@@ -1,0 +1,33 @@
+84a0762 fix(governance): record SharedExpertMoE in MoE variant usage ledger baseline
+9df6d6a docs(reports): add v26.08.1 candidate full-suite baseline to 0821 analysis
+22140b7 feat(scripts): add release baseline preflight tool with contract tests
+594cd57 feat(scripts): preflight CLI-contamination check; blocked-file rerun baseline
+0b18340 fix(exports): align MoT roundtrip validation with documented export semantics
+12d7cf1 chore: update GitHub star trend [skip ci]
+27966ca feat(mot): add export_masked flag for bit-exact sparse export parity
+6b4f4c1 feat(mot): wire export_masked through C2fMoT and master MoT configs
+3eb6cd9 docs(reports): mark MoT config-line export_masked rollout as landed
+e9ac08b chore: update GitHub star trend [skip ci]
+5a933fa fix(agent): import importlib.util for module resolution in device probe
+9ff7392 feat(mot): enable export_masked Top-K router weights by default
+cee7b5c test(fixtures): extract shared tiny COCO multitask dataset fixture
+b7d94e2 feat(peft): add YOLO-PEFT paper reproduction script and frozen claim anchor
+d29ff5a feat(scripts): harden release preflight CLI install attribution
+bf5f0f3 chore: update GitHub star trend [skip ci]
+748dec7 docs: define D1 offline DINOv3 cache design
+4f0cc4c docs: align D1 interface with n-scale channels
+55f71d4 feat: add deterministic D1 DINOv3 feature cache
+ef2df96 docs: pin correct DINOv3 model revision
+33c00d2 fix: measure full D1 cache reads
+f464f5a docs: record D1 100-image cache admission evidence
+ed4065f feat: train D1 detector from offline DINOv3 cache
+5575b54 docs: close D1 8.24 admission gate
+ac50dca docs: record D1 P0 offline-cache acceptance
+3e65b9d perf(d1): defer cached feature casting to GPU
+89f7f1b perf(d1): add preloaded cache residency modes
+ee04808 docs(d1): record COCO128 P1 pilot evidence
+8c8d5b8 docs(d1): record VisDrone500 P1 comparison
+f1bed28 experiments(d1): validate LatentMixture auxiliary weight
+053bec0 feat(d1): decouple data split and training seeds
+6c93b47 exp(d1): record paired VisDrone multiseed evaluation
+a06653d exp(d1): complete multiseed backbone-size evaluation
