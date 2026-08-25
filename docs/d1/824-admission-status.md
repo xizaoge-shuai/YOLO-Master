@@ -48,3 +48,29 @@ warm-cache 成本。
 
 P2 扫描 LatentMixture 辅助损失权重和 DINOv3 模型规模。当前主分支已经
 统一收集 LatentMixture 辅助损失，因此不能将该历史修复作为本课题新增成果。
+
+<!-- CACHE100-EVIDENCE-BEGIN -->
+
+## 100 图离线缓存实测结果
+
+- 数据集：COCO128 train，按稳定 sample_id 排序取前 100 张。
+- 模型：`Tooony133/dinov3-vits16-pretrain-lvd1689m`。
+- revision：`fc6921f7a0b44d5b33ab4482cfed5443db6ccd81`。
+- 输入尺寸：640×640。
+- 缓存层：[3, 7, 11]。
+- 缓存格式：FP16 safetensors。
+- 缓存总量：368664800 bytes（351.59 MiB）。
+- 单样本：3.52 MiB。
+- 缓存构建耗时：10.5119 秒。
+- 缓存构建 GPU-hours：0.002920。
+- 峰值分配显存：84.22 MiB。
+- 完整文件 warm-cache 顺序读取：4876.38 MiB/s。
+- manifest SHA256：`6820a2f4ff724d5978e9b48567cf56e2400e6a91a195ba70ba7ae7638410d267`。
+- 两次 manifest 一致性：PASS。
+- 100 个特征文件一致性：PASS。
+- DINOv3 三层实测形状：384×40×40。
+- LatentMixture 规划输出：P3=64×80×80，P4=128×40×40，P5=256×20×20。
+
+I/O 数值为完整读取全部缓存文件的 warm OS page-cache 测量，不表述为裸盘极限吞吐。
+
+<!-- CACHE100-EVIDENCE-END -->
