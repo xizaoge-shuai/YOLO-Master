@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "gate": "D1 P0 minimum acceptance",
+  "route": "offline DINOv3 feature cache -> LatentMixture P3/P4/P5 -> Detect",
+  "run": "/data/users/zhjia/YOLO-Master/runs/d1/p0/cached-latent-coco128-s0-20260825-061707",
+  "epochs": 20,
+  "train_samples": 80,
+  "val_samples": 20,
+  "gpu_hours_training": 0.07354593510105689,
+  "peak_vram_bytes": 1631932928,
+  "best_map50_95": 3.1826293872694825e-05,
+  "final": {
+    "epoch": 20,
+    "epoch_seconds": 14.028121031820774,
+    "lr": 1.6094271405406863e-06,
+    "metrics/mAP50(B)": 0.00013602251407129456,
+    "metrics/mAP50-95(B)": 2.1136257035647285e-05,
+    "metrics/precision(B)": 0.0006838386140870754,
+    "metrics/recall(B)": 0.0017016449234259785,
+    "peak_vram_bytes": 1631932928,
+    "train/box_loss": 6.220786094665527,
+    "train/cls_loss": 12.808629035949707,
+    "train/dfl_loss": 0.08261744678020477,
+    "train/mixture_aux_loss": 0.03274541683495045,
+    "train/total_loss": 19.11244144439697,
+    "val/box_loss": 7.4060845375061035,
+    "val/cls_loss": 12.618025779724121,
+    "val/dfl_loss": 0.08868248760700226,
+    "val/total_loss": 20.112792804837227
+  },
+  "checkpoint_sha256": {
+    "best.pt": "4ad97c5848996bb5705c4916330c7f346f4717cd102a184018a45d82ec1d6a42",
+    "last.pt": "7c59deb89d68f5b7ac8e580d6c471fdfffb86e4d6d776ea0153d077c312c4eee"
+  },
+  "teacher_loaded_during_training": false,
+  "student_only_checkpoints": true,
+  "limitations": [
+    "COCO128 80/20 split is a P0 chain validation, not a P1 benchmark",
+    "single seed 0; multi-seed and second dataset belong to P1"
+  ]
+}
