@@ -247,7 +247,7 @@ git commit -m "feat: report D1 cache admission resources"
 python scripts/d1_build_feature_cache.py \
   --dataset coco8.yaml --split train --limit 4 --imgsz 128 \
   --model Tooony133/dinov3-vits16-pretrain-lvd1689m \
-  --revision fc6921d3c4d96a9ca31f47445fa52b8378c1409d \
+  --revision fc6921f7a0b44d5b33ab4482cfed5443db6ccd81 \
   --layers 3 7 11 --device cuda:0 --dtype fp16 \
   --output runs/d1/admission-824/cache4 \
   2>&1 | tee runs/d1/admission-824/cache4.log
@@ -267,7 +267,7 @@ Expected: `D1 cache validation: PASS (4 samples)`.
 python scripts/d1_build_feature_cache.py \
   --dataset ultralytics/cfg/datasets/coco-mini.yaml --split train --limit 100 --imgsz 640 \
   --model Tooony133/dinov3-vits16-pretrain-lvd1689m \
-  --revision fc6921d3c4d96a9ca31f47445fa52b8378c1409d \
+  --revision fc6921f7a0b44d5b33ab4482cfed5443db6ccd81 \
   --layers 3 7 11 --device cuda:0 --dtype fp16 \
   --output runs/d1/admission-824/cache100 \
   2>&1 | tee runs/d1/admission-824/cache100.log
