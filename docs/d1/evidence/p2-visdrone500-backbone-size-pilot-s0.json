@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "scope": "D1 P2 VisDrone500 backbone-size single-seed 30-epoch pilot",
+  "seed": 0,
+  "split_seed": 0,
+  "mixture_aux_weight": 0.0,
+  "vit_s": {
+    "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p00-e30-s0",
+    "epochs": 30,
+    "best_epoch": 16,
+    "best_map50": 0.028845120914157734,
+    "best_map50_95": 0.009455026154902752,
+    "training_seconds": 104.98465591506101,
+    "preload_seconds": 15.598555390024558,
+    "cold_seconds": 120.58321130508557,
+    "preloaded_bytes": 1843200000,
+    "peak_vram_bytes": 3843516416,
+    "trainable_parameters": 1291619
+  },
+  "vit_l": {
+    "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/runs/vitl16-bf16cache-aux-w0p00-e30-s0",
+    "epochs": 30,
+    "best_epoch": 22,
+    "best_map50": 0.035411365803867514,
+    "best_map50_95": 0.011973669682645391,
+    "training_seconds": 156.5518068051897,
+    "preload_seconds": 21.794492739019915,
+    "cold_seconds": 178.34629954420961,
+    "preloaded_bytes": 4915200000,
+    "peak_vram_bytes": 7491672576,
+    "trainable_parameters": 2438499
+  },
+  "comparison": {
+    "map50_95_delta": 0.0025186435277426387,
+    "map50_95_relative_gain": 0.2663814447976578,
+    "training_time_increase": 0.4911875020274359,
+    "preload_time_increase": 0.3972122542166774,
+    "vram_increase": 0.9491714787045675,
+    "cache_size_increase": 1.6666666666666665
+  },
+  "decision": "VITL_PILOT_GAIN_WITH_HIGHER_COST",
+  "limitation": "Single seed and 30 epochs; requires paired 100-epoch multiseed confirmation."
+}

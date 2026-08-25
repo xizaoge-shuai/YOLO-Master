@@ -1,0 +1,290 @@
+{
+  "status": "PASS",
+  "scope": "D1 P2 VisDrone500 ViT-S versus ViT-L paired e100 multiseed",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "split_seed": 0,
+  "epochs": 100,
+  "mixture_aux_weight": 0.0,
+  "records": [
+    {
+      "model": "vits16",
+      "seed": 0,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/e100-multiseed/runs/vits16-aux-w0p00-e100-s0",
+      "best_epoch": 40,
+      "best_map50": 0.029314322991145548,
+      "best_map50_95": 0.009876685470833561,
+      "final_map50_95": 0.006910205606566453,
+      "training_seconds": 356.97086909692734,
+      "preload_seconds": 17.18059572414495,
+      "cold_seconds": 374.1514648210723,
+      "median_epoch_seconds": 3.5255610700696707,
+      "peak_vram_gib": 3.5795536041259766,
+      "preloaded_gib": 1.71661376953125,
+      "trainable_parameters": 1291619
+    },
+    {
+      "model": "vitl16",
+      "seed": 0,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/e100-multiseed/runs/vitl16-aux-w0p00-e100-s0",
+      "best_epoch": 31,
+      "best_map50": 0.031149792941824933,
+      "best_map50_95": 0.010247901540162658,
+      "final_map50_95": 0.007181198444686782,
+      "training_seconds": 502.74372069584206,
+      "preload_seconds": 24.455985011998564,
+      "cold_seconds": 527.1997057078406,
+      "median_epoch_seconds": 4.972017020918429,
+      "peak_vram_gib": 6.977893352508545,
+      "preloaded_gib": 4.57763671875,
+      "trainable_parameters": 2438499
+    },
+    {
+      "model": "vits16",
+      "seed": 1,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/e100-multiseed/runs/vits16-aux-w0p00-e100-s1",
+      "best_epoch": 23,
+      "best_map50": 0.028881464315853773,
+      "best_map50_95": 0.00971375420157245,
+      "final_map50_95": 0.00679879926560134,
+      "training_seconds": 377.4106667439919,
+      "preload_seconds": 44.533124421024695,
+      "cold_seconds": 421.9437911650166,
+      "median_epoch_seconds": 3.6089228349737823,
+      "peak_vram_gib": 3.582592010498047,
+      "preloaded_gib": 1.71661376953125,
+      "trainable_parameters": 1291619
+    },
+    {
+      "model": "vitl16",
+      "seed": 1,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/e100-multiseed/runs/vitl16-aux-w0p00-e100-s1",
+      "best_epoch": 28,
+      "best_map50": 0.04215518671578538,
+      "best_map50_95": 0.01478181085152384,
+      "final_map50_95": 0.010276341834733858,
+      "training_seconds": 480.5086411188822,
+      "preload_seconds": 36.79483298701234,
+      "cold_seconds": 517.3034741058946,
+      "median_epoch_seconds": 4.6842954501044005,
+      "peak_vram_gib": 6.978054523468018,
+      "preloaded_gib": 4.57763671875,
+      "trainable_parameters": 2438499
+    },
+    {
+      "model": "vits16",
+      "seed": 2,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/e100-multiseed/runs/vits16-aux-w0p00-e100-s2",
+      "best_epoch": 29,
+      "best_map50": 0.028740368904754593,
+      "best_map50_95": 0.0094714731758835,
+      "final_map50_95": 0.007181271145769671,
+      "training_seconds": 362.3372152419761,
+      "preload_seconds": 30.64468458807096,
+      "cold_seconds": 392.98189983004704,
+      "median_epoch_seconds": 3.523696405114606,
+      "peak_vram_gib": 3.581777572631836,
+      "preloaded_gib": 1.71661376953125,
+      "trainable_parameters": 1291619
+    },
+    {
+      "model": "vitl16",
+      "seed": 2,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/backbone-size/e100-multiseed/runs/vitl16-aux-w0p00-e100-s2",
+      "best_epoch": 34,
+      "best_map50": 0.03346859200459314,
+      "best_map50_95": 0.011743572402097566,
+      "final_map50_95": 0.010386671185325644,
+      "training_seconds": 487.4288261861075,
+      "preload_seconds": 16.51864211889915,
+      "cold_seconds": 503.9474683050066,
+      "median_epoch_seconds": 4.835928014945239,
+      "peak_vram_gib": 6.977108955383301,
+      "preloaded_gib": 4.57763671875,
+      "trainable_parameters": 2438499
+    }
+  ],
+  "paired": [
+    {
+      "seed": 0,
+      "vits16_best_epoch": 40,
+      "vitl16_best_epoch": 31,
+      "vits16_map50": 0.029314322991145548,
+      "vitl16_map50": 0.031149792941824933,
+      "vits16_map50_95": 0.009876685470833561,
+      "vitl16_map50_95": 0.010247901540162658,
+      "map50_95_delta": 0.0003712160693290969
+    },
+    {
+      "seed": 1,
+      "vits16_best_epoch": 23,
+      "vitl16_best_epoch": 28,
+      "vits16_map50": 0.028881464315853773,
+      "vitl16_map50": 0.04215518671578538,
+      "vits16_map50_95": 0.00971375420157245,
+      "vitl16_map50_95": 0.01478181085152384,
+      "map50_95_delta": 0.005068056649951391
+    },
+    {
+      "seed": 2,
+      "vits16_best_epoch": 29,
+      "vitl16_best_epoch": 34,
+      "vits16_map50": 0.028740368904754593,
+      "vitl16_map50": 0.03346859200459314,
+      "vits16_map50_95": 0.0094714731758835,
+      "vitl16_map50_95": 0.011743572402097566,
+      "map50_95_delta": 0.0022720992262140662
+    }
+  ],
+  "aggregate": {
+    "vits16": {
+      "map50": {
+        "mean": 0.028978718737251306,
+        "std": 0.0002990813270370543,
+        "values": [
+          0.029314322991145548,
+          0.028881464315853773,
+          0.028740368904754593
+        ]
+      },
+      "map50_95": {
+        "mean": 0.00968730428276317,
+        "std": 0.00020389690936460254,
+        "values": [
+          0.009876685470833561,
+          0.00971375420157245,
+          0.0094714731758835
+        ]
+      },
+      "training_seconds": {
+        "mean": 365.5729170276318,
+        "std": 10.597106043515275,
+        "values": [
+          356.97086909692734,
+          377.4106667439919,
+          362.3372152419761
+        ]
+      },
+      "cold_seconds": {
+        "mean": 396.35905193871196,
+        "std": 24.074477805662017,
+        "values": [
+          374.1514648210723,
+          421.9437911650166,
+          392.98189983004704
+        ]
+      },
+      "median_epoch_seconds": {
+        "mean": 3.5527267700526863,
+        "std": 0.04867614948114411,
+        "values": [
+          3.5255610700696707,
+          3.6089228349737823,
+          3.523696405114606
+        ]
+      },
+      "peak_vram_gib": {
+        "mean": 3.5813077290852866,
+        "std": 0.0015727501515291659,
+        "values": [
+          3.5795536041259766,
+          3.582592010498047,
+          3.581777572631836
+        ]
+      },
+      "preloaded_gib": {
+        "mean": 1.71661376953125,
+        "std": 0.0,
+        "values": [
+          1.71661376953125,
+          1.71661376953125,
+          1.71661376953125
+        ]
+      }
+    },
+    "vitl16": {
+      "map50": {
+        "mean": 0.035591190554067814,
+        "std": 0.005801615420006383,
+        "values": [
+          0.031149792941824933,
+          0.04215518671578538,
+          0.03346859200459314
+        ]
+      },
+      "map50_95": {
+        "mean": 0.012257761597928022,
+        "std": 0.002310276240570267,
+        "values": [
+          0.010247901540162658,
+          0.01478181085152384,
+          0.011743572402097566
+        ]
+      },
+      "training_seconds": {
+        "mean": 490.22706266694394,
+        "std": 11.37858895032451,
+        "values": [
+          502.74372069584206,
+          480.5086411188822,
+          487.4288261861075
+        ]
+      },
+      "cold_seconds": {
+        "mean": 516.1502160395806,
+        "std": 11.668939077100228,
+        "values": [
+          527.1997057078406,
+          517.3034741058946,
+          503.9474683050066
+        ]
+      },
+      "median_epoch_seconds": {
+        "mean": 4.8307468286560225,
+        "std": 0.14393074409745008,
+        "values": [
+          4.972017020918429,
+          4.6842954501044005,
+          4.835928014945239
+        ]
+      },
+      "peak_vram_gib": {
+        "mean": 6.977685610453288,
+        "std": 0.0005058580056207473,
+        "values": [
+          6.977893352508545,
+          6.978054523468018,
+          6.977108955383301
+        ]
+      },
+      "preloaded_gib": {
+        "mean": 4.57763671875,
+        "std": 0.0,
+        "values": [
+          4.57763671875,
+          4.57763671875,
+          4.57763671875
+        ]
+      }
+    }
+  },
+  "comparison": {
+    "paired_map50_95_delta_mean": 0.002570457315164851,
+    "paired_map50_95_delta_std": 0.0023625920134201896,
+    "paired_map50_95_delta_ci95": [
+      -0.0032985466030731035,
+      0.008439461233402806
+    ],
+    "vitl_win_count": 3,
+    "map50_95_relative_change": 0.2653428900482173,
+    "training_time_relative_change": 0.3409829881623594,
+    "cold_time_relative_change": 0.30222890965889104,
+    "vram_relative_change": 0.9483624804940962,
+    "cache_relative_change": 1.6666666666666665
+  },
+  "decision": "VITL_POSITIVE_MEAN_GAIN_NOT_CONFIRMED",
+  "limitation": "VisDrone500 deterministic subset with three training seeds."
+}
