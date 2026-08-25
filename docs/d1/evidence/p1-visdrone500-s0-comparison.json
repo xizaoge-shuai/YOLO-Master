@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "scope": "D1 P1 VisDrone500 single-seed comparison",
+  "base_ref": "acce839c7e895d6b179de7f7093fa879e237cc7b",
+  "final_ref": "ee048084e5c7f82513cf35e55272a13c6b5a76e6",
+  "dataset": {
+    "name": "VisDrone500 deterministic subset",
+    "train_samples": 400,
+    "val_samples": 100,
+    "seed": 0
+  },
+  "baseline": {
+    "method": "YOLO26n from scratch",
+    "best_epoch": 44,
+    "map50": 0.02833,
+    "map50_95": 0.00978,
+    "training_seconds": 1523.699570484925,
+    "gpu_hours": 0.423249880690257,
+    "peak_vram_gib": 2.6716208457946777,
+    "run": "/data/users/zhjia/YOLO-Master/runs/d1/p1/visdrone500/baseline/yolo26n-scratch-e100-lr1e-3-s0-20260825-092120"
+  },
+  "method": {
+    "method": "offline DINOv3 features + LatentMixture + Detect",
+    "best_epoch": 19,
+    "map50": 0.029074005208739966,
+    "map50_95": 0.009500533014626245,
+    "training_seconds": 400.95084214094095,
+    "preload_seconds": 28.32840727386065,
+    "cache_extraction_seconds": 72.41194312623702,
+    "training_gpu_hours": 0.11137523392803915,
+    "cold_gpu_hours": 0.1314896625742161,
+    "peak_vram_gib": 3.5795536041259766,
+    "cache_residency": "gpu",
+    "teacher_loaded_during_training": false,
+    "run": "/data/users/zhjia/YOLO-Master/runs/d1/p1/visdrone500/gpu-resident/cached-preload-gpu-e100-lr1e-3-s0-20260825-090718"
+  },
+  "comparison": {
+    "map50_delta": 0.0007440052087399653,
+    "map50_95_delta": -0.0002794669853737556,
+    "map50_95_retention": 0.9714246436223154,
+    "warm_cost_reduction": 0.7368570222715648,
+    "with_preload_cost_reduction": 0.7182651634677686,
+    "cold_cost_reduction": 0.6707413966249443,
+    "vram_reduction": -0.3398434174371898
+  },
+  "gates": {
+    "warm_cost_50_percent": true,
+    "with_preload_cost_50_percent": true,
+    "cold_cost_50_percent": true,
+    "accuracy_not_worse": false,
+    "coco128_cost_gate_already_passed": true
+  },
+  "decision": "P1_VISDRONE_COMPARISON_COMPLETE_ACCURACY_TUNING_RECOMMENDED",
+  "artifacts": {
+    "baseline_summary_sha256": "114b8744de310c6de7df9f1b9840867e658e3c4418e82951b9a0ff94df11e5a4",
+    "method_best_checkpoint_sha256": "acd0991b7eb17d94cdb40645e6a1cfd69f63848d816d0eca6d0aff6cd3b2ec91",
+    "method_results_csv_sha256": "8e2831c661b7f85a0d1904ffb3269440c01facc0b784ddf559f0185a7d07474c",
+    "cache_manifest_sha256": "11ec936d2b24ddf8821efd5d76b01ef069f0c4d20344532237ad63ef7f6fdf59"
+  },
+  "limitation": "VisDrone500 single seed; multi-seed confirmation remains."
+}
