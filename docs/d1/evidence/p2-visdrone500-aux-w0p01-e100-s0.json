@@ -1,0 +1,67 @@
+{
+  "status": "PASS",
+  "scope": "D1 P2 VisDrone500 auxiliary-weight selected configuration",
+  "base_ref": "acce839c7e895d6b179de7f7093fa879e237cc7b",
+  "final_ref": "8c8d5b84f73f9515dcf04b4dd9b9934922c1c00c",
+  "dataset": {
+    "name": "VisDrone500 deterministic subset",
+    "train_samples": 400,
+    "val_samples": 100,
+    "seed": 0,
+    "epochs": 100
+  },
+  "selected_weight": 0.01,
+  "scratch": {
+    "best_epoch": 44,
+    "map50": 0.02833,
+    "map50_95": 0.00978,
+    "training_seconds": 1523.699570484925,
+    "peak_vram_gib": 2.6716208457946777
+  },
+  "original_weight_0p1": {
+    "best_epoch": 19,
+    "map50": 0.029074005208739966,
+    "map50_95": 0.009500533014626245,
+    "training_seconds": 400.95084214094095
+  },
+  "tuned_weight_0p01": {
+    "best_epoch": 17,
+    "map50": 0.0295129966971169,
+    "map50_95": 0.00995112408959767,
+    "training_seconds": 369.3902712010313,
+    "preload_seconds": 30.00149604002945,
+    "cache_extraction_seconds": 72.41194312623702,
+    "cold_seconds": 471.80371036729775,
+    "training_gpu_hours": 0.10260840866695313,
+    "cold_gpu_hours": 0.12272283731313008,
+    "peak_vram_gib": 3.49251651763916,
+    "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p01-e100-s0"
+  },
+  "comparison": {
+    "map50_delta_vs_scratch": 0.0011829966971168976,
+    "map50_95_delta_vs_scratch": 0.0001711240895976695,
+    "map50_95_retention_vs_scratch": 1.0174973506746083,
+    "map50_delta_vs_weight_0p1": 0.00043899148837693233,
+    "map50_95_delta_vs_weight_0p1": 0.0004505910749714251,
+    "map50_95_relative_gain_vs_weight_0p1": 0.047427978438444596,
+    "warm_cost_reduction_vs_scratch": 0.75757014154472,
+    "with_preload_cost_reduction_vs_scratch": 0.7378802390067274,
+    "cold_cost_reduction_vs_scratch": 0.6903564721639031,
+    "vram_reduction_vs_scratch": -0.30726503468358213
+  },
+  "gates": {
+    "accuracy_not_worse_than_scratch": true,
+    "better_than_weight_0p1": true,
+    "warm_cost_reduction_50_percent": true,
+    "cold_cost_reduction_50_percent": true,
+    "teacher_excluded": true
+  },
+  "decision": "P2_AUX_WEIGHT_E100_STRONG_PASS",
+  "artifacts": {
+    "scan_report_sha256": "42e2cd23327fe455a16b0255d9b3e6f788ee9184627e4bb8afb1449316d8252c",
+    "best_checkpoint_sha256": "89a4b3f62a8cacfbdc4172bd54db8799f0b8c84b542cbe1f42c6e44c77bc1552",
+    "results_csv_sha256": "4713921f8b18aaa3d6f3c8d9c84b5bf7f3c2c71d2ac29bcc5512c14fe6d3f018",
+    "p0_summary_sha256": "2820e60008743cfa30b2989d8efca121559d4a4668a25ad40d3fb2c75dbc6746"
+  },
+  "limitation": "Single-seed selected-configuration confirmation; multi-seed evaluation remains."
+}

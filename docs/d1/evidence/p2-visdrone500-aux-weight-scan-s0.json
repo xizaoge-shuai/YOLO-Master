@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "D1 P2 VisDrone500 LatentMixture auxiliary-weight scan",
+  "epochs_per_candidate": 30,
+  "seed": 0,
+  "ranking": [
+    {
+      "weight": 0.01,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p01-e30-s0",
+      "best_epoch": 17,
+      "best_map50": 0.0295259337135934,
+      "best_map50_95": 0.010212563985346302,
+      "final_map50_95": 0.009564739417757463,
+      "best_train_mixture_aux_loss": 0.967827571630478,
+      "training_seconds": 115.62608249415644,
+      "preload_seconds": 15.913028463954106,
+      "peak_vram_gib": 3.5795435905456543
+    },
+    {
+      "weight": 0.1,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p10-e30-s0",
+      "best_epoch": 19,
+      "best_map50": 0.02979863566551926,
+      "best_map50_95": 0.009489043166045354,
+      "final_map50_95": 0.008981062258632672,
+      "best_train_mixture_aux_loss": 0.03849744951352477,
+      "training_seconds": 108.07991748582572,
+      "preload_seconds": 27.40830423706211,
+      "peak_vram_gib": 3.5795536041259766
+    },
+    {
+      "weight": 0.0,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p00-e30-s0",
+      "best_epoch": 16,
+      "best_map50": 0.028845120914157734,
+      "best_map50_95": 0.009455026154902752,
+      "final_map50_95": 0.008504856745778146,
+      "best_train_mixture_aux_loss": 1.002925283908844,
+      "training_seconds": 104.98465591506101,
+      "preload_seconds": 15.598555390024558,
+      "peak_vram_gib": 3.5795536041259766
+    },
+    {
+      "weight": 0.05,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p05-e30-s0",
+      "best_epoch": 22,
+      "best_map50": 0.028090375408318147,
+      "best_map50_95": 0.009418282034045778,
+      "final_map50_95": 0.009173302093654216,
+      "best_train_mixture_aux_loss": 0.20679148446768522,
+      "training_seconds": 119.48974924790673,
+      "preload_seconds": 24.170511624077335,
+      "peak_vram_gib": 3.5795536041259766
+    },
+    {
+      "weight": 0.2,
+      "run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p20-e30-s0",
+      "best_epoch": 16,
+      "best_map50": 0.02670208804920233,
+      "best_map50_95": 0.009111834308806448,
+      "final_map50_95": 0.008400870494395009,
+      "best_train_mixture_aux_loss": 0.015222486425191164,
+      "training_seconds": 105.19259541411884,
+      "preload_seconds": 13.60269873519428,
+      "peak_vram_gib": 3.5795536041259766
+    }
+  ],
+  "selected_weight": 0.01,
+  "selected_run": "/data/users/zhjia/YOLO-Master/runs/d1/p2/visdrone500-aux-scan/runs/aux-w0p01-e30-s0",
+  "selected_map50_95": 0.010212563985346302,
+  "scratch_baseline_map50_95": 0.00978,
+  "pilot_accuracy_not_worse": true,
+  "next_action": "RUN_SELECTED_WEIGHT_E100"
+}
