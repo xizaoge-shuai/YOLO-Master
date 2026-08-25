@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "gate": "8.24 Smoke Test / 准入检查",
+  "route": "offline cached DINOv3 features; train LatentMixture and Detect only",
+  "checks": {
+    "cache_100_images": true,
+    "manifest_reproducible": true,
+    "features_reproducible": true,
+    "immutable_model_revision": true,
+    "resource_report_present": true,
+    "interface_dimensions_present": true,
+    "latent_detect_forward_backward": true,
+    "teacher_not_loaded_in_offline_head": true,
+    "only_latent_and_detect_trainable": true,
+    "finite_backward": true
+  },
+  "manifest_sha256": "6820a2f4ff724d5978e9b48567cf56e2400e6a91a195ba70ba7ae7638410d267",
+  "feature_set_sha256": "5a5293285a708d3cc82ad616cff4f4d3b2f94ba6208015ddc99c90c443ac31d3",
+  "sample_count": 100,
+  "cache_total_bytes": 368664800,
+  "cache_build_gpu_hours": 0.0029199681712392166,
+  "cache_peak_vram_bytes": 88309248,
+  "head_peak_vram_bytes": 398474240,
+  "teacher_loaded": false,
+  "note": "Admission PASS authorizes P0; it is not itself the completed P0 experiment."
+}

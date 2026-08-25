@@ -74,3 +74,22 @@ P2 扫描 LatentMixture 辅助损失权重和 DINOv3 模型规模。当前主分
 I/O 数值为完整读取全部缓存文件的 warm OS page-cache 测量，不表述为裸盘极限吞吐。
 
 <!-- CACHE100-EVIDENCE-END -->
+
+<!-- ADMISSION-FINAL-BEGIN -->
+
+## 最终准入结论
+
+- 状态：**PASS**
+- 100 图缓存构建与校验：PASS
+- 两次 manifest 和 100 个特征文件复现：PASS
+- DINOv3 多层特征到 LatentMixture/Detect 接口：PASS
+- 前向、反向和有限梯度检查：PASS
+- 离线训练侧加载教师模型：否
+- 训练参数范围：仅 LatentMixture 与 Detect
+- manifest SHA256：`6820a2f4ff724d5978e9b48567cf56e2400e6a91a195ba70ba7ae7638410d267`
+- feature-set SHA256：`5a5293285a708d3cc82ad616cff4f4d3b2f94ba6208015ddc99c90c443ac31d3`
+
+该结论表示已经具备进入 P0 的条件，不等同于 P0
+真实标签训练和验证已经完成。
+
+<!-- ADMISSION-FINAL-END -->
