@@ -4,9 +4,43 @@ from __future__ import annotations
 
 import torch
 
-from scripts.d1_train_cached_detector import CachedLatentDetector, audit_model, move_batch, transform_letterbox_xywhn
+from scripts.d1_train_cached_detector import (
+    CachedLatentDetector,
+    audit_model,
+    move_batch,
+    split_sample_indices,
+    transform_letterbox_xywhn,
+)
 from ultralytics.nn.mixture_loss import _collect_mixture_aux_loss
 from ultralytics.utils.loss import E2EDetectLoss
+
+
+def test_sample_split_is_reproducible_and_seed_scoped():
+    train_a, val_a = split_sample_indices(
+        sample_count=20,
+        train_count=12,
+        val_count=4,
+        split_seed=7,
+    )
+    train_b, val_b = split_sample_indices(
+        sample_count=20,
+        train_count=12,
+        val_count=4,
+        split_seed=7,
+    )
+    train_c, val_c = split_sample_indices(
+        sample_count=20,
+        train_count=12,
+        val_count=4,
+        split_seed=8,
+    )
+
+    assert train_a == train_b
+    assert val_a == val_b
+    assert len(train_a) == 12
+    assert len(val_a) == 4
+    assert not set(train_a) & set(val_a)
+    assert (train_a, val_a) != (train_c, val_c)
 
 
 def test_letterbox_label_transform_matches_cache_geometry():

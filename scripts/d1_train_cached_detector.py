@@ -64,6 +64,44 @@ def seed_everything(seed: int) -> None:
     torch.backends.cudnn.benchmark = False
 
 
+def split_sample_indices(
+    sample_count: int,
+    train_count: int,
+    val_count: int,
+    split_seed: int,
+) -> tuple[list[int], list[int]]:
+    """Create a deterministic data split independently of the training seed."""
+    if min(
+        sample_count,
+        train_count,
+        val_count,
+    ) <= 0:
+        raise ValueError(
+            "sample-count, train-count, and "
+            "val-count must be positive"
+        )
+
+    required = train_count + val_count
+
+    if sample_count < required:
+        raise ValueError(
+            f"cache has {sample_count} samples, "
+            f"but split needs {required}"
+        )
+
+    order = list(range(sample_count))
+    random.Random(split_seed).shuffle(order)
+
+    train_indices = sorted(
+        order[:train_count]
+    )
+    val_indices = sorted(
+        order[train_count:required]
+    )
+
+    return train_indices, val_indices
+
+
 def label_path(dataset_root: Path, image_relative_path: str) -> Path:
     """Resolve the YOLO label corresponding to a manifest image path."""
     image = Path(image_relative_path)
@@ -347,6 +385,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--workers", type=int, default=0)
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument(
+        "--split-seed",
+        type=int,
+        default=None,
+        help=(
+            "dataset split seed; defaults to "
+            "--seed for backward compatibility"
+        ),
+    )
     parser.add_argument("--train-count", type=int, default=80)
     parser.add_argument("--val-count", type=int, default=20)
     parser.add_argument("--lr", type=float, default=1e-4)
@@ -373,6 +420,11 @@ def main() -> None:
     if min(args.epochs, args.batch, args.train_count, args.val_count) <= 0:
         raise ValueError("epochs, batch, train-count, and val-count must be positive")
     seed_everything(args.seed)
+    split_seed = (
+        args.seed
+        if args.split_seed is None
+        else args.split_seed
+    )
     device = torch.device(args.device)
     if device.type == "cuda" and not torch.cuda.is_available():
         raise RuntimeError("CUDA device requested but CUDA is unavailable")
@@ -393,10 +445,16 @@ def main() -> None:
     )
     nc = len(names)
 
-    order = list(range(len(manifest["samples"])))
-    random.Random(args.seed).shuffle(order)
-    train_indices = sorted(order[: args.train_count])
-    val_indices = sorted(order[args.train_count : required])
+    train_indices, val_indices = (
+        split_sample_indices(
+            sample_count=len(
+                manifest["samples"]
+            ),
+            train_count=args.train_count,
+            val_count=args.val_count,
+            split_seed=split_seed,
+        )
+    )
     output = (args.project / args.name).resolve()
     if output.exists() and any(output.iterdir()):
         raise FileExistsError(f"output already exists and is non-empty: {output}")
@@ -489,6 +547,7 @@ def main() -> None:
         layers=list(layers),
         in_channels=list(in_channels),
         nc=nc,
+        split_seed=split_seed,
         cache_identity=manifest["identity"],
     )
     atomic_write_json(output / "args.json", config)
@@ -496,9 +555,21 @@ def main() -> None:
     atomic_write_json(
         output / "split.json",
         {
-            "seed": args.seed,
-            "train_sample_ids": [manifest["samples"][index]["sample_id"] for index in train_indices],
-            "val_sample_ids": [manifest["samples"][index]["sample_id"] for index in val_indices],
+            "seed": split_seed,
+            "training_seed": args.seed,
+            "split_seed": split_seed,
+            "train_sample_ids": [
+                manifest["samples"][index][
+                    "sample_id"
+                ]
+                for index in train_indices
+            ],
+            "val_sample_ids": [
+                manifest["samples"][index][
+                    "sample_id"
+                ]
+                for index in val_indices
+            ],
         },
     )
     results_path = output / "results.csv"
@@ -584,6 +655,8 @@ def main() -> None:
         "epochs": args.epochs,
         "train_samples": len(train_dataset),
         "val_samples": len(val_dataset),
+        "training_seed": args.seed,
+        "split_seed": split_seed,
         "cache_residency": args.cache_residency,
         "preload_seconds": preload_seconds,
         "preloaded_bytes": preloaded_bytes,
