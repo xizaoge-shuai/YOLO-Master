@@ -49,4 +49,5 @@ def test_resource_report_contains_admission_fields():
     assert report["sample_count"] == 1
     assert report["cache_total_bytes"] == 1024
     assert report["peak_vram_bytes"] == 2048
+    assert report["sequential_read_method"] == "python-buffered-full-file-read-warm-cache"
     assert report["sequential_read_mb_s"] > 0

@@ -120,6 +120,7 @@ def build_resource_report(
         "extraction_seconds": extraction_seconds,
         "extraction_seconds_per_sample": extraction_seconds / count if count else 0.0,
         "peak_vram_bytes": int(peak_vram_bytes),
+        "sequential_read_method": "python-buffered-full-file-read-warm-cache",
         "sequential_read_seconds": float(read_seconds),
         "sequential_read_mb_s": total_bytes / (1024**2) / read_seconds if read_seconds > 0 else 0.0,
     }
@@ -233,17 +234,21 @@ def build_cache(
 
 
 def benchmark_sequential_read(output: Path, samples: list[dict[str, Any]]) -> float:
-    """Load every cache file once and return elapsed seconds."""
-    try:
-        from safetensors.torch import load_file
-    except (ImportError, ModuleNotFoundError) as exc:
-        raise ImportError("safetensors is required; install it with: python -m pip install safetensors") from exc
+    """Read every cache file fully and return warm-cache elapsed seconds."""
     started = time.perf_counter()
+    total_bytes = 0
     for sample in samples:
-        tensors = load_file(str(output / sample["cache_path"]), device="cpu")
-        if not tensors:
-            raise RuntimeError(f"empty cache file for sample {sample['sample_id']}")
-    return time.perf_counter() - started
+        cache_file = output / sample["cache_path"]
+        with cache_file.open("rb") as stream:
+            for block in iter(lambda: stream.read(8 * 1024 * 1024), b""):
+                total_bytes += len(block)
+    elapsed = time.perf_counter() - started
+    expected_bytes = sum(int(sample["bytes"]) for sample in samples)
+    if total_bytes != expected_bytes:
+        raise RuntimeError(
+            f"sequential read byte mismatch: expected {expected_bytes}, got {total_bytes}"
+        )
+    return elapsed
 
 
 def collect_image_paths(value: str | list[str]) -> list[Path]:
