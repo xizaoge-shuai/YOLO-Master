@@ -22,6 +22,7 @@ from safetensors.torch import load_file
 from torch.utils.data import DataLoader, Dataset
 
 from ultralytics.data.foundation_cache import atomic_write_json, validate_manifest
+from ultralytics.data.preloaded_feature_cache import PreloadedFeatureBatchLoader
 from ultralytics.data.utils import check_det_dataset
 from ultralytics.nn.mixture_loss import _collect_mixture_aux_loss
 from ultralytics.nn.modules import Detect, LatentMixture
@@ -354,6 +355,15 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--conf", type=float, default=0.001)
     parser.add_argument("--project", type=Path, default=Path("runs/d1/p0"))
     parser.add_argument("--name", default="cached-latent-coco128-s0")
+    parser.add_argument(
+        "--cache-residency",
+        choices=("stream", "cpu", "gpu"),
+        default="stream",
+        help=(
+            "stream features per sample, preload into "
+            "host memory, or keep the FP16 cache on GPU"
+        ),
+    )
     parser.add_argument("--verify-cache-files", action="store_true")
     return parser.parse_args()
 
@@ -396,14 +406,69 @@ def main() -> None:
     train_dataset = CachedDetectionDataset(cache_root, manifest, train_indices, nc)
     val_dataset = CachedDetectionDataset(cache_root, manifest, val_indices, nc)
     generator = torch.Generator().manual_seed(args.seed)
-    loader_options = dict(
-        batch_size=args.batch,
-        num_workers=args.workers,
-        pin_memory=device.type == "cuda",
-        collate_fn=collate_cached,
-    )
-    train_loader = DataLoader(train_dataset, shuffle=True, generator=generator, **loader_options)
-    val_loader = DataLoader(val_dataset, shuffle=False, **loader_options)
+    preload_seconds = 0.0
+    preloaded_bytes = 0
+
+    if args.cache_residency == "stream":
+        loader_options = dict(
+            batch_size=args.batch,
+            num_workers=args.workers,
+            pin_memory=device.type == "cuda",
+            collate_fn=collate_cached,
+        )
+        train_loader = DataLoader(
+            train_dataset,
+            shuffle=True,
+            generator=generator,
+            **loader_options,
+        )
+        val_loader = DataLoader(
+            val_dataset,
+            shuffle=False,
+            **loader_options,
+        )
+    else:
+        if args.workers != 0:
+            raise ValueError(
+                "preloaded cache residency requires --workers 0"
+            )
+        if (
+            args.cache_residency == "gpu"
+            and device.type != "cuda"
+        ):
+            raise ValueError(
+                "GPU cache residency requires a CUDA device"
+            )
+
+        storage_device = (
+            device
+            if args.cache_residency == "gpu"
+            else torch.device("cpu")
+        )
+        preload_started = time.perf_counter()
+
+        train_loader = PreloadedFeatureBatchLoader(
+            train_dataset,
+            batch_size=args.batch,
+            shuffle=True,
+            generator=generator,
+            storage_device=storage_device,
+        )
+        val_loader = PreloadedFeatureBatchLoader(
+            val_dataset,
+            batch_size=args.batch,
+            shuffle=False,
+            generator=None,
+            storage_device=storage_device,
+        )
+
+        preload_seconds = (
+            time.perf_counter() - preload_started
+        )
+        preloaded_bytes = (
+            train_loader.preloaded_bytes
+            + val_loader.preloaded_bytes
+        )
 
     first = manifest["samples"][0]
     layers = tuple(int(value) for value in manifest["identity"]["layers"])
@@ -503,6 +568,7 @@ def main() -> None:
             scheduler.step()
 
     final_row = row
+    training_elapsed = time.perf_counter() - total_started
     summary = {
         "status": "PASS",
         "p0_contract": {
@@ -518,8 +584,18 @@ def main() -> None:
         "epochs": args.epochs,
         "train_samples": len(train_dataset),
         "val_samples": len(val_dataset),
-        "elapsed_seconds": time.perf_counter() - total_started,
-        "gpu_hours_training": (time.perf_counter() - total_started) / 3600 if device.type == "cuda" else 0.0,
+        "cache_residency": args.cache_residency,
+        "preload_seconds": preload_seconds,
+        "preloaded_bytes": preloaded_bytes,
+        "elapsed_seconds": training_elapsed,
+        "elapsed_seconds_with_preload": (
+            training_elapsed + preload_seconds
+        ),
+        "gpu_hours_training": (
+            training_elapsed / 3600
+            if device.type == "cuda"
+            else 0.0
+        ),
         "peak_vram_bytes": int(final_row["peak_vram_bytes"]),
         "best_map50_95": best_fitness,
         "final": final_row,
