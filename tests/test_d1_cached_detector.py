@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import torch
 
-from scripts.d1_train_cached_detector import CachedLatentDetector, audit_model, transform_letterbox_xywhn
+from scripts.d1_train_cached_detector import CachedLatentDetector, audit_model, move_batch, transform_letterbox_xywhn
 from ultralytics.nn.mixture_loss import _collect_mixture_aux_loss
 from ultralytics.utils.loss import E2EDetectLoss
 
@@ -54,3 +54,35 @@ def test_trainability_audit_excludes_teacher():
     assert report["teacher_loaded"] is False
     assert report["teacher_parameters"] == []
     assert report["unexpected_trainable"] == []
+
+
+def test_move_batch_casts_cached_fp16_features_to_fp32():
+    batch = {
+        "features": tuple(
+            torch.randn(
+                1,
+                8,
+                4,
+                4,
+                dtype=torch.float16,
+            )
+            for _ in range(3)
+        ),
+        "cls": torch.tensor([[1.0]]),
+        "bboxes": torch.tensor(
+            [[0.5, 0.5, 0.25, 0.25]]
+        ),
+        "batch_idx": torch.tensor([0]),
+    }
+
+    features, targets = move_batch(
+        batch,
+        torch.device("cpu"),
+    )
+
+    assert all(
+        feature.dtype == torch.float32
+        for feature in features
+    )
+    assert targets["cls"].dtype == torch.float32
+    assert targets["bboxes"].dtype == torch.float32

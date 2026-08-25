@@ -127,7 +127,7 @@ class CachedDetectionDataset(Dataset):
         sample = self.samples[index]
         cache_file = self.cache_root / sample["cache_path"]
         tensors = load_file(str(cache_file), device="cpu")
-        features = tuple(tensors[f"layer_{layer}"].float() for layer in self.layers)
+        features = tuple(tensors[f"layer_{layer}"] for layer in self.layers)
         expected = tuple(tuple(sample["shapes"][f"layer_{layer}"]) for layer in self.layers)
         actual = tuple(tuple(feature.shape) for feature in features)
         if actual != expected:
@@ -237,7 +237,14 @@ def audit_model(model: nn.Module) -> dict[str, Any]:
 
 def move_batch(batch: dict[str, Any], device: torch.device) -> tuple[tuple[torch.Tensor, ...], dict[str, torch.Tensor]]:
     """Move features and loss targets to the selected device."""
-    features = tuple(feature.to(device, non_blocking=True) for feature in batch["features"])
+    features = tuple(
+        feature.to(
+            device=device,
+            dtype=torch.float32,
+            non_blocking=True,
+        )
+        for feature in batch["features"]
+    )
     targets = {
         "cls": batch["cls"].to(device, non_blocking=True),
         "bboxes": batch["bboxes"].to(device, non_blocking=True),
