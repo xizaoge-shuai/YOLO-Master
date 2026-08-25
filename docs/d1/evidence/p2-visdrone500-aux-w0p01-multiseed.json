@@ -1,0 +1,112 @@
+{
+  "status": "PASS",
+  "scope": "D1 P2 VisDrone500 paired three-seed confirmation",
+  "git_ref": "053bec070fa652023d54354d5daeef7f360bafd3",
+  "dataset": {
+    "name": "VisDrone500 deterministic subset",
+    "train_samples": 400,
+    "val_samples": 100,
+    "split_seed": 0,
+    "training_seeds": [
+      0,
+      1,
+      2
+    ]
+  },
+  "method": {
+    "aux_weight": 0.01,
+    "cache_residency": "gpu"
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "baseline": {
+        "epoch": 44,
+        "map50": 0.02833,
+        "map50_95": 0.00978
+      },
+      "method": {
+        "epoch": 17,
+        "map50": 0.0295129966971169,
+        "map50_95": 0.00995112408959767
+      },
+      "map50_delta": 0.0011829966971168976,
+      "map50_95_delta": 0.0001711240895976695,
+      "method_wins_map50_95": true
+    },
+    {
+      "seed": 1,
+      "baseline": {
+        "epoch": 32,
+        "map50": 0.02995,
+        "map50_95": 0.0103
+      },
+      "method": {
+        "epoch": 16,
+        "map50": 0.02508277768050518,
+        "map50_95": 0.008386699257981913
+      },
+      "map50_delta": -0.00486722231949482,
+      "map50_95_delta": -0.0019133007420180873,
+      "method_wins_map50_95": false
+    },
+    {
+      "seed": 2,
+      "baseline": {
+        "epoch": 39,
+        "map50": 0.02878,
+        "map50_95": 0.00974
+      },
+      "method": {
+        "epoch": 17,
+        "map50": 0.028085217403123412,
+        "map50_95": 0.008811111392285798
+      },
+      "map50_delta": -0.0006947825968765878,
+      "map50_95_delta": -0.0009288886077142029,
+      "method_wins_map50_95": false
+    }
+  ],
+  "aggregate": {
+    "baseline_map50_mean": 0.02902,
+    "baseline_map50_std": 0.0008362415918859814,
+    "method_map50_mean": 0.02756033059358183,
+    "method_map50_std": 0.0022612695009463337,
+    "baseline_map50_95_mean": 0.009940000000000001,
+    "baseline_map50_95_std": 0.000312409987036266,
+    "method_map50_95_mean": 0.00904964491328846,
+    "method_map50_95_std": 0.0008090302490793798,
+    "paired_map50_delta_mean": -0.0014596694064181702,
+    "paired_map50_95_deltas": [
+      0.0001711240895976695,
+      -0.0019133007420180873,
+      -0.0009288886077142029
+    ],
+    "paired_map50_95_delta_mean": -0.0008903550867115402,
+    "paired_map50_95_delta_std": 0.0010427465386395396,
+    "paired_map50_95_delta_ci95": [
+      -0.0034806810872405596,
+      0.0016999709138174795
+    ],
+    "method_win_count": 1
+  },
+  "decision": "MULTISEED_ACCURACY_GAIN_NOT_CONFIRMED",
+  "artifacts": {
+    "baseline_results_sha256": {
+      "0": "93d7723487640a1cc5a2eeaa2a1b5e8b7e8f42070c2a621ce2591e726178645e",
+      "1": "f8eee13d2e51ed8cc9180d998223117cd6dbf30207498492cea6c5e775d99f78",
+      "2": "7401f66f7bf98a53f1f37382131b792d04b3eaa0feed7692f991264db5e74564"
+    },
+    "method_results_sha256": {
+      "0": "4713921f8b18aaa3d6f3c8d9c84b5bf7f3c2c71d2ac29bcc5512c14fe6d3f018",
+      "1": "270fcb251e1b4a3b18fce72b2d022021457e91abc8bad573bb3e22b24634c88f",
+      "2": "5ab3bd127d0b5064e12737b0a3474627fa985678e6aee5cc4c906d0cdb14e576"
+    },
+    "method_checkpoints_sha256": {
+      "0": "89a4b3f62a8cacfbdc4172bd54db8799f0b8c84b542cbe1f42c6e44c77bc1552",
+      "1": "c3f44618e73c7e745b2fe0ccba124339bab199db402604c6cd49df421bdcbb16",
+      "2": "555aa30021d1b873fae2e8e83f9aa447287c2aaebd59dd44a272ca7212e238b2"
+    }
+  },
+  "limitation": "Three seeds on a 500-image subset; the weight was selected using seed 0."
+}
