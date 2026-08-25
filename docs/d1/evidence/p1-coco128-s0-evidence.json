@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "scope": "D1 P1 COCO128 single-seed pilot",
+  "base_ref": "acce839c7e895d6b179de7f7093fa879e237cc7b",
+  "final_ref": "89f7f1bf771f492ce5ed4155968ecd831afc04d4",
+  "dataset": {
+    "name": "COCO128 deterministic subset",
+    "train_samples": 80,
+    "val_samples": 20,
+    "seed": 0
+  },
+  "method": {
+    "offline_cache": true,
+    "cache_residency": "gpu",
+    "teacher_loaded_during_training": false,
+    "trainable_components": [
+      "LatentMixture-P3",
+      "LatentMixture-P4",
+      "LatentMixture-P5",
+      "Detect"
+    ]
+  },
+  "best": {
+    "epoch": 53,
+    "map50": 0.020743789099506662,
+    "map50_95": 0.009033892226148282
+  },
+  "cost": {
+    "map50": -0.0035362109004933376,
+    "map50_95": 0.0017438922261482828,
+    "accuracy_retention": 1.2392170406239071,
+    "warm_cost_reduction": 0.7874860527180234,
+    "cold_cost_reduction": 0.7601473210293775,
+    "wall_time_reduction": 0.7874860527180234,
+    "wall_time_with_preload_reduction": 0.7729310822028015,
+    "vram_reduction": 0.1943882266531055
+  },
+  "gates": {
+    "p1_warm_cost_50_percent": true,
+    "p1_cold_cost_50_percent": true,
+    "p1_wall_with_preload_50_percent": true,
+    "accuracy_not_worse_than_baseline": true
+  },
+  "run": "/data/users/zhjia/YOLO-Master/runs/d1/p1/coco128-pilot/gpu-resident/cached-preload-gpu-e100-lr1e-3-s0-20260825-082142",
+  "artifacts": {
+    "best_checkpoint_sha256": "7edb6e50ff0ef10a1b38a7a50e9a93d5b2057ce430c844ffa40a2e4193ea3c02",
+    "last_checkpoint_sha256": "c8ca05f96dde740408701ff98565e179e4e2cd9acff77a36cf0d57bf656da072",
+    "results_csv_sha256": "1fdfab1710eca2488d43178b3a71362d23c47ee5987ebfd088ad8dae6ab40e18"
+  },
+  "limitation": "COCO128 single seed; this satisfies the first-dataset pilot only."
+}

@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "dataset": "COCO128 deterministic 80/20 single-seed pilot",
+  "offline_cached_latent_gpu": {
+    "best_epoch": 53,
+    "best_map50": 0.020743789099506662,
+    "best_map50_95": 0.009033892226148282,
+    "training_seconds": 81.71272495994344,
+    "preload_seconds": 5.5964623391628265,
+    "training_plus_preload_seconds": 87.30918729910627,
+    "gpu_hours_training": 0.022697979155539845,
+    "peak_vram_gib": 1.8948755264282227
+  },
+  "yolo26n_scratch": {
+    "best_epoch": 43,
+    "best_map50": 0.02428,
+    "best_map50_95": 0.00729,
+    "training_seconds": 384.5052336801309,
+    "gpu_hours_training": 0.10680700935559193,
+    "peak_vram_gib": 2.352095127105713
+  },
+  "delta": {
+    "map50": -0.0035362109004933376,
+    "map50_95": 0.0017438922261482828,
+    "accuracy_retention": 1.2392170406239071,
+    "warm_cost_reduction": 0.7874860527180234,
+    "cold_cost_reduction": 0.7601473210293775,
+    "wall_time_reduction": 0.7874860527180234,
+    "wall_time_with_preload_reduction": 0.7729310822028015,
+    "vram_reduction": 0.1943882266531055
+  },
+  "gates": {
+    "p1_warm_cost_50_percent": true,
+    "p1_cold_cost_50_percent": true,
+    "p1_wall_with_preload_50_percent": true,
+    "accuracy_not_worse_than_baseline": true
+  },
+  "decision": "P1_PILOT_COST_AND_ACCURACY_PASS",
+  "limitation": "Single-seed COCO128 pilot; formal P1 requires the task-book dataset and repeated seeds."
+}
