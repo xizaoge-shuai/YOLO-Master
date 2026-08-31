@@ -97,3 +97,24 @@ At rank 64:
   - zoom: 0.9379 ± 0.0504
 
 Rank 64 is therefore used as the default correction budget for the first deployable predictor.
+
+## Unified cross-dataset frozen-method experiment
+
+The predictor architecture was selected once using calibration-set coefficient validation loss, without using held-out detection AP.
+
+Frozen configuration:
+
+- context: multiscale_global
+- rank: 64
+- hidden width: 128
+- predictor epochs: 80
+- learning rate: 1e-3
+- weight decay: 1e-4
+- augmentations: horizontal flip and 15% zoom
+- calibration ratio: 12.5%
+
+The identical method configuration was evaluated on VisDrone500 and COCO128 with three calibration/training seeds. Dataset-specific method tuning was not used.
+
+Machine-readable results:
+- research/results/unified_crossdataset_summary.csv
+- research/results/unified_rank_ablation.csv
