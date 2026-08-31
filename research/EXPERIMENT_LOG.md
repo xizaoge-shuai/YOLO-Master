@@ -34,3 +34,46 @@ Detector: frozen-cache LatentMixture + Detect
 ### Observation
 
 For both horizontal flipping and zoom-in augmentation, almost the entire downstream detection gap is determined by layer 3. Exact recovery of layers 7 and 11 alone provides essentially no task recovery. This motivates task-sensitive correction rather than indiscriminate reconstruction of all representation defects.
+
+## A3. Task-sensitive low-rank defect subspace
+
+VisDrone500 uses the fixed 400/100 train-validation split. All 100 held-out validation samples are evaluated.
+
+### Main findings
+
+1. The downstream task sensitivity is highly concentrated at DINOv3 layer 3.
+
+For horizontal flip, the mean first-order impacts are:
+
+- layer 3: 2.7379e-03
+- layer 7: 3.2978e-06
+- layer 11: 1.1655e-05
+
+For 15% zoom-in:
+
+- layer 3: 2.4670e-03
+- layer 7: 5.9732e-06
+- layer 11: 1.1321e-05
+
+2. Task-sensitive subspaces provide the largest advantage under small rank budgets.
+
+Horizontal flip AP-gap recovery:
+
+- rank 4: PCA 0.1674, task-sensitive 0.3326
+- rank 8: PCA 0.3166, task-sensitive 0.6487
+- rank 16: PCA 0.7205, task-sensitive 0.7732
+- rank 64: PCA 0.8729, task-sensitive 0.9524
+
+Zoom-in AP-gap recovery:
+
+- rank 1: PCA 0.1664, task-sensitive 0.4171
+- rank 2: PCA 0.2623, task-sensitive 0.4395
+- rank 4: PCA 0.4116, task-sensitive 0.5486
+- rank 64: PCA 1.0641, task-sensitive 0.9591
+
+3. Minimum rank for at least 90% AP-gap recovery:
+
+- horizontal flip: PCA 96, task-sensitive 64
+- zoom-in: PCA 64, task-sensitive 64
+
+The evidence therefore supports task-sensitive low-rank correction primarily as a low-budget representation mechanism rather than a universally superior subspace at every rank.
