@@ -12,6 +12,7 @@ from pathlib import Path
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.utils.data import DataLoader, TensorDataset
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -74,6 +75,9 @@ def parse_args():
     p.add_argument("--calibration-seed", type=int, default=0)
     p.add_argument("--eval-count", type=int, default=100)
 
+    p.add_argument("--train-count", type=int, default=400)
+    p.add_argument("--val-count", type=int, default=100)
+
     p.add_argument("--positions-per-image", type=int, default=128)
 
     p.add_argument("--epochs", type=int, default=80)
@@ -82,6 +86,19 @@ def parse_args():
     p.add_argument("--weight-decay", type=float, default=1e-4)
 
     p.add_argument("--coordinates", action="store_true")
+
+    p.add_argument(
+        "--context",
+        choices=(
+            "point",
+            "local3",
+            "local5",
+            "multiscale",
+            "global",
+            "multiscale_global",
+        ),
+        default="point",
+    )
 
     p.add_argument("--split-seed", type=int, default=0)
     p.add_argument("--seed", type=int, default=0)
@@ -157,14 +174,73 @@ class CoefficientPredictor(nn.Module):
         return self.net(x)
 
 
-def make_input(feature, coordinates):
+def make_input(
+    feature,
+    coordinates,
+    context,
+):
     _, channels, height, width = feature.shape
 
+    maps = [feature.float()]
+
+    if context in (
+        "local3",
+        "multiscale",
+        "multiscale_global",
+    ):
+        maps.append(
+            F.avg_pool2d(
+                feature.float(),
+                kernel_size=3,
+                stride=1,
+                padding=1,
+            )
+        )
+
+    if context in (
+        "local5",
+        "multiscale",
+        "multiscale_global",
+    ):
+        maps.append(
+            F.avg_pool2d(
+                feature.float(),
+                kernel_size=5,
+                stride=1,
+                padding=2,
+            )
+        )
+
+    if context in (
+        "global",
+        "multiscale_global",
+    ):
+        global_feature = F.adaptive_avg_pool2d(
+            feature.float(),
+            output_size=1,
+        ).expand(
+            -1,
+            -1,
+            height,
+            width,
+        )
+
+        maps.append(
+            global_feature
+        )
+
+    merged = torch.cat(
+        maps,
+        dim=1,
+    )
+
     x = (
-        feature[0]
+        merged[0]
         .permute(1, 2, 0)
-        .reshape(-1, channels)
-        .float()
+        .reshape(
+            -1,
+            merged.shape[1],
+        )
     )
 
     if coordinates:
@@ -175,7 +251,10 @@ def make_input(feature, coordinates):
         )
 
         x = torch.cat(
-            (x, coords),
+            (
+                x,
+                coords,
+            ),
             dim=1,
         )
 
@@ -250,6 +329,7 @@ def collect_pairs(
     imgsz,
     device,
     coordinates,
+    context,
 ):
     level = layers.index(3)
 
@@ -326,6 +406,7 @@ def collect_pairs(
             x = make_input(
                 transported_l3,
                 coordinates,
+                context,
             )
 
             y = residual_coefficients(
@@ -601,10 +682,12 @@ def predict_coefficients(
     stats,
     feature,
     coordinates,
+    context,
 ):
     x = make_input(
         feature,
         coordinates,
+        context,
     )
 
     x_mean = stats[
@@ -687,12 +770,6 @@ def main():
             "layer mismatch"
         )
 
-    if len(samples) < 500:
-        raise ValueError(
-            "this experiment expects the "
-            "VisDrone500 cache"
-        )
-
     imgsz = int(
         manifest[
             "identity"
@@ -735,11 +812,21 @@ def main():
     train_indices, val_indices = (
         split_sample_indices(
             sample_count=len(samples),
-            train_count=400,
-            val_count=100,
+            train_count=args.train_count,
+            val_count=args.val_count,
             split_seed=args.split_seed,
         )
     )
+
+    if args.calibration_count > len(train_indices):
+        raise ValueError(
+            "calibration-count exceeds training split"
+        )
+
+    if args.eval_count > len(val_indices):
+        raise ValueError(
+            "eval-count exceeds validation split"
+        )
 
     generator = torch.Generator().manual_seed(
         args.calibration_seed
@@ -838,6 +925,7 @@ def main():
         imgsz=imgsz,
         device=device,
         coordinates=args.coordinates,
+        context=args.context,
     )
 
     predictors = {}
@@ -880,6 +968,7 @@ def main():
                 "rank": args.rank,
                 "hidden": args.hidden,
                 "coordinates": args.coordinates,
+                "context": args.context,
             },
             args.output
             /
@@ -1026,6 +1115,7 @@ def main():
                     predictor_stats[aug],
                     transported_l3,
                     args.coordinates,
+                    args.context,
                 )
 
                 predicted_residual = reconstruct_residual(
@@ -1281,6 +1371,9 @@ def main():
         "rank": args.rank,
         "hidden": args.hidden,
         "coordinates": args.coordinates,
+        "context": args.context,
+        "train_count": args.train_count,
+        "val_count": args.val_count,
         "calibration_count": args.calibration_count,
         "calibration_seed": args.calibration_seed,
         "training_seed": args.seed,
