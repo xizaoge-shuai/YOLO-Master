@@ -77,3 +77,23 @@ Zoom-in AP-gap recovery:
 - zoom-in: PCA 64, task-sensitive 64
 
 The evidence therefore supports task-sensitive low-rank correction primarily as a low-budget representation mechanism rather than a universally superior subspace at every rank.
+
+## A4. Calibration stability
+
+Three independently sampled calibration sets were evaluated on the same complete 100-image held-out VisDrone500 validation split.
+
+At rank 64:
+
+- 5 calibration samples:
+  - hflip: 0.9220 ± 0.0326 AP-gap recovery
+  - zoom: 0.9333 ± 0.0604
+
+- 20 calibration samples:
+  - hflip: 0.9079 ± 0.0324
+  - zoom: 0.9323 ± 0.0801
+
+- 50 calibration samples:
+  - hflip: 0.9637 ± 0.0336
+  - zoom: 0.9379 ± 0.0504
+
+Rank 64 is therefore used as the default correction budget for the first deployable predictor.

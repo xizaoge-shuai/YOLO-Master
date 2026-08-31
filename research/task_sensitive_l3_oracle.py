@@ -70,6 +70,7 @@ def parse_args():
     )
 
     p.add_argument("--calibration-count", type=int, default=20)
+    p.add_argument("--calibration-seed", type=int, default=0)
     p.add_argument("--eval-count", type=int, default=100)
     p.add_argument("--positions-per-image", type=int, default=128)
     p.add_argument("--split-seed", type=int, default=0)
@@ -658,8 +659,23 @@ def main():
         split_seed=args.split_seed,
     )
 
-    calibration_indices = train_indices[
-        :args.calibration_count
+    if args.calibration_count > len(train_indices):
+        raise ValueError("calibration-count exceeds training split")
+
+    generator = torch.Generator().manual_seed(
+        args.calibration_seed
+    )
+
+    calibration_order = torch.randperm(
+        len(train_indices),
+        generator=generator,
+    ).tolist()
+
+    calibration_indices = [
+        train_indices[i]
+        for i in calibration_order[
+            :args.calibration_count
+        ]
     ]
 
     evaluation_indices = val_indices[
@@ -1040,6 +1056,7 @@ def main():
     summary = {
         "status": "PASS",
         "calibration_count": args.calibration_count,
+        "calibration_seed": args.calibration_seed,
         "eval_count": args.eval_count,
         "ranks": args.ranks,
         "augmentations": args.augmentations,
