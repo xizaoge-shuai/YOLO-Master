@@ -20,7 +20,9 @@ page 6, Tables 1 and 2. The requested paper is YOLO-Master, not FroFA.
 
 Current: fixed 400 train / 100 validation images, three training seeds,
 100 epochs, 640 input, batch 8, AdamW, frozen DINOv3 + mean_value detection head.
-Validation is the pilot split and D1 evaluator, not an independent official test.
+All 500 source images are from VisDrone images/train (verified from all500.txt);
+400/100 is an internal split of this training subset. Validation is the pilot
+split and D1 evaluator, not the official 548-image validation or independent test-dev.
 
 Use full VisDrone first: 6,471 train, 548 validation, and 1,610 test-dev.
 Choose configurations on validation; reserve test-dev for the finalized candidate.

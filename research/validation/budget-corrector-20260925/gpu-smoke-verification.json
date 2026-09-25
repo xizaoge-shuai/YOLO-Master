@@ -1,0 +1,18 @@
+{
+  "job": "runs/paper/budget-corrector/job-smoke-ajfAh00N",
+  "status": "SMOKE_SUCCEEDED",
+  "completed_cases": 6,
+  "raw_schedule_hash_and_across_arm_pairing": "PASS",
+  "teacher_images_per_arm": {
+    "p10": 40,
+    "p25": 96
+  },
+  "corrector_steps": {
+    "p10": 5,
+    "p25": 12
+  },
+  "corrector_parameters": 50560,
+  "saved_corrector_and_optimizer_state": "PASS",
+  "verification_command": "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python /tmp/verify_budget_smoke.py",
+  "limits": "One-epoch integration check; no method-effectiveness claim. Formal 18-run campaign not launched."
+}
