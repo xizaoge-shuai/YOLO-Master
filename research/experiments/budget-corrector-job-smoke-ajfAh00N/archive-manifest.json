@@ -1,0 +1,310 @@
+{
+  "source_job": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N",
+  "status": "SMOKE_SUCCEEDED",
+  "archived_at": "2026-09-25T08:12:16.705715+00:00",
+  "archival_git_parent": "7449569d1f8b8ef43576f6847b5877fb8ae251fa",
+  "files": {
+    "original/plan.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/plan.json",
+      "sha256": "2aa6f2657fe99ee83c252a0971a5fbbfd38040264d92f8f8de55a8394eddf7a0",
+      "bytes": 1251
+    },
+    "original/provenance.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/provenance.json",
+      "sha256": "864ba8000a4cea6e6eb614c991beb7e72417700d4f18a7ee23cd6f541216dacf",
+      "bytes": 1842
+    },
+    "original/reference_args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/reference_args.json",
+      "sha256": "39631aae179b7d8417cc0a0a97b1dc420eeaa4cc488fdc150b0843e379b71569",
+      "bytes": 1669
+    },
+    "original/reference_split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/reference_split.json",
+      "sha256": "90baf2a2e511b6e660a06574907072a65f3f460ea7d982865253cc2814c405e5",
+      "bytes": 16056
+    },
+    "original/smoke-comparison.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke-comparison.json",
+      "sha256": "b0ec7354f8fe7d681bf0642b2ffc724c21d86f045177cb3e04f38919e9a55906",
+      "bytes": 3705
+    },
+    "original/smoke-comparison.txt": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke-comparison.txt",
+      "sha256": "2dda8344a1d8928bb3e818f234cd944c5dd87965c94bd24ff59697257ea4b3f7",
+      "bytes": 1578
+    },
+    "original/status.txt": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/status.txt",
+      "sha256": "2474f87225a144c7fcf1f49731803506eaf7ab3d55dfa8959a9fe6a361592a04",
+      "bytes": 16
+    },
+    "original/smoke/c2-correct-p10-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/args.json",
+      "sha256": "6df1807968e880b2a4f2ec5e2d7df0584031178012d82fc908fbd9a86b700941",
+      "bytes": 3644
+    },
+    "original/smoke/c2-correct-p10-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/smoke/c2-correct-p10-s0/summary.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/summary.json",
+      "sha256": "f062d9b491e277caec56006f793eae29452f76979aac1e53e21778b5e592fc89",
+      "bytes": 3480
+    },
+    "original/smoke/c2-correct-p10-s0/trainability.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/trainability.json",
+      "sha256": "b2b02763922ee7d5240730702fe42f3a1eef1e6191c74cd0f53e9c70c905e4e9",
+      "bytes": 370
+    },
+    "original/smoke/c2-correct-p10-s0/parity.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/parity.json",
+      "sha256": "5914d997bf31490c3f394c0071777455111626a0ae95e2a3aeb8fbc33e4021cd",
+      "bytes": 1335
+    },
+    "original/smoke/c2-correct-p10-s0/metrics.csv": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/results.csv",
+      "sha256": "99bae6546a979b270afeb6c393766831166d1897b8c4f9111d6fd8b94c6b704a",
+      "bytes": 231
+    },
+    "original/smoke/c2-correct-p10-s0/correction.jsonl": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/correction.jsonl",
+      "sha256": "b4d5e3c3961426ed49843b060bc6f4321495c3d72541ff4f5bc90dc79cb254a7",
+      "bytes": 633
+    },
+    "original/smoke/c2-correct-p10-s0/DONE": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/smoke/c2-correct-p25-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/args.json",
+      "sha256": "5514839a431bafe76a30a4b8a9aa36861ae98da88860f85d50cc3e574b5d141e",
+      "bytes": 3644
+    },
+    "original/smoke/c2-correct-p25-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/smoke/c2-correct-p25-s0/summary.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/summary.json",
+      "sha256": "878c6686a291ee5d388d4a0f16ac39a1f19d3663cba31c8f9bd5052baeeb76d0",
+      "bytes": 3480
+    },
+    "original/smoke/c2-correct-p25-s0/trainability.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/trainability.json",
+      "sha256": "b2b02763922ee7d5240730702fe42f3a1eef1e6191c74cd0f53e9c70c905e4e9",
+      "bytes": 370
+    },
+    "original/smoke/c2-correct-p25-s0/parity.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/parity.json",
+      "sha256": "5914d997bf31490c3f394c0071777455111626a0ae95e2a3aeb8fbc33e4021cd",
+      "bytes": 1335
+    },
+    "original/smoke/c2-correct-p25-s0/metrics.csv": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/results.csv",
+      "sha256": "3001e395802c5378cffdbf8b3758cf647833b8e9dd9b9053f522cf84c43c1225",
+      "bytes": 231
+    },
+    "original/smoke/c2-correct-p25-s0/correction.jsonl": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/correction.jsonl",
+      "sha256": "69ca539d7feea00643bb4ad244042b55bd61838caf4d90e28e6f164c8cec6c70",
+      "bytes": 636
+    },
+    "original/smoke/c2-correct-p25-s0/DONE": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/smoke/c2-mix-p10-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/args.json",
+      "sha256": "08f5cde20423f56458fbd35ae2083e8fb8e187c9c8d1c55b40b0d28fd59d1ea6",
+      "bytes": 3636
+    },
+    "original/smoke/c2-mix-p10-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/smoke/c2-mix-p10-s0/summary.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/summary.json",
+      "sha256": "a783ff7a2be738ef24f5fb359561d375d68a76be79a7cccb11d45feb76fb7ddf",
+      "bytes": 3457
+    },
+    "original/smoke/c2-mix-p10-s0/trainability.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/trainability.json",
+      "sha256": "b2b02763922ee7d5240730702fe42f3a1eef1e6191c74cd0f53e9c70c905e4e9",
+      "bytes": 370
+    },
+    "original/smoke/c2-mix-p10-s0/parity.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/parity.json",
+      "sha256": "5914d997bf31490c3f394c0071777455111626a0ae95e2a3aeb8fbc33e4021cd",
+      "bytes": 1335
+    },
+    "original/smoke/c2-mix-p10-s0/metrics.csv": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/results.csv",
+      "sha256": "fc1065d21ad00d6010bbd07955f6ed42e6e7181078d7c532811ad5839bc48e31",
+      "bytes": 230
+    },
+    "original/smoke/c2-mix-p10-s0/correction.jsonl": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/correction.jsonl",
+      "sha256": "3b38b02308b1fe3a5be768e7287403a71b36547fdfa7c0a2461341c637155d45",
+      "bytes": 566
+    },
+    "original/smoke/c2-mix-p10-s0/DONE": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/smoke/c2-mix-p25-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/args.json",
+      "sha256": "cdbe32f12829292778284500053b0cbcaafa0191348adf9c8d62bf2de0be31ef",
+      "bytes": 3636
+    },
+    "original/smoke/c2-mix-p25-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/smoke/c2-mix-p25-s0/summary.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/summary.json",
+      "sha256": "facc2014834d1db4b5d2f455d393955f02f9175671b06dcfa4aee86e5229d6ae",
+      "bytes": 3456
+    },
+    "original/smoke/c2-mix-p25-s0/trainability.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/trainability.json",
+      "sha256": "b2b02763922ee7d5240730702fe42f3a1eef1e6191c74cd0f53e9c70c905e4e9",
+      "bytes": 370
+    },
+    "original/smoke/c2-mix-p25-s0/parity.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/parity.json",
+      "sha256": "5914d997bf31490c3f394c0071777455111626a0ae95e2a3aeb8fbc33e4021cd",
+      "bytes": 1335
+    },
+    "original/smoke/c2-mix-p25-s0/metrics.csv": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/results.csv",
+      "sha256": "02e680ca1959078884b959a90d91495a7f29548c4a27cd3c50fa88a9fcff6ac8",
+      "bytes": 227
+    },
+    "original/smoke/c2-mix-p25-s0/correction.jsonl": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/correction.jsonl",
+      "sha256": "0ee66692fe7766892598b456838493d27def739df07b273643b5e1448df44604",
+      "bytes": 568
+    },
+    "original/smoke/c2-mix-p25-s0/DONE": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/smoke/c2-transport-p10-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/args.json",
+      "sha256": "3eb25e0a24e5b256a5c77817b11991d4533dc57bbf0ab87a207c18e81649c87a",
+      "bytes": 3648
+    },
+    "original/smoke/c2-transport-p10-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/smoke/c2-transport-p10-s0/summary.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/summary.json",
+      "sha256": "00a9eb39c679d77a8abfa48319cc396aa2d6edcec9178fc9a674c4cf4b6e4dda",
+      "bytes": 3460
+    },
+    "original/smoke/c2-transport-p10-s0/trainability.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/trainability.json",
+      "sha256": "b2b02763922ee7d5240730702fe42f3a1eef1e6191c74cd0f53e9c70c905e4e9",
+      "bytes": 370
+    },
+    "original/smoke/c2-transport-p10-s0/parity.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/parity.json",
+      "sha256": "5914d997bf31490c3f394c0071777455111626a0ae95e2a3aeb8fbc33e4021cd",
+      "bytes": 1335
+    },
+    "original/smoke/c2-transport-p10-s0/metrics.csv": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/results.csv",
+      "sha256": "996c8b3863e3257c48ca5274f76b74d79549f9c9d440f480a9f2d54942271dec",
+      "bytes": 229
+    },
+    "original/smoke/c2-transport-p10-s0/correction.jsonl": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/correction.jsonl",
+      "sha256": "3b38b02308b1fe3a5be768e7287403a71b36547fdfa7c0a2461341c637155d45",
+      "bytes": 566
+    },
+    "original/smoke/c2-transport-p10-s0/DONE": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/smoke/c2-transport-p25-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/args.json",
+      "sha256": "b9d16a13b9303d3aedd1914cabe62ed3d8f4f5945fb8331e2d88689a23d7d7e7",
+      "bytes": 3648
+    },
+    "original/smoke/c2-transport-p25-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/smoke/c2-transport-p25-s0/summary.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/summary.json",
+      "sha256": "3253ea6e615889c554f525e2e94f0b9994430266d047aef42bc11b4dfa23e1a4",
+      "bytes": 3463
+    },
+    "original/smoke/c2-transport-p25-s0/trainability.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/trainability.json",
+      "sha256": "b2b02763922ee7d5240730702fe42f3a1eef1e6191c74cd0f53e9c70c905e4e9",
+      "bytes": 370
+    },
+    "original/smoke/c2-transport-p25-s0/parity.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/parity.json",
+      "sha256": "5914d997bf31490c3f394c0071777455111626a0ae95e2a3aeb8fbc33e4021cd",
+      "bytes": 1335
+    },
+    "original/smoke/c2-transport-p25-s0/metrics.csv": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/results.csv",
+      "sha256": "dd7bad7269bed7c416a53ed3e2f17cf9a67e4b11a7974c2b8f3f3617a81f991a",
+      "bytes": 229
+    },
+    "original/smoke/c2-transport-p25-s0/correction.jsonl": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/correction.jsonl",
+      "sha256": "0ee66692fe7766892598b456838493d27def739df07b273643b5e1448df44604",
+      "bytes": 568
+    },
+    "original/smoke/c2-transport-p25-s0/DONE": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    }
+  },
+  "note": "Raw metrics preserved; pilot only. No weights, datasets or cache tensors.",
+  "schedules": {
+    "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p10-s0/schedule.jsonl": {
+      "sha256": "fa8fb5238743b7e11b240e31d74a5007324a469ee7edac6fbc56c12cd7eba064",
+      "bytes": 21439
+    },
+    "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-correct-p25-s0/schedule.jsonl": {
+      "sha256": "9c7a8a2ee01016c09bf8752db1bda767bd0f841073d8fa40af6e2d89b8062877",
+      "bytes": 21432
+    },
+    "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p10-s0/schedule.jsonl": {
+      "sha256": "fa8fb5238743b7e11b240e31d74a5007324a469ee7edac6fbc56c12cd7eba064",
+      "bytes": 21439
+    },
+    "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-mix-p25-s0/schedule.jsonl": {
+      "sha256": "9c7a8a2ee01016c09bf8752db1bda767bd0f841073d8fa40af6e2d89b8062877",
+      "bytes": 21432
+    },
+    "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p10-s0/schedule.jsonl": {
+      "sha256": "fa8fb5238743b7e11b240e31d74a5007324a469ee7edac6fbc56c12cd7eba064",
+      "bytes": 21439
+    },
+    "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N/smoke/c2-transport-p25-s0/schedule.jsonl": {
+      "sha256": "9c7a8a2ee01016c09bf8752db1bda767bd0f841073d8fa40af6e2d89b8062877",
+      "bytes": 21432
+    }
+  }
+}

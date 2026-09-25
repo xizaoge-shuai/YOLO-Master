@@ -1,0 +1,24 @@
+AP: 0-100. 400/100 pilot; original cached validation; not official benchmark.
+Fresh query images/transformations paired across arms; reconstruction-only corrector.
+C2 training-cache build charged once/run; reused in practice; validation build excluded.
+method seed best_AP last_AP best_epoch online_pct query_images train_s correction_s build+wall_s VRAM_GiB
+c2-mix-p10 0 0.1880 0.1880 1 10.00 40 3.9 0.0 43.4 5.047
+c2-transport-p10 0 0.1745 0.1745 1 10.00 40 3.2 0.0 37.2 5.019
+c2-correct-p10 0 0.1935 0.1935 1 10.00 40 3.2 0.1 37.7 5.020
+c2-mix-p25 0 0.1896 0.1896 1 24.00 96 4.2 0.0 37.6 5.047
+c2-transport-p25 0 0.2152 0.2152 1 24.00 96 4.2 0.0 37.4 5.019
+c2-correct-p25 0 0.1863 0.1863 1 24.00 96 4.3 0.1 37.5 5.020
+
+method n best_AP_mean sample_sd last_AP_mean train_s_mean build+wall_s_mean
+c2-mix-p10 1 0.1880 NA 0.1880 3.9 43.4
+c2-transport-p10 1 0.1745 NA 0.1745 3.2 37.2
+c2-correct-p10 1 0.1935 NA 0.1935 3.2 37.7
+c2-mix-p25 1 0.1896 NA 0.1896 4.2 37.6
+c2-transport-p25 1 0.2152 NA 0.2152 4.2 37.4
+c2-correct-p25 1 0.1863 NA 0.1863 4.3 37.5
+
+Paired differences (correct minus baseline); positive AP means improvement.
+p10 vs mix: n=1 best_AP_delta=+0.0055 last_AP_delta=+0.0055 train_ratio=0.835; per_seed_best_deltas=[0.0055]
+p10 vs transport: n=1 best_AP_delta=+0.0190 last_AP_delta=+0.0190 train_ratio=1.007; per_seed_best_deltas=[0.019]
+p25 vs mix: n=1 best_AP_delta=-0.0033 last_AP_delta=-0.0033 train_ratio=1.025; per_seed_best_deltas=[-0.0033]
+p25 vs transport: n=1 best_AP_delta=-0.0289 last_AP_delta=-0.0289 train_ratio=1.017; per_seed_best_deltas=[-0.0289]

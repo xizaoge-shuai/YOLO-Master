@@ -42,3 +42,11 @@ claim that their weights/predictions have been independently re-evaluated.
 - Source job: /data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT
 - Report best/final AP, paired differences, actual query images and total charged time.
 - No full-dataset or independent-test claim; no conclusion inferred from smoke AP.
+
+## Fixed-budget correction: job-smoke-ajfAh00N
+
+- Status: SMOKE_SUCCEEDED
+- Evidence: [archive](experiments/budget-corrector-job-smoke-ajfAh00N/README.md)
+- Source job: /data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-ajfAh00N
+- Report best/final AP, paired differences, actual query images and total charged time.
+- No full-dataset or independent-test claim; no conclusion inferred from smoke AP.
