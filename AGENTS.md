@@ -143,3 +143,12 @@ pytest tests/test_molora_dtype.py tests/test_molora_backend_roundtrip.py \
 - **多 GPU**：`device="0,1,2,3"` 指定多卡训练
 - **依赖安装**：`pip install -e ".[dev]"` 安装开发依赖（pytest、coverage 等）
 - **导出依赖**：`pip install -e ".[export]"` 安装导出依赖（onnx、onnxslim 等）
+
+## 用户指定的 Git 留档要求（2026-09-25）
+
+- 后续每次完成代码改动或取得新的实验进展，都在本仓库创建范围明确的 Git commit，并在回复中报告提交哈希。
+- 实验进展同时更新 research/PROGRESS.md，保存可复核的配置、随机种子、轻量指标、源码指纹及结论边界；失败实验也如实记录。
+- 提交前检查状态，只暂存本次工作涉及的明确路径，不使用 git add . 混入其他工作。
+- 不提交特征缓存、数据集、模型权重、备份文件、凭据或 __pycache__。
+- 已完成实验的训练源码、配置和 provenance 按运行时内容保留；后续实现改动需建立新的版本对应关系，不改写旧结果以迎合新代码。
+- 用户已授权例行本地 commit；远端 push、公开发布按用户在当前会话的授权执行。不要把已 commit 描述成已 push。
