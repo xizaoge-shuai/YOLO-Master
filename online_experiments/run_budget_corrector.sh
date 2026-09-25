@@ -5,6 +5,13 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 BASE="$ROOT/runs/paper/budget-corrector"
 mkdir -p "$BASE"
+# Non-interactive SSH does not inherit the user's XDG cache setting.
+# Reuse the local weights location recorded by earlier successful campaigns.
+if [[ -z "${HF_HOME:-}" && -z "${HF_HUB_CACHE:-}" && -d "$HOME/cache/huggingface/hub" ]]; then
+    export HF_HOME="$HOME/cache/huggingface"
+fi
+export HF_HUB_OFFLINE=1
+export TRANSFORMERS_OFFLINE=1
 ACTION="${1:-start}"
 if [[ "$ACTION" == "_worker" ]]; then
     JOB="$2"
