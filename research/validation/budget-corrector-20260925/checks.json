@@ -1,0 +1,117 @@
+{
+  "new-lint": {
+    "exit": 0,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "online_experiments/budget_corrector.py",
+      "online_experiments/archive_budget_corrector.py",
+      "online_experiments/test_budget_corrector.py",
+      "online_experiments/check_benchmark_data.py"
+    ],
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "new-format": {
+    "exit": 0,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "online_experiments/budget_corrector.py",
+      "online_experiments/archive_budget_corrector.py",
+      "online_experiments/test_budget_corrector.py",
+      "online_experiments/check_benchmark_data.py"
+    ],
+    "tail": [
+      "4 files already formatted"
+    ]
+  },
+  "related-tests": {
+    "exit": 0,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "pytest",
+      "online_experiments/test_budget_corrector.py",
+      "online_experiments/test_feature_baselines.py",
+      "online_experiments/test_flip_cache_probe.py",
+      "-q"
+    ],
+    "tail": [
+      "0.01s call     online_experiments/test_budget_corrector.py::test_budget_counts_and_pairing",
+      "0.01s call     online_experiments/test_feature_baselines.py::test_patching_leaves_validation_unaugmented",
+      "",
+      "(25 durations < 0.005s hidden.  Use -vv to show these durations.)",
+      "\u001b[32m\u001b[32m\u001b[1m15 passed\u001b[0m\u001b[32m in 5.76s\u001b[0m\u001b[0m"
+    ]
+  },
+  "launcher-syntax": {
+    "exit": 0,
+    "command": [
+      "bash",
+      "-n",
+      "online_experiments/run_budget_corrector.sh"
+    ],
+    "tail": []
+  },
+  "repo-lint": {
+    "exit": 1,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/",
+      "--output-format",
+      "concise"
+    ],
+    "tail": [
+      "ultralytics/vpeft/solver.py:924:17: UP006 Use `dict` instead of `Dict` for type annotation",
+      "ultralytics/vpeft/solver.py:924:27: UP006 Use `list` instead of `List` for type annotation",
+      "ultralytics/vpeft/solver.py:925:17: UP006 Use `dict` instead of `Dict` for type annotation",
+      "Found 2768 errors.",
+      "[*] 731 fixable with the `--fix` option (1275 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+    ]
+  },
+  "repo-format": {
+    "exit": 1,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "tail": [
+      "119 +                 \"image_paths\": [self._image_paths[index] for index in index_values],",
+      "120 |             }",
+      "    |",
+      "",
+      "5 files would be reformatted, 666 files already formatted"
+    ]
+  },
+  "repo-codespell": {
+    "exit": 1,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "codespell"
+    ],
+    "tail": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python: No module named codespell"
+    ]
+  }
+}

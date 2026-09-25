@@ -1,0 +1,10 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                          [100%][0m
+============================= slowest 30 durations =============================
+5.08s call     online_experiments/test_budget_corrector.py::test_corrector_starts_at_transport_and_learns_without_teacher_gradients
+0.06s call     online_experiments/test_budget_corrector.py::test_patch_keeps_validation_and_adds_corrector_checkpoint
+0.02s call     online_experiments/test_feature_baselines.py::test_box_geometry_matches_image_path_and_keeps_small_objects
+0.01s call     online_experiments/test_budget_corrector.py::test_budget_counts_and_pairing
+0.01s call     online_experiments/test_feature_baselines.py::test_patching_leaves_validation_unaugmented
+
+(25 durations < 0.005s hidden.  Use -vv to show these durations.)
+[32m[32m[1m15 passed[0m[32m in 5.76s[0m[0m

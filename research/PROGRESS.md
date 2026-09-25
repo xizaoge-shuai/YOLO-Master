@@ -16,3 +16,21 @@
 Earlier online, fusion, mean-sweep and flip-cache runs remain historical
 references. Their helper scripts are retained as run; this entry does not
 claim that their weights/predictions have been independently re-evaluated.
+
+## 2026-09-25: fixed-budget correction implementation and full-data audit
+
+- Added six C2 cases: Mix / Transport / reconstruction-only Correct at 10% and 25%.
+  Formal campaign: 100 epochs, seeds 0/1/2; fixed 400/100 pilot.
+- Training queries have paired identities, transforms and masks across arms.
+  Actual teacher images, setup parity, correction time, checkpoints and schedule hashes are logged.
+- Background launcher runs smoke before training and archives/commits lightweight progress on completion or failure.
+- Validation: 17 related tests passed; new-file Ruff and launcher syntax checks passed.
+  Repository-wide checks still report 2,768 existing Ruff issues, five format mismatches;
+  codespell is not installed. Evidence: validation/budget-corrector-20260925/.
+- GPU smoke/full campaign had not been run at this implementation commit.
+- User confirmed target reference is YOLO-Master CVPR 2026. Paper recipe and differences:
+  [benchmark protocol](YOLO_MASTER_BENCHMARK_PROTOCOL.md).
+- Full VisDrone files: 6,471 train / 548 val / 1,610 test-dev; one zero-height training box
+  requires an explicit derived-annotation exclusion before full training.
+- COCO: 5,000 val images and annotations present; training images/JSON absent despite train list.
+  Full VisDrone caches require streaming; COCO C1 raw features alone require about 406 GiB.

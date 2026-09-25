@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-09-25T07:59:15.373312+00:00",
+  "root": "/data/users/zhjia/YOLO-Master",
+  "datasets": {
+    "VisDrone": {
+      "splits": {
+        "train": {
+          "expected_images": 6471,
+          "images": 6471,
+          "labels": 6471,
+          "missing_labels": [],
+          "orphan_labels": [],
+          "invalid_label_rows_count": 1,
+          "invalid_label_rows_first20": [
+            "9999985_00000_d_0000020.txt:11"
+          ],
+          "count_and_label_checks_pass": false
+        },
+        "val": {
+          "expected_images": 548,
+          "images": 548,
+          "labels": 548,
+          "missing_labels": [],
+          "orphan_labels": [],
+          "invalid_label_rows_count": 0,
+          "invalid_label_rows_first20": [],
+          "count_and_label_checks_pass": true
+        },
+        "test": {
+          "expected_images": 1610,
+          "images": 1610,
+          "labels": 1610,
+          "missing_labels": [],
+          "orphan_labels": [],
+          "invalid_label_rows_count": 0,
+          "invalid_label_rows_first20": [],
+          "count_and_label_checks_pass": true
+        }
+      },
+      "original_annotation_archives": {
+        "VisDrone2019-DET-train.zip": 6471,
+        "VisDrone2019-DET-val.zip": 548,
+        "VisDrone2019-DET-test-dev.zip": 1610
+      }
+    },
+    "COCO": {
+      "train2017_images": 0,
+      "val2017_images": 5000,
+      "train_list_entries": 118287,
+      "val_list_entries": 5000,
+      "instances_train2017_json": false,
+      "instances_val2017_json": true
+    }
+  },
+  "capacity": {
+    "free_disk_GiB": 327.83985900878906,
+    "feature_spec": "3 x [384,40,40] FP16; serialization overhead excluded",
+    "visdrone_train_C2_GiB_estimate": 44.432830810546875,
+    "visdrone_val_C1_GiB_estimate": 1.88140869140625,
+    "coco_train_C1_GiB_estimate": 406.10618591308594,
+    "full_training_requires_streaming_cache": true
+  },
+  "limits": [
+    "File/count/label checks only; not a full image-decoding or official-evaluation audit.",
+    "Current pilot split/evaluator remain unchanged and are not full-dataset results.",
+    "Preserve raw VisDrone ignored-region annotations for official evaluation.",
+    "COCO train list does not imply that train images or annotations are installed."
+  ]
+}

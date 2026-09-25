@@ -1,0 +1,7 @@
+[32m.[0m[32m.[0m[32m                                                                       [100%][0m
+============================= slowest 30 durations =============================
+0.05s call     online_experiments/test_budget_archive.py::test_archive_scopes_commit_and_preserves_raw_bytes
+0.02s call     online_experiments/test_budget_archive.py::test_corrector_initialization_does_not_seed_cuda
+
+(4 durations < 0.005s hidden.  Use -vv to show these durations.)
+[32m[32m[1m2 passed[0m[32m in 2.48s[0m[0m
