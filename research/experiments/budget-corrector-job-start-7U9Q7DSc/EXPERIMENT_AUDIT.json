@@ -1,0 +1,58 @@
+{
+  "audit_skill": "experiment-auditor",
+  "verdict": "WARN",
+  "reason_code": "pilot_scope_and_timing_confound",
+  "reviewer_model": "gpt-5.6-sol",
+  "reviewer_family": "openai",
+  "reviewer_reasoning": "ultra",
+  "executor_family": "openai",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "agent_id": "/root/audit_budget_results",
+  "verdict_id": "/root/audit_budget_results",
+  "date": "2026-09-25",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "checks": {
+    "gt_provenance": {
+      "status": "warn",
+      "details": "Dataset GT confirmed; custom pilot evaluator rather than official benchmark."
+    },
+    "score_normalization": {
+      "status": "pass",
+      "details": "AP scaled by 100 only; reconstruction proxy separately labeled."
+    },
+    "result_existence": {
+      "status": "pass",
+      "details": "18 runs, 100 epochs each; raw scores and 201 evidence hashes match."
+    },
+    "dead_code": {
+      "status": "pass",
+      "details": "Active metric path verified; metrics.py missing explicit hash but matches recorded Git commit."
+    },
+    "scope": {
+      "status": "warn",
+      "details": "Fixed internal 400/100 split; best selected on validation; timing anomaly retained."
+    },
+    "eval_type": "real_gt (AP); model-teacher proxy (reconstruction/parity)"
+  },
+  "claim_impact": {
+    "pilot_correct_vs_transport": "qualified",
+    "heldout_feature_recovery": "unsupported",
+    "p25_algorithmic_speedup": "unsupported",
+    "official_full_dataset_result": "unsupported"
+  },
+  "limitations": [
+    "Fresh same-family provisional review, not third-party replication.",
+    "No independent AP rerun from predictions/labels.",
+    "Raw weights/predictions not included in lightweight archive."
+  ],
+  "generated_at": "2026-09-25T14:02:45.019836+00:00",
+  "audited_input_hashes": {
+    "archive-manifest.json": "sha256:1649e6ed68cdf9bf40f20808abb44c86fc9fa5fc2fb9e0a267aef827557a9259",
+    "original/provenance.json": "sha256:8df7cd41b38b4b01ac55e54ad2a0c779d6875a9dfbc57fff0056d22029c09b83",
+    "original/comparison.json": "sha256:7c942c2865f11c1d247958cab7465445dbad8b5f0ade980a2ba4902c744b1cfb",
+    "original/reference_args.json": "sha256:39631aae179b7d8417cc0a0a97b1dc420eeaa4cc488fdc150b0843e379b71569"
+  },
+  "trace_path": "research/experiments/budget-corrector-job-start-7U9Q7DSc/EXPERIMENT_AUDIT.md"
+}

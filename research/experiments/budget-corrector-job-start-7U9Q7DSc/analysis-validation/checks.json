@@ -1,0 +1,49 @@
+{
+  "new-lint": {
+    "exit_code": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  "new-format": {
+    "exit_code": 0,
+    "tail": [
+      "1 file already formatted"
+    ]
+  },
+  "repo-lint": {
+    "exit_code": 1,
+    "tail": [
+      "ultralytics/vpeft/solver.py:924:27: UP006 Use `list` instead of `List` for type annotation",
+      "ultralytics/vpeft/solver.py:925:17: UP006 Use `dict` instead of `Dict` for type annotation",
+      "Found 2768 errors.",
+      "[*] 731 fixable with the `--fix` option (1275 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+    ]
+  },
+  "repo-format": {
+    "exit_code": 1,
+    "tail": [
+      "120 |             }",
+      "    |",
+      "",
+      "5 files would be reformatted, 666 files already formatted"
+    ]
+  },
+  "codespell": {
+    "exit_code": 1,
+    "tail": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python: No module named codespell"
+    ]
+  },
+  "analysis": {
+    "raw_archived_files_verified": 201,
+    "runs": 18,
+    "local_server_numeric_comparison": {
+      "fields": 256,
+      "abs_rel_tolerance": 1e-12,
+      "passed": true
+    },
+    "figures_visually_inspected": true,
+    "predictions_not_reevaluated": true
+  }
+}

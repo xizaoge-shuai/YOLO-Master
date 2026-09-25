@@ -63,3 +63,27 @@ claim that their weights/predictions have been independently re-evaluated.
 - Source job: /data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-start-7U9Q7DSc
 - Report best/final AP, paired differences, actual query images and total charged time.
 - No full-dataset or independent-test claim; no conclusion inferred from smoke AP.
+
+## 2026-09-25: paired-budget results audited; full-data roadmap fixed
+
+- Source job: runs/paper/budget-corrector/job-start-7U9Q7DSc; raw archive commit 8d01693.
+- Verified 201 archived evidence hashes and 18 complete 100-epoch runs. Local/server analysis
+  matches in 256 numeric fields to absolute/relative tolerance 1e-12. No AP rerun from predictions.
+- Correct minus Transport best AP: p10 -0.2270, p25 -0.1116;
+  final AP: p10 -0.1067, p25 +0.0391. Current reconstruction-only correction has no
+  demonstrated stable AP advantage over same-budget Transport.
+- Last-ten-epoch training-query relative MSE reductions: about 52-54% (p10), 62% (p25).
+  This establishes training-query fit only; held-out feature utility remains unmeasured.
+- Transport-p25-s1 slowdown affects training and validation; keep all original results.
+  No algorithmic speedup claim from the aggregate 0.902 ratio. Remeasure with telemetry.
+- Fresh GPT-5.6-Sol ultra reviewer: same-family/provisional WARN, not independent replication.
+  AP GT and query pairing pass; custom pilot scope, best-on-validation selection,
+  timing anomaly and explicit metrics.py hash omission require qualifiers/actions.
+- Analysis, statistical appendix, figures and audit:
+  [budget analysis](experiments/budget-corrector-job-start-7U9Q7DSc/analysis-report.md).
+- [Next experiments](NEXT_EXPERIMENTS_AFTER_BUDGET_CORRECTOR.md): start full VisDrone
+  streaming/evaluation/baseline preparation now; first full seed includes the current corrector
+  as a diagnostic control. One bounded held-out/object-aware diagnosis, then selected
+  COCO and second-backbone studies. No new GPU training launched in this analysis turn.
+- New analysis Ruff checks pass. Repository-wide pre-existing 2,768 Ruff issues and five
+  format mismatches persist; codespell remains unavailable. Evidence in analysis-validation/.
