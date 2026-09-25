@@ -1,0 +1,77 @@
+[
+  {
+    "name": "ruff-repository",
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "ruff-format-repository",
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "format",
+      "--check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "ruff-experiment-critical",
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "--select",
+      "E9,F63,F7,F82",
+      "online_experiments/"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "codespell-repository",
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "codespell"
+    ],
+    "exit_code": 1
+  },
+  {
+    "name": "pytest-experiment",
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "pytest",
+      "-o",
+      "addopts=",
+      "online_experiments/test_feature_baselines.py",
+      "online_experiments/test_flip_cache_probe.py",
+      "-q"
+    ],
+    "exit_code": 0
+  },
+  {
+    "name": "analysis-reproduction",
+    "exit_code": 0,
+    "result": "Local and server analysis agree within 1e-12; maximum difference 1.1102230246251565e-16"
+  },
+  {
+    "name": "source-provenance-recheck",
+    "exit_code": 0,
+    "result": "All 11 as-run source hashes unchanged after the code commit"
+  }
+]

@@ -1,0 +1,6 @@
+# Preserve original evidence byte-for-byte across operating systems.
+original/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# The raw captured console intentionally ends with a blank line.
+original/campaign-console.txt -whitespace
+# CSV uses the standard CRLF record terminator.
+*.csv -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

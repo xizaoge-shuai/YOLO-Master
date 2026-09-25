@@ -1,0 +1,192 @@
+{
+  "epochs": 100,
+  "threads": 4,
+  "gpu_uuid": "GPU-02d1df45-7f76-285a-1162-9ed27d60448d",
+  "cases": {
+    "cache1": {
+      "views": 1,
+      "geom": false,
+      "brightness": 0.0,
+      "noise": 0.0
+    },
+    "cache2": {
+      "views": 2,
+      "geom": false,
+      "brightness": 0.0,
+      "noise": 0.0
+    },
+    "frofa-c1-d01": {
+      "views": 1,
+      "geom": false,
+      "brightness": 0.1,
+      "noise": 0.0
+    },
+    "frofa-c1-d03": {
+      "views": 1,
+      "geom": false,
+      "brightness": 0.3,
+      "noise": 0.0
+    },
+    "frofa-c2-d01": {
+      "views": 2,
+      "geom": false,
+      "brightness": 0.1,
+      "noise": 0.0
+    },
+    "frofa-c2-d03": {
+      "views": 2,
+      "geom": false,
+      "brightness": 0.3,
+      "noise": 0.0
+    },
+    "transport-c1": {
+      "views": 1,
+      "geom": true,
+      "brightness": 0.0,
+      "noise": 0.0
+    },
+    "loffta-c1-n005": {
+      "views": 1,
+      "geom": true,
+      "brightness": 0.0,
+      "noise": 0.05
+    },
+    "transport-c2": {
+      "views": 2,
+      "geom": true,
+      "brightness": 0.0,
+      "noise": 0.0
+    },
+    "loffta-c2-n005": {
+      "views": 2,
+      "geom": true,
+      "brightness": 0.0,
+      "noise": 0.05
+    }
+  },
+  "tasks": [
+    [
+      "cache2",
+      0
+    ],
+    [
+      "frofa-c2-d01",
+      0
+    ],
+    [
+      "frofa-c1-d01",
+      0
+    ],
+    [
+      "transport-c1",
+      0
+    ],
+    [
+      "frofa-c1-d03",
+      0
+    ],
+    [
+      "loffta-c2-n005",
+      0
+    ],
+    [
+      "loffta-c1-n005",
+      0
+    ],
+    [
+      "cache1",
+      0
+    ],
+    [
+      "frofa-c2-d03",
+      0
+    ],
+    [
+      "transport-c2",
+      0
+    ],
+    [
+      "transport-c1",
+      1
+    ],
+    [
+      "cache2",
+      1
+    ],
+    [
+      "transport-c2",
+      1
+    ],
+    [
+      "frofa-c2-d03",
+      1
+    ],
+    [
+      "loffta-c2-n005",
+      1
+    ],
+    [
+      "frofa-c2-d01",
+      1
+    ],
+    [
+      "frofa-c1-d03",
+      1
+    ],
+    [
+      "frofa-c1-d01",
+      1
+    ],
+    [
+      "cache1",
+      1
+    ],
+    [
+      "loffta-c1-n005",
+      1
+    ],
+    [
+      "frofa-c1-d03",
+      2
+    ],
+    [
+      "frofa-c2-d01",
+      2
+    ],
+    [
+      "frofa-c2-d03",
+      2
+    ],
+    [
+      "loffta-c2-n005",
+      2
+    ],
+    [
+      "cache1",
+      2
+    ],
+    [
+      "cache2",
+      2
+    ],
+    [
+      "transport-c1",
+      2
+    ],
+    [
+      "frofa-c1-d01",
+      2
+    ],
+    [
+      "transport-c2",
+      2
+    ],
+    [
+      "loffta-c1-n005",
+      2
+    ]
+  ],
+  "source_job": "/data/users/zhjia/YOLO-Master/runs/paper/flip-cache/job-L6e24k33",
+  "schema_version": 1,
+  "note": "Fixed augmentation strengths, all reported; validation pilot is not held-out test performance"
+}

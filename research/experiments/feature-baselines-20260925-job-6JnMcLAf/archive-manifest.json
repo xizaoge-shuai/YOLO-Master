@@ -1,0 +1,964 @@
+{
+  "source_job": "runs/paper/feature-baselines/job-6JnMcLAf",
+  "runs": 30,
+  "epochs_per_run": 100,
+  "source_hashes": {
+    "ultralytics/nn/modules/latent_mixture.py": "7ee5b0516a20709c9bc96b8c966da13447ca527c8cba7c7051f41aaf61f52b51",
+    "online_experiments/d1_online_compare.py": "d2b13e98c74bcd1db1e2b361b0cfdefecdf6989e1b7a581ee6ea71a9a9a666d5",
+    "ultralytics/utils/loss.py": "e0f594c20c4c79eec3b5f31d70f53fa4da467283b3bd8fd5d67e7667b30b327a",
+    "ultralytics/data/foundation_cache.py": "17060222db9b8eaf1ce0a5f20443663500a024122ea7f24f48485b88ad879bce",
+    "online_experiments/fusion_probe.py": "8062d08feca57d194428074433b40756e45e08c3dc45a6b89501abd8e9c9e483",
+    "online_experiments/flip_cache_probe.py": "42ae7ac8978a7b3291baf29452906fc74843a5620b40d173fa76e4f519d54c8c",
+    "online_experiments/mean_sweep.py": "5506e479aaff311777a5a2903b3f2d368e5643a6d2416716821f5ac7d46311fd",
+    "scripts/d1_train_cached_detector.py": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009",
+    "ultralytics/nn/foundation/preprocessing.py": "0cc9a5b44eb3940aadd036c8d3c1cead07bd3c633c33fc7cab37ca89fea762f1",
+    "scripts/d1_build_feature_cache.py": "a09990b5ed1f7beb97ae378f6f1b123761b87928ec531ef2afbe6223124af0af",
+    "online_experiments/feature_baselines.py": "0222168bd915f89a35c877f9d778eeff36306520b4accdd43a8f8a2b1f181758"
+  },
+  "base_git_commit": "82b4d95eb5e0bf18b2717e056d85f916bd20ed5d",
+  "validation_scope": "checked completed runs, common actual args and split, finite epoch metrics, summary consistency; AP was not independently recomputed from predictions",
+  "files": {
+    "original/comparison.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/comparison.json",
+      "sha256": "9e9ecb7ada643f02076923567bf8d2bd12618580ff1c08845f570dbfd4ce7526",
+      "bytes": 11136
+    },
+    "original/comparison.txt": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/comparison.txt",
+      "sha256": "296e4557c7aeed406e7d2e8b349eb7451cf6cc2fb9960c5f731999d2a197cae4",
+      "bytes": 2798
+    },
+    "original/plan.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/plan.json",
+      "sha256": "ffa92f07572f508f51d56c666b002f2c077352b1c7a0cb933c33b063b19c6202",
+      "bytes": 2717
+    },
+    "original/provenance.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/provenance.json",
+      "sha256": "a8b5a3cd04c1fb13f78da43950029a2a6ee75aceced41de9dcf0611670848d02",
+      "bytes": 1531
+    },
+    "original/reference_args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/reference_args.json",
+      "sha256": "39631aae179b7d8417cc0a0a97b1dc420eeaa4cc488fdc150b0843e379b71569",
+      "bytes": 1669
+    },
+    "original/reference_split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/reference_split.json",
+      "sha256": "90baf2a2e511b6e660a06574907072a65f3f460ea7d982865253cc2814c405e5",
+      "bytes": 16056
+    },
+    "original/status.txt": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/status.txt",
+      "sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "bytes": 10
+    },
+    "original/train/cache2-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s0/args.json",
+      "sha256": "e18af6a1420da70c029777a5664116cef413d25c008768cff81e6b490906716b",
+      "bytes": 3676
+    },
+    "original/train/cache2-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s0/summary.json",
+      "sha256": "1d1f579be77e24f53e10ce0978632048724f6629bab1eeaa432b5f134dc84479",
+      "bytes": 1143
+    },
+    "original/train/cache2-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/cache2-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s0/results.csv",
+      "sha256": "4c218103c2956b6834cc530bc3673c62041f87aed2424e3f534613277f94ade6",
+      "bytes": 15756
+    },
+    "original/train/cache2-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/cache2-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c2-d01-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s0/args.json",
+      "sha256": "c5efce90b1592c4b807edd737c6f35e7cbdf38a1f8e7ce2d68a455a4b2546fca",
+      "bytes": 3688
+    },
+    "original/train/frofa-c2-d01-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s0/summary.json",
+      "sha256": "b3163e51a29d0c689bfccfe9aa067671cfbb9a18cd5650eb259433bba7abbb8b",
+      "bytes": 1149
+    },
+    "original/train/frofa-c2-d01-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c2-d01-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s0/results.csv",
+      "sha256": "2d39ec50b212d73e8dccf7dec9cf3c246a38f426f4a0873da4bbc5ba6ff3970f",
+      "bytes": 15822
+    },
+    "original/train/frofa-c2-d01-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c2-d01-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c1-d01-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s0/args.json",
+      "sha256": "cc1cb53bb813ae8912e5cea12ebabe0376c01a2ef4998a28661100139c9a40ae",
+      "bytes": 3688
+    },
+    "original/train/frofa-c1-d01-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s0/summary.json",
+      "sha256": "4b8273f65f7811e4aad2ccbb4ab32f1595655bdd786999a8a1df1f27d9d1b754",
+      "bytes": 1150
+    },
+    "original/train/frofa-c1-d01-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c1-d01-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s0/results.csv",
+      "sha256": "88933e9c63290fa120b53441223f0ea3ef4caf237e45fa65ff0cc181680f53f0",
+      "bytes": 15976
+    },
+    "original/train/frofa-c1-d01-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c1-d01-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/transport-c1-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s0/args.json",
+      "sha256": "02058e0a8aad6def47a8d4f59047fbaaf515d71ba576539ee6376737d0df6d28",
+      "bytes": 3687
+    },
+    "original/train/transport-c1-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s0/summary.json",
+      "sha256": "4b59c25560f044c11c7060dab1fc0e6334fbeea8f6126449711559abbbadbd8a",
+      "bytes": 1145
+    },
+    "original/train/transport-c1-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/transport-c1-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s0/results.csv",
+      "sha256": "078fca03c599581c633e1e948976bb98bba84bd87fd2da980269982990415b25",
+      "bytes": 15925
+    },
+    "original/train/transport-c1-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/transport-c1-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c1-d03-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s0/args.json",
+      "sha256": "093335e904203cb098fec401561c9000b4cbf45b00ec170868611231412c770b",
+      "bytes": 3688
+    },
+    "original/train/frofa-c1-d03-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s0/summary.json",
+      "sha256": "635871c52202d8b7cdd8841c5c6421276612ee6606c6faf9901ecd37d024956b",
+      "bytes": 1150
+    },
+    "original/train/frofa-c1-d03-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c1-d03-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s0/results.csv",
+      "sha256": "02047fc23d93bfd9045d4a1f3efd2f6894247e8a8b379d184cc254389ce47278",
+      "bytes": 15977
+    },
+    "original/train/frofa-c1-d03-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c1-d03-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/loffta-c2-n005-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s0/args.json",
+      "sha256": "e7929f993c0093d02cc3dbcf274a40fe329727eec94f091ba682d6d27d8eb6c6",
+      "bytes": 3692
+    },
+    "original/train/loffta-c2-n005-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s0/summary.json",
+      "sha256": "89558c858b4e81d945c257cf9e1c1d0ffd417db7983d8926f648fefc8551bd4c",
+      "bytes": 1149
+    },
+    "original/train/loffta-c2-n005-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/loffta-c2-n005-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s0/results.csv",
+      "sha256": "b6d5ab7a7501209e1d6c771ad4010afba4f3450bc5f71b63897f81f98f6085a1",
+      "bytes": 15824
+    },
+    "original/train/loffta-c2-n005-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/loffta-c2-n005-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/loffta-c1-n005-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s0/args.json",
+      "sha256": "95850e2c1eb17455cf28b895f9979fce1e09d93cb244c84860376813da6ca262",
+      "bytes": 3692
+    },
+    "original/train/loffta-c1-n005-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s0/summary.json",
+      "sha256": "24ae6e69a28579cd5f8d5c5223ecc14dd88e3e2e1b4cdac55194255d7774ce52",
+      "bytes": 1147
+    },
+    "original/train/loffta-c1-n005-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/loffta-c1-n005-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s0/results.csv",
+      "sha256": "051e69e8ccb0ea7ed1cda61b73094fc0f41e28ac5fb8ed207e911c7179fe789f",
+      "bytes": 15836
+    },
+    "original/train/loffta-c1-n005-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/loffta-c1-n005-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/cache1-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s0/args.json",
+      "sha256": "1b94a90d5d7e11c0dfec320dee978864e66a263999b2bb678f5279ad17d86205",
+      "bytes": 3676
+    },
+    "original/train/cache1-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s0/summary.json",
+      "sha256": "8c72bce4f13af814c924386789ccfe46269eecff383035bdb7599f9a634a8844",
+      "bytes": 1143
+    },
+    "original/train/cache1-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/cache1-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s0/results.csv",
+      "sha256": "ba177687f1b8205aac0e5e0f694813eb6b0d78884b32d8d343c50ef8fa316bd8",
+      "bytes": 15900
+    },
+    "original/train/cache1-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/cache1-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c2-d03-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s0/args.json",
+      "sha256": "6800b8bf389e44abb88a09b625605f72311ec68e5e262c78ba33295d20efc9e8",
+      "bytes": 3688
+    },
+    "original/train/frofa-c2-d03-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s0/summary.json",
+      "sha256": "2fdcf2e91c71a53ca31f576ca4244f47a74d720c30d0ac9a7fca0b0ba6488311",
+      "bytes": 1145
+    },
+    "original/train/frofa-c2-d03-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c2-d03-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s0/results.csv",
+      "sha256": "00162d011854e00d2f4fd98803be2f6fe4f3b57638e1cd002678e58bced6121e",
+      "bytes": 15846
+    },
+    "original/train/frofa-c2-d03-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c2-d03-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/transport-c2-s0/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s0/args.json",
+      "sha256": "4845acddcfd8d9bdfdc88bf263b7c1880d50c11beb918628b7d907e10b8cf112",
+      "bytes": 3687
+    },
+    "original/train/transport-c2-s0/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s0/summary.json",
+      "sha256": "03e44af9714dab48896a9df822439d809ca7f154669d56c2f419be55b88d510c",
+      "bytes": 1145
+    },
+    "original/train/transport-c2-s0/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/transport-c2-s0/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s0/results.csv",
+      "sha256": "9050f3a28402c662034ab51d9dd968c78a1f77317c25115d7189800aff76327c",
+      "bytes": 15837
+    },
+    "original/train/transport-c2-s0/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s0/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/transport-c2-s0/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s0/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/transport-c1-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s1/args.json",
+      "sha256": "9e4b3e5e8d9b7044bc2c09568de41815d1d4ff912ca84be1ae493562ffbac45d",
+      "bytes": 3687
+    },
+    "original/train/transport-c1-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s1/summary.json",
+      "sha256": "8209c462bfdacc3d20f2f19db41b518035e17d181ce2f01c1e8909da9c7cd180",
+      "bytes": 1146
+    },
+    "original/train/transport-c1-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/transport-c1-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s1/results.csv",
+      "sha256": "73b00fb1ba55bc7afd2586225c80ba0781cef23f9e018a8dee2b76c3288e9c17",
+      "bytes": 15860
+    },
+    "original/train/transport-c1-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/transport-c1-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/cache2-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s1/args.json",
+      "sha256": "c8dc7d733fc9d3938d78a6ebe0e97d8a5a2fbe99ffaf86e2e6659e8aafeb5d21",
+      "bytes": 3676
+    },
+    "original/train/cache2-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s1/summary.json",
+      "sha256": "5c336367cc559cd76e8e80748df58d23b210ef2331e3c6507379d04578bfd873",
+      "bytes": 1141
+    },
+    "original/train/cache2-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/cache2-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s1/results.csv",
+      "sha256": "292adcf0cf235a287f86366cd8b656df2ca4859cae3259b08db5fab837a3b576",
+      "bytes": 15871
+    },
+    "original/train/cache2-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/cache2-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/transport-c2-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s1/args.json",
+      "sha256": "962e5296669239f4d1e50503615bdad316ef072ad3a2f3bb42d069404d3af412",
+      "bytes": 3687
+    },
+    "original/train/transport-c2-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s1/summary.json",
+      "sha256": "e4bc04f9d7d8d7ad92e5d1c36a305a75e18a5111ab4f59150dcd76c2616ba470",
+      "bytes": 1146
+    },
+    "original/train/transport-c2-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/transport-c2-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s1/results.csv",
+      "sha256": "cb1d3007d877b26d45e95d27c321a0ed51d45fc8f548727c34ddd255ff3f467b",
+      "bytes": 15821
+    },
+    "original/train/transport-c2-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/transport-c2-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c2-d03-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s1/args.json",
+      "sha256": "fdf0bc0d41dbdaaca52d3465ef6df270fbb08e8e2df17eba2784135b301e7cdf",
+      "bytes": 3688
+    },
+    "original/train/frofa-c2-d03-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s1/summary.json",
+      "sha256": "dca086da792e2ee50e71e7381c4b2f3f97e0c248ad3765bd8e12886bde3412e6",
+      "bytes": 1145
+    },
+    "original/train/frofa-c2-d03-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c2-d03-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s1/results.csv",
+      "sha256": "a613d59fd90a7bc2becdd890cfaa84ee44beccf69dc35cdd4e6e619892b28993",
+      "bytes": 15874
+    },
+    "original/train/frofa-c2-d03-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c2-d03-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/loffta-c2-n005-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s1/args.json",
+      "sha256": "658d950d8b0d2a866e1f0607234b47ff32803a3519b32ab206f646f5abe8bfe6",
+      "bytes": 3692
+    },
+    "original/train/loffta-c2-n005-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s1/summary.json",
+      "sha256": "9303c7da859b41cf6cf194001f2a29068165c1e933e64404e2e0f2dc1ae1e4aa",
+      "bytes": 1149
+    },
+    "original/train/loffta-c2-n005-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/loffta-c2-n005-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s1/results.csv",
+      "sha256": "325ae961a6b06e02ba5d2e1a0ca78651c53ee2b4b2497e56338be1e17d20b666",
+      "bytes": 15831
+    },
+    "original/train/loffta-c2-n005-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/loffta-c2-n005-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c2-d01-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s1/args.json",
+      "sha256": "7e7adde287079b0b522a46705f8e93f74388b9b30a9aa16103d1b43e3c489726",
+      "bytes": 3688
+    },
+    "original/train/frofa-c2-d01-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s1/summary.json",
+      "sha256": "aa75006ea0654605fdabab253cc0a50b13d68a32c3d259f5cd41c99f1bdd8e0c",
+      "bytes": 1148
+    },
+    "original/train/frofa-c2-d01-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c2-d01-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s1/results.csv",
+      "sha256": "26b4d87bd74bcb1fa28531a1489e331689f8537b371916fef8acbc778354ef72",
+      "bytes": 15819
+    },
+    "original/train/frofa-c2-d01-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c2-d01-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c1-d03-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s1/args.json",
+      "sha256": "bc96b89a198e638fedd7ad2ffe0380336b6c7c41a7cbc301eeb02575cdba0bb0",
+      "bytes": 3688
+    },
+    "original/train/frofa-c1-d03-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s1/summary.json",
+      "sha256": "326493f56e76ff2a9acd1c23eb2e6524203efe3a29a009aeae62da4fb9d2263c",
+      "bytes": 1147
+    },
+    "original/train/frofa-c1-d03-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c1-d03-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s1/results.csv",
+      "sha256": "eb9fa9a5533f413918b84768eb8d425fc9ca3fffe29c17f72d638b54ae0238c4",
+      "bytes": 16004
+    },
+    "original/train/frofa-c1-d03-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c1-d03-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c1-d01-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s1/args.json",
+      "sha256": "64fe0af31ec791ddb73c2fcc92c89a83c4bcd6251532a3ccbca9ca9e2b755897",
+      "bytes": 3688
+    },
+    "original/train/frofa-c1-d01-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s1/summary.json",
+      "sha256": "aa5c00e93a1d17e667b5f39c18f82f01bb83f7767a1a41a3003ecfe4001e364b",
+      "bytes": 1147
+    },
+    "original/train/frofa-c1-d01-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c1-d01-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s1/results.csv",
+      "sha256": "18b7fe40eb3feb58154689e8431e3c46b48158c33c3dd33cb4544887a0ef0e77",
+      "bytes": 15963
+    },
+    "original/train/frofa-c1-d01-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c1-d01-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/cache1-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s1/args.json",
+      "sha256": "36440fb8515a4fe9317a42fe08d113a02a99ec280854252e2c471f56c960b8b4",
+      "bytes": 3676
+    },
+    "original/train/cache1-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s1/summary.json",
+      "sha256": "6e7bcaa585d0292f9793230e0d553ccf136182722036c0f99d86f57ab22969f7",
+      "bytes": 1140
+    },
+    "original/train/cache1-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/cache1-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s1/results.csv",
+      "sha256": "ea007b5c2d21aa6c8ee16f8186de36dc653cf1a45b42ddec4d869023680a1c48",
+      "bytes": 15895
+    },
+    "original/train/cache1-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/cache1-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/loffta-c1-n005-s1/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s1/args.json",
+      "sha256": "55f65cf3eded21dc4bbbceecf7cd8a19e23163d8034ff533d6beb5b115e2766e",
+      "bytes": 3692
+    },
+    "original/train/loffta-c1-n005-s1/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s1/summary.json",
+      "sha256": "f8a7d422c23311cd6e6458d04006df155621c3db19b6d19024f6c935d7e1bc06",
+      "bytes": 1148
+    },
+    "original/train/loffta-c1-n005-s1/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s1/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/loffta-c1-n005-s1/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s1/results.csv",
+      "sha256": "cbf5766df2161f6df442699ceb61856573d1cd6205112554918e1b1be2d5dc8c",
+      "bytes": 15952
+    },
+    "original/train/loffta-c1-n005-s1/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s1/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/loffta-c1-n005-s1/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s1/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c1-d03-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s2/args.json",
+      "sha256": "054f1d78a0d8f806dc1f115c2225e7aaa64a1cf92facc41c404975dc275b676c",
+      "bytes": 3688
+    },
+    "original/train/frofa-c1-d03-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s2/summary.json",
+      "sha256": "b859527891e88069d37fbe6ff7d6bb0197acf15f07ef83f57e618b3e7e643ad4",
+      "bytes": 1148
+    },
+    "original/train/frofa-c1-d03-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c1-d03-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s2/results.csv",
+      "sha256": "4ef54c05108102e87c30c07d1d217074c0e4bc99c658c47071c65a653cd589a3",
+      "bytes": 15967
+    },
+    "original/train/frofa-c1-d03-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c1-d03-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d03-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c2-d01-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s2/args.json",
+      "sha256": "f59ba0223df66b21a2957e060728ad3f96ff8fdd40e9d8c12f5da523674b2017",
+      "bytes": 3688
+    },
+    "original/train/frofa-c2-d01-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s2/summary.json",
+      "sha256": "166ee07f604bf3fbde2202a689fcbad4dd9116acce8b2a0cf1bfd00732fda98b",
+      "bytes": 1150
+    },
+    "original/train/frofa-c2-d01-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c2-d01-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s2/results.csv",
+      "sha256": "0715726545c5fc4f8d55618200ffb9752f1ca26506f72632bd1d7a0c41263675",
+      "bytes": 15939
+    },
+    "original/train/frofa-c2-d01-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c2-d01-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d01-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c2-d03-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s2/args.json",
+      "sha256": "a022236efb0055594f66eb634ad93d336be8d385469d0ba4415987b7e2826dc9",
+      "bytes": 3688
+    },
+    "original/train/frofa-c2-d03-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s2/summary.json",
+      "sha256": "a924d84fbb9f53b7922277a4caaf3986779a25196221e3917fd138c870777946",
+      "bytes": 1149
+    },
+    "original/train/frofa-c2-d03-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c2-d03-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s2/results.csv",
+      "sha256": "ec5d3fc9058c38667ba5c8ccf568d9f7d91315cdaa16005a6a466e01d8586814",
+      "bytes": 15931
+    },
+    "original/train/frofa-c2-d03-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c2-d03-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c2-d03-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/loffta-c2-n005-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s2/args.json",
+      "sha256": "a91da02d03e9121d6ad5ca976eb304ff58552544d9588a42f0e1eb3528172cd6",
+      "bytes": 3692
+    },
+    "original/train/loffta-c2-n005-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s2/summary.json",
+      "sha256": "74b6b997c6f1b1b8b846c7cb8ce2b915996367be4d8a70b2f9d35ea8fa678449",
+      "bytes": 1150
+    },
+    "original/train/loffta-c2-n005-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/loffta-c2-n005-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s2/results.csv",
+      "sha256": "6334acaef6b06c310903ddc11e456c2267b985f4e95a4eb0f7af93622214a1ef",
+      "bytes": 15858
+    },
+    "original/train/loffta-c2-n005-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/loffta-c2-n005-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c2-n005-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/cache1-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s2/args.json",
+      "sha256": "30f82fdf47b026051fb32659188979b111470b8b484cacfff47fc0d4c9abc901",
+      "bytes": 3676
+    },
+    "original/train/cache1-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s2/summary.json",
+      "sha256": "d642bfe1ef42f2a55c9174516c6982e28f74773c5fa6b6affa9b8b41d4a06b20",
+      "bytes": 1143
+    },
+    "original/train/cache1-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/cache1-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s2/results.csv",
+      "sha256": "625d19ce523ca28e19123a93ac1f5fba766804977a3cf8da5d279ac18b263269",
+      "bytes": 15891
+    },
+    "original/train/cache1-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/cache1-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache1-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/cache2-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s2/args.json",
+      "sha256": "af4ea1b0ff30cc9d8e479adeebb20b2bc2544da01b4bc173657fd4bde756ceb4",
+      "bytes": 3676
+    },
+    "original/train/cache2-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s2/summary.json",
+      "sha256": "09868699adbbf7d9f44d2c303eef782d2be4ff24526f76abc16f5911a3cad5ab",
+      "bytes": 1142
+    },
+    "original/train/cache2-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/cache2-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s2/results.csv",
+      "sha256": "b7f2198161400cd917ba56a032c3c926435d86b51644ac8fa60dac368de1cc24",
+      "bytes": 15849
+    },
+    "original/train/cache2-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/cache2-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/cache2-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/transport-c1-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s2/args.json",
+      "sha256": "429185c85448c78f7a5e372c639eecd2624fae7984ac039d77f72fa354a54174",
+      "bytes": 3687
+    },
+    "original/train/transport-c1-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s2/summary.json",
+      "sha256": "7e48764a8851dafd423bad0db7fc74ccb5cbb26de4236a6433903207ef3589aa",
+      "bytes": 1146
+    },
+    "original/train/transport-c1-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/transport-c1-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s2/results.csv",
+      "sha256": "2bc586b448f4210e5dacad8bd1df7f8a49b637b592e7e310ec0737a77dcbe488",
+      "bytes": 15931
+    },
+    "original/train/transport-c1-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/transport-c1-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c1-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/frofa-c1-d01-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s2/args.json",
+      "sha256": "6a7761c17fe092ef5b2cfa0ed3a1b0016319844daeb526b4943f1578611d4f6a",
+      "bytes": 3688
+    },
+    "original/train/frofa-c1-d01-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s2/summary.json",
+      "sha256": "058ccb58162bb187f83b9fe2540458404a811fa38a4ddf305579cd9b4590ae41",
+      "bytes": 1149
+    },
+    "original/train/frofa-c1-d01-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/frofa-c1-d01-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s2/results.csv",
+      "sha256": "24ff290e15b4a6035f84f29765d7daca73f5c985e7f9cac3726644118b8e39e5",
+      "bytes": 15923
+    },
+    "original/train/frofa-c1-d01-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/frofa-c1-d01-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/frofa-c1-d01-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/transport-c2-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s2/args.json",
+      "sha256": "f50bc3a50687f3f8a3116a730f8896cd036e671bd157df5a99f54a740022a40a",
+      "bytes": 3687
+    },
+    "original/train/transport-c2-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s2/summary.json",
+      "sha256": "d545ba8b9057c8f4abfc8a102607c066ce48959d3393b6c2db96d9d2dab72698",
+      "bytes": 1144
+    },
+    "original/train/transport-c2-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/transport-c2-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s2/results.csv",
+      "sha256": "b9911b4024568b0a0d1df418dde73b3e60ae012988130c5ebbe2d385df1ff39e",
+      "bytes": 15809
+    },
+    "original/train/transport-c2-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/transport-c2-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/transport-c2-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/train/loffta-c1-n005-s2/args.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s2/args.json",
+      "sha256": "30ff9d849778144198ab6e6bcfab3d9034e7101691401f53685f97353a561519",
+      "bytes": 3692
+    },
+    "original/train/loffta-c1-n005-s2/summary.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s2/summary.json",
+      "sha256": "a0a3c872f7c2561c8aa917a0504cd8b1efafaae11df8488559ce66385c49f5b1",
+      "bytes": 1150
+    },
+    "original/train/loffta-c1-n005-s2/split.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s2/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/train/loffta-c1-n005-s2/metrics.csv": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s2/results.csv",
+      "sha256": "90402fc17b2551d957d392b1c1c3448c02c17df1c8f893cccb6046a54099f860",
+      "bytes": 15878
+    },
+    "original/train/loffta-c1-n005-s2/trainability.json": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s2/trainability.json",
+      "sha256": "1edb708cada93946d6a4bd1081735c8c7e3308c486b86fd9f9817e598acbcd1f",
+      "bytes": 371
+    },
+    "original/train/loffta-c1-n005-s2/DONE": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/train/loffta-c1-n005-s2/DONE",
+      "sha256": "19eaf43821a7660ec323a87c8457bf74823beb296c39f5e01aa8a683aa50f061",
+      "bytes": 7
+    },
+    "original/campaign-console.txt": {
+      "source": "runs/paper/feature-baselines/job-6JnMcLAf/job.log",
+      "sha256": "71ece7b73aa7dc4ceffc109a017a97bc0564eda5d44cd77c72751a37f7114a5c",
+      "bytes": 9791
+    }
+  },
+  "recorded_code_commit": "e453114868049d62833a70aa6bae5efd7e0a4704",
+  "recorded_code_note": "Code committed after the experiment; original git_commit and source hashes remain unchanged."
+}

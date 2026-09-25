@@ -1,0 +1,382 @@
+unformatted: File would be reformatted
+   --> scripts/d1_build_feature_cache.py:248:28
+    |
+247 |     if total_bytes != expected_bytes:
+    -         raise RuntimeError(
+    -             f"sequential read byte mismatch: expected {expected_bytes}, got {total_bytes}"
+    -         )
+248 +         raise RuntimeError(f"sequential read byte mismatch: expected {expected_bytes}, got {total_bytes}")
+249 |     return elapsed
+    |
+
+unformatted: File would be reformatted
+   --> scripts/d1_train_cached_detector.py:74:8
+    |
+73  |     """Create a deterministic data split independently of the training seed."""
+    -     if min(
+    -         sample_count,
+    -         train_count,
+    -         val_count,
+    -     ) <= 0:
+    -         raise ValueError(
+    -             "sample-count, train-count, and "
+    -             "val-count must be positive"
+74  +     if (
+75  +         min(
+76  +             sample_count,
+77  +             train_count,
+78  +             val_count,
+79  |         )
+80  +         <= 0
+81  +     ):
+82  +         raise ValueError("sample-count, train-count, and val-count must be positive")
+83  |
+84  |     required = train_count + val_count
+85  |
+86  |     if sample_count < required:
+    -         raise ValueError(
+    -             f"cache has {sample_count} samples, "
+    -             f"but split needs {required}"
+    -         )
+87  +         raise ValueError(f"cache has {sample_count} samples, but split needs {required}")
+88  |
+89  |     order = list(range(sample_count))
+90  |     random.Random(split_seed).shuffle(order)
+91  |
+    -     train_indices = sorted(
+    -         order[:train_count]
+    -     )
+    -     val_indices = sorted(
+    -         order[train_count:required]
+    -     )
+92  +     train_indices = sorted(order[:train_count])
+93  +     val_indices = sorted(order[train_count:required])
+94  |
+--------------------------------------------------------------------------------
+384 |         default=None,
+    -         help=(
+    -             "dataset split seed; defaults to "
+    -             "--seed for backward compatibility"
+    -         ),
+385 +         help=("dataset split seed; defaults to --seed for backward compatibility"),
+386 |     )
+--------------------------------------------------------------------------------
+398 |         default="stream",
+    -         help=(
+    -             "stream features per sample, preload into "
+    -             "host memory, or keep the FP16 cache on GPU"
+    -         ),
+399 +         help=("stream features per sample, preload into host memory, or keep the FP16 cache on GPU"),
+400 |     )
+--------------------------------------------------------------------------------
+409 |     seed_everything(args.seed)
+    -     split_seed = (
+    -         args.seed
+    -         if args.split_seed is None
+    -         else args.split_seed
+    -     )
+410 +     split_seed = args.seed if args.split_seed is None else args.split_seed
+411 |     device = torch.device(args.device)
+--------------------------------------------------------------------------------
+430 |
+    -     train_indices, val_indices = (
+    -         split_sample_indices(
+    -             sample_count=len(
+    -                 manifest["samples"]
+    -             ),
+    -             train_count=args.train_count,
+    -             val_count=args.val_count,
+    -             split_seed=split_seed,
+    -         )
+431 +     train_indices, val_indices = split_sample_indices(
+432 +         sample_count=len(manifest["samples"]),
+433 +         train_count=args.train_count,
+434 +         val_count=args.val_count,
+435 +         split_seed=split_seed,
+436 |     )
+--------------------------------------------------------------------------------
+468 |         if args.workers != 0:
+    -             raise ValueError(
+    -                 "preloaded cache residency requires --workers 0"
+    -             )
+    -         if (
+    -             args.cache_residency == "gpu"
+    -             and device.type != "cuda"
+    -         ):
+    -             raise ValueError(
+    -                 "GPU cache residency requires a CUDA device"
+    -             )
+469 +             raise ValueError("preloaded cache residency requires --workers 0")
+470 +         if args.cache_residency == "gpu" and device.type != "cuda":
+471 +             raise ValueError("GPU cache residency requires a CUDA device")
+472 |
+    -         storage_device = (
+    -             device
+    -             if args.cache_residency == "gpu"
+    -             else torch.device("cpu")
+    -         )
+473 +         storage_device = device if args.cache_residency == "gpu" else torch.device("cpu")
+474 |         preload_started = time.perf_counter()
+--------------------------------------------------------------------------------
+490 |
+    -         preload_seconds = (
+    -             time.perf_counter() - preload_started
+    -         )
+    -         preloaded_bytes = (
+    -             train_loader.preloaded_bytes
+    -             + val_loader.preloaded_bytes
+    -         )
+491 +         preload_seconds = time.perf_counter() - preload_started
+492 +         preloaded_bytes = train_loader.preloaded_bytes + val_loader.preloaded_bytes
+493 |
+--------------------------------------------------------------------------------
+523 |             "split_seed": split_seed,
+    -             "train_sample_ids": [
+    -                 manifest["samples"][index][
+    -                     "sample_id"
+    -                 ]
+    -                 for index in train_indices
+    -             ],
+    -             "val_sample_ids": [
+    -                 manifest["samples"][index][
+    -                     "sample_id"
+    -                 ]
+    -                 for index in val_indices
+    -             ],
+524 +             "train_sample_ids": [manifest["samples"][index]["sample_id"] for index in train_indices],
+525 +             "val_sample_ids": [manifest["samples"][index]["sample_id"] for index in val_indices],
+526 |         },
+--------------------------------------------------------------------------------
+616 |         "elapsed_seconds": training_elapsed,
+    -         "elapsed_seconds_with_preload": (
+    -             training_elapsed + preload_seconds
+    -         ),
+    -         "gpu_hours_training": (
+    -             training_elapsed / 3600
+    -             if device.type == "cuda"
+    -             else 0.0
+    -         ),
+617 +         "elapsed_seconds_with_preload": (training_elapsed + preload_seconds),
+618 +         "gpu_hours_training": (training_elapsed / 3600 if device.type == "cuda" else 0.0),
+619 |         "peak_vram_bytes": int(final_row["peak_vram_bytes"]),
+    |
+
+unformatted: File would be reformatted
+   --> tests/test_d1_cached_detector.py:106:32
+    |
+105 |         "cls": torch.tensor([[1.0]]),
+    -         "bboxes": torch.tensor(
+    -             [[0.5, 0.5, 0.25, 0.25]]
+    -         ),
+106 +         "bboxes": torch.tensor([[0.5, 0.5, 0.25, 0.25]]),
+107 |         "batch_idx": torch.tensor([0]),
+--------------------------------------------------------------------------------
+114 |
+    -     assert all(
+    -         feature.dtype == torch.float32
+    -         for feature in features
+    -     )
+115 +     assert all(feature.dtype == torch.float32 for feature in features)
+116 |     assert targets["cls"].dtype == torch.float32
+    |
+
+unformatted: File would be reformatted
+   --> tests/test_d1_preloaded_feature_cache.py:28:41
+    |
+27  |                     ),
+    -                     "cls": torch.tensor(
+    -                         [[float(index % 2)]]
+    -                     ),
+    -                     "bboxes": torch.tensor(
+    -                         [[0.5, 0.5, 0.25, 0.25]]
+    -                     ),
+28  +                     "cls": torch.tensor([[float(index % 2)]]),
+29  +                     "bboxes": torch.tensor([[0.5, 0.5, 0.25, 0.25]]),
+30  |                     "sample_id": f"sample-{index}",
+    -                     "image_path": (
+    -                         f"images/train/{index}.jpg"
+    -                     ),
+31  +                     "image_path": (f"images/train/{index}.jpg"),
+32  |                 }
+--------------------------------------------------------------------------------
+80  |     def forbidden_stack(*args, **kwargs):
+    -         raise AssertionError(
+    -             "torch.stack must not run during iteration"
+    -         )
+81  +         raise AssertionError("torch.stack must not run during iteration")
+82  |
+--------------------------------------------------------------------------------
+91  |     assert len(batches) == 3
+    -     assert batches[-1]["sample_ids"] == [
+    -         "sample-4"
+    -     ]
+92  +     assert batches[-1]["sample_ids"] == ["sample-4"]
+93  |
+--------------------------------------------------------------------------------
+110 |
+    -     first_order = [
+    -         sample_id
+    -         for batch in first_loader
+    -         for sample_id in batch["sample_ids"]
+    -     ]
+    -     second_order = [
+    -         sample_id
+    -         for batch in second_loader
+    -         for sample_id in batch["sample_ids"]
+    -     ]
+111 +     first_order = [sample_id for batch in first_loader for sample_id in batch["sample_ids"]]
+112 +     second_order = [sample_id for batch in second_loader for sample_id in batch["sample_ids"]]
+113 |
+    |
+
+unformatted: File would be reformatted
+   --> ultralytics/data/preloaded_feature_cache.py:27:30
+    |
+26  |         if batch_size <= 0:
+    -             raise ValueError(
+    -                 f"batch_size must be positive, got {batch_size}"
+    -             )
+27  +             raise ValueError(f"batch_size must be positive, got {batch_size}")
+28  |         if len(dataset) <= 0:
+29  |             raise ValueError("cannot preload an empty dataset")
+    -         if (
+    -             storage_device.type == "cuda"
+    -             and not torch.cuda.is_available()
+    -         ):
+    -             raise RuntimeError(
+    -                 "CUDA cache residency requested but CUDA is unavailable"
+    -             )
+30  +         if storage_device.type == "cuda" and not torch.cuda.is_available():
+31  +             raise RuntimeError("CUDA cache residency requested but CUDA is unavailable")
+32  |
+33  |         started = time.perf_counter()
+34  |
+    -         items = [
+    -             dataset[index]
+    -             for index in range(len(dataset))
+    -         ]
+35  +         items = [dataset[index] for index in range(len(dataset))]
+36  |         levels = len(items[0]["features"])
+37  |
+38  |         if levels <= 0:
+    -             raise ValueError(
+    -                 "cached samples contain no feature levels"
+    -             )
+    -         if any(
+    -             len(item["features"]) != levels
+    -             for item in items
+    -         ):
+    -             raise RuntimeError(
+    -                 "cached samples have inconsistent feature levels"
+    -             )
+39  +             raise ValueError("cached samples contain no feature levels")
+40  +         if any(len(item["features"]) != levels for item in items):
+41  +             raise RuntimeError("cached samples have inconsistent feature levels")
+42  |
+43  |         for item in items:
+44  |             for feature in item["features"]:
+45  |                 if feature.dtype != torch.float16:
+    -                     raise RuntimeError(
+    -                         "preloaded cache expects FP16 features, "
+    -                         f"got {feature.dtype}"
+    -                     )
+46  +                     raise RuntimeError(f"preloaded cache expects FP16 features, got {feature.dtype}")
+47  |
+48  |         self._features = tuple(
+49  |             torch.stack(
+    -                 [
+    -                     item["features"][level]
+    -                     for item in items
+    -                 ],
+50  +                 [item["features"][level] for item in items],
+51  |                 dim=0,
+52  |             ).to(storage_device)
+53  |             for level in range(levels)
+    -         )
+    -         self._classes = tuple(
+    -             item["cls"] for item in items
+    -         )
+    -         self._boxes = tuple(
+    -             item["bboxes"] for item in items
+54  |         )
+    -         self._sample_ids = tuple(
+    -             item["sample_id"] for item in items
+    -         )
+    -         self._image_paths = tuple(
+    -             item["image_path"] for item in items
+    -         )
+55  +         self._classes = tuple(item["cls"] for item in items)
+56  +         self._boxes = tuple(item["bboxes"] for item in items)
+57  +         self._sample_ids = tuple(item["sample_id"] for item in items)
+58  +         self._image_paths = tuple(item["image_path"] for item in items)
+59  |
+--------------------------------------------------------------------------------
+63  |         self.storage_device = storage_device
+    -         self.preloaded_bytes = sum(
+    -             feature.numel() * feature.element_size()
+    -             for feature in self._features
+    -         )
+    -         self.preload_seconds = (
+    -             time.perf_counter() - started
+    -         )
+64  +         self.preloaded_bytes = sum(feature.numel() * feature.element_size() for feature in self._features)
+65  +         self.preload_seconds = time.perf_counter() - started
+66  |
+67  |     def __len__(self) -> int:
+    -         return math.ceil(
+    -             len(self._sample_ids) / self.batch_size
+    -         )
+68  +         return math.ceil(len(self._sample_ids) / self.batch_size)
+69  |
+--------------------------------------------------------------------------------
+85  |         ):
+    -             cpu_indices = order[
+    -                 start : start + self.batch_size
+    -             ]
+86  +             cpu_indices = order[start : start + self.batch_size]
+87  |             index_values = cpu_indices.tolist()
+    -             storage_indices = cpu_indices.to(
+    -                 self.storage_device
+    -             )
+88  +             storage_indices = cpu_indices.to(self.storage_device)
+89  |
+--------------------------------------------------------------------------------
+97  |
+    -             classes = [
+    -                 self._classes[index]
+    -                 for index in index_values
+    -             ]
+    -             boxes = [
+    -                 self._boxes[index]
+    -                 for index in index_values
+    -             ]
+98  +             classes = [self._classes[index] for index in index_values]
+99  +             boxes = [self._boxes[index] for index in index_values]
+100 |             batch_indices = [
+--------------------------------------------------------------------------------
+105 |                 )
+    -                 for local_index in range(
+    -                     len(index_values)
+    -                 )
+106 +                 for local_index in range(len(index_values))
+107 |             ]
+--------------------------------------------------------------------------------
+116 |                 ),
+    -                 "targets": list(
+    -                     zip(classes, boxes)
+    -                 ),
+    -                 "sample_ids": [
+    -                     self._sample_ids[index]
+    -                     for index in index_values
+    -                 ],
+    -                 "image_paths": [
+    -                     self._image_paths[index]
+    -                     for index in index_values
+    -                 ],
+117 +                 "targets": list(zip(classes, boxes)),
+118 +                 "sample_ids": [self._sample_ids[index] for index in index_values],
+119 +                 "image_paths": [self._image_paths[index] for index in index_values],
+120 |             }
+    |
+
+5 files would be reformatted, 666 files already formatted
