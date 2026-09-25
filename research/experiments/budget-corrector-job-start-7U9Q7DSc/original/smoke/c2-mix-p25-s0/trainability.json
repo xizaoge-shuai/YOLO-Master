@@ -1,0 +1,18 @@
+{
+  "detector": {
+    "allowed_trainable_prefixes": [
+      "p3",
+      "p4",
+      "p5",
+      "detect"
+    ],
+    "status": "PASS",
+    "teacher_loaded": false,
+    "teacher_parameters": [],
+    "trainable_parameter_tensors": 282,
+    "trainable_parameters": 1291619,
+    "unexpected_trainable": []
+  },
+  "teacher_loaded": true,
+  "teacher_trainable_parameters": 0
+}

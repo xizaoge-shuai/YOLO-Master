@@ -1,0 +1,62 @@
+[
+  {
+    "layer": 3,
+    "relative_l2": 0.001999662956222892,
+    "sample_id": "00b8e6ad9c17865923f5d9ab"
+  },
+  {
+    "layer": 7,
+    "relative_l2": 0.0020651663653552532,
+    "sample_id": "00b8e6ad9c17865923f5d9ab"
+  },
+  {
+    "layer": 11,
+    "relative_l2": 0.0022506609093397856,
+    "sample_id": "00b8e6ad9c17865923f5d9ab"
+  },
+  {
+    "layer": 3,
+    "relative_l2": 0.0018330856692045927,
+    "sample_id": "00e4a61b5d8a097149b535a5"
+  },
+  {
+    "layer": 7,
+    "relative_l2": 0.001940102898515761,
+    "sample_id": "00e4a61b5d8a097149b535a5"
+  },
+  {
+    "layer": 11,
+    "relative_l2": 0.0020996248349547386,
+    "sample_id": "00e4a61b5d8a097149b535a5"
+  },
+  {
+    "layer": 3,
+    "relative_l2": 0.001758703961968422,
+    "sample_id": "01552bef365d66da2368eeec"
+  },
+  {
+    "layer": 7,
+    "relative_l2": 0.0016868270467966795,
+    "sample_id": "01552bef365d66da2368eeec"
+  },
+  {
+    "layer": 11,
+    "relative_l2": 0.0019142511300742626,
+    "sample_id": "01552bef365d66da2368eeec"
+  },
+  {
+    "layer": 3,
+    "relative_l2": 0.0019103948725387454,
+    "sample_id": "0178c0c0dc8f31696e951680"
+  },
+  {
+    "layer": 7,
+    "relative_l2": 0.0027602436020970345,
+    "sample_id": "0178c0c0dc8f31696e951680"
+  },
+  {
+    "layer": 11,
+    "relative_l2": 0.002816497813910246,
+    "sample_id": "0178c0c0dc8f31696e951680"
+  }
+]

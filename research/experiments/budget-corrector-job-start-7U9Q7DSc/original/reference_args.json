@@ -1,0 +1,44 @@
+{
+  "augment": "none",
+  "aux_weight": 0.0,
+  "batch": 8,
+  "cache": "/data/users/zhjia/YOLO-Master/runs/d1/p1/visdrone500/cache500",
+  "cache_identity": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "dataset": "/data/users/zhjia/YOLO-Master/runs/d1/p1/visdrone500/source/visdrone500-p1.yaml",
+  "detector_fusion": "unchanged router_only",
+  "device": "cuda:0",
+  "epochs": 100,
+  "evaluator": "existing D1 COCO-style evaluator, not pycocotools",
+  "feature_interface": "FP16 quantized, FP32 detector; detector AMP disabled",
+  "git_commit": "82b4d95eb5e0bf18b2717e056d85f916bd20ed5d",
+  "lr": 0.001,
+  "mode": "offline",
+  "output": "/data/users/zhjia/YOLO-Master/runs/paper/online-bg/rangefix-20260922-152707-1878099/train/offline-none-s0",
+  "parity_only": false,
+  "parity_tolerance": 0.02,
+  "scale_max": 1.15,
+  "scale_min": 0.85,
+  "seed": 0,
+  "source_hashes": {
+    "scripts/d1_build_feature_cache.py": "a09990b5ed1f7beb97ae378f6f1b123761b87928ec531ef2afbe6223124af0af",
+    "scripts/d1_train_cached_detector.py": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009",
+    "ultralytics/nn/modules/latent_mixture.py": "7ee5b0516a20709c9bc96b8c966da13447ca527c8cba7c7051f41aaf61f52b51"
+  },
+  "split_seed": 0,
+  "teacher_dtype": "fp32",
+  "teacher_forward_dtype": null,
+  "train_count": 400,
+  "val_count": 100,
+  "validation": "unaugmented cached features for EVERY mode",
+  "weight_decay": 0.0005
+}

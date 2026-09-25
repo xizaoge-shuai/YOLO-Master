@@ -55,3 +55,11 @@ claim that their weights/predictions have been independently re-evaluated.
   match across arms. Corrector checkpoints contain trained weights and optimizer state
   (50,560 parameters; 5/12 updates at p10/p25). Formal 18-run campaign not launched here.
 - Pilot provenance: all 500 images come from official VisDrone training, internally split 400/100.
+
+## Fixed-budget correction: job-start-7U9Q7DSc
+
+- Status: SUCCEEDED
+- Evidence: [archive](experiments/budget-corrector-job-start-7U9Q7DSc/README.md)
+- Source job: /data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-start-7U9Q7DSc
+- Report best/final AP, paired differences, actual query images and total charged time.
+- No full-dataset or independent-test claim; no conclusion inferred from smoke AP.
