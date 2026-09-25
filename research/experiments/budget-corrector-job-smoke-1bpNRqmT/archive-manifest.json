@@ -1,0 +1,55 @@
+{
+  "source_job": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT",
+  "status": "FAILED exit=1; inspect job.log and worker log",
+  "archived_at": "2026-09-25T08:09:02.569222+00:00",
+  "archival_git_parent": "201b7ca4271dd38703c75a5870b7b6fe7457fb94",
+  "files": {
+    "original/plan.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/plan.json",
+      "sha256": "2aa6f2657fe99ee83c252a0971a5fbbfd38040264d92f8f8de55a8394eddf7a0",
+      "bytes": 1251
+    },
+    "original/provenance.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/provenance.json",
+      "sha256": "ba9c8a1a8de177a411b46b67491689759a888617f4c4579ed2d79cce0fa16d83",
+      "bytes": 1842
+    },
+    "original/reference_args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/reference_args.json",
+      "sha256": "39631aae179b7d8417cc0a0a97b1dc420eeaa4cc488fdc150b0843e379b71569",
+      "bytes": 1669
+    },
+    "original/reference_split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/reference_split.json",
+      "sha256": "90baf2a2e511b6e660a06574907072a65f3f460ea7d982865253cc2814c405e5",
+      "bytes": 16056
+    },
+    "original/status.txt": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/status.txt",
+      "sha256": "b4de4e2cc5dabfa7fd16705742c34ae8adffa159fbfd1b97bad4b0ffe663f131",
+      "bytes": 46
+    },
+    "original/smoke/c2-mix-p10-s0/args.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/smoke/c2-mix-p10-s0/args.json",
+      "sha256": "b27bbb8dacd46a1b6baa9e482a927aa56d3e81d287af99ad6fc7a6551b8e07dd",
+      "bytes": 3636
+    },
+    "original/smoke/c2-mix-p10-s0/split.json": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/smoke/c2-mix-p10-s0/split.json",
+      "sha256": "acd454d413f27ae9e9a7001ca2ca5609565e08e066baa3d32198a26d632d8a1a",
+      "bytes": 16076
+    },
+    "original/failure-logs/job.txt": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/job.log",
+      "sha256": "6f9965fa25afc8c6d81263bc7f695088dec073f8dce694490d2fe3dda62b2e49",
+      "bytes": 4286
+    },
+    "original/failure-logs/smoke-c2-mix-p10-s0.txt": {
+      "source": "/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT/smoke-c2-mix-p10-s0.log",
+      "sha256": "9ea645c263b6fb01a2f4523509c937683c2d814116d68e08bef72f4ea9acc45c",
+      "bytes": 3461
+    }
+  },
+  "note": "Raw metrics preserved; pilot only. No weights, datasets or cache tensors.",
+  "schedules": {}
+}

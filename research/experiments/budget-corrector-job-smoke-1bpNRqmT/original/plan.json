@@ -1,0 +1,92 @@
+{
+  "epochs": 100,
+  "threads": 4,
+  "corrector_rank": 64,
+  "corrector_lr": 0.001,
+  "gpu_uuid": "GPU-02d1df45-7f76-285a-1162-9ed27d60448d",
+  "cases": [
+    "c2-mix-p10",
+    "c2-transport-p10",
+    "c2-correct-p10",
+    "c2-mix-p25",
+    "c2-transport-p25",
+    "c2-correct-p25"
+  ],
+  "tasks": [
+    [
+      "c2-transport-p10",
+      0
+    ],
+    [
+      "c2-mix-p25",
+      0
+    ],
+    [
+      "c2-mix-p10",
+      0
+    ],
+    [
+      "c2-correct-p10",
+      0
+    ],
+    [
+      "c2-correct-p25",
+      0
+    ],
+    [
+      "c2-transport-p25",
+      0
+    ],
+    [
+      "c2-transport-p25",
+      1
+    ],
+    [
+      "c2-correct-p10",
+      1
+    ],
+    [
+      "c2-correct-p25",
+      1
+    ],
+    [
+      "c2-transport-p10",
+      1
+    ],
+    [
+      "c2-mix-p10",
+      1
+    ],
+    [
+      "c2-mix-p25",
+      1
+    ],
+    [
+      "c2-correct-p25",
+      2
+    ],
+    [
+      "c2-correct-p10",
+      2
+    ],
+    [
+      "c2-mix-p10",
+      2
+    ],
+    [
+      "c2-transport-p10",
+      2
+    ],
+    [
+      "c2-transport-p25",
+      2
+    ],
+    [
+      "c2-mix-p25",
+      2
+    ]
+  ],
+  "smoke_only": true,
+  "schema_version": 1,
+  "note": "Reconstruction-only correction; no tuned hyperparameter selection; pilot not held-out test"
+}

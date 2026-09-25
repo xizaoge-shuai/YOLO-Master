@@ -34,3 +34,11 @@ claim that their weights/predictions have been independently re-evaluated.
   requires an explicit derived-annotation exclusion before full training.
 - COCO: 5,000 val images and annotations present; training images/JSON absent despite train list.
   Full VisDrone caches require streaming; COCO C1 raw features alone require about 406 GiB.
+
+## Fixed-budget correction: job-smoke-1bpNRqmT
+
+- Status: FAILED exit=1; inspect job.log and worker log
+- Evidence: [archive](experiments/budget-corrector-job-smoke-1bpNRqmT/README.md)
+- Source job: /data/users/zhjia/YOLO-Master/runs/paper/budget-corrector/job-smoke-1bpNRqmT
+- Report best/final AP, paired differences, actual query images and total charged time.
+- No full-dataset or independent-test claim; no conclusion inferred from smoke AP.

@@ -1,0 +1,1 @@
+FAILED exit=1; inspect job.log and worker log
