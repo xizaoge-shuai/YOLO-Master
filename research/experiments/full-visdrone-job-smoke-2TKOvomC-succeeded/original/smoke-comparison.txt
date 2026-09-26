@@ -1,0 +1,9 @@
+Diagnostic AP 0-100; NOT official VisDrone AP. Smoke is not a benchmark.
+Cache/data preparation charged once per run, including validation cache.
+method seed epochs best_AP last_AP train_s val_s build+wall_s queries cache_GiB VRAM_GiB
+cache1 0 1 0.0000 0.0000 0.7 0.1 8.0 0 0.086 1.410
+cache2 0 1 0.0000 0.0000 0.7 0.1 8.2 0 0.144 1.410
+mix25 0 1 0.0000 0.0000 0.8 0.1 9.0 4 0.144 1.576
+transport25 0 1 0.0000 0.0000 0.8 0.1 9.0 4 0.144 1.628
+correct25 0 1 0.0000 0.0000 0.8 0.1 9.1 4 0.144 1.644
+online-geom 0 1 0.0000 0.0000 0.9 0.1 8.3 17 0.027 1.548

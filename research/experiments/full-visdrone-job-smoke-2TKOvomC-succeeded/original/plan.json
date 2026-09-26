@@ -1,0 +1,20 @@
+{
+  "methods": [
+    "cache1",
+    "cache2",
+    "mix25",
+    "transport25",
+    "correct25",
+    "online-geom"
+  ],
+  "epochs": 1,
+  "seeds": [
+    0
+  ],
+  "train_images": 17,
+  "val_images": 8,
+  "smoke": true,
+  "device": "0",
+  "official_evaluation": false,
+  "test_dev_used": false
+}

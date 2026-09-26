@@ -87,3 +87,9 @@ claim that their weights/predictions have been independently re-evaluated.
   COCO and second-backbone studies. No new GPU training launched in this analysis turn.
 - New analysis Ruff checks pass. Repository-wide pre-existing 2,768 Ruff issues and five
   format mismatches persist; codespell remains unavailable. Evidence in analysis-validation/.
+
+## Full VisDrone: job-smoke-2TKOvomC
+
+- Status: SUCCEEDED
+- Evidence: [archive](experiments/full-visdrone-job-smoke-2TKOvomC-succeeded/README.md)
+- Diagnostic AP only; official ignored-region evaluation pending. No test-dev tuning.

@@ -1,0 +1,57 @@
+{
+  "identity": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "teacher_dtype": "fp32",
+  "cache_dtype": "fp16",
+  "setup_seconds": 6.199222393333912,
+  "parts": {
+    "train-v0": {
+      "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-smoke-2TKOvomC/cache/train-v0.npy",
+      "bytes": 62668928,
+      "sha256": "a92052f4231f4aabb7450070b3442e0c0924e9670d76cf5c178ce31e003e82c0",
+      "seconds": 0.5040046842768788,
+      "images": 17,
+      "extra_parity_images": 1
+    },
+    "train-v1": {
+      "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-smoke-2TKOvomC/cache/train-v1.npy",
+      "bytes": 62668928,
+      "sha256": "948deaea29091147790de608a26a20c37d14ad6f4b921b75330955e57c0a7507",
+      "seconds": 0.32426084391772747,
+      "images": 17,
+      "extra_parity_images": 1
+    },
+    "val-v0": {
+      "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-smoke-2TKOvomC/cache/val-v0.npy",
+      "bytes": 29491328,
+      "sha256": "76e3641388de1610c1a1958780fca39bf78d0da4accf16af8abcfa93d352fece",
+      "seconds": 0.1952006034553051,
+      "images": 8,
+      "extra_parity_images": 1
+    }
+  },
+  "parity": [
+    {
+      "part": "train-v0",
+      "relative_L2": 0.0002052829513559118
+    },
+    {
+      "part": "train-v1",
+      "relative_L2": 0.00020196897094137967
+    },
+    {
+      "part": "val-v0",
+      "relative_L2": 0.00020351295825093985
+    }
+  ],
+  "dataset_manifest_sha256": "d2ff1c5dca79daff94ee773610ef7823c1d157ffebf41284fb6c1ca95cad8a0c"
+}
