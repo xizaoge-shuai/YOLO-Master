@@ -1,0 +1,2 @@
+bf56729a460955e913bec97c3120468a92038248e41a5f5d8523fbc11a2916b2
+/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/verification-1790394572184101177/full-data/dataset-manifest.json

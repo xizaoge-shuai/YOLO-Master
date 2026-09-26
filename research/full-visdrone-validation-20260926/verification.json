@@ -1,0 +1,22 @@
+{
+  "full_train_images": 6471,
+  "full_val_images": 548,
+  "test_dev_used": false,
+  "filtered_labels": [
+    {
+      "path": "/data/users/zhjia/YOLO-Master/datasets/VisDrone/labels/train/9999985_00000_d_0000020.txt",
+      "lines": [
+        11
+      ],
+      "reason": "zero-area box"
+    }
+  ],
+  "resume_max_abs_differences": {
+    "model": 0.0,
+    "corrector": 0.0
+  },
+  "resume_query_images": 8,
+  "final_commit_crash_recovery": "PASS",
+  "smoke_source": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-smoke-2TKOvomC",
+  "official_evaluation": false
+}

@@ -1,0 +1,4 @@
+
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 211/211 [00:00<00:00, 8683.77it/s]
+{"epoch": 1, "train_loss": 17.007340150720932, "val_loss": 18.981544494628906, "map50": 0.0, "map50_95": 0.0, "train_seconds": 1.665009361691773, "val_seconds": 0.44657503347843885, "peak_vram_gib": 1.6441798210144043, "lr": 0.001, "query_images": 4, "correction_seconds": 0.2536606378853321, "reconstruction_loss": 0.036188941448926926}

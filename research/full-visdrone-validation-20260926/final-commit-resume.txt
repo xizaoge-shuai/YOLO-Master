@@ -1,0 +1,2 @@
+Loading weights:   0%|          | 0/211 [00:00<?, ?it/s]Loading weights: 100%|██████████| 211/211 [00:00<00:00, 11430.24it/s]
+RESUME epoch=2

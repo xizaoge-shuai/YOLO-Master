@@ -93,3 +93,11 @@ claim that their weights/predictions have been independently re-evaluated.
 - Status: SUCCEEDED
 - Evidence: [archive](experiments/full-visdrone-job-smoke-2TKOvomC-succeeded/README.md)
 - Diagnostic AP only; official ignored-region evaluation pending. No test-dev tuning.
+
+## Full VisDrone background experiment entry (2026-09-26)
+
+- Added six matched-head arms on full 6471 train / 548 val, batch-streamed FP16 cache and exact image query budgets.
+- Test-dev untouched; raw ignored-region annotations and best/last VisDrone prediction exports retained. Diagnostic AP is not official VisDrone AP.
+- Full dataset preparation and six-arm 17/8 smoke passed; two-epoch interrupted/continuous corrector weights match exactly; final-epoch commit interruption recovery passed.
+- Independent code review findings fixed; details: FULL_VISDRONE_IMPLEMENTATION_CHECKS.md. Global lint retains 2768 pre-existing findings and five format mismatches; codespell absent.
+- Start/status/resume commands: online_experiments/FULL_VISDRONE.md. Full 100-epoch campaign not launched by assistant.
