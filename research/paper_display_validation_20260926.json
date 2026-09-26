@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-09-26T11:59:26.825485+00:00",
+  "plan_validation": "PASS: 4 main / 4 supplement figures, 10 / 16 panels, panel axes/legend/form/source present; 16 experiment families",
+  "training_source_snapshot": "UNCHANGED",
+  "active_job": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+  "job_status": "RUNNING train/cache1 epochs=100",
+  "checks": {
+    "codespell_global": {
+      "status": "previous attempt this turn timed out after 60 seconds; no global pass claimed"
+    },
+    "ruff_check": {
+      "returncode": 1,
+      "issue_count": 2768
+    },
+    "ruff_format": {
+      "returncode": 1,
+      "output": "er() - started\n66  |\n67  |     def __len__(self) -> int:\n    -         return math.ceil(\n    -             len(self._sample_ids) / self.batch_size\n    -         )\n68  +         return math.ceil(len(self._sample_ids) / self.batch_size)\n69  |\n--------------------------------------------------------------------------------\n85  |         ):\n    -             cpu_indices = order[\n    -                 start : start + self.batch_size\n    -             ]\n86  +             cpu_indices = order[start : start + self.batch_size]\n87  |             index_values = cpu_indices.tolist()\n    -             storage_indices = cpu_indices.to(\n    -                 self.storage_device\n    -             )\n88  +             storage_indices = cpu_indices.to(self.storage_device)\n89  |\n--------------------------------------------------------------------------------\n97  |\n    -             classes = [\n    -                 self._classes[index]\n    -                 for index in index_values\n    -             ]\n    -             boxes = [\n    -                 self._boxes[index]\n    -                 for index in index_values\n    -             ]\n98  +             classes = [self._classes[index] for index in index_values]\n99  +             boxes = [self._boxes[index] for index in index_values]\n100 |             batch_indices = [\n--------------------------------------------------------------------------------\n105 |                 )\n    -                 for local_index in range(\n    -                     len(index_values)\n    -                 )\n106 +                 for local_index in range(len(index_values))\n107 |             ]\n--------------------------------------------------------------------------------\n116 |                 ),\n    -                 \"targets\": list(\n    -                     zip(classes, boxes)\n    -                 ),\n    -                 \"sample_ids\": [\n    -                     self._sample_ids[index]\n    -                     for index in index_values\n    -                 ],\n    -                 \"image_paths\": [\n    -                     self._image_paths[index]\n    -                     for index in index_values\n    -                 ],\n117 +                 \"targets\": list(zip(classes, boxes)),\n118 +                 \"sample_ids\": [self._sample_ids[index] for index in index_values],\n119 +                 \"image_paths\": [self._image_paths[index] for index in index_values],\n120 |             }\n    |\n\n5 files would be reformatted, 666 files already formatted\n"
+    },
+    "codespell_scope": {
+      "returncode": 0,
+      "output": ""
+    },
+    "git_diff_check": {
+      "returncode": 0,
+      "output": ""
+    },
+    "git_cached_diff_check": {
+      "returncode": 0,
+      "output": ""
+    }
+  }
+}

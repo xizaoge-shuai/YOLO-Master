@@ -1,0 +1,416 @@
+{
+  "version": "1.0-prospective",
+  "date": "2026-09-26",
+  "status": "planning; no plotted results or final-method success assumed",
+  "main_figures": 4,
+  "supplementary_figures": 4,
+  "main_panels": 10,
+  "supplementary_panels": 16,
+  "main_tables": 3,
+  "method_diagram_separate": true,
+  "primary_checkpoint": "final at predeclared budget",
+  "error_bars": "mean +/- sample SD of three training seeds; paired SD for deltas",
+  "colors": {
+    "C1": "#7F7F7F",
+    "C2": "#4D4D4D",
+    "C6": "#222222",
+    "Mix": "#0072B2",
+    "Transport": "#E69F00",
+    "Rec": "#009E73",
+    "Final": "#CC79A7",
+    "Online": "#333333"
+  },
+  "figures": [
+    {
+      "id": "E1",
+      "location": "main",
+      "title": "Accuracy versus first-use cost",
+      "panels": [
+        {
+          "id": "a",
+          "x": "First-use allocated GPU-hours (log)",
+          "y": "VisDrone official final AP (0-100)",
+          "form": "scatter, mean +/- sample SD on both axes; connect only same-family budgets",
+          "legend": [
+            "C1",
+            "C2",
+            "C6",
+            "Mix",
+            "Transport",
+            "Rec",
+            "Final candidate",
+            "Online"
+          ],
+          "source": "full_visdrone_final_and_cost"
+        },
+        {
+          "id": "b",
+          "x": "First-use allocated GPU-hours (log)",
+          "y": "COCO bbox final AP (0-100)",
+          "form": "scatter, mean +/- sample SD on both axes",
+          "legend": [
+            "C1",
+            "C2",
+            "Mix",
+            "Transport",
+            "Rec",
+            "Final candidate",
+            "Online"
+          ],
+          "source": "full_coco_final_and_cost"
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "location": "main",
+      "title": "Budget-controlled benefit",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Training teacher-query fraction q (%)",
+          "y": "VisDrone official final AP",
+          "form": "line and markers, seed SD",
+          "legend": [
+            "Mix",
+            "Transport",
+            "Rec",
+            "Final candidate",
+            "C2 endpoint",
+            "Online endpoint"
+          ],
+          "source": "visdrone_query_sweep"
+        },
+        {
+          "id": "b",
+          "x": "Training teacher-query fraction q (%)",
+          "y": "Paired delta COCO-style VisDrone AP_S versus Transport (points)",
+          "form": "line and markers, paired-seed SD, zero reference",
+          "legend": [
+            "Mix",
+            "Rec",
+            "Final candidate"
+          ],
+          "source": "visdrone_query_sweep_size_metrics"
+        },
+        {
+          "id": "c",
+          "x": "Fixed first-use total-time budget (GPU-hours)",
+          "y": "VisDrone official final AP",
+          "form": "measured budget endpoints, seed SD",
+          "legend": [
+            "C2",
+            "Mix25",
+            "Transport25",
+            "Final25",
+            "Online"
+          ],
+          "source": "new_equal_total_time_runs"
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "location": "main",
+      "title": "Held-out task utility",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Held-out transform (hflip; scales .85,1.15,.75,1.25)",
+          "y": "Foreground relative MSE",
+          "form": "grouped points, seed SD",
+          "legend": [
+            "Transport",
+            "Rec",
+            "Final candidate",
+            "Exact = 0"
+          ],
+          "source": "heldout_foreground_diagnostics"
+        },
+        {
+          "id": "b",
+          "x": "Same held-out transform categories",
+          "y": "Background relative MSE",
+          "form": "grouped points, seed SD",
+          "legend": [
+            "Transport",
+            "Rec",
+            "Final candidate",
+            "Exact = 0"
+          ],
+          "source": "heldout_background_diagnostics"
+        },
+        {
+          "id": "c",
+          "x": "Same held-out transform categories",
+          "y": "Frozen-head detection loss / exact-feature loss",
+          "form": "grouped points, seed SD",
+          "legend": [
+            "Transport",
+            "Rec",
+            "Final candidate",
+            "Exact = 1"
+          ],
+          "source": "heldout_same_reference_head_loss"
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "location": "main",
+      "title": "Generalization",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Target-trained / source-frozen / source then target-adapted corrector",
+          "y": "Transfer direction (VisDrone -> COCO; COCO -> VisDrone)",
+          "form": "2 x 3 heatmap, mean and SD annotated",
+          "legend": [
+            "diverging colorbar: delta target AP versus Transport25, zero-centered"
+          ],
+          "source": "cross_dataset_corrector_transfer"
+        },
+        {
+          "id": "b",
+          "x": "DINOv3-S/16; DINOv3-B/16; DINOv2-S/14",
+          "y": "Paired delta VisDrone AP versus same-backbone Transport25",
+          "form": "points, seed SD, zero reference",
+          "legend": [
+            "Rec",
+            "Final candidate"
+          ],
+          "source": "cross_backbone_retrained_method"
+        }
+      ]
+    },
+    {
+      "id": "S1",
+      "location": "supplement",
+      "title": "Training stability",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Epoch",
+          "y": "Training loss",
+          "form": "unsmoothed line and seed-SD band",
+          "legend": [
+            "C1",
+            "C2",
+            "Mix25",
+            "Transport25",
+            "Rec25",
+            "Final25",
+            "Online"
+          ],
+          "source": "per_epoch_logs"
+        },
+        {
+          "id": "b",
+          "x": "Epoch",
+          "y": "Validation AP (explicit evaluator label)",
+          "form": "unsmoothed line and seed-SD band; best and final markers",
+          "legend": [
+            "C1",
+            "C2",
+            "Mix25",
+            "Transport25",
+            "Rec25",
+            "Final25",
+            "Online"
+          ],
+          "source": "per_epoch_metrics_do_not_mix_evaluators"
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "location": "supplement",
+      "title": "Storage and reuse",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Training-cache size (GiB)",
+          "y": "VisDrone final AP",
+          "form": "scatter, q annotation",
+          "legend": [
+            "C1",
+            "C2",
+            "C6",
+            "Final25"
+          ],
+          "source": "cache_capacity_runs"
+        },
+        {
+          "id": "b",
+          "x": "Reuse count K (1,2,3,5,10)",
+          "y": "Cumulative allocated GPU-hours",
+          "form": "measured markers and dashed analytical amortization",
+          "legend": [
+            "C1",
+            "C2",
+            "C6",
+            "Final25",
+            "Online"
+          ],
+          "source": "measured_component_times_and_declared_reuse_formula"
+        },
+        {
+          "id": "c",
+          "x": "Method",
+          "y": "Wall time (seconds)",
+          "form": "stacked non-overlapping component bars",
+          "legend": [
+            "Setup/cache",
+            "Training (includes correction)",
+            "Validation",
+            "Other I/O/artifacts"
+          ],
+          "source": "timing_components"
+        }
+      ]
+    },
+    {
+      "id": "S3",
+      "location": "supplement",
+      "title": "Capacity and residual structure",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Corrector bottleneck width (16,32,64,128)",
+          "y": "VisDrone final AP",
+          "form": "line and points, seed SD; Transport reference",
+          "legend": [
+            "Final candidate25",
+            "Transport25"
+          ],
+          "source": "post_freeze_width_sensitivity"
+        },
+        {
+          "id": "b",
+          "x": "Residual output gain (0,.25,.5,1)",
+          "y": "VisDrone final AP",
+          "form": "line and points, seed SD; Transport reference",
+          "legend": [
+            "Final candidate25",
+            "Transport25"
+          ],
+          "source": "post_freeze_gain_sensitivity"
+        },
+        {
+          "id": "c",
+          "x": "SVD rank (8,16,32,64,128)",
+          "y": "Cumulative held-out residual energy explained (%)",
+          "form": "line and points; oracle diagnostic label",
+          "legend": [
+            "Flip residual",
+            "Scale residual"
+          ],
+          "source": "heldout_residual_svd_not_deployable_oracle_AP"
+        }
+      ]
+    },
+    {
+      "id": "S4",
+      "location": "supplement",
+      "title": "Qualitative predictions",
+      "panels": [
+        {
+          "id": "a",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_1_GT"
+        },
+        {
+          "id": "b",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_1_Transport25"
+        },
+        {
+          "id": "c",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_1_Rec25"
+        },
+        {
+          "id": "d",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_1_Final25"
+        },
+        {
+          "id": "e",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_2_GT"
+        },
+        {
+          "id": "f",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_2_Transport25"
+        },
+        {
+          "id": "g",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_2_Rec25"
+        },
+        {
+          "id": "h",
+          "x": "Original-image x coordinate (ticks hidden)",
+          "y": "Original-image y coordinate (ticks hidden)",
+          "form": "aligned image overlay",
+          "legend": [
+            "TP green",
+            "FP vermilion",
+            "FN orange"
+          ],
+          "source": "fixed_scene_2_Final25"
+        }
+      ]
+    }
+  ]
+}

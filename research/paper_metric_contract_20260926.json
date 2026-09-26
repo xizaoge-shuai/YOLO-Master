@@ -1,0 +1,71 @@
+{
+  "version": "1.0-prospective",
+  "accuracy_primary": "final budget checkpoint, dataset standard bbox AP .50:.95 in points",
+  "accuracy_secondary": [
+    "AP50",
+    "AP75",
+    "AP_S",
+    "AP_M",
+    "AP_L",
+    "best_validation_AP_with_selection_metric",
+    "last10_AP_mean"
+  ],
+  "visdrone": {
+    "primary_evaluator": "VisDrone reference/validated equivalent, original ignored regions, maxDet500",
+    "area_extension": "COCO-style AP_S/M/L on VisDrone@500; explicitly nonofficial extension"
+  },
+  "coco": {
+    "evaluator": "pycocotools bbox",
+    "maxDet": 100,
+    "area_pixels_squared": [
+      1024,
+      9216
+    ]
+  },
+  "cost_primary": "first-use total allocated GPU-hours, including build/setup/I/O/train/val/artifacts, excluding queue",
+  "cost_fields": [
+    "cache_build_seconds",
+    "cache_bytes",
+    "setup_seconds",
+    "train_seconds",
+    "correction_seconds_nested_in_train",
+    "validation_seconds",
+    "first_use_charged_seconds",
+    "actual_campaign_seconds",
+    "peak_cuda_allocated_GiB",
+    "peak_cuda_reserved_GiB",
+    "peak_host_RSS_GiB",
+    "fresh_image_inference_latency_ms"
+  ],
+  "teacher_counts": [
+    "training_query_images",
+    "training_presentations",
+    "cache_build_images",
+    "calibration_images",
+    "diagnostic_images"
+  ],
+  "required_identity": [
+    "dataset_split_hash",
+    "raw_annotation_hash",
+    "evaluator_revision",
+    "source_snapshot_hash",
+    "backbone_checkpoint_revision",
+    "head_init_hash",
+    "seed",
+    "transform_schedule_hash",
+    "query_schedule_hash",
+    "checkpoint_selection_metric"
+  ],
+  "missing_value": "null with explicit reason, never zero",
+  "statistics": "seeds 0,1,2, sample SD and paired deltas; no default significance claim",
+  "known_missing_now": [
+    "official ignored-region AP",
+    "official AP75",
+    "area AP",
+    "held-out foreground/background error",
+    "full COCO results",
+    "cross-backbone results",
+    "controlled equal-time results",
+    "fresh-image latency"
+  ]
+}

@@ -101,3 +101,12 @@ claim that their weights/predictions have been independently re-evaluated.
 - Full dataset preparation and six-arm 17/8 smoke passed; two-epoch interrupted/continuous corrector weights match exactly; final-epoch commit interruption recovery passed.
 - Independent code review findings fixed; details: FULL_VISDRONE_IMPLEMENTATION_CHECKS.md. Global lint retains 2768 pre-existing findings and five format mismatches; codespell absent.
 - Start/status/resume commands: online_experiments/FULL_VISDRONE.md. Full 100-epoch campaign not launched by assistant.
+
+## Experiment display and metric contract (2026-09-26)
+
+- Verified active full-data job job-start-eDmH0odX: cache build and 7019-image integrity passed; six profiles complete; train/cache1 at 100 epochs is running. Profile AP is not a final result.
+- Completed pilots include C1/C2, online/mixed-query controls, Transport, FroFA/LOFF-TA idea adaptations and matched-budget reconstruction correction. No stable correction gain over same-budget Transport yet.
+- Confirmed early COCO128 80/20 and VisDrone 400/100 predictor runs; neither establishes full COCO or source-frozen transfer. Official evaluation, C6 scale cache, equal-time and cross-backbone tests remain pending.
+- Added PAPER_EXPERIMENT_DISPLAY_PLAN_20260926.md plus figure, experiment-matrix and metric contracts: 4 main figures / 10 panels, 4 supplementary figures / 16 panels, and 3 main tables. Final method remains a hypothesis.
+- Prospective primary endpoints: final-budget dataset AP and first-use total GPU-hours including cache construction. Best AP remains secondary; official VisDrone and COCO-style size metrics are distinguished.
+- Existing training source hashes verified unchanged. No additional GPU experiment started and no old results overwritten. Specification/schema checks pass. Required repository checks and their limitations are recorded in paper_display_validation_20260926.json.
