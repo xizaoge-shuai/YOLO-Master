@@ -116,3 +116,11 @@ claim that their weights/predictions have been independently re-evaluated.
 - Status: SUCCEEDED
 - Evidence: [archive](experiments/full-visdrone-job-start-eDmH0odX-succeeded/README.md)
 - Diagnostic AP only; official ignored-region evaluation pending. No test-dev tuning.
+
+## 2026-09-27: full VisDrone pinned-reference evaluation completed
+
+- Evidence: [reference evaluation](experiments/visdrone-reference-job-full-20260927/README.md).
+- Twelve full-548-image prediction sets rescored; native Octave parity on 24 synthetic and two real-image cases passed (max 4.41e-13 AP points). Fixed reference commit and actual source bytes verified.
+- Final reference AP: C1 9.1186, C2 10.6568, Mix25 11.3526, Transport25 9.6350, Correct25 9.7656, Online 11.3982. One seed only. Reference class-image weighting and ignored-region behavior preserved; old custom AP unchanged.
+- Corrector gains +0.1306 over Transport but trails Mix by 1.5870 AP. No final-method or stable-benefit claim. Best checkpoint was selected by old custom AP. Held-out feature/task diagnostic pending.
+- Ten reference tests and two feature metric tests pass; global pre-existing Ruff/format findings preserved. Validation evidence included; no push.

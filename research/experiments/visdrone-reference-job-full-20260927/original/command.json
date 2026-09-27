@@ -1,0 +1,13 @@
+[
+  "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+  "-u",
+  "online_experiments/run_visdrone_reference_eval.py",
+  "--source-job",
+  "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+  "--output",
+  "/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927",
+  "--octave",
+  "/data/users/zhjia/.cache/yolo-master-eval/octave/bin/octave-cli",
+  "--toolkit",
+  "/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/official-toolkit"
+]

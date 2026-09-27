@@ -1,0 +1,51 @@
+{
+  "scoped-ruff": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "online_experiments/diagnose_full_corrector.py",
+      "online_experiments/test_heldout_feature_metrics.py",
+      "online_experiments/visdrone_reference_eval.py",
+      "online_experiments/run_visdrone_reference_eval.py",
+      "online_experiments/test_visdrone_reference_eval.py"
+    ],
+    "exit": 0,
+    "seconds": 0.012330545112490654,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/validation-20260927/scoped-ruff.log"
+  },
+  "repository-ruff": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit": 1,
+    "seconds": 0.08301620371639729,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/validation-20260927/repository-ruff.log"
+  },
+  "repository-format": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "format",
+      "--check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit": 1,
+    "seconds": 0.014302530325949192,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/validation-20260927/repository-format.log"
+  },
+  "repository-codespell": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell"
+    ],
+    "exit": "TIMEOUT25",
+    "seconds": 25.02843743097037,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/validation-20260927/repository-codespell.log"
+  }
+}

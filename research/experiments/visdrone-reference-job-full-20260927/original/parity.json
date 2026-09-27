@@ -1,0 +1,36 @@
+[
+  {
+    "name": "synthetic",
+    "images": 24,
+    "max_absolute_AP_point_error": 4.405364961712621e-13,
+    "preprocessed_arrays_exact": true,
+    "input_sha256": "62111b6ae2037910a33c7bf7c7ae107496f6ae1507a0da1abb2d95adf811e9f2",
+    "native_output_sha256": "4350e157198fa65a55c749ee35d30c5e30361571dccc050194875cd5964691f0",
+    "native_metrics": [
+      19.91601493396701,
+      21.923647190383978,
+      19.660267989170606,
+      3.4002998500749655,
+      3.4002998500749655,
+      80.70311514360097,
+      80.70311514360097
+    ]
+  },
+  {
+    "name": "real",
+    "images": 2,
+    "max_absolute_AP_point_error": 3.552713678800501e-15,
+    "preprocessed_arrays_exact": true,
+    "input_sha256": "713dba7707c2d737d5fbc3ef3e1216cc083fe6db164f5b57bab9fee874061e38",
+    "native_output_sha256": "0889abc830d1b2e5422cf4fbfc20f6bfdfbdc410435356abc86ed5de89e76ecf",
+    "native_metrics": [
+      8.79943143388438,
+      19.258540846610074,
+      7.616792310095529,
+      0.5882352941176471,
+      3.913312693498451,
+      11.591767881241564,
+      18.793919187108035
+    ]
+  }
+]
