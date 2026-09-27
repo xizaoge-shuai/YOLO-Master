@@ -124,3 +124,9 @@ claim that their weights/predictions have been independently re-evaluated.
 - Final reference AP: C1 9.1186, C2 10.6568, Mix25 11.3526, Transport25 9.6350, Correct25 9.7656, Online 11.3982. One seed only. Reference class-image weighting and ignored-region behavior preserved; old custom AP unchanged.
 - Corrector gains +0.1306 over Transport but trails Mix by 1.5870 AP. No final-method or stable-benefit claim. Best checkpoint was selected by old custom AP. Held-out feature/task diagnostic pending.
 - Ten reference tests and two feature metric tests pass; global pre-existing Ruff/format findings preserved. Validation evidence included; no push.
+
+## 2026-09-27: frozen validation feature/task diagnostic launched
+
+- Run: runs/paper/heldout-corrector/job-7c6i3o4w; [protocol](../online_experiments/HELDOUT_CORRECTOR.md), [evidence](experiments/heldout-corrector-job-7c6i3o4w/README.md).
+- Full548 validation, final100epoch corrector and one frozen Online head, 10 augmentations, no updates. Separate foreground masks preserve all visible box fragments while loss keeps original target filtering. Four targeted tests and review pass.
+- First start job-z1m6vokw failed before evaluation: missing HF_HOME. Retry inherits original offline cache. GPU1 CUDA unavailable; using GPU0 batch4. Diagnostic time is not an efficiency benchmark.

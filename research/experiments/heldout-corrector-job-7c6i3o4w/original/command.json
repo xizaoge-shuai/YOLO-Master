@@ -1,0 +1,24 @@
+{
+  "command": [
+    "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "online_experiments/diagnose_full_corrector.py",
+    "--source-job",
+    "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+    "--output",
+    "/data/users/zhjia/YOLO-Master/runs/paper/heldout-corrector/job-7c6i3o4w",
+    "--batch",
+    "4"
+  ],
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": "0",
+    "HF_HOME": "/data/users/zhjia/cache/huggingface",
+    "HF_HUB_OFFLINE": "1",
+    "TRANSFORMERS_OFFLINE": "1",
+    "PYTHONUNBUFFERED": "1"
+  },
+  "retry_of": "/data/users/zhjia/YOLO-Master/runs/paper/heldout-corrector/job-z1m6vokw",
+  "reason": "inherit original training HF cache path",
+  "cost_benchmark": false,
+  "source_sha256": "d41f72b89e923b4b926423dc89fbd35932925fddd0fd059dcbd3dcc1046456dd"
+}

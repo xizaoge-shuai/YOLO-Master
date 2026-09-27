@@ -1,0 +1,10 @@
+RUNNING verify original validation annotations and prediction coverage
+FAILED ValueError: Unsorted detections or negative sizes: 0000155_01201_d_0000001
+Traceback (most recent call last):
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 283, in <module>
+    main()
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 204, in main
+    sample, _ = load_cases(source / "train/cache2-s0/predictions/last", records)
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 86, in load_cases
+    raise ValueError(f"Unsorted detections or negative sizes: {image_id}")
+ValueError: Unsorted detections or negative sizes: 0000155_01201_d_0000001

@@ -1,0 +1,11 @@
+RUNNING verify original validation annotations and prediction coverage
+RUNNING native MATLAB-code parity: synthetic boundary/ignore fixtures
+FAILED ValueError: Reference parity failure synthetic: {'AP': 0.03339239471181443, 'AP50': 7.105427357601002e-15, 'AP75': 1.7763568394002505e-14, 'AR1': 0.06296851574212559, 'AR10': 0.06296851574212559, 'AR100': 0.06296851574256834, 'AR500': 0.06296851574256834}
+Traceback (most recent call last):
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 311, in <module>
+    main()
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 250, in main
+    parity = [native_parity(job, args.toolkit, args.octave, synthetic_cases(), "synthetic")]
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 205, in native_parity
+    raise ValueError(f"Reference parity failure {name}: {dict(zip(KEYS, delta.tolist()))}")
+ValueError: Reference parity failure synthetic: {'AP': 0.03339239471181443, 'AP50': 7.105427357601002e-15, 'AP75': 1.7763568394002505e-14, 'AR1': 0.06296851574212559, 'AR10': 0.06296851574212559, 'AR100': 0.06296851574256834, 'AR500': 0.06296851574256834}

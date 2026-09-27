@@ -1,0 +1,28 @@
+RUNNING verify original validation annotations and prediction coverage
+RUNNING native MATLAB-code parity: synthetic boundary/ignore fixtures
+RUNNING native MATLAB-code parity: two original full-size validation images
+RUNNING evaluate/cache1/last images=548
+cache1 last 9.1186 20.3817 7.1366 22.2363 8.8044
+RUNNING evaluate/cache1/best images=548
+cache1 best 9.4065 20.8906 7.5036 22.2945 9.2781
+RUNNING evaluate/cache2/last images=548
+cache2 last 10.6568 23.6290 8.3528 24.2160 10.3244
+RUNNING evaluate/cache2/best images=548
+cache2 best 10.7025 23.6397 8.4385 24.2687 10.4061
+RUNNING evaluate/mix25/last images=548
+mix25 last 11.3526 24.5600 9.1624 24.5009 11.2540
+RUNNING evaluate/mix25/best images=548
+mix25 best 11.3878 24.5839 9.1635 24.5401 11.2933
+RUNNING evaluate/transport25/last images=548
+transport25 last 9.6350 20.9255 7.9773 21.8929 9.5717
+RUNNING evaluate/transport25/best images=548
+transport25 best 9.6019 20.8466 7.8775 21.7519 9.5399
+RUNNING evaluate/correct25/last images=548
+correct25 last 9.7656 21.1736 7.9369 22.1878 9.7314
+RUNNING evaluate/correct25/best images=548
+correct25 best 9.7867 21.1914 7.9808 22.2391 9.7540
+RUNNING evaluate/online-geom/last images=548
+online-geom last 11.3982 24.5792 9.2883 25.0183 11.2361
+RUNNING evaluate/online-geom/best images=548
+online-geom best 11.2903 24.3648 9.1573 24.6667 11.2212
+SUCCEEDED

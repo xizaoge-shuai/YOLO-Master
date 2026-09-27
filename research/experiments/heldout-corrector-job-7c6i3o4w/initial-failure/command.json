@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "online_experiments/diagnose_full_corrector.py",
+    "--source-job",
+    "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+    "--output",
+    "/data/users/zhjia/YOLO-Master/runs/paper/heldout-corrector/job-z1m6vokw",
+    "--batch",
+    "4"
+  ],
+  "CUDA_VISIBLE_DEVICES": "0",
+  "batch": 4,
+  "concurrent_gpu_process": "rec environment already present; no cost benchmark claim",
+  "gpu1_probe": "CUDA busy or unavailable; not used",
+  "source_sha256": "d41f72b89e923b4b926423dc89fbd35932925fddd0fd059dcbd3dcc1046456dd"
+}

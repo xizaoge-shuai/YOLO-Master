@@ -1,0 +1,13 @@
+RUNNING verify original validation annotations and prediction coverage
+RUNNING native MATLAB-code parity: synthetic boundary/ignore fixtures
+FAILED CalledProcessError: Command '['/data/users/zhjia/.cache/yolo-master-eval/octave/bin/octave-cli', '--quiet', '--no-history', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity/reference_runner.m', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/official-toolkit/utils', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity/synthetic-input.mat', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity/synthetic-reference.mat']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 283, in <module>
+    main()
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 222, in main
+    parity = [native_parity(job, args.toolkit, args.octave, synthetic_cases(), "synthetic")]
+  File "/data/users/zhjia/YOLO-Master/online_experiments/run_visdrone_reference_eval.py", line 153, in native_parity
+    subprocess.run(
+  File "/data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/data/users/zhjia/.cache/yolo-master-eval/octave/bin/octave-cli', '--quiet', '--no-history', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity/reference_runner.m', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/official-toolkit/utils', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity/synthetic-input.mat', '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927/parity/synthetic-reference.mat']' returned non-zero exit status 1.

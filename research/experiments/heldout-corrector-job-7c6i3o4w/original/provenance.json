@@ -1,0 +1,61 @@
+{
+  "source_job": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+  "seed": 0,
+  "images": 548,
+  "batch": 4,
+  "loss_aggregation": "image-count-weighted mean of batch target-score-normalized E2EDetectLoss components; identical batches and order across methods",
+  "head_method": "online-geom",
+  "head_checkpoint": "last epoch100",
+  "head_sha256": "06235dc23ef0289e9dd0f49a61cbe567a3904cc344e93c4f0a3dc65174b66ac9",
+  "corrector_sha256": "3282912f98218ce576044430f828b4035253e4c4ec1cfc6622d2c3180e688d43",
+  "source_sha256": "d41f72b89e923b4b926423dc89fbd35932925fddd0fd059dcbd3dcc1046456dd",
+  "manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+  "mask": "max per-box fractional cell overlap; background is valid image-content weight minus foreground",
+  "mask_boxes": "all positive-area visible transformed YOLO boxes, independent of the >=1 pixel/10% retained-area detection-loss filter",
+  "layer_aggregation": "mean of per-layer relative errors within each image; then equal image weights",
+  "targets": "same frozen YOLO-format validation targets as the training diagnostic; not official AP",
+  "training_updates": 0,
+  "test_dev_used": false,
+  "transform_cases": [
+    [
+      false,
+      1.0
+    ],
+    [
+      false,
+      0.85
+    ],
+    [
+      false,
+      1.15
+    ],
+    [
+      false,
+      0.75
+    ],
+    [
+      false,
+      1.25
+    ],
+    [
+      true,
+      1.0
+    ],
+    [
+      true,
+      0.85
+    ],
+    [
+      true,
+      1.15
+    ],
+    [
+      true,
+      0.75
+    ],
+    [
+      true,
+      1.25
+    ]
+  ]
+}
