@@ -130,3 +130,10 @@ claim that their weights/predictions have been independently re-evaluated.
 - Run: runs/paper/heldout-corrector/job-7c6i3o4w; [protocol](../online_experiments/HELDOUT_CORRECTOR.md), [evidence](experiments/heldout-corrector-job-7c6i3o4w/README.md).
 - Full548 validation, final100epoch corrector and one frozen Online head, 10 augmentations, no updates. Separate foreground masks preserve all visible box fragments while loss keeps original target filtering. Four targeted tests and review pass.
 - First start job-z1m6vokw failed before evaluation: missing HF_HOME. Retry inherits original offline cache. GPU1 CUDA unavailable; using GPU0 batch4. Diagnostic time is not an efficiency benchmark.
+
+## 2026-09-27: frozen validation diagnostic completed
+
+- [Results and analysis](experiments/heldout-corrector-job-7c6i3o4w/analysis-report.md): 548 images, 5480 teacher-image evaluations, 10960 paired rows, 20 condition summaries; 136.69 seconds; source/per-image hashes verified; no updates.
+- Nonidentity scales reduce foreground relative MSE by 10-13%, background by 15-19%, and fixed-head loss by 4-16% versus Transport. These are one-seed validation diagnostics, not AP improvements or cross-dataset transfer.
+- Scale1 exact anchors are unnecessarily changed: foreground relative MSE ~0 -> 0.00710 and mean loss ratio ~1 -> 1.00253. Identity-preserving behavior is a concrete candidate ablation, not an established AP fix.
+- Current method remains unfinished. Preserve C2/Mix/Transport controls and matched queries; next finite variants can test exact-anchor preservation and foreground/task supervision. Do not launch an unrestricted parameter sweep.

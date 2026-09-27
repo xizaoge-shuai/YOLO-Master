@@ -8,3 +8,7 @@ Source run: /data/users/zhjia/YOLO-Master/runs/paper/heldout-corrector/job-7c6i3
 - Review found target-filter leakage into masks; fixed before execution with two failing-then-passing tests. Four feature-metric tests pass; scoped Ruff passes. Second read-only review found no remaining actionable defects.
 - GPU1 basic CUDA allocation failed as busy/unavailable. GPU0 used. First start failed before teacher evaluation because HF_HOME was omitted; logs preserved. Retry uses original training cache at ~/cache/huggingface, fully offline.
 - Current job was launched successfully; final completion/results are recorded separately when available.
+
+## Completion
+
+SUCCEEDED. See [analysis and results](analysis-report.md). All coverage and source/checkpoint integrity checks passed; no training updates. Initial failure is retained.

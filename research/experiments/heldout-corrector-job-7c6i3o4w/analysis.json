@@ -1,0 +1,153 @@
+{
+  "aggregation": "equal average across two flip conditions; relative reduction from averaged condition means",
+  "identity_relative_MSE_reduction": null,
+  "identity_note": "near-zero denominator: use absolute differences, not relative percentages",
+  "groups": [
+    {
+      "scale": 1.0,
+      "foreground_relative_mse": {
+        "Transport": 2.948350276617722e-10,
+        "Rec": 0.007095628490256839,
+        "delta": 0.007095628195421811,
+        "reduction_percent": null
+      },
+      "background_relative_mse": {
+        "Transport": 3.1921124961172433e-10,
+        "Rec": 0.005526563149201061,
+        "delta": 0.005526562829989812,
+        "reduction_percent": null
+      },
+      "frozen_head_loss": {
+        "Transport": 7.247913409323587,
+        "Rec": 7.26627313220588,
+        "delta": 0.018359722882292928,
+        "reduction_percent": -0.2533104611690762
+      },
+      "head_loss_ratio": {
+        "Transport": 0.999997776700452,
+        "Rec": 1.0025307291508487,
+        "delta": 0.0025329524503967527,
+        "reduction_percent": -0.25329580819213326
+      }
+    },
+    {
+      "scale": 0.85,
+      "foreground_relative_mse": {
+        "Transport": 0.0887874672687873,
+        "Rec": 0.07955709059888139,
+        "delta": -0.009230376669905921,
+        "reduction_percent": 10.396035559796623
+      },
+      "background_relative_mse": {
+        "Transport": 0.06834594690107226,
+        "Rec": 0.05783901545117154,
+        "delta": -0.010506931449900725,
+        "reduction_percent": 15.373159530745905
+      },
+      "frozen_head_loss": {
+        "Transport": 10.508675590918882,
+        "Rec": 9.574778661240627,
+        "delta": -0.9338969296782551,
+        "reduction_percent": 8.886913689535591
+      },
+      "head_loss_ratio": {
+        "Transport": 1.3862657854302416,
+        "Rec": 1.2630696625063593,
+        "delta": -0.12319612292388227,
+        "reduction_percent": 8.8869049657492
+      }
+    },
+    {
+      "scale": 1.15,
+      "foreground_relative_mse": {
+        "Transport": 0.1036625477709692,
+        "Rec": 0.09303935545829743,
+        "delta": -0.010623192312671767,
+        "reduction_percent": 10.247859560757199
+      },
+      "background_relative_mse": {
+        "Transport": 0.07517097760309123,
+        "Rec": 0.06406966278526632,
+        "delta": -0.011101314817824906,
+        "reduction_percent": 14.768086263877978
+      },
+      "frozen_head_loss": {
+        "Transport": 10.058968684969157,
+        "Rec": 9.618753970974552,
+        "delta": -0.4402147139946049,
+        "reduction_percent": 4.37634043589783
+      },
+      "head_loss_ratio": {
+        "Transport": 1.4223575209429993,
+        "Rec": 1.360110337997853,
+        "delta": -0.06224718294514631,
+        "reduction_percent": 4.376338721355899
+      }
+    },
+    {
+      "scale": 0.75,
+      "foreground_relative_mse": {
+        "Transport": 0.10222742168364227,
+        "Rec": 0.08898632920748235,
+        "delta": -0.013241092476159913,
+        "reduction_percent": 12.952583815658002
+      },
+      "background_relative_mse": {
+        "Transport": 0.0876555576752826,
+        "Rec": 0.07143058841073673,
+        "delta": -0.016224969264545877,
+        "reduction_percent": 18.509915052563798
+      },
+      "frozen_head_loss": {
+        "Transport": 12.15527279359581,
+        "Rec": 10.177239247482188,
+        "delta": -1.9780335461136218,
+        "reduction_percent": 16.273049397589656
+      },
+      "head_loss_ratio": {
+        "Transport": 1.533803888173568,
+        "Rec": 1.284207975287794,
+        "delta": -0.2495959128857741,
+        "reduction_percent": 16.27300040183034
+      }
+    },
+    {
+      "scale": 1.25,
+      "foreground_relative_mse": {
+        "Transport": 0.11802009876744951,
+        "Rec": 0.10312239048773664,
+        "delta": -0.014897708279712873,
+        "reduction_percent": 12.623026446595153
+      },
+      "background_relative_mse": {
+        "Transport": 0.08803503965979348,
+        "Rec": 0.07101799527391646,
+        "delta": -0.01701704438587702,
+        "reduction_percent": 19.329853716927303
+      },
+      "frozen_head_loss": {
+        "Transport": 10.541152002167529,
+        "Rec": 9.974124099216322,
+        "delta": -0.5670279029512066,
+        "reduction_percent": 5.379183440620261
+      },
+      "head_loss_ratio": {
+        "Transport": 1.5142288551591374,
+        "Rec": 1.4327757216995953,
+        "delta": -0.08145313345954208,
+        "reduction_percent": 5.379182491604406
+      }
+    }
+  ],
+  "checks": {
+    "unique_image_ids": 548,
+    "unique_feature_rows": 10960,
+    "teacher_images": 5480,
+    "summary_conditions": 20,
+    "per_image_hash_pass": true,
+    "source_hash_pass": true,
+    "updates": 0,
+    "batch": 4
+  },
+  "evidence_scope": "one trained seed, validation mechanism development; no AP or significance claim"
+}
