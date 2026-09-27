@@ -1,0 +1,58 @@
+{
+  "identity": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "teacher_dtype": "fp32",
+  "cache_dtype": "fp16",
+  "setup_seconds": 5.937924052588642,
+  "parts": {
+    "train-v0": {
+      "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/cache/train-v0.npy",
+      "bytes": 23854694528,
+      "sha256": "9350e5bf247cb9612750c35b49190c63ba559eb557906b34c210b4ab80029dda",
+      "seconds": 144.4031515205279,
+      "images": 6471,
+      "extra_parity_images": 1
+    },
+    "train-v1": {
+      "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/cache/train-v1.npy",
+      "bytes": 23854694528,
+      "sha256": "a07a217d8e2281ccf4c9f82725b49b75b330b6eb83fb535cb455b3d9167fd71e",
+      "seconds": 142.9435338359326,
+      "images": 6471,
+      "extra_parity_images": 1
+    },
+    "val-v0": {
+      "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/cache/val-v0.npy",
+      "bytes": 2020147328,
+      "sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+      "seconds": 10.27102983277291,
+      "images": 548,
+      "extra_parity_images": 1
+    }
+  },
+  "parity": [
+    {
+      "part": "train-v0",
+      "relative_L2": 0.0002052829513559118
+    },
+    {
+      "part": "train-v1",
+      "relative_L2": 0.00020196897094137967
+    },
+    {
+      "part": "val-v0",
+      "relative_L2": 0.00020351295825093985
+    }
+  ],
+  "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+  "wall_seconds": 303.5879563363269
+}

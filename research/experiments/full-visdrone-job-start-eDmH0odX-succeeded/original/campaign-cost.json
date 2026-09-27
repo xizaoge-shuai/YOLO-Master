@@ -1,0 +1,12 @@
+{
+  "attempts": [
+    {
+      "start_unix": 1790422282.4122658,
+      "end_unix": 1790478474.020287,
+      "wall_seconds": 56191.60802221298,
+      "status": "SUCCEEDED"
+    }
+  ],
+  "actual_campaign_wall_seconds": 56191.60802221298,
+  "note": "Actual campaign includes prepare/cache/profiles/training and failed attempts; excludes Git archival and downtime. Per-run charged build costs are separate, not summed here."
+}

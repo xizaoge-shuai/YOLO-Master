@@ -110,3 +110,9 @@ claim that their weights/predictions have been independently re-evaluated.
 - Added PAPER_EXPERIMENT_DISPLAY_PLAN_20260926.md plus figure, experiment-matrix and metric contracts: 4 main figures / 10 panels, 4 supplementary figures / 16 panels, and 3 main tables. Final method remains a hypothesis.
 - Prospective primary endpoints: final-budget dataset AP and first-use total GPU-hours including cache construction. Best AP remains secondary; official VisDrone and COCO-style size metrics are distinguished.
 - Existing training source hashes verified unchanged. No additional GPU experiment started and no old results overwritten. Specification/schema checks pass. Required repository checks and their limitations are recorded in paper_display_validation_20260926.json.
+
+## Full VisDrone: job-start-eDmH0odX
+
+- Status: SUCCEEDED
+- Evidence: [archive](experiments/full-visdrone-job-start-eDmH0odX-succeeded/README.md)
+- Diagnostic AP only; official ignored-region evaluation pending. No test-dev tuning.

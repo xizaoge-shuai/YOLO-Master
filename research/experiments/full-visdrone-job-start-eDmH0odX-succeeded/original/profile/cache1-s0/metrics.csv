@@ -1,0 +1,2 @@
+epoch,train_loss,val_loss,map50,map50_95,train_seconds,val_seconds,peak_vram_gib,lr,query_images,correction_seconds,reconstruction_loss
+1,10.323114631239,9.129258155822754,0.05817722356694991,0.023531856323031484,47.81623419187963,5.401350782252848,2.5163140296936035,0.001,0,0.0,0.0

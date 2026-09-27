@@ -1,0 +1,4 @@
+{
+  "estimated_training_validation_hours": 14.536010110233393,
+  "basis": "six full-split one-epoch profiles x100; excludes checkpoint I/O variation"
+}

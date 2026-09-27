@@ -1,0 +1,53 @@
+{
+  "method": "cache1",
+  "seed": 0,
+  "epochs": 1,
+  "batch": 8,
+  "train_images": 6471,
+  "val_images": 548,
+  "imgsz": 640,
+  "max_det": 500,
+  "conf": 0.001,
+  "cache_identity": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "fusion": "mean_value",
+  "lr": 0.001,
+  "weight_decay": 0.0005,
+  "aux_weight": 0,
+  "query_pct": 0,
+  "budget_unit": "image, including tail batches",
+  "evaluator": "custom DetMetrics; ignored regions NOT handled; NOT official VisDrone AP",
+  "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+  "cache_manifest_sha256": "394efa2d1c3684c45e1b149c89f5ea41a0c95a1e8c832d029b56ff5ee5907f20",
+  "completed_epochs": 1,
+  "best_AP": 2.3531856323031484,
+  "best_epoch": 1,
+  "last_AP": 2.3531856323031484,
+  "train_seconds": 47.81623419187963,
+  "val_seconds": 5.401350782252848,
+  "wall_seconds": 54.40873755700886,
+  "setup_seconds_this_process": 0.5133401164785028,
+  "peak_host_rss_mib": 25714.1953125,
+  "host_io_read_blocks": 17099792,
+  "host_io_write_blocks": 98528,
+  "cache_build_charged_seconds": 160.61210540588945,
+  "data_prepare_charged_seconds": 9.724290873855352,
+  "build_plus_wall_seconds": 224.74513383675367,
+  "cache_bytes": 25874841856,
+  "query_images": 0,
+  "query_calls": 0,
+  "correction_seconds": 0.0,
+  "peak_vram_gib": 2.5163140296936035,
+  "schedule_sha256": {
+    "001.json": "1d163d89f54294627c09a731da96f6a9735278c510956825a341220b3551a3cf"
+  }
+}

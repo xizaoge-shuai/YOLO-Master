@@ -1,0 +1,31 @@
+{
+  "method": "cache1",
+  "seed": 0,
+  "epochs": 100,
+  "batch": 8,
+  "train_images": 6471,
+  "val_images": 548,
+  "imgsz": 640,
+  "max_det": 500,
+  "conf": 0.001,
+  "cache_identity": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "fusion": "mean_value",
+  "lr": 0.001,
+  "weight_decay": 0.0005,
+  "aux_weight": 0,
+  "query_pct": 0,
+  "budget_unit": "image, including tail batches",
+  "evaluator": "custom DetMetrics; ignored regions NOT handled; NOT official VisDrone AP",
+  "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+  "cache_manifest_sha256": "394efa2d1c3684c45e1b149c89f5ea41a0c95a1e8c832d029b56ff5ee5907f20"
+}
