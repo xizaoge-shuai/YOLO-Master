@@ -10,6 +10,8 @@ import torch
 from online_experiments.budget_corrector import (
     ConditionalCorrector,
     correction_loss,
+    foreground_correction_loss,
+    identity_gate,
     patch_pilot,
     query_batches,
 )
@@ -63,3 +65,62 @@ def test_global_rng_unaffected_by_query_schedule():
     state = random.getstate()
     query_batches(50, 25, 5, 0)
     assert state == random.getstate()
+
+
+
+def test_identity_gate_preserves_both_c2_anchors():
+    model = ConditionalCorrector(channels=8, rank=4, seed=3, use_identity_gate=True)
+
+    # Force a nonzero residual so equality genuinely comes from the gate.
+    with torch.no_grad():
+        model.net[-1].bias.fill_(1.0)
+
+    source = tuple(torch.randn(2, 8, 5, 5) for _ in range(3))
+    output = model(source, [1.0, 1.0], [False, True])
+
+    assert all(torch.equal(x, y) for x, y in zip(source, output))
+
+    g = identity_gate([1.0, 0.85, 1.15], device=torch.device("cpu"), dtype=torch.float32)
+    assert g[0].item() == 0.0
+    assert torch.isclose(g[1], torch.tensor(1.0), atol=1e-6)
+    assert torch.isclose(g[2], torch.tensor(1.0), atol=1e-6)
+
+
+def test_identity_gated_corrector_has_gradient_away_from_anchor():
+    model = ConditionalCorrector(channels=8, rank=4, seed=5, use_identity_gate=True)
+    source = tuple(torch.randn(2, 8, 5, 5) for _ in range(3))
+    target = tuple(x + 0.3 for x in source)
+
+    loss = correction_loss(model(source, [0.9, 1.1], [False, True]), target)
+    loss.backward()
+
+    assert any(
+        p.grad is not None and torch.isfinite(p.grad).all() and p.grad.abs().sum() > 0
+        for p in model.parameters()
+    )
+
+
+def test_foreground_loss_empty_region_falls_back_to_global():
+    source = tuple(torch.randn(2, 8, 5, 5) for _ in range(3))
+    target = tuple(x + 0.2 for x in source)
+    empty = [torch.empty((0, 4)), torch.empty((0, 4))]
+
+    combined, global_loss, foreground_loss = foreground_correction_loss(source, target, empty)
+
+    expected = correction_loss(source, target)
+    assert torch.allclose(global_loss, expected, atol=1e-7, rtol=1e-6)
+    assert torch.allclose(foreground_loss, expected, atol=1e-7, rtol=1e-6)
+    assert torch.allclose(combined, expected, atol=1e-7, rtol=1e-6)
+
+
+def test_foreground_loss_uses_fractional_box_weights():
+    prediction = (torch.zeros(1, 4, 4, 4),) * 3
+    target = tuple(torch.ones(1, 4, 4, 4) for _ in range(3))
+    boxes = [torch.tensor([[0.5, 0.5, 0.10, 0.10]], dtype=torch.float32)]
+
+    combined, global_loss, foreground_loss = foreground_correction_loss(prediction, target, boxes)
+
+    assert torch.isfinite(combined)
+    assert torch.isfinite(global_loss)
+    assert torch.isfinite(foreground_loss)
+    assert combined.requires_grad is False

@@ -1,0 +1,41 @@
+{
+  "epochs": 100,
+  "threads": 4,
+  "corrector_rank": 64,
+  "corrector_lr": 0.001,
+  "gpu_uuid": "GPU-02d1df45-7f76-285a-1162-9ed27d60448d",
+  "cases": [
+    "c2-idgate-p25",
+    "c2-idfg-p25"
+  ],
+  "tasks": [
+    [
+      "c2-idgate-p25",
+      0
+    ],
+    [
+      "c2-idfg-p25",
+      0
+    ],
+    [
+      "c2-idgate-p25",
+      1
+    ],
+    [
+      "c2-idfg-p25",
+      1
+    ],
+    [
+      "c2-idgate-p25",
+      2
+    ],
+    [
+      "c2-idfg-p25",
+      2
+    ]
+  ],
+  "smoke_only": false,
+  "candidate_only": true,
+  "schema_version": 2,
+  "note": "Identity-preserving candidate pilot; idfg uses fixed 0.5 global/0.5 foreground objective"
+}

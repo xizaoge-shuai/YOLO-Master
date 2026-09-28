@@ -137,3 +137,8 @@ claim that their weights/predictions have been independently re-evaluated.
 - Nonidentity scales reduce foreground relative MSE by 10-13%, background by 15-19%, and fixed-head loss by 4-16% versus Transport. These are one-seed validation diagnostics, not AP improvements or cross-dataset transfer.
 - Scale1 exact anchors are unnecessarily changed: foreground relative MSE ~0 -> 0.00710 and mean loss ratio ~1 -> 1.00253. Identity-preserving behavior is a concrete candidate ablation, not an established AP fix.
 - Current method remains unfinished. Preserve C2/Mix/Transport controls and matched queries; next finite variants can test exact-anchor preservation and foreground/task supervision. Do not launch an unrestricted parameter sweep.
+
+## 2026-09-28: recover completed candidate pilot
+
+- [Evidence](experiments/budget-corrector-candidate-job-start-LIz9kPc6/README.md). Six400/100 seed0/1/2 runs complete; all14 recorded source hashes verified. Gate final AP mean4.0630, gate+foreground4.2384; original Rec25 was4.2809. No gain claim.
+- Candidate code already present was preserved. Full-data factorial gate/foreground study follows with separate source provenance and visible-fragment masks.

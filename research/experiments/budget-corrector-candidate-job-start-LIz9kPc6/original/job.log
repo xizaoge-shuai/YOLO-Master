@@ -1,0 +1,32 @@
+START smoke-c2-idgate-p25-s0 (1/2) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/smoke-c2-idgate-p25-s0.log
+END smoke-c2-idgate-p25-s0 wall_s=8.2
+START smoke-c2-idfg-p25-s0 (2/2) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/smoke-c2-idfg-p25-s0.log
+END smoke-c2-idfg-p25-s0 wall_s=8.3
+START train-c2-idgate-p25-s0 (1/6) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/train-c2-idgate-p25-s0.log
+END train-c2-idgate-p25-s0 wall_s=514.1
+START train-c2-idfg-p25-s0 (2/6) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/train-c2-idfg-p25-s0.log
+END train-c2-idfg-p25-s0 wall_s=510.4
+START train-c2-idgate-p25-s1 (3/6) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/train-c2-idgate-p25-s1.log
+END train-c2-idgate-p25-s1 wall_s=500.0
+START train-c2-idfg-p25-s1 (4/6) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/train-c2-idfg-p25-s1.log
+END train-c2-idfg-p25-s1 wall_s=515.0
+START train-c2-idgate-p25-s2 (5/6) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/train-c2-idgate-p25-s2.log
+END train-c2-idgate-p25-s2 wall_s=511.0
+START train-c2-idfg-p25-s2 (6/6) log=/data/users/zhjia/YOLO-Master/runs/paper/budget-corrector-candidate/job-start-LIz9kPc6/train-c2-idfg-p25-s2.log
+END train-c2-idfg-p25-s2 wall_s=512.0
+AP: 0-100. 400/100 pilot; original cached validation; not official benchmark.
+Fresh query images/transformations paired across arms; reconstruction-only corrector.
+C2 training-cache build charged once/run; reused in practice; validation build excluded.
+method seed best_AP last_AP best_epoch online_pct query_images train_s correction_s build+wall_s VRAM_GiB
+c2-idgate-p25 0 4.3329 3.9610 67 25.00 10000 442.5 12.1 543.5 5.020
+c2-idgate-p25 1 4.1540 3.9172 51 25.00 10000 428.3 10.5 529.4 5.025
+c2-idgate-p25 2 4.6602 4.3108 68 25.00 10000 438.9 11.5 540.4 5.022
+c2-idfg-p25 0 3.9739 3.8598 84 25.00 10000 438.9 21.4 539.8 5.020
+c2-idfg-p25 1 4.4291 4.2938 96 25.00 10000 443.3 21.5 544.4 5.025
+c2-idfg-p25 2 4.6892 4.5617 72 25.00 10000 440.3 21.3 541.3 5.022
+
+method n best_AP_mean sample_sd last_AP_mean train_s_mean build+wall_s_mean
+c2-idgate-p25 3 4.3824 0.2567 4.0630 436.5 537.8
+c2-idfg-p25 3 4.3641 0.3621 4.2384 440.8 541.8
+
+Paired differences (correct minus baseline); positive AP means improvement.
