@@ -1,0 +1,5 @@
+{
+  "original_vs_adapter": "exact state equality",
+  "continuous_vs_resumed": "exact state equality",
+  "paired_schedules": "all seven cases match"
+}

@@ -142,3 +142,8 @@ claim that their weights/predictions have been independently re-evaluated.
 
 - [Evidence](experiments/budget-corrector-candidate-job-start-LIz9kPc6/README.md). Six400/100 seed0/1/2 runs complete; all14 recorded source hashes verified. Gate final AP mean4.0630, gate+foreground4.2384; original Rec25 was4.2809. No gain claim.
 - Candidate code already present was preserved. Full-data factorial gate/foreground study follows with separate source provenance and visible-fragment masks.
+
+## Correction ablation job-smoke-ibKknuJd: succeeded
+
+- [Evidence](experiments/correction-ablation-job-smoke-ibKknuJd/succeeded/README.md).
+- Fixed gate/foreground factors, paired query schedules; no test-dev or stable-advantage claim.

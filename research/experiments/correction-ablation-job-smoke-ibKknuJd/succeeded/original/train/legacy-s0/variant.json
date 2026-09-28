@@ -1,0 +1,12 @@
+{
+  "variant": "rec25",
+  "gate": false,
+  "foreground": false,
+  "gate_normalizer": "abs(log(1.15)); inherited candidate pilot, no tuning",
+  "foreground_weight": 0.5,
+  "foreground_boxes": "all positive-area visible transformed TRAINING boxes",
+  "legacy_control": true,
+  "extra_teacher_queries": 0,
+  "task_gradient": false,
+  "source_snapshot_sha256": "bb0da5545d6f21bac5ecc35e97f4db7d531295ad445bae2e0ec2081818af6067"
+}

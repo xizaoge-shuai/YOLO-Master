@@ -1,0 +1,9 @@
+{
+  "seconds": 0.2965219896286726,
+  "cache_sha256": {
+    "train-v0": "a92052f4231f4aabb7450070b3442e0c0924e9670d76cf5c178ce31e003e82c0",
+    "train-v1": "948deaea29091147790de608a26a20c37d14ad6f4b921b75330955e57c0a7507",
+    "val-v0": "76e3641388de1610c1a1958780fca39bf78d0da4accf16af8abcfa93d352fece"
+  },
+  "raw_images": 25
+}

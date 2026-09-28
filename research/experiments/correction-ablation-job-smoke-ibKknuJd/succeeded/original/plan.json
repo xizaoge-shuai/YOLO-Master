@@ -1,0 +1,18 @@
+{
+  "source_job": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-smoke-2TKOvomC",
+  "smoke": true,
+  "methods": [
+    "gate25",
+    "fg25",
+    "gatefg25"
+  ],
+  "seed": 0,
+  "epochs": 2,
+  "batch": 8,
+  "query_percent": 25,
+  "actual_new_cache_build_seconds": 0,
+  "primary": "final reference AP",
+  "test_dev_used": false,
+  "source_dataset_sha256": "d2ff1c5dca79daff94ee773610ef7823c1d157ffebf41284fb6c1ca95cad8a0c",
+  "source_cache_manifest_sha256": "1a973ef2ef1625844cce5e74dfe12c15a307e694b4af2f0213de269b4e1e798d"
+}

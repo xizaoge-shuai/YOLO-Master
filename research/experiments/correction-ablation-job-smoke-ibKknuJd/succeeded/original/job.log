@@ -1,0 +1,16 @@
+RUNNING verify source, cache and raw inputs
+INTEGRITY PASS images=25 seconds=0.3
+RUNNING legacy epochs=2
+END legacy custom_last_AP=0.0000
+RUNNING rec25 epochs=2
+END rec25 custom_last_AP=0.0000
+RUNNING gate25 epochs=2
+END gate25 custom_last_AP=0.0000
+RUNNING fg25 epochs=2
+END fg25 custom_last_AP=0.0000
+RUNNING gatefg25 epochs=2
+END gatefg25 custom_last_AP=0.0000
+RUNNING resume epochs=2
+RUNNING resume epochs=2
+END resume custom_last_AP=0.0000
+SUCCEEDED

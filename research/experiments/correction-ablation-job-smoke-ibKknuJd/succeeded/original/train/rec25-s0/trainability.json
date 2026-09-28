@@ -1,0 +1,6 @@
+{
+  "head_trainable": 1291619,
+  "corrector_trainable": 50560,
+  "teacher_frozen": 21596544,
+  "note": "Offline has the same pretrained teacher; it is absent from the training process."
+}
