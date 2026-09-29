@@ -14,6 +14,7 @@ from online_experiments.budget_corrector import (
     identity_gate,
     patch_pilot,
     query_batches,
+    severity_query_batches,
 )
 
 
@@ -124,3 +125,42 @@ def test_foreground_loss_uses_fractional_box_weights():
     assert torch.isfinite(global_loss)
     assert torch.isfinite(foreground_loss)
     assert combined.requires_grad is False
+
+
+
+def test_scale_severity_query_policy_preserves_exact_budget_and_rng():
+    rng = random.Random(123456)
+    before = rng.getstate()
+
+    selected = severity_query_batches(
+        n_batches=50,
+        pct=25,
+        epoch=7,
+        seed=0,
+        aug_rng=rng,
+        batch_size=8,
+        scale_min=0.85,
+        scale_max=1.15,
+    )
+
+    # Policy inspection must not perturb the real augmentation RNG.
+    assert rng.getstate() == before
+
+    # Same exact query budget as the historical random Mix25.
+    random_selected = query_batches(50, 25, 7, 0)
+    assert len(selected) == len(random_selected)
+
+    # Reconstruct the batch severity ranking independently.
+    probe = random.Random()
+    probe.setstate(before)
+    scores = {}
+    for batch_index in range(50):
+        values = []
+        for _ in range(8):
+            probe.random()
+            scale = probe.uniform(0.85, 1.15)
+            values.append(abs(__import__("math").log(scale)))
+        scores[batch_index] = sum(values) / len(values)
+
+    unselected = set(scores) - selected
+    assert min(scores[i] for i in selected) >= max(scores[i] for i in unselected)

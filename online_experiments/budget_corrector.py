@@ -22,7 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 ARMS = ("mix", "transport", "correct")
 CASES = [f"c2-{arm}-p{pct}" for pct in (10, 25) for arm in ARMS]
 CANDIDATE_CASES = ("c2-idgate-p25", "c2-idfg-p25")
-ALL_CASES = tuple(CASES) + CANDIDATE_CASES
+ROUTING_CASES = ("c2-mixseverity-p25",)
+ALL_CASES = tuple(CASES) + CANDIDATE_CASES + ROUTING_CASES
 
 
 def query_batches(n, pct, epoch, seed):
@@ -38,6 +39,36 @@ def identity_gate(scales, *, device, dtype):
     values = torch.as_tensor(scales, device=device, dtype=dtype)
     denominator = abs(math.log(1.15))
     return (values.log().abs() / denominator).clamp_(0, 1)
+
+
+def severity_query_batches(
+    n_batches,
+    pct,
+    epoch,
+    seed,
+    aug_rng,
+    batch_size,
+    scale_min,
+    scale_max,
+):
+    """Spend the exact query budget on batches with the strongest scale perturbations."""
+    random_reference = query_batches(n_batches, pct, epoch, seed)
+    k = len(random_reference)
+
+    probe = random.Random()
+    probe.setstate(aug_rng.getstate())
+
+    scores = []
+    for batch_index in range(n_batches):
+        severity = []
+        for _ in range(batch_size):
+            probe.random()  # flip draw: mirror the real augmentation RNG
+            scale = probe.uniform(scale_min, scale_max)
+            severity.append(abs(math.log(scale)))
+        scores.append((sum(severity) / len(severity), batch_index))
+
+    scores.sort(key=lambda x: (-x[0], x[1]))
+    return {batch_index for _, batch_index in scores[:k]}
 
 
 class ConditionalCorrector(nn.Module):
@@ -141,7 +172,7 @@ class Batches:
     def __iter__(self):
         if self.training:
             indices = torch.randperm(len(train), generator=generator).tolist()
-            begin_epoch(epoch - 1, len(indices), a.batch)
+            begin_epoch(epoch - 1, len(indices), a.batch, aug_rng)
             for start in range(0, len(indices), a.batch):
                 ids = indices[start:start+a.batch]
                 yield make_training_batch(train_bank, ids, d.collate_cached, aug_rng, extractor, start//a.batch)
@@ -230,12 +261,26 @@ class Runtime:
             self.optimizer = torch.optim.AdamW(self.corrector.parameters(), lr=self.a.corrector_lr, weight_decay=1e-4)
         return banks
 
-    def begin_epoch(self, epoch, n, batch):
+    def begin_epoch(self, epoch, n, batch, aug_rng):
         # A tail batch would make a batch quota differ from an image quota.
         if n % batch:
             raise ValueError("Pilot requires equal-sized batches for an exact image budget")
         self.epoch = epoch
-        self.queries = query_batches(n // batch, self.pct, epoch, self.a.seed)
+
+        if self.arm == "mixseverity":
+            self.queries = severity_query_batches(
+                n // batch,
+                self.pct,
+                epoch,
+                self.a.seed,
+                aug_rng,
+                batch,
+                self.cfg["scale_min"],
+                self.cfg["scale_max"],
+            )
+        else:
+            self.queries = query_batches(n // batch, self.pct, epoch, self.a.seed)
+
         self.epoch_losses, self.epoch_baselines, self.epoch_residuals = [], [], []
         self.epoch_global_losses, self.epoch_foreground_losses = [], []
 
@@ -250,6 +295,7 @@ class Runtime:
             flips.append(rng.random() < 0.5)
             scales.append(rng.uniform(self.cfg["scale_min"], self.cfg["scale_max"]))
         queried = batch_index in self.queries
+        is_mix = self.arm in ("mix", "mixseverity")
         record = [self.epoch, batch_index, [banks[0][i]["sample_id"] for i in ids], flips, scales, queried]
         payload = (json.dumps(record, separators=(",", ":")) + "\n").encode()
         self.digest.update(payload)
@@ -258,14 +304,14 @@ class Runtime:
         with (self.cfg["output"] / "schedule.jsonl").open("ab") as stream:
             stream.write(payload)
         items = [dict(banks[int(flip)][i]) for i, flip in zip(ids, flips)]
-        if queried or self.arm != "mix":
+        if queried or not is_mix:
             for item, scale in zip(items, scales):
                 item["cls"], item["bboxes"] = transform_targets(
                     item["cls"], item["bboxes"], False, scale, int(self.meta["identity"]["imgsz"])
                 )
         batch = collate(items)
         transported = None
-        if self.arm != "mix":
+        if not is_mix:
             transported = tuple(warp_features(x, [False] * len(ids), scales) for x in batch["features"])
         if queried:
             images = []
@@ -440,7 +486,8 @@ def worker(a):
                 source_hashes=provenance["sources"],
                 cpu_threads=a.threads,
                 visible_gpu=os.environ.get("CUDA_VISIBLE_DEVICES"),
-                augmentation_policy="same flip/scale proposals and queries; mix uses anchor on nonqueries",
+                augmentation_policy="same flip/scale proposals; mix-style methods use anchor on nonqueries",
+                query_policy="scale_severity" if runtime.arm == "mixseverity" else "random",
             )
             if name == "args.json":
                 if value["cache_identity"] != meta["identity"]:
@@ -649,7 +696,15 @@ def campaign(a):
         OMP_NUM_THREADS=str(a.threads),
         MKL_NUM_THREADS=str(a.threads),
     )
-    selected_cases = CANDIDATE_CASES if a.candidate_only else tuple(CASES)
+    if a.candidate_only and a.routing_only:
+        raise ValueError("--candidate-only and --routing-only are mutually exclusive")
+    selected_cases = (
+        ROUTING_CASES
+        if a.routing_only
+        else CANDIDATE_CASES
+        if a.candidate_only
+        else tuple(CASES)
+    )
     tasks = []
     for seed in (0, 1, 2):
         cases = list(selected_cases)
@@ -667,6 +722,7 @@ def campaign(a):
             "tasks": tasks,
             "smoke_only": a.smoke_only,
             "candidate_only": a.candidate_only,
+            "routing_only": a.routing_only,
             "schema_version": 2 if a.candidate_only else 1,
             "note": (
                 "Identity-preserving candidate pilot; idfg uses fixed 0.5 global/0.5 foreground objective"
@@ -748,6 +804,11 @@ def main():
         "--candidate-only",
         action="store_true",
         help="Run only c2-idgate-p25 and c2-idfg-p25; legacy default remains unchanged.",
+    )
+    p.add_argument(
+        "--routing-only",
+        action="store_true",
+        help="Run only the fixed-budget scale-severity Mix25 routing candidate.",
     )
     a = p.parse_args()
     a.job = a.job.resolve()
