@@ -23,7 +23,8 @@ ARMS = ("mix", "transport", "correct")
 CASES = [f"c2-{arm}-p{pct}" for pct in (10, 25) for arm in ARMS]
 CANDIDATE_CASES = ("c2-idgate-p25", "c2-idfg-p25")
 ROUTING_CASES = ("c2-mixseverity-p25",)
-ALL_CASES = tuple(CASES) + CANDIDATE_CASES + ROUTING_CASES
+LOSS_ROUTING_CASES = ("c2-mixloss-p25",)
+ALL_CASES = tuple(CASES) + CANDIDATE_CASES + ROUTING_CASES + LOSS_ROUTING_CASES
 
 
 def query_batches(n, pct, epoch, seed):
@@ -69,6 +70,17 @@ def severity_query_batches(
 
     scores.sort(key=lambda x: (-x[0], x[1]))
     return {batch_index for _, batch_index in scores[:k]}
+
+
+def topk_query_batches(scores, k):
+    """Return deterministic highest-score batch indices."""
+    if k < 0 or k > len(scores):
+        raise ValueError("Invalid top-k query budget")
+    order = sorted(
+        range(len(scores)),
+        key=lambda i: (-float(scores[i]), i),
+    )
+    return set(order[:k])
 
 
 class ConditionalCorrector(nn.Module):
@@ -172,7 +184,15 @@ class Batches:
     def __iter__(self):
         if self.training:
             indices = torch.randperm(len(train), generator=generator).tolist()
-            begin_epoch(epoch - 1, len(indices), a.batch, aug_rng)
+            begin_epoch(
+                epoch - 1,
+                indices,
+                a.batch,
+                aug_rng,
+                train_bank,
+                model,
+                criterion,
+            )
             for start in range(0, len(indices), a.batch):
                 ids = indices[start:start+a.batch]
                 yield make_training_batch(train_bank, ids, d.collate_cached, aug_rng, extractor, start//a.batch)
@@ -224,6 +244,14 @@ class Runtime:
         self.epoch_foreground_losses = []
         self.dataset = None
 
+        self.routing_score_seconds = 0.0
+        self.routing_score_forwards = 0
+        self.routing_score_images = 0
+
+        self.routing_score_mean = None
+        self.routing_selected_mean = None
+        self.routing_unselected_mean = None
+
     def cached_bank(self, dataset, device):
         from online_experiments.feature_baselines import sha
 
@@ -261,11 +289,226 @@ class Runtime:
             self.optimizer = torch.optim.AdamW(self.corrector.parameters(), lr=self.a.corrector_lr, weight_decay=1e-4)
         return banks
 
-    def begin_epoch(self, epoch, n, batch, aug_rng):
-        # A tail batch would make a batch quota differ from an image quota.
+    def _loss_guided_queries(
+        self,
+        epoch,
+        indices,
+        batch,
+        aug_rng,
+        banks,
+        model,
+        criterion,
+    ):
+        """Score all candidate batches with cheap Transport detector loss."""
+        from online_experiments.feature_baselines import transform_targets, warp_features
+        from scripts import d1_train_cached_detector as d
+
+        n = len(indices)
+        n_batches = n // batch
+
+        # Exact same cumulative query budget as historical Random Mix25.
+        k = len(
+            query_batches(
+                n_batches,
+                self.pct,
+                epoch,
+                self.a.seed,
+            )
+        )
+
+        # Probe a CLONE of augmentation RNG.
+        # The actual training augmentation stream is therefore unchanged.
+        probe = random.Random()
+        probe.setstate(
+            aug_rng.getstate()
+        )
+
+        scores = []
+
+        was_training = model.training
+        model.eval()
+
+        torch.cuda.synchronize()
+        started = time.perf_counter()
+
+        try:
+            with torch.no_grad():
+                for start in range(
+                    0,
+                    n,
+                    batch,
+                ):
+                    ids = indices[
+                        start:start + batch
+                    ]
+
+                    flips = []
+                    scales = []
+
+                    for _ in ids:
+                        flips.append(
+                            probe.random() < 0.5
+                        )
+                        scales.append(
+                            probe.uniform(
+                                self.cfg["scale_min"],
+                                self.cfg["scale_max"],
+                            )
+                        )
+
+                    # C2 already contains real original/hflip anchors.
+                    items = [
+                        dict(
+                            banks[int(flip)][i]
+                        )
+                        for i, flip
+                        in zip(ids, flips)
+                    ]
+
+                    # Transport-score candidate uses the SAME scale proposal
+                    # that will later be used if the batch is queried.
+                    for item, scale in zip(
+                        items,
+                        scales,
+                    ):
+                        item["cls"], item["bboxes"] = transform_targets(
+                            item["cls"],
+                            item["bboxes"],
+                            False,
+                            scale,
+                            int(
+                                self.meta[
+                                    "identity"
+                                ][
+                                    "imgsz"
+                                ]
+                            ),
+                        )
+
+                    collated = d.collate_cached(
+                        items
+                    )
+
+                    transported = tuple(
+                        warp_features(
+                            x,
+                            [False] * len(ids),
+                            scales,
+                        )
+                        for x
+                        in collated["features"]
+                    )
+
+                    _, targets = d.move_batch(
+                        collated,
+                        transported[0].device,
+                    )
+
+                    # Match the Oracle diagnostic signal:
+                    # sum of frozen/current-head loss components.
+                    _, components = criterion(
+                        model.training_predictions(
+                            transported
+                        ),
+                        targets,
+                    )
+
+                    score = float(
+                        components
+                        .sum()
+                        .detach()
+                    )
+
+                    if not math.isfinite(score):
+                        raise RuntimeError(
+                            "Nonfinite routing score"
+                        )
+
+                    scores.append(score)
+
+        finally:
+            model.train(
+                was_training
+            )
+
+        torch.cuda.synchronize()
+        seconds = (
+            time.perf_counter()
+            - started
+        )
+
+        selected = topk_query_batches(
+            scores,
+            k,
+        )
+
+        self.routing_score_seconds += seconds
+        self.routing_score_forwards += len(
+            scores
+        )
+        self.routing_score_images += n
+
+        self.routing_score_mean = (
+            statistics.mean(scores)
+            if scores
+            else None
+        )
+
+        selected_scores = [
+            scores[i]
+            for i in selected
+        ]
+
+        unselected_scores = [
+            scores[i]
+            for i in range(
+                len(scores)
+            )
+            if i not in selected
+        ]
+
+        self.routing_selected_mean = (
+            statistics.mean(
+                selected_scores
+            )
+            if selected_scores
+            else None
+        )
+
+        self.routing_unselected_mean = (
+            statistics.mean(
+                unselected_scores
+            )
+            if unselected_scores
+            else None
+        )
+
+        return selected
+
+
+    def begin_epoch(
+        self,
+        epoch,
+        indices,
+        batch,
+        aug_rng,
+        banks,
+        model,
+        criterion,
+    ):
+        n = len(indices)
+
         if n % batch:
-            raise ValueError("Pilot requires equal-sized batches for an exact image budget")
+            raise ValueError(
+                "Pilot requires equal-sized batches "
+                "for an exact image budget"
+            )
+
         self.epoch = epoch
+
+        self.routing_score_mean = None
+        self.routing_selected_mean = None
+        self.routing_unselected_mean = None
 
         if self.arm == "mixseverity":
             self.queries = severity_query_batches(
@@ -278,11 +521,38 @@ class Runtime:
                 self.cfg["scale_min"],
                 self.cfg["scale_max"],
             )
-        else:
-            self.queries = query_batches(n // batch, self.pct, epoch, self.a.seed)
 
-        self.epoch_losses, self.epoch_baselines, self.epoch_residuals = [], [], []
-        self.epoch_global_losses, self.epoch_foreground_losses = [], []
+        elif (
+            self.arm == "mixloss"
+            and epoch > 0
+        ):
+            self.queries = (
+                self._loss_guided_queries(
+                    epoch,
+                    indices,
+                    batch,
+                    aug_rng,
+                    banks,
+                    model,
+                    criterion,
+                )
+            )
+
+        else:
+            # Legacy methods and MixLoss epoch 0.
+            self.queries = query_batches(
+                n // batch,
+                self.pct,
+                epoch,
+                self.a.seed,
+            )
+
+        self.epoch_losses = []
+        self.epoch_baselines = []
+        self.epoch_residuals = []
+        self.epoch_global_losses = []
+        self.epoch_foreground_losses = []
+
 
     def make_batch(self, banks, ids, collate, rng, extractor, batch_index):
         from online_experiments.d1_online_compare import geometry, training_feature
@@ -295,7 +565,7 @@ class Runtime:
             flips.append(rng.random() < 0.5)
             scales.append(rng.uniform(self.cfg["scale_min"], self.cfg["scale_max"]))
         queried = batch_index in self.queries
-        is_mix = self.arm in ("mix", "mixseverity")
+        is_mix = self.arm in ("mix", "mixseverity", "mixloss")
         record = [self.epoch, batch_index, [banks[0][i]["sample_id"] for i in ids], flips, scales, queried]
         payload = (json.dumps(record, separators=(",", ":")) + "\n").encode()
         self.digest.update(payload)
@@ -388,6 +658,12 @@ class Runtime:
             ("query_foreground_relative_mse", self.epoch_foreground_losses),
         ):
             row[key] = statistics.mean(values) if values else None
+        row.update(
+            routing_score_mean=self.routing_score_mean,
+            routing_selected_mean=self.routing_selected_mean,
+            routing_unselected_mean=self.routing_unselected_mean,
+        )
+
         with (self.cfg["output"] / "correction.jsonl").open("a") as stream:
             stream.write(json.dumps(row) + "\n")
         print("BUDGET " + json.dumps(row), flush=True)
@@ -406,6 +682,9 @@ class Runtime:
             "corrector_parameters": sum(p.numel() for p in self.corrector.parameters()) if self.corrector else 0,
             "schedule_sha256": self.digest.hexdigest(),
             "query_sha256": self.query_digest.hexdigest(),
+            "routing_score_seconds": self.routing_score_seconds,
+            "routing_score_forwards": self.routing_score_forwards,
+            "routing_score_images": self.routing_score_images,
         }
 
     def checkpoint(self):
@@ -487,7 +766,13 @@ def worker(a):
                 cpu_threads=a.threads,
                 visible_gpu=os.environ.get("CUDA_VISIBLE_DEVICES"),
                 augmentation_policy="same flip/scale proposals; mix-style methods use anchor on nonqueries",
-                query_policy="scale_severity" if runtime.arm == "mixseverity" else "random",
+                query_policy=(
+                    "transport_loss_top25"
+                    if runtime.arm == "mixloss"
+                    else "scale_severity"
+                    if runtime.arm == "mixseverity"
+                    else "random"
+                ),
             )
             if name == "args.json":
                 if value["cache_identity"] != meta["identity"]:
@@ -552,6 +837,7 @@ def report(job, phase="train"):
                     "teacher_images": s["training_teacher_images"],
                     "total_teacher_images": s["total_teacher_images"],
                     "correction_s": s["corrector_seconds"],
+                    "routing_s": s.get("routing_score_seconds", 0.0),
                     "corrector_parameters": s["corrector_parameters"],
                     "VRAM_GiB": s["peak_vram_gib"],
                     "schedule_sha256": s["schedule_sha256"],
@@ -568,13 +854,13 @@ def report(job, phase="train"):
         "AP: 0-100. 400/100 pilot; original cached validation; not official benchmark.",
         "Fresh query images/transformations paired across arms; reconstruction-only corrector.",
         "C2 training-cache build charged once/run; reused in practice; validation build excluded.",
-        "method seed best_AP last_AP best_epoch online_pct query_images train_s correction_s build+wall_s VRAM_GiB",
+        "method seed best_AP last_AP best_epoch online_pct query_images train_s correction_s routing_s build+wall_s VRAM_GiB",
     ]
     for r in records:
         lines.append(
             f"{r['method']} {r['seed']} {r['best_AP']:.4f} {r['last_AP']:.4f} {r['best_epoch']} "
             f"{r['online_pct']:.2f} {r['teacher_images']} {r['train_s']:.1f} {r['correction_s']:.1f} "
-            f"{r['build_plus_wall_s']:.1f} {r['VRAM_GiB']:.3f}"
+            f"{r['routing_s']:.1f} {r['build_plus_wall_s']:.1f} {r['VRAM_GiB']:.3f}"
         )
     lines += ["", "method n best_AP_mean sample_sd last_AP_mean train_s_mean build+wall_s_mean"]
     for method in cases:
@@ -696,10 +982,22 @@ def campaign(a):
         OMP_NUM_THREADS=str(a.threads),
         MKL_NUM_THREADS=str(a.threads),
     )
-    if a.candidate_only and a.routing_only:
-        raise ValueError("--candidate-only and --routing-only are mutually exclusive")
+    flags = (
+        int(a.candidate_only)
+        + int(a.routing_only)
+        + int(a.loss_routing_only)
+    )
+
+    if flags > 1:
+        raise ValueError(
+            "candidate/routing experiment flags "
+            "are mutually exclusive"
+        )
+
     selected_cases = (
-        ROUTING_CASES
+        LOSS_ROUTING_CASES
+        if a.loss_routing_only
+        else ROUTING_CASES
         if a.routing_only
         else CANDIDATE_CASES
         if a.candidate_only
@@ -723,6 +1021,7 @@ def campaign(a):
             "smoke_only": a.smoke_only,
             "candidate_only": a.candidate_only,
             "routing_only": a.routing_only,
+            "loss_routing_only": a.loss_routing_only,
             "schema_version": 2 if a.candidate_only else 1,
             "note": (
                 "Identity-preserving candidate pilot; idfg uses fixed 0.5 global/0.5 foreground objective"
@@ -809,6 +1108,11 @@ def main():
         "--routing-only",
         action="store_true",
         help="Run only the fixed-budget scale-severity Mix25 routing candidate.",
+    )
+    p.add_argument(
+        "--loss-routing-only",
+        action="store_true",
+        help="Run only transport-loss-guided Mix25 at the fixed 25%% query budget.",
     )
     a = p.parse_args()
     a.job = a.job.resolve()

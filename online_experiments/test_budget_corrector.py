@@ -15,6 +15,7 @@ from online_experiments.budget_corrector import (
     patch_pilot,
     query_batches,
     severity_query_batches,
+    topk_query_batches,
 )
 
 
@@ -164,3 +165,33 @@ def test_scale_severity_query_policy_preserves_exact_budget_and_rng():
 
     unselected = set(scores) - selected
     assert min(scores[i] for i in selected) >= max(scores[i] for i in unselected)
+
+
+
+def test_topk_query_batches_is_exact_and_deterministic():
+    scores = [
+        1.0,
+        7.0,
+        3.0,
+        7.0,
+        -2.0,
+    ]
+
+    # tie 由较小 batch index 确定，保证可复现
+    assert topk_query_batches(
+        scores,
+        2,
+    ) == {1, 3}
+
+    assert topk_query_batches(
+        scores,
+        0,
+    ) == set()
+
+    with pytest.raises(
+        ValueError
+    ):
+        topk_query_batches(
+            scores,
+            6,
+        )
