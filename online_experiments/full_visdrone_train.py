@@ -33,7 +33,7 @@ from online_experiments.fusion_probe import configure_fusion
 from scripts import d1_train_cached_detector as d
 from ultralytics.data.foundation_cache import load_letterboxed_tensor
 
-METHODS = ("cache1", "cache2", "mix25", "transport25", "correct25", "online-geom")
+METHODS = ("cache1", "cache2", "mix10", "mix25", "mix50", "transport25", "correct25", "online-geom")
 
 
 def sync():
@@ -72,7 +72,15 @@ class Batches:
             raise RuntimeError("Dataset manifest changed after caching")
         self.train = self.meta["splits"]["train"]
         self.val = self.meta["splits"]["val"]
-        self.pct = 100 if method == "online-geom" else 25 if method.endswith("25") else 0
+        self.pct = (
+            100
+            if method == "online-geom"
+            else int(method.removeprefix("mix"))
+            if method.startswith("mix")
+            else 25
+            if method.endswith("25")
+            else 0
+        )
         self.arrays = (
             []
             if method == "online-geom"
@@ -107,7 +115,10 @@ class Batches:
             scales = all_scales[start : start + batch_size] if self.pct else [1.0] * len(ids)
             mask = all_queries[start : start + batch_size]
             queried = [i for i, selected in enumerate(mask) if selected]
-            effective_scales = [s if q or self.method != "mix25" else 1.0 for s, q in zip(scales, mask)]
+            effective_scales = [
+                s if q or not self.method.startswith("mix") else 1.0
+                for s, q in zip(scales, mask)
+            ]
             items = [self.item(self.train[i], f, s) for i, f, s in zip(ids, flips, effective_scales)]
             levels = None
             transported = None

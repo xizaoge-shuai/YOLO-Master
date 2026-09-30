@@ -95,3 +95,30 @@ def test_smoke_cannot_be_resumed_as_full():
     validate_mode(meta, True)
     with pytest.raises(ValueError, match="mode"):
         validate_mode(meta, False)
+
+
+
+def test_full_split_pareto_query_budgets_are_exact():
+    expected = {
+        10: 64710,
+        50: 323550,
+    }
+
+    for pct, target in expected.items():
+        total = 0
+
+        for epoch in range(100):
+            _, _, _, queries = epoch_plan(
+                6471,
+                pct,
+                epoch,
+                0,
+            )
+            total += sum(queries)
+
+            assert total == (
+                ((epoch + 1) * 6471 * pct)
+                // 100
+            )
+
+        assert total == target
