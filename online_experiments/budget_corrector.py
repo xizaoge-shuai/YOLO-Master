@@ -24,12 +24,19 @@ CASES = [f"c2-{arm}-p{pct}" for pct in (10, 25) for arm in ARMS]
 CANDIDATE_CASES = ("c2-idgate-p25", "c2-idfg-p25")
 ROUTING_CASES = ("c2-mixseverity-p25",)
 LOSS_ROUTING_CASES = ("c2-mixloss-p25",)
-ALL_CASES = tuple(CASES) + CANDIDATE_CASES + ROUTING_CASES + LOSS_ROUTING_CASES
+PARETO_CASES = ("c2-mix-p50",)
+ALL_CASES = (
+    tuple(CASES)
+    + CANDIDATE_CASES
+    + ROUTING_CASES
+    + LOSS_ROUTING_CASES
+    + PARETO_CASES
+)
 
 
 def query_batches(n, pct, epoch, seed):
     """Exact cumulative budget for equal-sized batches; independent routing RNG."""
-    if n < 1 or pct not in (10, 25) or epoch < 0:
+    if n < 1 or pct not in (10, 25, 50) or epoch < 0:
         raise ValueError("Invalid budget schedule")
     count = ((epoch + 1) * n * pct) // 100 - (epoch * n * pct) // 100
     return set(random.Random(seed + 15485863 + epoch * 1000003).sample(range(n), count))
@@ -986,6 +993,7 @@ def campaign(a):
         int(a.candidate_only)
         + int(a.routing_only)
         + int(a.loss_routing_only)
+        + int(a.pareto_only)
     )
 
     if flags > 1:
@@ -995,7 +1003,9 @@ def campaign(a):
         )
 
     selected_cases = (
-        LOSS_ROUTING_CASES
+        PARETO_CASES
+        if a.pareto_only
+        else LOSS_ROUTING_CASES
         if a.loss_routing_only
         else ROUTING_CASES
         if a.routing_only
@@ -1022,6 +1032,7 @@ def campaign(a):
             "candidate_only": a.candidate_only,
             "routing_only": a.routing_only,
             "loss_routing_only": a.loss_routing_only,
+            "pareto_only": a.pareto_only,
             "schema_version": 2 if a.candidate_only else 1,
             "note": (
                 "Identity-preserving candidate pilot; idfg uses fixed 0.5 global/0.5 foreground objective"
@@ -1113,6 +1124,11 @@ def main():
         "--loss-routing-only",
         action="store_true",
         help="Run only transport-loss-guided Mix25 at the fixed 25%% query budget.",
+    )
+    p.add_argument(
+        "--pareto-only",
+        action="store_true",
+        help="Run only random C2 Mix50 for the 50%% query-budget Pareto point.",
     )
     a = p.parse_args()
     a.job = a.job.resolve()

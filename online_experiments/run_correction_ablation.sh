@@ -48,7 +48,7 @@ PY
         JOB="$(mktemp -d "$BASE/job-${ACTION}-XXXXXXXX")"
         printf '%s\n' "$JOB" > "$MARKER"
     fi
-    if [[ -n "$(nvidia-smi -i 0 --query-compute-apps=pid --format=csv,noheader | tr -d '[:space:]')" ]]; then
+    if [[ "${ABLATION_ALLOW_SHARED_GPU:-0}" != 1 && -n "$(nvidia-smi -i 0 --query-compute-apps=pid --format=csv,noheader | tr -d '[:space:]')" ]]; then
         echo 'GPU0 has compute processes; leaving them untouched.'
         exit 1
     fi
