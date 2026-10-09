@@ -1,0 +1,33 @@
+{
+  "dataset": "VOC2007 trainval subset",
+  "train_images": 2000,
+  "validation_images": 400,
+  "seed": 0,
+  "epochs": 100,
+  "evaluation": "internal diagnostic AP, not official VOC AP",
+  "splits_match": true,
+  "methods": {
+    "q0": {
+      "final_AP": 22.712873656843442,
+      "best_AP": 23.420637926033383,
+      "train_seconds": 6615.594468603842,
+      "wall_seconds": 10800.662680259906
+    },
+    "q25": {
+      "final_AP": 24.156807226083494,
+      "best_AP": 24.60807072142459,
+      "train_seconds": 7759.712193597108,
+      "wall_seconds": 11999.40598201193
+    },
+    "q100": {
+      "final_AP": 27.18144468959112,
+      "best_AP": 27.807770135637238,
+      "train_seconds": 5484.964934946969,
+      "wall_seconds": 6763.237729856744
+    }
+  },
+  "mix25_teacher_images": 50000,
+  "q25_minus_q0": 1.443933569240052,
+  "q100_minus_q25": 3.024637463507627,
+  "gain_recovery": 0.32313094245526447
+}
