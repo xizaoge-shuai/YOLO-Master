@@ -1,0 +1,490 @@
+{
+  "review_date": "2026-10-13",
+  "scope": "read-only artifact audit; no new training/evaluation",
+  "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+  "val_images": 548,
+  "visdrone_last_AP": [
+    {
+      "method": "cache1",
+      "seed": "0",
+      "checkpoint": "last",
+      "AP": "9.118574713050801",
+      "AP50": "20.38171301508145",
+      "AP75": "7.136579773666059",
+      "AR1": "0.8016547105916733",
+      "AR10": "4.915230329649138",
+      "AR100": "14.703663200963183",
+      "AR500": "22.236284136520403",
+      "macro_AP_diagnostic": "8.804437401688636",
+      "cpu_evaluation_seconds": "3.537994765676558"
+    },
+    {
+      "method": "cache2",
+      "seed": "0",
+      "checkpoint": "last",
+      "AP": "10.656825441852376",
+      "AP50": "23.629006744914207",
+      "AP75": "8.352769354699443",
+      "AR1": "0.7279706329465294",
+      "AR10": "5.218991155662805",
+      "AR100": "16.078195581741628",
+      "AR500": "24.215998911077996",
+      "macro_AP_diagnostic": "10.324399918390235",
+      "cpu_evaluation_seconds": "3.549067122861743"
+    },
+    {
+      "method": "mix25",
+      "seed": "0",
+      "checkpoint": "last",
+      "AP": "11.352560927159786",
+      "AP50": "24.559985256783552",
+      "AP75": "9.16244637257089",
+      "AR1": "0.6884257263417907",
+      "AR10": "5.416630232021584",
+      "AR100": "16.58160897234462",
+      "AR500": "24.50087532800695",
+      "macro_AP_diagnostic": "11.254042991035591",
+      "cpu_evaluation_seconds": "3.577346870675683"
+    },
+    {
+      "method": "transport25",
+      "seed": "0",
+      "checkpoint": "last",
+      "AP": "9.635043658970952",
+      "AP50": "20.925495248502397",
+      "AP75": "7.977310448755204",
+      "AR1": "0.6749336911076428",
+      "AR10": "5.1417381736012295",
+      "AR100": "14.60391421337838",
+      "AR500": "21.892862803901412",
+      "macro_AP_diagnostic": "9.571706670168227",
+      "cpu_evaluation_seconds": "3.605716312304139"
+    },
+    {
+      "method": "correct25",
+      "seed": "0",
+      "checkpoint": "last",
+      "AP": "9.7655896823869",
+      "AP50": "21.173573548016517",
+      "AP75": "7.9368883275070985",
+      "AR1": "0.6654196121216633",
+      "AR10": "5.243115234285322",
+      "AR100": "14.713528712881132",
+      "AR500": "22.187848641206045",
+      "macro_AP_diagnostic": "9.731416550739532",
+      "cpu_evaluation_seconds": "3.695243555121124"
+    },
+    {
+      "method": "online-geom",
+      "seed": "0",
+      "checkpoint": "last",
+      "AP": "11.398159453937234",
+      "AP50": "24.57922122197171",
+      "AP75": "9.288335791628777",
+      "AR1": "0.6884176851947794",
+      "AR10": "5.27930409116562",
+      "AR100": "16.89750793409316",
+      "AR500": "25.0182648764337",
+      "macro_AP_diagnostic": "11.236061711659042",
+      "cpu_evaluation_seconds": "3.596229803748429"
+    },
+    {
+      "seed": 1,
+      "method": "cache2",
+      "checkpoint": "last",
+      "AP": 10.159850951436841,
+      "AP50": 22.659833764863453,
+      "AP75": 7.981103240262507,
+      "AR500": 23.325752010123253,
+      "macro_AP_diagnostic": 9.881115523022075
+    },
+    {
+      "seed": 1,
+      "method": "mix25",
+      "checkpoint": "last",
+      "AP": 10.88831702796182,
+      "AP50": 23.816927174829686,
+      "AP75": 8.764202853820704,
+      "AR500": 24.362792872261842,
+      "macro_AP_diagnostic": 10.69972819237368
+    },
+    {
+      "seed": 1,
+      "method": "online-geom",
+      "checkpoint": "last",
+      "AP": 11.398457511328816,
+      "AP50": 24.434683640531745,
+      "AP75": 9.306552690865033,
+      "AR500": 24.574932103997767,
+      "macro_AP_diagnostic": 11.214371590792036
+    },
+    {
+      "seed": 2,
+      "method": "cache2",
+      "checkpoint": "last",
+      "AP": 10.337528652236932,
+      "AP50": 22.861707751542443,
+      "AP75": 8.233862030517587,
+      "AR500": 23.576720278675328,
+      "macro_AP_diagnostic": 9.989537158472583
+    },
+    {
+      "seed": 2,
+      "method": "mix25",
+      "checkpoint": "last",
+      "AP": 10.809557307833769,
+      "AP50": 23.704175289404667,
+      "AP75": 8.66601283506049,
+      "AR500": 24.39463208228685,
+      "macro_AP_diagnostic": 10.504281375045986
+    },
+    {
+      "seed": 2,
+      "method": "online-geom",
+      "checkpoint": "last",
+      "AP": 11.691563635468281,
+      "AP50": 25.136352009087325,
+      "AP75": 9.513907868066209,
+      "AR500": 25.279281301975598,
+      "macro_AP_diagnostic": 11.510998086676022
+    }
+  ],
+  "visdrone_three_seed_summary": {
+    "cache2": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "AP": [
+        10.656825441852376,
+        10.159850951436841,
+        10.337528652236932
+      ],
+      "mean": 10.384735015175384,
+      "sample_sd": 0.2518278013987989
+    },
+    "mix25": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "AP": [
+        11.352560927159786,
+        10.88831702796182,
+        10.809557307833769
+      ],
+      "mean": 11.016811754318459,
+      "sample_sd": 0.29342188683939197
+    },
+    "online-geom": {
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "AP": [
+        11.398159453937234,
+        11.398457511328816,
+        11.691563635468281
+      ],
+      "mean": 11.496060200244777,
+      "sample_sd": 0.1693110070187265
+    }
+  },
+  "candidate_evaluation": [
+    {
+      "method": "anchor25",
+      "checkpoint": "last",
+      "seed": "0",
+      "AP": "10.11280776900597",
+      "AP50": "21.77555701261679",
+      "AP75": "8.278392506417381",
+      "AR1": "0.6824329989976092",
+      "AR10": "5.443254384068773",
+      "AR100": "15.060024688008767",
+      "AR500": "22.38244583284018",
+      "query_images": "161775",
+      "train_seconds": "37739.59918582067",
+      "correction_seconds": "2210.201462094672",
+      "build_plus_wall_seconds": "61535.85434394423",
+      "peak_vram_gib": "2.965435028076172"
+    },
+    {
+      "method": "anchor25",
+      "checkpoint": "best",
+      "seed": "0",
+      "AP": "10.08843604761258",
+      "AP50": "21.736389752982575",
+      "AP75": "8.270351010110389",
+      "AR1": "0.6724224197020203",
+      "AR10": "5.371030752714667",
+      "AR100": "15.0378224856972",
+      "AR500": "22.395319795072485",
+      "query_images": "161775",
+      "train_seconds": "37739.59918582067",
+      "correction_seconds": "2210.201462094672",
+      "build_plus_wall_seconds": "61535.85434394423",
+      "peak_vram_gib": "2.965435028076172"
+    },
+    {
+      "method": "task25",
+      "checkpoint": "last",
+      "seed": "0",
+      "AP": "10.08089351218589",
+      "AP50": "21.571067838120737",
+      "AP75": "8.289465191630226",
+      "AR1": "0.6456995971001395",
+      "AR10": "5.335909344598127",
+      "AR100": "14.977400479808361",
+      "AR500": "22.414516914934843",
+      "query_images": "161775",
+      "train_seconds": "69098.8140370436",
+      "correction_seconds": "28221.452669579536",
+      "build_plus_wall_seconds": "102276.06217955705",
+      "peak_vram_gib": "2.9998674392700195"
+    },
+    {
+      "method": "task25",
+      "checkpoint": "best",
+      "seed": "0",
+      "AP": "10.06046181207637",
+      "AP50": "21.484942600447177",
+      "AP75": "8.309280184304413",
+      "AR1": "0.6723579223205388",
+      "AR10": "5.397217150571253",
+      "AR100": "15.014439681358326",
+      "AR500": "22.27113357368707",
+      "query_images": "161775",
+      "train_seconds": "69098.8140370436",
+      "correction_seconds": "28221.452669579536",
+      "build_plus_wall_seconds": "102276.06217955705",
+      "peak_vram_gib": "2.9998674392700195"
+    }
+  ],
+  "recorded_costs_not_controlled_speed_benchmark": {
+    "cache2": {
+      "completed_epochs": 100,
+      "train_seconds": 4020.4303762372583,
+      "val_seconds": 522.6322421152145,
+      "wall_seconds": 4585.847453741357,
+      "correction_seconds": 0.0,
+      "query_images": 0,
+      "query_calls": 0,
+      "peak_vram_gib": 2.5165061950683594,
+      "host_io_read_blocks": 46574968
+    },
+    "mix25": {
+      "completed_epochs": 100,
+      "train_seconds": 7023.852596182376,
+      "val_seconds": 498.77486263308674,
+      "wall_seconds": 7574.017211129889,
+      "correction_seconds": 0.0,
+      "query_images": 161775,
+      "query_calls": 72786,
+      "peak_vram_gib": 2.7278714179992676,
+      "host_io_read_blocks": 12462728
+    },
+    "transport25": {
+      "completed_epochs": 100,
+      "train_seconds": 7163.2187683722,
+      "val_seconds": 470.43841551057994,
+      "wall_seconds": 7682.646802868694,
+      "correction_seconds": 0.0,
+      "query_images": 161775,
+      "query_calls": 72786,
+      "peak_vram_gib": 2.7827982902526855,
+      "host_io_read_blocks": 815384
+    },
+    "correct25": {
+      "completed_epochs": 100,
+      "train_seconds": 7441.328884436749,
+      "val_seconds": 458.1861226875335,
+      "wall_seconds": 7946.268729063682,
+      "correction_seconds": 214.27513950131834,
+      "query_images": 161775,
+      "query_calls": 72786,
+      "peak_vram_gib": 2.8367719650268555,
+      "host_io_read_blocks": 12480
+    },
+    "online-geom": {
+      "completed_epochs": 100,
+      "train_seconds": 15007.261851431802,
+      "val_seconds": 469.9461122918874,
+      "wall_seconds": 15521.74461535085,
+      "correction_seconds": 0.0,
+      "query_images": 647100,
+      "query_calls": 80900,
+      "peak_vram_gib": 2.655174732208252,
+      "host_io_read_blocks": 432
+    },
+    "anchor25": {
+      "completed_epochs": 100,
+      "train_seconds": 37739.59918582067,
+      "val_seconds": 23421.922277100384,
+      "wall_seconds": 61222.57441382855,
+      "correction_seconds": 2210.201462094672,
+      "query_images": 161775,
+      "query_calls": 72786,
+      "peak_vram_gib": 2.965435028076172,
+      "host_io_read_blocks": 1797930312
+    },
+    "task25": {
+      "completed_epochs": 100,
+      "train_seconds": 69098.8140370436,
+      "val_seconds": 32805.6907249745,
+      "wall_seconds": 101962.78224944137,
+      "correction_seconds": 28221.452669579536,
+      "query_images": 161775,
+      "query_calls": 72786,
+      "peak_vram_gib": 2.9998674392700195,
+      "host_io_read_blocks": 226233296
+    }
+  },
+  "candidate_source_matches_recorded_hash": true,
+  "candidate_schedules_match_mix25": {
+    "anchor25": true,
+    "task25": true
+  },
+  "baseline_checkpoint_eval": [
+    {
+      "method": "master-n",
+      "checkpoint": "last",
+      "AP": "14.874903806769046",
+      "AP50": "27.459828304889378",
+      "AP75": "13.813780555604692",
+      "AR1": "0.7306746209455237",
+      "AR10": "5.708739316656019",
+      "AR100": "20.375234981697115",
+      "AR500": "24.19003310003223",
+      "mean_predict_wall_ms": "352.04534579653046",
+      "checkpoint_sha256": "aef20d327830ebdc248e9501d3dd1872ace103473976c42de2f17d784b2a7c70",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "duplicate_epoch_count": "98",
+      "inconsistent_duplicate_count": "98"
+    },
+    {
+      "method": "master-n",
+      "checkpoint": "best",
+      "AP": "14.793735991435327",
+      "AP50": "27.314769863282148",
+      "AP75": "13.88726426569574",
+      "AR1": "0.6395833827349897",
+      "AR10": "5.726304650488445",
+      "AR100": "20.2944848784912",
+      "AR500": "24.216327579233212",
+      "mean_predict_wall_ms": "328.42264562865626",
+      "checkpoint_sha256": "cdea9c05abfedf5ea8a636187ade867e238c5cf67869646b2bed9217e9ffbb89",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "duplicate_epoch_count": "98",
+      "inconsistent_duplicate_count": "98"
+    },
+    {
+      "method": "yolo11-n",
+      "checkpoint": "last",
+      "AP": "14.774835887637352",
+      "AP50": "27.563685575942714",
+      "AP75": "13.552343522666856",
+      "AR1": "0.6583158636081506",
+      "AR10": "5.574692936690709",
+      "AR100": "19.8123400958126",
+      "AR500": "23.705006734182394",
+      "mean_predict_wall_ms": "22.484670733067677",
+      "checkpoint_sha256": "98973044b731a831813550b4dc47d1d1227a527231c760721b9079b9ceaf96a3",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "duplicate_epoch_count": "0",
+      "inconsistent_duplicate_count": "0"
+    },
+    {
+      "method": "yolo11-n",
+      "checkpoint": "best",
+      "AP": "14.767814194086132",
+      "AP50": "27.531142230095437",
+      "AP75": "13.54904040971591",
+      "AR1": "0.6581578358624901",
+      "AR10": "5.58845932774042",
+      "AR100": "19.800507938103227",
+      "AR500": "23.65065853360489",
+      "mean_predict_wall_ms": "44.1330714222642",
+      "checkpoint_sha256": "ffa0320e43db4225afa76f571352788ca2bfccc41d268ed194e9c3c0cc66a3f9",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "duplicate_epoch_count": "0",
+      "inconsistent_duplicate_count": "0"
+    },
+    {
+      "method": "yolo12-n",
+      "checkpoint": "last",
+      "AP": "14.38760570167743",
+      "AP50": "26.971082523034166",
+      "AP75": "13.31721536849248",
+      "AR1": "0.6634953890809578",
+      "AR10": "5.414905147226259",
+      "AR100": "19.694706304516654",
+      "AR500": "23.500684987593274",
+      "mean_predict_wall_ms": "16.299698131335695",
+      "checkpoint_sha256": "a01e71ad4e6e762c2694e656cc2c1465ebc4251dc816b34a31c4877e349d9dc2",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "duplicate_epoch_count": "0",
+      "inconsistent_duplicate_count": "0"
+    },
+    {
+      "method": "yolo12-n",
+      "checkpoint": "best",
+      "AP": "14.33442432728359",
+      "AP50": "26.86307774565796",
+      "AP75": "13.283355246333292",
+      "AR1": "0.6407253718465877",
+      "AR10": "5.407760619524521",
+      "AR100": "19.55008487075569",
+      "AR500": "23.36493113814152",
+      "mean_predict_wall_ms": "10.379504315541501",
+      "checkpoint_sha256": "bb8089fc05855a43be1ec2644c3db68a1401c79806f01b178bc9b97c944a7b70",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "duplicate_epoch_count": "0",
+      "inconsistent_duplicate_count": "0"
+    }
+  ],
+  "raw_baseline_csv_audit": {
+    "master-n": {
+      "rows": 198,
+      "unique_epochs": 100,
+      "duplicated_epoch_groups": 98,
+      "inconsistent_groups": 98
+    },
+    "yolo11-n": {
+      "rows": 100,
+      "unique_epochs": 100,
+      "duplicated_epoch_groups": 0,
+      "inconsistent_groups": 0
+    },
+    "yolo12-n": {
+      "rows": 100,
+      "unique_epochs": 100,
+      "duplicated_epoch_groups": 0,
+      "inconsistent_groups": 0
+    }
+  },
+  "voc_subset_comparison": "VOC2007 trainval subset: 2000 train / 400 val\nDiagnostic AP only; NOT official VOC2007 test AP.\n\nmethod | last_AP | best_AP | train_s | wall_s\nq0    | 22.7129 | 23.4206 | 6615.6 | 10800.7\nq25   | 24.1568 | 24.6081 | 7759.7 | 11999.4\nq100  | 27.1814 | 27.8078 | 5485.0 | 6763.2\n\nMix25 teacher-image queries: 50000\nMix25 online percent: 25.00%\nAll runs: seed0, 100 epochs, batch8, imgsz640, mean_value head.\n",
+  "cache_shift_diagnostic_comparison": "CACHE-SHIFT BENCHMARK V0\n\nCustom diagnostic AP (0-100); not official VisDrone AP.\nimages=548\nteacher_image_evaluations=3288\nelapsed_s=12517.5\n\nFEATURE SHIFT\nview difficulty scale flip rel_mse_mean rel_mse_median\nidentity anchor 1.00 0 0.000000 0.000000\nflip anchor 1.00 1 0.577536 0.407418\nscale095 mild 0.95 0 0.149210 0.148198\nscale105 mild 1.05 0 0.041409 0.042960\nscale085 hard 0.85 0 0.364933 0.364011\nscale115 hard 1.15 0 0.059873 0.057673\n\nHEAD ROBUSTNESS USING EXACT TRANSFORMED FEATURES\nq identity_AP mild_AP hard_AP all_AP hard_drop\n  0 7.9880 7.6390 7.4441 7.6982 +0.5438\n 10 7.8072 7.2954 7.0735 7.3671 +0.7338\n 25 9.1818 8.4118 8.4720 8.6122 +0.7098\n 50 8.4073 8.1105 7.9304 8.1190 +0.4768\n100 8.6465 8.5466 8.4159 8.5447 +0.2307\n\nEXACT VS TRANSPORT ALL-VIEW MEAN\nq exact_AP transport_AP exact_minus_transport\n  0 7.6982 3.8879 +3.8103\n 10 7.3671 3.8949 +3.4722\n 25 8.6122 4.2896 +4.3226\n 50 8.1190 4.0976 +4.0214\n100 8.5447 4.2201 +4.3246\n\nONLINE-BENEFIT RECOVERY USING EXACT FEATURES\nview q AP q0_AP q100_AP recovery\nidentity  10 7.8072 7.9880 8.6465 -27.44%\nidentity  25 9.1818 7.9880 8.6465 181.27%\nidentity  50 8.4073 7.9880 8.6465 63.67%\nflip  10 7.6576 8.0349 8.6964 -57.03%\nflip  25 8.7241 8.0349 8.6964 104.19%\nflip  50 8.2250 8.0349 8.6964 28.74%\nscale095  10 6.8320 7.2009 8.0732 -42.30%\nscale095  25 8.0135 7.2009 8.0732 93.15%\nscale095  50 7.6175 7.2009 8.0732 47.76%\nscale105  10 7.7589 8.0771 9.0200 -33.74%\nscale105  25 8.8101 8.0771 9.0200 77.73%\nscale105  50 8.6034 8.0771 9.0200 55.82%\nscale085  10 5.8817 6.3213 7.2026 -49.88%\nscale085  25 7.1376 6.3213 7.2026 92.63%\nscale085  50 6.7169 6.3213 7.2026 44.88%\nscale115  10 8.2652 8.5669 9.6292 -28.40%\nscale115  25 9.8064 8.5669 9.6292 116.68%\nscale115  50 9.1440 8.5669 9.6292 54.32%\n",
+  "source_sha256": {
+    "runs/paper/visdrone-eval/job-full-20260927/results.csv": "20209c75e813f69959fbef72dc0c62af1bc46299ec92c26e81238af4f3e647a7",
+    "runs/paper/full-visdrone-confirm/job-start-VIVUsfpt/reference-eval.json": "bd0bcb74d31315a06567720c2ba0d75ff2b14980eabb306ace4ba9910bec4331",
+    "runs/paper/taskaware-visdrone/job-start-O15eO1xR/evaluation/results.csv": "99325ff54614282267a9cd7221c8fbf7e232e1f4075b94a3212644c0493f027d",
+    "runs/paper/full-visdrone/job-start-eDmH0odX/train/cache2-s0/summary.json": "923d4c4f91e34804db0feeafb31c86cb177f06b3d4a71be7ff224de1d74f1415",
+    "runs/paper/full-visdrone/job-start-eDmH0odX/train/mix25-s0/summary.json": "5209dc21b0ec28376a49330600d752137caba078d1eebc23d15ee75eb97be6a8",
+    "runs/paper/full-visdrone/job-start-eDmH0odX/train/transport25-s0/summary.json": "0daae37017fd40398c6e1b890fc35dc47fa17d249707ba02e91420e72a0e9105",
+    "runs/paper/full-visdrone/job-start-eDmH0odX/train/correct25-s0/summary.json": "2fcf2e1c1ccaf3846832aa70d555ad4c407512ca4839539094ab6e4b52e2ca54",
+    "runs/paper/full-visdrone/job-start-eDmH0odX/train/online-geom-s0/summary.json": "b5d0139cf91a775f57a447b441065453d729a683965d804b69682de7c356c81a",
+    "runs/paper/taskaware-visdrone/job-start-O15eO1xR/train/anchor25-s0/summary.json": "d96e692367d4e636e937121e6b769fb4f484f8a424c8754ebff0e74f7a0ac7de",
+    "runs/paper/taskaware-visdrone/job-start-O15eO1xR/train/task25-s0/summary.json": "bc87486f98f694aa960a0fcd8904e3f6fc8b6f01b2d0a78b122edb90e12af490",
+    "online_experiments/full_visdrone_taskaware.py": "409a5f21e9ace0a9994016a7db4818c57207903223a7b94ac9477756e5a346d0",
+    "runs/paper/taskaware-visdrone/job-start-O15eO1xR/provenance.json": "580e00189550dae04e7c91763a0fb87477d2b39afb15eba3cd65a2d8821c8d8e",
+    "runs/paper/detector-baselines/job-start-EQA3xAp5/analysis/detector-baselines-verified.csv": "cf3e0e3fc5d9e3705f48372eb1f79e6287546aded68aa893faaad9270df459f4",
+    "runs/paper/detector-baselines/job-start-EQA3xAp5/train/master-n/results.csv": "8f9b783aec330bac10798c3043a93fdae6694a84ce633ab2652374922a34d0fc",
+    "runs/paper/detector-baselines/job-start-EQA3xAp5/train/yolo11-n/results.csv": "336b6f4e4ea893e4eec137873bfcca906533093428bf25f972bd59189a2c5b07",
+    "runs/paper/detector-baselines/job-start-EQA3xAp5/train/yolo12-n/results.csv": "1537c05c2b0eda74fc9da0bbd97697e47d5e11218fc1704194ecf352592b4b70",
+    "runs/paper/voc2007-crossdataset/job-start-eAj9DZnA/comparison.txt": "3721e15b77a828ec487ab7e6532cd123bbefaf0ed550e122441556334847f7b2",
+    "runs/paper/cache-shift-bench/job-start-ANc5OL2Q/comparison.txt": "4013e03a503ac3cb4f42119c91cb55ca8a4dffe2bbbf563c5e158153ad9643c1"
+  }
+}

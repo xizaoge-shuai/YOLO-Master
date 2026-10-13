@@ -147,3 +147,13 @@ claim that their weights/predictions have been independently re-evaluated.
 
 - [Evidence](experiments/correction-ablation-job-smoke-ibKknuJd/succeeded/README.md).
 - Fixed gate/foreground factors, paired query schedules; no test-dev or stable-advantage claim.
+
+
+## 2026-10-13: experiment evidence and CVPR story review
+
+- [Review and next diagnostic plan](CVPR_STORY_REVIEW.md); [read-only artifact audit](experiments/story-review/verified-results.json), with 18 source-file hashes. No new training/evaluation or cache deletion in this review.
+- Full VisDrone final reference AP over seeds 0/1/2: C2 10.3847 +/- 0.2518, Mix25 11.0168 +/- 0.2934, Online100 11.4961 +/- 0.1693 (sample SD). Mix25 improves C2 by 0.6321 AP and trails Online100 by 0.4792 AP.
+- Completed seed0 Anchor25/Task25 reference AP is 10.1128/10.0809, below paired Mix25 11.3526. All 100 candidate schedule hashes match Mix25; candidate source and three relevant dependency hashes match as-run provenance. Method remains exploratory.
+- VOC is a 2000/400 trainval subset with diagnostic AP, not official test or frozen source-to-target transfer. Its query reduction has not established wall-time speedup. New VisDrone timings also contain large time-varying validation overhead.
+- Raw Master-N CSV has 198 rows and 98 inconsistent duplicated epoch groups; checkpoint AP is retained but its strict training-budget comparison requires provenance repair. YOLO11/12 CSVs each have 100 unique rows.
+- DiKE/REVIVE paper exemplars motivate paired and equal-magnitude causal interventions. Existing cache-augmentation literature prevents a novelty claim based solely on D1 recency. Next decision: separate feature approximation and assignment effects before extending the method or launching more full campaigns.
