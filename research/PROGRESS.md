@@ -164,3 +164,9 @@ claim that their weights/predictions have been independently re-evaluated.
 - 11 CPU contracts pass; target lint/format/spelling, Bash syntax and CLI help pass. Independent reviewer findings on checkpoint identity and image weighting fixed. Global Ruff has 2768 pre-existing issues, five format files plus parse errors; full codespell timed out after 45 seconds.
 - [Preflight and check record](experiments/assignment-intervention-preflight-20261014/VERIFICATION.md) preserves two initialization failures; reused historical HF_HOME and handled nested extra model state. GPU1 CUDA allocation fails; planned batch-1 GPU0 run is shared and excluded from speed claims.
 - Background sequence: 2 training-image smoke, fixed 128 training-image development, all 548 prior validation images. Two approximations, six views, two loss branches, two target protocols, four feature/target cells. This remains a mechanism diagnostic, not a settled training method.
+
+## 2026-10-14: live assignment diagnostic and verified result archiving
+
+- [Run details and commands](ASSIGNMENT_INTERVENTION_RUN_20261014.md). Worker job-20261014-EgMkSelF has completed its 2-image smoke (12 teacher images, 384 cells), exact native loss parity, identity relative L2 0.000034996, unchanged model states and zero updates. Fixed 128-image development is running, followed by all 548 validation images.
+- Added a separate result watcher; it does not edit running diagnostic sources. It verifies stage counts, finite parity and five output hashes, archives small summaries, and commits explicitly scoped paths without push. It rejects unrelated progress/staged changes, preserves manual archive edits, and resumes its own interrupted commit without duplicate progress.
+- Independent review concerns addressed; seven archive tests pass, including real temporary-Git failed-commit recovery. Target lint/format/spelling pass. The diagnostic retains its previously passing eleven mathematical contracts.
