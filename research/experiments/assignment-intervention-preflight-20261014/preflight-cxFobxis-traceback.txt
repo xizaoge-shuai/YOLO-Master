@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/data/users/zhjia/YOLO-Master/online_experiments/diagnose_assignment_intervention.py", line 173, in run
+    original_states = {"head": state_hash(model), "corrector": state_hash(corrector)}
+  File "/data/users/zhjia/YOLO-Master/online_experiments/diagnose_assignment_intervention.py", line 43, in state_hash
+    digest.update(value.detach().cpu().contiguous().numpy().tobytes())
+AttributeError: 'dict' object has no attribute 'detach'

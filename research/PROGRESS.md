@@ -157,3 +157,10 @@ claim that their weights/predictions have been independently re-evaluated.
 - VOC is a 2000/400 trainval subset with diagnostic AP, not official test or frozen source-to-target transfer. Its query reduction has not established wall-time speedup. New VisDrone timings also contain large time-varying validation overhead.
 - Raw Master-N CSV has 198 rows and 98 inconsistent duplicated epoch groups; checkpoint AP is retained but its strict training-budget comparison requires provenance repair. YOLO11/12 CSVs each have 100 unique rows.
 - DiKE/REVIVE paper exemplars motivate paired and equal-magnitude causal interventions. Existing cache-augmentation literature prevents a novelty claim based solely on D1 recency. Next decision: separate feature approximation and assignment effects before extending the method or launching more full campaigns.
+
+## 2026-10-14: frozen-head assignment intervention implementation
+
+- Added [fixed diagnostic protocol](ASSIGNMENT_INTERVENTION_PLAN.md), native-soft and hard/common-denominator 2x2 target transplantation, separate box/classification output gradients, GT-switch/coverage metrics, frozen-state and source/checkpoint audits. No optimizer updates or AP claims.
+- 11 CPU contracts pass; target lint/format/spelling, Bash syntax and CLI help pass. Independent reviewer findings on checkpoint identity and image weighting fixed. Global Ruff has 2768 pre-existing issues, five format files plus parse errors; full codespell timed out after 45 seconds.
+- [Preflight and check record](experiments/assignment-intervention-preflight-20261014/VERIFICATION.md) preserves two initialization failures; reused historical HF_HOME and handled nested extra model state. GPU1 CUDA allocation fails; planned batch-1 GPU0 run is shared and excluded from speed claims.
+- Background sequence: 2 training-image smoke, fixed 128 training-image development, all 548 prior validation images. Two approximations, six views, two loss branches, two target protocols, four feature/target cells. This remains a mechanism diagnostic, not a settled training method.
