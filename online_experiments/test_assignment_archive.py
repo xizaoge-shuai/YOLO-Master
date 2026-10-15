@@ -94,6 +94,16 @@ def test_commit_rejects_unrelated_progress_changes(tmp_path):
     assert "New progress" not in progress.read_text()
 
 
+def test_commit_preserves_standard_csv_crlf_bytes(tmp_path):
+    block = make_repo(tmp_path)
+    path = tmp_path / "result.csv"
+    expected = b"metric,value\r\nloss,1.25\r\n"
+    path.write_bytes(expected)
+    commit_files(tmp_path, ["result.csv"], block, "<!-- stage:test -->", "result.csv", "Record CSV")
+    found = subprocess.check_output(["git", "show", "HEAD:result.csv"], cwd=tmp_path)
+    assert found == expected
+
+
 def test_commit_recovers_staging_and_does_not_duplicate_after_commit(tmp_path, monkeypatch):
     block = make_repo(tmp_path)
     real_run = subprocess.run

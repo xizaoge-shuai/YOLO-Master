@@ -86,7 +86,20 @@ def commit_files(root, artifact_paths, progress_block, marker, readme_path, mess
     (root / progress_path).write_bytes(expected_progress)
     # Enumerated result CSVs are intentionally versioned despite the global CSV ignore.
     subprocess.run(["git", "add", "-f", "--", *paths], cwd=root, check=True)
-    subprocess.run(["git", "diff", "--cached", "--check"], cwd=root, check=True)
+    # Python's CSV writer emits CRLF by default. Preserve the measured file bytes
+    # and hashes while permitting that line ending for this check only.
+    subprocess.run(
+        [
+            "git",
+            "-c",
+            "core.whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol",
+            "diff",
+            "--cached",
+            "--check",
+        ],
+        cwd=root,
+        check=True,
+    )
     subprocess.run(["git", "commit", "--only", "-m", message, "--", *paths], cwd=root, check=True)
     return git(root, "rev-parse", "HEAD")
 
