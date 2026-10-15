@@ -182,3 +182,9 @@ claim that their weights/predictions have been independently re-evaluated.
 
 - [Verified result archive](experiments/assignment-intervention-job-20261014-EgMkSelF/development/README.md); 128 images, 768 teacher images, 24576 cells.
 - Native loss parity max absolute difference 0; identity relative L2 9.0877351e-05; model states unchanged; zero updates. No AP claim.
+
+<!-- assignment-intervention:job-20261014-EgMkSelF:confirmation -->
+## Assignment intervention job-20261014-EgMkSelF: confirmation complete
+
+- [Verified result archive](experiments/assignment-intervention-job-20261014-EgMkSelF/confirmation/README.md); 548 images, 3288 teacher images, 105216 cells.
+- Native loss parity max absolute difference 0; identity relative L2 0.00013656419; model states unchanged; zero updates. No AP claim.

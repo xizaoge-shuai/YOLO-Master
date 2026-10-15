@@ -1,0 +1,19 @@
+{
+  "images": 548,
+  "split": "val",
+  "teacher_images": 3288,
+  "rows": 105216,
+  "parity_max_relative_l2": 0.00013656419469043612,
+  "native_loss_parity_max_absolute": 0.0,
+  "training_updates": 0,
+  "states_unchanged": true,
+  "elapsed_seconds": 10452.088028480299,
+  "peak_vram_gib": 0.24196386337280273,
+  "outputs_sha256": {
+    "per-image.csv": "40170a6e435302f438ca606bb52259b0c5d69157340df0baafe0d161b44c31b4",
+    "assignments.csv": "21e57624191f04085d78480d1fae194af6e9c0de268966d7abeb9864e2b547df",
+    "summary.csv": "c813e3ea413e52a51f0e1c00a9811242b9f4471a986103e4f8d3da070fc83aaa",
+    "assignment-summary.csv": "dbd204e872b68c1c950d5f690b6adde60e33b54b6f808b42e61e37735fae1774",
+    "selection.json": "a17d6789d36e67472da2f98a9176655d53c680b29ffcecbe047b45bfbebf907b"
+  }
+}
