@@ -1,0 +1,308 @@
+{
+  "protocol": "research/ASSIGNMENT_INTERVENTION_PLAN.md",
+  "protocol_sha256": "361cc22466995a22068ea4a0c180763adc983395e81fed308b1d030eb50acc90",
+  "source_job": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+  "source_hashes": {
+    "online_experiments/assignment_intervention.py": "691a08389cfa483417bda5afa3f4d3480d0e89350e9ab9254320da6ff0abf74c",
+    "online_experiments/budget_corrector.py": "172af8b9bfa437455ee8387bdcdd599e16532c6dd910908c459404b74f4b0ca5",
+    "online_experiments/d1_online_compare.py": "d2b13e98c74bcd1db1e2b361b0cfdefecdf6989e1b7a581ee6ea71a9a9a666d5",
+    "online_experiments/diagnose_assignment_intervention.py": "cba8251b7534aef82890f2fb0e46bc371ca1b1450caf6af54268f39c9d875475",
+    "online_experiments/feature_baselines.py": "0222168bd915f89a35c877f9d778eeff36306520b4accdd43a8f8a2b1f181758",
+    "online_experiments/full_visdrone_data.py": "c55f240e72b2f65326ea464e088c3c30bc167375fa286d89743466d25c9bc0d6",
+    "online_experiments/fusion_probe.py": "8062d08feca57d194428074433b40756e45e08c3dc45a6b89501abd8e9c9e483",
+    "scripts/__init__.py": "438d2c07ad050c109b1a0029c59c3e868c239ea52f463b2ab93579c923838b06",
+    "scripts/d1_build_feature_cache.py": "a09990b5ed1f7beb97ae378f6f1b123761b87928ec531ef2afbe6223124af0af",
+    "scripts/d1_train_cached_detector.py": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009",
+    "ultralytics/__init__.py": "d71461cea4c6fb2817e4bd92d554592dd8677a3603f8de390e9d9e98c1842e8c",
+    "ultralytics/cfg/__init__.py": "7b835f09aa5bb5b09bb73ebcf013bf0666eb4f7cf9a01e9f968d6ad0cbf70cc7",
+    "ultralytics/data/__init__.py": "fbb799cf1a862dc17169a64a8f98293e9e5f80f656b7ebb7b2bd3e3f612e0dbb",
+    "ultralytics/data/augment.py": "1ccb2e94bfaa5acc609e7971b301de4a686b332a90708fe47a0637447136c69b",
+    "ultralytics/data/base.py": "6915996cdf1a029126c9c61171d65ba60cf863a20557bed2e2af3c34ce9cb029",
+    "ultralytics/data/build.py": "7c3a34668e31be91b38c94d457a5f0a581a20a8789ee3105a28e5f5e41cc485c",
+    "ultralytics/data/converter.py": "12aa2759e25ffc4d2fa3b80642a6784294e676bd187bc5accdb8b1d7384fb5c3",
+    "ultralytics/data/dataset.py": "3e1c0d110fd36eaa20b6372192b4d6e8d18c2f27a7aeb306798989593f482022",
+    "ultralytics/data/foundation_cache.py": "17060222db9b8eaf1ce0a5f20443663500a024122ea7f24f48485b88ad879bce",
+    "ultralytics/data/loaders.py": "dd430c6093633458e498271b097f395b3c2de6116bf0f6d91d58a39c6e1efaf0",
+    "ultralytics/data/multitask_sampler.py": "fba290a23c4c2e470f3073ba322b0034bf83bda7008d4eb346bdec5850405ce6",
+    "ultralytics/data/preloaded_feature_cache.py": "1a862a0e05e207d3ae376978e6070c8d972ef49eb4fd60eba92ab8ba116c46fc",
+    "ultralytics/data/utils.py": "ec230acd002a19148cb5e2f630519d768a92145286aa9b683b4d03e40bb3ff53",
+    "ultralytics/mixture_metadata.py": "8893fc5e1c1656f1e3381bfa07a9bbc111ac3eb78bf9c8a8a87ee365938f7fe3",
+    "ultralytics/nn/__init__.py": "06c0647ea4095fb6f6adc23e30394ff36d2ac3df0db65a3da0f9249a05735a52",
+    "ultralytics/nn/autobackend.py": "d08fb788b52913058fde7e9b00398511953d5fde85728f196045b00a351d1f5f",
+    "ultralytics/nn/backends/__init__.py": "eb8ef0b029ca6debeaf154f72d49500997bc058c5ad736386d3f2a583731be5d",
+    "ultralytics/nn/backends/axelera.py": "2029b9bd6a661b42a3f67eeef0d75293538c60c6e799c2922215992acaa8ab3c",
+    "ultralytics/nn/backends/base.py": "a0a891c38e53e43ffae5b1e64d040fc557af0a155942298f2cc2733250bc84c4",
+    "ultralytics/nn/backends/coreml.py": "b9d12e8132f25237ec5c32db34a5d6d02ad8599dd0f44c699cde340184688196",
+    "ultralytics/nn/backends/deepx.py": "33865fbdb7edd9f48d2e294ee4faff9c7c0d7fe8df341e719526b9fcabf00ad4",
+    "ultralytics/nn/backends/executorch.py": "f968b645cd62c3acbef75f40cdc6cce8e890cf8c245c0a377d41d4c36959757b",
+    "ultralytics/nn/backends/hailo.py": "d05e3dd7884382fbc5640311ddef838ce08b8853f2c40fa62d1fe1c5d11d4ae4",
+    "ultralytics/nn/backends/litert.py": "ef2453b42552a40f94e4e339d853647ed2edbe22b08097258cee868a74959d4c",
+    "ultralytics/nn/backends/mnn.py": "51883f6bb1a6b0ef5f59625473e1c88797bf74c99d83a0febe7468a1be784db3",
+    "ultralytics/nn/backends/ncnn.py": "f6b6b739f7291906c0a95d143bc57218b6772064154f5931feae3f4388a44ffa",
+    "ultralytics/nn/backends/onnx.py": "0d352ea6075eeb334f7a07b110a268991908d8a5f98ab0c47b3452a6d2db207a",
+    "ultralytics/nn/backends/openvino.py": "1bf0e90bfae813dc7612bd25cd6a698a900f2bde035b821e4fb0f45d01377b56",
+    "ultralytics/nn/backends/paddle.py": "01019d89093d487665d3068e9bfe41e700f8ea638cb01d6ca58c4fb6b83a3116",
+    "ultralytics/nn/backends/pytorch.py": "eab69efaaadcb274d2aa4d16f395ada43fae12e6990463a4e063dd75fbc252e5",
+    "ultralytics/nn/backends/qnn.py": "4253eeecbdd569840604074dfa45f558831ed27eff3a4e3c698522e09a513240",
+    "ultralytics/nn/backends/rknn.py": "debb795712009d7df7f5fca27804a8d964199eda157bd2f8e784ae281649e4ac",
+    "ultralytics/nn/backends/tensorflow.py": "fc0b94db15d4b3ebf18a82af8fb1548ed77be221295682e8e27c39228ad3ffba",
+    "ultralytics/nn/backends/tensorrt.py": "14a4c8a716be0a40b336c466c6e3bc87d5e15ca26aafd43b3b77a32e5dd5bad2",
+    "ultralytics/nn/backends/triton.py": "b5f3e689f30dc52947f7904f8aa01219077eea4ffd511187604f474e54296057",
+    "ultralytics/nn/foundation/__init__.py": "802d7462c531ca1156552e0c50b300ee3b04d55f0710306bf5f3015fffcaf5e0",
+    "ultralytics/nn/foundation/losses.py": "25927ae2647513ffe4aa48c7b3c9f89a209dd2764861a6db12a3e435c164257c",
+    "ultralytics/nn/foundation/preprocessing.py": "0cc9a5b44eb3940aadd036c8d3c1cead07bd3c633c33fc7cab37ca89fea762f1",
+    "ultralytics/nn/foundation/projectors.py": "5c3a8aa242c175eb2d2e4cb50a27cbaa334084e2c78d16f4d1ebe22e28c54cb5",
+    "ultralytics/nn/foundation/protocol.py": "8d69cf7fba963ea6c4b4cad74f72872aca4f75f5fe809977917769f6a9c9cede",
+    "ultralytics/nn/foundation/routing.py": "141ba2bcd07380e9815f732227a594c6e9ab9c2a7d31e7620f8e9e172e048845",
+    "ultralytics/nn/foundation/semantic.py": "1e78a98e18e9592a1c23e58d5c9dc78b6ed81396d022a801bafe59f19c43f66b",
+    "ultralytics/nn/foundation/taps.py": "494d56d65c758852613de611061d8ca6da0152db696ea57a5b074c71d1489575",
+    "ultralytics/nn/foundation/teachers/__init__.py": "18b72f4e02c8f0c9e3c19a41e5abcd4350ba31da2b1211f5a05e1751fe588692",
+    "ultralytics/nn/foundation/teachers/dinov3.py": "3a2b088e71bc7917e0902677475c1af69e45babb5596d7a36bb5fe65d57c2d20",
+    "ultralytics/nn/foundation/teachers/multi.py": "8ca54ced62c9fd38f5ebcd084bdf847488c9e2edd1f0a1f818fe4cb75ff11321",
+    "ultralytics/nn/foundation/teachers/siglip2.py": "87f6da911352c4f44ee5cce6b2f7a51a0d87d4c114444157b3328e4f5f30dfde",
+    "ultralytics/nn/mixture_loss.py": "df93d357e327d97d702c9a05d678322f9d9c2f34c29aae0a23721146f1886a3c",
+    "ultralytics/nn/mixture_registry.py": "f835a021af5ad6c1f8ad92681039ec2939ae784c640d6a40af9f7f5b8b85c2f9",
+    "ultralytics/nn/modules/__init__.py": "078c9b5d3be0e792a540a0ca42981e515a991a703bd7d4f2b0d0c470bd9f4040",
+    "ultralytics/nn/modules/_numeric.py": "2df4cd72260ac09139d584fc4c43e83173d3c3f727d82446f606b0f401dc7aa2",
+    "ultralytics/nn/modules/block.py": "ff8dbb1de8e535b861b8ea31c79e06b5cfaad72d446fba4093209a275c667dbe",
+    "ultralytics/nn/modules/conv.py": "c802f36ea1596d8910f2b651d57877b50a4960857b97cbb5a20d44a1dbbaa774",
+    "ultralytics/nn/modules/dynamic_moe.py": "8fd965f6b90650ef96b6eca6d435e81d7cfb1b2cbb10bc774a4a61a413e344a9",
+    "ultralytics/nn/modules/head.py": "759a454e03a9b4ebe4c69628292b0acc0469bb5f9dba278f7bc4b54c214bf209",
+    "ultralytics/nn/modules/latent_mixture.py": "7ee5b0516a20709c9bc96b8c966da13447ca527c8cba7c7051f41aaf61f52b51",
+    "ultralytics/nn/modules/moa/__init__.py": "9056a1840e4280729d0956439f162dcf19134b85534196bddfbc87dfa9394e27",
+    "ultralytics/nn/modules/moa/_constants.py": "6111a3e52c3bf6a6c1e94e02b13acbad760c3a11fb2804105fb88e44c95760c3",
+    "ultralytics/nn/modules/moa/block.py": "bccb9157506dc126f9d227b88ba3eb9738c8797aa58a517d675baea3cc573a5b",
+    "ultralytics/nn/modules/moa/heads.py": "f147036410cdb47631bfc3a492d265c321a5b991506098d2a7bdd4ddb40c2fcc",
+    "ultralytics/nn/modules/moa/router.py": "ad753404db8b740c909b38d4f74dc4912527ce931ea76f48609ae7dbeb8f517f",
+    "ultralytics/nn/modules/moa/wrappers.py": "2b98b80efab054f6d3308b2bac59832f4567261a3eab46d62e8cc48b8d165543",
+    "ultralytics/nn/modules/moe/__init__.py": "1079b314d141505f9587f53c75740ecc88d3e76ef4db39091897c2371563c170",
+    "ultralytics/nn/modules/moe/_common.py": "7f4035ab72c1094fc795e25e553c97356adba383312ca5330be552f85cc0297c",
+    "ultralytics/nn/modules/moe/_gated_visual.py": "43f52c2bc88db193a24ae7d87b8c2aa59798cde67062e13b6fd10061a3639419",
+    "ultralytics/nn/modules/moe/_helpers.py": "50632470a32962b48a705d401832a5b794661bb4fddb49f995a3382ef8ac083c",
+    "ultralytics/nn/modules/moe/analysis.py": "fbf37c43a464fc28eb84951aef980393f685827b91d87dc672163936b02fdc4b",
+    "ultralytics/nn/modules/moe/config.py": "e0dcbcb7a61d9d7523cf6828b23a534b620683732a0dbe0f4c17aae6e26679f5",
+    "ultralytics/nn/modules/moe/diagnostics.py": "73bc5aaebdaeaffccdb857c92e00694d813e3161538513f6a0857cf7ca5643bf",
+    "ultralytics/nn/modules/moe/experts.py": "864cb60ccc8998c7a7c676dcc6ddcf61ca02a9388cd250910db89a5fae190c12",
+    "ultralytics/nn/modules/moe/gated.py": "5e73e35fa6c53ee45381b934771585314e68e66fb3e6f66786a6ce68af8f4727",
+    "ultralytics/nn/modules/moe/history.py": "23ebf14fbdbcd2f6224391637670ffbbeacaf9174fd40ae0ce54eda465285dab",
+    "ultralytics/nn/modules/moe/hooks.py": "9f8ea9a1171181dd4f86c99e921949f537735d7c15712010e8b33240c34e4622",
+    "ultralytics/nn/modules/moe/loss.py": "fc492ebd9af8c3a10dd57be221e8d110f7a13761da9ff1c900d6d17e5208f3b4",
+    "ultralytics/nn/modules/moe/modules.py": "ba1d73b335629563dcf71c66955b431818a7d1a213dc6783664328bfb58489f4",
+    "ultralytics/nn/modules/moe/protocol.py": "9c6af0e908c3abf8151ce47d047f245b35ea9f91b039b4686647f65e3233a485",
+    "ultralytics/nn/modules/moe/pruning.py": "9ec9137ea7dbd7c7dba34424a97e8c19a3e811707e9cf0fcf49981d7df831748",
+    "ultralytics/nn/modules/moe/routers.py": "1d44927ee4d9e2e76be2f0691a3dfb5da5b918536d9ea27047c236c42fc3b5d4",
+    "ultralytics/nn/modules/moe/scheduler.py": "972ec1f101e184e4c380282d920bf6fb3baddfdb623c0a1bf365eaba38474690",
+    "ultralytics/nn/modules/moe/shared_expert_moe.py": "9b438b9fb6693b60931d349594ae284e7292b0a0f089562513293aeb77068c80",
+    "ultralytics/nn/modules/moe/utils.py": "8788814a3328c3302066b2cbc2bda542e77087113ce1e403b51ae3e283a41b1b",
+    "ultralytics/nn/modules/mot/__init__.py": "597076de8d1220c8a0a9a5f443598de1c494b5612d2fe2a21e724d0f88f5150f",
+    "ultralytics/nn/modules/mot/_constants.py": "efa0614835d69405fd6bc28bb1f0b6a9dc20378d543f11f581a83577c48df3c1",
+    "ultralytics/nn/modules/mot/block.py": "24dffceb0dc130280f7085463332fd45faa6fd059035e50b89e0afc89228f206",
+    "ultralytics/nn/modules/mot/experts.py": "3e89d8daee33d29d723838a39cf832520c5c982eab5132c410b99322ea4be388",
+    "ultralytics/nn/modules/mot/router.py": "0fab250d4b472c979e28c76258768ce9c6e414fdc016dd3a29559ddcefd75fc1",
+    "ultralytics/nn/modules/mot/wrappers.py": "11304e2c5d30260fb17b4d153cbf8e82c436dde6e1199f60e5f868568c46a5ed",
+    "ultralytics/nn/modules/multitask/__init__.py": "47ded7b653874306121f36a313a341dc597fbc5604d3e477cf0633417c5c8669",
+    "ultralytics/nn/modules/multitask/head.py": "f70bfa3d6396f65592b9ec39216f5372438a64e5a009471eaa88bd8e91b56686",
+    "ultralytics/nn/modules/multitask/router.py": "bd817d8727b4211784d5b31008166c7f429f96875ede11d7ca4470532c42772f",
+    "ultralytics/nn/modules/routing_protocol.py": "fb1182314dd74fbc2295a33fef927e9f7333b4e2906688e5c0ecd4f9a00340b3",
+    "ultralytics/nn/modules/transformer.py": "5d6c6904fb773722eb858663de4d8601731d0efbda734e2fa6ba687072c6748b",
+    "ultralytics/nn/modules/utils.py": "3466783923eebae71abd1d7e62f6a553fc474255b98f3fcbe2a227af5061bcd0",
+    "ultralytics/nn/tasks.py": "9609c36b7a66400842d2b3f0b85d40cc1639bc50e4789971d7b7e6dddfd73105",
+    "ultralytics/utils/__init__.py": "40116cd34788beccd09cd6834fa68241409ad3138298cfc83f3beb1128f322d5",
+    "ultralytics/utils/checks.py": "90b3a332b1e88f5e7ef2f8c5d748cfb9c991810f3353e39be7f187f69a933198",
+    "ultralytics/utils/cpu.py": "3a4b0a3a55fddc0b1b4ac16ea18bcb5d15e0a643a26eb652c10c96ea58a9b784",
+    "ultralytics/utils/downloads.py": "652a73fbf7144286e6e26f2c7bedfb275dd792ab46b2a3e255b5e77a173e434f",
+    "ultralytics/utils/errors.py": "d6eb14a93fb3a14291c47a5806b7580a008684e588eae7194a46e30cfe111436",
+    "ultralytics/utils/files.py": "e936fffbd6ba3c9f07ab3507ec6361252cb4e4d3aaad38f3d54c94fd58abc7a9",
+    "ultralytics/utils/git.py": "a4040c3bde3400dee4f38768b1ed58c713f943d5e7439430141d50573f6dea62",
+    "ultralytics/utils/instance.py": "d49f7a39c7a468703353a326ce1b254382c83ac9f67e3aef378035bac7f456c1",
+    "ultralytics/utils/loss.py": "e0f594c20c4c79eec3b5f31d70f53fa4da467283b3bd8fd5d67e7667b30b327a",
+    "ultralytics/utils/metrics.py": "f4332f4fef5b406bad303d63525bbee1b6bd87760eb702da1c53fbb7cbb6f4dd",
+    "ultralytics/utils/ops.py": "3138933eda1076ad91d680e57b08c881f937fd9bd07e8f6daf85efa6545239c5",
+    "ultralytics/utils/patches.py": "df57659d2109914df51ad444c0fefbda0b3e8d9a3a26e1e4027e5d00f1ace59e",
+    "ultralytics/utils/plotting.py": "196c7f92ca88c0e6c4128599096db39d0098caae64e873d7f6865013c88ab11a",
+    "ultralytics/utils/tal.py": "e58ff8eaa2b7432a11d6a5a55e004a3a5a67ebaa334afc15920f152a3e8411b5",
+    "ultralytics/utils/torch_utils.py": "9eb5347a2cc9d07d6755f754e72507e3776b97a68cf055cbfef15d16f6b59f0c",
+    "ultralytics/utils/tqdm.py": "205aab835e4d52781a589ea45e47065a5e3b4613a6b2f04dbb5779f9370cf4f8"
+  },
+  "checkpoints": {
+    "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/train/online-geom-s0/weights/last.pt": "06235dc23ef0289e9dd0f49a61cbe567a3904cc344e93c4f0a3dc65174b66ac9",
+    "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/train/correct25-s0/weights/last.pt": "3282912f98218ce576044430f828b4035253e4c4ec1cfc6622d2c3180e688d43"
+  },
+  "checkpoint_training_metadata": {
+    "online-geom": {
+      "path": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/train/online-geom-s0/args.json",
+      "sha256": "25b30ad1e36c002dbf2190505051cd8326b0cf6903dadbd011487967f1366c0e",
+      "args": {
+        "method": "online-geom",
+        "seed": 0,
+        "epochs": 100,
+        "batch": 8,
+        "train_images": 6471,
+        "val_images": 548,
+        "imgsz": 640,
+        "max_det": 500,
+        "conf": 0.001,
+        "cache_identity": {
+          "imgsz": 640,
+          "layers": [
+            3,
+            7,
+            11
+          ],
+          "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+          "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+          "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+        },
+        "fusion": "mean_value",
+        "lr": 0.001,
+        "weight_decay": 0.0005,
+        "aux_weight": 0,
+        "query_pct": 100,
+        "budget_unit": "image, including tail batches",
+        "evaluator": "custom DetMetrics; ignored regions NOT handled; NOT official VisDrone AP",
+        "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+        "cache_manifest_sha256": "394efa2d1c3684c45e1b149c89f5ea41a0c95a1e8c832d029b56ff5ee5907f20"
+      }
+    },
+    "correct25": {
+      "path": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/train/correct25-s0/args.json",
+      "sha256": "f9e96ad6729ba6972bdbb059d567554bac5a7b283da519045e0ca33293153fab",
+      "args": {
+        "method": "correct25",
+        "seed": 0,
+        "epochs": 100,
+        "batch": 8,
+        "train_images": 6471,
+        "val_images": 548,
+        "imgsz": 640,
+        "max_det": 500,
+        "conf": 0.001,
+        "cache_identity": {
+          "imgsz": 640,
+          "layers": [
+            3,
+            7,
+            11
+          ],
+          "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+          "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+          "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+        },
+        "fusion": "mean_value",
+        "lr": 0.001,
+        "weight_decay": 0.0005,
+        "aux_weight": 0,
+        "query_pct": 25,
+        "budget_unit": "image, including tail batches",
+        "evaluator": "custom DetMetrics; ignored regions NOT handled; NOT official VisDrone AP",
+        "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+        "cache_manifest_sha256": "394efa2d1c3684c45e1b149c89f5ea41a0c95a1e8c832d029b56ff5ee5907f20"
+      }
+    }
+  },
+  "initial_state_hashes": {
+    "head": "59eb671a3e038858240e6c02b2e95078b01dfd43305237042520b17526483be6",
+    "corrector": "fd322c0a364b7e364c574aed4761608935986624692bf3e35c5342a13843c884"
+  },
+  "cache_manifest": {
+    "identity": {
+      "imgsz": 640,
+      "layers": [
+        3,
+        7,
+        11
+      ],
+      "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+      "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+      "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+    },
+    "teacher_dtype": "fp32",
+    "cache_dtype": "fp16",
+    "setup_seconds": 5.937924052588642,
+    "parts": {
+      "train-v0": {
+        "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/cache/train-v0.npy",
+        "bytes": 23854694528,
+        "sha256": "9350e5bf247cb9612750c35b49190c63ba559eb557906b34c210b4ab80029dda",
+        "seconds": 144.4031515205279,
+        "images": 6471,
+        "extra_parity_images": 1
+      },
+      "train-v1": {
+        "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/cache/train-v1.npy",
+        "bytes": 23854694528,
+        "sha256": "a07a217d8e2281ccf4c9f82725b49b75b330b6eb83fb535cb455b3d9167fd71e",
+        "seconds": 142.9435338359326,
+        "images": 6471,
+        "extra_parity_images": 1
+      },
+      "val-v0": {
+        "file": "/data/users/zhjia/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX/cache/val-v0.npy",
+        "bytes": 2020147328,
+        "sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+        "seconds": 10.27102983277291,
+        "images": 548,
+        "extra_parity_images": 1
+      }
+    },
+    "parity": [
+      {
+        "part": "train-v0",
+        "relative_L2": 0.0002052829513559118
+      },
+      {
+        "part": "train-v1",
+        "relative_L2": 0.00020196897094137967
+      },
+      {
+        "part": "val-v0",
+        "relative_L2": 0.00020351295825093985
+      }
+    ],
+    "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+    "wall_seconds": 303.5879563363269
+  },
+  "cache_hash_verification": "original manifest hashes inherited; sizes/shapes and used sample slices verified, no full cache rehash",
+  "manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+  "git_head": "ad972524756419a86f9bfeb973e9edcc5560f5ad",
+  "git_status": "?? online_experiments/full_visdrone_taskaware.py\n?? research/experiments/baseline-final/\n",
+  "seed": 20261014,
+  "split": "train",
+  "count": 128,
+  "head": "online-geom",
+  "views": [
+    [
+      false,
+      1.0
+    ],
+    [
+      false,
+      0.85
+    ],
+    [
+      false,
+      1.15
+    ],
+    [
+      true,
+      1.0
+    ],
+    [
+      true,
+      0.85
+    ],
+    [
+      true,
+      1.15
+    ]
+  ],
+  "batch": 1,
+  "reg_max": 1,
+  "training_updates": 0,
+  "environment": {
+    "torch": "2.13.0+cu130",
+    "numpy": "2.2.6",
+    "gpu": "NVIDIA GeForce RTX 4090"
+  },
+  "interpretation": "local frozen-head intervention; not AP recovery, training-gradient estimate or new method; shared GPU, no speed claims"
+}
