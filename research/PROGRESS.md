@@ -170,3 +170,9 @@ claim that their weights/predictions have been independently re-evaluated.
 - [Run details and commands](ASSIGNMENT_INTERVENTION_RUN_20261014.md). Worker job-20261014-EgMkSelF has completed its 2-image smoke (12 teacher images, 384 cells), exact native loss parity, identity relative L2 0.000034996, unchanged model states and zero updates. Fixed 128-image development is running, followed by all 548 validation images.
 - Added a separate result watcher; it does not edit running diagnostic sources. It verifies stage counts, finite parity and five output hashes, archives small summaries, and commits explicitly scoped paths without push. It rejects unrelated progress/staged changes, preserves manual archive edits, and resumes its own interrupted commit without duplicate progress.
 - Independent review concerns addressed; seven archive tests pass, including real temporary-Git failed-commit recovery. Target lint/format/spelling pass. The diagnostic retains its previously passing eleven mathematical contracts.
+
+<!-- assignment-intervention:job-20261014-EgMkSelF:smoke -->
+## Assignment intervention job-20261014-EgMkSelF: smoke complete
+
+- [Verified result archive](experiments/assignment-intervention-job-20261014-EgMkSelF/smoke/README.md); 2 images, 12 teacher images, 384 cells.
+- Native loss parity max absolute difference 0; identity relative L2 3.4995974e-05; model states unchanged; zero updates. No AP claim.

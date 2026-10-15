@@ -1,0 +1,13 @@
+{
+  "split": "train",
+  "seed": 20261014,
+  "indices": [
+    4825,
+    5853
+  ],
+  "sample_ids": [
+    "train/9999982_00000_d_0000025",
+    "train/9999998_00218_d_0000174"
+  ],
+  "full_selection_sha256": "30e522997752d099ffcfe62159bb9eaf2b4ef8fb9f1bf46d7aff7ec0c63e124e"
+}

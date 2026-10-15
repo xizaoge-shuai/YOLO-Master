@@ -1,0 +1,19 @@
+{
+  "images": 2,
+  "split": "train",
+  "teacher_images": 12,
+  "rows": 384,
+  "parity_max_relative_l2": 3.4995973692275584e-05,
+  "native_loss_parity_max_absolute": 0.0,
+  "training_updates": 0,
+  "states_unchanged": true,
+  "elapsed_seconds": 40.59365709684789,
+  "peak_vram_gib": 0.23308086395263672,
+  "outputs_sha256": {
+    "per-image.csv": "3a81a08bdf6017f7d6d7a672030b119e67ec2b11127bc3de58057d63ba2b8082",
+    "assignments.csv": "72703745a89cf6e09137d5b3c37254055b67c3e1f03847e5b897824f1d29c839",
+    "summary.csv": "d68893f3de8ac9eeff166cfe18f52e3954c36f6b8ee0e9698094e2b52134c3aa",
+    "assignment-summary.csv": "ba0117b8666f1818613fe65f75238f2e82c63ea25f0b8daef176febb63e99757",
+    "selection.json": "30e522997752d099ffcfe62159bb9eaf2b4ef8fb9f1bf46d7aff7ec0c63e124e"
+  }
+}

@@ -1,0 +1,37 @@
+Frozen-head diagnostic. No optimizer updates, no AP claims, shared GPU timing.
+Nonidentity views only; equal images and four views per image.
+box/cls refer to raw-output gradients, not parameter or feature gradients.
+hard_common uses unit-positive targets and a shared exact-positive denominator.
+method branch protocol cell loss box_grad_relL2 box_grad_cos cls_grad_relL2 cls_grad_cos
+rec one2many hard_common AA 6.706653 1.019418 0.359780 0.655016 0.786803
+rec one2many hard_common AE 8.211222 0.945321 0.460616 0.245645 0.974672
+rec one2many hard_common EA 5.496619 0.613673 0.761818 0.629683 0.787994
+rec one2many hard_common EE 6.112371 0.000000 1.000000 0.000000 1.000000
+rec one2many native_soft AA 5.901691 1.297156 0.201658 1.314959 0.478597
+rec one2many native_soft AE 7.024794 1.046093 0.279556 0.755390 0.799137
+rec one2many native_soft EA 5.458292 0.934651 0.533857 1.368516 0.452978
+rec one2many native_soft EE 4.402520 0.000000 1.000000 0.000000 1.000000
+rec one2one hard_common AA 7.204937 1.109227 0.222180 0.935212 0.570377
+rec one2one hard_common AE 8.473173 1.004276 0.365766 0.281837 0.963786
+rec one2one hard_common EA 6.297381 0.747591 0.662166 0.921121 0.566015
+rec one2one hard_common EE 6.106291 0.000000 1.000000 0.000000 1.000000
+rec one2one native_soft AA 6.676769 1.218218 0.135676 1.199896 0.411604
+rec one2one native_soft AE 7.978967 1.044395 0.262666 0.581738 0.859887
+rec one2one native_soft EA 6.333382 0.928046 0.473271 1.190510 0.425912
+rec one2one native_soft EE 5.102936 0.000000 1.000000 0.000000 1.000000
+transport one2many hard_common AA 6.800509 1.014754 0.361486 0.677901 0.774421
+transport one2many hard_common AE 8.317116 0.955581 0.439172 0.273840 0.968593
+transport one2many hard_common EA 5.475765 0.572901 0.814308 0.637537 0.783403
+transport one2many hard_common EE 6.112371 0.000000 1.000000 0.000000 1.000000
+transport one2many native_soft AA 6.189250 1.350975 0.196922 1.461432 0.440532
+transport one2many native_soft AE 7.286381 1.029648 0.297946 0.842164 0.768927
+transport one2many native_soft EA 5.443256 0.949515 0.535500 1.397732 0.440297
+transport one2many native_soft EE 4.402520 0.000000 1.000000 0.000000 1.000000
+transport one2one hard_common AA 7.571181 1.122687 0.211500 0.965561 0.552004
+transport one2one hard_common AE 8.772076 1.018897 0.342965 0.323234 0.953055
+transport one2one hard_common EA 6.473794 0.762266 0.646301 0.936469 0.555711
+transport one2one hard_common EE 6.106291 0.000000 1.000000 0.000000 1.000000
+transport one2one native_soft AA 7.357781 1.225078 0.127871 1.285151 0.385619
+transport one2one native_soft AE 8.545133 1.046618 0.262584 0.673229 0.824396
+transport one2one native_soft EA 6.339297 0.917833 0.489841 1.186355 0.427839
+transport one2one native_soft EE 5.102936 0.000000 1.000000 0.000000 1.000000
