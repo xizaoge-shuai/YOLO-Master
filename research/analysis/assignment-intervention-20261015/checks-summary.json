@@ -1,0 +1,61 @@
+{
+  "ruff-repo": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit": 1,
+    "seconds": 0.11446629744023085
+  },
+  "ruff-format-repo": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "format",
+      "--check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit": 1,
+    "seconds": 0.03198113292455673
+  },
+  "codespell-repo": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell"
+    ],
+    "exit": "TIMEOUT_45s",
+    "seconds": 45.002311285585165
+  },
+  "replication-status": {
+    "command": [
+      "bash",
+      "online_experiments/run_assignment_replication.sh",
+      "status"
+    ],
+    "exit": 0,
+    "seconds": 0.01638315711170435
+  },
+  "archive-help": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "online_experiments/archive_assignment_intervention.py",
+      "--help"
+    ],
+    "exit": 0,
+    "seconds": 0.03217987809330225
+  },
+  "target_verification_20261016": {
+    "pytest": "19 passed; 4 existing temporary-directory cleanup warnings",
+    "ruff_check": "passed: analyzer and archiver",
+    "ruff_format": "passed: analyzer and archiver",
+    "bash_syntax": "passed: replication launcher",
+    "analysis_source_hash": "verified against analysis-summary.json",
+    "diagnostic_source": "unchanged from ad972524756419a86f9bfeb973e9edcc5560f5ad",
+    "review_scope": "additional reviewer inspected supplied critical snippets only, not the full new analysis/launcher"
+  }
+}

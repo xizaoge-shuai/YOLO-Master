@@ -123,6 +123,11 @@ def commit_stage(root, job, stage_name, count):
             raise ValueError("Refusing to overwrite a different archived result")
         shutil.copyfile(stage / name, target)
     selection = json.loads((stage / "selection.json").read_text())
+    provenance = json.loads((stage / "provenance.json").read_text())
+    head = provenance["head"]
+    if head not in ("online-geom", "mix25"):
+        raise ValueError("Unexpected frozen reference head")
+    head_label = "Online100" if head == "online-geom" else "Mix25"
     compact = {
         "split": selection["split"],
         "seed": selection["seed"],
@@ -134,7 +139,7 @@ def commit_stage(root, job, stage_name, count):
     readme = (
         f"# Assignment intervention: {stage_name}\n\n"
         f"Source: `{stage}`. Images: {count}; teacher images: {summary['teacher_images']}; rows: {summary['rows']}.\n\n"
-        "Batch-1 frozen epoch-100 seed-0 Online100 head; Transport/Rec; six views; one2many/one2one; "
+        f"Batch-1 frozen epoch-100 seed-0 {head_label} head; Transport/Rec; six views; one2many/one2one; "
         "native_soft/hard_common; EE/EA/AE/AA cells (feature donor, assignment donor). "
         "Full per-image CSVs stay in the run directory and their hashes are in summary.json. "
         "No weights, feature caches, optimizer updates or AP evaluation in this archive. "
@@ -167,6 +172,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--job", type=Path, required=True)
     parser.add_argument("--once", action="store_true")
+    parser.add_argument(
+        "--stages",
+        nargs="+",
+        choices=("smoke", "development", "confirmation"),
+        default=["smoke", "development", "confirmation"],
+    )
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     job = args.job.resolve()
@@ -182,6 +193,8 @@ def main():
         try:
             while True:
                 for stage, count in (("smoke", 2), ("development", 128), ("confirmation", 548)):
+                    if stage not in args.stages:
+                        continue
                     status_path = job / stage / "status.txt"
                     if stage in state["commits"] or not status_path.exists():
                         continue
@@ -191,7 +204,9 @@ def main():
                         print(stage, state["commits"][stage], flush=True)
                 worker_status = (job / "status.txt").read_text().strip()
                 if worker_status == "SUCCEEDED" or worker_status.startswith("FAILED") or args.once:
-                    state["status"] = "ARCHIVED" if len(state["commits"]) == 3 else "PARTIAL: " + worker_status
+                    state["status"] = (
+                        "ARCHIVED" if set(args.stages).issubset(state["commits"]) else "PARTIAL: " + worker_status
+                    )
                     break
                 pid = (job / "pid.txt").read_text().strip()
                 cmdline = Path("/proc") / pid / "cmdline"

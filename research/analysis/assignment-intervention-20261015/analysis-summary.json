@@ -1,0 +1,63 @@
+{
+  "source_audits": {
+    "development": {
+      "images": 128,
+      "split": "train",
+      "teacher_images": 768,
+      "rows": 24576,
+      "parity_max_relative_l2": 9.087735088542104e-05,
+      "native_loss_parity_max_absolute": 0.0,
+      "training_updates": 0,
+      "states_unchanged": true,
+      "elapsed_seconds": 2519.380552340299,
+      "peak_vram_gib": 0.3336477279663086,
+      "outputs_sha256": {
+        "per-image.csv": "72359a0ed40ed6fda6169662b4aaf73fc662ab2d7e627f68d7c7e08073c37003",
+        "assignments.csv": "0cfd93de114187443523a8196171dd1d87ea7302f5e89a710b43d70399012e08",
+        "summary.csv": "4010bda2472dd60222227b5e8a3ae9cfca1a0cd0b38f35503b51bcdd46d966c1",
+        "assignment-summary.csv": "5a50129d474b59c5f60b7fee7183e6939d9214361a4a8a7d429756e8fa8f730a",
+        "selection.json": "0cd298e84a8e5bba0203c2b396e9d6a981dbd7e1987655c767ed76b4e2707225"
+      }
+    },
+    "confirmation": {
+      "images": 548,
+      "split": "val",
+      "teacher_images": 3288,
+      "rows": 105216,
+      "parity_max_relative_l2": 0.00013656419469043612,
+      "native_loss_parity_max_absolute": 0.0,
+      "training_updates": 0,
+      "states_unchanged": true,
+      "elapsed_seconds": 10452.088028480299,
+      "peak_vram_gib": 0.24196386337280273,
+      "outputs_sha256": {
+        "per-image.csv": "40170a6e435302f438ca606bb52259b0c5d69157340df0baafe0d161b44c31b4",
+        "assignments.csv": "21e57624191f04085d78480d1fae194af6e9c0de268966d7abeb9864e2b547df",
+        "summary.csv": "c813e3ea413e52a51f0e1c00a9811242b9f4471a986103e4f8d3da070fc83aaa",
+        "assignment-summary.csv": "dbd204e872b68c1c950d5f690b6adde60e33b54b6f808b42e61e37735fae1774",
+        "selection.json": "a17d6789d36e67472da2f98a9176655d53c680b29ffcecbe047b45bfbebf907b"
+      }
+    }
+  },
+  "essentials": {
+    "transport": {
+      "feature_relative_mse": 0.21239960276314399
+    },
+    "rec": {
+      "feature_relative_mse": 0.039713974147887715
+    },
+    "relative_mse_reduction": 0.813022370893158
+  },
+  "analysis_code_sha256": "1909db505aedd4dab7b30d76bfbf3add2e659f58b16fa661cb64d3e03a98e357",
+  "bootstrap_draws": 2000,
+  "seed": 20261015,
+  "uncertainty": "descriptive image/prefix resampling, not seed/population inference; no p-values",
+  "loss_dfl_column_semantics": "reg_max=1: normalized ltrb L1 auxiliary loss, not distribution focal loss; initial protocol zero-term assumption corrected without changing raw results",
+  "missing_validation_gradient_metrics": {
+    "cls_cosine": 0,
+    "box_cosine": 0,
+    "cls_relative_l2": 0,
+    "box_relative_l2": 0,
+    "loss_total": 0
+  }
+}
