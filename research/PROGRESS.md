@@ -203,3 +203,9 @@ claim that their weights/predictions have been independently re-evaluated.
 - Background job `/data/users/zhjia/YOLO-Master/runs/paper/assignment-intervention/job-replication-mix25-20261016-mOtQ5Tzb`; worker PID 2329985; implementation/analysis commit e34f2e827a7fdd6ed4c2233a18c1207bce5da0b5. Provenance confirms the Mix25 head. Full 548-image existing validation set, unchanged diagnostic and corrector, zero planned optimizer updates.
 - Live verified progress at recording: {"completed_images": 1, "elapsed_seconds": 22.849116755649447, "teacher_images": 6, "total_images": 548}. This is an in-progress run, not a result or AP claim. Previous full diagnostic took 10452 seconds; runtime will vary with GPU load.
 - Monitor: `bash online_experiments/run_assignment_replication.sh status`. Raw logs and per-image data remain in the job directory. On successful computation, the launcher verifies and commits the small confirmation archive; archiving has a separate status and never rewrites raw results. Original campaign pointer is preserved. No push.
+
+<!-- assignment-intervention:job-replication-mix25-20261016-mOtQ5Tzb:confirmation -->
+## Assignment intervention job-replication-mix25-20261016-mOtQ5Tzb: confirmation complete
+
+- [Verified result archive](experiments/assignment-intervention-job-replication-mix25-20261016-mOtQ5Tzb/confirmation/README.md); 548 images, 3288 teacher images, 105216 cells.
+- Native loss parity max absolute difference 0; identity relative L2 0.00013656419; model states unchanged; zero updates. No AP claim.
