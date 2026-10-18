@@ -1,0 +1,17 @@
+{
+  "ruff": {
+    "exit": 1,
+    "seconds": 0.11388540267944336,
+    "log": "research/checks/joint-gradient-20261018/ruff.log"
+  },
+  "format": {
+    "exit": 1,
+    "seconds": 0.03233742713928223,
+    "log": "research/checks/joint-gradient-20261018/format.log"
+  },
+  "codespell": {
+    "exit": "timeout",
+    "seconds": 45.002137184143066,
+    "log": "research/checks/joint-gradient-20261018/codespell.log"
+  }
+}

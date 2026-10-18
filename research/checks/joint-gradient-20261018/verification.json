@@ -1,0 +1,41 @@
+{
+  "pytest": {
+    "exit": 0,
+    "seconds": 22.56241512298584,
+    "stdout": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m                           [100%]\u001b[0m\n\u001b[33m=============================== warnings summary ===============================\u001b[0m\n../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95\n  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-db6b1c72-d4a6-4a3f-92f5-17e6594c97e4/test_commit_recovers_staging_a0\n  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_recovers_staging_a0'\n    warnings.warn(\n\n../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95\n  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-db6b1c72-d4a6-4a3f-92f5-17e6594c97e4/test_commit_preserves_standard0\n  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_preserves_standard0'\n    warnings.warn(\n\n../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95\n  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-db6b1c72-d4a6-4a3f-92f5-17e6594c97e4/test_commit_rejects_unrelated_0\n  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_rejects_unrelated_0'\n    warnings.warn(\n\n../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95\n  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-db6b1c72-d4a6-4a3f-92f5-17e6594c97e4\n  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-db6b1c72-d4a6-4a3f-92f5-17e6594c97e4'\n    warnings.warn(\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n============================= slowest 30 durations =============================\n16.55s call     online_experiments/test_gradient_calibration.py::test_native_gradient_matches_direct_actual_detection_loss_and_detachment\n4.01s call     online_experiments/test_gradient_calibration.py::test_estimator_matches_enumerated_autograd_gradient_distribution[0.1]\n0.22s call     online_experiments/test_gradient_calibration.py::test_joint_oracles_combine_regions_and_preserve_unselected_tokens\n0.17s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[False-4]\n0.11s call     online_experiments/test_assignment_intervention.py::test_foreign_assignment_matches_native_loss_with_fixed_assigner[4]\n0.05s call     online_experiments/test_assignment_intervention.py::test_identity_four_cells_and_zero_gradient_handling\n0.03s call     online_experiments/test_assignment_intervention.py::test_hard_targets_use_labels_and_ignore_soft_quality\n0.03s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[True-4]\n0.02s call     online_experiments/test_spatial_intervention.py::test_regions_flip_clipping_and_mixed_boundaries\n0.02s call     online_experiments/test_assignment_archive.py::test_commit_recovers_staging_and_does_not_duplicate_after_commit\n0.02s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[True-1]\n0.02s call     online_experiments/test_assignment_intervention.py::test_foreign_assignment_matches_native_loss_with_fixed_assigner[1]\n0.02s call     online_experiments/test_assignment_archive.py::test_commit_preserves_standard_csv_crlf_bytes\n0.02s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[False-1]\n0.01s call     online_experiments/test_assignment_archive.py::test_commit_rejects_unrelated_progress_changes\n\n(15 durations < 0.005s hidden.  Use -vv to show these durations.)\n\u001b[33m\u001b[32m46 passed\u001b[0m, \u001b[33m\u001b[1m4 warnings\u001b[0m\u001b[33m in 22.03s\u001b[0m\u001b[0m\n",
+    "stderr": ""
+  },
+  "ruff": {
+    "exit": 0,
+    "seconds": 0.010190486907958984,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  "format": {
+    "exit": 0,
+    "seconds": 0.00628662109375,
+    "stdout": "5 files already formatted\n",
+    "stderr": ""
+  },
+  "codespell": {
+    "exit": 0,
+    "seconds": 0.07951879501342773,
+    "stdout": "",
+    "stderr": ""
+  },
+  "bash": {
+    "exit": 0,
+    "seconds": 0.0015177726745605469,
+    "stdout": "",
+    "stderr": ""
+  },
+  "files_sha256": {
+    "online_experiments/diagnose_joint_gradient.py": "c04f5165446b1a38783399a6972018a307ccb852e3eaab8cf7204cd4025bb95d",
+    "online_experiments/archive_joint_gradient.py": "553e58edd0fb4e7e85977a0414b6a9fd1e19fec75d7536151b11ffb2567026f4",
+    "online_experiments/gradient_calibration.py": "619d88903f75c385cacae60e8b0c465e43284e0ae5320e0986b7e9e4eb14f0b0",
+    "online_experiments/test_joint_archive.py": "670bcfab8da35a76b5a9af310855190a6dde2741f7ce86f8f0530166c37eea91",
+    "online_experiments/test_gradient_calibration.py": "14d8e231c791c69db5c4fbd76e2f4242d65a816a21c15e20889f42f0701b0464",
+    "online_experiments/run_joint_gradient.sh": "833dd83d17f7b46fbebdb519979d19cef818fd1363e691577a54b914c7ab1df4",
+    "research/JOINT_GRADIENT_IMPLEMENTATION_20261018.md": "f56690ddd9e66b7776346a887b3f5ae90fcbb5399bbefb377299ad47ac3cc9f9"
+  }
+}

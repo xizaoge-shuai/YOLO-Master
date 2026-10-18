@@ -256,3 +256,11 @@ claim that their weights/predictions have been independently re-evaluated.
 - Mix25 scale-1.15 P3 localization cosine: Transport 0.542088, Rec 0.553150, content oracle 0.954236; box-head cosine 0.439836, 0.453441, 0.944803. At scale 0.85, content-only replacement leaves padding corrupted and P3 cosine remains -0.180066. Need padding-by-content factorial controls before attributing residual importance or building a trainable content corrector.
 - Next: complete joint padding/content interventions, then equal-token/equal-norm residual controls with padding held fixed; retain cheap fill as a mandatory candidate-training baseline. No new GPU experiment, AP claim, cross-model/domain claim or finalized method in this analysis turn. Natural-area oracles use exact donors and are not efficiency competitors.
 - Final analyzer Ruff check/format and targeted codespell pass; full data analysis invariants pass, both generated plots visually inspected. Repository-wide lint/format retain documented pre-existing errors; full codespell times out after 45 seconds. Raw CSVs, source tarballs, caches and weights remain outside the Git commit.
+
+<!-- joint-gradient:implementation:20261018 -->
+## Joint spatial interventions and native gradient calibration implemented
+
+- User approved trying the staged candidate; [locked protocol](JOINT_GRADIENT_IMPLEMENTATION_20261018.md).
+- Two joint spatial oracles supplement the previous six arms. Actual native E2EDetectLoss gradients are measured separately from hard-assignment diagnostics, and Bernoulli p=.25 conditional mean/variance is enumerated for deployable controls.
+- [Verification](checks/joint-gradient-20261018/README.md): 46 targeted tests and scoped lint/format/spelling pass; repository-global pre-existing failures recorded. Independent review completed; GPU smoke not yet run at this commit.
+- New background campaign will verify 2-image smoke before 128-image development, freeze provenance, and archive/commit/push each completed stage. Full training requires a later minibatch/train-state check; current method remains exploratory.
