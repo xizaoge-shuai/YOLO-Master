@@ -1,0 +1,129 @@
+{
+  "stage": "execution_smoke",
+  "probability": 0.25,
+  "cells": [
+    {
+      "arm": "transport",
+      "head": "online-geom",
+      "scale": 0.85,
+      "observations": 4,
+      "exact_squared_norm": 1629.3142212878809,
+      "residual_squared_norm": 11119.725470425345,
+      "variance_ratio": 6.824788813072429,
+      "passes_cell": false
+    },
+    {
+      "arm": "transport",
+      "head": "online-geom",
+      "scale": 1.15,
+      "observations": 4,
+      "exact_squared_norm": 1340.8036170053053,
+      "residual_squared_norm": 2601.8451244409725,
+      "variance_ratio": 1.9405117136036765,
+      "passes_cell": false
+    },
+    {
+      "arm": "transport",
+      "head": "mix25",
+      "scale": 0.85,
+      "observations": 4,
+      "exact_squared_norm": 3073.7172428329322,
+      "residual_squared_norm": 34488030.666600935,
+      "variance_ratio": 11220.300353592247,
+      "passes_cell": false
+    },
+    {
+      "arm": "transport",
+      "head": "mix25",
+      "scale": 1.15,
+      "observations": 4,
+      "exact_squared_norm": 2424.751744924386,
+      "residual_squared_norm": 3556.9411657925466,
+      "variance_ratio": 1.4669300365442017,
+      "passes_cell": false
+    },
+    {
+      "arm": "blank_fill",
+      "head": "online-geom",
+      "scale": 0.85,
+      "observations": 4,
+      "exact_squared_norm": 1629.3142212878809,
+      "residual_squared_norm": 3886.643546320259,
+      "variance_ratio": 2.385447506404312,
+      "passes_cell": false
+    },
+    {
+      "arm": "blank_fill",
+      "head": "online-geom",
+      "scale": 1.15,
+      "observations": 4,
+      "exact_squared_norm": 1340.8036170053053,
+      "residual_squared_norm": 2601.8625794464842,
+      "variance_ratio": 1.9405247319199237,
+      "passes_cell": false
+    },
+    {
+      "arm": "blank_fill",
+      "head": "mix25",
+      "scale": 0.85,
+      "observations": 4,
+      "exact_squared_norm": 3073.7172428329322,
+      "residual_squared_norm": 6470.481116464297,
+      "variance_ratio": 2.1050996579310244,
+      "passes_cell": false
+    },
+    {
+      "arm": "blank_fill",
+      "head": "mix25",
+      "scale": 1.15,
+      "observations": 4,
+      "exact_squared_norm": 2424.751744924386,
+      "residual_squared_norm": 3556.9804366615463,
+      "variance_ratio": 1.4669462323750047,
+      "passes_cell": false
+    },
+    {
+      "arm": "rec",
+      "head": "online-geom",
+      "scale": 0.85,
+      "observations": 4,
+      "exact_squared_norm": 1629.3142212878809,
+      "residual_squared_norm": 5629.864034490818,
+      "variance_ratio": 3.455358064720462,
+      "passes_cell": false
+    },
+    {
+      "arm": "rec",
+      "head": "online-geom",
+      "scale": 1.15,
+      "observations": 4,
+      "exact_squared_norm": 1340.8036170053053,
+      "residual_squared_norm": 2500.9908279231913,
+      "variance_ratio": 1.865292423292512,
+      "passes_cell": false
+    },
+    {
+      "arm": "rec",
+      "head": "mix25",
+      "scale": 0.85,
+      "observations": 4,
+      "exact_squared_norm": 3073.7172428329322,
+      "residual_squared_norm": 6268.205423268932,
+      "variance_ratio": 2.03929149237285,
+      "passes_cell": false
+    },
+    {
+      "arm": "rec",
+      "head": "mix25",
+      "scale": 1.15,
+      "observations": 4,
+      "exact_squared_norm": 2424.751744924386,
+      "residual_squared_norm": 3667.160054928302,
+      "variance_ratio": 1.512385778298578,
+      "passes_cell": false
+    }
+  ],
+  "eligible_for_minibatch_probe": [],
+  "full_training_authorized_by_this_gate": false,
+  "reason": "Frozen eval, batch1 native-loss screening only; minibatch and train-state checks still required."
+}

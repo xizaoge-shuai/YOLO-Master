@@ -264,3 +264,8 @@ claim that their weights/predictions have been independently re-evaluated.
 - Two joint spatial oracles supplement the previous six arms. Actual native E2EDetectLoss gradients are measured separately from hard-assignment diagnostics, and Bernoulli p=.25 conditional mean/variance is enumerated for deployable controls.
 - [Verification](checks/joint-gradient-20261018/README.md): 46 targeted tests and scoped lint/format/spelling pass; repository-global pre-existing failures recorded. Independent review completed; GPU smoke not yet run at this commit.
 - New background campaign will verify 2-image smoke before 128-image development, freeze provenance, and archive/commit/push each completed stage. Full training requires a later minibatch/train-state check; current method remains exploratory.
+
+<!-- joint-gradient:job-20261018-pJHRhd15:smoke -->
+## Joint spatial/native-gradient intervention job-20261018-pJHRhd15: smoke complete
+
+- [Verified archive](experiments/joint-gradient-job-20261018-pJHRhd15/smoke/README.md); 2 training images; 12+1 teacher queries, two frozen heads, eight arms. States unchanged, zero updates; no AP claim.

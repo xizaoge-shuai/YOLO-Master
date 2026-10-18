@@ -1,0 +1,246 @@
+Spatial interventions; frozen eval heads, no training or AP evaluation.
+Hard targets from exact features; nonidentity views; equal image weights.
+head arm branch output_cls_cos output_box_cos native_loss
+mix25 blank_content_oracle one2many 0.998904 0.935494 4.545313
+mix25 blank_content_oracle one2one 0.999404 0.880046 5.023241
+mix25 blank_fill one2many 0.977166 0.454026 6.187009
+mix25 blank_fill one2one 0.971427 0.301368 6.755665
+mix25 content_oracle one2many 0.714374 0.809468 23.714685
+mix25 content_oracle one2one 0.963092 0.790110 7.450634
+mix25 exact one2many 1.000000 1.000000 4.493510
+mix25 exact one2one 1.000000 1.000000 4.995457
+mix25 joint_oracle one2many 0.999728 0.970986 4.489729
+mix25 joint_oracle one2one 0.999857 0.933166 5.003209
+mix25 padding_oracle one2many 0.977265 0.466709 6.173156
+mix25 padding_oracle one2one 0.971293 0.323120 6.763094
+mix25 rec one2many 0.977624 0.475219 6.084840
+mix25 rec one2one 0.972503 0.335043 6.725074
+mix25 transport one2many 0.715488 0.445300 28.935265
+mix25 transport one2one 0.941264 0.336379 9.260739
+online-geom blank_content_oracle one2many 0.998144 0.907119 4.546659
+online-geom blank_content_oracle one2one 0.997383 0.813021 5.237206
+online-geom blank_fill one2many 0.973406 0.473765 6.068461
+online-geom blank_fill one2one 0.963134 0.377354 6.861488
+online-geom content_oracle one2many 0.988593 0.854815 4.793371
+online-geom content_oracle one2one 0.984278 0.796811 5.650584
+online-geom exact one2many 1.000000 1.000000 4.402520
+online-geom exact one2one 1.000000 1.000000 5.102936
+online-geom joint_oracle one2many 0.999416 0.943817 4.474076
+online-geom joint_oracle one2one 0.998972 0.873503 5.136857
+online-geom padding_oracle one2many 0.973441 0.461566 5.948761
+online-geom padding_oracle one2one 0.963989 0.375570 6.732517
+online-geom rec one2many 0.974672 0.460616 5.901691
+online-geom rec one2one 0.963786 0.365766 6.676769
+online-geom transport one2many 0.968593 0.439172 6.189250
+online-geom transport one2one 0.953055 0.342965 7.357781
+
+head arm branch task block param_cos param_relL2 defined_images
+mix25 blank_content_oracle one2many box one2many_box 0.964355 0.268813 2
+mix25 blank_content_oracle one2many box one2one_box NA NA 0
+mix25 blank_content_oracle one2many box p3 0.972513 0.228475 2
+mix25 blank_content_oracle one2many cls one2many_box NA NA 0
+mix25 blank_content_oracle one2many cls one2one_box NA NA 0
+mix25 blank_content_oracle one2many cls p3 0.985255 0.201823 2
+mix25 blank_content_oracle one2one box one2many_box NA NA 0
+mix25 blank_content_oracle one2one box one2one_box 0.866100 0.452894 2
+mix25 blank_content_oracle one2one box p3 NA NA 0
+mix25 blank_content_oracle one2one cls one2many_box NA NA 0
+mix25 blank_content_oracle one2one cls one2one_box NA NA 0
+mix25 blank_content_oracle one2one cls p3 NA NA 0
+mix25 blank_fill one2many box one2many_box 0.632715 0.806034 2
+mix25 blank_fill one2many box one2one_box NA NA 0
+mix25 blank_fill one2many box p3 0.467172 1.553995 2
+mix25 blank_fill one2many cls one2many_box NA NA 0
+mix25 blank_fill one2many cls one2one_box NA NA 0
+mix25 blank_fill one2many cls p3 0.750108 1.796352 2
+mix25 blank_fill one2one box one2many_box NA NA 0
+mix25 blank_fill one2one box one2one_box 0.424472 0.999666 2
+mix25 blank_fill one2one box p3 NA NA 0
+mix25 blank_fill one2one cls one2many_box NA NA 0
+mix25 blank_fill one2one cls one2one_box NA NA 0
+mix25 blank_fill one2one cls p3 NA NA 0
+mix25 content_oracle one2many box one2many_box 0.706811 0.569491 2
+mix25 content_oracle one2many box one2one_box NA NA 0
+mix25 content_oracle one2many box p3 0.481070 0.821614 2
+mix25 content_oracle one2many cls one2many_box NA NA 0
+mix25 content_oracle one2many cls one2one_box NA NA 0
+mix25 content_oracle one2many cls p3 0.490067 18.433829 2
+mix25 content_oracle one2one box one2many_box NA NA 0
+mix25 content_oracle one2one box one2one_box 0.742720 0.606043 2
+mix25 content_oracle one2one box p3 NA NA 0
+mix25 content_oracle one2one cls one2many_box NA NA 0
+mix25 content_oracle one2one cls one2one_box NA NA 0
+mix25 content_oracle one2one cls p3 NA NA 0
+mix25 exact one2many box one2many_box 1.000000 0.000000 2
+mix25 exact one2many box one2one_box NA NA 0
+mix25 exact one2many box p3 1.000000 0.000000 2
+mix25 exact one2many cls one2many_box NA NA 0
+mix25 exact one2many cls one2one_box NA NA 0
+mix25 exact one2many cls p3 1.000000 0.000000 2
+mix25 exact one2one box one2many_box NA NA 0
+mix25 exact one2one box one2one_box 1.000000 0.000000 2
+mix25 exact one2one box p3 NA NA 0
+mix25 exact one2one cls one2many_box NA NA 0
+mix25 exact one2one cls one2one_box NA NA 0
+mix25 exact one2one cls p3 NA NA 0
+mix25 joint_oracle one2many box one2many_box 0.985011 0.160504 2
+mix25 joint_oracle one2many box one2one_box NA NA 0
+mix25 joint_oracle one2many box p3 0.992821 0.120208 2
+mix25 joint_oracle one2many cls one2many_box NA NA 0
+mix25 joint_oracle one2many cls one2one_box NA NA 0
+mix25 joint_oracle one2many cls p3 0.996882 0.087171 2
+mix25 joint_oracle one2one box one2many_box NA NA 0
+mix25 joint_oracle one2one box one2one_box 0.916315 0.331886 2
+mix25 joint_oracle one2one box p3 NA NA 0
+mix25 joint_oracle one2one cls one2many_box NA NA 0
+mix25 joint_oracle one2one cls one2one_box NA NA 0
+mix25 joint_oracle one2one cls p3 NA NA 0
+mix25 padding_oracle one2many box one2many_box 0.623595 0.855803 2
+mix25 padding_oracle one2many box one2one_box NA NA 0
+mix25 padding_oracle one2many box p3 0.445801 1.634367 2
+mix25 padding_oracle one2many cls one2many_box NA NA 0
+mix25 padding_oracle one2many cls one2one_box NA NA 0
+mix25 padding_oracle one2many cls p3 0.757745 1.646538 2
+mix25 padding_oracle one2one box one2many_box NA NA 0
+mix25 padding_oracle one2one box one2one_box 0.460124 0.983009 2
+mix25 padding_oracle one2one box p3 NA NA 0
+mix25 padding_oracle one2one cls one2many_box NA NA 0
+mix25 padding_oracle one2one cls one2one_box NA NA 0
+mix25 padding_oracle one2one cls p3 NA NA 0
+mix25 rec one2many box one2many_box 0.617478 0.842335 2
+mix25 rec one2many box one2one_box NA NA 0
+mix25 rec one2many box p3 0.447316 1.538328 2
+mix25 rec one2many cls one2many_box NA NA 0
+mix25 rec one2many cls one2one_box NA NA 0
+mix25 rec one2many cls p3 0.776378 1.486112 2
+mix25 rec one2one box one2many_box NA NA 0
+mix25 rec one2one box one2one_box 0.422000 1.010601 2
+mix25 rec one2one box p3 NA NA 0
+mix25 rec one2one cls one2many_box NA NA 0
+mix25 rec one2one cls one2one_box NA NA 0
+mix25 rec one2one cls p3 NA NA 0
+mix25 transport one2many box one2many_box 0.516094 0.846853 2
+mix25 transport one2many box one2one_box NA NA 0
+mix25 transport one2many box p3 0.235354 1.562397 2
+mix25 transport one2many cls one2many_box NA NA 0
+mix25 transport one2many cls one2one_box NA NA 0
+mix25 transport one2many cls p3 0.358158 18.882131 2
+mix25 transport one2one box one2many_box NA NA 0
+mix25 transport one2one box one2one_box 0.444834 0.964528 2
+mix25 transport one2one box p3 NA NA 0
+mix25 transport one2one cls one2many_box NA NA 0
+mix25 transport one2one cls one2one_box NA NA 0
+mix25 transport one2one cls p3 NA NA 0
+online-geom blank_content_oracle one2many box one2many_box 0.915689 0.413370 2
+online-geom blank_content_oracle one2many box one2one_box NA NA 0
+online-geom blank_content_oracle one2many box p3 0.919235 0.484515 2
+online-geom blank_content_oracle one2many cls one2many_box NA NA 0
+online-geom blank_content_oracle one2many cls one2one_box NA NA 0
+online-geom blank_content_oracle one2many cls p3 0.953507 0.322218 2
+online-geom blank_content_oracle one2one box one2many_box NA NA 0
+online-geom blank_content_oracle one2one box one2one_box 0.835434 0.584031 2
+online-geom blank_content_oracle one2one box p3 NA NA 0
+online-geom blank_content_oracle one2one cls one2many_box NA NA 0
+online-geom blank_content_oracle one2one cls one2one_box NA NA 0
+online-geom blank_content_oracle one2one cls p3 NA NA 0
+online-geom blank_fill one2many box one2many_box 0.576672 0.833491 2
+online-geom blank_fill one2many box one2one_box NA NA 0
+online-geom blank_fill one2many box p3 0.287731 1.513512 2
+online-geom blank_fill one2many cls one2many_box NA NA 0
+online-geom blank_fill one2many cls one2one_box NA NA 0
+online-geom blank_fill one2many cls p3 0.750768 1.638424 2
+online-geom blank_fill one2one box one2many_box NA NA 0
+online-geom blank_fill one2one box one2one_box 0.580285 0.843110 2
+online-geom blank_fill one2one box p3 NA NA 0
+online-geom blank_fill one2one cls one2many_box NA NA 0
+online-geom blank_fill one2one cls one2one_box NA NA 0
+online-geom blank_fill one2one cls p3 NA NA 0
+online-geom content_oracle one2many box one2many_box 0.894550 0.424152 2
+online-geom content_oracle one2many box one2one_box NA NA 0
+online-geom content_oracle one2many box p3 0.911677 0.468835 2
+online-geom content_oracle one2many cls one2many_box NA NA 0
+online-geom content_oracle one2many cls one2one_box NA NA 0
+online-geom content_oracle one2many cls p3 0.966522 0.237852 2
+online-geom content_oracle one2one box one2many_box NA NA 0
+online-geom content_oracle one2one box one2one_box 0.848691 0.598962 2
+online-geom content_oracle one2one box p3 NA NA 0
+online-geom content_oracle one2one cls one2many_box NA NA 0
+online-geom content_oracle one2one cls one2one_box NA NA 0
+online-geom content_oracle one2one cls p3 NA NA 0
+online-geom exact one2many box one2many_box 1.000000 0.000000 2
+online-geom exact one2many box one2one_box NA NA 0
+online-geom exact one2many box p3 1.000000 0.000000 2
+online-geom exact one2many cls one2many_box NA NA 0
+online-geom exact one2many cls one2one_box NA NA 0
+online-geom exact one2many cls p3 1.000000 0.000000 2
+online-geom exact one2one box one2many_box NA NA 0
+online-geom exact one2one box one2one_box 1.000000 0.000000 2
+online-geom exact one2one box p3 NA NA 0
+online-geom exact one2one cls one2many_box NA NA 0
+online-geom exact one2one cls one2one_box NA NA 0
+online-geom exact one2one cls p3 NA NA 0
+online-geom joint_oracle one2many box one2many_box 0.963003 0.271409 2
+online-geom joint_oracle one2many box one2one_box NA NA 0
+online-geom joint_oracle one2many box p3 0.970484 0.261369 2
+online-geom joint_oracle one2many cls one2many_box NA NA 0
+online-geom joint_oracle one2many cls one2one_box NA NA 0
+online-geom joint_oracle one2many cls p3 0.993541 0.118805 2
+online-geom joint_oracle one2one box one2many_box NA NA 0
+online-geom joint_oracle one2one box one2one_box 0.899053 0.460349 2
+online-geom joint_oracle one2one box p3 NA NA 0
+online-geom joint_oracle one2one cls one2many_box NA NA 0
+online-geom joint_oracle one2one cls one2one_box NA NA 0
+online-geom joint_oracle one2one cls p3 NA NA 0
+online-geom padding_oracle one2many box one2many_box 0.591824 0.908030 2
+online-geom padding_oracle one2many box one2one_box NA NA 0
+online-geom padding_oracle one2many box p3 0.156048 1.848523 2
+online-geom padding_oracle one2many cls one2many_box NA NA 0
+online-geom padding_oracle one2many cls one2one_box NA NA 0
+online-geom padding_oracle one2many cls p3 0.770087 1.531905 2
+online-geom padding_oracle one2one box one2many_box NA NA 0
+online-geom padding_oracle one2one box one2one_box 0.519799 0.957610 2
+online-geom padding_oracle one2one box p3 NA NA 0
+online-geom padding_oracle one2one cls one2many_box NA NA 0
+online-geom padding_oracle one2one cls one2one_box NA NA 0
+online-geom padding_oracle one2one cls p3 NA NA 0
+online-geom rec one2many box one2many_box 0.535491 0.901873 2
+online-geom rec one2many box one2one_box NA NA 0
+online-geom rec one2many box p3 0.179419 1.589051 2
+online-geom rec one2many cls one2many_box NA NA 0
+online-geom rec one2many cls one2one_box NA NA 0
+online-geom rec one2many cls p3 0.805559 1.391920 2
+online-geom rec one2one box one2many_box NA NA 0
+online-geom rec one2one box one2one_box 0.537487 0.903798 2
+online-geom rec one2one box p3 NA NA 0
+online-geom rec one2one cls one2many_box NA NA 0
+online-geom rec one2one cls one2one_box NA NA 0
+online-geom rec one2one cls p3 NA NA 0
+online-geom transport one2many box one2many_box 0.570301 0.892969 2
+online-geom transport one2many box one2one_box NA NA 0
+online-geom transport one2many box p3 0.163927 1.694094 2
+online-geom transport one2many cls one2many_box NA NA 0
+online-geom transport one2many cls one2one_box NA NA 0
+online-geom transport one2many cls p3 0.767921 1.522085 2
+online-geom transport one2one box one2many_box NA NA 0
+online-geom transport one2one box one2one_box 0.522328 0.956563 2
+online-geom transport one2one box p3 NA NA 0
+online-geom transport one2one cls one2many_box NA NA 0
+online-geom transport one2one cls one2one_box NA NA 0
+online-geom transport one2one cls p3 NA NA 0
+
+Native-loss batch1 frozen-eval gradient variance screen; p=0.25 (enumeration, not training).
+arm head scale calibration/query_only_variance_ratio
+transport online-geom 0.85 6.824789
+transport online-geom 1.15 1.940512
+transport mix25 0.85 11220.300354
+transport mix25 1.15 1.466930
+blank_fill online-geom 0.85 2.385448
+blank_fill online-geom 1.15 1.940525
+blank_fill mix25 0.85 2.105100
+blank_fill mix25 1.15 1.466946
+rec online-geom 0.85 3.455358
+rec online-geom 1.15 1.865292
+rec mix25 0.85 2.039291
+rec mix25 1.15 1.512386
+Eligible for minibatch probe: []
+No full-training/AP conclusion; all views queried for diagnostics.
