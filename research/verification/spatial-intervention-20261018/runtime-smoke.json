@@ -1,0 +1,22 @@
+{
+  "job": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/job-20261018-CWz2EKyV",
+  "smoke_summary_sha256": "549f3ff8384ee853e526d88fdd63f59aa458ad035ec90131270ffa702da5eb99",
+  "status": "PASS",
+  "checks": [
+    "complete_smoke_source_hashes_and_row_grids",
+    "region_partition_1600_tokens",
+    "regional_sse_and_energy_additivity",
+    "exact_feature_error_zero",
+    "identity_blank_fill_equals_transport",
+    "no_new_padding_for_identity_or_enlargement",
+    "reject_tampered_protocol",
+    "reject_incomplete_grid_even_with_updated_hash",
+    "reject_unexpected_one2one_shared_gradient"
+  ],
+  "output_rows": 288,
+  "parameter_rows": 4032,
+  "region_rows": 1080,
+  "native_loss_parity_max_absolute": 0.0,
+  "states_unchanged": true,
+  "note": "Post-smoke integrity checks use isolated temporary copies; original outputs unchanged. Smoke metrics are not scientific estimates."
+}
