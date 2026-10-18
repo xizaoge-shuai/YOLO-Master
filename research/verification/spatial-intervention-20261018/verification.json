@@ -1,0 +1,110 @@
+{
+  "target-tests": {
+    "returncode": 0,
+    "seconds": 11.774,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "pytest",
+      "-q",
+      "online_experiments/test_spatial_intervention.py",
+      "online_experiments/test_assignment_archive.py",
+      "online_experiments/test_assignment_intervention.py"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/target-tests.log"
+  },
+  "target-lint": {
+    "returncode": 0,
+    "seconds": 0.017,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "online_experiments/spatial_intervention.py",
+      "online_experiments/diagnose_spatial_intervention.py",
+      "online_experiments/archive_spatial_intervention.py",
+      "online_experiments/test_spatial_intervention.py"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/target-lint.log"
+  },
+  "target-format": {
+    "returncode": 0,
+    "seconds": 0.017,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "format",
+      "--check",
+      "online_experiments/spatial_intervention.py",
+      "online_experiments/diagnose_spatial_intervention.py",
+      "online_experiments/archive_spatial_intervention.py",
+      "online_experiments/test_spatial_intervention.py"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/target-format.log"
+  },
+  "target-spelling": {
+    "returncode": 0,
+    "seconds": 0.168,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell",
+      "online_experiments/spatial_intervention.py",
+      "online_experiments/diagnose_spatial_intervention.py",
+      "online_experiments/archive_spatial_intervention.py",
+      "online_experiments/test_spatial_intervention.py"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/target-spelling.log"
+  },
+  "bash-syntax": {
+    "returncode": 0,
+    "seconds": 0.004,
+    "command": [
+      "bash",
+      "-n",
+      "online_experiments/run_spatial_intervention.sh"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/bash-syntax.log"
+  },
+  "global-ruff": {
+    "returncode": 1,
+    "seconds": 0.126,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/global-ruff.log"
+  },
+  "global-format": {
+    "returncode": 1,
+    "seconds": 0.07,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "format",
+      "--check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/global-format.log"
+  },
+  "global-spelling": {
+    "returncode": "TIMEOUT",
+    "seconds": 45.003,
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/global-spelling.log"
+  },
+  "gpu-status": {
+    "returncode": 0,
+    "seconds": 0.066,
+    "command": [
+      "nvidia-smi",
+      "--query-gpu=index,name,memory.used,memory.free,utilization.gpu",
+      "--format=csv"
+    ],
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/gpu-status.log"
+  }
+}
