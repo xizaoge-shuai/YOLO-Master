@@ -1,0 +1,63 @@
+{
+  "target-ruff": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "online_experiments/analyze_assignment_replication.py"
+    ],
+    "exit": 0
+  },
+  "target-format": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "format",
+      "--check",
+      "online_experiments/analyze_assignment_replication.py"
+    ],
+    "exit": 0
+  },
+  "target-codespell": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell",
+      "online_experiments/analyze_assignment_replication.py",
+      "research/NEXT_INTERVENTION_PLAN_20261018.md"
+    ],
+    "exit": 0
+  },
+  "ruff-repo": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit": 1
+  },
+  "ruff-format-repo": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/ruff",
+      "format",
+      "--check",
+      "ultralytics/",
+      "tests/",
+      "scripts/",
+      "agent/"
+    ],
+    "exit": 1
+  },
+  "codespell-repo": {
+    "command": [
+      "/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell"
+    ],
+    "exit": "TIMEOUT_45s"
+  },
+  "data-verification": {
+    "per_row_feature_mse_difference": 0,
+    "paired_images": 548,
+    "source_hashes_identical": true,
+    "all_primary_metrics_finite": true,
+    "raw_sha256_verified": true
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "source_audits": {
+    "Online100": {
+      "images": 548,
+      "split": "val",
+      "teacher_images": 3288,
+      "rows": 105216,
+      "parity_max_relative_l2": 0.00013656419469043612,
+      "native_loss_parity_max_absolute": 0.0,
+      "training_updates": 0,
+      "states_unchanged": true,
+      "elapsed_seconds": 10452.088028480299,
+      "peak_vram_gib": 0.24196386337280273,
+      "outputs_sha256": {
+        "per-image.csv": "40170a6e435302f438ca606bb52259b0c5d69157340df0baafe0d161b44c31b4",
+        "assignments.csv": "21e57624191f04085d78480d1fae194af6e9c0de268966d7abeb9864e2b547df",
+        "summary.csv": "c813e3ea413e52a51f0e1c00a9811242b9f4471a986103e4f8d3da070fc83aaa",
+        "assignment-summary.csv": "dbd204e872b68c1c950d5f690b6adde60e33b54b6f808b42e61e37735fae1774",
+        "selection.json": "a17d6789d36e67472da2f98a9176655d53c680b29ffcecbe047b45bfbebf907b"
+      }
+    },
+    "Mix25": {
+      "images": 548,
+      "split": "val",
+      "teacher_images": 3288,
+      "rows": 105216,
+      "parity_max_relative_l2": 0.00013656419469043612,
+      "native_loss_parity_max_absolute": 0.0,
+      "training_updates": 0,
+      "states_unchanged": true,
+      "elapsed_seconds": 10791.827900432982,
+      "peak_vram_gib": 0.24196386337280273,
+      "outputs_sha256": {
+        "per-image.csv": "77665b6a5972a41d854842b3e9c2748a39fbf8f03b54894e5359deeda0f87e9d",
+        "assignments.csv": "b0a3d824070d34118783e13fa80cac1eed2ca78b588cdff74fcb2135a4470385",
+        "summary.csv": "f9ec0d5bba0e1dc4da29f9cd58953d779541612d4acd94bb83cd21e8d4f63bbf",
+        "assignment-summary.csv": "4332366e3a43a95a03a91acf045706befb97d3259665e4e344cfe96f9003d920",
+        "selection.json": "a17d6789d36e67472da2f98a9176655d53c680b29ffcecbe047b45bfbebf907b"
+      }
+    }
+  },
+  "identical_provenance_fields": [
+    "source_hashes",
+    "views",
+    "manifest_sha256",
+    "cache_manifest",
+    "cache_hash_verification",
+    "reg_max",
+    "batch",
+    "seed",
+    "split",
+    "environment"
+  ],
+  "identical_corrector": true,
+  "different_heads": true,
+  "maximum_per_row_feature_mse_difference": 0.0,
+  "analysis_sha256": "7292b1a6a06f4fcac5873d36d067062794e33290abcf64cf1d06d9ad439ae74e",
+  "helper_sha256": "1909db505aedd4dab7b30d76bfbf3add2e659f58b16fa661cb64d3e03a98e357",
+  "images": 548,
+  "seed_per_head_recipe": 1,
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261018,
+  "prefix_groups": 76,
+  "inference": "conditional descriptive resampling only; no p-values or training-seed/population claims",
+  "all_primary_metrics_finite": true
+}
