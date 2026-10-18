@@ -269,3 +269,10 @@ claim that their weights/predictions have been independently re-evaluated.
 ## Joint spatial/native-gradient intervention job-20261018-pJHRhd15: smoke complete
 
 - [Verified archive](experiments/joint-gradient-job-20261018-pJHRhd15/smoke/README.md); 2 training images; 12+1 teacher queries, two frozen heads, eight arms. States unchanged, zero updates; no AP claim.
+
+<!-- joint-gradient:launch:job-20261018-pJHRhd15 -->
+## Joint native-gradient development campaign started
+
+- Job `job-20261018-pJHRhd15`, GPU0; real smoke passed and push verified (`7431061`).
+- Native loss parity 0; conditional expectation relative error below 5e-17; all head/corrector states unchanged. Hash corruption, rehashed invalid variance, and forged screening decision rejected by verifier.
+- Development observation: 8/128 training images. No full training/AP started; method remains exploratory. [Run record](experiments/joint-gradient-job-20261018-pJHRhd15/README.md).

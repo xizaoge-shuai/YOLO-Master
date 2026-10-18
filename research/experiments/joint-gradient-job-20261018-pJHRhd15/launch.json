@@ -1,0 +1,19 @@
+{
+  "job": "/data/users/zhjia/YOLO-Master/runs/paper/joint-gradient/job-20261018-pJHRhd15",
+  "pid": 433339,
+  "status": "RUNNING development",
+  "observed_utc": "2026-10-18T14:52:20Z",
+  "development_progress": {
+    "completed_images": 8,
+    "total_images": 128,
+    "teacher_images": 48,
+    "blank_teacher_images": 1,
+    "elapsed_seconds": 71.47607031464577
+  },
+  "implementation_commit": "2a96fff6396ed55340662471d9f738ddd0cc4559",
+  "smoke_archive_commit": "7431061ba956eb42758bcbd58523bb28a402f80b",
+  "smoke_push_verified": "7431061ba956eb42758bcbd58523bb28a402f80b",
+  "gpu": 0,
+  "full_training_started": false,
+  "next_gate": "Review 128-image native-gradient screen before paired minibatch/train-state checks"
+}
