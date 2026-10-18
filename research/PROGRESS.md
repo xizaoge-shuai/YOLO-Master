@@ -226,3 +226,8 @@ claim that their weights/predictions have been independently re-evaluated.
 - Preserve eval buffers and one2one shared-feature detachment; no optimizer updates or AP claims. Natural-region interventions are not equal-token/equal-energy controls. No full-validation or candidate training is launched automatically.
 - [Verification](verification/spatial-intervention-20261018/README.md): 23 targeted tests passed; targeted Ruff, format, spelling and Bash checks pass. Existing global lint/format failures and the 45-second codespell timeout remain documented. Requested independent review was interrupted by usage limits; manual review completed, not an independent audit pass.
 - New launcher gates development on a two-image smoke with source/protocol hashes, complete row grids, native-loss parity, unchanged weights and zero-gradient handling. Small archives are scoped commits; raw data/weights/caches stay out of Git. The user explicitly authorized origin push. Actual launch and push state will be recorded separately.
+
+<!-- spatial-intervention:job-20261018-CWz2EKyV:smoke -->
+## Spatial intervention job-20261018-CWz2EKyV: smoke complete
+
+- [Verified archive](experiments/spatial-intervention-job-20261018-CWz2EKyV/smoke/README.md); 2 training images; 12+1 teacher queries, two frozen heads, six arms. States unchanged, zero updates; no AP claim.

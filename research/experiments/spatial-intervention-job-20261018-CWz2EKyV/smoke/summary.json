@@ -1,0 +1,45 @@
+{
+  "images": 2,
+  "split": "train",
+  "heads": [
+    "online-geom",
+    "mix25"
+  ],
+  "arms": [
+    "exact",
+    "transport",
+    "rec",
+    "padding_oracle",
+    "content_oracle",
+    "blank_fill"
+  ],
+  "teacher_images": 12,
+  "blank_teacher_images": 1,
+  "output_rows": 288,
+  "parameter_rows": 4032,
+  "matching_rows": 288,
+  "region_rows": 1080,
+  "parity_max_relative_l2": 3.4995973692275584e-05,
+  "native_loss_parity_max_absolute": 0.0,
+  "states_unchanged": true,
+  "training_updates": 0,
+  "elapsed_seconds": 180.64310343470424,
+  "blank_build_seconds": 0.6041954886168242,
+  "blank_storage_bytes_fp32": 7372800,
+  "peak_vram_gib": 0.43393421173095703,
+  "outputs_sha256": {
+    "per-image.csv": "a13b83e81b7a92bdda978de446fc36c02ee7b13fca155838935c726723bd6b5b",
+    "parameters.csv": "15e6b4ba771ac87c60e53057aa702b8f3847c66cead38c012397952c9db3f675",
+    "assignments.csv": "882dea3d1b43edb20619439cc5ac9306e40b573f57ba2ab1104572f72ebb9c10",
+    "regions.csv": "28910f6680626ad834c267815e230d37531b6afb48acaac7b067624c7624d7df",
+    "summary.csv": "2e9733161260c557633a0e58f6c12cc778c1738539f36994bc1f18f37e7d9bbb",
+    "parameter-summary.csv": "579026c248da68ea44df07fea2c5a6e97341098a86c3eaa82dc85e384ba27902",
+    "region-summary.csv": "db9b83bae0faee6810ca92d8e9826afdc663eec76fd6d29dee4d9eb661faa4f4",
+    "assignment-summary.csv": "5c8496ff6c649a8434ff6967665f15a5074e28e20f17200b4ed427d1b2302284",
+    "selection.json": "30e522997752d099ffcfe62159bb9eaf2b4ef8fb9f1bf46d7aff7ec0c63e124e",
+    "blank-template.json": "3c9d064af707f26d32b2f3a7a8548899cdc8b2c1786627c66ef61708c9028070",
+    "cache-slices.json": "6a0de2ecbd0eb7a7d516ce9ecd23839cf74622f546558fadd698b28aa526e1e7",
+    "comparison.txt": "7766c554cadccfd986be4de1f5348cca623b5a6db55fa19ad1d8941049c049fb",
+    "provenance.json": "3638683dd5692a367787bf3aaa656e23ba5b0758f9109fc1f733c1df47ffa997"
+  }
+}
