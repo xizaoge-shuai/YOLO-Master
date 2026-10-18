@@ -1,0 +1,14 @@
+{
+  "global-ruff": {
+    "returncode": 1,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/analysis/global-ruff.log"
+  },
+  "global-format": {
+    "returncode": 1,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/analysis/global-format.log"
+  },
+  "global-spelling": {
+    "returncode": "TIMEOUT",
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/spatial-intervention/checks/analysis/global-spelling.log"
+  }
+}

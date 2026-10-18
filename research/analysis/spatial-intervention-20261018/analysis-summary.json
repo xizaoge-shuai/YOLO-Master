@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "raw_hashes": {
+    "provenance.json": "ee15d60917337d5ddd4490e1da412e062417ab0d3ad2fc2d5612019afaac866b",
+    "selection.json": "0cd298e84a8e5bba0203c2b396e9d6a981dbd7e1987655c767ed76b4e2707225",
+    "per-image.csv": "5444a3298f9e8874ffd0f2591dc1ae6c675a06a2d5b6aab136d032bae45ef28d",
+    "parameters.csv": "2f9c64f7d8b33cb7e32872362012ecdf83525ddfb02a323e01bde6b2b501ca53",
+    "regions.csv": "6a813e7fc11524f705d5a33bfd4b74bda459f8a1252ea0318829b029bd617b39",
+    "assignments.csv": "7e9fa4d07e8cb48446703085e6c6ccbb2231a5ff082173a1831277925f4f1d69",
+    "comparison.txt": "133868ef9ed4015e07a568c324501d085100eedf84831bcaf3f794c39b8bdf75"
+  },
+  "summary_sha256": "a1b5c338ae515512bd41a8a8f5928e2829a6bd4f6ea9fbbdce7bc6a339c43a89",
+  "analyzer_sha256": "1a381bf569a506498f31f89abc610c388685dfa08ecc99773be1ec0cc30f4982",
+  "images": 128,
+  "prefix_groups": 46,
+  "seed_per_head": 1,
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261018,
+  "native_loss_parity": 0,
+  "states_unchanged": true,
+  "training_updates": 0,
+  "development_seconds": 1926.3867544457316,
+  "inference": "descriptive only; no AP or significance claim"
+}

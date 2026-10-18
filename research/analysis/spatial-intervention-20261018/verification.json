@@ -1,0 +1,20 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_LIMITS",
+  "raw_integrity": "Server full verifier and local transferred SHA256/row/gradient/partition checks passed",
+  "primary_cell_images": 128,
+  "flip_views_per_image": 2,
+  "training_seeds_per_recipe": 1,
+  "prefix_groups": 46,
+  "zero_reference_gradients": "NA; one2one shared parameter norms verified zero",
+  "figures_visually_inspected": [
+    "figure-01-spatial-gradient-interventions.png",
+    "figure-02-regional-error-budget.png"
+  ],
+  "figure_qa": "Labels readable; negative cosines visible; exact reference retained; no clipped panels; second legend moved outside data; vector PDF/SVG and raster previews saved",
+  "analyzer_sha256": "1a381bf569a506498f31f89abc610c388685dfa08ecc99773be1ec0cc30f4982",
+  "statistics_helper_sha256": "1909db505aedd4dab7b30d76bfbf3add2e659f58b16fa661cb64d3e03a98e357",
+  "targeted_checks": "Ruff check/format and codespell passed on final formatted analyzer",
+  "global_checks": "Existing 2768 Ruff failures and five formatting files plus parse errors; full codespell timeout after 45 seconds",
+  "inference_limit": "Descriptive paired differences and pointwise bootstrap sensitivity only; no seed-level significance/equivalence/AP claims",
+  "next_step": "Padding-by-content factorial controls, then equal-token/equal-norm residual controls with padding fixed; no new GPU job started in this analysis turn"
+}
