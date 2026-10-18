@@ -240,3 +240,8 @@ claim that their weights/predictions have been independently re-evaluated.
 - [Additional runtime integrity checks](verification/spatial-intervention-20261018/runtime-smoke.json) pass: 1600-token partitions, additive regional SSE/energy, exact zero error and identity blank-fill parity; temporary-copy tests reject changed protocol, incomplete rehashed grids and unexpected one2one shared gradients. Original results unchanged.
 - Development uses the same code/protocol/checkpoint hashes and first two selected IDs, expanded to the fixed 128 training images. Verified live snapshot: `{"completed_images": 1, "total_images": 128, "teacher_images": 6, "blank_teacher_images": 1, "elapsed_seconds": 89.23219015914947}`. This is in progress, not an AP result. Rough runtime at the smoke rate is 3-4 hours; actual GPU load may change it.
 - Monitor with `bash online_experiments/run_spatial_intervention.sh status`. Completion triggers verified small-result commit and origin push, with push failures recorded separately in archive-status.json. No automatic full-validation or new model training.
+
+<!-- spatial-intervention:job-20261018-CWz2EKyV:development -->
+## Spatial intervention job-20261018-CWz2EKyV: development complete
+
+- [Verified archive](experiments/spatial-intervention-job-20261018-CWz2EKyV/development/README.md); 128 training images; 768+1 teacher queries, two frozen heads, six arms. States unchanged, zero updates; no AP claim.
