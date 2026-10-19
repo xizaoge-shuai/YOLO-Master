@@ -281,3 +281,14 @@ claim that their weights/predictions have been independently re-evaluated.
 ## Joint spatial/native-gradient intervention job-20261018-pJHRhd15: development complete
 
 - [Verified archive](experiments/joint-gradient-job-20261018-pJHRhd15/development/README.md); 128 training images; 768+1 teacher queries, two frozen heads, eight arms. States unchanged, zero updates; no AP claim.
+
+<!-- joint-gradient:analysis:20261019 -->
+## Joint/native-gradient analysis: fixed-coefficient candidate fails gate
+
+- Original 128-image campaign completed and pushed as `b2f651a`; states unchanged, zero updates, native parity 0, 768+1 teacher queries, diagnostic runtime 1216.979s.
+- [Analysis and decisions](analysis/joint-gradient-20261019/analysis-report.md), two figures, six numeric tables and hash verification. Existing six-arm gradients/native losses reproduce all 18432 shared output rows exactly. The new script checks pooled total/block energies and rederives selected-outcome norms.
+- All 12 deployable head/scale/control cells have native-gradient conditional variance ratio > 1. No candidate is eligible under the unchanged gate. This rejects this unit-coefficient implementation for progression, not all control variates. No new GPU training launched.
+- Mix25 shrinkage Transport ratio 23851 is not one outlier: image median 3531; removal of largest 5 images still leaves ratio 8889 (sensitivity only, not the gate).
+- Joint true padding+content improves fixed-assignment P3 localization cosine (Mix25 shrink 0.9474, Online100 shrink 0.7948). Cheap blank+true content is weaker; on Online100 shrink it is worse than content alone. Oracles are not deployable AP results.
+- Post-hoc same-data constant-scalar Rec oracle offers only about 5.6-6.2% conditional variance reduction; not held-out evidence or a revised gate.
+- Proposed next priorities: full-protocol padding/discrete-view-cache baselines, then matched-token/matched-energy content interventions. Cross-dataset/model training remains downstream of a repeatable candidate. Scoped checks pass; global pre-existing 2768 Ruff errors, 5 format files and 45s codespell timeout retained.

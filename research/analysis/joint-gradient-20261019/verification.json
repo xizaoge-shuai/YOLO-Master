@@ -1,0 +1,38 @@
+{
+  "input_hashes": {
+    "comparison.txt": "446c7cf7d9ac1a9073cae3565c86cfe79bf512e54a545c2a5afb856b6f6b7a11",
+    "native-gradients.csv": "39d95d76a40b22bd3a2bff353384515e5dac5e0333b78f9c9578e8016c8e94bb",
+    "native-summary.csv": "13a8decd33e856ab9e7b1df346c70cf3a42bc9637b4a15115d1fbeeb5dafcedf",
+    "parameter-summary.csv": "b8859188dadcb6588263b3ac637b6c817977f675046f361e7419238f3fb310af",
+    "parameters.csv": "ea59c65a3fae9e26fabbc32e481e8213e7c815cb81d63feeee964b95b055f51e",
+    "per-image.csv": "06252b47e1466061372523ba2b027a8e11959ba5392df03b42b11df5ede388a6",
+    "provenance.json": "4d27fbf294cb7270bdb585e9af64b28f14e7659249109ac0032fe4bfa3117f53",
+    "screening.json": "c273e70bc5eafaf0f149c882903117ab1db53d66819d640d57f231304a688923",
+    "selection.json": "0cd298e84a8e5bba0203c2b396e9d6a981dbd7e1987655c767ed76b4e2707225"
+  },
+  "summary_sha256": "4e9449c83ff8ed0da0f22970014cd3daa998495d8a902dd032d5830e0cef5f2d",
+  "source_runtime_seconds": 1216.9790835697204,
+  "images": 128,
+  "heads": [
+    "online-geom",
+    "mix25"
+  ],
+  "training_seeds_per_head": 1,
+  "prefix_groups": 46,
+  "bootstrap_draws": 2000,
+  "bootstrap_seed": 20261019,
+  "eligible": [],
+  "prior_six_arms": {
+    "checked": true,
+    "shared_rows": 18432,
+    "old_input_sha256": "5444a3298f9e8874ffd0f2591dc1ae6c675a06a2d5b6aab136d032bae45ef28d",
+    "max_absolute_deltas": {
+      "cls_cosine": 0.0,
+      "box_cosine": 0.0,
+      "native_loss": 0.0
+    }
+  },
+  "source_job": "runs/paper/joint-gradient/job-20261018-pJHRhd15",
+  "gate_unchanged": true,
+  "inference": "Descriptive pointwise filename-bootstrap sensitivity only; no population or training-seed tests."
+}

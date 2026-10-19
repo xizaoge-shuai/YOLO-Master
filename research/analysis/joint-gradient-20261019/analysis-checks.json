@@ -1,0 +1,15 @@
+{
+  "analysis_exit": 0,
+  "repeat_csv_hashes_identical": true,
+  "source_sha256": "47db6f9b4ed7d30a17459540af0aad078a53b06eb1f773d3eb7f1df4adac2cd4",
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:37:03) [MSC v.1929 64 bit (AMD64)]",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "matplotlib": "3.10.0",
+  "scoped_ruff": 0,
+  "scoped_ruff_format": 0,
+  "scoped_codespell": 0,
+  "py_compile": 0,
+  "figures_visually_inspected": true,
+  "no_new_gpu_training": true
+}

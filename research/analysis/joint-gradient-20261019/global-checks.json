@@ -1,0 +1,17 @@
+{
+  "ruff": {
+    "exit": 1,
+    "seconds": 0.16955653950572014,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/joint-gradient/job-20261018-pJHRhd15/analysis-checks-20261019/ruff.log"
+  },
+  "format": {
+    "exit": 1,
+    "seconds": 0.03214529436081648,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/joint-gradient/job-20261018-pJHRhd15/analysis-checks-20261019/format.log"
+  },
+  "codespell": {
+    "exit": "timeout45s",
+    "seconds": 45.00335537921637,
+    "log": "/data/users/zhjia/YOLO-Master/runs/paper/joint-gradient/job-20261018-pJHRhd15/analysis-checks-20261019/codespell.log"
+  }
+}

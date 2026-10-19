@@ -1,0 +1,20 @@
+{
+  "analysis-checks.json": "5a60e6ac2fe1317c86f32169c90288e6b58b5891bbee4131a55807c60db0e27e",
+  "analysis-report.md": "5fdc976f58934f2ba4eb09418e8d15b04fd171d2099fd3cba4ed4712da8d2214",
+  "figure-catalog.md": "cfbd37dd1a4f96e25d07d925917e9e72259ee2335b4ef900833cf6dccdd11dd7",
+  "global-checks.json": "8ba22c61e546fcb573a52f52427e7bc41d91c4742e9544f58bc55306161b0bce",
+  "influence-sensitivity.csv": "40a464101927ce00b4c10509f1c8a6fd15ee8492abe54f06abfdbdb3df849eb6",
+  "native-block-energies.csv": "39023063b6389f9538716066f1bcea4a9736e5bba4df177536c13b9de6f6f443",
+  "paired-contrasts.csv": "906fbe8b1a997738c691201bf22663be509f0f46d7f789518e47ddd4f8feff28",
+  "posthoc-scalar-oracle.csv": "d881666c4b4c5e8b4c0389ef13a263e5fdd1d061319ebdbe5afbe91bd088accb",
+  "spatial-cells.csv": "3a04cec6ffb04a20076c9026c84ed749ccf159d9bede4b2e99e53bf66ef1ecb9",
+  "stats-appendix.md": "4f1fd0e4495d8f874543a6a367de559a2c25790273bf23550226830947534b83",
+  "variance-screen.csv": "d8ce8d9213b606bd886aba7cfcdd18f057d5e7d0fe27630cb36553a0526d0892",
+  "verification.json": "b3af4db77e0e4c6e29cdd42ab1388eb2b7520b915174b887d5405210821a8d18",
+  "figures/figure-01-native-variance-screen.pdf": "ba4d5c99a05bca2a64a9687cf639a14aad2a54f6bf746b20e43593f127cca10d",
+  "figures/figure-01-native-variance-screen.png": "9842f249aa1f1d9dfcfcb0e250c5a9f2a39713fae0068d187b3bcea01ace999a",
+  "figures/figure-01-native-variance-screen.svg": "3bb878228a17eb8c501a1f0b539dcf5d0a32df7f88f01eb1ab82efef95e8f167",
+  "figures/figure-02-joint-spatial-restoration.pdf": "312be9a83f8caa9cf6bee7e9f76061e20d9517492187699e6879fb03b67ad28e",
+  "figures/figure-02-joint-spatial-restoration.png": "8a9464ba2bc0c93a2810aa4ce4c8f5dd0ccdf0234750810575e248e1c7a9a069",
+  "figures/figure-02-joint-spatial-restoration.svg": "dad4319a9953a6180d3744d6a5d64fd9f3541a6400c8ee950c15951ec1570b98"
+}
