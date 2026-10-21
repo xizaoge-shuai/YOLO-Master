@@ -1,0 +1,17 @@
+{
+  "ruff": {
+    "exit": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  "format": {
+    "exit": 0,
+    "stdout": "3 files already formatted\n",
+    "stderr": ""
+  },
+  "codespell": {
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+}

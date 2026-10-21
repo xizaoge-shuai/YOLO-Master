@@ -1,0 +1,40 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                        [100%][0m
+[33m=============================== warnings summary ===============================[0m
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-49e88657-7cbe-464a-bace-69070d831c34
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-49e88657-7cbe-464a-bace-69070d831c34'
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 30 durations =============================
+10.51s call     online_experiments/test_detail_probe_data.py::test_all_arms_have_identical_schedules_and_detail_blank_features
+4.55s call     online_experiments/test_detail_probe_model.py::test_branch_receives_detection_gradients_after_zero_init_step[rgb]
+3.83s call     online_experiments/test_detail_probe_data.py::test_detail_queries_use_exact_same_rgb_and_keep_tail_and_labels
+0.41s call     online_experiments/test_detail_probe_data.py::test_blank_support_preserves_constant_field_including_fractional_boundary
+0.25s call     online_experiments/test_detail_probe_data.py::test_validation_keeps_original_rgb_and_four_feature_collation
+0.19s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[router_only-rgb]
+0.18s call     online_experiments/test_detail_probe_data.py::test_original_validation_cache_unchanged_and_raw_loading_only_for_needed_images
+0.17s call     online_experiments/test_detail_probe_model.py::test_lowpass_removes_checkerboard_but_preserves_constant_and_normalization
+0.14s call     online_experiments/test_detail_probe_model.py::test_nonzero_branch_changes_only_p3[rgb]
+0.13s call     online_experiments/test_detail_probe_data.py::test_cache_builder_is_nonoverwriting_hash_verified_and_counts_blank
+0.11s call     online_experiments/test_detail_probe_data.py::test_queries_keep_exact_cumulative_quota_for_multiple_epochs_and_single_tail
+0.10s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[router_only-none]
+0.09s call     online_experiments/test_detail_probe_model.py::test_state_dict_roundtrip_retains_predictions[rgb]
+0.09s call     online_experiments/test_detail_probe_model.py::test_state_dict_roundtrip_retains_predictions[lowpass]
+0.09s call     online_experiments/test_detail_probe_model.py::test_state_dict_roundtrip_retains_predictions[none]
+0.08s call     online_experiments/test_detail_probe_data.py::test_completed_cache_constructor_and_source_mutations_are_checked
+0.08s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[mean_value-rgb]
+0.07s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[mean_value-lowpass]
+0.07s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[mean_value-none]
+0.07s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[router_only-lowpass]
+0.07s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[deepest_value-rgb]
+0.07s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[deepest_value-lowpass]
+0.07s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[deepest_value-none]
+0.06s call     online_experiments/test_detail_probe_model.py::test_branch_receives_detection_gradients_after_zero_init_step[lowpass]
+0.06s call     online_experiments/test_detail_probe.py::test_archive_retry_preserves_a_pushed_descendant
+0.05s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[none]
+0.04s call     online_experiments/test_detail_probe_data.py::test_changed_manifest_is_rejected_and_insufficient_disk_keeps_teacher_unloaded
+0.03s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[lowpass]
+0.03s call     online_experiments/test_detail_probe_model.py::test_rgb_and_lowpass_have_identical_parameterization
+0.03s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[rgb]
+[33m[32m49 passed[0m, [33m[1m1 warning[0m[33m in 23.15s[0m[0m

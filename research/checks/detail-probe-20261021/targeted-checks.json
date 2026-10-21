@@ -1,0 +1,56 @@
+[
+  {
+    "name": "format-fix",
+    "returncode": 0,
+    "tail": [
+      "Found 2 errors (2 fixed, 0 remaining)."
+    ]
+  },
+  {
+    "name": "format",
+    "returncode": 0,
+    "tail": [
+      "1 file reformatted, 1 file left unchanged"
+    ]
+  },
+  {
+    "name": "lint",
+    "returncode": 0,
+    "tail": [
+      "All checks passed!"
+    ]
+  },
+  {
+    "name": "format-check",
+    "returncode": 0,
+    "tail": [
+      "6 files already formatted"
+    ]
+  },
+  {
+    "name": "bash-syntax",
+    "returncode": 0,
+    "tail": []
+  },
+  {
+    "name": "targeted-tests",
+    "returncode": 0,
+    "tail": [
+      "0.06s call     online_experiments/test_detail_probe_model.py::test_branch_receives_detection_gradients_after_zero_init_step[lowpass]",
+      "0.06s call     online_experiments/test_detail_probe.py::test_archive_retry_preserves_a_pushed_descendant",
+      "0.05s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[none]",
+      "0.04s call     online_experiments/test_detail_probe_data.py::test_changed_manifest_is_rejected_and_insufficient_disk_keeps_teacher_unloaded",
+      "0.03s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[lowpass]",
+      "0.03s call     online_experiments/test_detail_probe_model.py::test_rgb_and_lowpass_have_identical_parameterization",
+      "0.03s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[rgb]",
+      "\u001b[33m\u001b[32m49 passed\u001b[0m, \u001b[33m\u001b[1m1 warning\u001b[0m\u001b[33m in 23.15s\u001b[0m\u001b[0m"
+    ]
+  },
+  {
+    "name": "reference-evidence",
+    "returncode": 0,
+    "tail": [
+      "{'job': '/data/users/zhjia/YOLO-Master/runs/paper/visdrone-eval/job-full-20260927', 'parity_sha256': 'b666a3cbef884fb4fb0b5ea7c6c6d88050635322825de66b9bb39deea1cf23a3', 'provenance_sha256': '73403be6b54dd452038b2d35310feb0b0038ca02dd8f474813df5ad1e0c02b8c', 'reference_commit': '005445782213e20cb91bc50a597db3dd949e749a', 'checks': [{'name': 'synthetic', 'images': 24, 'max_absolute_AP_point_error': 4.405364961712621e-13, 'preprocessed_arrays_exact': True, 'input_sha256': '62111b6ae2037910a33c7bf7c7ae107496f6ae1507a0da1abb2d95adf811e9f2', 'native_output_sha256': '4350e157198fa65a55c749ee35d30c5e30361571dccc050194875cd5964691f0', 'native_metrics': [19.91601493396701, 21.923647190383978, 19.660267989170606, 3.4002998500749655, 3.4002998500749655, 80.70311514360097, 80.70311514360097]}, {'name': 'real', 'images': 2, 'max_absolute_AP_point_error': 3.552713678800501e-15, 'preprocessed_arrays_exact': True, 'input_sha256': '713dba7707c2d737d5fbc3ef3e1216cc083fe6db164f5b57bab9fee874061e38', 'native_output_sha256': '0889abc830d1b2e5422cf4fbfc20f6bfdfbdc410435356abc86ed5de89e76ecf', 'native_metrics': [8.79943143388438, 19.258540846610074, 7.616792310095529, 0.5882352941176471, 3.913312693498451, 11.591767881241564, 18.793919187108035]}]}"
+    ]
+  }
+]

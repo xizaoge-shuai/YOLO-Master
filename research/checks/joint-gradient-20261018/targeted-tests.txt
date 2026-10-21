@@ -1,0 +1,42 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                            [100%][0m
+[33m=============================== warnings summary ===============================[0m
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-da872846-2761-4513-ba9a-0ce2941db3eb/test_commit_recovers_staging_a0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_recovers_staging_a0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-da872846-2761-4513-ba9a-0ce2941db3eb/test_commit_preserves_standard0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_preserves_standard0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-da872846-2761-4513-ba9a-0ce2941db3eb/test_commit_rejects_unrelated_0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_rejects_unrelated_0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-da872846-2761-4513-ba9a-0ce2941db3eb
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-da872846-2761-4513-ba9a-0ce2941db3eb'
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 30 durations =============================
+16.40s call     online_experiments/test_gradient_calibration.py::test_native_gradient_matches_direct_actual_detection_loss_and_detachment
+4.01s call     online_experiments/test_gradient_calibration.py::test_estimator_matches_enumerated_autograd_gradient_distribution[0.1]
+0.22s call     online_experiments/test_gradient_calibration.py::test_joint_oracles_combine_regions_and_preserve_unselected_tokens
+0.15s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[False-4]
+0.11s call     online_experiments/test_assignment_intervention.py::test_foreign_assignment_matches_native_loss_with_fixed_assigner[4]
+0.05s call     online_experiments/test_assignment_intervention.py::test_identity_four_cells_and_zero_gradient_handling
+0.03s call     online_experiments/test_assignment_intervention.py::test_hard_targets_use_labels_and_ignore_soft_quality
+0.03s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[True-4]
+0.02s call     online_experiments/test_assignment_archive.py::test_commit_recovers_staging_and_does_not_duplicate_after_commit
+0.02s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[True-1]
+0.02s call     online_experiments/test_assignment_intervention.py::test_foreign_assignment_matches_native_loss_with_fixed_assigner[1]
+0.02s call     online_experiments/test_assignment_archive.py::test_commit_preserves_standard_csv_crlf_bytes
+0.01s call     online_experiments/test_assignment_archive.py::test_commit_rejects_unrelated_progress_changes
+0.01s call     online_experiments/test_spatial_intervention.py::test_regions_flip_clipping_and_mixed_boundaries
+0.01s call     online_experiments/test_assignment_intervention.py::test_native_loss_and_gradient_parity[False-1]
+
+(15 durations < 0.005s hidden.  Use -vv to show these durations.)
+[33m[32m45 passed[0m, [33m[1m4 warnings[0m[33m in 21.89s[0m[0m

@@ -1,0 +1,83 @@
+[32m.[0m[32m.[0m[32m.[0m[32m                                                                      [100%][0m
+[33m=============================== warnings summary ===============================[0m
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-60ac69a4-6619-4233-9ee2-7dc670c07196/test_commit_recovers_staging_a0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_recovers_staging_a0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-60ac69a4-6619-4233-9ee2-7dc670c07196/test_commit_preserves_standard0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_preserves_standard0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-60ac69a4-6619-4233-9ee2-7dc670c07196/test_commit_rejects_unrelated_0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_rejects_unrelated_0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-60ac69a4-6619-4233-9ee2-7dc670c07196
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-60ac69a4-6619-4233-9ee2-7dc670c07196'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-ce9b517e-981d-4272-89bf-907ddaf18314/test_commit_recovers_staging_a0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_recovers_staging_a0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-ce9b517e-981d-4272-89bf-907ddaf18314/test_commit_preserves_standard0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_preserves_standard0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-ce9b517e-981d-4272-89bf-907ddaf18314/test_commit_rejects_unrelated_0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_rejects_unrelated_0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-ce9b517e-981d-4272-89bf-907ddaf18314
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-ce9b517e-981d-4272-89bf-907ddaf18314'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-0cce6a7c-20fd-452c-94ad-9e53f656f6b5/test_commit_recovers_staging_a0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_recovers_staging_a0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-0cce6a7c-20fd-452c-94ad-9e53f656f6b5/test_commit_rejects_unrelated_0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_rejects_unrelated_0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-0cce6a7c-20fd-452c-94ad-9e53f656f6b5
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-0cce6a7c-20fd-452c-94ad-9e53f656f6b5'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-c345a463-bee5-4ff8-b847-4513ffadfa02/test_commit_recovers_staging_a0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_recovers_staging_a0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-c345a463-bee5-4ff8-b847-4513ffadfa02/test_commit_rejects_unrelated_0
+  <class 'OSError'>: [Errno 39] Directory not empty: 'test_commit_rejects_unrelated_0'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-c345a463-bee5-4ff8-b847-4513ffadfa02
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-c345a463-bee5-4ff8-b847-4513ffadfa02'
+    warnings.warn(
+
+../miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95
+  /data/users/zhjia/miniconda3/envs/yolomaster/lib/python3.10/site-packages/_pytest/pathlib.py:95: PytestWarning: (rm_rf) error removing /tmp/pytest-of-zhjia/garbage-070764c4-19e0-4319-af80-94f3442b4e45
+  <class 'OSError'>: [Errno 39] Directory not empty: '/tmp/pytest-of-zhjia/garbage-070764c4-19e0-4319-af80-94f3442b4e45'
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+============================= slowest 30 durations =============================
+0.01s setup    online_experiments/test_detail_probe.py::test_pairing_gate_rejects_changed_augmentation_schedule
+
+(8 durations < 0.005s hidden.  Use -vv to show these durations.)
+[33m[32m3 passed[0m, [33m[1m15 warnings[0m[33m in 0.03s[0m[0m

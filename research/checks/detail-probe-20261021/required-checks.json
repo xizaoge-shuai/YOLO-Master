@@ -1,0 +1,44 @@
+[
+  {
+    "name": "targeted-runner",
+    "returncode": 0,
+    "seconds": 0.26073575019836426,
+    "tail": [
+      "============================= slowest 30 durations =============================",
+      "0.01s setup    online_experiments/test_detail_probe.py::test_pairing_gate_rejects_changed_augmentation_schedule",
+      "",
+      "(8 durations < 0.005s hidden.  Use -vv to show these durations.)",
+      "\u001b[33m\u001b[32m3 passed\u001b[0m, \u001b[33m\u001b[1m15 warnings\u001b[0m\u001b[33m in 0.03s\u001b[0m\u001b[0m"
+    ]
+  },
+  {
+    "name": "ruff-repository",
+    "returncode": 1,
+    "seconds": 0.34613847732543945,
+    "tail": [
+      "    |",
+      "help: Replace with `dict`",
+      "",
+      "Found 2768 errors.",
+      "[*] 731 fixable with the `--fix` option (1275 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+    ]
+  },
+  {
+    "name": "format-repository",
+    "returncode": 1,
+    "seconds": 0.02401566505432129,
+    "tail": [
+      "119 +                 \"image_paths\": [self._image_paths[index] for index in index_values],",
+      "120 |             }",
+      "    |",
+      "",
+      "5 files would be reformatted, 666 files already formatted"
+    ]
+  },
+  {
+    "name": "codespell-repository",
+    "returncode": "TIMEOUT",
+    "seconds": 45.04802322387695,
+    "tail": []
+  }
+]
