@@ -1,6 +1,6 @@
 # Full-split cache and spatial-detail screening (2026-10-19)
 
-Status: approved implementation and exploratory experiment; no new accuracy result yet.
+Status (2026-10-22): implementation and 49 CPU contract tests completed; GPU smoke and full campaign pending launch. No new accuracy result yet. The interrupted implementation was preserved by the user's server backup commit e83ba00.
 
 ## Question and evidence boundary
 
@@ -27,6 +27,8 @@ Can a small trainable image-detail pathway use part of the compute saved by froz
 Six-view scales are {0.85, 1, 1.15}. Non-anchor requests remain continuous and approximate: relative feature warp = requested scale / anchor scale. This does not restore image context cropped out of an anchor. Label transforms always follow the requested image transform, never the anchor transform.
 
 The branch uses stride-2 convolution, two depthwise/pointwise stages, GroupNorm and SiLU, and a zero-initialized 1x1 P3 projection. It adds no labels or teacher features beyond the paired budget. Lowpass reduces the image to 40x40 by area filtering then restores 640x640 bilinearly. Parameter count and initialization match the RGB branch. Equal initial predictions, nonzero learning gradients, save/load, and geometry/query contracts require tests.
+
+The implemented branch adds 4,672 parameters. Both branch modes have identical initial head/branch states. Final-checkpoint sidecar recovery and archive retry against a newer pushed commit are covered by regression tests.
 
 ## Execution and recovery
 

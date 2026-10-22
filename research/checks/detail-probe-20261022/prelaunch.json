@@ -1,0 +1,10 @@
+{
+  "targeted_tests": 49,
+  "targeted_tests_passed": true,
+  "lint_passed": true,
+  "format_passed": true,
+  "gpu0_compute_backward": "PASS",
+  "source_local_server_hashes": "MATCH",
+  "source_backup_commit": "e83ba005edade66dd47ac61de370c7eb5dfbf606",
+  "full_repository_checks": "Prior unchanged failures recorded in research/checks/detail-probe-20261021/required-checks.json"
+}

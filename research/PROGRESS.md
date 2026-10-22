@@ -292,3 +292,8 @@ claim that their weights/predictions have been independently re-evaluated.
 - Joint true padding+content improves fixed-assignment P3 localization cosine (Mix25 shrink 0.9474, Online100 shrink 0.7948). Cheap blank+true content is weaker; on Online100 shrink it is worse than content alone. Oracles are not deployable AP results.
 - Post-hoc same-data constant-scalar Rec oracle offers only about 5.6-6.2% conditional variance reduction; not held-out evidence or a revised gate.
 - Proposed next priorities: full-protocol padding/discrete-view-cache baselines, then matched-token/matched-energy content interventions. Cross-dataset/model training remains downstream of a repeatable candidate. Scoped checks pass; global pre-existing 2768 Ruff errors, 5 format files and 45s codespell timeout retained.
+
+
+## detail-probe launch preparation 2026-10-22
+
+Continued interrupted implementation preserved in backup e83ba00, using branch research/detail-probe-20261022. Five paired 25% query arms, full VisDrone 6471/548, seed 0, 100 epochs, fixed-final official-reference AP. New RGB/lowpass P3 branch adds 4672 parameters. Fresh 49 tests, scoped lint/format, and GPU0 backward check passed; evaluator hashes match prior native parity. Existing repository-wide lint/format problems remain. No new AP result yet. See DETAIL_PROBE_PLAN_20261019.md and DETAIL_PROBE_REVIEW_20261022.md.
