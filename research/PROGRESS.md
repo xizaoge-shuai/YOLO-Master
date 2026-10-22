@@ -302,3 +302,8 @@ Continued interrupted implementation preserved in backup e83ba00, using branch r
 ## detail-probe job-20261022-hjP4y3Lf smoke
 
 Archived [smoke](experiments/detail-probe/job-20261022-hjP4y3Lf/smoke/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
+
+
+## detail-probe job-20261022-hjP4y3Lf cache
+
+Archived [cache](experiments/detail-probe/job-20261022-hjP4y3Lf/cache/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
