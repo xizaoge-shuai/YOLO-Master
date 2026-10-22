@@ -1,0 +1,13 @@
+{
+  "methods": [
+    "transport25",
+    "blank25",
+    "views25",
+    "detail25",
+    "lowpass25"
+  ],
+  "equal_head_initialization": true,
+  "schedule_sha256": {
+    "001.json": "db954f893f978db7fecedeb8c40be9c4346a62d29b2db78ef8f001e60b8fde2f"
+  }
+}

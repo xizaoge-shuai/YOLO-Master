@@ -1,0 +1,14 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 16.9612657883588,
+    "train_seconds": 2.996366376057267,
+    "query_images": 4,
+    "query_calls": 2,
+    "lr": 0.001,
+    "peak_vram_gib": 1.9152164459228516,
+    "val_loss": 18.980182647705078,
+    "diagnostic_AP": 0.0,
+    "val_seconds": 0.8662784965708852
+  }
+]
