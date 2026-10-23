@@ -1,0 +1,17 @@
+{
+  "python": "3.10.20 (main, Jun 11 2026, 15:17:37) [GCC 14.3.0]",
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0",
+  "cudnn": 92000,
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "transformers": "5.15.1"
+  },
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "telemetry": {
+    "time_unix": 1792691926.3078113,
+    "returncode": 0,
+    "gpu": "0, GPU-02d1df45-7f76-285a-1162-9ed27d60448d, 3769, 44992, 0, 449.50\n1, GPU-97f41417-ff0e-2f11-0ac5-1b0f5f4bbe44, 4, 48756, 0, 38.56"
+  }
+}

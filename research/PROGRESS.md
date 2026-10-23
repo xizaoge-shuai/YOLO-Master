@@ -312,3 +312,8 @@ Archived [cache](experiments/detail-probe/job-20261022-hjP4y3Lf/cache/README.md)
 ## detail-probe job-20261022-hjP4y3Lf transport25
 
 Archived [transport25](experiments/detail-probe/job-20261022-hjP4y3Lf/transport25/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
+
+
+## detail-probe job-20261022-hjP4y3Lf blank25
+
+Archived [blank25](experiments/detail-probe/job-20261022-hjP4y3Lf/blank25/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
