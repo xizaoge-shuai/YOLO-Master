@@ -1,0 +1,23 @@
+{
+  "method": "lowpass25",
+  "seed": 0,
+  "epochs": 100,
+  "batch": 8,
+  "train_images": 6471,
+  "val_images": 548,
+  "smoke": false,
+  "query_pct": 25,
+  "fusion": "mean_value",
+  "imgsz": 640,
+  "max_det": 500,
+  "conf": 0.001,
+  "lr": 0.001,
+  "weight_decay": 0.0005,
+  "detail_mode": "lowpass",
+  "validation_interval": 10,
+  "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+  "cache_manifest_sha256": "a2775f75454736c6c6a91baad9d798154151fd1a0c8f39d08c75263659f2c988",
+  "provenance_sha256": "bcca720e4788b7fdea937b9380b2b5a9f1313794d5832083a4d31d2ff4865837",
+  "primary_endpoint": "final official-reference AP, no best-epoch selection",
+  "timing_conditions": "shared GPU0; not a controlled speed benchmark"
+}
