@@ -332,3 +332,8 @@ Archived [detail25](experiments/detail-probe/job-20261022-hjP4y3Lf/detail25/READ
 ## detail-probe job-20261022-hjP4y3Lf lowpass25
 
 Archived [lowpass25](experiments/detail-probe/job-20261022-hjP4y3Lf/lowpass25/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
+
+
+## detail-probe job-20261022-hjP4y3Lf complete
+
+Archived [complete](experiments/detail-probe/job-20261022-hjP4y3Lf/complete/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
