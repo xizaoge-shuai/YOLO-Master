@@ -337,3 +337,11 @@ Archived [lowpass25](experiments/detail-probe/job-20261022-hjP4y3Lf/lowpass25/RE
 ## detail-probe job-20261022-hjP4y3Lf complete
 
 Archived [complete](experiments/detail-probe/job-20261022-hjP4y3Lf/complete/README.md). Frozen 25% query screening; official final AP only after full training. Shared-GPU costs provisional.
+
+
+<!-- writing-handoff:20261106 -->
+## 2026-11-06: CVPR 2027 writing handoff guide
+
+- Added [paper-writing handoff](CVPR2027_WRITING_GUIDE.md): scientific scope, six-section/eight-page plan, paragraph roles, baseline placement, four-figure/three-table evidence design, metrics, references, and author checklist.
+- The guide binds current five-arm full-split seed-0 results to archived commit 2b13720c718dbd14f99d4e722671d930a261997e; separates observed AP gains from unestablished controlled timing and generalization claims.
+- Verified UTF-8, local evidence links, AP deltas and query arithmetic; independent read-only review checked numerical and claim boundaries. Official submission rules were checked on 2026-11-06.
