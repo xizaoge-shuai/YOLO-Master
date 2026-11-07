@@ -1,0 +1,102 @@
+[
+  {
+    "method": "blank25",
+    "seed": 1,
+    "name": "blank25-s1"
+  },
+  {
+    "method": "detail25",
+    "seed": 1,
+    "name": "detail25-s1"
+  },
+  {
+    "method": "lowpass25",
+    "seed": 1,
+    "name": "lowpass25-s1"
+  },
+  {
+    "method": "blank25",
+    "seed": 2,
+    "name": "blank25-s2"
+  },
+  {
+    "method": "detail25",
+    "seed": 2,
+    "name": "detail25-s2"
+  },
+  {
+    "method": "lowpass25",
+    "seed": 2,
+    "name": "lowpass25-s2"
+  },
+  {
+    "method": "frofa-c2-d01",
+    "seed": 0,
+    "name": "frofa-c2-d01-s0"
+  },
+  {
+    "method": "loffta-c2-n005",
+    "seed": 0,
+    "name": "loffta-c2-n005-s0"
+  },
+  {
+    "method": "mix25",
+    "seed": 0,
+    "name": "mix25-s0"
+  },
+  {
+    "method": "online100",
+    "seed": 0,
+    "name": "online100-s0"
+  },
+  {
+    "method": "blank0",
+    "seed": 0,
+    "name": "blank0-s0"
+  },
+  {
+    "method": "detail0",
+    "seed": 0,
+    "name": "detail0-s0"
+  },
+  {
+    "method": "transport25",
+    "seed": 1,
+    "name": "transport25-s1"
+  },
+  {
+    "method": "views25",
+    "seed": 1,
+    "name": "views25-s1"
+  },
+  {
+    "method": "transport25",
+    "seed": 2,
+    "name": "transport25-s2"
+  },
+  {
+    "method": "views25",
+    "seed": 2,
+    "name": "views25-s2"
+  },
+  {
+    "method": "frofa-c2-d01",
+    "seed": 1,
+    "name": "frofa-c2-d01-s1"
+  },
+  {
+    "method": "loffta-c2-n005",
+    "seed": 1,
+    "name": "loffta-c2-n005-s1"
+  },
+  {
+    "method": "frofa-c2-d01",
+    "seed": 2,
+    "name": "frofa-c2-d01-s2"
+  },
+  {
+    "method": "loffta-c2-n005",
+    "seed": 2,
+    "name": "loffta-c2-n005-s2"
+  }
+]

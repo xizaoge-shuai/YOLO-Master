@@ -368,3 +368,9 @@ Archived [smoke](experiments/replication-suite/job-20261107-lNbNHy3z/smoke/READM
 
 - Archived [C2/Mix25/Online100 seeds1/2](experiments/full-visdrone-confirm-job-start-VIVUsfpt/README.md): saved reference AP, original configuration,100 epoch rows,source provenance and integrity records. Verified600 schedule digests.
 - Historical recovery only; no new training or re-scoring. Missing score-event checkpoint/prediction binding and historical dirty-source flags remain explicit. New replication campaign continues independently.
+
+
+<!-- replication-suite:job-20261107-lNbNHy3z:launch -->
+## Replication suite job-20261107-lNbNHy3z: launch
+
+Archived [launch](experiments/replication-suite/job-20261107-lNbNHy3z/launch/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.

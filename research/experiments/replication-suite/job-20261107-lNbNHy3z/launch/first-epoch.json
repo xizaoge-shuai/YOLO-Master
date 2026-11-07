@@ -1,0 +1,42 @@
+{
+  "case": "blank25-s1",
+  "scope": "First full-data epoch execution; no final AP claim",
+  "args": {
+    "method": "blank25",
+    "seed": 1,
+    "epochs": 100,
+    "batch": 8,
+    "train_images": 6471,
+    "val_images": 548,
+    "smoke": false,
+    "query_pct": 25,
+    "detail_mode": "none",
+    "effective_geometry": "continuous requested geometry",
+    "brightness": 0.0,
+    "noise": 0.0,
+    "fusion": "mean_value",
+    "imgsz": 640,
+    "max_det": 500,
+    "conf": 0.001,
+    "lr": 0.001,
+    "weight_decay": 0.0005,
+    "validation_interval": 10,
+    "dataset_manifest_sha256": "9da100e6d1e0c3c38704c02569520b4342ba6c31afe9a94de972b9c94d4fe247",
+    "cache_manifest_sha256": "990b82ef659e61d1dbcd9bf9a72e218bc1e8bb81266c7186bf00377c12fbb7d1",
+    "provenance_sha256": "c58b86fd620fa79055366fa46044e423d95ac0a1cc42bac5218950503eeef06f",
+    "primary_endpoint": "fixed final epoch official-reference AP; no best-epoch selection",
+    "timing_conditions": "shared GPU; not a controlled speed benchmark",
+    "baseline_scope": "matched-head full-split control",
+    "feature_augmentation_rng": "separate per-epoch generator: seed + 49979687 + epoch * 1000003",
+    "teacher_loaded": true
+  },
+  "epoch1": {
+    "epoch": 1,
+    "train_loss": 10.73342377744158,
+    "train_seconds": 351.307013557991,
+    "query_images": 1617,
+    "query_calls": 734,
+    "lr": 0.001,
+    "peak_vram_gib": 2.915130138397217
+  }
+}
