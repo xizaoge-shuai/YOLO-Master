@@ -374,3 +374,13 @@ Archived [smoke](experiments/replication-suite/job-20261107-lNbNHy3z/smoke/READM
 ## Replication suite job-20261107-lNbNHy3z: launch
 
 Archived [launch](experiments/replication-suite/job-20261107-lNbNHy3z/launch/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- paper-baseline-priority-20261107 -->
+## 2026-11-07: direct full-data paper baseline priority
+
+- Read the four supplied PDFs; [fixed idea-adaptation protocol](PAPER_BASELINE_PROTOCOL_20261107.md). FroFA/LOFF-TA have prior pilot evidence; ViT-Adapter cache-side interaction and physically quantized Cache and Reuse are new full-data baselines. No author repository source was downloaded.
+- User explicitly requested no new GPU smoke or small-data validation. Only static syntax/lint and independent source review were performed; full6471/548,100epochs is the execution target. New source Ruff/Bash syntax pass; repository-wide pre-existing2768 lint errors and format/parser failures remain, codespell unavailable.
+- Isolated branch preserves the original frozen source.28-case master queue retains original20 once, adding adapter25/0 and real INT8/packedINT4 controls. First four are paper baseline seed0; original partial Blank25-s1 resumes its saved epoch in the original directory.
+- Five evidence-table categories follow the user specification. Missing AP remains empty; YOLO13 has no implementation/result and no proxy is substituted. Source PDFs are identified by SHA256; weights/caches/PDFs are not versioned.
+- Priority switch records complete checkpoint,optimizer,scheduler,RNG,query budget,SHA and potential tail overhead before releasing original GPU processes. Subsequent case results/failures are archived and pushed independently. Queue prepared; completion is not claimed.

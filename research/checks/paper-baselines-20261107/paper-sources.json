@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "file": "2205.08534v4.pdf",
+      "sha256": "888d8dc74ec1c5fd5e0ece1720b1b2808a10c0007dd52b2020c373664ad7e3e1",
+      "title": "Vision Transformer Adapter for Dense Predictions",
+      "venue": "ICLR 2023",
+      "location": "Sections3,4.4; pages4-5,8-9,17-18"
+    },
+    {
+      "file": "2410.02527v1.pdf",
+      "sha256": "067a55cfd2db070e96cdd9c2a30299d3c807ba5cb9bad8a7d03d425f18cb3b2c",
+      "title": "Learning from Offline Foundation Features with Tensor Augmentations",
+      "venue": "NeurIPS 2024",
+      "location": "Section3.3; Figure2"
+    },
+    {
+      "file": "Bar_Frozen_Feature_Augmentation_for_Few-Shot_Image_Classification_CVPR_2024_paper.pdf",
+      "sha256": "9840aa29bd99d6cd07477d14bcb14f00573a8f9e3124d02f3aaff5a32eadad18",
+      "title": "Frozen Feature Augmentation for Few-Shot Image Classification",
+      "venue": "CVPR 2024",
+      "location": "Section3"
+    },
+    {
+      "file": "Yang_Cache_and_Reuse_Rethinking_the_Efficiency_of_On-device_Transfer_Learning_CVPRW_2024_paper.pdf",
+      "sha256": "8a41a14661ae3d6c109ed9b4f37f3321d86fb2efd863d0c9b8b998264c35de9c",
+      "title": "Cache and Reuse: Rethinking the Efficiency of On-device Transfer Learning",
+      "venue": "CVPRW 2024",
+      "location": "Sections4.2-4.3; Equations1-3; Algorithm2"
+    }
+  ],
+  "execution": "direct full6471/548; no new GPU smoke or small-data validation"
+}

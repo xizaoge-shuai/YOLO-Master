@@ -47,6 +47,10 @@ METHODS = (
     "blank0",
     "detail0",
     "detail10",
+    "vit-adapter-cache25",
+    "vit-adapter-cache0",
+    "cache-reuse-c1-int8",
+    "cache-reuse-c1-int4",
 )
 PROTOCOL = ROOT / "research/REPLICATION_ABLATION_PLAN_20261106.md"
 
@@ -62,10 +66,18 @@ def method_spec(method):
             "blank0": "blank25",
             "detail0": "detail25",
             "detail10": "detail25",
+            "vit-adapter-cache25": "detail25",
+            "vit-adapter-cache0": "detail25",
         }.get(method)
     )
     pct = 100 if method == "online100" else 10 if method == "detail10" else 25 if method.endswith("25") else 0
-    detail = "lowpass" if method == "lowpass25" else "rgb" if method in ("detail25", "detail0", "detail10") else "none"
+    detail = (
+        "lowpass"
+        if method == "lowpass25"
+        else "rgb"
+        if method in ("detail25", "detail0", "detail10", "vit-adapter-cache25", "vit-adapter-cache0")
+        else "none"
+    )
     geometry = (
         "unaugmented"
         if method == "cache1"
@@ -93,6 +105,22 @@ def check_counts(epoch, seen, n, queries, pct):
 def cost_for_method(manifest, method):
     """Charge each run's consumed physical banks, including validation and blank."""
     spec = method_spec(method)
+    if method.startswith("cache-reuse-"):
+        quantized = manifest["quantization"]
+        parts = [manifest["parts"][key] for key in ("train-v0", "val-v0")]
+        return {
+            "cache_build_charged_seconds": float(manifest["source_setup_seconds"])
+            + sum(float(part["seconds"]) for part in parts)
+            + quantized["build_seconds"],
+            "cache_bytes": quantized["total_bytes"] + manifest["parts"]["val-v0"]["bytes"],
+            "cache_build_query_images": sum(
+                int(part["images"]) + int(part.get("extra_parity_images", 0)) for part in parts
+            ),
+            "consumed_cache_parts": ["quantized-train-v0", "val-v0"],
+            "quantization_build_seconds": quantized["build_seconds"],
+            "compressed_training_cache_bytes": quantized["total_bytes"],
+            "cache_note": "Consumed INT cache plus common FP16 validation; original FP16 source retained for audit, not deleted",
+        }
     keys = ["val-v0"]
     if method != "online100":
         keys += ["train-v0"] if method == "cache1" else ["train-v0", "train-v1"]
@@ -374,7 +402,7 @@ def validate_completed(output, smoke, method=None, seed=None, *, request=None):
                 raise RuntimeError("Scored predictions changed after final evaluation")
 
 
-def train(a):
+def train(a, *, batches_factory=None, model_factory=None):
     import resource
 
     import torch
@@ -396,12 +424,14 @@ def train(a):
     torch.set_num_threads(4)
     d.seed_everything(a.seed)
     started = time.perf_counter()
-    batches = batch_class()(a.source, a.cache, a.method, a.seed, 17 if a.smoke else None, 8 if a.smoke else None)
+    batches = (batches_factory or batch_class())(
+        a.source, a.cache, a.method, a.seed, 17 if a.smoke else None, 8 if a.smoke else None
+    )
     n, nv = len(batches.train), len(batches.val)
     if (n, nv) != ((17, 8) if a.smoke else (6471, 548)):
         raise RuntimeError(f"Unexpected data split {(n, nv)}")
     d.seed_everything(a.seed)
-    model = DetailDetector(
+    model = (model_factory or DetailDetector)(
         in_channels=(384,) * 3, nc=10, imgsz=640, epochs=a.epochs, detail_mode=spec["detail_mode"]
     ).cuda()
     configure_fusion(model, "mean_value")
@@ -435,10 +465,13 @@ def train(a):
         "primary_endpoint": "fixed final epoch official-reference AP; no best-epoch selection",
         "timing_conditions": "shared GPU; not a controlled speed benchmark",
         "baseline_scope": "local detection idea adaptation"
-        if a.method.startswith(("frofa", "loffta"))
+        if a.method.startswith(("frofa", "loffta", "vit-adapter", "cache-reuse"))
         else "matched-head full-split control",
         "feature_augmentation_rng": "separate per-epoch generator: seed + 49979687 + epoch * 1000003",
         "teacher_loaded": batches.extractor is not None,
+        "method_contract": spec,
+        "model_contract": getattr(model, "paper_contract", None),
+        "auxiliary_inputs": getattr(batches, "auxiliary_inputs", {}),
     }
     if (output / "args.json").exists() and read(output / "args.json") != args:
         raise RuntimeError("Resume configuration changed")
@@ -496,6 +529,9 @@ def train(a):
         batches.query_images, batches.query_calls = state["query_images"], state["query_calls"]
         batches.raw_image_seconds = totals["raw_train_seconds"] + totals["raw_val_seconds"]
         batches.raw_image_images = totals["raw_train_images"] + totals["raw_val_images"]
+        if hasattr(batches, "quantized_bank"):
+            batches.quantized_bank.dequant_seconds = totals.get("dequant_seconds", 0.0)
+            batches.quantized_bank.dequant_images = totals.get("dequant_images", 0)
         torch.set_rng_state(state["cpu_rng"])
         torch.cuda.set_rng_state(state["cuda_rng"])
         print(f"RESUME {a.method} seed={a.seed} epoch={begin + 1}", flush=True)
@@ -555,6 +591,9 @@ def train(a):
         rows.append(row)
         scheduler.step()
         totals["wall"] = prior_wall + time.perf_counter() - started
+        if hasattr(batches, "quantized_bank"):
+            totals["dequant_seconds"] = batches.quantized_bank.dequant_seconds
+            totals["dequant_images"] = batches.quantized_bank.dequant_images
         with (output / "telemetry.jsonl").open("a", encoding="utf-8") as stream:
             stream.write(json.dumps(telemetry()) + "\n")
         summary = {
@@ -572,6 +611,8 @@ def train(a):
             "geometry_schedule_sha256": geometry_schedules(output),
             "data_prepare_charged_seconds": batches.meta["prepare_seconds"],
             **{key: value for key, value in totals.items() if key.startswith("raw_")},
+            "dequant_seconds": totals.get("dequant_seconds", 0.0),
+            "dequant_images": totals.get("dequant_images", 0),
             "raw_loading_note": "CPU image read/decode/letterbox time; included in training and validation wall times",
         }
         summary["build_plus_wall_seconds"] = summary["wall_seconds"] + costs["cache_build_charged_seconds"]

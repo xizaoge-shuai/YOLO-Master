@@ -1,0 +1,39 @@
+{
+  "scope": "Static syntax/lint only. No GPU smoke, synthetic forward, subset training or small-data evaluation.",
+  "new-ruff-fix": {
+    "exit_code": 0
+  },
+  "new-format": {
+    "exit_code": 0
+  },
+  "new-ruff": {
+    "exit_code": 0
+  },
+  "shell-syntax": {
+    "exit_code": 0
+  },
+  "syntax": {
+    "exit_code": 0,
+    "compiled_files": 6,
+    "unique_full_cases": 28,
+    "gpu_tests": 0,
+    "subset_runs": 0
+  },
+  "required-ruff": {
+    "exit_code": 1
+  },
+  "required-format": {
+    "exit_code": 1
+  },
+  "required-codespell": {
+    "unavailable": "codespell executable unavailable in restored environment"
+  },
+  "source_sha256": {
+    "online_experiments/replication_suite.py": "5735712a6ac4619c531376072afb0bdb6c478604f889eb11c89442f83afac5d4",
+    "online_experiments/replication_campaign.py": "ec863a1d440ceaecab3b1b5481cc5b27a62e176ce0a70c6400af27e2c69013cb",
+    "online_experiments/paper_adapter_model.py": "95a8e9ec6524b3b4784ac747382a123e50f9df1906f6f95dc7472402f5c8f71f",
+    "online_experiments/paper_quantized_cache.py": "533edb3d4f85daf05d25e13f92629448c2c9110c3120af0dfca4864ae9cc390b",
+    "online_experiments/paper_baseline_suite.py": "8a0b51da7e35433b5465f3f090655ef85186beb099f1e017554df807675faf1f",
+    "online_experiments/paper_baseline_campaign.py": "7f06449c8f1ebd9efdac3ebe89a8de0fd3191016ab0e2171e759f97de8d4c7bd"
+  }
+}

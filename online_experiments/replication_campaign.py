@@ -50,7 +50,7 @@ def push():
     if not remote.startswith("https://github.com/"):
         raise RuntimeError("Expected the configured GitHub repository")
     env = dict(os.environ)
-    env["GH_CONFIG_DIR"] = str(ROOT.parent / ".config/gh")
+    env.setdefault("GH_CONFIG_DIR", str(ROOT.parent / ".config/gh"))
     env["GIT_TERMINAL_PROMPT"] = "0"
     helper = "!" + shlex.quote(str(gh)) + " auth git-credential"
     subprocess.run(
@@ -83,7 +83,8 @@ def sanitized(value):
     if isinstance(value, list):
         return [sanitized(item) for item in value]
     if isinstance(value, str):
-        return value.replace(str(ROOT), "repo:").replace(str(ROOT.parent), "user-data:")
+        old_home = str(Path("/data/users") / ROOT.parent.name)
+        return value.replace(str(ROOT), "repo:").replace(str(ROOT.parent), "user-data:").replace(old_home, "user-data:")
     return value
 
 
