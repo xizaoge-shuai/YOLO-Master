@@ -384,3 +384,9 @@ Archived [launch](experiments/replication-suite/job-20261107-lNbNHy3z/launch/REA
 - Isolated branch preserves the original frozen source.28-case master queue retains original20 once, adding adapter25/0 and real INT8/packedINT4 controls. First four are paper baseline seed0; original partial Blank25-s1 resumes its saved epoch in the original directory.
 - Five evidence-table categories follow the user specification. Missing AP remains empty; YOLO13 has no implementation/result and no proxy is substituted. Source PDFs are identified by SHA256; weights/caches/PDFs are not versioned.
 - Priority switch records complete checkpoint,optimizer,scheduler,RNG,query budget,SHA and potential tail overhead before releasing original GPU processes. Subsequent case results/failures are archived and pushed independently. Queue prepared; completion is not claimed.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:priority-switch -->
+## Replication suite job-20261107-Imo9Yocz: priority-switch
+
+Archived [priority-switch](experiments/replication-suite/job-20261107-Imo9Yocz/priority-switch/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.

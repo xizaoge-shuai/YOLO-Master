@@ -1,0 +1,19 @@
+{
+  "phase": "stopped_all",
+  "process_ids": [
+    174770,
+    173673,
+    173668
+  ],
+  "original_job": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+  "case": "blank25-s1",
+  "preserved_epoch": 10,
+  "checkpoint_sha256": "f540a399075f5b1f0cdf7a95609b9ca3ecda18220634e213a14ed635465a81ea",
+  "query_images": 16177,
+  "checkpoint_train_seconds": 3086.329693281965,
+  "time_unix": 1794034602.2973125,
+  "switch_wait_seconds": 141.43310260772705,
+  "tail_elapsed_since_checkpoint_seconds": 0.6365008354187012,
+  "tail_note": "Possible uncheckpointed tail work retained as elapsed overhead; no zero-cost claim",
+  "reason": "User prioritizes four paper-idea baselines, direct full training, no smoke/pilot"
+}
