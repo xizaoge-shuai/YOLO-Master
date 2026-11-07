@@ -1,0 +1,179 @@
+{
+  "source": "repo:/runs/paper/full-visdrone-confirm/job-start-VIVUsfpt",
+  "cases": [
+    {
+      "case": "train/cache2-s1",
+      "completed_epochs": 100,
+      "verified_schedules": 100
+    },
+    {
+      "case": "train/cache2-s2",
+      "completed_epochs": 100,
+      "verified_schedules": 100
+    },
+    {
+      "case": "train/mix25-s1",
+      "completed_epochs": 100,
+      "verified_schedules": 100
+    },
+    {
+      "case": "train/mix25-s2",
+      "completed_epochs": 100,
+      "verified_schedules": 100
+    },
+    {
+      "case": "train/online-geom-s1",
+      "completed_epochs": 100,
+      "verified_schedules": 100
+    },
+    {
+      "case": "train/online-geom-s2",
+      "completed_epochs": 100,
+      "verified_schedules": 100
+    }
+  ],
+  "files": {
+    "reference-eval.json": {
+      "original_sha256": "bd0bcb74d31315a06567720c2ba0d75ff2b14980eabb306ace4ba9910bec4331",
+      "archive_sha256": "bd0bcb74d31315a06567720c2ba0d75ff2b14980eabb306ace4ba9910bec4331"
+    },
+    "confirmatory-plan.json": {
+      "original_sha256": "ceaf0e1e9e9eb784ef3f67bbd3c80a525b4a71cac9f80eaec2cd4464f22a56f2",
+      "archive_sha256": "6b20331524c718b65126b600653b48aeab547f77d4efdd94ec20cae9ae88108c"
+    },
+    "provenance.json": {
+      "original_sha256": "39a09ee47ce06faeb0e36e9a233f2f0b193946b49e39d6742d7e392705ec87d7",
+      "archive_sha256": "39a09ee47ce06faeb0e36e9a233f2f0b193946b49e39d6742d7e392705ec87d7"
+    },
+    "integrity-check.json": {
+      "original_sha256": "1944eb48e631cae90fc449af739c353c728488c6b452290f77d64517e47132d2",
+      "archive_sha256": "1944eb48e631cae90fc449af739c353c728488c6b452290f77d64517e47132d2"
+    },
+    "status.txt": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    },
+    "train/cache2-s1/args.json": {
+      "original_sha256": "b14bc4efe00cb749e4a7afbbbd310dc3a6262d57989ffc05bec21b3eb377bc2d",
+      "archive_sha256": "b14bc4efe00cb749e4a7afbbbd310dc3a6262d57989ffc05bec21b3eb377bc2d"
+    },
+    "train/cache2-s1/summary.json": {
+      "original_sha256": "edc1a9372cdadb46a42b30110948e0da9cd9ba8aff02067d62edefe05d0565c3",
+      "archive_sha256": "edc1a9372cdadb46a42b30110948e0da9cd9ba8aff02067d62edefe05d0565c3"
+    },
+    "train/cache2-s1/trainability.json": {
+      "original_sha256": "b25807406ae3724aec42b477bd1a155b989327836e9806ececda9750dd87ed77",
+      "archive_sha256": "b25807406ae3724aec42b477bd1a155b989327836e9806ececda9750dd87ed77"
+    },
+    "train/cache2-s1/metrics.csv": {
+      "original_sha256": "d8b5d5a791ce38e0675e38c0c760750fcc2005db3ec953d483f25a3b593df0b3",
+      "archive_sha256": "d8b5d5a791ce38e0675e38c0c760750fcc2005db3ec953d483f25a3b593df0b3"
+    },
+    "train/cache2-s1/DONE": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    },
+    "train/cache2-s2/args.json": {
+      "original_sha256": "62c7221ef85b4736f27eef27e3fd779b3ae5d472bca5b10e738692c21865922f",
+      "archive_sha256": "62c7221ef85b4736f27eef27e3fd779b3ae5d472bca5b10e738692c21865922f"
+    },
+    "train/cache2-s2/summary.json": {
+      "original_sha256": "f808759e9cccb21afef90e1f5cbfed8f125f2e3083e8ff70db00374a1bfb2ed8",
+      "archive_sha256": "f808759e9cccb21afef90e1f5cbfed8f125f2e3083e8ff70db00374a1bfb2ed8"
+    },
+    "train/cache2-s2/trainability.json": {
+      "original_sha256": "b25807406ae3724aec42b477bd1a155b989327836e9806ececda9750dd87ed77",
+      "archive_sha256": "b25807406ae3724aec42b477bd1a155b989327836e9806ececda9750dd87ed77"
+    },
+    "train/cache2-s2/metrics.csv": {
+      "original_sha256": "781e6d6498a09ee16b0bd4d7da1e314de924325eeba85c626975d1c21801d45f",
+      "archive_sha256": "781e6d6498a09ee16b0bd4d7da1e314de924325eeba85c626975d1c21801d45f"
+    },
+    "train/cache2-s2/DONE": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    },
+    "train/mix25-s1/args.json": {
+      "original_sha256": "ad6f8d04ea69059cf0832aa54fabf729df29c7cc35e4fdbd27b3a0a7a8bc0634",
+      "archive_sha256": "ad6f8d04ea69059cf0832aa54fabf729df29c7cc35e4fdbd27b3a0a7a8bc0634"
+    },
+    "train/mix25-s1/summary.json": {
+      "original_sha256": "7199d022937de4465232dc4f59f0916091783146256e00791c2896b9b209cbcb",
+      "archive_sha256": "7199d022937de4465232dc4f59f0916091783146256e00791c2896b9b209cbcb"
+    },
+    "train/mix25-s1/trainability.json": {
+      "original_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2",
+      "archive_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2"
+    },
+    "train/mix25-s1/metrics.csv": {
+      "original_sha256": "07751d2f4f24ec00719310f644cf2c25cc4ef863483975a66164d492db9678e2",
+      "archive_sha256": "07751d2f4f24ec00719310f644cf2c25cc4ef863483975a66164d492db9678e2"
+    },
+    "train/mix25-s1/DONE": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    },
+    "train/mix25-s2/args.json": {
+      "original_sha256": "068d2e5a4540da611d1a8bc6ac1be7e410ddaa3fb70d65a5e23afd2450084468",
+      "archive_sha256": "068d2e5a4540da611d1a8bc6ac1be7e410ddaa3fb70d65a5e23afd2450084468"
+    },
+    "train/mix25-s2/summary.json": {
+      "original_sha256": "36798aa31840f6fc5cac5e6147799b2f6aa65a4a671a7f4b7a702a907d9706d8",
+      "archive_sha256": "36798aa31840f6fc5cac5e6147799b2f6aa65a4a671a7f4b7a702a907d9706d8"
+    },
+    "train/mix25-s2/trainability.json": {
+      "original_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2",
+      "archive_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2"
+    },
+    "train/mix25-s2/metrics.csv": {
+      "original_sha256": "d7551b9af8b9a31f7e5cccc779e8bcc7076b44f602340311a9bae72ddd3d799b",
+      "archive_sha256": "d7551b9af8b9a31f7e5cccc779e8bcc7076b44f602340311a9bae72ddd3d799b"
+    },
+    "train/mix25-s2/DONE": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    },
+    "train/online-geom-s1/args.json": {
+      "original_sha256": "5a4c48fd1cfd376a63f4fb6d0a960b11c850cdc30bfbb852899460282d6aa3c3",
+      "archive_sha256": "5a4c48fd1cfd376a63f4fb6d0a960b11c850cdc30bfbb852899460282d6aa3c3"
+    },
+    "train/online-geom-s1/summary.json": {
+      "original_sha256": "871cc54aef5d8d1d2942904a3db0bc50e1201851b4edc794986100bfe290f96b",
+      "archive_sha256": "871cc54aef5d8d1d2942904a3db0bc50e1201851b4edc794986100bfe290f96b"
+    },
+    "train/online-geom-s1/trainability.json": {
+      "original_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2",
+      "archive_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2"
+    },
+    "train/online-geom-s1/metrics.csv": {
+      "original_sha256": "7bcc81e1b3afecdda8682a821918a9de0fe4e300dd76ba1c7690ca59eb0de199",
+      "archive_sha256": "7bcc81e1b3afecdda8682a821918a9de0fe4e300dd76ba1c7690ca59eb0de199"
+    },
+    "train/online-geom-s1/DONE": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    },
+    "train/online-geom-s2/args.json": {
+      "original_sha256": "3f2060dd22a9b81540ab36b1dd90daccf66f3c85858821429d455b3c09b0e2ea",
+      "archive_sha256": "3f2060dd22a9b81540ab36b1dd90daccf66f3c85858821429d455b3c09b0e2ea"
+    },
+    "train/online-geom-s2/summary.json": {
+      "original_sha256": "8b15279aa3a234c111516ef27452a8d647d77cfa61f507655434d27c3dc5a0e4",
+      "archive_sha256": "8b15279aa3a234c111516ef27452a8d647d77cfa61f507655434d27c3dc5a0e4"
+    },
+    "train/online-geom-s2/trainability.json": {
+      "original_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2",
+      "archive_sha256": "6a159c60e4ced68da8b86c1c2d59c2bf3c0075d52701e870c476992d963a2fc2"
+    },
+    "train/online-geom-s2/metrics.csv": {
+      "original_sha256": "3aea228efba3b4358a11cea1b6928f081e0fcc750d14804abff18c4453f9bf0d",
+      "archive_sha256": "3aea228efba3b4358a11cea1b6928f081e0fcc750d14804abff18c4453f9bf0d"
+    },
+    "train/online-geom-s2/DONE": {
+      "original_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+      "archive_sha256": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636"
+    }
+  },
+  "verification_scope": "Saved records recovered; 600 schedules checked. No fresh AP evaluation or checkpoint-to-evaluation authentication.",
+  "normalization": "Repository absolute path values normalized in JSON only; measurements unchanged. Original bytes retained at source."
+}

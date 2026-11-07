@@ -1,0 +1,20 @@
+{
+  "source_full_job": "repo:/runs/paper/full-visdrone/job-start-eDmH0odX",
+  "methods": [
+    "cache2",
+    "mix25",
+    "online-geom"
+  ],
+  "seeds": [
+    1,
+    2
+  ],
+  "epochs": 100,
+  "batch": 8,
+  "primary_endpoint": "last checkpoint official/reference AP",
+  "purpose": "confirm sparse exact refresh against offline cache and full online teacher",
+  "reuse_dataset_manifest": true,
+  "reuse_cache": true,
+  "reuse_raw_val_annotations": true,
+  "test_dev_used": false
+}

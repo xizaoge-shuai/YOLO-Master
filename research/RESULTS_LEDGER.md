@@ -52,7 +52,7 @@ FroFA/LOFF-TA 的实现边界见[配置说明](../online_experiments/FEATURE_BAS
 
 C2、Mix25、Online100 的三种子配对差：Mix25−C2 为 +0.6321 ± 0.1396 AP；Online100−Mix25 为 +0.4792 ± 0.4191 AP。seed0 的 93.85% 在线收益恢复率不能概括全部种子；逐种子恢复率均值为 62.51% ± 29.67%。这些是少量种子的描述性统计。
 
-证据：[seed0 原始参考结果](experiments/visdrone-reference-job-full-20260927/original/results.json)；[聊天原始日志](../ChatGPT_答辩PPT与稿子撰写_20261106-2309.md) L21577–21588、L22519–22534、L22682–22699。后两组日志尚需按实际文件拉齐本地归档；不能因为聊天助手总结或目录名存在就视为归档完整。
+证据：[seed0 原始参考结果](experiments/visdrone-reference-job-full-20260927/original/results.json)；[聊天原始日志](../ChatGPT_答辩PPT与稿子撰写_20261106-2309.md) L21577–21588、L22519–22534、L22682–22699。2026-11-07 已找回并归档[种子1/2的六个原始全量运行](experiments/full-visdrone-confirm-job-start-VIVUsfpt/README.md)，核对各100轮记录和共600个计划哈希。AP为保存的参考评估记录，未重新评分；历史评估缺checkpoint/预测哈希绑定，旧provenance含两个dirty文件，不能写成新重算或干净快照。原始路径已在归档JSON中归一化，数值未改。
 
 ## 4. 最近五臂：空间细节消融
 
