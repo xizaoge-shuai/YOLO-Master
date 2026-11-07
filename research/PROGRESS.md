@@ -390,3 +390,9 @@ Archived [launch](experiments/replication-suite/job-20261107-lNbNHy3z/launch/REA
 ## Replication suite job-20261107-Imo9Yocz: priority-switch
 
 Archived [priority-switch](experiments/replication-suite/job-20261107-Imo9Yocz/priority-switch/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:full-training-start -->
+## Replication suite job-20261107-Imo9Yocz: full-training-start
+
+Archived [full-training-start](experiments/replication-suite/job-20261107-Imo9Yocz/full-training-start/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
