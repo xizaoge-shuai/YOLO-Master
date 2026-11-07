@@ -1,0 +1,34 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m [ 88%]
+[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                                                [100%][0m
+============================= slowest 30 durations =============================
+4.46s call     online_experiments/test_replication_suite.py::test_query_ablations_keep_geometry_and_exact_cumulative_quota[online100]
+4.24s call     online_experiments/test_replication_suite.py::test_query_ablations_keep_geometry_and_exact_cumulative_quota[detail10]
+4.15s call     online_experiments/test_replication_suite.py::test_query_ablations_keep_geometry_and_exact_cumulative_quota[detail0]
+3.30s call     online_experiments/test_detail_probe_data.py::test_all_arms_have_identical_schedules_and_detail_blank_features
+1.23s call     online_experiments/test_detail_probe_data.py::test_detail_queries_use_exact_same_rgb_and_keep_tail_and_labels
+0.50s call     online_experiments/test_replication_suite.py::test_mix_pairs_requested_schedule_but_keeps_nonquery_targets_and_cache_unscaled
+0.30s call     online_experiments/test_detail_probe_model.py::test_branch_receives_detection_gradients_after_zero_init_step[rgb]
+0.09s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[router_only-none]
+0.08s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[deepest_value-rgb]
+0.07s call     online_experiments/test_detail_probe_data.py::test_original_validation_cache_unchanged_and_raw_loading_only_for_needed_images
+0.06s call     online_experiments/test_detail_probe_data.py::test_validation_keeps_original_rgb_and_four_feature_collation
+0.05s call     online_experiments/test_detail_probe_model.py::test_state_dict_roundtrip_retains_predictions[rgb]
+0.05s call     online_experiments/test_detail_probe_model.py::test_state_dict_roundtrip_retains_predictions[lowpass]
+0.05s call     online_experiments/test_detail_probe_model.py::test_state_dict_roundtrip_retains_predictions[none]
+0.04s call     online_experiments/test_detail_probe_data.py::test_queries_keep_exact_cumulative_quota_for_multiple_epochs_and_single_tail
+0.04s call     online_experiments/test_detail_probe.py::test_archive_retry_preserves_a_pushed_descendant
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[router_only-rgb]
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[router_only-lowpass]
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[deepest_value-lowpass]
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[mean_value-lowpass]
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[deepest_value-none]
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[mean_value-rgb]
+0.04s call     online_experiments/test_detail_probe_model.py::test_initial_outputs_equal_parent_in_both_inference_paths[mean_value-none]
+0.03s call     online_experiments/test_detail_probe_model.py::test_branch_receives_detection_gradients_after_zero_init_step[lowpass]
+0.02s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[none]
+0.02s call     online_experiments/test_replication_suite.py::test_full_completion_rejects_nonprotocol_batch
+0.02s call     online_experiments/test_detail_probe_model.py::test_rgb_and_lowpass_have_identical_parameterization
+0.02s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[rgb]
+0.02s call     online_experiments/test_detail_probe_model.py::test_initial_parent_state_and_global_rng_are_unchanged[lowpass]
+0.02s call     online_experiments/test_detail_probe_model.py::test_lowpass_removes_checkerboard_but_preserves_constant_and_normalization
+[32m[32m[1m81 passed[0m[32m in 20.06s[0m[0m

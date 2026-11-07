@@ -1,0 +1,36 @@
+{
+  "new-ruff-fix": {
+    "exit_code": 0
+  },
+  "new-format": {
+    "exit_code": 0
+  },
+  "new-ruff": {
+    "exit_code": 0
+  },
+  "shell-syntax": {
+    "exit_code": 0
+  },
+  "targeted-tests": {
+    "exit_code": 0
+  },
+  "required-ruff": {
+    "exit_code": 1
+  },
+  "required-format": {
+    "exit_code": 1
+  },
+  "required-codespell": {
+    "unavailable": "[Errno 2] No such file or directory: '/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell'"
+  },
+  "checked_source_sha256": {
+    "online_experiments/replication_suite.py": "dcdf1ffe7533ae59b7b54e8df76b8096f8259338fd8213e69d39d3723be77a9c",
+    "online_experiments/test_replication_suite.py": "e7db12837432a865f0dc956d3959382d6247e42485b349c6dd18008f37ea472f",
+    "online_experiments/relocate_feature_assets.py": "fbee8b5107f556869256a3e0b6dfccd127d0cb46724683bb755d782f5e05224e",
+    "online_experiments/test_relocate_feature_assets.py": "8575c4e642add14c0438ce789c184978f37fca3c455e48a69b31d3cfd27d645e",
+    "online_experiments/replication_campaign.py": "1ef81dce0ca89378b782bbed3c43c5af63139e2c9c654e5081ca210f3e03a35d",
+    "online_experiments/test_replication_campaign.py": "4041e39fc5e512d7579d76b50e02f968bcb3b8059291d4075d74447dc6dae3ba",
+    "online_experiments/run_replication_suite.sh": "93d8473bd6f33b34610e5f2534e0a48b647991b912be878dff62402b1029950a"
+  },
+  "scope_note": "81 targeted tests passed. New source lint and shell syntax passed. Repository-wide pre-existing 2768 lint failures and parse/format failures remain; codespell binary unavailable after OS reinstall."
+}

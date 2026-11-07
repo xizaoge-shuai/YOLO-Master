@@ -345,3 +345,13 @@ Archived [complete](experiments/detail-probe/job-20261022-hjP4y3Lf/complete/READ
 - Added [paper-writing handoff](CVPR2027_WRITING_GUIDE.md): scientific scope, six-section/eight-page plan, paragraph roles, baseline placement, four-figure/three-table evidence design, metrics, references, and author checklist.
 - The guide binds current five-arm full-split seed-0 results to archived commit 2b13720c718dbd14f99d4e722671d930a261997e; separates observed AP gains from unestablished controlled timing and generalization claims.
 - Verified UTF-8, local evidence links, AP deltas and query arithmetic; independent read-only review checked numerical and claim boundaries. Official submission rules were checked on 2026-11-06.
+
+
+<!-- replication-suite-setup-20261107 -->
+## 2026-11-07: inventory and fixed full-data replication campaign
+
+- Added [results ledger](RESULTS_LEDGER.md) separating full detector references, FroFA/LOFF-TA pilot adaptations, full frozen-head results, mechanism diagnostics and missing evidence. Manuscript and existing writing guide unchanged.
+- Added [20-run protocol](REPLICATION_ABLATION_PLAN_20261106.md): seed1/2 repeats for five detail arms, full FroFA/LOFF-TA seeds0/1/2, fresh Mix25/Online100 seed0 cost repeats and Blank0/Detail0 query ablations. Full 6471/548 VisDrone; fixed epoch100 official-reference endpoint. Queue not yet claimed complete.
+- Shadow metadata validates and reuses preserved cache arrays after mount migration, retaining original files/cost lineage. GPU0 serial background queue; GPU1 actual CUDA initialization unavailable.
+- Targeted verification: 81 passed, new-source Ruff and Bash syntax pass. Existing repository-wide checks still report 2768 lint errors and existing formatting/parser failures; codespell executable unavailable. Scoped checks are archived.
+- Runtime freezes code/protocol, checks paired initial heads/schedules and cumulative image query quotas, supports epoch-boundary recovery, archives and commits lightweight stage results. Push success is recorded separately and pending publication has an explicit retry command.
