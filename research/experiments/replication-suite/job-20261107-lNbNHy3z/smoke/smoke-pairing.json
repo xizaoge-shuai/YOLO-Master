@@ -1,0 +1,14 @@
+{
+  "compared": [
+    "frofa-c2-d01-s1",
+    "loffta-c2-n005-s1",
+    "mix25-s1",
+    "online100-s1",
+    "blank0-s1",
+    "detail0-s1",
+    "detail25-s1",
+    "views25-s1"
+  ],
+  "paired": true,
+  "seed_groups": 1
+}

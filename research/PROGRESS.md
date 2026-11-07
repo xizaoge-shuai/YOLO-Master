@@ -355,3 +355,9 @@ Archived [complete](experiments/detail-probe/job-20261022-hjP4y3Lf/complete/READ
 - Shadow metadata validates and reuses preserved cache arrays after mount migration, retaining original files/cost lineage. GPU0 serial background queue; GPU1 actual CUDA initialization unavailable.
 - Targeted verification: 81 passed, new-source Ruff and Bash syntax pass. Existing repository-wide checks still report 2768 lint errors and existing formatting/parser failures; codespell executable unavailable. Scoped checks are archived.
 - Runtime freezes code/protocol, checks paired initial heads/schedules and cumulative image query quotas, supports epoch-boundary recovery, archives and commits lightweight stage results. Push success is recorded separately and pending publication has an explicit retry command.
+
+
+<!-- replication-suite:job-20261107-lNbNHy3z:smoke -->
+## Replication suite job-20261107-lNbNHy3z: smoke
+
+Archived [smoke](experiments/replication-suite/job-20261107-lNbNHy3z/smoke/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.

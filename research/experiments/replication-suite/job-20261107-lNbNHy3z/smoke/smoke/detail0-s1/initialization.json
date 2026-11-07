@@ -1,0 +1,7 @@
+{
+  "head_state_sha256": "506118a12b132090f2a0e19830a4b71a9034878734e256af2d95a7b9edf39c61",
+  "parameters": 1296291,
+  "trainable_parameters": 1296291,
+  "detail_parameters": 4672,
+  "teacher_loaded": false
+}
