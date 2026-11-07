@@ -410,3 +410,9 @@ Archived [full-training-start](experiments/replication-suite/job-20261107-Imo9Yo
 ## Replication suite job-20261107-Imo9Yocz: frofa-c2-d01-s0
 
 Archived [frofa-c2-d01-s0](experiments/replication-suite/job-20261107-Imo9Yocz/frofa-c2-d01-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:loffta-c2-n005-s0 -->
+## Replication suite job-20261107-Imo9Yocz: loffta-c2-n005-s0
+
+Archived [loffta-c2-n005-s0](experiments/replication-suite/job-20261107-Imo9Yocz/loffta-c2-n005-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
