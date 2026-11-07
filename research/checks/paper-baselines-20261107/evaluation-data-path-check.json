@@ -1,0 +1,10 @@
+{
+  "full_val_annotation_images": 548,
+  "dataset_manifest_sha256": "9da100e6d1e0c3c38704c02569520b4342ba6c31afe9a94de972b9c94d4fe247",
+  "gpu_calls": 0,
+  "prediction_evaluation": false,
+  "created_evaluation_zip_link": true,
+  "zip_relative_path": "datasets/VisDrone/VisDrone2019-DET-val.zip",
+  "target_is_symlink": true,
+  "source_archive_bytes": 81638851
+}

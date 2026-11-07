@@ -396,3 +396,11 @@ Archived [priority-switch](experiments/replication-suite/job-20261107-Imo9Yocz/p
 ## Replication suite job-20261107-Imo9Yocz: full-training-start
 
 Archived [full-training-start](experiments/replication-suite/job-20261107-Imo9Yocz/full-training-start/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- experiment-handoff-guide-20261107 -->
+## 2026-11-07: experiment progress and operations handoff
+
+- Added [Chinese progress, commands and directory guide](../实验进展与运行指南.md): verified current full-data progress, historical metrics,28-case priority queue,five result tables,logs and restricted resume/publish instructions. No manuscript edits.
+- Directory inspection found the isolated evaluation archive path missing; linked the existing validation zip and checked all548 raw-annotation identities with the frozen evaluation loader. No GPU calls,prediction scoring,smoke or subset training; frozen training source unchanged.
+- UTF-8,document links and all 10 Bash blocks passed syntax checks. Runtime remains active.
