@@ -431,3 +431,11 @@ Archived [cache-reuse-c1-int8-s0](experiments/replication-suite/job-20261107-Imo
 - Read-only recheck matched each final checkpoint and all548 exported prediction hashes. Detail25 historicalAP12.3453 exceeds these by1.8181/3.2219/4.2733 points; explicitly cross-campaign,q25 versusq0. Historical paired q25 Detail-minus-Blank remains2.3469; deficit to project Master-N is2.5296. No significance or speed claim.
 - Adapter q25 continues in the existing28-case queue. No frozen source,protocol,manuscript or queue edits; no GPU smoke/subset training or new scoring.
 - UTF-8,links,Bash syntax and result-identity checks passed. Required repository lint/format retain existing failures;codespell remains unavailable. [Result snapshot](checks/paper-baselines-20261107/results-gap-20261108.json) and [document checks](checks/paper-baselines-20261107/results-gap-docs-validation-20261108.json) retain evidence.
+
+
+<!-- storage-staging-20261108 -->
+## 2026-11-08: staged datasets and recoverable duplicate cleanup
+
+- User order: finish current full-data metrics and controls, archive, reclaim unused storage, then add formal datasets before tuning the method. [Dataset/evidence plan](DATASET_EXPANSION_PLAN_20261108.md) selectsCOCO2017,VOC07+12,SKU-110K from primary sources; new downloads/training have not started.
+- Removed only122225 files in abandoned COCO extraction after byte-identical retained-copy/ZIP proof. Observed free-space increase530046976bytes; retained ZIP rehashed after deletion. No unique data,weights,predictions or feature banks deleted. [Cleanup evidence](checks/paper-baselines-20261107/cleanup-result-20261108.json).
+- Existing28-case worker remains active; frozen training source and protocol unchanged. No newGPU calls,smoke/subset tests or method tuning. ChineseUTF-8,links and11shell blocks checked; unchanged-source repository lint limitations remain documented in the prior checks.

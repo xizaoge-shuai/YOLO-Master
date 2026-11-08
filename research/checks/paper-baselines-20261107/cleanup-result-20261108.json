@@ -1,0 +1,19 @@
+{
+  "time": "2026-11-08T20:21:19.633988+08:00",
+  "deleted_path": "datasets/_coco_box_labels_tmp",
+  "deleted_file_count": 122225,
+  "logical_bytes_removed": 59362226,
+  "allocated_file_bytes_removed": 525787136,
+  "observed_disk_free_delta": 530046976,
+  "retained_archive": "datasets/coco2017labels-box.zip",
+  "retained_archive_sha256": "51a5175c894a7a1010f90eb4cba613473445f02633b684ed46c0292a997d0234",
+  "detailed_plan_sha256": "8bd6db348e4fffa6cd120f0b60ae212621f42d16c44dbeef8caaaa14815ecaa4",
+  "detailed_plan_location": "runs/paper/paper-baselines/job-20261107-Imo9Yocz/cleanup-duplicate-plan-20261108.json",
+  "proof": "All non-metadata files were byte-identical to existing canonical files or retained ZIP members; no unique data removed.",
+  "training_source_changed": false,
+  "weights_deleted": 0,
+  "feature_banks_deleted": 0,
+  "original_datasets_deleted": 0,
+  "gpu_calls": 0,
+  "active_status": "RUNNING full 4/28 vit-adapter-cache25-s0; no smoke/pilot"
+}
