@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-09",
+  "source_base": "81b2d0f03ec1a26f98b98903daf7d79fce455469",
+  "gpu_or_subset_execution": false,
+  "new_ap_results": false,
+  "cpu_checks": {
+    "python_ast_and_cli": "pass",
+    "single_pixel_and_inclusive_boxes": "pass",
+    "invalid_boxes_rejected": "pass",
+    "difficult_omitted_from_training_labels": "pass",
+    "traversal_paths_rejected": "pass",
+    "immutable_outputs_preserved": "pass",
+    "synthetic_completion_seal_not_created": "pass",
+    "utf8_documents": "pass",
+    "bash_syntax_setup": "pass",
+    "bash_syntax_guide_blocks": {"count": 6, "status": "pass"},
+    "targeted_ruff": "pass",
+    "targeted_ruff_format": "pass",
+    "targeted_codespell": "pass",
+    "formatted_source_ast_matches_launched_snapshot": true
+  },
+  "source_sha256": {
+    "setup_autodl_cvpr.sh": "4883f12fd8e7bcb73401d37f4d2924a0615b002a01288b16688e81f30a698ea6",
+    "prepare_autodl_voc.py_published_formatted": "f20d4eeb984fb40d17fa93bc050502efe7953bbc07e064011b8b530f4dcc89f9",
+    "prepare_autodl_voc.py_launched_snapshot": "b586d75bd812da4698f53aa8ae8eca91dfa469bdd21a68e95a4ac6eee383c868"
+  },
+  "launched_snapshot": "/root/autodl-tmp/transfer/source/prepare_autodl_voc.py",
+  "repository_checks": {
+    "scope": "unchanged base-source ultralytics, tests, scripts, agent; codespell repository-wide",
+    "ruff_findings": 2752,
+    "ruff_format_failures": 5,
+    "codespell_exit_code": 65,
+    "interpretation": "Pre-existing repository findings retained. Targeted new-script checks pass; this is not an all-repository pass."
+  },
+  "runtime_snapshot": {
+    "environment_installation": "RUNNING install_torch",
+    "voc_preparation": "RUNNING third archive download; not fully prepared",
+    "data_disk_gib": 50,
+    "full_feature_cache_started": false,
+    "training_started": false,
+    "old_server_checkpoint_transfer": "not possible while source host unavailable"
+  }
+}

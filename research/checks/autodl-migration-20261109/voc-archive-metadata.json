@@ -1,0 +1,123 @@
+{
+  "schema_version": "voc-range-metadata-audit-v1",
+  "audit_date_asia_shanghai": "2026-11-09",
+  "purpose": "Read-only preflight of official detection split XML coordinates and merge compatibility for prepare_autodl_voc.py",
+  "execution": {
+    "host": "local Windows workspace, not AutoDL or the original training server",
+    "python": "E:\\Anaconda\\python.exe",
+    "transport": "Python urllib.request HTTPS HEAD and bounded HTTP Range GET",
+    "parser": "Python standard-library struct, zipfile, zlib and xml.etree.ElementTree",
+    "range_response_required": "HTTP 206 with exact requested byte length",
+    "single_range_read_limit_bytes": 12582912,
+    "archive_payloads_written": false,
+    "jpeg_payload_downloaded_for_validation": false,
+    "training_or_gpu_execution": false,
+    "training_source_modified": false
+  },
+  "sources": [
+    {
+      "name": "VOCtrainval_06-Nov-2007.zip",
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtrainval_06-Nov-2007.zip",
+      "archive_size_bytes_from_head": 445914070,
+      "central_directory_bytes": 1204918,
+      "central_directory_members_including_directories": 10945,
+      "root": "VOCdevkit/VOC2007",
+      "all_annotation_xml_members": 5011,
+      "official_split_member": "VOCdevkit/VOC2007/ImageSets/Main/trainval.txt",
+      "official_split_images": 5011,
+      "selected_annotation_xml_parsed": 5011,
+      "bounded_xml_region_bytes_read": 2431974,
+      "objects": 15662,
+      "difficult_objects": 3054,
+      "minimum_xmin": 1,
+      "minimum_ymin": 1,
+      "maximum_xmax_minus_width_positive_overflow": 0,
+      "maximum_ymax_minus_height_positive_overflow": 0,
+      "invalid_boxes": 0,
+      "xml_image_filename_mismatches": 0
+    },
+    {
+      "name": "VOCtest_06-Nov-2007.zip",
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtest_06-Nov-2007.zip",
+      "archive_size_bytes_from_head": 438316827,
+      "central_directory_bytes": 1137113,
+      "central_directory_members_including_directories": 10357,
+      "root": "VOCdevkit/VOC2007",
+      "all_annotation_xml_members": 4952,
+      "official_split_member": "VOCdevkit/VOC2007/ImageSets/Main/test.txt",
+      "official_split_images": 4952,
+      "selected_annotation_xml_parsed": 4952,
+      "bounded_xml_region_bytes_read": 2391453,
+      "objects": 14976,
+      "difficult_objects": 2944,
+      "minimum_xmin": 1,
+      "minimum_ymin": 1,
+      "maximum_xmax_minus_width_positive_overflow": 0,
+      "maximum_ymax_minus_height_positive_overflow": 0,
+      "invalid_boxes": 0,
+      "xml_image_filename_mismatches": 0
+    },
+    {
+      "name": "VOCtrainval_11-May-2012.zip",
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtrainval_11-May-2012.zip",
+      "archive_size_bytes_from_head": 1950180009,
+      "central_directory_bytes": 4642866,
+      "central_directory_members_including_directories": 40189,
+      "root": "VOCdevkit/VOC2012",
+      "all_annotation_xml_members": 17125,
+      "official_split_member": "VOCdevkit/VOC2012/ImageSets/Main/trainval.txt",
+      "official_split_images": 11540,
+      "selected_annotation_xml_parsed": 11540,
+      "bounded_xml_region_bytes_read": 8034057,
+      "objects": 31561,
+      "difficult_objects": 4111,
+      "minimum_xmin": 1,
+      "minimum_ymin": 1,
+      "maximum_xmax_minus_width_positive_overflow": 0,
+      "maximum_ymax_minus_height_positive_overflow": 0,
+      "invalid_boxes": 0,
+      "xml_image_filename_mismatches": 0,
+      "extra_xml_policy": "The archive has 17125 XML members; only the 11540 ImageSets/Main/trainval.txt IDs define the official detection trainval split. Other XML members were excluded from this coordinate audit."
+    }
+  ],
+  "merge_checks": {
+    "comparison": "Exact full ZIP member path intersection for non-directory files; conflicting shared paths compared by central-directory CRC and uncompressed size",
+    "pairs": [
+      {"archives": ["VOCtrainval_06-Nov-2007.zip", "VOCtest_06-Nov-2007.zip"], "overlapping_file_paths": 0, "conflicting_file_paths": 0},
+      {"archives": ["VOCtrainval_06-Nov-2007.zip", "VOCtrainval_11-May-2012.zip"], "overlapping_file_paths": 0, "conflicting_file_paths": 0},
+      {"archives": ["VOCtest_06-Nov-2007.zip", "VOCtrainval_11-May-2012.zip"], "overlapping_file_paths": 0, "conflicting_file_paths": 0}
+    ],
+    "shared_directories_are_expected": true
+  },
+  "coordinate_check": {
+    "xml_values": "Original VOC one-based inclusive xmin, ymin, xmax, ymax",
+    "accepted_predicate": "Each coordinate is finite and integer; 1 <= xmin <= xmax <= XML width; 1 <= ymin <= ymax <= XML height",
+    "training_conversion": "Zero-based half-open XYXY = [xmin-1, ymin-1, xmax, ymax]",
+    "annotation_member_crc_and_size_checked": true,
+    "official_split_member_crc_and_size_checked": true,
+    "selected_images_total": 21503,
+    "selected_objects_total": 62199,
+    "selected_difficult_objects_total": 10109,
+    "invalid_boxes_total": 0,
+    "policy_conclusion": "No observed coordinate or filename blocker in the selected official detection splits. Keep strict validation and preserve XML; do not silently clip or rewrite historical labels."
+  },
+  "limits": {
+    "full_jpeg_decode_or_dimension_check": false,
+    "full_archive_crc_validation": false,
+    "full_archive_sha256_available": false,
+    "dataset_preparation_complete": false,
+    "benchmark_metrics_produced": false,
+    "notes": [
+      "This is a remote ZIP-directory/XML metadata audit, not an executed full dataset preparation or image-integrity check.",
+      "Only selected detection XML and split member CRC/size were checked; no complete ZIP SHA256 is claimed.",
+      "ZIP sizes are observed HEAD metadata, not cryptographic release identity. The full preparation must record actual archive SHA256 values.",
+      "The preparation script must still decode every selected JPEG and compare its dimensions with the original XML before writing complete.json.",
+      "Suffix Range requests initially returned HTTP 501 from the local network path; exact positive-offset requests returned HTTP 206 and were used for this audit."
+    ]
+  },
+  "supporting_primary_sources": [
+    "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/cfg/datasets/VOC.yaml",
+    "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/voc2012/htmldoc/index.html",
+    "https://raw.githubusercontent.com/facebookresearch/detectron2/main/detectron2/data/datasets/pascal_voc.py"
+  ]
+}
