@@ -1,0 +1,47 @@
+{
+  "document_utf8": true,
+  "document_links": true,
+  "bash_syntax_blocks": 10,
+  "gpu_calls": 0,
+  "training_source_changed": false,
+  "repository_checks": [
+    {
+      "command": "ruff check ultralytics/ tests/ scripts/ agent/",
+      "exit_code": 1,
+      "output_tail": [
+        "925 |         w_vars: Dict[tuple, any] = {}",
+        "    |                 ^^^^",
+        "926 |         for i in range(n):",
+        "927 |             y_vars[i] = []",
+        "    |",
+        "help: Replace with `dict`",
+        "",
+        "Found 2768 errors.",
+        "[*] 731 fixable with the `--fix` option (1275 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+      ]
+    },
+    {
+      "command": "ruff format --check ultralytics/ tests/ scripts/ agent/",
+      "exit_code": 1,
+      "output_tail": [
+        "    -                     for index in index_values",
+        "    -                 ],",
+        "117 +                 \"targets\": list(zip(classes, boxes)),",
+        "118 +                 \"sample_ids\": [self._sample_ids[index] for index in index_values],",
+        "119 +                 \"image_paths\": [self._image_paths[index] for index in index_values],",
+        "120 |             }",
+        "    |",
+        "",
+        "5 files would be reformatted, 666 files already formatted"
+      ]
+    },
+    {
+      "command": "codespell",
+      "exit_code": 127,
+      "output_tail": [
+        "codespell launch failed (FileNotFoundError): existing environment entry point is not executable."
+      ]
+    }
+  ],
+  "repository_check_scope": "Existing whole-repository lint/format failures retained. No training code changed."
+}

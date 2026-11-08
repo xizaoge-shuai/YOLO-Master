@@ -422,3 +422,12 @@ Archived [loffta-c2-n005-s0](experiments/replication-suite/job-20261107-Imo9Yocz
 ## Replication suite job-20261107-Imo9Yocz: cache-reuse-c1-int8-s0
 
 Archived [cache-reuse-c1-int8-s0](experiments/replication-suite/job-20261107-Imo9Yocz/cache-reuse-c1-int8-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- baseline-gap-results-20261108 -->
+## 2026-11-08: full paper-baseline endpoints and candidate gap
+
+- Updated the existing Chinese experiment guide and result ledger: three completed seed0 full6471/548 epoch100 endpoints are FroFA10.5272,LOFF-TA9.1234,Cache and Reuse INT8 8.0720. The worker already archived and pushed all three.
+- Read-only recheck matched each final checkpoint and all548 exported prediction hashes. Detail25 historicalAP12.3453 exceeds these by1.8181/3.2219/4.2733 points; explicitly cross-campaign,q25 versusq0. Historical paired q25 Detail-minus-Blank remains2.3469; deficit to project Master-N is2.5296. No significance or speed claim.
+- Adapter q25 continues in the existing28-case queue. No frozen source,protocol,manuscript or queue edits; no GPU smoke/subset training or new scoring.
+- UTF-8,links,Bash syntax and result-identity checks passed. Required repository lint/format retain existing failures;codespell remains unavailable. [Result snapshot](checks/paper-baselines-20261107/results-gap-20261108.json) and [document checks](checks/paper-baselines-20261107/results-gap-docs-validation-20261108.json) retain evidence.

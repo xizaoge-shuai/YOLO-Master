@@ -1,0 +1,220 @@
+{
+  "snapshot_time": "2026-11-08T19:41:48.670250+08:00",
+  "job": "job-20261107-Imo9Yocz",
+  "status": "RUNNING full 4/28 vit-adapter-cache25-s0; no smoke/pilot",
+  "head_before_docs": "4565377999e17cbe871d701f4f3b5ddcd2102e0e",
+  "source_diff_empty": true,
+  "failed_cases": [],
+  "completed_new_full_runs": [
+    {
+      "method": "cache-reuse-c1-int8",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "query_images": 0,
+      "metrics": {
+        "AP": 8.072014986177772,
+        "AP50": 18.068462072656732,
+        "AP75": 6.351673751189029,
+        "AR500": 19.403312147053633
+      },
+      "effective_geometry": "continuous requested geometry",
+      "parameters": 1291619,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "observed_train_seconds": 24772.661446797865,
+      "consumed_cache_bytes": 14007131648,
+      "compressed_training_cache_bytes": 11986984320,
+      "dequant_seconds_included": 1320.2783988138253,
+      "checkpoint_sha256": "715c2c3616957ce9ea46fd82d16e0fa3487ea177c5ec9b8c0bf7497976f9dc2f",
+      "checkpoint_hash_match": true,
+      "prediction_hashes_match": true,
+      "prediction_files": 548,
+      "official_record_sha256": "4ad32c4003788f7855c5fcb9e2844e46d2731c3b32917c5c54d3d1806ee20ff0",
+      "summary_sha256": "b098c41d5a6e36ca1525bacbb3d58e9a3b4c40ab9fcdf14c40561ae8da0edbdb",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "archive_commit": "4565377999e17cbe871d701f4f3b5ddcd2102e0e",
+      "pushed": true,
+      "source": "research/experiments/replication-suite/job-20261107-Imo9Yocz/cache-reuse-c1-int8-s0/train/cache-reuse-c1-int8-s0",
+      "detail_minus_baseline_AP_points": 4.273260329921159
+    },
+    {
+      "method": "frofa-c2-d01",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "query_images": 0,
+      "metrics": {
+        "AP": 10.527168678946435,
+        "AP50": 22.96632927348513,
+        "AP75": 8.30763537489345,
+        "AR500": 24.065412777354513
+      },
+      "effective_geometry": "true flipped C2; scale 1",
+      "parameters": 1291619,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "observed_train_seconds": 22230.94238914785,
+      "consumed_cache_bytes": 49729536384,
+      "compressed_training_cache_bytes": null,
+      "dequant_seconds_included": 0.0,
+      "checkpoint_sha256": "0861ad0d58411acf4aa8e1fd63ad39bfc1c3a0c22df86090b208cf7c91510868",
+      "checkpoint_hash_match": true,
+      "prediction_hashes_match": true,
+      "prediction_files": 548,
+      "official_record_sha256": "a7e5bcb9aeae6d239450f436ab5997592253ef341b58f6c2046fada5a35e1e5d",
+      "summary_sha256": "d58e68263ed016bc86f6c5c5960ac3e70bfcc9c2f86580abd8237017664c2964",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "archive_commit": "5b42a62099fb973e0da97918ce7ec3bf68ef0fc1",
+      "pushed": true,
+      "source": "research/experiments/replication-suite/job-20261107-Imo9Yocz/frofa-c2-d01-s0/train/frofa-c2-d01-s0",
+      "detail_minus_baseline_AP_points": 1.8181066371524963
+    },
+    {
+      "method": "loffta-c2-n005",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "query_images": 0,
+      "metrics": {
+        "AP": 9.123371319577005,
+        "AP50": 19.94210750130395,
+        "AP75": 7.4517961639452865,
+        "AR500": 21.216630469579066
+      },
+      "effective_geometry": "continuous requested geometry",
+      "parameters": 1291619,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "observed_train_seconds": 22529.29854312027,
+      "consumed_cache_bytes": 49729536384,
+      "compressed_training_cache_bytes": null,
+      "dequant_seconds_included": 0.0,
+      "checkpoint_sha256": "cf12d33802c7a69cc8f72a1290ec15c77a9bb314de38ae13a51e876b9d0042a9",
+      "checkpoint_hash_match": true,
+      "prediction_hashes_match": true,
+      "prediction_files": 548,
+      "official_record_sha256": "8a0d0fde0afae0d63ca62d4bb41513476d2c163a6c4362a34e973eef4bbbaeed",
+      "summary_sha256": "07518b43545fe38351ec6be638e8958d39a9f91e0c0b803df3504ba8521773fd",
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "archive_commit": "90ebeeca1f417975d3ac1820d3b96d705a51866c",
+      "pushed": true,
+      "source": "research/experiments/replication-suite/job-20261107-Imo9Yocz/loffta-c2-n005-s0/train/loffta-c2-n005-s0",
+      "detail_minus_baseline_AP_points": 3.2219039965219256
+    }
+  ],
+  "active_runs": [
+    {
+      "name": "vit-adapter-cache25-s0",
+      "epoch": 54,
+      "query_images": 87358,
+      "peak_vram_gib": 4.888466835021973
+    }
+  ],
+  "historical_spatial_seed0": [
+    {
+      "method": "transport25",
+      "seed": 0,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 9.635043658970952,
+        "AP50": 20.925495248502397,
+        "AP75": 7.977310448755204,
+        "AR500": 21.892862803901412
+      },
+      "observed_train_seconds": 38532.92054340243,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "extra_parameters": 0,
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "source": "research/experiments/detail-probe/job-20261022-hjP4y3Lf/transport25/train/transport25-s0",
+      "evidence_scope": "historical archived evaluation; no fresh historical prediction scoring",
+      "detail_minus_baseline_AP_points": 2.710231657127979
+    },
+    {
+      "method": "blank25",
+      "seed": 0,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 9.998387927062227,
+        "AP50": 21.48944372922987,
+        "AP75": 8.323284043186522,
+        "AR500": 21.989622215442914
+      },
+      "observed_train_seconds": 32277.357337048277,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "extra_parameters": 0,
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "source": "research/experiments/detail-probe/job-20261022-hjP4y3Lf/blank25/train/blank25-s0",
+      "evidence_scope": "historical archived evaluation; no fresh historical prediction scoring",
+      "detail_minus_baseline_AP_points": 2.346887389036704
+    },
+    {
+      "method": "views25",
+      "seed": 0,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 10.091227093982441,
+        "AP50": 21.773080202847755,
+        "AP75": 8.251826272794066,
+        "AR500": 22.495839989562644
+      },
+      "observed_train_seconds": 39386.055915504694,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "extra_parameters": 0,
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "source": "research/experiments/detail-probe/job-20261022-hjP4y3Lf/views25/train/views25-s0",
+      "evidence_scope": "historical archived evaluation; no fresh historical prediction scoring",
+      "detail_minus_baseline_AP_points": 2.2540482221164897
+    },
+    {
+      "method": "detail25",
+      "seed": 0,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 12.345275316098931,
+        "AP50": 26.659294229277737,
+        "AP75": 10.005655379909765,
+        "AR500": 26.843220534176492
+      },
+      "observed_train_seconds": 66354.71317294613,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "extra_parameters": 4672,
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "source": "research/experiments/detail-probe/job-20261022-hjP4y3Lf/detail25/train/detail25-s0",
+      "evidence_scope": "historical archived evaluation; no fresh historical prediction scoring",
+      "detail_minus_baseline_AP_points": 0.0
+    },
+    {
+      "method": "lowpass25",
+      "seed": 0,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 9.850932808305062,
+        "AP50": 21.24140208981132,
+        "AP75": 8.222645823320404,
+        "AR500": 22.03022795572688
+      },
+      "observed_train_seconds": 56140.21924604755,
+      "head_state_sha256": "c7dc5a1db881520d5cbc341d6512f8488b06c241b30510d76a2ed3c07f609357",
+      "extra_parameters": 4672,
+      "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+      "reference_port_sha256": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "source": "research/experiments/detail-probe/job-20261022-hjP4y3Lf/lowpass25/train/lowpass25-s0",
+      "evidence_scope": "historical archived evaluation; no fresh historical prediction scoring",
+      "detail_minus_baseline_AP_points": 2.494342507793869
+    }
+  ],
+  "comparison_scope": "AP points, fixed epoch100, full6471/548, pinned reference. New q0 paper adaptations versus historical Detail25 are cross-campaign and differ in query budget, geometry and/or cache. Historical five-arm q25 contrasts are paired seed0 only. No p-values, uncertainty intervals, controlled speed or generalization claims.",
+  "audit_gpu_calls": 0,
+  "audit_prediction_scoring_calls": 0
+}
