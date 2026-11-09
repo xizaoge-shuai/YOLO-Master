@@ -471,3 +471,9 @@ Archived [vit-adapter-cache25-s0](experiments/replication-suite/job-20261107-Imo
 ## Replication suite job-20261107-Imo9Yocz: mix25-s0
 
 Archived [mix25-s0](experiments/replication-suite/job-20261107-Imo9Yocz/mix25-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:online100-s0 -->
+## Replication suite job-20261107-Imo9Yocz: online100-s0
+
+Archived [online100-s0](experiments/replication-suite/job-20261107-Imo9Yocz/online100-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
