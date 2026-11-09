@@ -483,3 +483,13 @@ Archived [online100-s0](experiments/replication-suite/job-20261107-Imo9Yocz/onli
 ## Replication suite job-20261107-Imo9Yocz: blank0-s0
 
 Archived [blank0-s0](experiments/replication-suite/job-20261107-Imo9Yocz/blank0-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- dataset-first-implementation-20261109 -->
+## 2026-11-09: freeze recipe and prepare dataset-first coordination
+
+- User order: finish dataset coverage before repeated seeds or any epoch/augmentation tuning. Keep100 epochs and the existing optimizer/augmentation/final-epoch endpoint. Current paper-baseline campaign has7 completed seed0 cases and detail0-s0 running.
+- Added an external coordinator selecting the original10 seed0 cases and recording18 deferred repeats; no frozen training source,queue,provenance or old result changed. Existing trainer adoption verifies exact UID/PID/starttime/argv/cwd and requires DONE plus the frozen full validator before advancing. Three locks prevent duplicate supervisors.
+- CPU contracts,AST,CLI,targeted Ruff/format and all810 frozen source hashes pass. Independent read-only code review found no blocker for fresh single-worker adoption. NoGPU smoke,subset training or new accuracy scoring. Repository-wide checks retain2768 existing Ruff findings and5 formatting failures; configured codespell entry cannot execute. See dataset-first CPU/required-check JSON records.
+- Code is committed before live supervisor handoff. Actual transition/child continuity must be established by a separate handoff audit; preparation is not reported as successful adoption. VOC/SKU/COCO training integration remains pending, and10/10 is not28/28 or full paper completion.
+- New final results include ViT-Adapter-style q25 AP16.5855,above historical Detail25 AP12.3453 by4.2402 points. This stronger local adaptation is retained as a baseline; do not hide it or claim all baselines are beaten. Shared/restarted elapsed times are not a controlled speed benchmark.

@@ -1,0 +1,164 @@
+{
+  "source_job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+  "endpoints": [
+    {
+      "method": "blank0",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "metrics": {
+        "AP": 8.995389291604418,
+        "AP50": 19.72325673617635,
+        "AP75": 7.288401335849306,
+        "AR500": 20.62543216242178
+      },
+      "summary_sha256": "20a132c643cb31f4d1003982bbc9095bd16b12a08f202f388e9a1c3d2d346c5b",
+      "official_final_sha256": "1c6138997dddebbddd8de875a4157ddc75a2d363e5ff7fe568b8e96d9ef13faa",
+      "bound_checkpoint_sha256": "568d5319b499bf2c585b393462238a9c93789229c287310cb1b27cd79d647af5",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    },
+    {
+      "method": "cache-reuse-c1-int8",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "metrics": {
+        "AP": 8.072014986177772,
+        "AP50": 18.068462072656732,
+        "AP75": 6.351673751189029,
+        "AR500": 19.403312147053633
+      },
+      "summary_sha256": "b098c41d5a6e36ca1525bacbb3d58e9a3b4c40ab9fcdf14c40561ae8da0edbdb",
+      "official_final_sha256": "4ad32c4003788f7855c5fcb9e2844e46d2731c3b32917c5c54d3d1806ee20ff0",
+      "bound_checkpoint_sha256": "715c2c3616957ce9ea46fd82d16e0fa3487ea177c5ec9b8c0bf7497976f9dc2f",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    },
+    {
+      "method": "frofa-c2-d01",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "metrics": {
+        "AP": 10.527168678946435,
+        "AP50": 22.96632927348513,
+        "AP75": 8.30763537489345,
+        "AR500": 24.065412777354513
+      },
+      "summary_sha256": "d58e68263ed016bc86f6c5c5960ac3e70bfcc9c2f86580abd8237017664c2964",
+      "official_final_sha256": "a7e5bcb9aeae6d239450f436ab5997592253ef341b58f6c2046fada5a35e1e5d",
+      "bound_checkpoint_sha256": "0861ad0d58411acf4aa8e1fd63ad39bfc1c3a0c22df86090b208cf7c91510868",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    },
+    {
+      "method": "loffta-c2-n005",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 0,
+      "metrics": {
+        "AP": 9.123371319577005,
+        "AP50": 19.94210750130395,
+        "AP75": 7.4517961639452865,
+        "AR500": 21.216630469579066
+      },
+      "summary_sha256": "07518b43545fe38351ec6be638e8958d39a9f91e0c0b803df3504ba8521773fd",
+      "official_final_sha256": "8a0d0fde0afae0d63ca62d4bb41513476d2c163a6c4362a34e973eef4bbbaeed",
+      "bound_checkpoint_sha256": "cf12d33802c7a69cc8f72a1290ec15c77a9bb314de38ae13a51e876b9d0042a9",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    },
+    {
+      "method": "mix25",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 11.352560927159786,
+        "AP50": 24.559985256783552,
+        "AP75": 9.16244637257089,
+        "AR500": 24.50087532800695
+      },
+      "summary_sha256": "276d735958aa2a65a8a1be46034f0f3a7ea31806fe21e7334eed5cef9f267442",
+      "official_final_sha256": "8dbf899a4d95e7e004f80a400b8582ed0d5d3fed5a8194f57d275b6984da24c2",
+      "bound_checkpoint_sha256": "9f28d0f7c1d8240014d4f8af04d50da77312ad3a8f5ba00ea20a2723869bcdbf",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    },
+    {
+      "method": "online100",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 100,
+      "metrics": {
+        "AP": 11.398159453937234,
+        "AP50": 24.57922122197171,
+        "AP75": 9.288335791628777,
+        "AR500": 25.0182648764337
+      },
+      "summary_sha256": "1e3da2ee2e1c5d36441f7036c9219f69d3328440c255ecd962853898c7f4f4a1",
+      "official_final_sha256": "012f83030db3870f7bd669332df890dae3136b8b3132d50246a3553faf2e26f6",
+      "bound_checkpoint_sha256": "03f659ec7ebc55dc7f178f432e4d3222ab511e7e65782ad4d9166bba2eb422d7",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "seed": 0,
+      "epochs": 100,
+      "train_images": 6471,
+      "val_images": 548,
+      "query_pct": 25,
+      "metrics": {
+        "AP": 16.585498245593705,
+        "AP50": 33.195785126736915,
+        "AP75": 14.465128070995096,
+        "AR500": 33.069409737908195
+      },
+      "summary_sha256": "a30ff0d7e6fe1290057c473b5fdf1e1e84d70f123b8d4621857b62d6f2da0357",
+      "official_final_sha256": "57218753313cdf2f2497c1a6b8f4ebbf6a72ef7881d02fa1f6b7bc12d5fd80e0",
+      "bound_checkpoint_sha256": "8e1f5eaaf5137a0ec31c4e471437a068cb18e2d168d82d0f3e4e3f6ab6988da2",
+      "prediction_hash_count": 548,
+      "checkpoint_file": "last.pt",
+      "checkpoint_hash_verified": true,
+      "predictions_rehashed": 548,
+      "DONE": "SUCCEEDED"
+    }
+  ],
+  "primary_endpoint": "fixed final epoch official-reference AP,0-100",
+  "no_new_scoring": true,
+  "no_speed_claim": "shared GPU and resumed runtime; unequal parameter counts",
+  "historical_Detail25_AP": 12.3452753161,
+  "adapter_minus_historical_Detail25_AP": 4.240222929493704
+}

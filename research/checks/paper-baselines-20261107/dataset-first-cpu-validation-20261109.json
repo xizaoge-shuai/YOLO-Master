@@ -1,0 +1,15 @@
+{
+  "ast": "PASS",
+  "ruff check": 0,
+  "ruff format --check": 0,
+  "partition_actual_28": "PASS",
+  "reject_invalid_queue": "PASS",
+  "process_identity": "PASS",
+  "lock_refusal_preserves_status": "PASS",
+  "DONE_plus_full_validator_required": "PASS",
+  "cli_help": "PASS",
+  "coordinator_sends_no_signals": "PASS",
+  "frozen_source_unchanged": 810,
+  "source_sha256": "b335c28eb5379246a6d0821047e5fa8f0359c847b0012902b5b663598203ee5f",
+  "no_GPU_model_smoke_or_subset_run": true
+}

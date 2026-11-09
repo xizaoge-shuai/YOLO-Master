@@ -1,0 +1,21 @@
+{
+  "required_ruff": {
+    "returncode": 1,
+    "output_tail": [
+      "",
+      "Found 2768 errors.",
+      "[*] 731 fixable with the `--fix` option (1275 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+    ]
+  },
+  "required_format": {
+    "returncode": 1,
+    "output_tail": [
+      "    |",
+      "",
+      "5 files would be reformatted, 666 files already formatted"
+    ]
+  },
+  "required_codespell": {
+    "error": "[Errno 2] No such file or directory: '/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell'"
+  }
+}
