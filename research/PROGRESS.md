@@ -493,3 +493,9 @@ Archived [blank0-s0](experiments/replication-suite/job-20261107-Imo9Yocz/blank0-
 - CPU contracts,AST,CLI,targeted Ruff/format and all810 frozen source hashes pass. Independent read-only code review found no blocker for fresh single-worker adoption. NoGPU smoke,subset training or new accuracy scoring. Repository-wide checks retain2768 existing Ruff findings and5 formatting failures; configured codespell entry cannot execute. See dataset-first CPU/required-check JSON records.
 - Code is committed before live supervisor handoff. Actual transition/child continuity must be established by a separate handoff audit; preparation is not reported as successful adoption. VOC/SKU/COCO training integration remains pending, and10/10 is not28/28 or full paper completion.
 - New final results include ViT-Adapter-style q25 AP16.5855,above historical Detail25 AP12.3453 by4.2402 points. This stronger local adaptation is retained as a baseline; do not hide it or claim all baselines are beaten. Shared/restarted elapsed times are not a controlled speed benchmark.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:dataset-first-plan -->
+## Replication suite job-20261107-Imo9Yocz: dataset-first-plan
+
+Archived [dataset-first-plan](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-plan/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
