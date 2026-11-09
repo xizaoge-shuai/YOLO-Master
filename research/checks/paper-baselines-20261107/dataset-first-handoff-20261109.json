@@ -1,0 +1,194 @@
+{
+  "schema": "supervisor-only-dataset-first-handoff-v1",
+  "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+  "code_commit": "cef519efa4c6ae5c49d926b4326a40813796fd29",
+  "launcher_before": {
+    "pid": 2042056,
+    "uid": 1010,
+    "starttime": 946307,
+    "state": "S",
+    "argv": [
+      "bash",
+      "online_experiments/run_paper_baselines.sh",
+      "worker",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz"
+    ],
+    "cwd": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107"
+  },
+  "supervisor_before": {
+    "pid": 2042064,
+    "uid": 1010,
+    "starttime": 946309,
+    "state": "S",
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "online_experiments/paper_baseline_campaign.py",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+      "--origin-root",
+      "/mnt/data/users/zhjia/YOLO-Master",
+      "--original-job",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+      "--assets",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets"
+    ],
+    "cwd": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107"
+  },
+  "trainer_before": {
+    "pid": 2862820,
+    "uid": 1010,
+    "starttime": 4254401,
+    "state": "R",
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/paper_baseline_suite.py",
+      "train",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+      "--source",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+      "--cache",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/cache/manifest.json",
+      "--method",
+      "detail0",
+      "--seed",
+      "0"
+    ],
+    "cwd": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107"
+  },
+  "old_status": "RUNNING full 8/28 detail0-s0; no smoke/pilot\n",
+  "epoch_before": 22,
+  "checkpoint_before_sha256": "2ca3045e787b7670a80232765886a1623daf9cf16ccd02b63ab67e10e71a8963",
+  "checkpoint_backup": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/restarts/dataset-first-20261109/detail0-last-before-handoff.pt",
+  "child_inherited_campaign_lock_fds": [],
+  "queue_sha256": "5cb360db08afdcb682db55107db70e9efaa5defe3ec9be9c652cb5dfb9db3ba8",
+  "provenance_sha256": "d45a604e6651541a0f8be4b7b14d154e28d3ce0ce82ca18de55dfbd1d6af2d39",
+  "frozen_source_unchanged": 810,
+  "signals": [
+    {
+      "pid": 2042064,
+      "signal": "SIGSTOP",
+      "time_unix": 1794238600.13819
+    },
+    {
+      "pid": 2042064,
+      "signal": "SIGTERM",
+      "time_unix": 1794238600.138567
+    },
+    {
+      "pid": 2042064,
+      "signal": "SIGCONT",
+      "time_unix": 1794238600.13884
+    }
+  ],
+  "trainer_restart": false,
+  "epochs_augmentation_optimizer_unchanged": true,
+  "new_datasets_launched": false,
+  "state": "LIVE_CHILD_AND_NEW_COORDINATOR_VERIFIED",
+  "new_worker_pid": 2958346,
+  "new_worker_command": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/dataset_first_campaign.py",
+    "run",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+    "--origin-root",
+    "/mnt/data/users/zhjia/YOLO-Master",
+    "--original-job",
+    "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+    "--adopt-pid",
+    "2862820",
+    "--adopt-starttime",
+    "4254401",
+    "--adopt-method",
+    "detail0"
+  ],
+  "trainer_after": {
+    "pid": 2862820,
+    "uid": 1010,
+    "starttime": 4254401,
+    "state": "R",
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/paper_baseline_suite.py",
+      "train",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+      "--source",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+      "--cache",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/cache/manifest.json",
+      "--method",
+      "detail0",
+      "--seed",
+      "0"
+    ],
+    "cwd": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107"
+  },
+  "queue_unchanged": true,
+  "provenance_unchanged": true,
+  "new_worker_identity": {
+    "pid": 2958346,
+    "uid": 1010,
+    "starttime": 4560449,
+    "state": "S",
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/dataset_first_campaign.py",
+      "run",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+      "--origin-root",
+      "/mnt/data/users/zhjia/YOLO-Master",
+      "--original-job",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+      "--adopt-pid",
+      "2862820",
+      "--adopt-starttime",
+      "4254401",
+      "--adopt-method",
+      "detail0"
+    ],
+    "cwd": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107"
+  },
+  "phase_status": {
+    "state": "ADOPTING",
+    "message": "detail0-s0 epoch=23/100; no seed repeats",
+    "time_unix": 1794238752.2746425,
+    "case": "detail0-s0",
+    "pid": 2862820,
+    "completed_epochs": 23
+  },
+  "worker_owns_three_locks": [
+    {
+      "lock": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/dataset-first/campaign.lock",
+      "fds": [
+        "3"
+      ]
+    },
+    {
+      "lock": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/campaign.lock",
+      "fds": [
+        "4"
+      ]
+    },
+    {
+      "lock": "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/campaign.lock",
+      "fds": [
+        "5"
+      ]
+    }
+  ],
+  "epoch_after": 23,
+  "query_images_after": 0,
+  "continuity_verified_time_unix": 1794238660.5327716,
+  "old_supervisors_exited": true,
+  "saved_epoch_advanced": true,
+  "last_check_time_unix": 1794238765.4399788,
+  "adoption_identity_verified": true
+}

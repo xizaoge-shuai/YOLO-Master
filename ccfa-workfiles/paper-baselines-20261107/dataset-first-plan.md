@@ -22,8 +22,8 @@
 - [x] New online_experiments/dataset_first_campaign.py: immutable plan selection, strict child identity/adoption, lock ownership, seed0-only dispatch, existing validation/quantization/archive reuse, explicit phase status.
 - [x] CPU tests for seed filtering, PID/starttime/argv verification, DONE/validation acceptance and lock refusal; AST/CLI/Ruff. No GPU smoke or subset experiment. Frozen810 files unchanged; source SHA b335c28eb5379246a6d0821047e5fa8f0359c847b0012902b5b663598203ee5f.
 - [x] Independent coordinator and supervisor-only handoff review. Recheck live descriptors/identities at the actual handoff, not against historical adapter PID.
-- [ ] Commit code and records before changing process ownership. Controlled handoff, then verify current child remains same PID and epoch counters continue.
-- [ ] Update operations/dataset plan: seed0 across VisDrone,VOC,SKU,fullCOCO first, then repetitions. Preserve already-completed seeds.
+- [x] Commit code and records before changing process ownership:cef519efa4c6ae5c49d926b4326a40813796fd29 pushed. Controlled handoff preserved detail0 PID2862820/start4254401; new worker2958346 holds three locks,ADOPTING epoch22. Original supervisors exited; queue/provenance unchanged. Check later summary for a newly saved epoch.
+- [x] Update operations/dataset plan: seed0 across VisDrone,VOC,SKU,fullCOCO first, then repetitions. Preserve already-completed seeds.
 - [ ] Scoped commit/push handoff progress and exact phase status.
 
 ## AP interpretation check during implementation

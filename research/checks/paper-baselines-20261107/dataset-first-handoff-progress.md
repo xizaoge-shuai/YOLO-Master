@@ -1,0 +1,8 @@
+<!-- dataset-first-handoff-20261109 -->
+## 2026-11-09: dataset-first worker adopted the live Detail0 run
+
+- Pushed implementation commitcef519efa4c6ae5c49d926b4326a40813796fd29 before handoff. Rechecked exact process UID/starttime/argv/cwd, default supervisor TERM handling, child lock descriptors, all810 frozen source hashes and immutable queue/provenance. Preserved Detail0 checkpoint and summary outside Git.
+- Sent STOP,TERM,CONT only to old supervisor2042064. Launcher exited naturally. Training child2862820/start4254401 remained alive without receiving a signal or restarting; no process group was signalled. New worker2958346/start4560449 owns all three campaign locks and showsADOPTING detail0-s0 epoch22/100. No phase failure record found.
+- Seven prior seed0 cases are accepted through their frozen validators and archived by the new phase, not retrained.10 original seed0 cases remain in the phase plan;18 independent seed repeats are deferred. Remaining after Detail0:ViT-Adapter-cache0 and CacheReuse-INT4. Phase completion is explicitly separate from the original28-case completion.
+- Recipe stays100 epochs/current augmentation/optimizer. No new dataset,smoke,subset experiment,method tuning or cache deletion launched. The next formal dataset isVOC07+12, whose training/evaluation integration is still pending; this handoff does not claim those experiments completed.
+- Fresh final result snapshot and hashes for7 endpoints retain the strong Adapter-style resultAP16.5855 versus historical Detail25 AP12.3453. All7 final checkpoint hashes and3836 prediction hashes match; no new AP scoring or controlled speed claim.
