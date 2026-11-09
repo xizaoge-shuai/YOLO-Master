@@ -459,3 +459,9 @@ Archived [cache-reuse-c1-int8-s0](experiments/replication-suite/job-20261107-Imo
 - Rechecked all5 completed full-VisDrone RGB candidate seed0 summaries. The28-case count describes the new expanded repetition/baseline campaign, not total project progress. Existing results remain valid within their dataset/method/metric scope; no automatic duplication across new datasets.
 - Corrected the ablation mapping: Blank is w/oRGB, Lowpass is same-capacity input replacement, Transport removesRGB+blank relative toDetail, Views changes the cache strategy as well as droppingRGB. Full-model w/oBlank-withRGB and a simpler same-RGB branch are conditional missing controls, not executed results. [Ledger clarification](RESULTS_LEDGER.md) and [fresh metadata audit](checks/paper-baselines-20261107/dataset-and-ablation-audit-20261109.json) preserve the distinction.
 - No new training/scoring, frozen source/queue change, or deletion in this audit. Current full-data worker continues unchanged. Original low-rank predictor ablations are kept separate from later RGB branch evidence.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:vit-adapter-cache25-s0 -->
+## Replication suite job-20261107-Imo9Yocz: vit-adapter-cache25-s0
+
+Archived [vit-adapter-cache25-s0](experiments/replication-suite/job-20261107-Imo9Yocz/vit-adapter-cache25-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
