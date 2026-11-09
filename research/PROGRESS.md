@@ -450,3 +450,12 @@ Archived [cache-reuse-c1-int8-s0](experiments/replication-suite/job-20261107-Imo
 - At13:34Asia/Shanghai used the original launcher resume path. Log confirms RESUME vit-adapter-cache25 seed0 epoch60; existing completed runs are validated and skipped. Source and frozen28-case protocol unchanged, no GPU smoke/subset run or new scoring. Training continues in background.
 - Checkpoint cumulative counters continue; uncheckpointed work/physical teacher calls before interruption remain unknown overhead. Original peak host-RSS record preserved; shared GPU observations and restarted timing are not controlled speed evidence. Current GPU UUID/driver and boot ID retained with restart evidence.
 - [Sequential dataset/evidence plan](DATASET_EXPANSION_PLAN_20261108.md) and [Chinese operations guide](../实验进展与运行指南.md) now identify the restored server as current.28/28 alone does not complete equal-time, deployment inference, second-backbone or all paper evidence.
+
+
+<!-- dataset-ablation-clarification-20261109 -->
+## 2026-11-09: reconcile two-dataset results and ablation coverage
+
+- Re-read original summaries: early unified predictor has COCO12880/20 and VisDrone400/100 seed0/1/2 records, rank32/64/96 on both and6 context variants on VisDrone. Context development evaluated8 images, not the full100. Later VOC2007 subset2000/400 has three complete100epoch C2/Mix25/Online100 endpoints.
+- Rechecked all5 completed full-VisDrone RGB candidate seed0 summaries. The28-case count describes the new expanded repetition/baseline campaign, not total project progress. Existing results remain valid within their dataset/method/metric scope; no automatic duplication across new datasets.
+- Corrected the ablation mapping: Blank is w/oRGB, Lowpass is same-capacity input replacement, Transport removesRGB+blank relative toDetail, Views changes the cache strategy as well as droppingRGB. Full-model w/oBlank-withRGB and a simpler same-RGB branch are conditional missing controls, not executed results. [Ledger clarification](RESULTS_LEDGER.md) and [fresh metadata audit](checks/paper-baselines-20261107/dataset-and-ablation-audit-20261109.json) preserve the distinction.
+- No new training/scoring, frozen source/queue change, or deletion in this audit. Current full-data worker continues unchanged. Original low-rank predictor ablations are kept separate from later RGB branch evidence.
