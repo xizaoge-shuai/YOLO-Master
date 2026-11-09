@@ -517,3 +517,9 @@ Archived [dataset-first-loffta-c2-n005-s0](experiments/replication-suite/job-202
 ## Replication suite job-20261107-Imo9Yocz: dataset-first-cache-reuse-c1-int8-s0
 
 Archived [dataset-first-cache-reuse-c1-int8-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-cache-reuse-c1-int8-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:dataset-first-vit-adapter-cache25-s0 -->
+## Replication suite job-20261107-Imo9Yocz: dataset-first-vit-adapter-cache25-s0
+
+Archived [dataset-first-vit-adapter-cache25-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-vit-adapter-cache25-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
