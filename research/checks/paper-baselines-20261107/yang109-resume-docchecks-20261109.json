@@ -1,0 +1,22 @@
+{
+  "utf8": "pass",
+  "bash_blocks_syntax_pass": 17,
+  "training_source_and_frozen_inputs": "unchanged;810 source hashes verified after document sync",
+  "new_model_tests": "none; existing full-data training resumed",
+  "deleted_files": 0,
+  "runtime_checkpoint_archived_outside_git": true,
+  "known_repository_lint": "pre-existing failures; rerun logs retained in restart directory",
+  "repository_checks": {
+    "ruff_findings": 2768,
+    "format_summary": [
+      "5 files would be reformatted, 666 files already formatted"
+    ],
+    "codespell_summary": [
+      "bash: /mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell: /data/users/zhjia/miniconda3/envs/yolomaster/bin/python: bad interpreter: No such file or directory"
+    ],
+    "source_changed": false,
+    "model_tests_or_smoke_run": false,
+    "codespell_status": "Installed CLI has stale /data/users interpreter shebang; invocation failed126. Training environment unchanged.",
+    "shell_transport_note": "Initial CRLF heredoc marker was rejected after writing the check record; subsequent bookkeeping uses Python stdin, no training command was affected."
+  }
+}
