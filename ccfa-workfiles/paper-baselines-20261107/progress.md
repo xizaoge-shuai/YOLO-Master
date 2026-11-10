@@ -1,5 +1,10 @@
 # Session progress
 
+2026-11-10:
+- User requests concurrentVOC/SKU plus targeted new evidence. Dispatched three independent tasks:verified full raw dataset preparation;newmanifest/mmap training adapter;CPU-only full548prediction and learning-curve analysis.
+- Read current progress and supplied suggestions. Seven seed0 complete;Detail0 epoch38. CurrentGPU1 is unusable(requiresreset);CPU/data preparation continues inparallel,GPUtraining requireshealthy-deviceadmission.
+- Installed pinned metric packages in task-specific target directory,without modifying active training environment. NoGPU smoke/subset or method tuning.
+
 2026-11-08:
 
 - Read relevant literature/design instructions and kept the existing method frozen.

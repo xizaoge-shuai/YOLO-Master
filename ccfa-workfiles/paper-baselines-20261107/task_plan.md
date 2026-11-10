@@ -1,4 +1,21 @@
-# Experiment completion and staged dataset expansion
+# Experiment completion and dataset expansion
+
+## Active task:2026-11-10 parallel preparation and evidence analysis
+
+User now authorizes starting VOC and SKU together and requests claim-relevant additional experiments. Keep100 epochs/current augmentation,baseline-first then the existing candidate,seed0 before independent repeats,fullCOCO last. Do not alter manuscript or frozen VisDrone sources.
+
+- [x] Read supplied recommendations and map against existing writing/figure plans.
+- [x] Fresh server audit:VisDrone7 seed0 DONE,Detail0 epoch38;109GiB availableRAM,data disk1.2TiB. GPU1 reports requires-reset;GPU0 is shared with another user's job.
+- [x] Isolate pinned pycocotools2.0.11/TIDE1.0.1 dependencies under research worktree; existing training environment untouched.
+- [ ] Prepare VOC07+12 and SKUfixed concurrently in background; preserve official splits/raw annotations and download hashes.
+- [ ] Implement new manifest-driven/mmap training and correct VOC/SKU evaluation without editing frozen VisDrone trainer.
+- [ ] CPU contract tests and independent review; commit implementation before formal launch. NoGPU smoke or subset experiment.
+- [ ] Start two dataset pipelines with explicit resource admission; a brokenGPU is never selected. Report preparation,waiting,training andcompletion separately.
+- [ ] Run full548-image size/perclass/TIDE analysis and extract existing convergence curves; bind source prediction/checkpoint hashes.
+- [ ] Specify and implement new-checkpoint geometry/feature-frequency/full-forward inference diagnostics; reuse compatible old diagnostics and count new diagnostic teacher calls separately.
+- [ ] Update current evidence plan/operations/PROGRESS,archive and scoped commit/push all new source/real results.
+
+## Historical stages (superseded scheduling retained below)
 
 User order: finish existing metrics and controls, archive, reclaim unused storage, then add formal datasets; keep the candidate method unchanged during evidence collection. No GPU smoke or subset training.
 

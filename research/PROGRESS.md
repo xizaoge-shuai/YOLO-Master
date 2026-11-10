@@ -553,3 +553,21 @@ Archived [dataset-first-blank0-s0](experiments/replication-suite/job-20261107-Im
 - Fresh final result snapshot and hashes for7 endpoints retain the strong Adapter-style resultAP16.5855 versus historical Detail25 AP12.3453. All7 final checkpoint hashes and3836 prediction hashes match; no new AP scoring or controlled speed claim.
 
 - Post-handoff summary advanced from epoch22 to epoch23 with the same training PID/starttime.
+
+
+<!-- datasets-and-offline-evidence-20261110 -->
+## 2026-11-10: parallel VOC/SKU preparation and full prediction analysis
+
+- User authorizes concurrentVOC/SKU and targeted new evidence; keep100 epochs/current augmentation,baseline-first,seed0 before independent repeats,fullCOCO last. Added standalone manifest/mmap suite and12-case coordinator without modifying810 frozenVisDrone files. VOC16551/4952 primaryVOC07 eleven-pointAP50+difficult; SKU8219/588/2936 standardCOCOmaxDet100 plus separate dense500. Complete-detector comparisons on new datasets remain separate missing work,not claimed among these12 adaptations.
+- Both raw-data workers are running; official sources,immutable complete seal,originalXML/difficult andSKU annotations retained. Direct download attempts were deliberately stopped for loopback proxy use; failures and partials preserved,then resumed through the user's existingClash/SSH route. Full data preparation is not yet complete.
+- GPU1 explicitly requiresreset; no device reset or other-user process change. New compute stages use healthyGPU0 with a shared admission lock and>=8GiB free-memory guard,while originalVisDrone continues. Source,query,cachebuild,storage,cold/warm and resumed-work records are distinct. Independent review fixed cache-prefix overwrite and quantization double-charge before formal training.
+- CPU suite14 contracts,pipeline6 contracts,targetedRuff/format and independent critical review pass; noGPU smoke/subset experiment. Required global checks retain2768 existingRuff findings/5 formatting failures;configuredcodespell cannotexecute. Isolatedpycocotools2.0.11/TIDE1.0.1 dependencies leave active environment unchanged.
+- Full548 CPU analysis completed for8 arms(4384 method-image pairs);all originalofficialAPs recompute identically. Detail-minus-Blank auxiliaryAP_S@500+2.2930,AP_M+0.9358,AP_L-0.6321;MissdAP decreases1.5907 butCls/BkgdAP increase. StrongAdapter remainsAP16.5855 andauxsmallAP9.0101 versusDetail12.3453/5.4259. Preserve both gains and regressions.
+- Initial analysis failure found37 rawnegative-width/heightDetail predictions,29remaining after ignore preparation. Retried with a versioned auxiliary protocol clampingnegative extents tozero while preserving score/class/count asdegenerateFP. OriginalpredictTXT/officialAP unchanged;failure/sourcehash retained. Curves/size/perclass/TIDECSV andfour exploratory figures archived;singletrainingseed givesno fabricatedrunSD.
+- Updated operating guide and claim/evidence/figure plan. FreshP3/latency/geometry diagnostics are separate GPU stages requiring verified sources and full coverage; no completed measurement is inferred from implementation.
+
+
+<!-- continuation-recovery-20261110 -->
+## 2026-11-10: completed Detail0; restore archive and proxy downloads
+
+Detail0 completed100epochs/AP11.6328556031 and final prediction/checkpoint evidence. Its coordinator stopped only at archive because the present uncommitted progress draft triggered the pre-existing dirty-progress guard. Commit the draft first,then resume original seed0 coordinator without retraining completed cases. VOC2012/SKU downloads stopped at preserved partial files when loopback proxy became unavailable; restore transport and resume the same frozen preparer. No failed state is rewritten as success.

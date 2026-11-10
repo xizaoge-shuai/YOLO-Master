@@ -1,0 +1,36 @@
+[
+  {
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "format",
+      "online_experiments/analyze_detection_evidence.py"
+    ],
+    "exit": 0,
+    "stdout": "1 file reformatted\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-m",
+      "ruff",
+      "check",
+      "online_experiments/analyze_detection_evidence.py"
+    ],
+    "exit": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "online_experiments/analyze_detection_evidence.py",
+      "selfcheck"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"status\": \"PASS\",\n  \"contracts\": [\n    \"ignored-region union prefilter\",\n    \"score-zero GT ignored not negative\",\n    \"class-specific ignored object consumes detection\",\n    \"missing size is null, not zero\",\n    \"negative-size detections retained as zero-area auxiliary FP candidates\",\n    \"no torch import\"\n  ]\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "status": "SUCCEEDED",
+  "methods": [
+    "transport25",
+    "blank25",
+    "views25",
+    "detail25",
+    "lowpass25",
+    "mix25",
+    "online100",
+    "vit-adapter-cache25"
+  ],
+  "images_each": 548,
+  "method_image_pairs": 4384,
+  "seconds": 241.42688063999958,
+  "torch_imported": false,
+  "protocol_sha256": "c962367d6f183ef03e6a2b627ebd709889fd4dde5160e3180e1b4a36d72c6794"
+}

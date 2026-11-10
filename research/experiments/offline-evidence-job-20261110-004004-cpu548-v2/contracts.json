@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "contracts": [
+    "ignored-region union prefilter",
+    "score-zero GT ignored not negative",
+    "class-specific ignored object consumes detection",
+    "missing size is null, not zero",
+    "negative-size detections retained as zero-area auxiliary FP candidates",
+    "no torch import"
+  ]
+}

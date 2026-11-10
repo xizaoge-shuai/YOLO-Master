@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "case": "../escape",
+      "pass": true
+    },
+    {
+      "case": "/absolute",
+      "pass": true
+    },
+    {
+      "case": "a\\b",
+      "pass": true
+    },
+    {
+      "case": "C:/target",
+      "pass": true
+    },
+    {
+      "case": "a/../../b",
+      "pass": true
+    },
+    {
+      "case": "SKU CSV positional schema and zero-based coordinates",
+      "pass": true
+    },
+    {
+      "case": "Invalid annotation is not silently dropped",
+      "pass": true
+    },
+    {
+      "case": "VOC inclusive single pixel conversion",
+      "pass": true
+    },
+    {
+      "case": "Tar traversal refused before extraction",
+      "pass": true
+    },
+    {
+      "case": "No GPU/model imports",
+      "pass": true
+    }
+  ],
+  "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+  "gpu_calls": 0,
+  "target_ruff": "PASS",
+  "target_ruff_format": "PASS"
+}

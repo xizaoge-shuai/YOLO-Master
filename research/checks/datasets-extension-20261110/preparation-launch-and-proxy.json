@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-11-10 Asia/Shanghai",
+  "base": "/mnt/data/users/zhjia/datasets-extension-20261110",
+  "datasets": {
+    "voc0712": {
+      "pid": 3415330,
+      "expected_counts": {
+        "train": 16551,
+        "test": 4952
+      }
+    },
+    "sku110k": {
+      "pid": 3415374,
+      "expected_counts": {
+        "train": 8219,
+        "val": 588,
+        "test": 2936
+      }
+    }
+  },
+  "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+  "source_frozen": "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+  "download_limit_per_worker": "20MiB/s",
+  "observed_probe_bytes_per_second": {
+    "voc0712": 1007923,
+    "sku110k": 879742
+  },
+  "windows_tunnel_pid": 28780,
+  "reverse_forward": "127.0.0.1:7907 -> local 127.0.0.1:7897",
+  "proxy_scope": "Only preparation subprocess env; no SSH config or training env change",
+  "initial_direct_attempts": "Intentional curl SIGTERM; failure JSON and partial files preserved in each root/restarts/proxy-20261110",
+  "source_urls": {
+    "voc_primary": "https://www.robots.ox.ac.uk/~vgg/projects/pascal/VOC/",
+    "voc_maintainer": "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/cfg/datasets/VOC.yaml",
+    "sku_authors": "https://github.com/eg4000/SKU110K_CVPR19",
+    "sku_archive": "https://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz",
+    "sku_maintainer_splits": "https://docs.ultralytics.com/datasets/detect/sku-110k/"
+  },
+  "scope": "Data download/index only; no GPU training, no dataset deletion, no global dependency install; no claim all images fully decoded"
+}

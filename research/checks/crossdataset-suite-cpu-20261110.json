@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-10",
+  "scope": "Pure CPU contracts; no model inference/training/subset/GPU smoke; no CUDA context initialized",
+  "source_sha256": {
+    "online_experiments/crossdataset_suite.py": "44fa4471568f1693c1d89d09ffc972330cfbae33ff36517b2dc727410731945b",
+    "online_experiments/test_crossdataset_suite.py": "b9abdd94b29f6ac6a309fb48c04c43d5154a62aa9b48f3636b00cc0c73585975"
+  },
+  "checks": [
+    {
+      "command": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "online_experiments/crossdataset_suite.py",
+        "online_experiments/test_crossdataset_suite.py"
+      ],
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "online_experiments/crossdataset_suite.py",
+        "online_experiments/test_crossdataset_suite.py"
+      ],
+      "returncode": 0,
+      "stdout": "2 files already formatted\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "unittest",
+        "online_experiments.test_crossdataset_suite"
+      ],
+      "returncode": 0,
+      "stdout": "creating index...\nindex created!\nLoading and preparing results...\nDONE (t=0.00s)\ncreating index...\nindex created!\nRunning per image evaluation...\nEvaluate annotation type *bbox*\nDONE (t=0.05s).\nAccumulating evaluation results...\nDONE (t=0.00s).\nRunning per image evaluation...\nEvaluate annotation type *bbox*\nDONE (t=0.05s).\nAccumulating evaluation results...\nDONE (t=0.00s).\n",
+      "stderr": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.117s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-c",
+        "import torch; assert not torch.cuda.is_initialized(); from online_experiments import replication_suite,detail_probe_model,paper_adapter_model; from online_experiments import crossdataset_suite as c; assert set(c.METHODS)==set(replication_suite.METHODS); assert not torch.cuda.is_initialized(); print(\"CPU_IMPORT_NO_CUDA_CONTEXT_PASS\")"
+      ],
+      "returncode": 0,
+      "stdout": "CPU_IMPORT_NO_CUDA_CONTEXT_PASS\n",
+      "stderr": ""
+    }
+  ],
+  "all_pass": true,
+  "limitations": [
+    "No GPU cache extraction or full dataset training performed by this validation.",
+    "VOC/SKU use local detection idea adaptations; full YOLO-Master/YOLO11/YOLO12 endpoints remain historical VisDrone only."
+  ]
+}

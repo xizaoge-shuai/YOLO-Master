@@ -1,0 +1,23 @@
+{
+  "pid": 3415697,
+  "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-002957-cpu548",
+  "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-002957-cpu548.log",
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "online_experiments/analyze_detection_evidence.py",
+    "run",
+    "--campaign",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+    "--original-detail-job",
+    "/mnt/data/users/zhjia/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf",
+    "--output",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-002957-cpu548"
+  ],
+  "analysis_source_sha256": "3e0141b669839ee91133a9cb49a51415da7f7c532ba9c1867cbdcb21520962c0",
+  "CUDA_VISIBLE_DEVICES": "",
+  "selfcheck": "PASS",
+  "ruff": "PASS",
+  "threads": 2,
+  "previous_CPU_contract_failure": "Initial raw TIDE library Bkg count included ignored predictions; valid error counts now exclude pred.used=None; unmodified library counts retained."
+}

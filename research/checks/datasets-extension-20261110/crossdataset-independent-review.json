@@ -1,0 +1,66 @@
+{
+  "review_scope": "Read-only independent review; no GPU tests or dataset subset runs",
+  "reviewed_source_sha256": {
+    "online_experiments/crossdataset_suite.py": "64c4830d6c7ae82d1e5a1eeeb98d2845b45fff84b0405f7cd2d05579a5a36101",
+    "online_experiments/crossdataset_campaign.py": "28c631b01a9a63406a7f21112c699dc36d175d6067aa466c3b23442943810791"
+  },
+  "status": "GO",
+  "blocking_findings": [
+    {
+      "id": "archive-required-file",
+      "file": "online_experiments/crossdataset_campaign.py",
+      "detail": "archive_case requires official-final.json but suite writes only metrics.json; first completed endpoint cannot archive. Align exact evidence contract, not placeholder."
+    },
+    {
+      "id": "cache-partial-rename-resume",
+      "file": "online_experiments/crossdataset_suite.py",
+      "detail": "build_cache partial metadata offset can survive final partial->target rename; resume branch skips target-exists guard, creates absent partial via w+ with old offset, potentially replaces target with zero-prefix/zero bank. Require existing partial and absent target when offset>0, or explicitly adopt validated target; preserve inconsistent state."
+    },
+    {
+      "id": "quantized-missing-prefix-resume",
+      "file": "online_experiments/crossdataset_suite.py",
+      "detail": "quantized_cache with progress.offset>0 may create any missing arrays in w+ and skip their old prefix. Require all arrays present with correct dtype/shape or fail preserving artifacts."
+    }
+  ],
+  "resource_findings": [
+    {
+      "id": "quantization-double-charge",
+      "detail": "train starts wall clock before make_batches, which builds quantization; costs then adds quantization build_seconds to cold cache charge. Quantization work is included twice in cold_seconds. Exclude quantization setup from warm process timer or separate counters without double-add."
+    }
+  ],
+  "checked_contracts": [
+    "VOC original 1-based inclusive boxes retained; predicted zero-based bounds converted before strict IoU>0.5, difficult matches ignored, duplicate detections false-positive, equal class averaging and eleven-point interpolation",
+    "SKU COCO tensors separately extract precision for maxDets100 and500, no dependence on hardcoded stats[0] for500",
+    "Memory mapped feature banks, selected batches only; no np.array(full_bank) eager materialization",
+    "epoch_plan exact cumulative image quota independent of method and handles train counts not divisible by100",
+    "Training teacher journal durable attempted/completed events, replayed queries not silently zero",
+    "Fixed final epoch100; no intermediate held-out test score used for checkpoint selection",
+    "Campaign methods baseline-first then Transport/Blank/Detail/Lowpass; optional view and seed repeats deferred",
+    "Source/identity/dataset manifest hashes, per-input SHA at snapshot and stat identity reuse; DONE only after endpoint checks"
+  ],
+  "final_review": {
+    "reviewed_source_sha256": {
+      "online_experiments\\crossdataset_suite.py": "44fa4471568f1693c1d89d09ffc972330cfbae33ff36517b2dc727410731945b",
+      "online_experiments\\crossdataset_campaign.py": "cddbeafdea53419e86f0aa59a34d75f2abd0c3383cdaa42ce0a4bd902d687293"
+    },
+    "status": "GO_FOR_DATA_READY_GATED_FULL_RUN",
+    "checks": [
+      "positive_offset_missing_prefix_rejected",
+      "existing_positive_offset_prefix_preserved",
+      "cache_dtype_shape_mismatch_rejected",
+      "VOC_inclusive_perfect_prediction_and_difficult_ignored",
+      "live_children_exact_job_UID_and_suite_isolation",
+      "GPU_stage_fd_explicitly_passed_to_child",
+      "archive_endpoint_contract_matches_training",
+      "orphan_guard_runs_before_plan_or_status_overwrite",
+      "GPU_stage_lock_fixed_global_root_independent_of_job_parent"
+    ],
+    "resolved": [
+      "archive-required-file",
+      "cache-partial-rename-resume",
+      "quantized-missing-prefix-resume",
+      "quantization-double-charge"
+    ],
+    "execution_limits": "Independent CPU-only checks; no GPU execution or paper-method validation. Fixed shared GPU lock root now guarantees mutual exclusion for all job parents."
+  }
+}

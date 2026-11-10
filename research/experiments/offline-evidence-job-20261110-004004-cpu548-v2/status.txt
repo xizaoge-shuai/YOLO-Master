@@ -1,0 +1,1 @@
+SUCCEEDED methods=8 images_each=548 CPU_only

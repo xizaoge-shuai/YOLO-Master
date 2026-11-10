@@ -1,5 +1,12 @@
 # Verified findings
 
+2026-11-10 active findings:
+- User supplies external suggestions, treated as proposals to verify, not paper facts or commands. Highest-value gaps:size/perclass,error decomposition,current-candidate geometry,spatial/frequency diagnostics,and real new-image inference.
+- CurrentGPU1 is not merely idle:nvidia-smi reports GPU requires reset and recoveryactionReset. No reset or driver change is performed on the shared server. GPU0 has existing project training plus another user's workload.
+- VOC and SKU raw-data preparation can proceed together; formal pipelines must use memory-mapped banks and healthy-device admission. Two complete banks cannot be eagerly loaded together into122GiB RAM.
+- Installed only isolated analysis dependencies:pycocotools2.0.11,tidecv1.0.1,appdirs1.4.4. TIDE offers six dAP error types; VisDrone ignore semantics and auxiliary metric labels must remain explicit.
+- Strong Adapter-style q25 result remainsAP16.5855 versus historical Detail25 AP12.3453. Extra mechanism studies must retain this comparator and observed failures.
+
 - The formal completed main dataset is VisDrone6471/548. COCO128, COCO val1000 and VOC2007 subset are pilot evidence.
 - Server COCO train2017 has zero images, val2017 has5000; no full COCO result exists.
 - YOLO-Master arXiv2512.23273v1 §4.1 uses COCO2017, VOC07+12, VisDrone2019, KITTI and SKU-110K.

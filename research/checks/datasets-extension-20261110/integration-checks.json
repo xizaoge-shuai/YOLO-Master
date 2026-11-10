@@ -1,0 +1,28 @@
+{
+  "required_ruff": {
+    "returncode": 1,
+    "tail": [
+      "",
+      "Found 2768 errors.",
+      "[*] 731 fixable with the `--fix` option (1275 hidden fixes can be enabled with the `--unsafe-fixes` option)."
+    ]
+  },
+  "required_format": {
+    "returncode": 1,
+    "tail": [
+      "    |",
+      "",
+      "5 files would be reformatted, 666 files already formatted"
+    ]
+  },
+  "required_codespell": {
+    "error": "[Errno 2] No such file or directory: '/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/codespell'"
+  },
+  "isolated_metric_wheels": {
+    "pycocotools-2.0.11-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl": "e40a3a898c6e5340b8d70cf7984868b9bff8c3d80187de9a3b661d504d665978",
+    "tidecv-1.0.1-py3-none-any.whl": "42245fa065f87941ebb4016bc6000a89b158976a5c0f2132067d7731e0a1d307",
+    "appdirs-1.4.4-py2.py3-none-any.whl": "a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+  },
+  "GPU1_status": "GPU requires reset; no reset attempted, selected GPU0 only",
+  "no_GPU_smoke_or_subset_runs": true
+}

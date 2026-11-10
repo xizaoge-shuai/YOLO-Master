@@ -1,0 +1,16 @@
+{
+  "old_job_name": "job-20261110-002957-cpu548",
+  "status": "FAILED ValueError: Expected finite, nonnegative-width original-coordinate eight-column rows",
+  "failure": {
+    "type": "ValueError",
+    "message": "Expected finite, nonnegative-width original-coordinate eight-column rows"
+  },
+  "launch_source_sha256": "3e0141b669839ee91133a9cb49a51415da7f7c532ba9c1867cbdcb21520962c0",
+  "old_protocol_sha256": "1c2b55d8ca4a0c398e5d6e669da2d20bafd649934acdf532437140210b3f5724",
+  "partial_completed_methods": [
+    "transport25",
+    "blank25",
+    "views25"
+  ],
+  "resolution": "Preserve old failed run unchanged. New v2 protocol retains negative-width/height detections as zero-area auxiliary FP candidates; original official evaluation and predictions unchanged."
+}

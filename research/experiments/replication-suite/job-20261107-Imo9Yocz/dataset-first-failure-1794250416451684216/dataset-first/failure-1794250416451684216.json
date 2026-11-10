@@ -1,0 +1,12 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"repo:/online_experiments/dataset_first_campaign.py\", line 446, in main\n    run(args)\n  File \"repo:/online_experiments/dataset_first_campaign.py\", line 355, in run\n    archive_stage(\n  File \"repo:/online_experiments/dataset_first_campaign.py\", line 260, in archive_stage\n    archive(job, stage, paths, True)\n  File \"repo:/online_experiments/replication_campaign.py\", line 134, in archive\n    commit = commit_files(\n  File \"repo:/online_experiments/archive_assignment_intervention.py\", line 78, in commit_files\n    raise RuntimeError(\"Unrelated progress changes exist; preserve them and defer this commit\")\nRuntimeError: Unrelated progress changes exist; preserve them and defer this commit\n",
+  "last_status": {
+    "state": "ADOPTING",
+    "message": "detail0-s0 epoch=100/100; no seed repeats",
+    "time_unix": 1794250414.021283,
+    "case": "detail0-s0",
+    "pid": 2862820,
+    "completed_epochs": 100
+  },
+  "policy": "Stop this phase on failure; do not start seed repeats or a new dataset"
+}

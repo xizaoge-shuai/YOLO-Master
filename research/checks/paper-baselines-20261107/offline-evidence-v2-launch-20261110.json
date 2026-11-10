@@ -1,0 +1,25 @@
+{
+  "schema": "offline-evidence-launch-v2",
+  "pid": 3476839,
+  "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-004004-cpu548-v2",
+  "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-004004-cpu548-v2.log",
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "online_experiments/analyze_detection_evidence.py",
+    "run",
+    "--campaign",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+    "--original-detail-job",
+    "/mnt/data/users/zhjia/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf",
+    "--output",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-004004-cpu548-v2"
+  ],
+  "analysis_source_sha256": "2f308be4425540a7929b626a1aa2e647ba20205e04960dcbfe142741677d0c4a",
+  "CUDA_VISIBLE_DEVICES": "",
+  "selfcheck": "PASS",
+  "ruff": "PASS",
+  "threads": 2,
+  "previous_failed_job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-002957-cpu548",
+  "revision": "Original predictions unchanged; negative width/height converted to zero only for auxiliary COCO/TIDE, preserving FP candidates; selfcheck confirms TIDE Bkg1/AP0 and COCO AP0."
+}

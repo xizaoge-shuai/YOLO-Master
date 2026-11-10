@@ -1,0 +1,11 @@
+{
+  "method": "detail25",
+  "raw_negative_size_predictions": 37,
+  "raw_negative_size_maximum_score": 0.03757677,
+  "after_frozen_ignore_region_prefilter": {
+    "negative_size_predictions": 29,
+    "maximum_score": 0.03757677,
+    "auxiliary_handling": "negative sizes clamped to zero, no prediction discarded"
+  },
+  "interpretation": "37 original rows, 29 surviving ignored-region filtering; no original files changed. Aux invalid_prediction_geometry counts refer to prepared evaluator inputs."
+}

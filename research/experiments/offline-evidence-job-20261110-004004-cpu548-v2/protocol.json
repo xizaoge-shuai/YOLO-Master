@@ -1,0 +1,90 @@
+{
+  "schema": "visdrone-offline-evidence-v2",
+  "images": 548,
+  "training_seeds": [
+    0
+  ],
+  "checkpoint_selection": "fixed final epoch100, not best",
+  "scale": "AP/AR/dAP points 0-100",
+  "official": {
+    "reference_commit": "005445782213e20cb91bc50a597db3dd949e749a",
+    "aggregation": "image-occurrence-weighted",
+    "parity": "recompute each final score and compare saved bound official-final.json"
+  },
+  "size_auxiliary": {
+    "implementation": "pycocotools.COCOeval",
+    "area_ranges_original_pixels": [
+      [
+        0,
+        10000000000.0
+      ],
+      [
+        0,
+        1024
+      ],
+      [
+        1024,
+        9216
+      ],
+      [
+        9216,
+        10000000000.0
+      ]
+    ],
+    "area_labels": [
+      "all",
+      "small",
+      "medium",
+      "large"
+    ],
+    "IoUs": [
+      0.5,
+      0.55,
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.8999999999999999,
+      0.95
+    ],
+    "maxDets": [
+      1,
+      10,
+      500
+    ],
+    "global_export_cap": 500,
+    "aggregation": "COCO uniform category macro and 101-point sampled precision",
+    "not_official_VisDrone_metric": true,
+    "boundary": "COCO inclusive bounds; exact1024/9216 can occur in adjacent groups"
+  },
+  "ignored_semantics": "Reference union ignored-region rasterization removes GT/dets with >=0.5 overlap. Remaining score-zero same-class GT become crowd/ignore; category11 excluded. Truncation/occlusion retained in source/counts and not grounds for removal.",
+  "tide": {
+    "implementation": "tidecv1.0.1 public APIs",
+    "foreground_IoU": 0.5,
+    "background_IoU": 0.1,
+    "max_dets": 500,
+    "not_official_VisDrone_metric": true,
+    "dAP50": "independent error-fixing oracles, not additive"
+  },
+  "curves": "diagnostic_AP is internal macro validation only, never official AP; training AP unavailable",
+  "resources": "CPU only; no feature/model inference or checkpoint torch deserialization",
+  "negative_size_auxiliary_policy": "Clamp negative prediction width/height to zero for COCO/TIDE only; keep every box, score and class; original official input unchanged.",
+  "ground_truth_profile_boundary": "Descriptive profile counts are disjoint small<=1024, 1024<medium<=9216, large>9216; metric ranges use COCO inclusive bounds.",
+  "input_source": "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+  "dataset_manifest_sha256": "9da100e6d1e0c3c38704c02569520b4342ba6c31afe9a94de972b9c94d4fe247",
+  "annotation_hashes_sha256": "d2718b21b47a8d0d2a306dbc65b499f14a73e3bf0da6ed44496cd67122db9bc7",
+  "analysis_source_sha256": "2f308be4425540a7929b626a1aa2e647ba20205e04960dcbfe142741677d0c4a",
+  "dependencies": {
+    "numpy": "2.2.6",
+    "pycocotools": "2.0.11",
+    "tidecv": "1.0.1",
+    "matplotlib": "3.10.9"
+  },
+  "environment_threads": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2"
+  }
+}
