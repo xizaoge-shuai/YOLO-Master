@@ -2,7 +2,9 @@
   "baseline_first_twelve_seed_zero": "PASS",
   "healthy_device_only": "PASS",
   "duplicate_pipeline_lock_refused": "PASS",
-  "GPU_lock_can_be_inherited_by_child": "PASS",
+  "GPU_lock_fd_available_for_inheritance": "PASS",
+  "two_stage_limit_and_third_waits": "PASS",
+  "second_stage_memory_reserve": "PASS",
   "live_child_refusal_preserves_status": "PASS",
   "CLI_help_no_GPU": "PASS",
   "no_GPU_execution": true

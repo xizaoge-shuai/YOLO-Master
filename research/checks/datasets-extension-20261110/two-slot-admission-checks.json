@@ -1,0 +1,17 @@
+{
+  "format": {
+    "exit": 0,
+    "stdout": "2 files left unchanged\n",
+    "stderr": ""
+  },
+  "ruff": {
+    "exit": 0,
+    "stdout": "All checks passed!\n",
+    "stderr": ""
+  },
+  "cpu": {
+    "exit": 0,
+    "stdout": "{\n  \"baseline_first_twelve_seed_zero\": \"PASS\",\n  \"healthy_device_only\": \"PASS\",\n  \"duplicate_pipeline_lock_refused\": \"PASS\",\n  \"GPU_lock_fd_available_for_inheritance\": \"PASS\",\n  \"two_stage_limit_and_third_waits\": \"PASS\",\n  \"second_stage_memory_reserve\": \"PASS\",\n  \"live_child_refusal_preserves_status\": \"PASS\",\n  \"CLI_help_no_GPU\": \"PASS\",\n  \"no_GPU_execution\": true\n}\n",
+    "stderr": ""
+  }
+}

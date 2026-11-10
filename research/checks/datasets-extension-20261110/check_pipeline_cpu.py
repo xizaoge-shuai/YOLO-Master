@@ -50,7 +50,37 @@ def main():
             assert hasattr(args, "gpu_lock_fd")
             os.fstat(args.gpu_lock_fd)
         assert not hasattr(args, "gpu_lock_fd")
-        checks["GPU_lock_can_be_inherited_by_child"] = "PASS"
+        checks["GPU_lock_fd_available_for_inheritance"] = "PASS"
+        second = SimpleNamespace(job=Path(temporary) / "job2", gpu=0, min_free_mib=8192, dataset="sku110k")
+        third = SimpleNamespace(job=Path(temporary) / "job3", gpu=0, min_free_mib=8192, dataset="diagnostic")
+        second.job.mkdir()
+        third.job.mkdir()
+        with contextlib.ExitStack() as stack:
+            stack.enter_context(patch.object(module, "GPU_LOCK_ROOT", Path(temporary)))
+            stack.enter_context(patch.object(module, "gpu_memory", return_value=32768))
+            stack.enter_context(module.gpu_admission(args, "first"))
+            stack.enter_context(module.gpu_admission(second, "second"))
+            with patch.object(module.time, "sleep", side_effect=TimeoutError("third slot waits")):
+                try:
+                    with module.gpu_admission(third, "third"):
+                        raise AssertionError("More than two new stages admitted")
+                except TimeoutError:
+                    pass
+            assert module.read(third.job / "pipeline-status.json")["state"] == "WAITING_GPU"
+            os.fstat(args.gpu_lock_fd)
+            os.fstat(second.gpu_lock_fd)
+        checks["two_stage_limit_and_third_waits"] = "PASS"
+        with contextlib.ExitStack() as stack:
+            stack.enter_context(patch.object(module, "GPU_LOCK_ROOT", Path(temporary)))
+            stack.enter_context(patch.object(module, "gpu_memory", return_value=12000))
+            stack.enter_context(module.gpu_admission(args, "first"))
+            with patch.object(module.time, "sleep", side_effect=TimeoutError("reserve guard")):
+                try:
+                    with module.gpu_admission(second, "second"):
+                        raise AssertionError("Second stage admitted without16GiB reserve")
+                except TimeoutError:
+                    pass
+        checks["second_stage_memory_reserve"] = "PASS"
         with patch.object(module, "live_children", return_value=[{"pid": 123}]):
             try:
                 module.run(args)

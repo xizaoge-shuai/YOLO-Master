@@ -111,34 +111,58 @@ def live_children(job):
 
 @contextlib.contextmanager
 def gpu_admission(args, message):
-    """Serialize the two new pipelines' GPU stages; existing VisDrone keeps running."""
+    """Admit at most two new stages, reserving extra memory for the second lease."""
     import fcntl
 
     GPU_LOCK_ROOT.mkdir(parents=True, exist_ok=True)
     lock = GPU_LOCK_ROOT / f"gpu{args.gpu}-stages.lock"
-    with lock.open("a") as stream:
-        while True:
-            try:
-                fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
-                acquired = True
-            except BlockingIOError:
-                acquired = False
-            if acquired:
-                free = gpu_memory(args.gpu)
-                if free >= args.min_free_mib:
-                    break
-                fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
-                state_message = f"{message}; GPU{args.gpu} free={free}MiB, need>={args.min_free_mib}MiB"
-            else:
-                state_message = f"{message}; other new dataset owns GPU{args.gpu} stage lock"
+    stream = None
+    while stream is None:
+        candidates, selected, admitted = [], None, False
+        state_message = f"{message}; waiting for GPU{args.gpu} admission gate"
+        try:
+            with lock.open("a") as gate:
+                try:
+                    fcntl.flock(gate.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                    acquired = True
+                except BlockingIOError:
+                    acquired = False
+                if acquired:
+                    busy = 0
+                    for number in range(2):
+                        candidate = (GPU_LOCK_ROOT / f"gpu{args.gpu}-slot{number}.lock").open("a")
+                        candidates.append(candidate)
+                        try:
+                            fcntl.flock(candidate.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                        except BlockingIOError:
+                            busy += 1
+                        else:
+                            if selected is None:
+                                selected = candidate
+                            else:
+                                fcntl.flock(candidate.fileno(), fcntl.LOCK_UN)
+                    if selected is not None:
+                        free = gpu_memory(args.gpu)
+                        required = args.min_free_mib + (8192 if busy else 0)
+                        if free >= required:
+                            admitted, stream = True, selected
+                        state_message = f"{message}; GPU{args.gpu} free={free}MiB, need>={required}MiB"
+                    else:
+                        state_message = f"{message}; both new GPU{args.gpu} stage slots are occupied"
+        finally:
+            for candidate in candidates:
+                if not admitted or candidate is not selected:
+                    candidate.close()
+        if stream is None:
             status(args.job, "WAITING_GPU", state_message, dataset=args.dataset)
             time.sleep(30)
-        try:
-            args.gpu_lock_fd = stream.fileno()
-            yield free
-        finally:
-            del args.gpu_lock_fd
-            fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+    try:
+        args.gpu_lock_fd = stream.fileno()
+        yield free
+    finally:
+        del args.gpu_lock_fd
+        fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+        stream.close()
 
 
 def execute(args, action, *, method=None):
@@ -269,7 +293,7 @@ def run(args):
             "batch": 8,
             "coordinator_sha256": sha(Path(__file__)),
             "gpu_index": args.gpu,
-            "gpu_stages": "single new-dataset stage at a time; VisDrone preserved; noGPU1reset",
+            "gpu_stages": "up to two admitted new stages; second requires16GiB free; VisDrone preserved; noGPU1reset",
             "no_smoke_or_subset": True,
             "test_selection": "fixed final epoch only",
             "deferred_extensions": ["views25", "vit-adapter-cache0", "cache-reuse-c1-int4", "seed1", "seed2"],

@@ -1,0 +1,143 @@
+{
+  "utc": "2026-11-10T05:22:05Z",
+  "reason": "Reverse SSH proxy disappeared; original curl failures retained; no source or training change",
+  "frozen_source": "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+  "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+  "proxy": "http://127.0.0.1:7907",
+  "proxy_scope": "loopback-only, dataset job environment only",
+  "windows_tunnel_pid": 19796,
+  "proxy_checks": [
+    {
+      "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtrainval_11-May-2012.zip",
+      "exit_code": 0,
+      "headers": [
+        "HTTP/1.1 200 Connection established",
+        "HTTP/2 302",
+        "content-length: 0",
+        "HTTP/1.1 200 Connection established",
+        "HTTP/2 200",
+        "accept-ranges: bytes",
+        "content-length: 1950180009"
+      ]
+    },
+    {
+      "url": "https://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz",
+      "exit_code": 0,
+      "headers": [
+        "HTTP/1.1 200 Connection established",
+        "HTTP/1.1 200 OK",
+        "Accept-Ranges: bytes",
+        "Content-Length: 12196152718"
+      ]
+    }
+  ],
+  "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+  "workers": [
+    {
+      "dataset": "voc0712",
+      "restart_snapshot": "/mnt/data/users/zhjia/datasets-extension-20261110/voc0712/restarts/proxy-recovery-20261110-052159",
+      "before_partials": [
+        {
+          "name": "VOCtrainval_11-May-2012.zip.partial",
+          "bytes": 1416640105,
+          "inode": 130296661
+        }
+      ],
+      "old_status": "FAILED",
+      "pid": 3710295,
+      "command": [
+        "nice",
+        "-n",
+        "19",
+        "ionice",
+        "-c",
+        "3",
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+        "--dataset",
+        "voc0712",
+        "--root",
+        "/mnt/data/users/zhjia/datasets-extension-20261110/voc0712"
+      ],
+      "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+      "source_frozen": "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+      "log": "/mnt/data/users/zhjia/datasets-extension-20261110/voc0712/prepare.log",
+      "proxy": "http://127.0.0.1:7907",
+      "launched_utc": "2026-11-10T05:22:05Z",
+      "starttime_ticks": 9512942,
+      "followup": {
+        "pid_alive": true,
+        "status": "DOWNLOADING VOCtrainval_11-May-2012.zip",
+        "partials": [
+          {
+            "name": "VOCtrainval_11-May-2012.zip.partial",
+            "before_bytes": 1416640105,
+            "after_bytes": 1464923753,
+            "increase_bytes": 48283648,
+            "same_inode": true
+          }
+        ],
+        "log_tail": "-May-2012.zip.partial', 'https://github.com/ultralytics/assets/releases/download/v0.0.0/VOCtrainval_11-May-2012.zip']' returned non-zero exit status 7.\n\nRESUME_REVERSE_PROXY 20261110-052159; original failed status and log preserved in /mnt/data/users/zhjia/datasets-extension-20261110/voc0712/restarts/proxy-recovery-20261110-052159\nSTARTING\nDOWNLOADING VOCtrainval_06-Nov-2007.zip\nEXTRACTING VOCtrainval_06-Nov-2007.zip\nDOWNLOADING VOCtest_06-Nov-2007.zip\nEXTRACTING VOCtest_06-Nov-2007.zip\nDOWNLOADING VOCtrainval_11-May-2012.zip\nDOWNLOAD VOCtrainval_11-May-2012.zip; partial downloads are resumed\n",
+        "process_state": "S",
+        "starttime_ticks": 9512942,
+        "same_process": true,
+        "cmd": "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python -u /mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py --dataset voc0712 --root /mnt/data/users/zhjia/datasets-extension-20261110/voc0712 "
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "restart_snapshot": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/restarts/proxy-recovery-20261110-052159",
+      "before_partials": [
+        {
+          "name": "SKU110K_fixed.tar.gz.partial",
+          "bytes": 2547237147,
+          "inode": 130285628
+        }
+      ],
+      "old_status": "FAILED",
+      "pid": 3710296,
+      "command": [
+        "nice",
+        "-n",
+        "19",
+        "ionice",
+        "-c",
+        "3",
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+        "--dataset",
+        "sku110k",
+        "--root",
+        "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k"
+      ],
+      "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+      "source_frozen": "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+      "log": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/prepare.log",
+      "proxy": "http://127.0.0.1:7907",
+      "launched_utc": "2026-11-10T05:22:05Z",
+      "starttime_ticks": 9512942,
+      "followup": {
+        "pid_alive": true,
+        "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+        "partials": [
+          {
+            "name": "SKU110K_fixed.tar.gz.partial",
+            "before_bytes": 2547237147,
+            "after_bytes": 2637099291,
+            "increase_bytes": 89862144,
+            "same_inode": true
+          }
+        ],
+        "log_tail": "ntinue-at', '-', '--retry', '10', '--retry-all-errors', '--limit-rate', '20M', '--connect-timeout', '30', '--speed-limit', '1024', '--speed-time', '120', '--output', '/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/archives/SKU110K_fixed.tar.gz.partial', 'https://trax-geometry.s3.amazonaws.com/cvpr_challenge/SKU110K_fixed.tar.gz']' returned non-zero exit status 7.\n\nRESUME_REVERSE_PROXY 20261110-052159; original failed status and log preserved in /mnt/data/users/zhjia/datasets-extension-20261110/sku110k/restarts/proxy-recovery-20261110-052159\nSTARTING\nDOWNLOADING SKU110K_fixed.tar.gz\n",
+        "process_state": "S",
+        "starttime_ticks": 9512942,
+        "same_process": true,
+        "cmd": "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python -u /mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py --dataset sku110k --root /mnt/data/users/zhjia/datasets-extension-20261110/sku110k "
+      }
+    }
+  ],
+  "verified_utc": "2026-11-10T05:23:09Z",
+  "status": "RECOVERED_DOWNLOADING"
+}

@@ -577,3 +577,11 @@ Detail0 completed100epochs/AP11.6328556031 and final prediction/checkpoint evide
 ## Replication suite job-20261107-Imo9Yocz: dataset-first-detail0-s0
 
 Archived [dataset-first-detail0-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-detail0-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- dataset-gpu-admission-and-recovery-20261110 -->
+## 2026-11-10: downloads recovered and parallel admission verified
+
+- VOC full official data preparation is PREPARED. SKU download resumed through existing loopback proxy; partials and failures preserved. Original VisDrone seed0 is8/10 complete, Adapter-cache0 running.
+- New dataset/diagnostic GPU stages share at most two slots on healthyGPU0. First admission needs8GiB free, second needs16GiB; third waits. Existing VisDrone continues; brokenGPU1 is never selected or reset. CPU concurrency and reserve contracts plus independent read-only review pass; shared timing remains observational.
+- Corrected CPU check label: FD availability was checked, not an actual child-process inheritance experiment. Implementation passes the leased FD to actual children. No GPU smoke or subset experiments. New full dataset pipelines will be launched after this source commit.
