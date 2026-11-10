@@ -571,3 +571,9 @@ Archived [dataset-first-blank0-s0](experiments/replication-suite/job-20261107-Im
 ## 2026-11-10: completed Detail0; restore archive and proxy downloads
 
 Detail0 completed100epochs/AP11.6328556031 and final prediction/checkpoint evidence. Its coordinator stopped only at archive because the present uncommitted progress draft triggered the pre-existing dirty-progress guard. Commit the draft first,then resume original seed0 coordinator without retraining completed cases. VOC2012/SKU downloads stopped at preserved partial files when loopback proxy became unavailable; restore transport and resume the same frozen preparer. No failed state is rewritten as success.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:dataset-first-detail0-s0 -->
+## Replication suite job-20261107-Imo9Yocz: dataset-first-detail0-s0
+
+Archived [dataset-first-detail0-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-detail0-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
