@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "wrapper_sha256": "406bd4b20ec07a24daa80e66c243b9ea3c21deb83ed6181b10dc2e8f4eda9dcb",
+  "contracts": [
+    {
+      "contract": "three stages, correct CLI, inherited GPU lease FD, happy completion",
+      "pass": true
+    },
+    {
+      "contract": "geometry teacher count",
+      "pass": true,
+      "observed_rejection": "Full geometric feature/loss workload changed",
+      "archives": [
+        "features",
+        "latency"
+      ]
+    },
+    {
+      "contract": "geometry cropped official AP prohibited",
+      "pass": true,
+      "observed_rejection": "Full geometric feature/loss workload changed",
+      "archives": [
+        "features",
+        "latency"
+      ]
+    },
+    {
+      "contract": "geometry full image coverage",
+      "pass": true,
+      "observed_rejection": "Measurement ended without full declared coverage",
+      "archives": [
+        "features",
+        "latency"
+      ]
+    },
+    {
+      "contract": "latency cached input prohibited",
+      "pass": true,
+      "observed_rejection": "Fresh-image latency workload/teacher accounting changed",
+      "archives": [
+        "features"
+      ]
+    },
+    {
+      "contract": "features full pair coverage",
+      "pass": true,
+      "observed_rejection": "Full cached feature diagnostic workload changed",
+      "archives": []
+    },
+    {
+      "contract": "features teacher-free workload",
+      "pass": true,
+      "observed_rejection": "Full cached feature diagnostic workload changed",
+      "archives": []
+    },
+    {
+      "contract": "exact method identity no duplicates",
+      "pass": true,
+      "observed_rejection": "Measurement ended without full declared coverage",
+      "archives": []
+    }
+  ],
+  "archive_readme": {
+    "geometry_counts": "548x6=3288 shared by4; correct",
+    "files": [
+      "research/experiments/spatial-evidence/job/geometry/raw-dino-error.csv",
+      "research/experiments/spatial-evidence/job/geometry/completion.json",
+      "research/experiments/spatial-evidence/job/geometry/README.md"
+    ],
+    "commit_executed": false,
+    "push_executed": false
+  },
+  "GPU_execution": false,
+  "GPU_model_execution": false,
+  "real_subprocesses_launched": 0,
+  "commits_or_pushes": 0,
+  "scope": "CPU supervisor contracts with simulated child completions; no experiment results"
+}

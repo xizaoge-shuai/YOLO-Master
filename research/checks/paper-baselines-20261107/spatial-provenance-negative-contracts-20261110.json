@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "source_sha256": "7584ee888733ab61403d459f4f3975634287ee9f58339a1388ac30b6148713a8",
+  "CPU_only": true,
+  "full548_annotation_identity_checked_per_case": true,
+  "cases": [
+    {
+      "case": "unmodified-old-run-through-known-mount-mapping",
+      "status": "PASS"
+    },
+    {
+      "case": "reject-provenance_sha256",
+      "status": "PASS",
+      "message": "Run arguments no longer bind its provenance: blank25"
+    },
+    {
+      "case": "reject-dataset_manifest_sha256",
+      "status": "PASS",
+      "message": "Run dataset-manifest hash no longer binds its actual source: blank25"
+    },
+    {
+      "case": "reject-cache_manifest_sha256",
+      "status": "PASS",
+      "message": "Run cache-manifest hash no longer binds its actual cache: blank25"
+    },
+    {
+      "case": "reject-different-val-bank-content",
+      "status": "PASS",
+      "message": "Run uses a different validation feature bank: blank25"
+    },
+    {
+      "case": "reject-missing-required-model-source",
+      "status": "PASS",
+      "message": "Run provenance lacks required frozen model source: blank25"
+    }
+  ]
+}

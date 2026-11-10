@@ -7,12 +7,12 @@ User now authorizes starting VOC and SKU together and requests claim-relevant ad
 - [x] Read supplied recommendations and map against existing writing/figure plans.
 - [x] Fresh server audit:VisDrone7 seed0 DONE,Detail0 epoch38;109GiB availableRAM,data disk1.2TiB. GPU1 reports requires-reset;GPU0 is shared with another user's job.
 - [x] Isolate pinned pycocotools2.0.11/TIDE1.0.1 dependencies under research worktree; existing training environment untouched.
-- [ ] Prepare VOC07+12 and SKUfixed concurrently in background; preserve official splits/raw annotations and download hashes.
-- [ ] Implement new manifest-driven/mmap training and correct VOC/SKU evaluation without editing frozen VisDrone trainer.
-- [ ] CPU contract tests and independent review; commit implementation before formal launch. NoGPU smoke or subset experiment.
+- [x] VOC07+12 full data sealed; SKUfixed download runs in background; official splits/raw annotations and download hashes preserved.
+- [x] Implement new manifest-driven/mmap training and correct VOC/SKU evaluation without editing frozen VisDrone trainer.
+- [x] CPU contracts and independent review passed; initial implementation committed36e96ac, guarded parallel admission2b521ae. NoGPU smoke or subset experiment.
 - [ ] Start two dataset pipelines with explicit resource admission; a brokenGPU is never selected. Report preparation,waiting,training andcompletion separately.
-- [ ] Run full548-image size/perclass/TIDE analysis and extract existing convergence curves; bind source prediction/checkpoint hashes.
-- [ ] Specify and implement new-checkpoint geometry/feature-frequency/full-forward inference diagnostics; reuse compatible old diagnostics and count new diagnostic teacher calls separately.
+- [x] Run full548-image size/perclass/TIDE analysis for8 arms and extract existing convergence curves; source prediction/checkpoint hashes bound and results committed36e96ac.
+- [x] Implement full548 geometry/feature-frequency/full-forward inference diagnostics; final CPU input/GT/source gates and wrapper contracts passed. Execution remains separately tracked.
 - [ ] Update current evidence plan/operations/PROGRESS,archive and scoped commit/push all new source/real results.
 
 ## Historical stages (superseded scheduling retained below)

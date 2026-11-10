@@ -1,0 +1,5 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"repo:/online_experiments/crossdataset_campaign.py\", line 389, in main\n    run(args)\n  File \"repo:/online_experiments/crossdataset_campaign.py\", line 330, in run\n    execute(args, \"snapshot\")\n  File \"repo:/online_experiments/crossdataset_campaign.py\", line 219, in execute\n    raise RuntimeError(f\"{label} exited{result}; preserve log/checkpoint, no automatic retry\")\nRuntimeError: snapshot exited1; preserve log/checkpoint, no automatic retry\n",
+  "time_unix": 1794289164.0237095,
+  "policy": "Preserve all data,logs and checkpoints; no automatic retry or method change"
+}

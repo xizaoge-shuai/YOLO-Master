@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "source_sha256": "c401eabeda1e74f7281d761cb5d0647ab52464972ce039efd19489d42be06fea",
+  "contracts": [
+    "semanticGT invariant to annotation row ordering",
+    "semanticGT rejects changedclass",
+    "semanticGT rejects changedbbox",
+    "full548 real provenance/source/cache/GT inspectPASS",
+    "CPU no torch import"
+  ]
+}

@@ -111,14 +111,17 @@ def validate_manifest(meta):
     if meta.get("nc") != nc or len(names) != nc or len(set(names)) != nc:
         raise ValueError("Dataset class count or ordered names mismatch")
     seen = set()
-    image_hashes = set()
+    image_hashes = {}
     for split, samples in meta["splits"].items():
         for sample in samples:
             identity = sample["sample_id"]
-            if identity in seen or sample["image_sha256"] in image_hashes:
-                raise ValueError(f"Duplicate sample/image across official splits: {identity}")
+            if identity in seen:
+                raise ValueError(f"Duplicate sample ID across official splits: {identity}")
+            digest = sample["image_sha256"]
+            if digest in image_hashes and image_hashes[digest] != split:
+                raise ValueError(f"Identical image across official splits: {identity}")
             seen.add(identity)
-            image_hashes.add(sample["image_sha256"])
+            image_hashes[digest] = split
             if sample["width"] < 1 or sample["height"] < 1:
                 raise ValueError(f"Invalid image dimensions: {identity}")
             for obj in sample["objects"]:
@@ -132,6 +135,21 @@ def validate_manifest(meta):
                 if split == "test" and dataset == "voc0712" and "bbox_voc_1based_inclusive" not in obj:
                     raise ValueError("VOC test objects must retain official one-based inclusive coordinates")
     return meta
+
+
+def within_split_duplicate_images(meta):
+    """Record official repeated JPEGs without dropping or merging annotated samples."""
+    result = []
+    for split, samples in meta["splits"].items():
+        groups = {}
+        for sample in samples:
+            groups.setdefault(sample["image_sha256"], []).append(sample["sample_id"])
+        result.extend(
+            {"split": split, "image_sha256": digest, "sample_ids": identities}
+            for digest, identities in groups.items()
+            if len(identities) > 1
+        )
+    return result
 
 
 def prepare_targets(sample):
@@ -453,6 +471,8 @@ def snapshot(args):
         "manifest_sha256": sha(manifest),
         "dataset": meta["dataset"],
         "counts": COUNTS[meta["dataset"]],
+        "within_split_duplicate_images": within_split_duplicate_images(meta),
+        "duplicate_image_policy": "Keep official within-split samples and annotations; reject cross-split identical JPEGs and any repeated sample ID.",
         "class_names": meta["class_names"],
         "identity": identity,
         "identity_file": str(Path(args.identity).resolve()),

@@ -1,0 +1,160 @@
+{
+  "schema": "voc-official-duplicate-cpu-audit-v1",
+  "utc": "2026-11-10T05:44:00Z",
+  "GPU_execution": false,
+  "source_or_data_changes": false,
+  "manifest_sha256": "decd4ff35488587831a085cc0095bd584807d37b112ff9ae0e0bb0dbbe5cbdab",
+  "counts": {
+    "test": 4952,
+    "train": 16551
+  },
+  "sample_id_duplicates": {},
+  "duplicate_groups": [
+    {
+      "image_sha256": "0ac537472d2a64f654b3207a4825d8434f8f2c5e4fab66275d21f1f548cfa8de",
+      "splits": [
+        "train"
+      ],
+      "records": [
+        {
+          "split": "train",
+          "sample_id": "VOC2007/008037",
+          "image": "images/train2007/008037.jpg",
+          "archive": "VOCtrainval_06-Nov-2007.zip",
+          "member": "VOCdevkit/VOC2007/JPEGImages/008037.jpg",
+          "archive_member_sha256": "0ac537472d2a64f654b3207a4825d8434f8f2c5e4fab66275d21f1f548cfa8de",
+          "archive_member_matches_manifest": true,
+          "extracted_raw_matches_archive": true,
+          "exposed_image_matches_archive": true,
+          "xml_archive_matches_manifest": true,
+          "official_list_membership": true
+        },
+        {
+          "split": "train",
+          "sample_id": "VOC2007/009623",
+          "image": "images/train2007/009623.jpg",
+          "archive": "VOCtrainval_06-Nov-2007.zip",
+          "member": "VOCdevkit/VOC2007/JPEGImages/009623.jpg",
+          "archive_member_sha256": "0ac537472d2a64f654b3207a4825d8434f8f2c5e4fab66275d21f1f548cfa8de",
+          "archive_member_matches_manifest": true,
+          "extracted_raw_matches_archive": true,
+          "exposed_image_matches_archive": true,
+          "xml_archive_matches_manifest": true,
+          "official_list_membership": true
+        }
+      ]
+    },
+    {
+      "image_sha256": "a0505c78bb40f009b8132750260a4a523f7b450d10b43e4c51cf93518dc383e7",
+      "splits": [
+        "train"
+      ],
+      "records": [
+        {
+          "split": "train",
+          "sample_id": "VOC2007/000338",
+          "image": "images/train2007/000338.jpg",
+          "archive": "VOCtrainval_06-Nov-2007.zip",
+          "member": "VOCdevkit/VOC2007/JPEGImages/000338.jpg",
+          "archive_member_sha256": "a0505c78bb40f009b8132750260a4a523f7b450d10b43e4c51cf93518dc383e7",
+          "archive_member_matches_manifest": true,
+          "extracted_raw_matches_archive": true,
+          "exposed_image_matches_archive": true,
+          "xml_archive_matches_manifest": true,
+          "official_list_membership": true
+        },
+        {
+          "split": "train",
+          "sample_id": "VOC2007/007284",
+          "image": "images/train2007/007284.jpg",
+          "archive": "VOCtrainval_06-Nov-2007.zip",
+          "member": "VOCdevkit/VOC2007/JPEGImages/007284.jpg",
+          "archive_member_sha256": "a0505c78bb40f009b8132750260a4a523f7b450d10b43e4c51cf93518dc383e7",
+          "archive_member_matches_manifest": true,
+          "extracted_raw_matches_archive": true,
+          "exposed_image_matches_archive": true,
+          "xml_archive_matches_manifest": true,
+          "official_list_membership": true
+        }
+      ]
+    },
+    {
+      "image_sha256": "d1363b56770b458dc48fd8e7616a8360e1418a973f3efa95c3c774495cbb0582",
+      "splits": [
+        "train"
+      ],
+      "records": [
+        {
+          "split": "train",
+          "sample_id": "VOC2007/000949",
+          "image": "images/train2007/000949.jpg",
+          "archive": "VOCtrainval_06-Nov-2007.zip",
+          "member": "VOCdevkit/VOC2007/JPEGImages/000949.jpg",
+          "archive_member_sha256": "d1363b56770b458dc48fd8e7616a8360e1418a973f3efa95c3c774495cbb0582",
+          "archive_member_matches_manifest": true,
+          "extracted_raw_matches_archive": true,
+          "exposed_image_matches_archive": true,
+          "xml_archive_matches_manifest": true,
+          "official_list_membership": true
+        },
+        {
+          "split": "train",
+          "sample_id": "VOC2007/005042",
+          "image": "images/train2007/005042.jpg",
+          "archive": "VOCtrainval_06-Nov-2007.zip",
+          "member": "VOCdevkit/VOC2007/JPEGImages/005042.jpg",
+          "archive_member_sha256": "d1363b56770b458dc48fd8e7616a8360e1418a973f3efa95c3c774495cbb0582",
+          "archive_member_matches_manifest": true,
+          "extracted_raw_matches_archive": true,
+          "exposed_image_matches_archive": true,
+          "xml_archive_matches_manifest": true,
+          "official_list_membership": true
+        }
+      ]
+    }
+  ],
+  "split_provenance": [
+    {
+      "archive": "VOCtrainval_06-Nov-2007.zip",
+      "member": "VOCdevkit/VOC2007/ImageSets/Main/trainval.txt",
+      "count": 5011,
+      "unique_ids": 5011,
+      "archive_member_sha256": "15a0c17dd13dd526194ed09fe773fd3000e951570a041c509078c634a63761e0",
+      "extracted_sha256": "15a0c17dd13dd526194ed09fe773fd3000e951570a041c509078c634a63761e0",
+      "extracted_equals_archive_member": true
+    },
+    {
+      "archive": "VOCtest_06-Nov-2007.zip",
+      "member": "VOCdevkit/VOC2007/ImageSets/Main/test.txt",
+      "count": 4952,
+      "unique_ids": 4952,
+      "archive_member_sha256": "46f3424f5769b4b9032673364380b6652346ab4d2fa66390cb75adf9d0f95afa",
+      "extracted_sha256": "46f3424f5769b4b9032673364380b6652346ab4d2fa66390cb75adf9d0f95afa",
+      "extracted_equals_archive_member": true
+    },
+    {
+      "archive": "VOCtrainval_11-May-2012.zip",
+      "member": "VOCdevkit/VOC2012/ImageSets/Main/trainval.txt",
+      "count": 11540,
+      "unique_ids": 11540,
+      "archive_member_sha256": "d8db5bcfb2ea35dc072f2e74a0f234345065ae340e422d7d0ad0216ac13fbee3",
+      "extracted_sha256": "d8db5bcfb2ea35dc072f2e74a0f234345065ae340e422d7d0ad0216ac13fbee3",
+      "extracted_equals_archive_member": true
+    }
+  ],
+  "official_2007_trainval_test_id_intersection": [],
+  "cross_train_test_duplicate_groups": 0,
+  "within_train_only_duplicate_groups": 3,
+  "within_test_only_duplicate_groups": 0,
+  "diagnosis": "False positive from global image-hash uniqueness check: exactly three duplicate JPEG pairs already coexist within VOC2007 official trainval. No duplicate sample IDs or train/test JPEG overlap. Archive members, extracted images/XML and exposed images agree.",
+  "recommendation": {
+    "preserve_sealed_manifest": true,
+    "preserve_official_training_count": 16551,
+    "do_not_deduplicate_or_relabel": true,
+    "continue_rejecting_all_duplicate_sample_ids": true,
+    "continue_rejecting_any_cross_split_image_hash_overlap": true,
+    "same_split_exception": "If implementing, require exact dataset=voc0712, split=train, full official counts, and exact observed (sha256,sorted sample_ids) set from this audit; reject any unrecognized/additional duplicate hash group. Record audit hash in snapshot provenance. This is a verified dataset fact, not disabling duplicate checks.",
+    "new_snapshot_job_required_after_source_fix": true,
+    "preserve_failed_snapshot": true
+  }
+}

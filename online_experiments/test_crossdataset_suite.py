@@ -4,6 +4,7 @@ import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
 
@@ -75,6 +76,39 @@ class NativeEvaluationContracts(unittest.TestCase):
 
 
 class InputContracts(unittest.TestCase):
+    def duplicate_manifest(self, *, leak=False, repeated_id=False):
+        samples = [
+            {**record("train-a", []), "image_sha256": "identical-official-jpeg"},
+            {**record("train-b", []), "image_sha256": "identical-official-jpeg"},
+        ]
+        test = {
+            **record("train-a" if repeated_id else "test-a", []),
+            "image_sha256": "identical-official-jpeg" if leak else "test-jpeg",
+        }
+        return {
+            "schema": "detection-dataset-v1",
+            "dataset": "voc0712",
+            "nc": 20,
+            "class_names": [str(index) for index in range(20)],
+            "splits": {"train": samples, "test": [test]},
+        }
+
+    def test_official_within_train_jpeg_duplicates_keep_distinct_samples(self):
+        meta = self.duplicate_manifest()
+        with patch.dict(suite.COUNTS, {"voc0712": {"train": 2, "test": 1}}):
+            self.assertIs(suite.validate_manifest(meta), meta)
+        self.assertEqual(len(meta["splits"]["train"]), 2)
+
+    @patch.dict(suite.COUNTS, {"voc0712": {"train": 2, "test": 1}})
+    def test_same_jpeg_across_train_and_test_is_rejected(self):
+        with self.assertRaisesRegex(ValueError, "across official splits"):
+            suite.validate_manifest(self.duplicate_manifest(leak=True))
+
+    @patch.dict(suite.COUNTS, {"voc0712": {"train": 2, "test": 1}})
+    def test_duplicate_sample_id_is_still_rejected(self):
+        with self.assertRaisesRegex(ValueError, "Duplicate sample ID"):
+            suite.validate_manifest(self.duplicate_manifest(repeated_id=True))
+
     def test_partial_cache_resume_cannot_recreate_missing_prefix_as_zeros(self):
         with tempfile.TemporaryDirectory() as folder:
             missing = Path(folder) / "missing.partial.npy"

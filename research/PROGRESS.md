@@ -585,3 +585,11 @@ Archived [dataset-first-detail0-s0](experiments/replication-suite/job-20261107-I
 - VOC full official data preparation is PREPARED. SKU download resumed through existing loopback proxy; partials and failures preserved. Original VisDrone seed0 is8/10 complete, Adapter-cache0 running.
 - New dataset/diagnostic GPU stages share at most two slots on healthyGPU0. First admission needs8GiB free, second needs16GiB; third waits. Existing VisDrone continues; brokenGPU1 is never selected or reset. CPU concurrency and reserve contracts plus independent read-only review pass; shared timing remains observational.
 - Corrected CPU check label: FD availability was checked, not an actual child-process inheritance experiment. Implementation passes the leased FD to actual children. No GPU smoke or subset experiments. New full dataset pipelines will be launched after this source commit.
+
+
+<!-- full548-diagnostics-and-voc-official-duplicates-20261110 -->
+## 2026-11-10: full548 diagnostic implementation and VOC integrity fix
+
+- Initial VOC snapshot failed before any GPU execution because the validator rejected3 pairs of identical JPEGs inside officialVOC2007 training. Full21,503-record audit verified ZIP/image/XML hashes, no repeated sampleID and no train/test content overlap. Keep16551/4952 and sealed manifest unchanged; record within-split repetitions, reject cross-split content overlap and repeated IDs. Failure archived; restart uses a fresh job.
+- New suite17 CPU contracts including native VOC/denseCOCO, full official VOC manifest validation,8 mocked three-stage completion contracts, both full548 checkpoint/source/semanticGT inspections and targetRuff/format pass. Original810 frozen training files remain unchanged.
+- Final fixed-model diagnostic sources frozen:548 images x4 models features;2192 fresh-image latency measurements+80warmups with independent backbone;548x6geometry=3288 teacherimages/calls shared by4models. No training updates or synthetic officialAP; C2 identity/flip zero-error controls and additiveRGB/P3-error interpretation recorded. CPU checks are not GPU result claims. Prior negative-source checks bind the preceding helper hash; final GT/provenance/input checks bind the current final source.

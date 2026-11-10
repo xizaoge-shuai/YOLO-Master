@@ -1,4 +1,4 @@
-"""Queue full-split feature and fresh-image latency measurements on a healthy GPU."""
+"""Queue full-split feature, fresh-image latency and geometric diagnostics."""
 
 import argparse
 import json
@@ -35,11 +35,19 @@ def archive(args, stage, output):
         target.write_text(content, encoding="utf-8")
         names.append(target.relative_to(ROOT).as_posix())
     readme = destination / "README.md"
+    scope = (
+        "Six views of548 images,3288 new teacher images shared by four fixed models. "
+        "Identity/flip are true C2 anchors and zero-error controls. Fixed-model feature/loss sensitivity "
+        "is not officialAP; identical additiveRGB cancels in absolute P3 differences. "
+        if stage == "geometry"
+        else "Four final seed0 checkpoints;548 images each. Feature energy is descriptive. "
+        "Fresh-image latency includes each method's independent frozen backbone and20 warmup images; "
+        "sharedGPU latency is observational. "
+    )
     readme.write_text(
         f"# Full VisDrone fixed-model diagnostic: {stage}\n\n"
-        "Four final seed0 checkpoints;548 images each;no weight updates. "
-        "Feature energy is descriptive. Fresh-image inference includes an independent frozen backbone "
-        "for each method;sharedGPU latency is observational. Exact contracts and counts are in protocol.\n",
+        + scope
+        + "No weight updates. Exact contracts and counts are in protocol.\n",
         encoding="utf-8",
     )
     names.append(readme.relative_to(ROOT).as_posix())
@@ -68,38 +76,43 @@ def run(args):
         write(
             args.job / "plan.json",
             {
-                "schema": "full548-spatial-evidence-v1",
-                "stages": ["features", "latency"],
+                "schema": "full548-spatial-evidence-v2",
+                "stages": ["features", "latency", "geometry"],
                 "gpu_index": args.gpu,
                 "methods": ["blank25", "detail25", "lowpass25", "vit-adapter-cache25"],
                 "images_each": 548,
                 "latency_warmup_images_each": 20,
                 "no_weight_updates": True,
                 "script_sha256": sha(ROOT / "online_experiments/spatial_feature_analysis.py"),
+                "geometry_script_sha256": sha(ROOT / "online_experiments/geometric_evidence.py"),
+                "geometry_teacher_images": 3288,
+                "geometry_official_AP_computed": False,
                 "campaign": str(args.campaign),
                 "original_detail_job": str(args.original_detail_job),
             },
         )
         write(args.job / "worker.json", {"pid": os.getpid(), "started_unix": time.time(), "argv": sys.argv})
         results = []
-        for stage in ("features", "latency"):
+        for stage in ("features", "latency", "geometry"):
             output = args.job / stage
             with gpu_admission(args, f"Full548 fixed-model {stage}"):
-                status(args.job, "MEASURING", f"{stage}:4 methods x548 images; no training", stage=stage)
+                coverage = "4 models x548 images x6 views" if stage == "geometry" else "4 methods x548 images"
+                status(args.job, "MEASURING", f"{stage}:{coverage}; no training", stage=stage)
+                script = "geometric_evidence.py" if stage == "geometry" else "spatial_feature_analysis.py"
                 command = [
                     sys.executable,
                     "-u",
-                    str(ROOT / "online_experiments/spatial_feature_analysis.py"),
-                    stage,
+                    str(ROOT / "online_experiments" / script),
+                    "run" if stage == "geometry" else stage,
                     "--campaign",
                     str(args.campaign),
                     "--original-detail-job",
                     str(args.original_detail_job),
                     "--output",
                     str(output),
-                    "--warmup",
-                    "20",
                 ]
+                if stage != "geometry":
+                    command += ["--warmup", "20"]
                 env = dict(os.environ)
                 env.update(
                     CUDA_VISIBLE_DEVICES=str(args.gpu),
@@ -128,20 +141,39 @@ def run(args):
                 if code:
                     raise RuntimeError(f"{stage} exited{code}; its outputs are retained")
             result = read(output / "completion.json")
-            if result.get("status") != "SUCCEEDED" or result.get("images_each") != 548 or len(result["methods"]) != 4:
+            image_count = result.get("images") if stage == "geometry" else result.get("images_each")
+            methods = result.get("methods", [])
+            expected_methods = {"blank25", "detail25", "lowpass25", "vit-adapter-cache25"}
+            if (
+                result.get("status") != "SUCCEEDED"
+                or image_count != 548
+                or len(methods) != 4
+                or set(methods) != expected_methods
+            ):
                 raise RuntimeError("Measurement ended without full declared coverage")
+            if stage == "features" and (result["feature_image_pairs"], result["teacher_forward_images"]) != (2192, 0):
+                raise RuntimeError("Full cached feature diagnostic workload changed")
             if stage == "latency" and (
                 result["teacher_measured_images"],
                 result["teacher_warmup_images"],
                 result["feature_bank_reads"],
             ) != (2192, 80, 0):
                 raise RuntimeError("Fresh-image latency workload/teacher accounting changed")
+            if stage == "geometry" and (
+                result["teacher_images"],
+                result["teacher_calls"],
+                result["teacher_blank_images_new"],
+                result["method_image_views"],
+                result["official_AP_computed"],
+                result["training_updates"],
+            ) != (3288, 3288, 0, 13152, False, 0):
+                raise RuntimeError("Full geometric feature/loss workload changed")
             results.append({"stage": stage, "completion": result, "archive": archive(args, stage, output)})
             write(args.job / "completed-stages.json", results)
         status(
             args.job,
             "SUCCEEDED",
-            "Full548 features and fresh-image latency complete; geometry remains pending",
+            "Full548 features, fresh-image latency and geometric feature/loss diagnostics complete",
             completed_stages=len(results),
             all_pushed=all(item["archive"]["pushed"] for item in results),
         )

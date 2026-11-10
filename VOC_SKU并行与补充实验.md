@@ -4,7 +4,7 @@
 
 ## 并行范围
 
-VOC07+12与SKU-110K fixed的下载和准备已同时后台运行。每个数据集有独立状态、断点文件、原始标注、下载来源和完成封印。只有完整划分与全部文件通过检查、生成complete.json后，训练流水线才继续。
+VOC07+12已完成全量准备，SKU-110K fixed继续后台下载。每个数据集有独立状态、断点文件、原始标注、下载来源和完成封印。只有完整划分与全部文件通过检查、生成complete.json后，训练流水线才继续。
 
 GPU1驱动报告GPU requires reset，目前不选用。两个新数据集流水线与新增诊断共用健康GPU0的准入队列，最多同时运行两个新增计算阶段：首个要求至少8GiB空闲显存，第二个要求至少16GiB空闲显存，否则后台等待；现有VisDrone训练不重启。下载、CPU评价、状态监控可以并行，GPU并行发生在同一张卡上。GPU0还有其他用户工作，耗时是观察记录，不是受控速度benchmark。
 
@@ -17,6 +17,8 @@ GPU1驱动报告GPU requires reset，目前不选用。两个新数据集流水�
 VOC使用16551训练/4952测试、20类，主要指标是VOC2007十一点AP50，difficult匹配忽略。SKU预期8219训练/588验证/2936测试、1类，主要指标为标准COCO maxDet100的bboxAP，另报密集maxDet500；实际计数以固定发布包检查结果为准。两者都只评固定最终100轮测试端点，不在测试集上挑最好轮或调超参数。
 
 新文件crossdataset_suite.py复用已有模型/增强/损失，新增可变类别与正式数据输入、mmap银行、独立评估和断点证据。缓存恢复时发现缺失前缀/rename-seal窗口会保留文件并明确报错，避免悄悄补零覆盖。物理教师调用与逻辑预算分开记录，量化构建不重复计入冷成本。
+
+首次VOC快照因误将官方训练集内部3对重复JPEG当成跨划分泄漏而停止，未构建缓存或训练。已从原ZIP核验：sample ID不重复、训练/测试内容不重叠，保留官方16551训练样本与各自标注；新校验只拒绝跨划分重复内容及重复ID，训练内部重复在provenance显式记录。失败job保留，新job重新快照；sealed数据没有去重或改写。
 
 ## 看下载、训练和结果
 
@@ -70,7 +72,7 @@ cat "$ANA/summary.csv"
 cat "$ANA/tide-errors-auxiliary.csv"
 ```
 
-新P3频谱和真实新图推理入口另行排GPU阶段，完成状态以其job为准。查看两阶段：
+新P3频谱、真实新图推理及几何特征/损失诊断共三个GPU阶段，完成状态以其job为准：
 
 ```bash
 GJOB="$(cat runs/paper/evidence-gpu/latest-job.txt)"
@@ -78,7 +80,9 @@ cat "$GJOB/status.txt"
 tail -n 8 "$GJOB/pipeline.log"
 ```
 
-features覆盖4个固定最终模型各548图，使用真实验证银行；latency则为每个方法各548张新图输入，独立执行DINO前向，另计每方法20张预热，共2192实测＋80预热教师图像，不用缓存替代推理。当前检测头采用端到端解码/top-K，独立NMS不适用；推理后处理测置信度筛选和原图坐标恢复，不虚构NMS耗时。几何鲁棒性需绑定当前候选checkpoint，旧校正器CacheShift的诊断不自动充当当前方法结果，该新几何评价尚未完成。
+features覆盖4个固定最终模型各548图，使用真实验证银行；latency则为每个方法各548张新图输入，独立执行DINO前向，另计每方法20张预热，共2192实测＋80预热教师图像，不用缓存替代推理。当前检测头采用端到端解码/top-K，独立NMS不适用；推理后处理测置信度筛选和原图坐标恢复，不虚构NMS耗时。
+
+geometry使用548图×6视角，共3288次新教师图像/调用，四个固定模型共享这批诊断特征；identity/hflip是真C2锚点零误差对照，其余四视角为0.85/0.95/1.05/1.15缩放。统计原DINO误差、各模型自身approx/exact P3误差、检测损失差及GT裁剪数，不更新权重，不产出变换后的官方AP。Detail加性RGB在同模型P3绝对差中抵消，不能据此声称恢复了DINO表示；旧校正器CacheShift也不充当当前候选的结果。
 
 ## 文件与论文结构
 
@@ -87,7 +91,8 @@ features覆盖4个固定最终模型各548图，使用真实验证银行；laten
 - online_experiments/crossdataset_campaign.py：12项矩阵、健康GPU准入、归档commit/push。
 - online_experiments/analyze_detection_evidence.py：原最终预测的CPU分析。
 - online_experiments/spatial_feature_analysis.py：固定模型的特征/真实推理测量，单独记录教师计算。
-- online_experiments/run_spatial_evidence.py：上述两阶段的GPU准入、日志、完整覆盖校验与轻量归档。
+- online_experiments/geometric_evidence.py：六视角全548图的特征/固定检测头损失诊断。
+- online_experiments/run_spatial_evidence.py：上述三阶段的GPU准入、日志、完整覆盖校验与轻量归档。
 - research/PAPER_EVIDENCE_PLAN_20261110.md：章节、五类表、四张主图和各指标/数据依赖。
 
 沿用第3节缓存增强问题、第4节实际方法、第5.2节baseline、第5.3节成本、第5.4节消融机制、第5.5节数据/骨干适用范围、第5.6节困难场景与失败的结构。优先补本表中的证据，不增加与主张无关的分类、分割或功耗实验。全COCO、第二骨干、独立种子和受控等时间仍未被本批替代。

@@ -1,0 +1,83 @@
+{
+  "format": {
+    "exit": 0,
+    "out": "1 file reformatted, 4 files left unchanged\n",
+    "err": ""
+  },
+  "ruff": {
+    "exit": 0,
+    "out": "All checks passed!\n",
+    "err": ""
+  },
+  "cpu": {
+    "exit": 0,
+    "out": "creating index...\nindex created!\nLoading and preparing results...\nDONE (t=0.00s)\ncreating index...\nindex created!\nRunning per image evaluation...\nEvaluate annotation type *bbox*\nDONE (t=0.04s).\nAccumulating evaluation results...\nDONE (t=0.00s).\nRunning per image evaluation...\nEvaluate annotation type *bbox*\nDONE (t=0.04s).\nAccumulating evaluation results...\nDONE (t=0.00s).\n",
+    "err": "test_checkpoint100_recovers_missing_summary_before_final_evaluation (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_duplicate_sample_id_is_still_rejected (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_letterboxed_targets_exclude_difficult (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_manifest_rejects_pilot_even_if_claimed_expected (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_official_within_train_jpeg_duplicates_keep_distinct_samples (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_partial_cache_resume_cannot_recreate_missing_prefix_as_zeros (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_partial_cache_resume_rejects_wrong_dtype (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_physical_teacher_count_retains_uncertain_and_replayed_calls (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_quantizer_packed_int4_roundtrip_and_constants (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_same_jpeg_across_train_and_test_is_rejected (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_training_cache_selection_respects_method_budget (online_experiments.test_crossdataset_suite.InputContracts) ... ok\ntest_coco_preserves_empty_images_and_uses_native_pixel_area (online_experiments.test_crossdataset_suite.NativeEvaluationContracts) ... ok\ntest_dense_coco_ap500_does_not_reuse_hardcoded_ap100_summary (online_experiments.test_crossdataset_suite.NativeEvaluationContracts) ... ok\ntest_inverse_letterbox_does_not_add_category_or_change_xyxy (online_experiments.test_crossdataset_suite.NativeEvaluationContracts) ... ok\ntest_voc_duplicate_detection_is_false_positive (online_experiments.test_crossdataset_suite.NativeEvaluationContracts) ... ok\ntest_voc_exact_iou_threshold_is_strict (online_experiments.test_crossdataset_suite.NativeEvaluationContracts) ... ok\ntest_voc_one_pixel_box_and_difficult_are_not_false_positives (online_experiments.test_crossdataset_suite.NativeEvaluationContracts) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 0.113s\n\nOK\n"
+  },
+  "wrapper": {
+    "exit": 0,
+    "out": "{\"status\": \"PASS\", \"record\": \"/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/paper-baselines-20261107/spatial-wrapper-contract-20261110.json\", \"failed\": []}\n",
+    "err": ""
+  },
+  "geometry_selfcheck": {
+    "exit": 0,
+    "out": "{\n  \"status\": \"PASS\",\n  \"GPU_execution\": false,\n  \"teacher_images_full_run\": 3288,\n  \"contracts\": [\n    \"raw GT letterbox projection\",\n    \"flip\",\n    \"scale clipping/keep\",\n    \"ignore/classes/empty GT\",\n    \"6x548 teacher accounting\",\n    \"temporary anchors reused\",\n    \"no torch import\"\n  ]\n}\n",
+    "err": ""
+  },
+  "spatial_inspect": {
+    "exit": 0,
+    "out": "Full548 input binding passed",
+    "err": ""
+  },
+  "geometry_inspect": {
+    "exit": 0,
+    "out": "Full548 input binding passed",
+    "err": ""
+  },
+  "full_voc": {
+    "status": "PASS",
+    "counts": {
+      "test": 4952,
+      "train": 16551
+    },
+    "manifest_unchanged_sha256": "decd4ff35488587831a085cc0095bd584807d37b112ff9ae0e0bb0dbbe5cbdab",
+    "official_within_train_duplicates": [
+      {
+        "split": "train",
+        "image_sha256": "a0505c78bb40f009b8132750260a4a523f7b450d10b43e4c51cf93518dc383e7",
+        "sample_ids": [
+          "VOC2007/000338",
+          "VOC2007/007284"
+        ]
+      },
+      {
+        "split": "train",
+        "image_sha256": "d1363b56770b458dc48fd8e7616a8360e1418a973f3efa95c3c774495cbb0582",
+        "sample_ids": [
+          "VOC2007/000949",
+          "VOC2007/005042"
+        ]
+      },
+      {
+        "split": "train",
+        "image_sha256": "0ac537472d2a64f654b3207a4825d8434f8f2c5e4fab66275d21f1f548cfa8de",
+        "sample_ids": [
+          "VOC2007/008037",
+          "VOC2007/009623"
+        ]
+      }
+    ],
+    "GPU_execution": false
+  },
+  "frozen_visdrone_sources": {
+    "files": 810,
+    "changed": []
+  },
+  "source_sha256": {
+    "online_experiments/crossdataset_suite.py": "8c00629b54bd8c150c6337b9d3b28bef716e6d0cac63dcbe3b792d54d463fd42",
+    "online_experiments/test_crossdataset_suite.py": "7327287d0824134bd95ba90f00f68f906cab200db89d09258b5bcb9bcb7a80bd",
+    "online_experiments/run_spatial_evidence.py": "406bd4b20ec07a24daa80e66c243b9ea3c21deb83ed6181b10dc2e8f4eda9dcb",
+    "online_experiments/spatial_feature_analysis.py": "c401eabeda1e74f7281d761cb5d0647ab52464972ce039efd19489d42be06fea",
+    "online_experiments/geometric_evidence.py": "adeda2707b3d79473ff5f70b06d9f0d7b5f0065a916d784b627a07e8f27963e2"
+  }
+}
