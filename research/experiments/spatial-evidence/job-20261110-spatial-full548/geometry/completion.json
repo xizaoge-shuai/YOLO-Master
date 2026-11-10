@@ -1,0 +1,17 @@
+{
+  "status": "SUCCEEDED",
+  "seconds": 3249.409594787998,
+  "images": 548,
+  "teacher_images": 3288,
+  "teacher_calls": 3288,
+  "teacher_blank_images_new": 0,
+  "methods": [
+    "blank25",
+    "detail25",
+    "lowpass25",
+    "vit-adapter-cache25"
+  ],
+  "method_image_views": 13152,
+  "official_AP_computed": false,
+  "training_updates": 0
+}

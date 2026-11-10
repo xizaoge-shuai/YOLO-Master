@@ -1,0 +1,156 @@
+{
+  "schema": "full548-geometric-evidence-v1",
+  "images": 548,
+  "views": [
+    {
+      "name": "identity",
+      "flip": false,
+      "scale": 1.0
+    },
+    {
+      "name": "hflip",
+      "flip": true,
+      "scale": 1.0
+    },
+    {
+      "name": "scale085",
+      "flip": false,
+      "scale": 0.85
+    },
+    {
+      "name": "scale095",
+      "flip": false,
+      "scale": 0.95
+    },
+    {
+      "name": "scale105",
+      "flip": false,
+      "scale": 1.05
+    },
+    {
+      "name": "scale115",
+      "flip": false,
+      "scale": 1.15
+    }
+  ],
+  "methods": [
+    "blank25",
+    "detail25",
+    "lowpass25",
+    "vit-adapter-cache25"
+  ],
+  "checkpoint_selection": "fixed final epoch100 seed0, no re-selection",
+  "bindings": {
+    "blank25": {
+      "run": "user-data:/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/blank25-s0",
+      "checkpoint_sha256": "4029de3d8301276a3a2f105d8d8ca33686d8bfaf38f58e800025bf341025c1eb",
+      "args_sha256": "7b490466f5c4a640fc08fd1c59d17ac946587df80d495c1cf8f8bf9f16746877",
+      "official_final_sha256": "cae27f4ab7367751776f85274085bf5e6f4cbcb2128db1d0c70f4698292ed305",
+      "critical_model_source_files": 112,
+      "model_source_sha256": "6ba6895c08ebd61565d6bdfd23fbdc582d785e4acf04a6834251b2b8c3242b20",
+      "provenance_sha256": "bcca720e4788b7fdea937b9380b2b5a9f1313794d5832083a4d31d2ff4865837",
+      "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+      "cache_manifest_sha256": "a2775f75454736c6c6a91baad9d798154151fd1a0c8f39d08c75263659f2c988",
+      "validation_bank_sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+      "validation_image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "validation_semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a",
+      "source_reference_as_saved": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+      "source_resolved_after_mount_migration": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX"
+    },
+    "detail25": {
+      "run": "user-data:/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/detail25-s0",
+      "checkpoint_sha256": "4deff7242b5d23d767292529c160f819691c333a41d950def4f449f81df8326d",
+      "args_sha256": "d2bf55de1cf5b936c6994181979fbc190388d7c4f095139b969f928f03cdd14f",
+      "official_final_sha256": "7d8bd01ed2ad0af819c6d984fd1ce517c27b5e7c171b253d84b76f4c7ce0e080",
+      "critical_model_source_files": 112,
+      "model_source_sha256": "6ba6895c08ebd61565d6bdfd23fbdc582d785e4acf04a6834251b2b8c3242b20",
+      "provenance_sha256": "bcca720e4788b7fdea937b9380b2b5a9f1313794d5832083a4d31d2ff4865837",
+      "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+      "cache_manifest_sha256": "a2775f75454736c6c6a91baad9d798154151fd1a0c8f39d08c75263659f2c988",
+      "validation_bank_sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+      "validation_image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "validation_semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a",
+      "source_reference_as_saved": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+      "source_resolved_after_mount_migration": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX"
+    },
+    "lowpass25": {
+      "run": "user-data:/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/lowpass25-s0",
+      "checkpoint_sha256": "b49a518b9d35d5e2b289ef05e3e9db32858cb529f65a3b6dde3fa4765fdc5ac1",
+      "args_sha256": "c02d23f1d3703f897464ecdaed300b39d7ba36dd9d09ca3284ac48e92590cb18",
+      "official_final_sha256": "5f251c7ec9a222bca60a232338f3f9e7b3b3ecbe3ae66668ca7855994345f8b5",
+      "critical_model_source_files": 112,
+      "model_source_sha256": "6ba6895c08ebd61565d6bdfd23fbdc582d785e4acf04a6834251b2b8c3242b20",
+      "provenance_sha256": "bcca720e4788b7fdea937b9380b2b5a9f1313794d5832083a4d31d2ff4865837",
+      "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+      "cache_manifest_sha256": "a2775f75454736c6c6a91baad9d798154151fd1a0c8f39d08c75263659f2c988",
+      "validation_bank_sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+      "validation_image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "validation_semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a",
+      "source_reference_as_saved": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+      "source_resolved_after_mount_migration": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX"
+    },
+    "vit-adapter-cache25": {
+      "run": "repo:/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache25-s0",
+      "checkpoint_sha256": "8e1f5eaaf5137a0ec31c4e471437a068cb18e2d168d82d0f3e4e3f6ab6988da2",
+      "args_sha256": "9cfe35798b429d105e5b35a8227a5ba207f6d442f8ef5eeb670669455e8a438b",
+      "official_final_sha256": "57218753313cdf2f2497c1a6b8f4ebbf6a72ef7881d02fa1f6b7bc12d5fd80e0",
+      "critical_model_source_files": 113,
+      "model_source_sha256": "730aee33b0ed03236bc0c16d8079469ee31c27bb3a72dc62dd68df3f93740fe9",
+      "provenance_sha256": "d45a604e6651541a0f8be4b7b14d154e28d3ce0ce82ca18de55dfbd1d6af2d39",
+      "dataset_manifest_sha256": "9da100e6d1e0c3c38704c02569520b4342ba6c31afe9a94de972b9c94d4fe247",
+      "cache_manifest_sha256": "990b82ef659e61d1dbcd9bf9a72e218bc1e8bb81266c7186bf00377c12fbb7d1",
+      "validation_bank_sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+      "validation_image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "validation_semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a",
+      "source_reference_as_saved": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+      "source_resolved_after_mount_migration": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source"
+    }
+  },
+  "teacher": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "teacher_images_expected": 3288,
+  "teacher_blank_images_new": 0,
+  "teacher_calls_expected": 3288,
+  "teacher_interface": "fresh FP32 DINO; layer3/7/11 FP16 roundtrip -> FP32, as in frozen training",
+  "temporary_C2": "fresh identity/hflip per image, reused as exact references and C2 anchors; no extra calls",
+  "approximation": "choose flip-matched true C2 anchor then existing center-scale transport + true blank fill",
+  "blank": {
+    "sha256": "649f859efcaf5b6c3010ffb58a4779abcfed9a43c7c4cb7a2434afca5a92a7c0",
+    "new_teacher_images": 0
+  },
+  "geometry_targets": "raw eight-column GT; prepare_arrays then nonignored class1..10, linear letterbox projection, frozen geometry+transform_targets clipping with >=1pixel and >=10% area",
+  "loss_ignore_semantics": "ignored targets/regions are removed before transform; training loss does not mask ignored background pixels. Cropped ignored regions are not an official transformed-evaluation protocol.",
+  "loss": "fixed eval-mode model, no_grad; E2EDetectLoss one2many+one2one with box/cls/dfl gains7.5/.5/1.5; identical image/GT/RGB for approximate and fresh exact feature inputs within each own frozen model",
+  "P3_reference": "same model's P3 on fresh exact teacher features of same view; not ground-truth P3",
+  "relative_error": "sqrt(sum((approx-exact)^2)/sum(exact^2)); NA if reference energy is zero",
+  "RGB_interpretation": "raw DINO transport error shared and reported once; RGB branches do not directly restore raw DINO. An additive branch with identical RGB cancels from absolute P3 difference; relative denominators and loss can differ. No feature-error metric is an AP surrogate.",
+  "model_mode": "eval + requires_gradFalse + no_grad, no optimizer or weight/BN-stat updates",
+  "source_sha256": {
+    "online_experiments/geometric_evidence.py": "adeda2707b3d79473ff5f70b06d9f0d7b5f0065a916d784b627a07e8f27963e2",
+    "online_experiments/spatial_feature_analysis.py": "c401eabeda1e74f7281d761cb5d0647ab52464972ce039efd19489d42be06fea",
+    "online_experiments/analyze_detection_evidence.py": "2f308be4425540a7929b626a1aa2e647ba20205e04960dcbfe142741677d0c4a",
+    "online_experiments/visdrone_reference_eval.py": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+    "online_experiments/detail_probe_data.py": "d16cb6f4f91fc25a379cb2158642f5fa470c5d43f6aa721479f307ef2f68cee4",
+    "online_experiments/d1_online_compare.py": "d2b13e98c74bcd1db1e2b361b0cfdefecdf6989e1b7a581ee6ea71a9a9a666d5",
+    "online_experiments/feature_baselines.py": "0222168bd915f89a35c877f9d778eeff36306520b4accdd43a8f8a2b1f181758",
+    "online_experiments/full_visdrone_data.py": "c55f240e72b2f65326ea464e088c3c30bc167375fa286d89743466d25c9bc0d6",
+    "scripts/d1_build_feature_cache.py": "a09990b5ed1f7beb97ae378f6f1b123761b87928ec531ef2afbe6223124af0af",
+    "scripts/d1_train_cached_detector.py": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009",
+    "ultralytics/utils/loss.py": "e0f594c20c4c79eec3b5f31d70f53fa4da467283b3bd8fd5d67e7667b30b327a",
+    "ultralytics/utils/tal.py": "e58ff8eaa2b7432a11d6a5a55e004a3a5a67ebaa334afc15920f152a3e8411b5"
+  },
+  "batch": 1,
+  "official_AP_computed": false,
+  "training_run": false,
+  "deployment_or_speed_claim": false,
+  "output": "repo:/runs/paper/evidence-gpu/job-20261110-spatial-full548/geometry"
+}

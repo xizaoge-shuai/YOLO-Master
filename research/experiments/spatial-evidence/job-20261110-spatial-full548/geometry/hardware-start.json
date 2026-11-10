@@ -1,0 +1,7 @@
+{
+  "device": "NVIDIA GeForce RTX 4090",
+  "free_bytes_start": 16507011072,
+  "total_bytes": 50866487296,
+  "CUDA_VISIBLE_DEVICES": "0",
+  "compute_apps": "3681293, python, 24736 MiB\n3710030, user-data:/miniconda3/envs/yolomaster/bin/python, 7626 MiB\n3742970, user-data:/miniconda3/envs/yolomaster/bin/python, 386 MiB\n[N/A], [N/A], [N/A]"
+}

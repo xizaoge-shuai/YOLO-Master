@@ -605,3 +605,9 @@ Archived [features](experiments/spatial-evidence/job-20261110-spatial-full548/fe
 ## Full548 fixed-model latency
 
 Archived [latency](experiments/spatial-evidence/job-20261110-spatial-full548/latency/README.md); no retraining or seed replication.
+
+
+<!-- spatial-evidence:job-20261110-spatial-full548:geometry -->
+## Full548 fixed-model geometry
+
+Archived [geometry](experiments/spatial-evidence/job-20261110-spatial-full548/geometry/README.md); no retraining or seed replication.
