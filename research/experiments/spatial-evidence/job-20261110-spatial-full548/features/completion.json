@@ -1,0 +1,16 @@
+{
+  "status": "SUCCEEDED",
+  "action": "features",
+  "seconds": 397.500865391994,
+  "images_each": 548,
+  "methods": [
+    "blank25",
+    "detail25",
+    "lowpass25",
+    "vit-adapter-cache25"
+  ],
+  "feature_image_pairs": 2192,
+  "teacher_forward_images": 0,
+  "heatmap_n_images_per_method": 27,
+  "note": "Full548 quantitative features; GT-selected images only for qualitative heatmaps, not AP estimation"
+}
