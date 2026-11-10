@@ -628,3 +628,11 @@ Archived [geometry](experiments/spatial-evidence/job-20261110-spatial-full548/ge
 - The VSCode-provided7907 forwarding failed again. Preserved both failures and the sameSKU partial/inode,stopped only the verified own curl child,and resumed through an independent hiddenWindowsSSH7908-to-Clash7897 tunnel. Verified HTTP206 body and sustained byte growth,not just a HEAD response. OriginalSKU coordinator keeps waiting for complete data; no training source or plan changed.
 - ClosingVSCode no longer closes this download tunnel. Windows/network/VPN/Clash and the hiddenSSH process must stay alive until data preparation completes. Updated HOME-linked handoff with current7908,explicit-key empty-config tunnel recovery,and process-local proxy commands. Corrected the manualSSH recipe to avoid ClearAllForwardings clearing the requested reverse forward.
 - Final guide Bash blocks pass syntax-only checking; PowerShell tunnel block parsed on the client without execution. HOME targets and handoff bytes rechecked. Fresh live epoch/download/completion snapshot is archived with the recovery evidence.
+
+
+<!-- experiment-coverage-ledger-20261110 -->
+## 2026-11-10: reconcile requested analyses with actual experiment coverage
+
+- Updated RESULTS_LEDGER section14 against the supplied checklist and real artifacts. Completed:8-method full548 size/perclass/TIDE/available-curves;four-model full548 Fourier/foreground metrics,freshDINO latency,and six-view feature/fixed-head loss. Final difficult-scene panels and transformed officialAP remain unfinished;NPZ heatmaps are preparation,not completed figures.
+- Verified the three historical fullVisDrone detector endpoints and six last/best checkpoint hashes independently; retainMaster resume/duplicate-row limits. Four related-paper detection adaptations seed0 are complete; Adapter0 is running andINT4 is queued. Existing fullC2/Mix25/Online100 three seeds must not be erased from coverage,while currentRGB seed1/2 remain unfinished (oldBlank-s1 only10epochs).
+- VOC first full case is training;SKU waits for full data;no formal external endpoint or second-backbone result yet. Recent8/10 is the supplemental seed0 queue,not the total project experiment count. No extra training or recipe changes in this audit.

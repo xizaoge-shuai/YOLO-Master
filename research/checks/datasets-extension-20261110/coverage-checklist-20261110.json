@@ -1,0 +1,245 @@
+{
+  "time_beijing": "2026-11-10T22:41:36.377306+08:00",
+  "scope": "Read-only coverage audit; no training launched",
+  "visdrone": {
+    "status": {
+      "state": "RUNNING",
+      "message": "seed0 9/10 vit-adapter-cache0-s0; seed1/2=18 deferred",
+      "time_unix": 1794288080.9472184,
+      "case": "vit-adapter-cache0-s0",
+      "completed_seed_zero": 8,
+      "planned_seed_zero": 10,
+      "deferred_seed_repeats": 18
+    },
+    "completed": [
+      {
+        "method": "blank0-s0",
+        "epochs": 100,
+        "AP": 8.995389291604418
+      },
+      {
+        "method": "cache-reuse-c1-int8-s0",
+        "epochs": 100,
+        "AP": 8.072014986177772
+      },
+      {
+        "method": "detail0-s0",
+        "epochs": 100,
+        "AP": 11.63285560312653
+      },
+      {
+        "method": "frofa-c2-d01-s0",
+        "epochs": 100,
+        "AP": 10.527168678946435
+      },
+      {
+        "method": "loffta-c2-n005-s0",
+        "epochs": 100,
+        "AP": 9.123371319577005
+      },
+      {
+        "method": "mix25-s0",
+        "epochs": 100,
+        "AP": 11.352560927159786
+      },
+      {
+        "method": "online100-s0",
+        "epochs": 100,
+        "AP": 11.398159453937234
+      },
+      {
+        "method": "vit-adapter-cache25-s0",
+        "epochs": 100,
+        "AP": 16.585498245593705
+      }
+    ],
+    "running": {
+      "method": "vit-adapter-cache0-s0",
+      "completed_epochs": 70
+    }
+  },
+  "datasets": {
+    "voc0712": {
+      "state": "TRAINING",
+      "message": "cache1:100 epochs,current recipe",
+      "time_unix": 1794292304.5616891,
+      "dataset": "voc0712",
+      "method": "cache1",
+      "completed": 0,
+      "planned": 12,
+      "completed_endpoint_count": 0,
+      "completed_epochs": 48
+    },
+    "sku110k": {
+      "state": "WAITING_DATA",
+      "message": "sku110k: full data and immutable seal pending",
+      "time_unix": 1794321696.3026714,
+      "dataset": "sku110k",
+      "preparation": {
+        "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+        "utc": "2026-11-10T14:16:23Z"
+      },
+      "completed_endpoint_count": 0
+    }
+  },
+  "detectors": [
+    {
+      "method": "master-n",
+      "source": "YOLO-Master/runs/paper/detector-baselines/job-start-EQA3xAp5/evaluation/master-n-last.json",
+      "metrics": null,
+      "checkpoint_sha256": "aef20d327830ebdc248e9501d3dd1872ace103473976c42de2f17d784b2a7c70",
+      "images": 548
+    },
+    {
+      "method": "yolo11-n",
+      "source": "YOLO-Master/runs/paper/detector-baselines/job-start-EQA3xAp5/evaluation/yolo11-n-last.json",
+      "metrics": null,
+      "checkpoint_sha256": "98973044b731a831813550b4dc47d1d1227a527231c760721b9079b9ceaf96a3",
+      "images": 548
+    },
+    {
+      "method": "yolo12-n",
+      "source": "YOLO-Master/runs/paper/detector-baselines/job-start-EQA3xAp5/evaluation/yolo12-n-last.json",
+      "metrics": null,
+      "checkpoint_sha256": "a01e71ad4e6e762c2694e656cc2c1465ebc4251dc816b34a31c4877e349d9dc2",
+      "images": 548
+    }
+  ],
+  "diagnostics": [
+    {
+      "stage": "features",
+      "completion": {
+        "status": "SUCCEEDED",
+        "action": "features",
+        "seconds": 397.500865391994,
+        "images_each": 548,
+        "methods": [
+          "blank25",
+          "detail25",
+          "lowpass25",
+          "vit-adapter-cache25"
+        ],
+        "feature_image_pairs": 2192,
+        "teacher_forward_images": 0,
+        "heatmap_n_images_per_method": 27,
+        "note": "Full548 quantitative features; GT-selected images only for qualitative heatmaps, not AP estimation"
+      },
+      "archive": {
+        "commit": "926826dfb22969733775f9219f52e831c042ace3",
+        "pushed": true,
+        "pushed_head": "926826dfb22969733775f9219f52e831c042ace3"
+      }
+    },
+    {
+      "stage": "latency",
+      "completion": {
+        "status": "SUCCEEDED",
+        "action": "latency",
+        "seconds": 467.8443596440047,
+        "images_each": 548,
+        "methods": [
+          "blank25",
+          "detail25",
+          "lowpass25",
+          "vit-adapter-cache25"
+        ],
+        "teacher_measured_images": 2192,
+        "teacher_warmup_images": 80,
+        "feature_bank_reads": 0,
+        "resource_claim": "observational shared-GPU stage timings, not a controlled speed benchmark"
+      },
+      "archive": {
+        "commit": "3ea31af42d6927f7b50f6893bbcbdd63dffd69ae",
+        "pushed": true,
+        "pushed_head": "3ea31af42d6927f7b50f6893bbcbdd63dffd69ae"
+      }
+    },
+    {
+      "stage": "geometry",
+      "completion": {
+        "status": "SUCCEEDED",
+        "seconds": 3249.409594787998,
+        "images": 548,
+        "teacher_images": 3288,
+        "teacher_calls": 3288,
+        "teacher_blank_images_new": 0,
+        "methods": [
+          "blank25",
+          "detail25",
+          "lowpass25",
+          "vit-adapter-cache25"
+        ],
+        "method_image_views": 13152,
+        "official_AP_computed": false,
+        "training_updates": 0
+      },
+      "archive": {
+        "commit": "a99e9a4f9d7a4ac414594ee52e9f264bac734223",
+        "pushed": true,
+        "pushed_head": "a99e9a4f9d7a4ac414594ee52e9f264bac734223"
+      }
+    }
+  ],
+  "cpu_analysis_completion": {
+    "status": "SUCCEEDED",
+    "methods": [
+      "transport25",
+      "blank25",
+      "views25",
+      "detail25",
+      "lowpass25",
+      "mix25",
+      "online100",
+      "vit-adapter-cache25"
+    ],
+    "images_each": 548,
+    "method_image_pairs": 4384,
+    "seconds": 241.42688063999958,
+    "torch_imported": false,
+    "protocol_sha256": "c962367d6f183ef03e6a2b627ebd709889fd4dde5160e3180e1b4a36d72c6794"
+  },
+  "cpu_metrics_fields": {
+    "per-class-metrics.csv": [
+      "method",
+      "class_id",
+      "class_name",
+      "AP",
+      "AP50",
+      "AP75",
+      "AR500",
+      "official_AP",
+      "official_AP50",
+      "official_AP75"
+    ],
+    "size-metrics-auxiliary.csv": [
+      "method",
+      "area",
+      "AP",
+      "AP50",
+      "AP75",
+      "AR500",
+      "positive_gt_count"
+    ],
+    "training-curves.csv": [
+      "method",
+      "epoch",
+      "train_loss",
+      "val_loss",
+      "diagnostic_AP",
+      "cumulative_train_seconds",
+      "cumulative_validation_seconds",
+      "train_AP",
+      "official_reference_AP"
+    ]
+  },
+  "qualitative_heatmap_arrays": 108,
+  "pending_categories": [
+    "final difficult-scene comparison montage",
+    "current candidate transformed-detection AP",
+    "full external-dataset endpoints",
+    "second backbone",
+    "remaining full-model seed repeats",
+    "controlled equal-time cost comparison"
+  ],
+  "detector_checkpoint_verification": "Independent read-only agent verified all six last/best checkpoint hashes against existing evaluations; this script reads the saved final metrics only."
+}

@@ -1,6 +1,6 @@
 # 实验结果台账
 
-整理日期：2026-11-06；最近核对：2026-11-09。本文只整理结果、协议与证据缺口，不修改论文或历史实验记录。当前补验队列的完成数不代表整个项目已完成实验总数；两数据集及消融覆盖的最新核对见第13节。
+整理日期：2026-11-06；最近核对：2026-11-10晚。本文只整理结果、协议与证据缺口，不修改论文或历史实验记录。当前补验队列的完成数不代表整个项目已完成实验总数；对应附件建议逐项核对的最新完成情况见第14节，第13节保留数据集与消融身份说明。下方带日期的历史快照按其当时含义保留。
 
 最近五臂表是空间细节候选的消融表，不能代替全项目主比较。完整结果还包括完整检测器、缓存与在线预算、FroFA/LOFF-TA 适配、重建与查询策略，以及冻结头机制诊断。不同轮次不合并均值或计算受控速度优势；重复归档不算新增实验，因此不报跨阶段总 run 数。
 
@@ -12,10 +12,10 @@
 | YOLO11-N、YOLO12-N | 主流完整检测器参照 | 完整 VisDrone；配方和成本须单独披露 |
 | C1、C2 | 单视角缓存与真实原图/翻转缓存 | pilot 与完整 VisDrone；C2 另有三种子和 VOC 子集 |
 | Random Mix、Online100 | 同冻结骨干下的预算收益与全在线参考 | 完整 VisDrone；q0/q25/q100 三种子 |
-| FroFA，CVPR 2024 | 检查直接冻结特征亮度增强是否足够 | 已完成检测思想适配 pilot；未完成全量同协议对照 |
-| LOFF-TA，NeurIPS 2024 | 检查离线张量几何增强及噪声是否足够 | 已完成检测思想适配 pilot；不是原分类论文完整复现 |
-| ViT-Adapter，ICLR 2023 | 检查空间先验与双向稀疏特征交互 | 尚无完成结果；新增缓存侧思想适配，不等同原网络 |
-| Cache and Reuse，CVPRW 2024 | 检查单缓存增强及低比特存储 | Transport-C1 pilot覆盖未压缩近似；新增真实INT8/INT4缓存版本 |
+| FroFA，CVPR 2024 | 检查直接冻结特征亮度增强是否足够 | pilot及完整VisDrone seed0均已完成；全量AP10.5272 |
+| LOFF-TA，NeurIPS 2024 | 检查离线张量几何增强及噪声是否足够 | pilot及完整VisDrone seed0均已完成，AP9.1234；检测思想适配 |
+| ViT-Adapter，ICLR 2023 | 检查空间先验与双向稀疏特征交互 | 缓存侧q25适配seed0已完成，AP16.5855；q0训练中，不等同原网络 |
+| Cache and Reuse，CVPRW 2024 | 检查单缓存增强及低比特存储 | 真实INT8全量seed0已完成，AP8.0720；INT4仍排队 |
 | Transport、Rec/Correct | 区分几何传输与学习重建的作用 | 同预算 pilot、完整 VisDrone 单种子 |
 | Blank、Views | 检查廉价填充和增加真实缓存视角 | 最近五臂中的强简单对照 |
 | RGB Detail、Lowpass | 相同 4,672 参数分支，检验输入细节的增量 | 完整 VisDrone，固定 q25、seed0 |
@@ -154,7 +154,7 @@ COCO val1000：cached latent最佳0–1 mAP50–95为0.006733611853143846；YOLO
 ## 9. 仍需补的证据
 
 - 同轮配对种子1/2：Detail、Blank、Lowpass、Views与Transport；核对旧Mix/Online的加载源码与评估后决定是否重跑，不能直接补进误差条。
-- 全量FroFA/LOFF-TA检测适配对照，以及C2/Mix25/Online100的当前版本可比性；原论文分类配方复现与检测适配应明确标注。
+- FroFA/LOFF-TA/Adapter/CacheReuse思想适配的独立种子补验及INT4扩展；2026-11-10全量seed0四项已完成，见第14节。原论文配方复现与检测适配继续分开标注。
 - 受控等时间/端到端成本：缓存构建、训练、验证、全部RGB读取、教师调用、存储、峰值显存；共享GPU时间不支持速度优越性。
 - 第二骨干、正式第二数据集协议、完整COCO；当前VOC子集和两个冻结头诊断不能替代。
 - 机制的等token/等残差能量控制及独立评估；已有548开发验证图参与方法选择，不能再称未见测试集。
@@ -218,3 +218,69 @@ COCO val1000：cached latent最佳0–1 mAP50–95为0.006733611853143846；YOLO
 因此现有消融确实包含用户所说的“去模块”和“平替”，但不能把所有臂统称完整方法的逐模块消融。RGB有无的关键比较是Detail−Blank；同容量输入控制是Detail−Lowpass。它们支持这次固定设置下RGB分支的增益，不能单独证明特定分支结构最优、高频是唯一原因或blank与RGB存在协同。
 
 若将blank也列为独立贡献，还缺“保留RGB、去blank”的一格；若主张专门分支结构必要，还需“同RGB/同监督、换成更简单分支”的控制。现有Lowpass不等于该结构控制。是否补这两格取决于最终主张，不因消融表需要更多行而自动增加实验。RGB候选与早期重建Corrector分别由检测损失和特征重建监督训练，旧路线的参数消融不能直接充当当前方法的模块消融。
+
+
+<!-- experiment-coverage-checklist-20261110 -->
+## 14. 2026-11-10晚：附件建议与真实完成情况逐项对照
+
+核对时间：2026-11-10 22:33，Asia/Shanghai。依据原始run的summary/DONE/最终评分、当前监督进程状态、已提交结果和完整诊断completion；附件中的建议或旧队列安排不当成完成证据。本次未新开训练，既有队列继续。
+
+### 数据集与规模
+
+| 数据设置 | 已完成/当前状态 | 解释 |
+| --- | --- | --- |
+| COCO128：80/20 | 早期预测器等pilot已完成，含种子和秩实验 | 不是当前RGB候选的正式COCO验证 |
+| COCO val1000：800/200 | cached latent、YOLO26n-scratch旧实验已完成 | 非COCO train2017正式训练 |
+| VisDrone500：400/100 | 特征增强、预算校正和查询探索已完成，多项3种子 | 内部诊断AP，不能混入全量表 |
+| 完整VisDrone：6471/548 | 缓存/预算、完整检测器、五臂seed0、四相关思想适配及机制分析已有结果 | 当前补验队列8/10完成，Adapter0在69/100，INT4下一项 |
+| VOC2007子集：2000/400 | C2/Mix25/Online100已完成 | 不是完整VOC官方test |
+| VOC07+12：16551/4952 | 数据和全量银行完成；C1 seed0在47/100，正式最终AP尚未生成 | 12项流水线已启动，固定最终100轮测试 |
+| SKU110K：8219/588/2936 | 约10.53/12.20GB原tar断点下载中，训练流水线WAITING_DATA | 完整校验封印后才建银行、训练，没有AP |
+| 完整COCO2017 | 尚未开始正式训练 | 按用户顺序放最后 |
+
+### 之前提到的baseline及消融
+
+- 完整检测器：YOLO-Master-N、YOLO11-N、YOLO12-N有完整VisDrone历史seed0结果，最终参考AP分别14.8749、14.7748、14.3876；来源与训练历史限制在第5节。不是引用论文官方表。YOLO13没有完成结果。
+- 缓存/预算：C1、C2、Mix10/25/50、Online100已有全量结果；C2、Mix25、Online100已有seed0/1/2。新的seed0成本复测不增加独立种子数。
+- 当前RGB路线五臂：Transport25、Blank25、Views25、Detail25、Lowpass25均已完成完整VisDrone100轮seed0，AP分别9.6350、9.9984、10.0912、12.3453、9.8509。种子1/2补验仍延后；原Blank25-s1仅保存10轮检查点、无DONE，其余四臂种子1/2尚未开始，不能把目标epochs100当完成轮数。
+- 本次相关方法补验：FroFA10.5272、LOFF-TA9.1234、CacheReuse-INT8 8.0720、Adapter25 16.5855均全量100轮seed0完成；不是原分类/密集预测论文源码复现。
+- 新增零查询：Blank0 AP8.9954、Detail0 AP11.6329完成；Adapter0正在训练，INT4尚未训练。最近8/10指这组补验进度，不代表整个项目只有8个完成实验。
+
+### 附件建议逐项状态
+
+| 建议项 | 状态 | 真实覆盖/尚缺部分 |
+| --- | --- | --- |
+| 小/中/大目标AP与AR | 完成 | 8方法×完整548图；原图面积组，辅助COCO-style AP/AP50/AP75/AR500及GT数；不叫VisDrone官方AP_S |
+| Per-class AP/Recall | 完成 | 8方法×10类；per-class-metrics.csv含AP/AP50/AP75/AR500，固定参考classAP另列 |
+| TIDE六类错误 | 完成 | Cls/Loc/Both/Dupe/Bkg/Miss的oracle dAP及计数，8方法全548图；与官方AP分开 |
+| Fourier/P3定量 | 完成 | Blank/Detail/Lowpass/Adapter四个最终模型，各548图；base/final/RGB残差、去DC归一化频谱、前景/背景/padding能量 |
+| 空间热图可视化原料 | 数据完成、组合图待做 | 27张按GT预选图×4模型=108份NPZ；没有把NPZ当成已排版图 |
+| 当前方法几何诊断 | 特征/固定头loss完成；变换后AP未测 | 548×6视角、3288新teacher图像；rawDINO/P3误差、approx−own-exact loss、GT裁剪计数；没有合成增强官方AP |
+| 困难场景最终定性图 | 部分准备 | 小目标、密集、遮挡、截断的GT预选名单和最终预测已备；统一阈值GT/检测框/热图组合图尚未导出，复杂背景专门分组未完成 |
+| 真实新图完整推理 | 完成观察测量 | 每方法548实测+20预热，共2192+80，独立DINO前向、零特征银行读取、分阶段P50/P95；共享GPU不作受控速度排名 |
+| 训练曲线/过拟合 | 部分完成 | 已提取8方法训练loss、可用val loss/内部AP及累计时间，并出曲线草图；训练集AP未测，稠密官方逐轮AP和完整train−val AP差未测 |
+| 缓存/训练资源成本 | 已有记录、受控比较未完成 | 构建/存储、查询图像和调用、训练/墙钟、cold/warm、参数、VRAM、INT8解量化时间已有；缺同硬件隔离下等时间比较与完整瓶颈profile |
+| 第二正式数据集 | 进行中 | VOC全量首项正在训练；旧VOC/COCO子集不能代替当前方法正式外部验证 |
+| 第二backbone/跨模型 | 未完成 | 当前主线仍为DINOv3-S/16；早期其他诊断不替代第二骨干完整检测训练 |
+| 功耗/额外分类分割 | 未开展 | 未纳入当前核心主张，不因附件提及而自动新增 |
+
+已有分析草图四类：尺度AP/AR、TIDE、逐类AP热图、训练曲线，均有PDF/SVG/PNG。它们是数据分析草图，不等于论文最终图已排版完成。
+
+### 已完成分析的关键观察
+
+- Detail−Blank官方AP+2.3469；辅助AP_S@500+2.2930，AP_M+0.9358，AP_L−0.6321；Miss oracle dAP下降1.5907，但分类/背景错误没有全面改善。
+- finalP3高频占比Blank15.51%、Detail25.59%、Lowpass10.95%、Adapter15.57%。高频占比不按AP排序，不能单靠频谱证明机制。
+- 四尺度平均固定模型loss增量：Blank+.5039、Detail+.0856、Lowpass+.5002、Adapter−.0108。是每个模型自身approx/exact的诊断，不是官方AP恢复率；相对特征误差还存在分母效应。
+- 真实新图全流程P50/P95（ms）为Blank194.10/223.69、Detail196.47/224.37、Lowpass187.92/211.56、Adapter220.62/247.58；仅为共享GPU观察，不直接对比YOLO-Master论文延迟。
+- 同预算强Adapter的全量AP16.5855仍高于Detail12.3453。方法尚需完整外部验证、独立种子和受控成本，不能据此写成已完成全部论文证据。
+
+本次还独立核对了三检测器原job的SUCCEEDED、实际6471/548图、训练args和6个last/best检查点SHA与评估绑定。它们是100轮、seed0、batch8、640、AdamW、从零训练的历史实测，不是600轮原论文配方复现。Master的resume/重复记录仍保留，不能据此给出干净成本排名。
+
+### 证据入口
+
+- 当前完整VisDrone补验：runs/paper/paper-baselines/latest-job.txt及job内tables/、train/*/DONE和official-final.json。
+- 原五臂：research/experiments/detail-probe/job-20261022-hjP4y3Lf/complete/。
+- 8方法全548 CPU分析：[结果归档](experiments/offline-evidence-job-20261110-004004-cpu548-v2/README.md)。
+- 三GPU诊断：[独立核对及解释](checks/datasets-extension-20261110/full548-independent-audit-20261110.md)；原始run为runs/paper/evidence-gpu/latest-job.txt。
+- VOC/SKU：runs/paper/crossdataset/latest-<dataset>-job.txt，最终结果必须有DONE与metrics.json；当前没有正式新数据AP。
+- [服务器独立接手说明](../服务器实验接手.md)，HOME入口/home/zhjia/先看这里-实验接手.md。
