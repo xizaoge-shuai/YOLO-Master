@@ -642,3 +642,9 @@ Archived [geometry](experiments/spatial-evidence/job-20261110-spatial-full548/ge
 ## Replication suite job-20261107-Imo9Yocz: dataset-first-vit-adapter-cache0-s0
 
 Archived [dataset-first-vit-adapter-cache0-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-vit-adapter-cache0-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- crossdataset:job-20261110-voc0712-s0-v2:cache1-s0 -->
+## voc0712 full seed0: cache1
+
+Archived [cache1-s0](experiments/crossdataset/job-20261110-voc0712-s0-v2/cache1-s0/README.md); final epoch,explicit metric.

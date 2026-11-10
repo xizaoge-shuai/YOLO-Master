@@ -1,0 +1,131 @@
+{
+  "primary": {
+    "mAP50_11point": 67.59999942289588,
+    "per_class": {
+      "aeroplane": {
+        "AP50_11point": 73.4571854491862,
+        "non_difficult_objects": 285,
+        "detections": 702,
+        "ignored_detections": 15
+      },
+      "bicycle": {
+        "AP50_11point": 72.18534603393188,
+        "non_difficult_objects": 337,
+        "detections": 937,
+        "ignored_detections": 21
+      },
+      "bird": {
+        "AP50_11point": 74.04542770353676,
+        "non_difficult_objects": 459,
+        "detections": 1054,
+        "ignored_detections": 75
+      },
+      "boat": {
+        "AP50_11point": 58.69661883008768,
+        "non_difficult_objects": 263,
+        "detections": 994,
+        "ignored_detections": 67
+      },
+      "bottle": {
+        "AP50_11point": 53.52239546621319,
+        "non_difficult_objects": 469,
+        "detections": 1518,
+        "ignored_detections": 86
+      },
+      "bus": {
+        "AP50_11point": 71.76637220647795,
+        "non_difficult_objects": 213,
+        "detections": 551,
+        "ignored_detections": 23
+      },
+      "car": {
+        "AP50_11point": 80.39157960610804,
+        "non_difficult_objects": 1201,
+        "detections": 2937,
+        "ignored_detections": 227
+      },
+      "cat": {
+        "AP50_11point": 82.54962771168702,
+        "non_difficult_objects": 358,
+        "detections": 720,
+        "ignored_detections": 10
+      },
+      "chair": {
+        "AP50_11point": 49.2431274583308,
+        "non_difficult_objects": 756,
+        "detections": 2899,
+        "ignored_detections": 377
+      },
+      "cow": {
+        "AP50_11point": 70.13153217899222,
+        "non_difficult_objects": 244,
+        "detections": 701,
+        "ignored_detections": 50
+      },
+      "diningtable": {
+        "AP50_11point": 53.82428953019745,
+        "non_difficult_objects": 206,
+        "detections": 1008,
+        "ignored_detections": 65
+      },
+      "dog": {
+        "AP50_11point": 78.8989794420202,
+        "non_difficult_objects": 489,
+        "detections": 1166,
+        "ignored_detections": 33
+      },
+      "horse": {
+        "AP50_11point": 82.23083047296751,
+        "non_difficult_objects": 348,
+        "detections": 823,
+        "ignored_detections": 16
+      },
+      "motorbike": {
+        "AP50_11point": 72.8640004063733,
+        "non_difficult_objects": 325,
+        "detections": 876,
+        "ignored_detections": 27
+      },
+      "person": {
+        "AP50_11point": 70.74473188445567,
+        "non_difficult_objects": 4528,
+        "detections": 9933,
+        "ignored_detections": 365
+      },
+      "pottedplant": {
+        "AP50_11point": 38.13174402300773,
+        "non_difficult_objects": 480,
+        "detections": 1499,
+        "ignored_detections": 46
+      },
+      "sheep": {
+        "AP50_11point": 67.07563195189394,
+        "non_difficult_objects": 242,
+        "detections": 678,
+        "ignored_detections": 22
+      },
+      "sofa": {
+        "AP50_11point": 62.99988348394665,
+        "non_difficult_objects": 239,
+        "detections": 731,
+        "ignored_detections": 94
+      },
+      "train": {
+        "AP50_11point": 71.99249859411037,
+        "non_difficult_objects": 282,
+        "detections": 619,
+        "ignored_detections": 6
+      },
+      "tvmonitor": {
+        "AP50_11point": 67.24818602439295,
+        "non_difficult_objects": 308,
+        "detections": 902,
+        "ignored_detections": 37
+      }
+    },
+    "definition": "VOC2007 eleven-point AP; IoU strictly >0.5; difficult ignored; inclusive official boxes",
+    "scale": "0-100",
+    "evaluated_images": 4952
+  },
+  "endpoint": "VOC2007test; trainVOC2007+2012trainval; final100epoch; eleven-point AP50"
+}
