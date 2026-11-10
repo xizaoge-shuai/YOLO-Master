@@ -1,0 +1,48 @@
+{
+  "time_beijing": "2026-11-10T22:24:34.136120+08:00",
+  "jobs": {
+    "voc0712": {
+      "state": "TRAINING",
+      "message": "cache1:100 epochs,current recipe",
+      "time_unix": 1794292304.5616891,
+      "dataset": "voc0712",
+      "method": "cache1",
+      "completed": 0,
+      "planned": 12,
+      "worker_pid": 3716080,
+      "worker_alive": true,
+      "cache1_completed_epochs": 46
+    },
+    "sku110k": {
+      "state": "WAITING_DATA",
+      "message": "sku110k: full data and immutable seal pending",
+      "time_unix": 1794320645.3498085,
+      "dataset": "sku110k",
+      "preparation": {
+        "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+        "utc": "2026-11-10T14:16:23Z"
+      },
+      "worker_pid": 3102023,
+      "worker_alive": true
+    }
+  },
+  "visdrone": {
+    "state": "RUNNING",
+    "message": "seed0 9/10 vit-adapter-cache0-s0; seed1/2=18 deferred",
+    "time_unix": 1794288080.9472184,
+    "case": "vit-adapter-cache0-s0",
+    "completed_seed_zero": 8,
+    "planned_seed_zero": 10,
+    "deferred_seed_repeats": 18,
+    "adapter0_completed_epochs": 68
+  },
+  "sku_status": "DOWNLOADING SKU110K_fixed.tar.gz",
+  "sku_partial_bytes": 9448847697,
+  "full548": {
+    "state": "SUCCEEDED",
+    "message": "Full548 features, fresh-image latency and geometric feature/loss diagnostics complete",
+    "time_unix": 1794294313.0175989,
+    "completed_stages": 3,
+    "all_pushed": true
+  }
+}

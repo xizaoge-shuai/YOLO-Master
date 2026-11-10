@@ -1,0 +1,184 @@
+{
+  "dataset": "sku110k",
+  "pid": 3101849,
+  "command": [
+    "nice",
+    "-n",
+    "19",
+    "ionice",
+    "-c",
+    "3",
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+    "--dataset",
+    "sku110k",
+    "--root",
+    "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k"
+  ],
+  "source_frozen": "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+  "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+  "proxy": "http://127.0.0.1:7907",
+  "restart_snapshot": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/restarts/evening-proxy-recovery-20261110-140505",
+  "before_partial": {
+    "bytes": 8307461318,
+    "inode": 130285628
+  },
+  "launched_utc": "2026-11-10T14:05:05Z",
+  "reason": "curl exit7; existing reverse proxy is currently healthy; exact official S3 URL HEAD200 and range support",
+  "pipeline_restart": {
+    "pid": 3102023,
+    "command": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_campaign.py",
+      "run",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-s0",
+      "--dataset",
+      "sku110k",
+      "--data-root",
+      "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k",
+      "--identity",
+      "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/cache/manifest.json",
+      "--gpu",
+      "0",
+      "--publish"
+    ],
+    "original_plan_matched": true,
+    "pre_existing_failure_preserved": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/restarts/evening-proxy-recovery-20261110-140505/pipeline-before",
+    "training_proxy_set": false
+  },
+  "after_launch_preparation": {
+    "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+    "utc": "2026-11-10T14:05:05Z"
+  },
+  "after_launch_pipeline": {
+    "state": "WAITING_DATA",
+    "message": "sku110k: full data and immutable seal pending",
+    "time_unix": 1794319564.3135412,
+    "dataset": "sku110k",
+    "preparation": {
+      "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+      "utc": "2026-11-10T14:05:05Z"
+    }
+  },
+  "partial_after_launch": {
+    "bytes": 8388345030,
+    "inode": 130285628
+  },
+  "proxy_dependency": "Existing7907 reverse proxy is provided by currentVSCode SSHconnection; keepVSCodeconnected andClash7897alive. Noportstolen orSSHconfigurationchanged.",
+  "verified_growth": {
+    "sample1": {
+      "bytes": 8388345030,
+      "inode": 130285628
+    },
+    "sample2": {
+      "bytes": 8402975057,
+      "inode": 130285628,
+      "utc": "2026-11-10T14:06:31Z"
+    },
+    "delta_from_restart_bytes": 95513739,
+    "delta_from_after_launch_bytes": 14630027,
+    "expected_archive_bytes": 12196152718
+  },
+  "final_preparation_status": {
+    "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+    "utc": "2026-11-10T14:05:05Z"
+  },
+  "final_pipeline_status": {
+    "state": "WAITING_DATA",
+    "message": "sku110k: full data and immutable seal pending",
+    "time_unix": 1794319564.3135412,
+    "dataset": "sku110k",
+    "preparation": {
+      "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+      "utc": "2026-11-10T14:05:05Z"
+    }
+  },
+  "worker_alive": true,
+  "pipeline_alive": true,
+  "retry_history": [
+    {
+      "utc": "2026-11-10T14:16:22Z",
+      "reason": "7907reverseforwardfailedagain; unchangedpartialandcurl7retryloop",
+      "old_worker_pid": 3101849,
+      "old_curl_pid": 3101850,
+      "stopped_only_verified_own_curl_with_sigterm": true,
+      "pre_switch_snapshot": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/restarts/independent-proxy7908-20261110-141621",
+      "before_partial": {
+        "bytes": 8402975057,
+        "inode": 130285628
+      },
+      "new_worker_pid": 3103961,
+      "command": [
+        "nice",
+        "-n",
+        "19",
+        "ionice",
+        "-c",
+        "3",
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py",
+        "--dataset",
+        "sku110k",
+        "--root",
+        "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k"
+      ],
+      "proxy": "http://127.0.0.1:7908",
+      "proxy_dependency": "IndependenthiddenWindowsOpenSSHpid7360, remote127.0.0.1:7908 to Windows127.0.0.1:7897; keepsrunningwithoutVSCode. RequiresWindows/network/VPNandClashalive. -F NUL usesexplicitkeyanduser,noexistingSSHforwardsmodified.",
+      "proxy_actual_get_before_restart": {
+        "http": 206,
+        "bytes": 1048576,
+        "curl_exit": 0,
+        "range": "8402975057-8404023632"
+      },
+      "source_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+      "windows_tunnel_pid": 7360,
+      "initial_state": {
+        "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+        "utc": "2026-11-10T14:16:23Z"
+      },
+      "partial_initial": {
+        "bytes": 8402975057,
+        "inode": 130285628
+      },
+      "growth_samples": [
+        {
+          "bytes": 8428521809,
+          "inode": 130285628,
+          "utc": "2026-11-10T14:16:48Z"
+        },
+        {
+          "bytes": 8549656913,
+          "inode": 130285628,
+          "utc": "2026-11-10T14:17:44Z"
+        }
+      ],
+      "verified_delta_from_switch_bytes": 146681856,
+      "verified_delta_between_samples_bytes": 121135104
+    }
+  ],
+  "current_worker_pid": 3103961,
+  "current_proxy": "http://127.0.0.1:7908",
+  "current_proxy_dependency": "IndependenthiddenWindowsOpenSSHpid7360, remote127.0.0.1:7908 to Windows127.0.0.1:7897; keepsrunningwithoutVSCode. RequiresWindows/network/VPNandClashalive. -F NUL usesexplicitkeyanduser,noexistingSSHforwardsmodified.",
+  "current_status": {
+    "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+    "utc": "2026-11-10T14:16:23Z"
+  },
+  "current_pipeline_status": {
+    "state": "WAITING_DATA",
+    "message": "sku110k: full data and immutable seal pending",
+    "time_unix": 1794320254.9824135,
+    "dataset": "sku110k",
+    "preparation": {
+      "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+      "utc": "2026-11-10T14:16:23Z"
+    }
+  },
+  "current_worker_alive": true,
+  "current_pipeline_alive": true,
+  "current_snapshot_utc": "2026-11-10T14:17:44Z",
+  "previous_proxy_dependency_superseded": true
+}

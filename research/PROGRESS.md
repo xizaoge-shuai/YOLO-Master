@@ -620,3 +620,11 @@ Archived [geometry](experiments/spatial-evidence/job-20261110-spatial-full548/ge
 - Full548 features/latency/geometry all SUCCEEDED and pushed926826d/3ea31af/a99e9a4. Independent audit verified28 archive files and model/source bindings. Four-scale own-head mean loss increments:Blank+.5039,Detail+.0856,Lowpass+.5002,Adapter-.0108. Relative-P3 error has a denominator effect; results do not establish DINO recovery or superiority overAdapter. SharedGPU latency is observational.
 - VOC full bank built; C1 observed44/100. OriginalVisDrone Adapter0 observed65/100,8/10seed0 complete. SKU interrupted download has been resumed from the same partial; its unchanged pipeline waits for full data. No epoch,augmentation,method,or GPU1 changes.
 - Both active training source snapshots revalidated unchanged before this documentation commit. Recovery and independent-operation commands are in the handoff guide; source/large-data edits are separated from these running tasks.
+
+
+<!-- independent-sku-tunnel7908-handoff-20261110 -->
+## 2026-11-10: durable download tunnel and final HOME handoff
+
+- The VSCode-provided7907 forwarding failed again. Preserved both failures and the sameSKU partial/inode,stopped only the verified own curl child,and resumed through an independent hiddenWindowsSSH7908-to-Clash7897 tunnel. Verified HTTP206 body and sustained byte growth,not just a HEAD response. OriginalSKU coordinator keeps waiting for complete data; no training source or plan changed.
+- ClosingVSCode no longer closes this download tunnel. Windows/network/VPN/Clash and the hiddenSSH process must stay alive until data preparation completes. Updated HOME-linked handoff with current7908,explicit-key empty-config tunnel recovery,and process-local proxy commands. Corrected the manualSSH recipe to avoid ClearAllForwardings clearing the requested reverse forward.
+- Final guide Bash blocks pass syntax-only checking; PowerShell tunnel block parsed on the client without execution. HOME targets and handoff bytes rechecked. Fresh live epoch/download/completion snapshot is archived with the recovery evidence.

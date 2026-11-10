@@ -100,5 +100,10 @@
       "executed": false
     }
   ],
-  "workspace_targets_verified": true
+  "workspace_targets_verified": true,
+  "handoff_sha256": "6af6482ce5045d9f1c7e9fd9ee1fd8aa2f108830d3160159b6762b11ef35d8ea",
+  "current_download_proxy": "http://127.0.0.1:7908",
+  "powershell_tunnel_block_syntax_checked_on_client": true,
+  "powershell_tunnel_block_executed": false,
+  "final_verification_beijing": "2026-11-10T22:24:34.135381+08:00"
 }
