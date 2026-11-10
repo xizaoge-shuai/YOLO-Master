@@ -636,3 +636,9 @@ Archived [geometry](experiments/spatial-evidence/job-20261110-spatial-full548/ge
 - Updated RESULTS_LEDGER section14 against the supplied checklist and real artifacts. Completed:8-method full548 size/perclass/TIDE/available-curves;four-model full548 Fourier/foreground metrics,freshDINO latency,and six-view feature/fixed-head loss. Final difficult-scene panels and transformed officialAP remain unfinished;NPZ heatmaps are preparation,not completed figures.
 - Verified the three historical fullVisDrone detector endpoints and six last/best checkpoint hashes independently; retainMaster resume/duplicate-row limits. Four related-paper detection adaptations seed0 are complete; Adapter0 is running andINT4 is queued. Existing fullC2/Mix25/Online100 three seeds must not be erased from coverage,while currentRGB seed1/2 remain unfinished (oldBlank-s1 only10epochs).
 - VOC first full case is training;SKU waits for full data;no formal external endpoint or second-backbone result yet. Recent8/10 is the supplemental seed0 queue,not the total project experiment count. No extra training or recipe changes in this audit.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:dataset-first-vit-adapter-cache0-s0 -->
+## Replication suite job-20261107-Imo9Yocz: dataset-first-vit-adapter-cache0-s0
+
+Archived [dataset-first-vit-adapter-cache0-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-vit-adapter-cache0-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
