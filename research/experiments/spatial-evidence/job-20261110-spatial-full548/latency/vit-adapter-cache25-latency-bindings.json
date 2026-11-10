@@ -1,0 +1,23 @@
+{
+  "run": "repo:/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache25-s0",
+  "bindings": {
+    "run": "repo:/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache25-s0",
+    "checkpoint_sha256": "8e1f5eaaf5137a0ec31c4e471437a068cb18e2d168d82d0f3e4e3f6ab6988da2",
+    "args_sha256": "9cfe35798b429d105e5b35a8227a5ba207f6d442f8ef5eeb670669455e8a438b",
+    "official_final_sha256": "57218753313cdf2f2497c1a6b8f4ebbf6a72ef7881d02fa1f6b7bc12d5fd80e0",
+    "critical_model_source_files": 113,
+    "model_source_sha256": "730aee33b0ed03236bc0c16d8079469ee31c27bb3a72dc62dd68df3f93740fe9",
+    "provenance_sha256": "d45a604e6651541a0f8be4b7b14d154e28d3ce0ce82ca18de55dfbd1d6af2d39",
+    "dataset_manifest_sha256": "9da100e6d1e0c3c38704c02569520b4342ba6c31afe9a94de972b9c94d4fe247",
+    "cache_manifest_sha256": "990b82ef659e61d1dbcd9bf9a72e218bc1e8bb81266c7186bf00377c12fbb7d1",
+    "validation_bank_sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+    "validation_image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+    "validation_semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a",
+    "source_reference_as_saved": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+    "source_resolved_after_mount_migration": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source"
+  },
+  "setup_seconds": 1.6394172739965143,
+  "teacher_queries": 568,
+  "cache_feature_reads": 0,
+  "compute_apps_end": "3681293, python, 24736 MiB\n3710030, user-data:/miniconda3/envs/yolomaster/bin/python, 7626 MiB\n3725233, user-data:/miniconda3/envs/yolomaster/bin/python, 714 MiB\n[N/A], [N/A], [N/A]"
+}

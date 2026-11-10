@@ -1,0 +1,23 @@
+{
+  "run": "user-data:/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/lowpass25-s0",
+  "bindings": {
+    "run": "user-data:/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/lowpass25-s0",
+    "checkpoint_sha256": "b49a518b9d35d5e2b289ef05e3e9db32858cb529f65a3b6dde3fa4765fdc5ac1",
+    "args_sha256": "c02d23f1d3703f897464ecdaed300b39d7ba36dd9d09ca3284ac48e92590cb18",
+    "official_final_sha256": "5f251c7ec9a222bca60a232338f3f9e7b3b3ecbe3ae66668ca7855994345f8b5",
+    "critical_model_source_files": 112,
+    "model_source_sha256": "6ba6895c08ebd61565d6bdfd23fbdc582d785e4acf04a6834251b2b8c3242b20",
+    "provenance_sha256": "bcca720e4788b7fdea937b9380b2b5a9f1313794d5832083a4d31d2ff4865837",
+    "dataset_manifest_sha256": "a80a45cbd3c0f2eedb8a575eb3b43d43b9acfdcba7c78de49c44e313d8a47eed",
+    "cache_manifest_sha256": "a2775f75454736c6c6a91baad9d798154151fd1a0c8f39d08c75263659f2c988",
+    "validation_bank_sha256": "98ec4205d4be7ea320daf507d8c941722c342c2f81e41cde6ff59e9677493640",
+    "validation_image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+    "validation_semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a",
+    "source_reference_as_saved": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX",
+    "source_resolved_after_mount_migration": "user-data:/YOLO-Master/runs/paper/full-visdrone/job-start-eDmH0odX"
+  },
+  "setup_seconds": 1.2830656089936383,
+  "teacher_queries": 568,
+  "cache_feature_reads": 0,
+  "compute_apps_end": "3681293, python, 24736 MiB\n3710030, user-data:/miniconda3/envs/yolomaster/bin/python, 7626 MiB\n3725233, user-data:/miniconda3/envs/yolomaster/bin/python, 688 MiB\n[N/A], [N/A], [N/A]"
+}

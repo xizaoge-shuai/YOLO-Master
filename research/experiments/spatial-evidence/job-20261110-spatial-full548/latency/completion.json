@@ -1,0 +1,16 @@
+{
+  "status": "SUCCEEDED",
+  "action": "latency",
+  "seconds": 467.8443596440047,
+  "images_each": 548,
+  "methods": [
+    "blank25",
+    "detail25",
+    "lowpass25",
+    "vit-adapter-cache25"
+  ],
+  "teacher_measured_images": 2192,
+  "teacher_warmup_images": 80,
+  "feature_bank_reads": 0,
+  "resource_claim": "observational shared-GPU stage timings, not a controlled speed benchmark"
+}
