@@ -611,3 +611,12 @@ Archived [latency](experiments/spatial-evidence/job-20261110-spatial-full548/lat
 ## Full548 fixed-model geometry
 
 Archived [geometry](experiments/spatial-evidence/job-20261110-spatial-full548/geometry/README.md); no retraining or seed replication.
+
+
+<!-- home-vscode-handoff-and-completed-full548-20261110 -->
+## 2026-11-10 evening: HOME access and independent experiment handoff
+
+- At user request created/home/zhjia directory symlinks for the original repository,current experiment worktree,and fullVOC/SKU data. Added a HOME multi-folder VSCode workspace and a readable handoff link to the canonical server guide. Real active data/source/cache/checkpoint paths are preserved. Verified each link and workspace target; ten handoff Bash blocks pass syntax-only checks without launching duplicates.
+- Full548 features/latency/geometry all SUCCEEDED and pushed926826d/3ea31af/a99e9a4. Independent audit verified28 archive files and model/source bindings. Four-scale own-head mean loss increments:Blank+.5039,Detail+.0856,Lowpass+.5002,Adapter-.0108. Relative-P3 error has a denominator effect; results do not establish DINO recovery or superiority overAdapter. SharedGPU latency is observational.
+- VOC full bank built; C1 observed44/100. OriginalVisDrone Adapter0 observed65/100,8/10seed0 complete. SKU interrupted download has been resumed from the same partial; its unchanged pipeline waits for full data. No epoch,augmentation,method,or GPU1 changes.
+- Both active training source snapshots revalidated unchanged before this documentation commit. Recovery and independent-operation commands are in the handoff guide; source/large-data edits are separated from these running tasks.

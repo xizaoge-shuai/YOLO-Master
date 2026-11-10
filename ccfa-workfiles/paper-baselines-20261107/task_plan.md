@@ -10,10 +10,10 @@ User now authorizes starting VOC and SKU together and requests claim-relevant ad
 - [x] VOC07+12 full data sealed; SKUfixed download runs in background; official splits/raw annotations and download hashes preserved.
 - [x] Implement new manifest-driven/mmap training and correct VOC/SKU evaluation without editing frozen VisDrone trainer.
 - [x] CPU contracts and independent review passed; initial implementation committed36e96ac, guarded parallel admission2b521ae. NoGPU smoke or subset experiment.
-- [ ] Start two dataset pipelines with explicit resource admission; a brokenGPU is never selected. Report preparation,waiting,training andcompletion separately.
+- [x] Start two dataset pipelines with explicit resource admission; VOCsnapshot passed thenWAITING_GPU,SKUWAITING_DATA. BrokenGPU1 never selected. Full runs remain asynchronous.
 - [x] Run full548-image size/perclass/TIDE analysis for8 arms and extract existing convergence curves; source prediction/checkpoint hashes bound and results committed36e96ac.
 - [x] Implement full548 geometry/feature-frequency/full-forward inference diagnostics; final CPU input/GT/source gates and wrapper contracts passed. Execution remains separately tracked.
-- [ ] Update current evidence plan/operations/PROGRESS,archive and scoped commit/push all new source/real results.
+- [x] Current evidence plan/operations/PROGRESS updated; CPU results and diagnostic sources archived, scoped commits36e96ac/2b521ae/23b9b54 pushed. GPU diagnostic/new dataset results will archive on completion.
 
 ## Historical stages (superseded scheduling retained below)
 

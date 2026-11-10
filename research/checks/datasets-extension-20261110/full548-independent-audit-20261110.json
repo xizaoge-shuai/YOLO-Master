@@ -1,0 +1,718 @@
+{
+  "schema": "independent-read-only-full548-audit-v1",
+  "time_unix": 1794319568.538657,
+  "scope": "Existing completed final-epoch seed0 checkpoints; no GPU work, training or source changes during this audit",
+  "job": "repo:/runs/paper/evidence-gpu/job-20261110-spatial-full548",
+  "checks": [
+    {
+      "stage": "features",
+      "archive_commit": "926826dfb22969733775f9219f52e831c042ace3",
+      "published_record": true,
+      "archived_files": 8,
+      "git_blob_mismatches": [],
+      "raw_vs_archive_semantic_mismatches": [],
+      "completion": {
+        "status": "SUCCEEDED",
+        "action": "features",
+        "seconds": 397.500865391994,
+        "images_each": 548,
+        "methods": [
+          "blank25",
+          "detail25",
+          "lowpass25",
+          "vit-adapter-cache25"
+        ],
+        "feature_image_pairs": 2192,
+        "teacher_forward_images": 0,
+        "heatmap_n_images_per_method": 27,
+        "note": "Full548 quantitative features; GT-selected images only for qualitative heatmaps, not AP estimation"
+      }
+    },
+    {
+      "stage": "latency",
+      "archive_commit": "3ea31af42d6927f7b50f6893bbcbdd63dffd69ae",
+      "published_record": true,
+      "archived_files": 10,
+      "git_blob_mismatches": [],
+      "raw_vs_archive_semantic_mismatches": [],
+      "completion": {
+        "status": "SUCCEEDED",
+        "action": "latency",
+        "seconds": 467.8443596440047,
+        "images_each": 548,
+        "methods": [
+          "blank25",
+          "detail25",
+          "lowpass25",
+          "vit-adapter-cache25"
+        ],
+        "teacher_measured_images": 2192,
+        "teacher_warmup_images": 80,
+        "feature_bank_reads": 0,
+        "resource_claim": "observational shared-GPU stage timings, not a controlled speed benchmark"
+      }
+    },
+    {
+      "stage": "geometry",
+      "archive_commit": "a99e9a4f9d7a4ac414594ee52e9f264bac734223",
+      "published_record": true,
+      "archived_files": 10,
+      "git_blob_mismatches": [],
+      "raw_vs_archive_semantic_mismatches": [],
+      "completion": {
+        "status": "SUCCEEDED",
+        "seconds": 3249.409594787998,
+        "images": 548,
+        "teacher_images": 3288,
+        "teacher_calls": 3288,
+        "teacher_blank_images_new": 0,
+        "methods": [
+          "blank25",
+          "detail25",
+          "lowpass25",
+          "vit-adapter-cache25"
+        ],
+        "method_image_views": 13152,
+        "official_AP_computed": false,
+        "training_updates": 0
+      }
+    }
+  ],
+  "analysis_source_checks": [
+    {
+      "path": "online_experiments/geometric_evidence.py",
+      "expected": "adeda2707b3d79473ff5f70b06d9f0d7b5f0065a916d784b627a07e8f27963e2",
+      "actual": "adeda2707b3d79473ff5f70b06d9f0d7b5f0065a916d784b627a07e8f27963e2",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/spatial_feature_analysis.py",
+      "expected": "c401eabeda1e74f7281d761cb5d0647ab52464972ce039efd19489d42be06fea",
+      "actual": "c401eabeda1e74f7281d761cb5d0647ab52464972ce039efd19489d42be06fea",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/analyze_detection_evidence.py",
+      "expected": "2f308be4425540a7929b626a1aa2e647ba20205e04960dcbfe142741677d0c4a",
+      "actual": "2f308be4425540a7929b626a1aa2e647ba20205e04960dcbfe142741677d0c4a",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/visdrone_reference_eval.py",
+      "expected": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "actual": "84960068a73bf9fe2b82b41643ff4fbcf7d42946f9eb7ea3bba7e578e282d741",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/detail_probe_data.py",
+      "expected": "d16cb6f4f91fc25a379cb2158642f5fa470c5d43f6aa721479f307ef2f68cee4",
+      "actual": "d16cb6f4f91fc25a379cb2158642f5fa470c5d43f6aa721479f307ef2f68cee4",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/d1_online_compare.py",
+      "expected": "d2b13e98c74bcd1db1e2b361b0cfdefecdf6989e1b7a581ee6ea71a9a9a666d5",
+      "actual": "d2b13e98c74bcd1db1e2b361b0cfdefecdf6989e1b7a581ee6ea71a9a9a666d5",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/feature_baselines.py",
+      "expected": "0222168bd915f89a35c877f9d778eeff36306520b4accdd43a8f8a2b1f181758",
+      "actual": "0222168bd915f89a35c877f9d778eeff36306520b4accdd43a8f8a2b1f181758",
+      "matches": true
+    },
+    {
+      "path": "online_experiments/full_visdrone_data.py",
+      "expected": "c55f240e72b2f65326ea464e088c3c30bc167375fa286d89743466d25c9bc0d6",
+      "actual": "c55f240e72b2f65326ea464e088c3c30bc167375fa286d89743466d25c9bc0d6",
+      "matches": true
+    },
+    {
+      "path": "scripts/d1_build_feature_cache.py",
+      "expected": "a09990b5ed1f7beb97ae378f6f1b123761b87928ec531ef2afbe6223124af0af",
+      "actual": "a09990b5ed1f7beb97ae378f6f1b123761b87928ec531ef2afbe6223124af0af",
+      "matches": true
+    },
+    {
+      "path": "scripts/d1_train_cached_detector.py",
+      "expected": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009",
+      "actual": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009",
+      "matches": true
+    },
+    {
+      "path": "ultralytics/utils/loss.py",
+      "expected": "e0f594c20c4c79eec3b5f31d70f53fa4da467283b3bd8fd5d67e7667b30b327a",
+      "actual": "e0f594c20c4c79eec3b5f31d70f53fa4da467283b3bd8fd5d67e7667b30b327a",
+      "matches": true
+    },
+    {
+      "path": "ultralytics/utils/tal.py",
+      "expected": "e58ff8eaa2b7432a11d6a5a55e004a3a5a67ebaa334afc15920f152a3e8411b5",
+      "actual": "e58ff8eaa2b7432a11d6a5a55e004a3a5a67ebaa334afc15920f152a3e8411b5",
+      "matches": true
+    }
+  ],
+  "frozen_run_checks": [
+    {
+      "method": "blank25",
+      "artifact_hash_mismatches": [],
+      "critical_source_files": 112,
+      "critical_source_mismatches": [],
+      "image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a"
+    },
+    {
+      "method": "detail25",
+      "artifact_hash_mismatches": [],
+      "critical_source_files": 112,
+      "critical_source_mismatches": [],
+      "image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a"
+    },
+    {
+      "method": "lowpass25",
+      "artifact_hash_mismatches": [],
+      "critical_source_files": 112,
+      "critical_source_mismatches": [],
+      "image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a"
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "artifact_hash_mismatches": [],
+      "critical_source_files": 113,
+      "critical_source_mismatches": [],
+      "image_order_sha256": "fa9647b2eefd31a65282a8154f5b2ca8b69d8716d517f62456dcc64ecded95e3",
+      "semantic_gt_sha256": "0b5afba2673f1f151afd96420d141e337837389f4ef650576e5806d7bb767d4a"
+    }
+  ],
+  "archive_sha256": {
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/README.md": "a848d6772bce6a550972cafb2939a212e977f51584f901194530cd7896187647",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/completion.json": "2fdf1bb59f355856b35352b4491147fd1d87de58b05e320bc9851776a6db9e9e",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/hardware-start.json": "9bd7906a0c543b153122678a902370644f0e9e5a24fc155b2a7e324e79d7840a",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/heatmap-selection.json": "c5866a3dcf405aedf473fdc55e542198033d827c9e2777e11a2cf49cd4a1f7ca",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/p3-image-metrics.csv": "8cb082be4f0d5da6f8a72d3dd57eb074959f4b62d834873b2d019c291f1f38d0",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/p3-radial-power.csv": "0f78b64e4565f3291535c157fd3f1584dcd5fc0117eac7fc60dec6a0f7549c82",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/p3-summary.csv": "76971842d6bf76a034e1123a2251d8f15f7b65861f3104e8763c759c8d0e7707",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/features/protocol.json": "3bc21a0fe505a89678fec976d53e178ac6a57d25c55154a0d76acf1294d654a4",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/README.md": "00886e5b9990e3e46ca81577e9523fee63dca7913def86d8a3566daf015275c7",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/blank25-latency-bindings.json": "4caa6373b2727ab35d920e8dc68187cdc3a106d4a3f8b1992ef7207fb965c3ad",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/completion.json": "2d71decba7d131e4b854cdd803af0304c7108106f41bde655f8b20fbe59deb90",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/detail25-latency-bindings.json": "37185fdfdcec92b3e55d06c6438f4e22993675568383673ae1dbae7765588afa",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/hardware-start.json": "6e33915f8b73de8f8f5139d169bda263c9d75ee19e2d73ed3a61cb94de6a6b01",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/latency-per-image.csv": "0a71ab52c9212880cf81acecee4fb50db50f31f67a64195f9cbd4795579d4839",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/latency-summary.csv": "bff262f26811c3c5e0a392384959462f5d501b7adb0093cf2ad54778624cf7af",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/lowpass25-latency-bindings.json": "0bedc538b3b5068707f9f2e98648144a94c8d3c3a356c1f7ccfd33711fc54cb6",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/protocol.json": "fc867a9bcdbbbd6eec92239ae8de91273615aa601a89833dd4ba36b266c1f873",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/vit-adapter-cache25-latency-bindings.json": "dc1264b861ff96c2ac47649d8b11f442648c34c761cf86cabacf6936196f6d58",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/README.md": "9bfb1769ebcfc18876f5ef80085b82c631eb9964c785c862f9f8af7e21953331",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/completion.json": "e1bf03527d7ce57e57d3f86f5c7df5277214d13ee174b654656b9aa83f73854b",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/gt-geometry-counts.csv": "ad8b06e54fd291e489d153201c308f5a4fb7d6c415d7c60c5800ecb62896063b",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/hardware-start.json": "4608d771e7754e3f1dced96a43a79af0db8e8c63ff6bf709548b67976584af27",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/p3-and-loss-summary.csv": "5cc78f8121722000aaed199f19444cba43d47c99ba5c24928b90347d6bcf36c9",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/p3-and-loss.csv": "0f9279deaa2ca3a7060c48820f2514070c5f0e1643e3cf8fe195147e2277fc03",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/progress.json": "249de064d7702d13f1b0aa830e12bba5c2c2c2462c883b15b142fa45f7cee60b",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/protocol.json": "399003aaba72cde29bd3bace3b0f39aa0ac4764698d8a93e15a416515f9e51d4",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/raw-dino-error.csv": "03baa8b44ed8484324b393325acf8a1cb71f49467fa8204a4d81a9635c7c8d88",
+    "research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/raw-dino-summary.csv": "50decbccc781dd062d5b4aa5c49c6b3a1422704aa6c1b7bbad853b06206e1729"
+  },
+  "features": [
+    {
+      "method": "blank25",
+      "base_high_frequency_fraction": 0.15511449430932595,
+      "final_high_frequency_fraction": 0.15511449430932595,
+      "residual_high_frequency_fraction": null,
+      "residual_centered_power": 0.0,
+      "foreground_squared_mean": 0.21963357183980053,
+      "background_squared_mean": 0.19570579427274395
+    },
+    {
+      "method": "detail25",
+      "base_high_frequency_fraction": 0.19095110365843937,
+      "final_high_frequency_fraction": 0.255947547139242,
+      "residual_high_frequency_fraction": 0.4021186057333471,
+      "residual_centered_power": 237.54554141585706,
+      "foreground_squared_mean": 0.8410937364561235,
+      "background_squared_mean": 0.6827550869231109
+    },
+    {
+      "method": "lowpass25",
+      "base_high_frequency_fraction": 0.1076223020910699,
+      "final_high_frequency_fraction": 0.1094944909809138,
+      "residual_high_frequency_fraction": 0.2651130940152993,
+      "residual_centered_power": 8.209729527442699,
+      "foreground_squared_mean": 0.6307935027987727,
+      "background_squared_mean": 0.55203226142192
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "base_high_frequency_fraction": 0.02566645043991018,
+      "final_high_frequency_fraction": 0.15567559082749477,
+      "residual_high_frequency_fraction": 0.25386248970682385,
+      "residual_centered_power": 3328.4696840876145,
+      "foreground_squared_mean": 10.003089850641498,
+      "background_squared_mean": 8.905859771395416
+    }
+  ],
+  "latency": [
+    {
+      "method": "blank25",
+      "stages": [
+        {
+          "stage": "DINO_forward_and_preprocessing_ms",
+          "mean_ms": 35.19019650544565,
+          "p50_ms": 33.585764504096005,
+          "p95_ms": 49.7927361044276
+        },
+        {
+          "stage": "pyramid_inclusive_ms",
+          "mean_ms": 139.67311793637575,
+          "p50_ms": 136.73576099972706,
+          "p95_ms": 168.20318590544048
+        },
+        {
+          "stage": "RGB_branch_nested_ms",
+          "mean_ms": 0.0,
+          "p50_ms": 0.0,
+          "p95_ms": 0.0
+        },
+        {
+          "stage": "total_ms",
+          "mean_ms": 195.63439107878366,
+          "p50_ms": 194.10009500279557,
+          "p95_ms": 223.69100025316584
+        }
+      ]
+    },
+    {
+      "method": "detail25",
+      "stages": [
+        {
+          "stage": "DINO_forward_and_preprocessing_ms",
+          "mean_ms": 35.535991277449455,
+          "p50_ms": 33.920102498086635,
+          "p95_ms": 48.39723565673921
+        },
+        {
+          "stage": "pyramid_inclusive_ms",
+          "mean_ms": 141.46411496175375,
+          "p50_ms": 142.47003300260985,
+          "p95_ms": 170.99246729849256
+        },
+        {
+          "stage": "RGB_branch_nested_ms",
+          "mean_ms": 2.4196497511363377,
+          "p50_ms": 2.5287200212478638,
+          "p95_ms": 4.663424158096314
+        },
+        {
+          "stage": "total_ms",
+          "mean_ms": 196.5979995054053,
+          "p50_ms": 196.47422649723012,
+          "p95_ms": 224.36866245479905
+        }
+      ]
+    },
+    {
+      "method": "lowpass25",
+      "stages": [
+        {
+          "stage": "DINO_forward_and_preprocessing_ms",
+          "mean_ms": 35.58381880666142,
+          "p50_ms": 33.92659699602518,
+          "p95_ms": 49.5038503075193
+        },
+        {
+          "stage": "pyramid_inclusive_ms",
+          "mean_ms": 133.51726044187885,
+          "p50_ms": 131.64482299907831,
+          "p95_ms": 154.87819055342698
+        },
+        {
+          "stage": "RGB_branch_nested_ms",
+          "mean_ms": 2.2772649910545697,
+          "p50_ms": 2.5246241092681885,
+          "p95_ms": 4.679867243766784
+        },
+        {
+          "stage": "total_ms",
+          "mean_ms": 188.92628232140478,
+          "p50_ms": 187.91983050323324,
+          "p95_ms": 211.55729279562365
+        }
+      ]
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "stages": [
+        {
+          "stage": "DINO_forward_and_preprocessing_ms",
+          "mean_ms": 35.471509231451385,
+          "p50_ms": 33.86024649080355,
+          "p95_ms": 49.88715810031862
+        },
+        {
+          "stage": "pyramid_inclusive_ms",
+          "mean_ms": 165.1518533667148,
+          "p50_ms": 164.25346299365629,
+          "p95_ms": 190.98754065053072
+        },
+        {
+          "stage": "RGB_branch_nested_ms",
+          "mean_ms": 28.8918553216614,
+          "p50_ms": 31.261839866638184,
+          "p95_ms": 43.94395561218262
+        },
+        {
+          "stage": "total_ms",
+          "mean_ms": 221.41874296140108,
+          "p50_ms": 220.6225190020632,
+          "p95_ms": 247.5838282458426
+        }
+      ]
+    }
+  ],
+  "geometry": [
+    {
+      "method": "blank25",
+      "view": "identity",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 7.702574637684509,
+      "approx_loss_total": 7.702574637684509,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "blank25",
+      "view": "hflip",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 7.71870294713626,
+      "approx_loss_total": 7.71870294713626,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "blank25",
+      "view": "scale085",
+      "relative_l2": 0.3292517959456255,
+      "rmse": 0.1500866968772051,
+      "exact_loss_total": 8.13148336253897,
+      "approx_loss_total": 8.64011331109235,
+      "paired_loss_delta_total": 0.5086299485533777
+    },
+    {
+      "method": "blank25",
+      "view": "scale095",
+      "relative_l2": 0.2660343619742294,
+      "rmse": 0.121096641802505,
+      "exact_loss_total": 7.8603541037462055,
+      "approx_loss_total": 8.271031793451657,
+      "paired_loss_delta_total": 0.41067768970545193
+    },
+    {
+      "method": "blank25",
+      "view": "scale105",
+      "relative_l2": 0.2426048172492795,
+      "rmse": 0.11064668313346993,
+      "exact_loss_total": 7.651413018250987,
+      "approx_loss_total": 8.124774121455033,
+      "paired_loss_delta_total": 0.473361103204045
+    },
+    {
+      "method": "blank25",
+      "view": "scale115",
+      "relative_l2": 0.2957299391089202,
+      "rmse": 0.13474572407853472,
+      "exact_loss_total": 7.511688631381432,
+      "approx_loss_total": 8.13467123691183,
+      "paired_loss_delta_total": 0.6229826055303977
+    },
+    {
+      "method": "detail25",
+      "view": "identity",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 7.115893766392756,
+      "approx_loss_total": 7.115893766392756,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "detail25",
+      "view": "hflip",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 7.140718906900308,
+      "approx_loss_total": 7.140718906900308,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "detail25",
+      "view": "scale085",
+      "relative_l2": 0.20211573589019696,
+      "rmse": 0.1750724370238744,
+      "exact_loss_total": 7.444873538330524,
+      "approx_loss_total": 7.4415245647848085,
+      "paired_loss_delta_total": -0.0033489735457148864
+    },
+    {
+      "method": "detail25",
+      "view": "scale095",
+      "relative_l2": 0.1623561625940248,
+      "rmse": 0.14091029458033627,
+      "exact_loss_total": 7.222708469324738,
+      "approx_loss_total": 7.235595588266414,
+      "paired_loss_delta_total": 0.012887118941676007
+    },
+    {
+      "method": "detail25",
+      "view": "scale105",
+      "relative_l2": 0.14501971454170728,
+      "rmse": 0.12598660199344577,
+      "exact_loss_total": 7.094720324895678,
+      "approx_loss_total": 7.216081012339488,
+      "paired_loss_delta_total": 0.12136068744380979
+    },
+    {
+      "method": "detail25",
+      "view": "scale115",
+      "relative_l2": 0.18350281007132083,
+      "rmse": 0.15953270479974657,
+      "exact_loss_total": 6.997711140744007,
+      "approx_loss_total": 7.209148215986517,
+      "paired_loss_delta_total": 0.21143707524250893
+    },
+    {
+      "method": "lowpass25",
+      "view": "identity",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 7.6912442336987406,
+      "approx_loss_total": 7.6912442336987406,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "lowpass25",
+      "view": "hflip",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 7.705055771082857,
+      "approx_loss_total": 7.705055771082857,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "lowpass25",
+      "view": "scale085",
+      "relative_l2": 0.20208017758038102,
+      "rmse": 0.15747079605408112,
+      "exact_loss_total": 8.116194721120987,
+      "approx_loss_total": 8.64186401697841,
+      "paired_loss_delta_total": 0.5256692958574225
+    },
+    {
+      "method": "lowpass25",
+      "view": "scale095",
+      "relative_l2": 0.16087415002584493,
+      "rmse": 0.1251447856863711,
+      "exact_loss_total": 7.844879348782728,
+      "approx_loss_total": 8.238881283867968,
+      "paired_loss_delta_total": 0.39400193508524095
+    },
+    {
+      "method": "lowpass25",
+      "view": "scale105",
+      "relative_l2": 0.14349767751535333,
+      "rmse": 0.11140829422005646,
+      "exact_loss_total": 7.634840139072307,
+      "approx_loss_total": 8.104897762737135,
+      "paired_loss_delta_total": 0.4700576236648281
+    },
+    {
+      "method": "lowpass25",
+      "view": "scale115",
+      "relative_l2": 0.18606394394405057,
+      "rmse": 0.14417581422009,
+      "exact_loss_total": 7.4878106508811895,
+      "approx_loss_total": 8.098795686760088,
+      "paired_loss_delta_total": 0.6109850358788984
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "view": "identity",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 6.231475296246744,
+      "approx_loss_total": 6.231475296246744,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "view": "hflip",
+      "relative_l2": 0.0,
+      "rmse": 0.0,
+      "exact_loss_total": 6.233430372972558,
+      "approx_loss_total": 6.233430372972558,
+      "paired_loss_delta_total": 0.0
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "view": "scale085",
+      "relative_l2": 0.1148468554061017,
+      "rmse": 0.34258711287467475,
+      "exact_loss_total": 6.486268991101397,
+      "approx_loss_total": 6.411590906390308,
+      "paired_loss_delta_total": -0.07467808471108875
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "view": "scale095",
+      "relative_l2": 0.08891559479111048,
+      "rmse": 0.2659285502026484,
+      "exact_loss_total": 6.328846911009211,
+      "approx_loss_total": 6.286935130610083,
+      "paired_loss_delta_total": -0.0419117803991276
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "view": "scale105",
+      "relative_l2": 0.07647194450055642,
+      "rmse": 0.22929015640483008,
+      "exact_loss_total": 6.249032773240639,
+      "approx_loss_total": 6.273247799299059,
+      "paired_loss_delta_total": 0.024215026058419777
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "view": "scale115",
+      "relative_l2": 0.09301461602232092,
+      "rmse": 0.2793634310253697,
+      "exact_loss_total": 6.229473588457943,
+      "approx_loss_total": 6.278531810010437,
+      "paired_loss_delta_total": 0.0490582215524938
+    }
+  ],
+  "geometry_paired_loss_scale_summary": [
+    {
+      "method": "blank25",
+      "image_scale_pairs": 2192,
+      "mean_paired_loss_delta": 0.5039128367483181,
+      "fraction_positive_loss_delta": 0.9023722627737226,
+      "fraction_negative_loss_delta": 0.09762773722627738
+    },
+    {
+      "method": "detail25",
+      "image_scale_pairs": 2192,
+      "mean_paired_loss_delta": 0.08558397702056997,
+      "fraction_positive_loss_delta": 0.6541970802919708,
+      "fraction_negative_loss_delta": 0.3458029197080292
+    },
+    {
+      "method": "lowpass25",
+      "image_scale_pairs": 2192,
+      "mean_paired_loss_delta": 0.5001784726215975,
+      "fraction_positive_loss_delta": 0.9028284671532847,
+      "fraction_negative_loss_delta": 0.09717153284671533
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "image_scale_pairs": 2192,
+      "mean_paired_loss_delta": -0.010829154374825694,
+      "fraction_positive_loss_delta": 0.4762773722627737,
+      "fraction_negative_loss_delta": 0.5237226277372263
+    }
+  ],
+  "raw_dino_scale_relative_l2": [
+    {
+      "view": "hflip",
+      "layer": "3",
+      "mean": "0.0"
+    },
+    {
+      "view": "hflip",
+      "layer": "7",
+      "mean": "0.0"
+    },
+    {
+      "view": "hflip",
+      "layer": "11",
+      "mean": "0.0"
+    },
+    {
+      "view": "identity",
+      "layer": "3",
+      "mean": "0.0"
+    },
+    {
+      "view": "identity",
+      "layer": "7",
+      "mean": "0.0"
+    },
+    {
+      "view": "identity",
+      "layer": "11",
+      "mean": "0.0"
+    },
+    {
+      "view": "scale085",
+      "layer": "3",
+      "mean": "0.21234819268203875"
+    },
+    {
+      "view": "scale085",
+      "layer": "7",
+      "mean": "0.22179169445338656"
+    },
+    {
+      "view": "scale085",
+      "layer": "11",
+      "mean": "0.3578406767754387"
+    },
+    {
+      "view": "scale095",
+      "layer": "3",
+      "mean": "0.17344793389490523"
+    },
+    {
+      "view": "scale095",
+      "layer": "7",
+      "mean": "0.2058600614923324"
+    },
+    {
+      "view": "scale095",
+      "layer": "11",
+      "mean": "0.278303809330261"
+    },
+    {
+      "view": "scale105",
+      "layer": "3",
+      "mean": "0.16532060478813226"
+    },
+    {
+      "view": "scale105",
+      "layer": "7",
+      "mean": "0.20675847253529994"
+    },
+    {
+      "view": "scale105",
+      "layer": "11",
+      "mean": "0.23170757879827447"
+    },
+    {
+      "view": "scale115",
+      "layer": "3",
+      "mean": "0.19463043591564103"
+    },
+    {
+      "view": "scale115",
+      "layer": "7",
+      "mean": "0.23903802786144537"
+    },
+    {
+      "view": "scale115",
+      "layer": "11",
+      "mean": "0.2900404012081427"
+    }
+  ],
+  "conclusion": "No archive/source/weight integrity mismatch. Supports spatial task-side compensation and reduced own-head sensitivity; does not show raw-DINO recovery or beat the larger Adapter baseline. Shared GPU timings are observational. No geometry official AP. Image SD is not training-seed SD.",
+  "integrity_pass": true,
+  "integrity_scope_limit": "Archive bytes/Git blobs, raw-vs-sanitized archive content, 12 analysis source files, four final weights/args/official metrics/provenance and 112/113 critical model source files were checked. Raw images and full feature-bank files were not independently rehashed again by this read-only audit; their recorded content/order/GT hashes agree across bindings."
+}

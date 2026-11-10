@@ -1,5 +1,11 @@
 # Session progress
 
+2026-11-10 evening continuation:
+- Full548 features, fresh-image latency and geometric feature/fixed-head loss diagnostics all SUCCEEDED and auto-archived/pushed926826d/3ea31af/a99e9a4. Independent audit checked28 archived files and model/source bindings; relative-error denominator effects and strongerAdapter are preserved in the interpretation.
+- VOC complete C2/test/blank bank built; C1 full-data training observed44/100. OriginalVisDrone seed0 remains8/10 complete; Adapter-cache0 observed65/100. No method/epoch/augmentation changes.
+- SKU proxy interruption recovered from the same8.3GB partial; original pipeline restored with unchanged plan and noGPU action. Downloads still need Clash7897 and the current7907 SSH forwarding; training is independent.
+- At user's request, created HOME directory symlinks for original repo/currentworktree/data and a remote VSCode multi-folder workspace. Canonical handoff guide includes status,finalmetrics,exact environment,and original-job recovery commands; no active data/source/checkpoints moved.
+
 2026-11-10:
 - User requests concurrentVOC/SKU plus targeted new evidence. Dispatched three independent tasks:verified full raw dataset preparation;newmanifest/mmap training adapter;CPU-only full548prediction and learning-curve analysis.
 - Read current progress and supplied suggestions. Seven seed0 complete;Detail0 epoch38. CurrentGPU1 is unusable(requiresreset);CPU/data preparation continues inparallel,GPUtraining requireshealthy-deviceadmission.

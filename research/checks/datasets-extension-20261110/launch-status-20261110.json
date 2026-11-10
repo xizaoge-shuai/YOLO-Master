@@ -1,0 +1,62 @@
+{
+  "time_utc": "2026-11-10T06:00:32.134586+00:00",
+  "jobs": {
+    "voc0712": {
+      "state": "WAITING_GPU",
+      "message": "Build complete C2/test/blank bank; GPU0 free=15555MiB, need>=16384MiB",
+      "time_unix": 1794290405.7353005,
+      "dataset": "voc0712",
+      "worker_alive": true,
+      "worker_pid": 3716080,
+      "job": "repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2"
+    },
+    "sku110k": {
+      "state": "WAITING_DATA",
+      "message": "sku110k: full data and immutable seal pending",
+      "time_unix": 1794290424.9100983,
+      "dataset": "sku110k",
+      "preparation": {
+        "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+        "utc": "2026-11-10T05:22:05Z"
+      },
+      "worker_alive": true,
+      "worker_pid": 3713226,
+      "job": "repo:/runs/paper/crossdataset/job-20261110-sku110k-s0"
+    },
+    "spatial": {
+      "state": "MEASURING",
+      "message": "features:4 methods x548 images; no training",
+      "time_unix": 1794290161.3367982,
+      "stage": "features",
+      "worker_alive": true,
+      "worker_pid": 3716081,
+      "job": "repo:/runs/paper/evidence-gpu/job-20261110-spatial-full548",
+      "features.log": "FEATURES blank25 64/548\nFEATURES blank25 128/548\nFEATURES blank25 192/548\nFEATURES blank25 256/548\nFEATURES blank25 320/548\nFEATURES blank25 384/548\nFEATURES blank25 448/548\nFEATURES blank25 512/548\nFEATURES blank25 548/548\nFEATURES detail25 64/548\nFEATURES detail25 128/548\nFEATURES detail25 192/548\nFEATURES detail25 256/548\nFEATURES detail25 320/548\nFEATURES detail25 384/548\nFEATURES detail25 448/548\nFEATURES detail25 512/548\nFEATURES detail25 548/548\nFEATURES lowpass25 64/548\nFEATURES lowpass25 128/548\nFEATURES lowpass25 192/548\nFEATURES lowpass25 256/548\nFEATURES lowpass25 320/548\nFEATURES lowpass25 384/548\n"
+    }
+  },
+  "data": {
+    "voc0712": {
+      "status": "PREPARED",
+      "complete_seal_present": true
+    },
+    "sku110k": {
+      "status": "DOWNLOADING SKU110K_fixed.tar.gz",
+      "complete_seal_present": false,
+      "download_bytes": 6856092013,
+      "download_total_bytes": 12196152718,
+      "download_percent": 56.22
+    }
+  },
+  "visdrone": {
+    "state": "RUNNING",
+    "message": "seed0 9/10 vit-adapter-cache0-s0; seed1/2=18 deferred",
+    "time_unix": 1794288080.9472184,
+    "case": "vit-adapter-cache0-s0",
+    "completed_seed_zero": 8,
+    "planned_seed_zero": 10,
+    "deferred_seed_repeats": 18,
+    "adapter0_completed_epochs": 6
+  },
+  "gpu": "0, 15555 MiB, P2\n1, 48510 MiB, [GPU requires reset]",
+  "git_head": "23b9b541ffa14b5bb909bdfac4c2675a2d7abbda"
+}

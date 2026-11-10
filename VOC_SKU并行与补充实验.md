@@ -2,6 +2,20 @@
 
 2026-11-10。当前执行平台yang109。保持100轮、现有增强/优化器和固定最终轮端点，先跑实验数据，再种子与调优。
 
+## VS Code打开哪个目录
+
+服务器当前登录HOME是/home/zhjia，实验没有放在HOME下面。VS Code连接yang109后，在“文件→打开文件夹”里输入：
+
+```text
+/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107
+```
+
+原仓库是/mnt/data/users/zhjia/YOLO-Master；当前实验目录是它的Git worktree，分支research/paper-baselines-20261107。新代码在online_experiments，运行日志/缓存/权重在runs/paper，提交的轻量结果在research/experiments，进展在research/PROGRESS.md。完整VOC/SKU数据位于同级datasets-extension-20261110。最初HOME下没有仓库入口，2026-11-10晚已按用户要求在/home/zhjia创建三个目录符号链接，现在~/YOLO-Master及~/YOLO-Master-paper-baselines-20261107也能进入同一份文件。
+
+可直接打开/home/zhjia/YOLO-Master-research.code-workspace，同时显示当前实验、原仓库和新数据目录；这个文件使用服务器目录间的相对路径，应在yang109远程窗口打开。仅关闭大目录文件监听和搜索，不隐藏Explorer里的实验输出。可独立继续操作的完整命令见[服务器实验接手](服务器实验接手.md)，HOME下还有“先看这里-实验接手.md”入口。
+
+实验由SSH启动的后台监督进程运行（Popen+start_new_session），子训练进程调用数据盘conda环境/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python。监督进程等待并检查每个训练端点、保存日志，再归档commit/push；不依赖VS Code终端是否打开。数据下载另外依赖本地Clash/反向隧道，断开隧道会中断下载，但不停止已本地化的训练。
+
 ## 并行范围
 
 VOC07+12已完成全量准备，SKU-110K fixed继续后台下载。每个数据集有独立状态、断点文件、原始标注、下载来源和完成封印。只有完整划分与全部文件通过检查、生成complete.json后，训练流水线才继续。
@@ -23,7 +37,7 @@ VOC使用16551训练/4952测试、20类，主要指标是VOC2007十一点AP50，
 ## 看下载、训练和结果
 
 ```bash
-cd ~/YOLO-Master-paper-baselines-20261107
+cd /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107
 DATA_ROOT="$(cd ../datasets-extension-20261110 && pwd)"
 for DATA in voc0712 sku110k; do
     echo "$DATA"
@@ -32,7 +46,7 @@ for DATA in voc0712 sku110k; do
 done
 ```
 
-两个流水线启动后：
+两个流水线已启动，查看实际阶段：
 
 ```bash
 for DATA in voc0712 sku110k; do
@@ -43,6 +57,27 @@ done
 ```
 
 WAITING_DATA是等待完整数据封印；WAITING_GPU是等待健康GPU准入；BUILDING_CACHE、TRAINING、VALIDATING分别对应真实阶段；SUCCEEDED要求12个最终端点通过校验。PID退出不能当作成功。已存在训练子进程或任务锁时新入口拒绝重复启动。
+
+2026-11-10 14:00（北京时间）快照：VisDrone的seed0完成8/10，Adapter-cache0已完成6轮；VOC新job已通过快照，等待显存准入；SKU下载56.22%，其流水线等待完整数据。四模型features阶段正在运行。状态和完整结果以命令实时输出为准。
+
+2026-11-10晚更新：三个GPU诊断阶段全部SUCCEEDED并push（926826d/3ea31af/a99e9a4），独立审查通过；VOC完成全量银行构建，第一项C1正在训练，核验时44/100轮；VisDrone Adapter-cache0核验时65/100轮。SKU代理中断后按原partial恢复，原流水线重新等待完整数据。具体分析见research/checks/datasets-extension-20261110/full548-independent-audit-20261110.md。本轮没有修改方法、轮数或增强。
+
+新数据集最终指标写入各job下train/<方法>-s0/metrics.json；相应目录有DONE才代表该配置全量100轮端点完成。快速列出已完成端点：
+
+```bash
+python - <<'PY'
+import json
+from pathlib import Path
+for dataset in ("voc0712", "sku110k"):
+    job = Path(Path(f"runs/paper/crossdataset/latest-{dataset}-job.txt").read_text().strip())
+    runs = sorted((job / "train").glob("*/DONE"))
+    print(dataset, f"{len(runs)}/12 done")
+    for done in runs:
+        result = json.loads((done.parent / "metrics.json").read_text())["primary"]
+        metric = result["mAP50_11point"] if dataset == "voc0712" else result["by_max_detections"]["100"]["AP"]
+        print(done.parent.name, round(metric, 4))
+PY
+```
 
 ## 已补的VisDrone离线分析
 

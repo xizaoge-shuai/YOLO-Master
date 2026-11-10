@@ -1,0 +1,104 @@
+{
+  "time_beijing": "2026-11-10T22:09:03.979240+08:00",
+  "home": "/home/zhjia",
+  "links": [
+    {
+      "home_entry": "/home/zhjia/YOLO-Master",
+      "target": "/mnt/data/users/zhjia/YOLO-Master",
+      "action": "created"
+    },
+    {
+      "home_entry": "/home/zhjia/YOLO-Master-paper-baselines-20261107",
+      "target": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107",
+      "action": "created"
+    },
+    {
+      "home_entry": "/home/zhjia/datasets-extension-20261110",
+      "target": "/mnt/data/users/zhjia/datasets-extension-20261110",
+      "action": "created"
+    }
+  ],
+  "workspace": "/home/zhjia/YOLO-Master-research.code-workspace",
+  "workspace_folders": [
+    {
+      "name": "Current experiments",
+      "path": "YOLO-Master-paper-baselines-20261107"
+    },
+    {
+      "name": "Original YOLO-Master",
+      "path": "YOLO-Master"
+    },
+    {
+      "name": "VOC and SKU data",
+      "path": "datasets-extension-20261110"
+    }
+  ],
+  "method": "directory symlinks; no data, source, caches or checkpoints moved",
+  "training_paths_preserved": true,
+  "handoff_entry": "/home/zhjia/\u5148\u770b\u8fd9\u91cc-\u5b9e\u9a8c\u63a5\u624b.md",
+  "handoff_target": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/\u670d\u52a1\u5668\u5b9e\u9a8c\u63a5\u624b.md",
+  "handoff_readable": true,
+  "handoff_bash_blocks": [
+    {
+      "index": 2,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 3,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 4,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 5,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 6,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 7,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 8,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 9,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 11,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    },
+    {
+      "index": 12,
+      "language": "bash",
+      "syntax": "PASS",
+      "executed": false
+    }
+  ],
+  "workspace_targets_verified": true
+}

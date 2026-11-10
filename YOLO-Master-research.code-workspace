@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "当前论文实验",
+      "path": "."
+    },
+    {
+      "name": "原始YOLO-Master仓库",
+      "path": "../YOLO-Master"
+    },
+    {
+      "name": "VOC与SKU数据准备",
+      "path": "../datasets-extension-20261110"
+    }
+  ],
+  "settings": {
+    "files.watcherExclude": {
+      "**/runs/**": true,
+      "**/datasets/**": true,
+      "**/raw/**": true,
+      "**/archives/**": true,
+      "**/.research-deps/**": true
+    },
+    "search.exclude": {
+      "**/runs/**": true,
+      "**/raw/**": true,
+      "**/archives/**": true,
+      "**/.research-deps/**": true
+    }
+  }
+}
