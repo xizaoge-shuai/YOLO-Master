@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "tests": [
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "online_experiments/test_expansion_assets.py"
+      ],
+      "exit": 0,
+      "output": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "online_experiments/prepare_expansion_assets.py",
+        "online_experiments/test_expansion_assets.py"
+      ],
+      "exit": 0,
+      "output": "2 files left unchanged\n"
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "online_experiments/prepare_expansion_assets.py",
+        "online_experiments/test_expansion_assets.py"
+      ],
+      "exit": 0,
+      "output": "All checks passed!\n"
+    }
+  ],
+  "frozen_sources_checked": 1366,
+  "qualitative_archive_sha_pass": 8,
+  "source_sha256": {
+    "online_experiments/prepare_expansion_assets.py": "b2e850d8e16c52e09bdab7a4a16bc5bfa8e7fdc2ea731582ac7503070298daf9",
+    "online_experiments/test_expansion_assets.py": "8b95a074ca5f473fc083927ebd39bad7dba0432f92184669ffcabb7d0dae580a"
+  },
+  "gpu_used": false
+}

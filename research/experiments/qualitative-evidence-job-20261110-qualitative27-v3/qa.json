@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "full_run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-qualitative27-v3",
+  "pdf_page_count": 27,
+  "PNG_gallery_count": 27,
+  "method_image_pairs": 108,
+  "all_completion_file_hashes_verified": true,
+  "source_sha256_bound": true,
+  "PNG_dpi_floor": 300,
+  "SVG_XML_parse": "PASS",
+  "PDF_header_trailer_page_objects": "PASS",
+  "qualitative_aggregate_at_fixed_threshold": {
+    "blank25": {
+      "GT": 3927,
+      "TP": 535,
+      "FP": 205,
+      "FN": 3392
+    },
+    "detail25": {
+      "GT": 3927,
+      "TP": 928,
+      "FP": 489,
+      "FN": 2999
+    },
+    "lowpass25": {
+      "GT": 3927,
+      "TP": 551,
+      "FP": 241,
+      "FN": 3376
+    },
+    "vit-adapter-cache25": {
+      "GT": 3927,
+      "TP": 1289,
+      "FP": 578,
+      "FN": 2638
+    }
+  },
+  "static_source_validator": {
+    "FAIL": 0,
+    "WARN": 3,
+    "warnings_explained": [
+      "Electronic review panels use300dpi; native photos are not retouched or enhanced.",
+      "Large368.3mm electronic gallery and preview chosen for detailed visual audit, not final183mm manuscript placement.",
+      "PNG+PDF+SVG are review exports; TIFF deferred until final submission figure layout."
+    ]
+  },
+  "visual_QA": "Main preview inspected; gallery page01 inspected and colorbar overlap fixed in v3; all pages regenerated with identical layout.",
+  "changes_between_renders": "v1/v2 preserved; v2 only300dpi explicitexports; v3 only outside colorbar axis/multiline titles; predictions/counts/selection unchanged."
+}

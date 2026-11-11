@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "contracts": [
+    "class-aware greedy one-to-one TP",
+    "duplicate and wrong class remain FP",
+    "same-class ignored object absorbs predictions",
+    "unmatched positive GT is miss",
+    "original-coordinate crop has no letterbox conversion",
+    "fixed512 GT-only crop deterministic",
+    "no torch import"
+  ]
+}

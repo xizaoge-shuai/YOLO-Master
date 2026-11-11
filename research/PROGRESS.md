@@ -666,3 +666,9 @@ Archived [dataset-first-phase-complete](experiments/replication-suite/job-202611
 ## voc0712 full seed0: cache2
 
 Archived [cache2-s0](experiments/crossdataset/job-20261110-voc0712-s0-v2/cache2-s0/README.md); final epoch,explicit metric.
+
+
+<!-- remaining-evidence-20261111:cpu-and-assets -->
+## Remaining evidence: CPU hard-scene comparison and full-asset preparation
+
+Completed27GT-selected images×4frozen final models=108 qualitative comparisons, fixedscore0.25/IoU0.50; mainPNG/PDF/SVG and hashes archived. Detail gains393TP versusBlank on this selected cohort while adding284FP; Adapter remains stronger. Full27-page gallery stays in run directory. Added pinned public DINOv3-B/16 and complete officialCOCO2017 asset preparation; sixCPU contracts/Ruff passed, noGPU or subset training. Download and full image validation are preparation, not benchmark results. Verified all1366 frozen VOC source files unchanged.

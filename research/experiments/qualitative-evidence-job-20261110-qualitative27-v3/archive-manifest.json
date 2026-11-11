@@ -1,0 +1,17 @@
+{
+  "schema": "lightweight-derived-figure-archive-v1",
+  "full_run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/evidence-analysis/job-20261110-qualitative27-v3",
+  "full_run_bytes": 256055089,
+  "included": {
+    "README.md": "59e1d46751cadf1ba910ff05797d7c34960d0117e463af7cf94e981600c65c07",
+    "source-selection-manifest.json": "0b2805c03c26562e2948acd5c9e768e7411464120795a5d56e167e11cdadd558",
+    "qualitative-match-counts.csv": "9f908456409c0a51f00e5106445c6648b8cfd28c026b1f4665645b249b23abd9",
+    "contracts.json": "51c1f8657e9c95d1cb2ce98c1dd6e309c703e928f5da6278cb6707fdd49f389d",
+    "completion.json": "02263261499514c0ec4320429d6f7d2f5aaea6325714336dccecd06a79c4af8e",
+    "hard-scenes-main-preview.png": "4c450666cce64c650b3f74f8a14eaf4255c419fb789e11fc5c0c72f7cfd49ddb",
+    "hard-scenes-main-preview.pdf": "107fee64fdbad9721eb9cef662ea8047cd447e7419f7a30768bd340ac2b5497e",
+    "hard-scenes-main-preview.svg": "8843598d152ee8502905e47d77e9e2c328c1f0d9b75250b5de55171e0ada20dc"
+  },
+  "excluded": "Full27-page gallery PDF and27per-imagePNG kept in full_run; completion.json records their hashes. No raw image/data/NPZ/checkpoint bank is archived.",
+  "archive_bytes_before_manifest": 27489688
+}
