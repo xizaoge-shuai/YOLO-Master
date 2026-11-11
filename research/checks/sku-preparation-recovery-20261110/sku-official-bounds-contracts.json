@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "scope": "All official 1,730,996 rows compared to actual author _read_annotations via AST; CPU only",
+  "source_sha256": "6ed65a75209568488525571797aba95b1c36be4ae301c6711758f5a3a52454fa",
+  "original_source_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+  "official_reference_url": "https://raw.githubusercontent.com/eg4000/SKU110K_CVPR19/master/object_detector_retinanet/keras_retinanet/preprocessing/csv_generator.py",
+  "official_reference_sha256": "44284158a427a46eb26be6a05454af105c1ac95cb3f7a39374897386528c3b08",
+  "policy": "Official author CSVGenerator._read_annotations boundary handling: x0/x1>=width->width-1; y0>height->height-1; y1>=height->height-1. Preserve original CSV coordinates and every object; do not silently clip/drop elsewhere.",
+  "splits": {
+    "train": {
+      "images": 8219,
+      "objects": 1208482,
+      "official_boundary_adjustments": 22469,
+      "raw_out_of_bounds": 14918,
+      "dropped_objects": 0,
+      "source_csv_sha256": "6859fe75eeb0665aeb8ac0fa06be349020c41f244f04f53b7f77cf03187c6d65"
+    },
+    "val": {
+      "images": 588,
+      "objects": 90968,
+      "official_boundary_adjustments": 1565,
+      "raw_out_of_bounds": 1031,
+      "dropped_objects": 0,
+      "source_csv_sha256": "7032314e171064936fc342f1bbddf8d575892c46f84331ee7e07e585f2695ded"
+    },
+    "test": {
+      "images": 2936,
+      "objects": 431546,
+      "official_boundary_adjustments": 7876,
+      "raw_out_of_bounds": 5211,
+      "dropped_objects": 0,
+      "source_csv_sha256": "cd905bc73a3e97e5d458f48b4ac0622bf3b1a4c4f347ee5f25fda96e6a72315f"
+    }
+  },
+  "preservation_contracts": "Original CSV bbox and line retained; every object kept; nonfinite/invalid/negative/degenerate still fail",
+  "seconds": 6.403925267004524
+}

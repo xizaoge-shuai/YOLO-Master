@@ -1,0 +1,10 @@
+{
+  "pid": 3111828,
+  "source": "/mnt/data/users/zhjia/datasets-extension-20261110/control/source-6ed65a752095/prepare_sku_official_bounds.py",
+  "source_sha256": "6ed65a75209568488525571797aba95b1c36be4ae301c6711758f5a3a52454fa",
+  "policy_source": "https://raw.githubusercontent.com/eg4000/SKU110K_CVPR19/master/object_detector_retinanet/keras_retinanet/preprocessing/csv_generator.py",
+  "preflight": "All 1,730,996 source rows exactly matched author loader; no counts/splits dropped",
+  "restart": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/restarts/official-author-boundary-20261110-145952",
+  "archive_bytes": 12196152718,
+  "created_unix": 1794322792.3596613
+}

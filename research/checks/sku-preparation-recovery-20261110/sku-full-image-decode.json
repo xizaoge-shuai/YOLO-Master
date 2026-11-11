@@ -1,0 +1,29 @@
+{
+  "status": "FAILED",
+  "scope": "All original split-listed JPEGs fully decoded via PIL.Image.convert(RGB).load; no drop/repair",
+  "images": 11743,
+  "decoded": 11743,
+  "failures": [
+    {
+      "file": "test_274.jpg",
+      "error": "OSError('image file is truncated (14 bytes not processed)')"
+    },
+    {
+      "file": "train_4222.jpg",
+      "error": "OSError('image file is truncated (23 bytes not processed)')"
+    },
+    {
+      "file": "train_5822.jpg",
+      "error": "OSError('broken data stream when reading image file')"
+    },
+    {
+      "file": "train_882.jpg",
+      "error": "OSError('image file is truncated (3 bytes not processed)')"
+    },
+    {
+      "file": "train_924.jpg",
+      "error": "OSError('image file is truncated (10 bytes not processed)')"
+    }
+  ],
+  "seconds": 95.77673779000179
+}

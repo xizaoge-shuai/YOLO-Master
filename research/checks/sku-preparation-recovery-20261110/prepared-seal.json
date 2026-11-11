@@ -1,0 +1,55 @@
+{
+  "counts": {
+    "test": 2936,
+    "train": 8219,
+    "val": 588
+  },
+  "dataset": "sku110k",
+  "evaluation_sha256": "9b80092a1939eff554af3f5d6f0da2b8b3c2137742346272c220111bf2676b86",
+  "manifest_sha256": "af5af57b34e9c2f2c4a755a7b25c79bae1d0f00bb4330549ace824903066fe87",
+  "objects": {
+    "test": 431546,
+    "train": 1208482,
+    "val": 90968
+  },
+  "schema": "detection-dataset-v1",
+  "source_code_sha256": "6ed65a75209568488525571797aba95b1c36be4ae301c6711758f5a3a52454fa",
+  "validation": {
+    "adjustments": [
+      {
+        "adjusted_objects": 22469,
+        "audit_file": "annotation-adjustments/train.json",
+        "audit_sha256": "ec8498081ea8ff391c3f7ae08645a43f9954e34b3fb7637cf09e075ae72e5bf4",
+        "dropped_objects": 0,
+        "policy": "Official author CSVGenerator._read_annotations boundary handling: x0/x1>=width->width-1; y0>height->height-1; y1>=height->height-1. Preserve original CSV coordinates and every object; do not silently clip/drop elsewhere.",
+        "source_url": "https://raw.githubusercontent.com/eg4000/SKU110K_CVPR19/master/object_detector_retinanet/keras_retinanet/preprocessing/csv_generator.py",
+        "split": "train"
+      },
+      {
+        "adjusted_objects": 1565,
+        "audit_file": "annotation-adjustments/val.json",
+        "audit_sha256": "f83cb68d0779b6a880ecfa6499452d028575ad26d8617f6e37ed55f30f8b7b80",
+        "dropped_objects": 0,
+        "policy": "Official author CSVGenerator._read_annotations boundary handling: x0/x1>=width->width-1; y0>height->height-1; y1>=height->height-1. Preserve original CSV coordinates and every object; do not silently clip/drop elsewhere.",
+        "source_url": "https://raw.githubusercontent.com/eg4000/SKU110K_CVPR19/master/object_detector_retinanet/keras_retinanet/preprocessing/csv_generator.py",
+        "split": "val"
+      },
+      {
+        "adjusted_objects": 7876,
+        "audit_file": "annotation-adjustments/test.json",
+        "audit_sha256": "8d478439bc7c1f7f89447209ac814889e92175a134c0f558fc90b4a96cd5b4c8",
+        "dropped_objects": 0,
+        "policy": "Official author CSVGenerator._read_annotations boundary handling: x0/x1>=width->width-1; y0>height->height-1; y1>=height->height-1. Preserve original CSV coordinates and every object; do not silently clip/drop elsewhere.",
+        "source_url": "https://raw.githubusercontent.com/eg4000/SKU110K_CVPR19/master/object_detector_retinanet/keras_retinanet/preprocessing/csv_generator.py",
+        "split": "test"
+      }
+    ],
+    "checks": "Archive streaming integrity, all listed JPEG headers and dimensions, all listed image/label SHA256",
+    "corrupt": [],
+    "decode_note": "JPEG header/container checks do not prove full image decode; data loader must surface decode failures.",
+    "duplicate_ids": [],
+    "full_image_decode": false,
+    "missing": [],
+    "silent_drops": 0
+  }
+}

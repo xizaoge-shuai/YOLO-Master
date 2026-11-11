@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "scope": "Complete11743-image manifest contracts, all1730996-object official splits preserved; no CUDA/Torch imported; five known damaged JPEGs retained and decoded; fixed1366+2wrappers+2decoderEvidence source list",
+  "counts": {
+    "test": 2936,
+    "train": 8219,
+    "val": 588
+  },
+  "objects": {
+    "test": 431546,
+    "train": 1208482,
+    "val": 90968
+  },
+  "manifest_sha256": "af5af57b34e9c2f2c4a755a7b25c79bae1d0f00bb4330549ace824903066fe87",
+  "source_anchor_sha256": "9564e537b32f18fe51a949888a6656a047c2a02797fd9ce863247e1e0b37d932",
+  "source_keys": 1370,
+  "wrapper_sha256": "ca3c464f654f0349f71b8a6c110447ecde0dc3fb6863fb421d43ad414ddcbf11",
+  "coordinator_sha256": "27d57ca4d21e880b7a2927c8c1cccdd69926e60aa84903366bb124ad439fd712",
+  "torch_imported": false,
+  "seconds": 8.060159219996422
+}

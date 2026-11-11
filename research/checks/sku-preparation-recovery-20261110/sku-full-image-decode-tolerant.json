@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "All original split-listed JPEGs decoded via Pillow LOAD_TRUNCATED_IMAGES=True, convert(RGB).load; raw bytes retained, no drop/repair; tolerant decoder can conceal missing entropy data, disclosed",
+  "images": 11743,
+  "decoded": 11743,
+  "failures": [],
+  "seconds": 94.29558110701328
+}

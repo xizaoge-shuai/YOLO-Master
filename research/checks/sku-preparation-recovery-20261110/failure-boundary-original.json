@@ -1,0 +1,10 @@
+{
+  "dataset": "sku110k",
+  "error": "SKU box outside image at /mnt/data/users/zhjia/datasets-extension-20261110/sku110k/raw/SKU110K_fixed/annotations/annotations_train.csv:71; preserved without silent clipping",
+  "silent_drops": 0,
+  "source_code_sha256": "4bb13602c3c369554a334a09a9b5e4fcd424bfa39f01c90665455c03f379379b",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py\", line 830, in main\n    seal = prepare_voc(root, args.offline) if args.dataset == \"voc0712\" else prepare_sku(root, args.offline)\n  File \"/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py\", line 755, in prepare_sku\n    rows = sku_rows(csv_path)\n  File \"/mnt/data/users/zhjia/datasets-extension-20261110/control/source-4bb13602c3c3/prepare_detection_datasets.py\", line 727, in sku_rows\n    raise ValueError(f\"SKU box outside image at {csv_path}:{number}; preserved without silent clipping\")\nValueError: SKU box outside image at /mnt/data/users/zhjia/datasets-extension-20261110/sku110k/raw/SKU110K_fixed/annotations/annotations_train.csv:71; preserved without silent clipping\n",
+  "type": "ValueError",
+  "utc": "2026-11-10T14:47:06Z"
+}
