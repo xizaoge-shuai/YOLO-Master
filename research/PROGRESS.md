@@ -678,3 +678,9 @@ Completed27GT-selected images×4frozen final models=108 qualitative comparisons,
 ## Resume full SKU and independent VisDrone repeats
 
 Full SKU assets prepared:8219train/588val/2936test,1730996objects retained. Author CSVGenerator boundary policy reproduced with original-row audit;5damaged official JPEGs retained under uniform process-local tolerant decoding. Complete11743image decode passed. New SKU version isolates decoder changes from frozen VOC/VisDrone. Added18-case repeat supervisor gated on completed10/10seed0 and original campaign ownership locks:8related-method baseline repeats before10spatial-arm repeats. LegacyBlank25-s1 resumes its original epoch10 optimizer/RNG checkpoint. Independent9CPUcontracts/Ruff passed; sources1366unchanged. These are execution-ready sources, not completed AP results.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:seed-repeats-plan -->
+## Replication suite job-20261107-Imo9Yocz: seed-repeats-plan
+
+Archived [seed-repeats-plan](experiments/replication-suite/job-20261107-Imo9Yocz/seed-repeats-plan/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.

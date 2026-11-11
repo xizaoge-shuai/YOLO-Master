@@ -1,0 +1,135 @@
+{
+  "schema": "frozen-visdrone-seed-repeats-v1",
+  "job": "repo:/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+  "original_job": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+  "origin_root": "user-data:/YOLO-Master",
+  "original_queue_sha256": "5cb360db08afdcb682db55107db70e9efaa5defe3ec9be9c652cb5dfb9db3ba8",
+  "provenance_sha256": "d45a604e6651541a0f8be4b7b14d154e28d3ce0ce82ca18de55dfbd1d6af2d39",
+  "original_provenance_sha256": "c58b86fd620fa79055366fa46044e423d95ac0a1cc42bac5218950503eeef06f",
+  "coordinator_sha256": "2c00c2bc15d7a555e4a1fb94b48fc640d6074ed06c87c2d676bdd6941332c3e0",
+  "gpu_admission_sha256": "074036556b569d5e6e7b9e10b46e62b968d90bf178fe9f444e679d16230cd8e4",
+  "cases": [
+    {
+      "method": "frofa-c2-d01",
+      "seed": 1,
+      "name": "frofa-c2-d01-s1",
+      "resume_original": false
+    },
+    {
+      "method": "loffta-c2-n005",
+      "seed": 1,
+      "name": "loffta-c2-n005-s1",
+      "resume_original": false
+    },
+    {
+      "method": "cache-reuse-c1-int8",
+      "seed": 1,
+      "name": "cache-reuse-c1-int8-s1",
+      "resume_original": false
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "seed": 1,
+      "name": "vit-adapter-cache25-s1",
+      "resume_original": false
+    },
+    {
+      "method": "frofa-c2-d01",
+      "seed": 2,
+      "name": "frofa-c2-d01-s2",
+      "resume_original": false
+    },
+    {
+      "method": "loffta-c2-n005",
+      "seed": 2,
+      "name": "loffta-c2-n005-s2",
+      "resume_original": false
+    },
+    {
+      "method": "cache-reuse-c1-int8",
+      "seed": 2,
+      "name": "cache-reuse-c1-int8-s2",
+      "resume_original": false
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "seed": 2,
+      "name": "vit-adapter-cache25-s2",
+      "resume_original": false
+    },
+    {
+      "method": "blank25",
+      "seed": 1,
+      "name": "blank25-s1",
+      "resume_original": true
+    },
+    {
+      "method": "detail25",
+      "seed": 1,
+      "name": "detail25-s1",
+      "resume_original": false
+    },
+    {
+      "method": "lowpass25",
+      "seed": 1,
+      "name": "lowpass25-s1",
+      "resume_original": false
+    },
+    {
+      "method": "transport25",
+      "seed": 1,
+      "name": "transport25-s1",
+      "resume_original": false
+    },
+    {
+      "method": "views25",
+      "seed": 1,
+      "name": "views25-s1",
+      "resume_original": false
+    },
+    {
+      "method": "blank25",
+      "seed": 2,
+      "name": "blank25-s2",
+      "resume_original": false
+    },
+    {
+      "method": "detail25",
+      "seed": 2,
+      "name": "detail25-s2",
+      "resume_original": false
+    },
+    {
+      "method": "lowpass25",
+      "seed": 2,
+      "name": "lowpass25-s2",
+      "resume_original": false
+    },
+    {
+      "method": "transport25",
+      "seed": 2,
+      "name": "transport25-s2",
+      "resume_original": false
+    },
+    {
+      "method": "views25",
+      "seed": 2,
+      "name": "views25-s2",
+      "resume_original": false
+    }
+  ],
+  "baseline_repeats": 8,
+  "spatial_repeats": 10,
+  "epochs": 100,
+  "batch": 8,
+  "train_images": 6471,
+  "val_images": 548,
+  "seed_zero_gate": "dataset-first PHASE_COMPLETE plus three exclusive locks and no live trainer",
+  "scheduling": "baseline repeats first; GPU0 up to two resource-admitted stages across all new pipelines",
+  "user_authorization": "2026-11-10 user requests all missing experiments, parallel where feasible, baselines first otherwise",
+  "supersedes_scheduling_only": "Earlier wait-for-all-datasets rule; frozen deferred-seeds.json is retained unchanged",
+  "legacy_resume": "Blank25-s1 continues the existing original checkpoint, optimizer, scheduler and RNG",
+  "no_gpu_smoke_or_subset": true,
+  "no_process_signals": true,
+  "timing_conditions": "Shared GPU; observed costs, not controlled speed comparisons"
+}
