@@ -1,0 +1,93 @@
+{
+  "schema": "dataset-first-seed-zero-v1",
+  "job": "repo:/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+  "origin_root": "user-data:/YOLO-Master",
+  "original_job": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+  "original_queue_sha256": "5cb360db08afdcb682db55107db70e9efaa5defe3ec9be9c652cb5dfb9db3ba8",
+  "provenance_sha256": "d45a604e6651541a0f8be4b7b14d154e28d3ce0ce82ca18de55dfbd1d6af2d39",
+  "coordinator_sha256": "b335c28eb5379246a6d0821047e5fa8f0359c847b0012902b5b663598203ee5f",
+  "source": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+  "cache_manifest": "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/cache/manifest.json",
+  "cases": [
+    {
+      "method": "frofa-c2-d01",
+      "seed": 0,
+      "name": "frofa-c2-d01-s0",
+      "resume_original": false
+    },
+    {
+      "method": "loffta-c2-n005",
+      "seed": 0,
+      "name": "loffta-c2-n005-s0",
+      "resume_original": false
+    },
+    {
+      "method": "cache-reuse-c1-int8",
+      "seed": 0,
+      "name": "cache-reuse-c1-int8-s0",
+      "resume_original": false
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "seed": 0,
+      "name": "vit-adapter-cache25-s0",
+      "resume_original": false
+    },
+    {
+      "method": "mix25",
+      "seed": 0,
+      "name": "mix25-s0",
+      "resume_original": false
+    },
+    {
+      "method": "online100",
+      "seed": 0,
+      "name": "online100-s0",
+      "resume_original": false
+    },
+    {
+      "method": "blank0",
+      "seed": 0,
+      "name": "blank0-s0",
+      "resume_original": false
+    },
+    {
+      "method": "detail0",
+      "seed": 0,
+      "name": "detail0-s0",
+      "resume_original": false
+    },
+    {
+      "method": "vit-adapter-cache0",
+      "seed": 0,
+      "name": "vit-adapter-cache0-s0",
+      "resume_original": false
+    },
+    {
+      "method": "cache-reuse-c1-int4",
+      "seed": 0,
+      "name": "cache-reuse-c1-int4-s0",
+      "resume_original": false
+    }
+  ],
+  "policy": "VisDrone seed0 first; all independent seed1/2 repeats deferred until datasets finish",
+  "next_datasets": [
+    {
+      "dataset": "VOC07+12",
+      "training_integration": "pending",
+      "launched": false
+    },
+    {
+      "dataset": "SKU-110K",
+      "training_integration": "pending",
+      "launched": false
+    },
+    {
+      "dataset": "COCO2017",
+      "training_integration": "pending",
+      "launched": false
+    }
+  ],
+  "no_smoke_or_subset_runs": true,
+  "no_process_signals": true
+}

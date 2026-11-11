@@ -1,0 +1,15 @@
+method,seed,AP,status,source,note
+C1,0,9.1186,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+C2 / q0,0,10.6568,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+C2 / q0,1,10.1599,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+C2 / q0,2,10.3375,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Random Mix10,0,10.6708,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Random Mix25,0,11.3526,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Random Mix25,1,10.8883,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Random Mix25,2,10.8096,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Random Mix50,0,11.2299,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Online100,0,11.3982,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Online100,1,11.3985,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+Online100,2,11.6916,historical saved reference,research/RESULTS_LEDGER.md section3,Do not pool historical seed0 with its new cost repeat as independent seeds
+mix25,0,11.352560927159786,complete,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/mix25-s0,new seed0 cost repeat
+online100,0,11.398159453937234,complete,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/online100-s0,new seed0 cost repeat

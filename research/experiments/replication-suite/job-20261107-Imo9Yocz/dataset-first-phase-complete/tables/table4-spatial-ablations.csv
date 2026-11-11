@@ -1,0 +1,18 @@
+method,seed,status,AP,AP50,AP75,AR500,query_pct,source
+transport25,0,historical saved reference,9.6350,20.9255,7.9773,,25,research/RESULTS_LEDGER.md section4
+blank25,0,historical saved reference,9.9984,21.4894,8.3233,,25,research/RESULTS_LEDGER.md section4
+views25,0,historical saved reference,10.0912,21.7731,8.2518,,25,research/RESULTS_LEDGER.md section4
+detail25,0,historical saved reference,12.3453,26.6593,10.0057,,25,research/RESULTS_LEDGER.md section4
+lowpass25,0,historical saved reference,9.8509,21.2414,8.2226,,25,research/RESULTS_LEDGER.md section4
+blank0,0,complete,8.995389291604418,19.72325673617635,7.288401335849306,20.62543216242178,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/blank0-s0
+detail0,0,complete,11.63285560312653,25.82813978881251,9.197839194970369,26.13563194418149,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/detail0-s0
+blank25,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/train/blank25-s1
+detail25,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/detail25-s1
+lowpass25,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/lowpass25-s1
+transport25,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/transport25-s1
+views25,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/views25-s1
+blank25,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/blank25-s2
+detail25,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/detail25-s2
+lowpass25,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/lowpass25-s2
+transport25,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/transport25-s2
+views25,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/views25-s2

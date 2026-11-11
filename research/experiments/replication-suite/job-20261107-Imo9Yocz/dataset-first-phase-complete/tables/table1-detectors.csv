@@ -1,0 +1,6 @@
+method,seed,AP,AP50,AP75,AR500,status,source,note
+YOLO-Master-N,0,14.8749,27.4598,13.8138,,historical saved reference,research/RESULTS_LEDGER.md section5,seed0；100 unique epochs，存在续训/重复记录
+YOLO11-N,0,14.7748,27.5637,13.5523,,historical saved reference,research/RESULTS_LEDGER.md section5,seed0；100 unique epochs
+YOLO12-N,0,14.3876,26.9711,13.3172,,historical saved reference,research/RESULTS_LEDGER.md section5,seed0；100 unique epochs
+YOLO13,,,,,,not implemented/not run,,No proxy architecture substituted
+Detail25 candidate,0,12.3453,26.6593,10.0057,,historical saved reference,research/RESULTS_LEDGER.md section4,"Candidate, not finalized method"

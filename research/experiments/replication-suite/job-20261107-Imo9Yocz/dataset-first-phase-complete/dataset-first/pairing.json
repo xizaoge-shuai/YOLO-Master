@@ -1,0 +1,16 @@
+{
+  "compared": [
+    "frofa-c2-d01-s0",
+    "loffta-c2-n005-s0",
+    "cache-reuse-c1-int8-s0",
+    "vit-adapter-cache25-s0",
+    "mix25-s0",
+    "online100-s0",
+    "blank0-s0",
+    "detail0-s0",
+    "vit-adapter-cache0-s0",
+    "cache-reuse-c1-int4-s0"
+  ],
+  "paired": true,
+  "seed_groups": 1
+}

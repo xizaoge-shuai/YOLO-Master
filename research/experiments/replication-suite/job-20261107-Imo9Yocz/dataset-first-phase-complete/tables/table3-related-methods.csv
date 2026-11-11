@@ -1,0 +1,15 @@
+method,seed,status,AP,AP50,AP75,AR500,query_pct,source
+frofa-c2-d01,0,complete,10.527168678946435,22.96632927348513,8.30763537489345,24.065412777354513,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/frofa-c2-d01-s0
+loffta-c2-n005,0,complete,9.123371319577005,19.94210750130395,7.4517961639452865,21.216630469579066,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/loffta-c2-n005-s0
+cache-reuse-c1-int8,0,complete,8.072014986177772,18.068462072656732,6.351673751189029,19.403312147053633,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/cache-reuse-c1-int8-s0
+vit-adapter-cache25,0,complete,16.585498245593705,33.195785126736915,14.465128070995096,33.069409737908195,25,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache25-s0
+vit-adapter-cache0,0,complete,15.906833559854633,32.23826084581267,13.782780310744204,32.52821204635218,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache0-s0
+cache-reuse-c1-int4,0,complete,8.206034210304981,18.13738956202855,6.571322393896489,19.427617746778505,0,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/cache-reuse-c1-int4-s0
+frofa-c2-d01,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/frofa-c2-d01-s1
+loffta-c2-n005,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/loffta-c2-n005-s1
+cache-reuse-c1-int8,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/cache-reuse-c1-int8-s1
+vit-adapter-cache25,1,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache25-s1
+frofa-c2-d01,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/frofa-c2-d01-s2
+loffta-c2-n005,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/loffta-c2-n005-s2
+cache-reuse-c1-int8,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/cache-reuse-c1-int8-s2
+vit-adapter-cache25,2,pending,,,,,,/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/paper-baselines/job-20261107-Imo9Yocz/train/vit-adapter-cache25-s2

@@ -1,0 +1,11 @@
+{
+  "state": "PHASE_COMPLETE",
+  "completed_seed_zero": 10,
+  "planned_seed_zero": 10,
+  "deferred_seed_repeats": 18,
+  "next_action": "READY_FOR_NEXT_DATASET",
+  "next_dataset": "VOC07+12",
+  "next_dataset_training_integration": "pending",
+  "new_dataset_launched": false,
+  "original_28_case_queue_complete": false
+}

@@ -654,3 +654,9 @@ Archived [cache1-s0](experiments/crossdataset/job-20261110-voc0712-s0-v2/cache1-
 ## Replication suite job-20261107-Imo9Yocz: dataset-first-cache-reuse-c1-int4-s0
 
 Archived [dataset-first-cache-reuse-c1-int4-s0](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-cache-reuse-c1-int4-s0/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:dataset-first-phase-complete -->
+## Replication suite job-20261107-Imo9Yocz: dataset-first-phase-complete
+
+Archived [dataset-first-phase-complete](experiments/replication-suite/job-20261107-Imo9Yocz/dataset-first-phase-complete/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
