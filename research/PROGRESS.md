@@ -684,3 +684,9 @@ Full SKU assets prepared:8219train/588val/2936test,1730996objects retained. Auth
 ## Replication suite job-20261107-Imo9Yocz: seed-repeats-plan
 
 Archived [seed-repeats-plan](experiments/replication-suite/job-20261107-Imo9Yocz/seed-repeats-plan/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- replication-suite:job-20261107-Imo9Yocz:seed-repeats-frofa-c2-d01-s1 -->
+## Replication suite job-20261107-Imo9Yocz: seed-repeats-frofa-c2-d01-s1
+
+Archived [seed-repeats-frofa-c2-d01-s1](experiments/replication-suite/job-20261107-Imo9Yocz/seed-repeats-frofa-c2-d01-s1/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
