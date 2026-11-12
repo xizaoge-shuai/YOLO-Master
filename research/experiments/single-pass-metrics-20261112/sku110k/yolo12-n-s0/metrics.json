@@ -1,0 +1,87 @@
+{
+  "version": "complete-cpu-metrics-v1",
+  "dataset": "sku110k",
+  "evaluated_images": 2936,
+  "scale": "0-100",
+  "native_primary": {
+    "implementation": "pycocotools.COCOeval bbox",
+    "version": "2.0.11",
+    "scale": "0-100",
+    "evaluated_images": 2936,
+    "by_max_detections": {
+      "100": {
+        "AP": 40.3693226045944,
+        "AP50": 62.57726876896685,
+        "AP75": 47.13424787888756,
+        "AP_small": 11.106111318240496,
+        "AP_medium": 14.905516554725596,
+        "AP_large": 46.141046105474345,
+        "AR": 44.183609626783706
+      },
+      "500": {
+        "AP": 54.10846375182054,
+        "AP50": 88.88109732867531,
+        "AP75": 60.14370991796528,
+        "AP_small": 11.939357402203756,
+        "AP_medium": 32.21458296169169,
+        "AP_large": 58.6749690259836,
+        "AR": 61.66508321245012
+      }
+    }
+  },
+  "native_consistency": "PASS",
+  "saved_prediction_protocol": {
+    "version": "direct-full-detection-v1",
+    "coordinates": "zero-based half-open original image pixels",
+    "confidence": 0.001,
+    "max_det": 500,
+    "nms_iou": 0.7,
+    "native_prediction": true
+  },
+  "auxiliary_coco_by_max_detections": {
+    "1": {
+      "AP": 0.8752791446809352,
+      "AP50": 0.9900990099009901,
+      "AP75": 0.9900990099009901,
+      "AP_small": 0.0,
+      "AP_medium": 0.7948294829482949,
+      "AP_large": 0.8752791446809352,
+      "AR": 0.5260621115709565
+    },
+    "10": {
+      "AP": 5.190602361162245,
+      "AP50": 6.8880389893605205,
+      "AP75": 6.665986935959069,
+      "AP_small": 0.7260726072607261,
+      "AP_medium": 0.8115426927308114,
+      "AP_large": 6.143628609975975,
+      "AR": 5.15421299235771
+    },
+    "100": {
+      "AP": 40.3693226045944,
+      "AP50": 62.57726876896685,
+      "AP75": 47.13424787888756,
+      "AP_small": 11.106111318240496,
+      "AP_medium": 14.905516554725596,
+      "AP_large": 46.141046105474345,
+      "AR": 44.183609626783706
+    },
+    "500": {
+      "AP": 54.10846375182054,
+      "AP50": 88.88109732867531,
+      "AP75": 60.14370991796528,
+      "AP_small": 11.939357402203756,
+      "AP_medium": 32.21458296169169,
+      "AP_large": 58.6749690259836,
+      "AR": 61.66508321245012
+    }
+  },
+  "definitions": {
+    "COCO_AP": "101-point interpolated AP averaged over IoU0.50:0.05:0.95, area=all; equal category weighting, not micro AP",
+    "AR": "Maximum recall averaged over IoU0.50:0.05:0.95 at selected maxDet; equal category weighting",
+    "VOC_auxiliary_only": "COCO-style VOC results use half-open boxes and map difficult to crowd. Native VOC eleven-point AP50 remains unchanged and primary.",
+    "area": "Original-image bbox area. COCO ranges: small[0,1024], medium[1024,9216], large[9216,1e10]; boundaries overlap per COCOeval.",
+    "PR": "COCOeval interpolated precision/score tensors at 101 recall grid points; -1/CSV empty means undefined. This is not confidence-sweep P/R/F1.",
+    "missing": "No new inference; predictions below frozen score0.001 or beyond frozen top500 cannot be recovered."
+  }
+}
