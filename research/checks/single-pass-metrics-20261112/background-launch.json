@@ -1,0 +1,126 @@
+{
+  "worker": {
+    "pid": 661685,
+    "argv": [
+      "online_experiments/metric_bundle_campaign.py",
+      "run",
+      "--priority",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass",
+      "--publish"
+    ],
+    "started_unix": 1794498664.034072
+  },
+  "status": {
+    "state": "WAITING_RESULTS",
+    "message": "CPU sidecar waiting for original sealed final endpoints",
+    "time_unix": 1794498664.0361712,
+    "completed": 0,
+    "failed": 0,
+    "planned": 14
+  },
+  "cases": [
+    {
+      "dataset": "voc0712",
+      "method": "master-n",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0",
+      "time_unix": 1794498664.034278
+    },
+    {
+      "dataset": "sku110k",
+      "method": "yolo12-n",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/yolo12-n-s0",
+      "time_unix": 1794498664.0344777
+    },
+    {
+      "dataset": "voc0712",
+      "method": "yolo12-n",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/yolo12-n-s0",
+      "time_unix": 1794498664.0346363
+    },
+    {
+      "dataset": "sku110k",
+      "method": "master-n",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/master-n-s0",
+      "time_unix": 1794498664.0347693
+    },
+    {
+      "dataset": "voc0712",
+      "method": "frofa-c2-d01",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0",
+      "time_unix": 1794498664.0349033
+    },
+    {
+      "dataset": "sku110k",
+      "method": "frofa-c2-d01",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0",
+      "time_unix": 1794498664.0350323
+    },
+    {
+      "dataset": "voc0712",
+      "method": "loffta-c2-n005",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0",
+      "time_unix": 1794498664.0351577
+    },
+    {
+      "dataset": "sku110k",
+      "method": "loffta-c2-n005",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/loffta-c2-n005-s0",
+      "time_unix": 1794498664.0352871
+    },
+    {
+      "dataset": "voc0712",
+      "method": "cache-reuse-c1-int8",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0",
+      "time_unix": 1794498664.0354154
+    },
+    {
+      "dataset": "sku110k",
+      "method": "cache-reuse-c1-int8",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0",
+      "time_unix": 1794498664.0355434
+    },
+    {
+      "dataset": "voc0712",
+      "method": "vit-adapter-cache25",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/vit-adapter-cache25-s0",
+      "time_unix": 1794498664.03567
+    },
+    {
+      "dataset": "sku110k",
+      "method": "vit-adapter-cache25",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/vit-adapter-cache25-s0",
+      "time_unix": 1794498664.0357976
+    },
+    {
+      "dataset": "voc0712",
+      "method": "detail25",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/detail25-s0",
+      "time_unix": 1794498664.035923
+    },
+    {
+      "dataset": "sku110k",
+      "method": "detail25",
+      "state": "WAITING_RESULTS",
+      "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0",
+      "time_unix": 1794498664.0360463
+    }
+  ],
+  "pid_alive": true,
+  "daemon_log": "",
+  "policy": "CPU-only independent sidecar; original seven-method full-data seed0 training unchanged; one saved prediction set per endpoint"
+}

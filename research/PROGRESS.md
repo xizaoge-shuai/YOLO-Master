@@ -726,3 +726,9 @@ Verified nativeVOCYOLO-Master-N in epoch1 and nativeSKUYOLO12-N in epoch2, both 
 ## Single-pass metric export
 
 Added CPU-only saved-prediction metric scorer and14-case VOC/SKU sidecar; no active training source changes, no extra inference or seeds. Native metrics preserved; full4952-image VOC C1 reference matches original nativeAP50 exactly,100training rows exported.16CPUcontracts and targetedRuff passed. [Evidence](checks/single-pass-metrics-20261112/README.md). Background sidecar launch follows this source commit.
+
+
+<!-- single-pass-metric-sidecar-launched-20261112 -->
+## CPU metric sidecar launched
+
+DetachedPID661685 verified alive;14authorized VOC/SKU endpoints WAITING_RESULTS,0failed. Existing nativeVOCMaster/SKUYOLO12 continued at epoch3/13 during check. No new GPU pass or training restart. Complete metric bundles archive and publish as original final predictions become available. [Launch evidence](checks/single-pass-metrics-20261112/background-launch.json).

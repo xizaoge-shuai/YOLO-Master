@@ -6,8 +6,8 @@ User requests all derivable metrics together, avoiding second training/evaluatio
 
 - [x] Export native primary consistency, auxiliaryCOCO AP/AP50/AP75/size/perclass/AR,rawPR/score tensors and actualtrain/lr/time curves from saved predictions/logs only. Full4952-image completed VOC C1 reference verified without inference; nativeAP50 matches exactly and100training rows exported.
 - [x] Reuse measured cost/storage/VRAM/query/parameter sources with explicit scopes; filter dummy zero validation columns and do not use cached validation as full-imageFPS. Identity-bound frozen teacher21,596,544parameters counted once on CPU; actualhead/native-nc sources checked.
-- [ ] Start an idempotent CPU-only watcher for the14 authorized VOC/SKU endpoints,archive metric bundles without changing training jobs or triggering GPU passes.
-- [ ] CPU contracts,independent metric/source review,scoped commit+push,and update handoff with one-command bundle status.
+- [x] Start an idempotent CPU-only watcher for the14 authorized VOC/SKU endpoints,archive metric bundles without changing training jobs or triggering GPU passes. PID661685 verified alive;14cases WAITING_RESULTS,0failed atlaunch. NativeVOCMaster/SKUYOLO12 continued epoch3/13 during verification.
+- [x] CPU contracts,independent metric/source review,scoped commit+push,and update handoff with one-command bundle status.16CPUcontracts+targetedRuff passed;fullVOCsaved-prediction check passed;sources/docs/evidence pushed asf1f4956;launch evidence archived separately. Metric results remain asynchronous,not claimed complete.
 
 ## Superseding authorization:2026-11-12 minimal single-run paper baselines
 
