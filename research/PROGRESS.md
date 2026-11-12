@@ -696,3 +696,9 @@ Archived [seed-repeats-frofa-c2-d01-s1](experiments/replication-suite/job-202611
 ## sku110k full seed0: cache1
 
 Archived [cache1-s0](experiments/crossdataset/job-20261110-sku110k-official-loader-v2/cache1-s0/README.md); final epoch,explicit metric.
+
+
+<!-- live-check-20261112:full-data-progress -->
+## Full-data progress check2026-11-12
+
+VOC C1/C2 complete at native eleven-point AP50=67.6000/74.7612; Mix25 reached97/100. SKU C1 complete at COCO AP34.2675(maxDet100),45.6275(maxDet500); C2 reached69/100. VisDrone FroFA seed1 complete at AP10.5167; LOFFTA seed1 waiting GPU behind VOC/SKU. Completed endpoints were auto-archived and pushed. COCO proxy interruption recovered; official train archive resumed from13411181563bytes with original partial retained. No training source, schedule or active process changed. Second-backbone weights prepared; cross-backbone/transformed-AP/controlled-cost training or measurements have not been launched.
