@@ -690,3 +690,9 @@ Archived [seed-repeats-plan](experiments/replication-suite/job-20261107-Imo9Yocz
 ## Replication suite job-20261107-Imo9Yocz: seed-repeats-frofa-c2-d01-s1
 
 Archived [seed-repeats-frofa-c2-d01-s1](experiments/replication-suite/job-20261107-Imo9Yocz/seed-repeats-frofa-c2-d01-s1/README.md). Fixed final official-reference AP for complete full runs; observed resource conditions retained.
+
+
+<!-- crossdataset:job-20261110-sku110k-official-loader-v2:cache1-s0 -->
+## sku110k full seed0: cache1
+
+Archived [cache1-s0](experiments/crossdataset/job-20261110-sku110k-official-loader-v2/cache1-s0/README.md); final epoch,explicit metric.
