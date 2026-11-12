@@ -708,3 +708,9 @@ VOC C1/C2 complete at native eleven-point AP50=67.6000/74.7612; Mix25 reached97/
 ## Deadline priority: actual detectors and four supplied-paper baselines, one run each
 
 User replaces broad12-case queues and18seed repetitions with seven cases per full dataset:actualYOLO-Master-N,YOLO12-N,FroFA,LOFF-TA,Cache and ReuseINT8,ViT-Adapter idea adaptations,thenDetail25. Stopped all old supervisors and paused SKU extraC2 at retained72epoch checkpoint; existing VOCMix25 tail allowed to finish. Seven full VisDrone seed0 cases already complete and reused with exact native-reference hashes. Added native full-detector worker and minimal two-slotGPU0 coordinator.12CPUcontracts/Ruff/independentreview passed; actualVOC16551/SKU8219train counts and all5damagedSKUoriginalJPEGs preserved; original1366sources unchanged. Full new data preparations sealed, noGPU smoke/subset. Source ready for full background launch; no newAP claimed here. Handoff replaced obsolete seed/extra-control instructions.
+
+
+<!-- minimal-priority-20261112:parallel-two-architectures -->
+## Parallel start of the two direct detector architectures
+
+Allow the two direct baseline methods to exchange execution order without changing the seven methods or their recipes. VOC startsYOLO-Master-N andSKU startsYOLO12-N,then each runs the other detector before the four paper adaptations andDetail25. CPU ordering assertions,six coordinator contracts andRuff passed.

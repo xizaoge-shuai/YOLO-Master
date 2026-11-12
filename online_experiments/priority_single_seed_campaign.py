@@ -31,6 +31,12 @@ METHODS = (
 DIRECT = frozenset(METHODS[:2])
 
 
+def ordered_methods(args):
+    if getattr(args, "first_detector", "master-n") == "yolo12-n":
+        return (METHODS[1], METHODS[0], *METHODS[2:])
+    return METHODS
+
+
 def read(path):
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
@@ -183,7 +189,7 @@ def plan(args):
         "manifest": provenance["manifest"],
         "manifest_sha256": provenance["manifest_sha256"],
         "counts": provenance["counts"],
-        "methods": list(METHODS),
+        "methods": list(ordered_methods(args)),
         "source_sha256": {name: sha(ROOT / name) for name in sources},
         "seed": 0,
         "epochs": 100,
@@ -309,7 +315,7 @@ def run(args):
         status(args, "PREPARING_NATIVE_DATA", "Full official split labels for both direct detectors")
         execute(args, "prepare", "master-n")
         completed = []
-        for index, method in enumerate(METHODS, 1):
+        for index, method in enumerate(contract["methods"], 1):
             output = output_for(args, method)
             done = output / ("DONE.json" if method in DIRECT else "DONE")
             if not done.is_file():
@@ -346,6 +352,7 @@ def main():
     parser.add_argument("--job", type=Path, required=True)
     parser.add_argument("--dataset", choices=("voc0712", "sku110k"))
     parser.add_argument("--dataset-job", type=Path)
+    parser.add_argument("--first-detector", choices=("master-n", "yolo12-n"), default="master-n")
     parser.add_argument("--dependencies", type=Path, default=ROOT / ".research-deps/evidence-20261110/site")
     parser.add_argument("--publish", action="store_true")
     args = parser.parse_args()
