@@ -732,3 +732,9 @@ Added CPU-only saved-prediction metric scorer and14-case VOC/SKU sidecar; no act
 ## CPU metric sidecar launched
 
 DetachedPID661685 verified alive;14authorized VOC/SKU endpoints WAITING_RESULTS,0failed. Existing nativeVOCMaster/SKUYOLO12 continued at epoch3/13 during check. No new GPU pass or training restart. Complete metric bundles archive and publish as original final predictions become available. [Launch evidence](checks/single-pass-metrics-20261112/background-launch.json).
+
+
+<!-- priority-single-seed-20261112:sku110k:yolo12-n -->
+## Priority sku110k: yolo12-n completed
+
+Full seed0/final100 endpoint archived: [yolo12-n](experiments/priority-single-seed-20261112/sku110k/yolo12-n-s0/README.md). No seed repeats or ablations queued.
