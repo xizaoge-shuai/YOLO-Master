@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "script": "test_direct_baseline_suite.py",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.011s\n\nOK\n"
+    },
+    {
+      "script": "test_priority_single_seed_campaign.py",
+      "exit": 0,
+      "stdout": "",
+      "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nOK\n"
+    }
+  ],
+  "gpu_training_used": false
+}

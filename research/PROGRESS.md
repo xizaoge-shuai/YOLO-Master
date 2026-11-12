@@ -702,3 +702,9 @@ Archived [cache1-s0](experiments/crossdataset/job-20261110-sku110k-official-load
 ## Full-data progress check2026-11-12
 
 VOC C1/C2 complete at native eleven-point AP50=67.6000/74.7612; Mix25 reached97/100. SKU C1 complete at COCO AP34.2675(maxDet100),45.6275(maxDet500); C2 reached69/100. VisDrone FroFA seed1 complete at AP10.5167; LOFFTA seed1 waiting GPU behind VOC/SKU. Completed endpoints were auto-archived and pushed. COCO proxy interruption recovered; official train archive resumed from13411181563bytes with original partial retained. No training source, schedule or active process changed. Second-backbone weights prepared; cross-backbone/transformed-AP/controlled-cost training or measurements have not been launched.
+
+
+<!-- minimal-single-seed-priority-20261112:source-and-stop -->
+## Deadline priority: actual detectors and four supplied-paper baselines, one run each
+
+User replaces broad12-case queues and18seed repetitions with seven cases per full dataset:actualYOLO-Master-N,YOLO12-N,FroFA,LOFF-TA,Cache and ReuseINT8,ViT-Adapter idea adaptations,thenDetail25. Stopped all old supervisors and paused SKU extraC2 at retained72epoch checkpoint; existing VOCMix25 tail allowed to finish. Seven full VisDrone seed0 cases already complete and reused with exact native-reference hashes. Added native full-detector worker and minimal two-slotGPU0 coordinator.12CPUcontracts/Ruff/independentreview passed; actualVOC16551/SKU8219train counts and all5damagedSKUoriginalJPEGs preserved; original1366sources unchanged. Full new data preparations sealed, noGPU smoke/subset. Source ready for full background launch; no newAP claimed here. Handoff replaced obsolete seed/extra-control instructions.

@@ -1,0 +1,83 @@
+{
+  "status": "PASS",
+  "gpu_initialized": false,
+  "unit_contracts": 6,
+  "datasets": {
+    "voc0712": {
+      "train_images": 16551,
+      "original_train_images": 16551,
+      "test_images": 4952,
+      "train_objects": 40058,
+      "prepared_seal_sha256": "0affe7c6880a71927c4b0f34f3ba21f9e8658f36d7cdcc625a14f0ee2ac53e4f"
+    },
+    "sku110k": {
+      "train_images": 8219,
+      "original_train_images": 8219,
+      "test_images": 2936,
+      "train_objects": 1208482,
+      "prepared_seal_sha256": "ce638f49f0a496fe691c47cf19288787c310701dc30272937c18e16e214fdb12"
+    }
+  },
+  "damaged_jpegs": [
+    {
+      "sample_id": "SKU110K/test_274.jpg",
+      "split": "test",
+      "original_sha256": "5ef4924a7594fb6d2ec81b05d0c90e5c45453b3f1bf8369d13293b8dee321327",
+      "shape": [
+        3264,
+        2448,
+        3
+      ],
+      "bytes_unchanged": true
+    },
+    {
+      "sample_id": "SKU110K/train_4222.jpg",
+      "split": "train",
+      "original_sha256": "b26ddd61b6d7a6709a6e85f73e649510fcbd4637098e7a1ee9fffca7060bd621",
+      "shape": [
+        3264,
+        2448,
+        3
+      ],
+      "bytes_unchanged": true
+    },
+    {
+      "sample_id": "SKU110K/train_5822.jpg",
+      "split": "train",
+      "original_sha256": "5450f26208dd8776013620eb581348cc1546e64d9fa4aa5e669f8dfc235321c7",
+      "shape": [
+        2448,
+        3264,
+        3
+      ],
+      "bytes_unchanged": true
+    },
+    {
+      "sample_id": "SKU110K/train_882.jpg",
+      "split": "train",
+      "original_sha256": "ced298ad25bc44d6b80887d49c033144d93c368ff27f275c4c10090df43bb95a",
+      "shape": [
+        3264,
+        2448,
+        3
+      ],
+      "bytes_unchanged": true
+    },
+    {
+      "sample_id": "SKU110K/train_924.jpg",
+      "split": "train",
+      "original_sha256": "27c538fcf05123d18d32fc47c8563ca664ac038d3998d52ce95454ae1152cc1d",
+      "shape": [
+        3264,
+        2448,
+        3
+      ],
+      "bytes_unchanged": true
+    }
+  ],
+  "source_sha256": {
+    "online_experiments/direct_baseline_suite.py": "fd3eeae79d9035ee66e65e42fb796d815803e0044e88978a3649d9c8fc2eced4",
+    "online_experiments/test_direct_baseline_suite.py": "799cee551de05ed31945ff7d2c1ac927df76c34af05696541c243ddb44d5e242"
+  },
+  "frozen_source_files_verified": 1371
+}

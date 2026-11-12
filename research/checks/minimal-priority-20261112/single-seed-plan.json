@@ -1,0 +1,32 @@
+{
+  "user_priority": "Supersedes broad baseline sweeps and seed repetitions under deadline",
+  "created_unix": 1794495280.9006736,
+  "runs_per_configuration": 1,
+  "seed": 0,
+  "epochs": 100,
+  "batch": 8,
+  "imgsz": 640,
+  "baseline_order": [
+    "YOLO-Master-N",
+    "YOLO12-N",
+    "FroFA idea adaptation",
+    "LOFF-TA idea adaptation",
+    "Cache and Reuse INT8 idea adaptation",
+    "ViT-Adapter cache-side idea adaptation"
+  ],
+  "candidate_after_baselines": "Detail25",
+  "datasets": [
+    "voc0712",
+    "sku110k",
+    "coco2017 last after preparation"
+  ],
+  "visdrone_core_cases_already_complete": 7,
+  "repeat_existing_visdrone": false,
+  "new_seed_repeats": false,
+  "extra_ablation_or_budget_sweeps": false,
+  "parallel_policy": "Healthy GPU0 only; up to2 admitted full-data stages; no GPU1 reset or other-user process changes",
+  "existing_results_preserved": true,
+  "original_paper_source_code_reproduction_claim": false,
+  "direct_detector_training": "Actual model YAML architectures with existing100epoch recipe; final last checkpoint and native full heldout evaluation",
+  "execution_state": "New priority source implementation and review in progress; no new detector training claimed started"
+}

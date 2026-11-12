@@ -1,0 +1,92 @@
+{
+  "user_request": "Only single-seed direct YOLO-Master/YOLO12 and four supplied-paper idea adaptations before Detail25. No seed repeats or extra ablations. Parallel whenever resource admission permits.",
+  "time_unix": 1794494562.7285264,
+  "actions": [
+    {
+      "pid": 199924,
+      "argv": [
+        "user-data:/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "repo:/online_experiments/seed_repeat_campaign.py",
+        "run",
+        "--job",
+        "repo:/runs/paper/paper-baselines/job-20261107-Imo9Yocz",
+        "--original-job",
+        "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z",
+        "--origin-root",
+        "user-data:/YOLO-Master"
+      ],
+      "signal": "SIGTERM",
+      "starttime": "21721281"
+    },
+    {
+      "pid": 199923,
+      "argv": [
+        "user-data:/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "repo:/online_experiments/sku_official_loader_campaign.py",
+        "run",
+        "--job",
+        "repo:/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--dataset",
+        "sku110k",
+        "--data-root",
+        "user-data:/datasets-extension-20261110/sku110k",
+        "--identity",
+        "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/cache/manifest.json",
+        "--gpu",
+        "0",
+        "--dependencies",
+        "repo:/.research-deps/evidence-20261110/site",
+        "--publish"
+      ],
+      "signal": "SIGTERM",
+      "starttime": "21721281"
+    },
+    {
+      "pid": 3716080,
+      "argv": [
+        "user-data:/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "repo:/online_experiments/crossdataset_campaign.py",
+        "run",
+        "--job",
+        "repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+        "--dataset",
+        "voc0712",
+        "--data-root",
+        "user-data:/datasets-extension-20261110/voc0712",
+        "--identity",
+        "user-data:/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/cache/manifest.json",
+        "--gpu",
+        "0",
+        "--publish"
+      ],
+      "signal": "SIGTERM",
+      "starttime": "9716554"
+    },
+    {
+      "pid": 506754,
+      "argv": [
+        "user-data:/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "repo:/online_experiments/sku_official_loader_suite.py",
+        "train",
+        "--job",
+        "repo:/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--method",
+        "cache2",
+        "--seed",
+        "0"
+      ],
+      "signal": "SIGINT",
+      "retained_checkpoint": {
+        "path": "repo:/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/train/cache2-s0/weights/last.pt",
+        "bytes": 14428673,
+        "summary_completed_epochs": 72
+      }
+    }
+  ],
+  "VOC_mix25_tail": "Existing epoch98 worker allowed to finish; old coordinator stopped so it cannot start Online100 or further extras.",
+  "retained_all_previous_outputs": true
+}

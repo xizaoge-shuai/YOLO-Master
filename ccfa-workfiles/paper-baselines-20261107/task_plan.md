@@ -1,5 +1,28 @@
 # Experiment completion and dataset expansion
 
+## Superseding authorization:2026-11-12 minimal single-run paper baselines
+
+User explicitly cancels seed repeats and broad extra baseline/ablation sweeps under deadline. Prioritize real YOLO-Master-N and YOLO12-N, plus the four supplied-paper idea adaptations (FroFA, LOFFTA, ViT-Adapter, Cache and Reuse INT8), then Detail25. One run per dataset/configuration, full current splits,100epochs,seed0 only. Run concurrently on healthyGPU0 when admission allows. Reuse completed VisDrone results; do not repeat already measured cases.
+
+- [x] Stop old seed/VOC/SKU supervisors; preserve every result and checkpoint. Pause SKU C2 at retained72epoch checkpoint; let the already98epoch VOC Mix25 worker finish without launching further old cases.
+- [ ] Add direct full YOLO-Master-N/YOLO12-N training and native final-evaluation worker using verified real architecture configurations.
+- [ ] Add a minimal seven-case/dataset coordinator:two direct detectors,four supplied-paper adaptations,Detail25; shared two-slot GPU0 admission.
+- [ ] CPU contract/source review,scope commit+push,then launch actual full-data background work and verify its first real training log.
+- [ ] Replace handoff/status instructions with the seven-case queues and record canceled extras. Full COCO preparation may continue; cross-backbone/diagnostic expansions remain deferred.
+
+## Active authorization:2026-11-10 complete remaining experiments
+
+User requests all missing measurements,parallel execution when resources permit,and baselines before the candidate when stages must serialize. Existing100epoch/augmentation recipes and complete-split execution remain fixed. New source files only:activeVisDrone810/VOC1366 source snapshots must stay byte-identical.
+
+- [ ] Recover SKU preparation using author-loader coordinate policy,retain rawCSV/bboxes and per-row audit; restore unchanged full12-case pipeline.
+- [ ] Complete CPU qualitative panels from27GT-selected images and existing predictions/108heatmap arrays,with fixed threshold and failures retained.
+- [ ] Add CPU-tested18-case seed continuation waiting for original10seed0 phase and locks;8baseline repeats before10candidate/ablation repeats,using commonGPU0 admission.
+- [ ] Add full548 transformed-view detectionAP diagnostic with transformed ignore regions/GT and explicit auxiliary protocol;baseline arms before candidate at inference,teacher calls separately charged.
+- [ ] Prepare second-backbone weights and a versioned fullVisDrone adapter without changing running sources;within-backbone baseline-first comparisons.
+- [ ] Prepare completeCOCO from official sources,then queue its full-data comparison afterVOC/SKU,with a disk-space gate before large banks;do not duplicate completed datasets or claim subsets as fullCOCO.
+- [ ] Queue controlled equal-time and bottleneck measurements behind an actualGPU-isolation gate;keep sharedGPU observations separate.
+- [ ] Review sources/contracts and real output,commit+push each concrete milestone;updateHOME handoff with all active/queued statuses and limitations.
+
 ## Active task:2026-11-10 parallel preparation and evidence analysis
 
 User now authorizes starting VOC and SKU together and requests claim-relevant additional experiments. Keep100 epochs/current augmentation,baseline-first then the existing candidate,seed0 before independent repeats,fullCOCO last. Do not alter manuscript or frozen VisDrone sources.
