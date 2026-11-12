@@ -1,0 +1,187 @@
+{
+  "version": "complete-cpu-metrics-v1",
+  "dataset": "voc0712",
+  "evaluated_images": 4952,
+  "scale": "0-100",
+  "native_primary": {
+    "mAP50_11point": 67.59999942289588,
+    "per_class": {
+      "aeroplane": {
+        "AP50_11point": 73.4571854491862,
+        "non_difficult_objects": 285,
+        "detections": 702,
+        "ignored_detections": 15
+      },
+      "bicycle": {
+        "AP50_11point": 72.18534603393188,
+        "non_difficult_objects": 337,
+        "detections": 937,
+        "ignored_detections": 21
+      },
+      "bird": {
+        "AP50_11point": 74.04542770353676,
+        "non_difficult_objects": 459,
+        "detections": 1054,
+        "ignored_detections": 75
+      },
+      "boat": {
+        "AP50_11point": 58.69661883008768,
+        "non_difficult_objects": 263,
+        "detections": 994,
+        "ignored_detections": 67
+      },
+      "bottle": {
+        "AP50_11point": 53.52239546621319,
+        "non_difficult_objects": 469,
+        "detections": 1518,
+        "ignored_detections": 86
+      },
+      "bus": {
+        "AP50_11point": 71.76637220647795,
+        "non_difficult_objects": 213,
+        "detections": 551,
+        "ignored_detections": 23
+      },
+      "car": {
+        "AP50_11point": 80.39157960610804,
+        "non_difficult_objects": 1201,
+        "detections": 2937,
+        "ignored_detections": 227
+      },
+      "cat": {
+        "AP50_11point": 82.54962771168702,
+        "non_difficult_objects": 358,
+        "detections": 720,
+        "ignored_detections": 10
+      },
+      "chair": {
+        "AP50_11point": 49.2431274583308,
+        "non_difficult_objects": 756,
+        "detections": 2899,
+        "ignored_detections": 377
+      },
+      "cow": {
+        "AP50_11point": 70.13153217899222,
+        "non_difficult_objects": 244,
+        "detections": 701,
+        "ignored_detections": 50
+      },
+      "diningtable": {
+        "AP50_11point": 53.82428953019745,
+        "non_difficult_objects": 206,
+        "detections": 1008,
+        "ignored_detections": 65
+      },
+      "dog": {
+        "AP50_11point": 78.8989794420202,
+        "non_difficult_objects": 489,
+        "detections": 1166,
+        "ignored_detections": 33
+      },
+      "horse": {
+        "AP50_11point": 82.23083047296751,
+        "non_difficult_objects": 348,
+        "detections": 823,
+        "ignored_detections": 16
+      },
+      "motorbike": {
+        "AP50_11point": 72.8640004063733,
+        "non_difficult_objects": 325,
+        "detections": 876,
+        "ignored_detections": 27
+      },
+      "person": {
+        "AP50_11point": 70.74473188445567,
+        "non_difficult_objects": 4528,
+        "detections": 9933,
+        "ignored_detections": 365
+      },
+      "pottedplant": {
+        "AP50_11point": 38.13174402300773,
+        "non_difficult_objects": 480,
+        "detections": 1499,
+        "ignored_detections": 46
+      },
+      "sheep": {
+        "AP50_11point": 67.07563195189394,
+        "non_difficult_objects": 242,
+        "detections": 678,
+        "ignored_detections": 22
+      },
+      "sofa": {
+        "AP50_11point": 62.99988348394665,
+        "non_difficult_objects": 239,
+        "detections": 731,
+        "ignored_detections": 94
+      },
+      "train": {
+        "AP50_11point": 71.99249859411037,
+        "non_difficult_objects": 282,
+        "detections": 619,
+        "ignored_detections": 6
+      },
+      "tvmonitor": {
+        "AP50_11point": 67.24818602439295,
+        "non_difficult_objects": 308,
+        "detections": 902,
+        "ignored_detections": 37
+      }
+    },
+    "definition": "VOC2007 eleven-point AP; IoU strictly >0.5; difficult ignored; inclusive official boxes",
+    "scale": "0-100",
+    "evaluated_images": 4952
+  },
+  "native_consistency": "PASS",
+  "saved_prediction_protocol": {
+    "schema": "crossdataset-detection-v1",
+    "coordinates": "zero-based half-open original image pixels",
+    "max_det": 500,
+    "confidence": 0.001
+  },
+  "auxiliary_coco_by_max_detections": {
+    "1": {
+      "AP": 31.532683618287127,
+      "AP50": 53.147123449136956,
+      "AP75": 33.480255617939626,
+      "AP_small": 3.2050382607348804,
+      "AP_medium": 14.399221496253723,
+      "AP_large": 39.04617972607641,
+      "AR": 39.85284370404588
+    },
+    "10": {
+      "AP": 40.0304072897856,
+      "AP50": 68.93293914791947,
+      "AP75": 41.97170410745964,
+      "AP_small": 8.680272306917503,
+      "AP_medium": 23.656451287812445,
+      "AP_large": 47.654207209727154,
+      "AR": 56.432694094969825
+    },
+    "100": {
+      "AP": 40.40888081290094,
+      "AP50": 69.72724570518032,
+      "AP75": 42.31351847167035,
+      "AP_small": 8.739175350315742,
+      "AP_medium": 24.24871848903391,
+      "AP_large": 47.80379315606783,
+      "AR": 57.48089786055224
+    },
+    "500": {
+      "AP": 40.40888081290094,
+      "AP50": 69.72724570518032,
+      "AP75": 42.31351847167035,
+      "AP_small": 8.739175350315742,
+      "AP_medium": 24.24871848903391,
+      "AP_large": 47.80379315606783,
+      "AR": 57.48089786055224
+    }
+  },
+  "definitions": {
+    "COCO_AP": "101-point interpolated AP averaged over IoU0.50:0.05:0.95, area=all; equal category weighting, not micro AP",
+    "AR": "Maximum recall averaged over IoU0.50:0.05:0.95 at selected maxDet; equal category weighting",
+    "VOC_auxiliary_only": "COCO-style VOC results use half-open boxes and map difficult to crowd. Native VOC eleven-point AP50 remains unchanged and primary.",
+    "area": "Original-image bbox area. COCO ranges: small[0,1024], medium[1024,9216], large[9216,1e10]; boundaries overlap per COCOeval.",
+    "PR": "COCOeval interpolated precision/score tensors at 101 recall grid points; -1/CSV empty means undefined. This is not confidence-sweep P/R/F1.",
+    "missing": "No new inference; predictions below frozen score0.001 or beyond frozen top500 cannot be recovered."
+  }
+}

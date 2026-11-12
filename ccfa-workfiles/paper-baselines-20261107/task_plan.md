@@ -1,5 +1,14 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-12 single-pass metric completion
+
+User requests all derivable metrics together, avoiding second training/evaluation passes under deadline. Current direct/cached training and priority coordinator source hashes remain fixed. New CPU-only sidecars consume the one persisted final full-test prediction set per configuration.
+
+- [x] Export native primary consistency, auxiliaryCOCO AP/AP50/AP75/size/perclass/AR,rawPR/score tensors and actualtrain/lr/time curves from saved predictions/logs only. Full4952-image completed VOC C1 reference verified without inference; nativeAP50 matches exactly and100training rows exported.
+- [x] Reuse measured cost/storage/VRAM/query/parameter sources with explicit scopes; filter dummy zero validation columns and do not use cached validation as full-imageFPS. Identity-bound frozen teacher21,596,544parameters counted once on CPU; actualhead/native-nc sources checked.
+- [ ] Start an idempotent CPU-only watcher for the14 authorized VOC/SKU endpoints,archive metric bundles without changing training jobs or triggering GPU passes.
+- [ ] CPU contracts,independent metric/source review,scoped commit+push,and update handoff with one-command bundle status.
+
 ## Superseding authorization:2026-11-12 minimal single-run paper baselines
 
 User explicitly cancels seed repeats and broad extra baseline/ablation sweeps under deadline. Prioritize real YOLO-Master-N and YOLO12-N, plus the four supplied-paper idea adaptations (FroFA, LOFFTA, ViT-Adapter, Cache and Reuse INT8), then Detail25. One run per dataset/configuration, full current splits,100epochs,seed0 only. Run concurrently on healthyGPU0 when admission allows. Reuse completed VisDrone results; do not repeat already measured cases.

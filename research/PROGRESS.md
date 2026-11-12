@@ -720,3 +720,9 @@ Allow the two direct baseline methods to exchange execution order without changi
 ## Actual parallel full-data direct baseline training started
 
 Verified nativeVOCYOLO-Master-N in epoch1 and nativeSKUYOLO12-N in epoch2, both real full-data optimization onGPU0 under the two admission leases. Each dataset retains exactly seven single-seed cases. Original seed/extra supervisors are absent. Preserved a zero-stepMaster initialization attempt before retrying with locally cached validArial font; configuration unchanged, no repeated training. LegacyVOCMix25 tail finished100epochs, nativeAP50=77.4351, and its original endpoint remains intact. Updated HOME handoff/status commands. No new completed detectorAP is claimed yet; subsequent cases validate/archive/push automatically.
+
+
+<!-- single-pass-metric-export-20261112 -->
+## Single-pass metric export
+
+Added CPU-only saved-prediction metric scorer and14-case VOC/SKU sidecar; no active training source changes, no extra inference or seeds. Native metrics preserved; full4952-image VOC C1 reference matches original nativeAP50 exactly,100training rows exported.16CPUcontracts and targetedRuff passed. [Evidence](checks/single-pass-metrics-20261112/README.md). Background sidecar launch follows this source commit.

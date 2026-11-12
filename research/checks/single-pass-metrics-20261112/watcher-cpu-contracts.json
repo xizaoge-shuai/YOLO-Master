@@ -1,0 +1,51 @@
+{
+  "schema": "metric-bundle-watcher-cpu-contracts-v1",
+  "tests": 10,
+  "gpu_used": false,
+  "training_updates": 0,
+  "cached_explicit_original_provenance": true,
+  "source_sha256": {
+    "online_experiments/metric_bundle_campaign.py": "148846ed518031ce65a25522f33ff2ea8700ef22c52c7b7a774fd515fbe4e08e",
+    "online_experiments/test_metric_bundle_campaign.py": "4a3ca192e56c979c119321cd5ae95aaf5cb3b1879a126752fa3b2108d53b9a57"
+  },
+  "checks": [
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "online_experiments/metric_bundle_campaign.py",
+        "online_experiments/test_metric_bundle_campaign.py"
+      ],
+      "returncode": 0,
+      "stdout": "2 files left unchanged\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "online_experiments/metric_bundle_campaign.py",
+        "online_experiments/test_metric_bundle_campaign.py"
+      ],
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "unittest",
+        "online_experiments.test_metric_bundle_campaign",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_adopt_old_completed_cache_only_not_partial_or_native (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_bundle_integrity_accepts_seal_and_rejects_tamper (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_bundle_integrity_rejects_escape (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_cached_metric_command_binds_original_job_provenance_only (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_coordinator_resolved_output_is_authoritative_and_contained (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_exact_seven_methods_and_baselines_precede_ours (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_existing_bundle_is_not_recomputed_or_revalidated (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_native_done_json_and_cached_done_are_distinct (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_native_identity_rejects_wrong_method_even_allowed_architecture (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\ntest_validators_only_have_validate_action_and_cpu_environment (online_experiments.test_metric_bundle_campaign.Contracts) ... ok\n\n----------------------------------------------------------------------\nRan 10 tests in 0.005s\n\nOK\n"
+    }
+  ]
+}

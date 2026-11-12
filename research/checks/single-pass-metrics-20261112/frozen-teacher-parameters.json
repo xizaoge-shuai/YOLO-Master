@@ -1,0 +1,27 @@
+{
+  "version": "frozen-teacher-parameter-count-v1",
+  "created_utc": "2026-11-12T15:37:15.290453+00:00",
+  "identity": {
+    "imgsz": 640,
+    "layers": [
+      3,
+      7,
+      11
+    ],
+    "model_id": "Tooony133/dinov3-vits16-pretrain-lvd1689m",
+    "preprocess_fingerprint": "9f434ea794578d365c24fdc7e7aeecf19afa4df56a9af4f5376a1fb44a852bc2",
+    "revision": "fc6921f7a0b44d5b33ab4482cfed5443db6ccd81"
+  },
+  "snapshot": "/mnt/data/users/zhjia/cache/huggingface/hub/models--Tooony133--dinov3-vits16-pretrain-lvd1689m/snapshots/fc6921f7a0b44d5b33ab4482cfed5443db6ccd81",
+  "model_class": "DINOv3ViTBackbone",
+  "config_sha256": "9481247be9f95a134a5599402b4bfc838eecdf9a7fffbf4debd1c70ec213898b",
+  "weights_sha256": "4610ad75edef83e75afdebf162d148dc628045ea6cbb83d67d4708c709c4f91d",
+  "torch": "2.13.0+cu130",
+  "total_parameters": 21596544,
+  "frozen_parameters": 21596544,
+  "trainable_parameters": 0,
+  "parameter_tensors": 211,
+  "forward_passes": 0,
+  "cuda_initialized": false,
+  "count_policy": "Actual frozen DINOv3ViTBackbone pinned cached snapshot loaded on CPU, matching training extractor class. Every unique Parameter counted. Frozen backbone parameters add to detection head pipeline total; excluded from trainable count."
+}

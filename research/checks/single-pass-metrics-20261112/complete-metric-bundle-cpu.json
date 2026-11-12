@@ -1,0 +1,36 @@
+{
+  "version": "complete-cpu-metrics-v1",
+  "checks": [
+    {
+      "command": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "unittest",
+        "online_experiments.test_complete_metric_bundle",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_cached_epoch_curves_and_composite_counts_not_log (online_experiments.test_complete_metric_bundle.MetricContracts) ... ok\ntest_curve_placeholders_excluded_and_actual_nc_log (online_experiments.test_complete_metric_bundle.MetricContracts) ... ok\ntest_dense_recall_more_than_100_detections (online_experiments.test_complete_metric_bundle.MetricContracts) ... ok\ntest_difficult_and_crowd_ignored (online_experiments.test_complete_metric_bundle.MetricContracts) ... ok\ntest_empty_detections_zero_ap_undefined_area (online_experiments.test_complete_metric_bundle.MetricContracts) ... ok\ntest_perfect_box_and_primary_voc (online_experiments.test_complete_metric_bundle.MetricContracts) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.147s\n\nOK\n"
+    },
+    {
+      "command": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "online_experiments/complete_metric_bundle.py",
+        "online_experiments/test_complete_metric_bundle.py"
+      ],
+      "exit_code": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    }
+  ],
+  "additional_training_images": 0,
+  "additional_prediction_images": 0,
+  "source_sha256": {
+    "online_experiments/complete_metric_bundle.py": "51e1e6379c21e6cc015fe44a210fc79b3081eda27146908f59f7d48bded479a2",
+    "online_experiments/test_complete_metric_bundle.py": "25537ae0a7a301437167518c2a6373e010c5a47e9735b0a7dbc8e0d5d3e8602d"
+  }
+}
