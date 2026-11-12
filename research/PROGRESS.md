@@ -714,3 +714,9 @@ User replaces broad12-case queues and18seed repetitions with seven cases per ful
 ## Parallel start of the two direct detector architectures
 
 Allow the two direct baseline methods to exchange execution order without changing the seven methods or their recipes. VOC startsYOLO-Master-N andSKU startsYOLO12-N,then each runs the other detector before the four paper adaptations andDetail25. CPU ordering assertions,six coordinator contracts andRuff passed.
+
+
+<!-- minimal-priority-20261112:actual-parallel-training -->
+## Actual parallel full-data direct baseline training started
+
+Verified nativeVOCYOLO-Master-N in epoch1 and nativeSKUYOLO12-N in epoch2, both real full-data optimization onGPU0 under the two admission leases. Each dataset retains exactly seven single-seed cases. Original seed/extra supervisors are absent. Preserved a zero-stepMaster initialization attempt before retrying with locally cached validArial font; configuration unchanged, no repeated training. LegacyVOCMix25 tail finished100epochs, nativeAP50=77.4351, and its original endpoint remains intact. Updated HOME handoff/status commands. No new completed detectorAP is claimed yet; subsequent cases validate/archive/push automatically.

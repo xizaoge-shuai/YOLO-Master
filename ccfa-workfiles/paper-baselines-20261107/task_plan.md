@@ -5,10 +5,10 @@
 User explicitly cancels seed repeats and broad extra baseline/ablation sweeps under deadline. Prioritize real YOLO-Master-N and YOLO12-N, plus the four supplied-paper idea adaptations (FroFA, LOFFTA, ViT-Adapter, Cache and Reuse INT8), then Detail25. One run per dataset/configuration, full current splits,100epochs,seed0 only. Run concurrently on healthyGPU0 when admission allows. Reuse completed VisDrone results; do not repeat already measured cases.
 
 - [x] Stop old seed/VOC/SKU supervisors; preserve every result and checkpoint. Pause SKU C2 at retained72epoch checkpoint; let the already98epoch VOC Mix25 worker finish without launching further old cases.
-- [ ] Add direct full YOLO-Master-N/YOLO12-N training and native final-evaluation worker using verified real architecture configurations.
-- [ ] Add a minimal seven-case/dataset coordinator:two direct detectors,four supplied-paper adaptations,Detail25; shared two-slot GPU0 admission.
-- [ ] CPU contract/source review,scope commit+push,then launch actual full-data background work and verify its first real training log.
-- [ ] Replace handoff/status instructions with the seven-case queues and record canceled extras. Full COCO preparation may continue; cross-backbone/diagnostic expansions remain deferred.
+- [x] Add direct full YOLO-Master-N/YOLO12-N training and native final-evaluation worker using verified real architecture configurations.
+- [x] Add a minimal seven-case/dataset coordinator:two direct detectors,four supplied-paper adaptations,Detail25; shared two-slot GPU0 admission.
+- [x] CPU contract/source review,scope commit+push,then launch actual full-data background work and verify its first real training log:VOC realMaster epoch1,SKU realYOLO12 epoch2,parallelGPU0; twelveCPUcontracts passed. A zero-step native initialization retry was preserved after font/network waiting; no repeated training or source change.
+- [x] Replace handoff/status instructions with the seven-case queues and record canceled extras. Full COCO preparation may continue; cross-backbone/diagnostic expansions remain deferred.
 
 ## Active authorization:2026-11-10 complete remaining experiments
 

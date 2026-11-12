@@ -1,0 +1,173 @@
+{
+  "date_Asia_Shanghai": "2026-11-12",
+  "checked_unix": 1794496366.2913084,
+  "training_runs_per_configuration": 1,
+  "seed_repeats_cancelled": true,
+  "native_full_training_not_smoke": true,
+  "jobs": {
+    "voc0712": {
+      "state": {
+        "state": "TRAINING",
+        "message": "master-n: full data,seed0,100 epochs",
+        "time_unix": 1794496247.8950229,
+        "dataset": "voc0712",
+        "method": "master-n",
+        "completed": 0,
+        "planned": 7
+      },
+      "coordinator": {
+        "pid": 644301,
+        "argv": [
+          "repo:/online_experiments/priority_single_seed_campaign.py",
+          "run",
+          "--job",
+          "repo:/runs/paper/priority/job-20261112-single-seed/voc0712",
+          "--dataset",
+          "voc0712",
+          "--dataset-job",
+          "repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+          "--first-detector",
+          "master-n",
+          "--publish"
+        ],
+        "started_unix": 1794496240.445365,
+        "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23"
+      },
+      "active_child": {
+        "pid": 644361,
+        "action": "train",
+        "method": "master-n",
+        "argv": [
+          "user-data:/miniconda3/envs/yolomaster/bin/python",
+          "-u",
+          "repo:/online_experiments/direct_baseline_suite.py",
+          "train",
+          "--dataset-manifest",
+          "user-data:/datasets-extension-20261110/voc0712/dataset-manifest.json",
+          "--prepared",
+          "repo:/runs/paper/priority/job-20261112-single-seed/datasets/voc0712",
+          "--method",
+          "master-n",
+          "--output",
+          "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0",
+          "--device",
+          "0"
+        ]
+      },
+      "observed_current_epoch": 1,
+      "last_actual_batch_line": "1",
+      "methods": [
+        "master-n",
+        "yolo12-n",
+        "frofa-c2-d01",
+        "loffta-c2-n005",
+        "cache-reuse-c1-int8",
+        "vit-adapter-cache25",
+        "detail25"
+      ],
+      "counts": {
+        "train": 16551,
+        "test": 4952
+      },
+      "plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96"
+    },
+    "sku110k": {
+      "state": {
+        "state": "TRAINING",
+        "message": "yolo12-n: full data,seed0,100 epochs",
+        "time_unix": 1794495974.232499,
+        "dataset": "sku110k",
+        "method": "yolo12-n",
+        "completed": 0,
+        "planned": 7
+      },
+      "coordinator": {
+        "pid": 641892,
+        "argv": [
+          "repo:/online_experiments/priority_single_seed_campaign.py",
+          "run",
+          "--job",
+          "repo:/runs/paper/priority/job-20261112-single-seed/sku110k",
+          "--dataset",
+          "sku110k",
+          "--dataset-job",
+          "repo:/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+          "--first-detector",
+          "yolo12-n",
+          "--publish"
+        ],
+        "started_unix": 1794495906.4125414,
+        "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23"
+      },
+      "active_child": {
+        "pid": 642327,
+        "action": "train",
+        "method": "yolo12-n",
+        "argv": [
+          "user-data:/miniconda3/envs/yolomaster/bin/python",
+          "-u",
+          "repo:/online_experiments/direct_baseline_suite.py",
+          "train",
+          "--dataset-manifest",
+          "user-data:/datasets-extension-20261110/sku110k/dataset-manifest.json",
+          "--prepared",
+          "repo:/runs/paper/priority/job-20261112-single-seed/datasets/sku110k",
+          "--method",
+          "yolo12-n",
+          "--output",
+          "repo:/runs/paper/priority/job-20261112-single-seed/sku110k/train/yolo12-n-s0",
+          "--device",
+          "0"
+        ]
+      },
+      "observed_current_epoch": 2,
+      "last_actual_batch_line": "2",
+      "methods": [
+        "yolo12-n",
+        "master-n",
+        "frofa-c2-d01",
+        "loffta-c2-n005",
+        "cache-reuse-c1-int8",
+        "vit-adapter-cache25",
+        "detail25"
+      ],
+      "counts": {
+        "train": 8219,
+        "val": 588,
+        "test": 2936
+      },
+      "plan_sha256": "9c54bbac0a01a000da988cdf78051e1b4cf083e4d8cf2fc7501d0eb48fae1131"
+    }
+  },
+  "initialization_only_retry": {
+    "new_coordinator_pid": 644301,
+    "previous_coordinator_pid": 641890,
+    "previous_child_pid": 642202,
+    "reason": "Native initialization had not started any training iteration and waited after argument dump; complete validArial font is now locally cached. Preserve initialization artifacts, restart same fixed configuration.",
+    "optimization_steps_in_previous_attempt": 0,
+    "retained_initialization": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/initialization-retries/master-n-1794496240159271382",
+    "time_unix": 1794496240.160397,
+    "argv": [
+      "user-data:/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "repo:/online_experiments/priority_single_seed_campaign.py",
+      "run",
+      "--job",
+      "repo:/runs/paper/priority/job-20261112-single-seed/voc0712",
+      "--dataset",
+      "voc0712",
+      "--dataset-job",
+      "repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+      "--first-detector",
+      "master-n",
+      "--publish"
+    ]
+  },
+  "preserved_old_mix25_tail": {
+    "completed_epochs": 100,
+    "native_AP50_11point": 77.4350839999308,
+    "metrics_sha256": "79c82931aa26b2c6a6fb5a8fd2dcc8b19305fe8c3f9a86e0013b0b192478c792",
+    "source": "repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/train/mix25-s0",
+    "not_part_of_new_seven_case_queue": true
+  }
+}
