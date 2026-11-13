@@ -774,3 +774,9 @@ Added CPU-only INT8 preparation for the existing fullVOC/SKU baselines and full5
 ## VisDrone core metrics: master-n
 
 Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/master-n/README.md).
+
+
+<!-- visdrone-core-metrics-20261113:yolo12-n -->
+## VisDrone core metrics: yolo12-n
+
+Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/yolo12-n/README.md).
