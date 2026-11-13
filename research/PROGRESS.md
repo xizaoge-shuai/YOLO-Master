@@ -834,3 +834,9 @@ CPU preparation evidence: [sku110k](experiments/priority-int8-20261113/sku110k/R
 ## Explicit mAP summary
 
 Nine completed endpoints,25 protocol rows exported without training,prediction or evaluation calls. VisDrone reference-class macro and weighted AP remain distinct; COCO-style auxiliary and VOC11point protocols labeled. [Definitions](metrics/map-summary/README.md). Full548CPUcore7/7complete,0failed.
+
+
+<!-- remaining-dataset-map-coverage-20261113 -->
+## Remaining dataset mAP coverage
+
+Added completed VOC C1/C2/Mix25 and SKU C1 as historical controls, separately from the seven-method core queue. Existing VOC C1 COCO auxiliary evidence reused. Full coverageCSV distinguishes21 core pairs,currently9complete; pending runs have no fabricated mAP.32 protocol rows available across13 completed endpoints; no new training,inference or evaluation. [Tables](metrics/map-summary/README.md). COCOdata prepared,training not started.
