@@ -846,3 +846,9 @@ Added completed VOC C1/C2/Mix25 and SKU C1 as historical controls, separately fr
 ## Priority voc0712: master-n completed
 
 Full seed0/final100 endpoint archived: [master-n](experiments/priority-single-seed-20261112/voc0712/master-n-s0/README.md). No seed repeats or ablations queued.
+
+
+<!-- single-pass-metrics-20261112:voc0712:master-n -->
+## Single-pass metrics: voc0712, master-n
+
+Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/voc0712/master-n-s0/README.md). No extra training or inference.

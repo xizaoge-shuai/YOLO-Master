@@ -1,0 +1,31 @@
+{
+  "version": "complete-cpu-metrics-v1",
+  "input_sha256": {
+    "/mnt/data/users/zhjia/datasets-extension-20261110/voc0712/dataset-manifest.json": "decd4ff35488587831a085cc0095bd584807d37b112ff9ae0e0bb0dbbe5cbdab",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/endpoint.json": "e42b844c003fd3eadc59374752ad98648b601753bad6cdce28e36176ac4df1b1",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/predictions.json": "98727724abfb75094a1b679a7566afd8745e007fdfb304af22be6e00636f3c01",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/metrics.json": "c6d2ab8d9a35ab4cddd1f5dadfd77b2f01843d0cbcd9c1d9689bb6f69ab411b3",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/summary.json": "465e2caa935b43dc89baa820e8dd68ef5a88a7dbf8f0e7539de62174876f71ca",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/complete_metric_bundle.py": "51e1e6379c21e6cc015fe44a210fc79b3081eda27146908f59f7d48bded479a2",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py": "8c00629b54bd8c150c6337b9d3b28bef716e6d0cac63dcbe3b792d54d463fd42",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/initialization.json": "b7ec22c09e0808d7617079cf8c15b117f7e22e2030181183f3c9423e033392bc",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/args.json": "9a9d8192edb454e08e94ca23b04cea35705ebe8d66d49eac6c0baf538507f1ef",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/DONE.json": "d8202bfa47f51781ab68c420cdcde48170e34b25e5c1fb85822994b0310082b0",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/single-pass-metrics-20261112/frozen-teacher-parameters.json": "133d687d642ec2bf5c433b903a2dcf0f6ed76a49241ee46b56eaa498fdc52efe",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-master-n.log": "41b8642ccbcbf5a602c8460c5a53faa497376737672836b901d135a7c61b8cb4",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0/results.csv": "2c6427c6605199a2f37875b5463fff7c47cde273ec1ec764e32dda647cf6fce3"
+  },
+  "output_sha256": {
+    "metrics.json": "76730ad46de1b7562df05a9e62d4c36c0004d31e038eb076da05b72a49fa91fc",
+    "object-counts.csv": "0b8fcbce38ab28246159500b95de5658d91e46f9cd0f2598b78e97623c3fa4c8",
+    "per-area.csv": "f49941c093406b31df13392e86bbd4f57c9b4c582b52e2d3041af132c3038e95",
+    "per-class.csv": "d4e637d05445c1a6491e5e2707e163d34514c2c540f7e56c6717c818d0317945",
+    "pr-curves.csv": "c8c0010bf4f15136e3fc90448c0eee6f83937c605e39224a34c44d28e035fb26",
+    "provenance.json": "0ec21e6dfc8ff3465a9cc92e6bedde4a5b2e255912273af8fc9c5e5d79931715",
+    "resource-metrics.json": "0b35bdfdb17d3b1fa4b2eba81162a0cb189864a33fcec2eaa2e6df19a9317956",
+    "status.txt": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+    "tensors.npz": "cf9cfdd58fe5c2ea6c10e9d6ee284428c66790f7407579b04a20399cbd0f05a2",
+    "training-curves.csv": "ae46a821d95b4a68f5871ce712e5d6555a80e82ed302a304057994e9623f2950"
+  },
+  "completed_unix": 1794585592.5351214
+}
