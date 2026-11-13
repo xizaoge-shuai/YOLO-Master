@@ -816,3 +816,9 @@ Full548 saved final predictions scored on CPU. No retraining or inference. [Evid
 ## VisDrone core metrics: detail25
 
 Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/detail25/README.md).
+
+
+<!-- priority-int8-20261113:voc0712 -->
+## voc0712: existing INT8 baseline bank ready
+
+CPU preparation evidence: [voc0712](experiments/priority-int8-20261113/voc0712/README.md). No retraining or GPU inference; original compression build cost retained.

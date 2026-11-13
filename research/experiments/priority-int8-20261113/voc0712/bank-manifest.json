@@ -1,0 +1,54 @@
+{
+  "version": "crossdataset-detection-v1",
+  "request": {
+    "bits": 8,
+    "quantile": 0.001,
+    "source_sha256": "93c33c4840e52fbffe51f18b2f53ce05fdb16b5a6dc85f329394a77458ea2f67",
+    "cache_manifest_sha256": "03d72d5a8b5be072c196f208c59b7ac372c2066d4cdaab337fabfb5515ad81c8"
+  },
+  "bits": 8,
+  "shape": [
+    16551,
+    3,
+    384,
+    40,
+    40
+  ],
+  "parts": {
+    "codes": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/quantized-int8/codes.npy",
+      "sha256": "e1d007c1cebd6a12abf6c412eda1c9b05bf2855a7479921086487a29fc059fa4",
+      "stat": {
+        "bytes": 30506803328,
+        "mtime_ns": 1794579808664511700,
+        "ctime_ns": 1794579808664511700
+      },
+      "bytes": 30506803328
+    },
+    "low": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/quantized-int8/low.npy",
+      "sha256": "43374934a14bb7c38ff7e5b6e2fd645016ce5a5d728bbb0600c4ab8525fab4d1",
+      "stat": {
+        "bytes": 76267136,
+        "mtime_ns": 1794579808666511764,
+        "ctime_ns": 1794579808666511764
+      },
+      "bytes": 76267136
+    },
+    "step": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/quantized-int8/step.npy",
+      "sha256": "98047ed62d8505ed33d01d6844b147df34af1dcc74db493ebb621165bdc6efb0",
+      "stat": {
+        "bytes": 76267136,
+        "mtime_ns": 1794579808667511796,
+        "ctime_ns": 1794579808667511796
+      },
+      "bytes": 76267136
+    }
+  },
+  "cache_bytes": 30659337600,
+  "build_seconds": 557.6362939039827,
+  "teacher_query_images": 0,
+  "packing": "uint8",
+  "scope": "Cache and Reuse idea adaptation; per-image/layer/channel quantile0.001, original FP16 source preserved"
+}

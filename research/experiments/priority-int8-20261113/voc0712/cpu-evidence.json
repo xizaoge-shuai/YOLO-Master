@@ -1,0 +1,67 @@
+{
+  "schema": "priority-int8-cpu-preparation-v1",
+  "contract": {
+    "dataset": "voc0712",
+    "dataset_job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+    "pipeline_plan": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/pipeline-plan.json",
+    "pipeline_plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+    "provenance_sha256": "9564e537b32f18fe51a949888a6656a047c2a02797fd9ce863247e1e0b37d932",
+    "cache_manifest_sha256": "03d72d5a8b5be072c196f208c59b7ac372c2066d4cdaab337fabfb5515ad81c8",
+    "source_anchor_files": 1366,
+    "source_bank": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/train-v0.npy",
+      "sha256": "93c33c4840e52fbffe51f18b2f53ce05fdb16b5a6dc85f329394a77458ea2f67",
+      "stat": {
+        "bytes": 61013606528,
+        "mtime_ns": 1794291633677144012,
+        "ctime_ns": 1794291633854149511
+      },
+      "bytes": 61013606528,
+      "images": 16551,
+      "seconds": 340.83394012082135,
+      "parity_relative_L2": 0.00020863120153080672,
+      "logical_teacher_images": 16551
+    },
+    "request": {
+      "bits": 8,
+      "quantile": 0.001,
+      "source_sha256": "93c33c4840e52fbffe51f18b2f53ce05fdb16b5a6dc85f329394a77458ea2f67",
+      "cache_manifest_sha256": "03d72d5a8b5be072c196f208c59b7ac372c2066d4cdaab337fabfb5515ad81c8"
+    }
+  },
+  "runtime": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "cpu_threads": 1,
+    "nice": 10,
+    "io_priority": "idle",
+    "gpu_leases": 0,
+    "teacher_queries": 0,
+    "image_reads": 0,
+    "training_runs": 0,
+    "prediction_runs": 0
+  },
+  "sidecar_sha256": "241ffaff8e5c01dfb871ca6f55fe234e8e292c83c7ef2d39093721da9ea1e182",
+  "cpu_wall_seconds_this_invocation": 557.7143826679676,
+  "quantizer_construction_seconds_this_invocation": 557.6366741469828,
+  "cold_compression_build_seconds_retained": 557.6362939039827,
+  "cache_bytes": 30659337600,
+  "source_before": {
+    "cache_manifest_sha256": "03d72d5a8b5be072c196f208c59b7ac372c2066d4cdaab337fabfb5515ad81c8",
+    "source_bank_stat": {
+      "bytes": 61013606528,
+      "mtime_ns": 1794291633677144012,
+      "ctime_ns": 1794291633854149511
+    }
+  },
+  "source_after": {
+    "cache_manifest_sha256": "03d72d5a8b5be072c196f208c59b7ac372c2066d4cdaab337fabfb5515ad81c8",
+    "source_bank_stat": {
+      "bytes": 61013606528,
+      "mtime_ns": 1794291633677144012,
+      "ctime_ns": 1794291633854149511
+    }
+  },
+  "zero_gpu_scope": "No torch/CUDA import or GPU admission; existing quantizer reads only FP16 npy arrays",
+  "writer_lock_scope": "Advisory lock shared by new wrappers; legacy trainer checked before admission",
+  "completed_unix": 1794579834.2795086
+}
