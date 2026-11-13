@@ -822,3 +822,9 @@ Full548 saved final predictions scored on CPU. No retraining or inference. [Evid
 ## voc0712: existing INT8 baseline bank ready
 
 CPU preparation evidence: [voc0712](experiments/priority-int8-20261113/voc0712/README.md). No retraining or GPU inference; original compression build cost retained.
+
+
+<!-- priority-int8-20261113:sku110k -->
+## sku110k: existing INT8 baseline bank ready
+
+CPU preparation evidence: [sku110k](experiments/priority-int8-20261113/sku110k/README.md). No retraining or GPU inference; original compression build cost retained.

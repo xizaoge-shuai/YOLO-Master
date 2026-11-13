@@ -1,0 +1,54 @@
+{
+  "version": "crossdataset-sku-official-loader-v2",
+  "request": {
+    "bits": 8,
+    "quantile": 0.001,
+    "source_sha256": "6c030a287c736fa45cf5db3f226894c49d109258497a002d9e0dfab63b0cb5d4",
+    "cache_manifest_sha256": "c49667966754f5692d989c2b7008b5a4e42775e21f950ad7ae0340c817571d3b"
+  },
+  "bits": 8,
+  "shape": [
+    8219,
+    3,
+    384,
+    40,
+    40
+  ],
+  "parts": {
+    "codes": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/quantized-int8/codes.npy",
+      "sha256": "baf1885232ee56ceb046b5c601e69f96b02f41224c60287dd69c2d6a6e06237e",
+      "stat": {
+        "bytes": 15149260928,
+        "mtime_ns": 1794580088131483759,
+        "ctime_ns": 1794580088131483759
+      },
+      "bytes": 15149260928
+    },
+    "low": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/quantized-int8/low.npy",
+      "sha256": "1bd4925abb7f2720e2dd9b4dee440b93cd29e186de3f37c4b278022e55d8f6ad",
+      "stat": {
+        "bytes": 37873280,
+        "mtime_ns": 1794580088134483855,
+        "ctime_ns": 1794580088134483855
+      },
+      "bytes": 37873280
+    },
+    "step": {
+      "file": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/quantized-int8/step.npy",
+      "sha256": "7fde56b6e6cf7b02ae880d48fec55819efee4c02933c0220c92f4a76c70f7fc6",
+      "stat": {
+        "bytes": 37873280,
+        "mtime_ns": 1794580088136483920,
+        "ctime_ns": 1794580088136483920
+      },
+      "bytes": 37873280
+    }
+  },
+  "cache_bytes": 15225007488,
+  "build_seconds": 245.46467065101024,
+  "teacher_query_images": 0,
+  "packing": "uint8",
+  "scope": "Cache and Reuse idea adaptation; per-image/layer/channel quantile0.001, original FP16 source preserved"
+}

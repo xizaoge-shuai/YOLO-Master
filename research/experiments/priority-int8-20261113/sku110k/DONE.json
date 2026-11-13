@@ -1,0 +1,8 @@
+{
+  "bank_manifest_sha256": "c9880a9c10492ee2382a0b57f6f8e3595d91799ceaa86ae82fc6e34000c4e5f6",
+  "evidence_sha256": {
+    "bank-manifest.json": "c9880a9c10492ee2382a0b57f6f8e3595d91799ceaa86ae82fc6e34000c4e5f6",
+    "bank-complete.json": "dfbb9bcb86086bbd31f69f70f566f660ef32be9653ceaa5ea7d20c01a94e12d0",
+    "cpu-evidence.json": "c019bca0c70fc0b65d797c35af618e8896d936899451334c61824cf24b230b60"
+  }
+}
