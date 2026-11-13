@@ -762,3 +762,9 @@ Full-test final100 saved predictions scored once on CPU; [bundle](experiments/si
 ## November13 evening status
 
 SKU realYOLO12/Master completed final100; full2936-image metrics bundled with no repeated inference. AP@100=40.3693/40.3206; denseAP@500=54.1085/53.8890. VOCMaster epoch91 and SKUFroFA epoch33 continued unchanged. CPUsidecar2/14complete,0failed. Restored stopped7908reverseproxy and resumedCOCOpartial without deletion; noCOCOtraining. [Status](EXPERIMENT_STATUS_20261113.md).
+
+
+<!-- parallel-baseline-cpu-sources-20261113 -->
+## Parallel CPU baseline preparation and evidence
+
+Added CPU-only INT8 preparation for the existing fullVOC/SKU baselines and full548 seven-method saved-prediction evidence collection. Existing twoGPU training workers and frozen sources unchanged. Inputs1366/1370anchors checked; fourCPUcontracts+Ruff and independent reviews passed. LegacyVisDroneMaster duplicateCSV history is retained; savedAP is not an equal-step guarantee. [Checks](checks/status-20261113/parallel-cpu-source-checks.json). Production launch follows source commit.

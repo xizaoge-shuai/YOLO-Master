@@ -1,0 +1,39 @@
+{
+  "checks": [
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "online_experiments/test_complete_visdrone_core_metrics.py"
+      ],
+      "exit": 0,
+      "output": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m                                                                     [100%]\u001b[0m\n============================= slowest 30 durations =============================\n\n(12 durations < 0.005s hidden.  Use -vv to show these durations.)\n\u001b[32m\u001b[32m\u001b[1m4 passed\u001b[0m\u001b[32m in 0.12s\u001b[0m\u001b[0m\n"
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E9,F63,F7,F82",
+        "online_experiments/prepare_priority_int8.py",
+        "online_experiments/complete_visdrone_core_metrics.py",
+        "online_experiments/test_complete_visdrone_core_metrics.py"
+      ],
+      "exit": 0,
+      "output": "All checks passed!\n"
+    }
+  ],
+  "source_sha256": {
+    "online_experiments/prepare_priority_int8.py": "241ffaff8e5c01dfb871ca6f55fe234e8e292c83c7ef2d39093721da9ea1e182",
+    "online_experiments/complete_visdrone_core_metrics.py": "a32763f0f4d42b0bc8dc26c374ccfbb833e07bdbd4abf642ccc1a6f1c91834b5",
+    "online_experiments/test_complete_visdrone_core_metrics.py": "ace3cee3a8739be76c38be0c4f489a1e0ab2176ef06957a844f5841712a1d122"
+  },
+  "full548_source": "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+  "annotation_archive": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/datasets/VisDrone/VisDrone2019-DET-val.zip",
+  "training_or_inference_calls": 0,
+  "production_started": false
+}
