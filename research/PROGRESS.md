@@ -810,3 +810,9 @@ Full548 saved final predictions scored on CPU. No retraining or inference. [Evid
 ## VisDrone core metrics: vit-adapter-cache25
 
 Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/vit-adapter-cache25/README.md).
+
+
+<!-- visdrone-core-metrics-20261113:detail25 -->
+## VisDrone core metrics: detail25
+
+Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/detail25/README.md).
