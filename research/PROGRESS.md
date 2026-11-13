@@ -750,3 +750,9 @@ Full-test final100 saved predictions scored once on CPU; [bundle](experiments/si
 ## Priority sku110k: master-n completed
 
 Full seed0/final100 endpoint archived: [master-n](experiments/priority-single-seed-20261112/sku110k/master-n-s0/README.md). No seed repeats or ablations queued.
+
+
+<!-- single-pass-metrics-20261112:sku110k:master-n -->
+## Single-pass metrics: sku110k, master-n
+
+Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/master-n-s0/README.md). No extra training or inference.
