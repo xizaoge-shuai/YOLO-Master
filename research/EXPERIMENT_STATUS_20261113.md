@@ -1,6 +1,6 @@
 # 实验进展：2026-11-13 晚间
 
-执行服务器yang109，项目`/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107`。本次只核查结果、恢复数据下载和同步Git，没有重新训练、追加推理或修改冻结训练源码。
+执行服务器yang109，项目`/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107`。本次核查结果、恢复数据下载、补充CPU并行准备与指标收集，没有重新训练、追加模型推理或修改冻结训练源码。
 
 ## 当前训练与指标
 
@@ -28,6 +28,26 @@ CPU指标后台仍运行，14项中2项完成、0项失败，其余等待原训�
 
 按最近训练速度，VOC当前Master剩余约2小时、SKU当前FroFA剩余约7小时，随后还要最终预测与CPU评分。该估计只针对当前方法，不是整条队列完成时间；共享GPU速度会变化。VOC完成Master后会继续YOLO12；SKU完成FroFA后继续LOFF-TA。
 
+## 与其他论文思想baseline的已有比较
+
+VisDrone完整548张开发集的保存结果已完成，0–100尺度。以下是相关论文思想的检测适配，不是其原论文源码复现。候选方法与强Adapter的负差距保留，不按结果筛baseline。
+
+| 方法 | 已测AP | Detail25减该方法AP |
+| --- | ---: | ---: |
+| FroFA适配 | 10.5272 | +1.8181 |
+| LOFF-TA适配 | 9.1234 | +3.2219 |
+| Cache and Reuse INT8适配 | 8.0720 | +4.2733 |
+| ViT-Adapter适配 | 16.5855 | -4.2402 |
+| Detail25 | 12.3453 | 0 |
+
+真实Master和YOLO12的已有VisDrone AP分别14.8749、14.3876，不能用它们的SKU结果替代VisDrone比较。历史检测器训练轨迹与新VOC/SKU的严格100唯一epoch合同分别审计，保存分数不代表所有训练成本已可公平比较。完整七项来源表位于`research/checks/minimal-priority-20261112/reused-visdrone-core-results.csv`。
+
+新增CPU并行准备两类工作：预构建VOC/SKU所需的物理INT8缓存；从现有VisDrone预测补齐缺少的分类、尺度、PR/张量和TIDE证据。已完成的八臂分析保留，Adapter/Detail已有TIDE直接复用。两项GPU训练继续，VOC/SKU每项最终预测后的CPU指标后台继续运行。
+
+两项已实际后台启动：INT8准备PID1276050，首次核查为`PREPARING_CPU`、VOC已处理876/16551图；VisDrone补指标PID1276051，首次核查为`RUNNING_CPU`、当前真实Master。两项均独立后台执行，完成后自动轻量归档、commit/push，不需要Codex持续在线监控。源码已提交并push：`1f8fa1f`。输出分别位于`runs/paper/priority-int8/job-20261113-cpu/`和`runs/paper/visdrone-core-metrics/job-20261113-single-pass/`，启动实测快照见`research/checks/status-20261113/parallel-cpu-launch.json`。
+
+资源核查：GPU0利用率100%，另有其他用户进程占24660MiB，剩余约14.4GiB；GPU1异常。CPU约85%空闲，可用内存约47GiB、I/O等待0–1%。本批新增工作使用CPU低优先级，不绕过现有两路GPU准入增加第三项训练。INT8预构建预计额外存储约45.9GB，原FP16银行保留，未来训练自动复用；原构建耗时仍计入冷成本。
+
 ## 下载与Git
 
 发现原反向代理7908已停止监听，COCO保留的13,715,363,183字节partial未删除。已恢复电脑Clash7897到服务器7908的SSH反向隧道（本地进程2284），服务器数据准备进程1264009继续断点下载。核查时partial已增长到13,801,694,575字节。COCO没有开始训练。
@@ -47,6 +67,12 @@ done
 
 "$PY" online_experiments/metric_bundle_campaign.py status \
   --job runs/paper/metric-bundles/job-20261112-single-pass
+
+# CPU预构建已有INT8 baseline缓存
+"$PY" online_experiments/prepare_priority_int8.py status
+
+# VisDrone七方法补全指标
+cat runs/paper/visdrone-core-metrics/job-20261113-single-pass/status.json
 ```
 
 训练和CPU汇总独立后台执行；退出Codex不会停止训练。COCO下载依赖电脑、VPN、Clash及SSH隧道在线。详细快照见`research/checks/status-20261113/snapshot.json`。

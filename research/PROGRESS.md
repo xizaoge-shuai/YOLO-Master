@@ -792,3 +792,9 @@ Full548 saved final predictions scored on CPU. No retraining or inference. [Evid
 ## VisDrone core metrics: loffta-c2-n005
 
 Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/loffta-c2-n005/README.md).
+
+
+<!-- parallel-baseline-cpu-launched-20261113 -->
+## Parallel baseline CPU work launched
+
+INT8 prebuildPID1276050 and full548 metricsPID1276051 verified active alongside unchanged GPU training. 4new core metric bundles already sealed and checked; remaining cases continue autonomously with scoped automatic commit/push. [Handoff](../服务器实验接手.md), [baseline comparison](EXPERIMENT_STATUS_20261113.md), [launch evidence](checks/status-20261113/parallel-cpu-launch.json). No new training/inference or seeds.

@@ -1,0 +1,82 @@
+{
+  "launches": [
+    {
+      "name": "int8",
+      "pid": 1276050,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/prepare_priority_int8.py",
+        "run",
+        "--publish"
+      ],
+      "job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-int8/job-20261113-cpu",
+      "started_unix": 1794579275.359858,
+      "cuda_visible_devices": "",
+      "training_calls": 0,
+      "prediction_calls": 0
+    },
+    {
+      "name": "visdrone_metrics",
+      "pid": 1276051,
+      "argv": [
+        "ionice",
+        "-c",
+        "3",
+        "nice",
+        "-n",
+        "10",
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/complete_visdrone_core_metrics.py",
+        "--source",
+        "/mnt/data/users/zhjia/YOLO-Master/runs/paper/replication-suite/job-20261107-lNbNHy3z/assets/source",
+        "--archive",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/datasets/VisDrone/VisDrone2019-DET-val.zip",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass",
+        "--publish"
+      ],
+      "job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass",
+      "started_unix": 1794579275.3641093,
+      "cuda_visible_devices": "",
+      "training_calls": 0,
+      "prediction_calls": 0
+    }
+  ],
+  "existing_gpu_jobs_unchanged": true,
+  "verified": {
+    "int8": {
+      "pid": 1276050,
+      "pid_alive": true,
+      "status": {
+        "state": "PREPARING_CPU",
+        "message": "Existing full INT8 baseline bank, low CPU and I/O priority",
+        "time_unix": 1794579276.5570037,
+        "dataset": "voc0712"
+      },
+      "log_tail": "{\"state\": \"PREPARING_CPU\", \"message\": \"Existing full INT8 baseline bank, low CPU and I/O priority\", \"time_unix\": 1794579276.5570037, \"dataset\": \"voc0712\"}\nQUANTIZE int8 4/16551\nQUANTIZE int8 404/16551\nQUANTIZE int8 804/16551\n"
+    },
+    "visdrone_metrics": {
+      "pid": 1276051,
+      "pid_alive": true,
+      "status": {
+        "state": "RUNNING_CPU",
+        "current_method": "YOLO-Master-N",
+        "completed": 0,
+        "failed": 0,
+        "planned": 7,
+        "time_unix": 1794579276.145659
+      },
+      "log_tail": ""
+    }
+  },
+  "verified_unix": 1794579308.3173382,
+  "completed_metric_seals_verified": [
+    "master-n",
+    "yolo12-n",
+    "frofa-c2-d01",
+    "loffta-c2-n005"
+  ],
+  "updated_unix": 1794579527.0228176
+}

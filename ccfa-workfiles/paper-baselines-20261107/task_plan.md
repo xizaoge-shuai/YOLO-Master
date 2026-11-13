@@ -1,5 +1,15 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-13 baseline comparison and CPU parallel completion
+
+User requests the remaining baseline comparisons and all derivable metrics together, with parallel work wherever resources permit. Retain the authorized seven-method single-seed scope, full splits, final100 protocol, and current workers. Do not alter frozen sources or duplicate training/inference.
+
+- [x] Verify current GPU/CPU/RAM/I/O resources and completed baseline coverage: two active GPU0 jobs,100%GPU utilization, GPU1 unhealthy; CPU~85%idle, MemAvailable~47GiB, I/Owait0–1%. Keep current two GPU leases; existing jobs continue.
+- [x] Recover full548 VisDrone seven-method AP table and honest Detail differences; identify missing auxiliary evidence for FroFA/LOFFTA/INT8/realMaster/YOLO12 beyond the older eight-arm analysis.
+- [x] Add and launch a CPU-only low-priority, singleton INT8 preparation sidecar for the two existing dataset banks; preserve original banks/seals and include build_seconds in future cold costs. PID1276050 verified PREPARING_CPU;VOC offset876/16551 atfirst check,then SKU automatically.
+- [x] Add and launch full548 CPU metric completion from the existing seven-method predictions; export complete tensors/PR/class/area evidence, compute only missing TIDE results and reuse completed analyses. PID1276051 verified RUNNING_CPU on realMaster;no GPU inference or retraining.
+- [x] Verify unchanged running-source hashes, actual sidecar processes/progress, runtime autoarchive/commit/push, and refresh the existing handoff/status report. FourCPUcontracts+Ruff,1366/1370anchor checks and independent reviews passed;source pushed1f8fa1f. Runtime autoarchives sharepriority/archive.lock;full asynchronous outputs remain pending.
+
 ## 2026-11-12 single-pass metric completion
 
 User requests all derivable metrics together, avoiding second training/evaluation passes under deadline. Current direct/cached training and priority coordinator source hashes remain fixed. New CPU-only sidecars consume the one persisted final full-test prediction set per configuration.
