@@ -786,3 +786,9 @@ Full548 saved final predictions scored on CPU. No retraining or inference. [Evid
 ## VisDrone core metrics: frofa-c2-d01
 
 Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/frofa-c2-d01/README.md).
+
+
+<!-- visdrone-core-metrics-20261113:loffta-c2-n005 -->
+## VisDrone core metrics: loffta-c2-n005
+
+Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/loffta-c2-n005/README.md).

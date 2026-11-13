@@ -1,0 +1,22 @@
+{
+  "train_seconds": 22529.29854312027,
+  "validation_seconds": 2250.161320145038,
+  "wall_seconds": 24815.51490749899,
+  "peak_vram_gib": 2.797412395477295,
+  "cache_bytes": 49729536384,
+  "cache_build_charged_seconds": 303.55563924182206,
+  "data_prepare_charged_seconds": 9.724290873855352,
+  "build_plus_wall_seconds": 25119.07054674081,
+  "total_charged_seconds": 25128.794837614667,
+  "query_images": 0,
+  "query_calls": 0,
+  "raw_train_seconds": 0.0,
+  "raw_val_seconds": 0.0,
+  "quantization_seconds": null,
+  "compressed_training_bytes": null,
+  "parameters": null,
+  "trainable_parameters": null,
+  "fresh_inference_p95_ms": null,
+  "note": "Saved shared-GPU observations only; missing values are unmeasured. Cache validation is not fresh-pipeline inference latency.",
+  "curve_scope": "Saved training losses, times and learning rates only; no inferred training AP or placeholder validation zeros."
+}
