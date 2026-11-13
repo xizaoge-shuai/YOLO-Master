@@ -1,0 +1,5 @@
+{
+  "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/master-n-s0",
+  "dataset_job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+  "pipeline_plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96"
+}

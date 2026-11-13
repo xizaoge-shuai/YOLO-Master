@@ -840,3 +840,9 @@ Nine completed endpoints,25 protocol rows exported without training,prediction o
 ## Remaining dataset mAP coverage
 
 Added completed VOC C1/C2/Mix25 and SKU C1 as historical controls, separately from the seven-method core queue. Existing VOC C1 COCO auxiliary evidence reused. Full coverageCSV distinguishes21 core pairs,currently9complete; pending runs have no fabricated mAP.32 protocol rows available across13 completed endpoints; no new training,inference or evaluation. [Tables](metrics/map-summary/README.md). COCOdata prepared,training not started.
+
+
+<!-- priority-single-seed-20261112:voc0712:master-n -->
+## Priority voc0712: master-n completed
+
+Full seed0/final100 endpoint archived: [master-n](experiments/priority-single-seed-20261112/voc0712/master-n-s0/README.md). No seed repeats or ablations queued.
