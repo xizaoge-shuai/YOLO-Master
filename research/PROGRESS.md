@@ -828,3 +828,9 @@ CPU preparation evidence: [voc0712](experiments/priority-int8-20261113/voc0712/R
 ## sku110k: existing INT8 baseline bank ready
 
 CPU preparation evidence: [sku110k](experiments/priority-int8-20261113/sku110k/README.md). No retraining or GPU inference; original compression build cost retained.
+
+
+<!-- explicit-map-metric-export-20261113 -->
+## Explicit mAP summary
+
+Nine completed endpoints,25 protocol rows exported without training,prediction or evaluation calls. VisDrone reference-class macro and weighted AP remain distinct; COCO-style auxiliary and VOC11point protocols labeled. [Definitions](metrics/map-summary/README.md). Full548CPUcore7/7complete,0failed.

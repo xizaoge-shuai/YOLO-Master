@@ -1,0 +1,39 @@
+{
+  "available_runs": [
+    "VisDrone/master-n",
+    "VisDrone/yolo12-n",
+    "VisDrone/frofa-c2-d01",
+    "VisDrone/loffta-c2-n005",
+    "VisDrone/cache-reuse-c1-int8",
+    "VisDrone/vit-adapter-cache25",
+    "VisDrone/detail25",
+    "sku110k/master-n",
+    "sku110k/yolo12-n"
+  ],
+  "rows": 25,
+  "input_sha256": {
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/master-n/metrics.json": "1a64740f4f450f2ed5d730ecdd543d2ed671c07c00a9e740d02530c67b261039",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/master-n/completion.json": "8fdd775ab872c9328ef6b6b2bd8f18810a22f822ce359e964cf82ea51259a39c",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/yolo12-n/metrics.json": "51921704b04aa51d4c6b3dbe2013b6692ab08ea2c09d3fe2d01bb06c0afdc9a7",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/yolo12-n/completion.json": "ceddae923e8fd09606e90fd54f97514c35673b907ce3c7fc39f2fe6f36248b18",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/frofa-c2-d01/metrics.json": "08896e18802c1f142c3d58e272d0ea3103810310fcd0d4157ceccc65595a8717",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/frofa-c2-d01/completion.json": "078f0b810d7d1fd3fbf2793f6f021601d9a137f36cdbe03aa891f47ad0072052",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/loffta-c2-n005/metrics.json": "026d5697552169d90200207a6280e94f1d2e3853ee323bcaf153ddffd08786f1",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/loffta-c2-n005/completion.json": "935f57dcbc98bff67537d2399458c4ff7d321409529feb19f0084e7d7762d61d",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/cache-reuse-c1-int8/metrics.json": "685c158f0ea8f3167cc86eab879758d3999e9ee5b1091f268233299e1bf97e58",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/cache-reuse-c1-int8/completion.json": "61d838fd4be818ae642e7a2c03c2910b10c7473e53351b6a815eaafd17303766",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/vit-adapter-cache25/metrics.json": "656b78e943fb8e2c00ccb666db7885f22eb1f1e1cb86ab8ad64b23c11d6039b7",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/vit-adapter-cache25/completion.json": "41a6b9e9e8738fac8e314ac922f9509f572c4cf78123bff044981f1a91918896",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/detail25/metrics.json": "66339972ad9cbd72b6a4f195257640174d6fc5d52ec71765449e68834d7d1ec6",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/visdrone-core-metrics/job-20261113-single-pass/detail25/completion.json": "260d97e9a3a07831a2d5f4f48eaa6a3354bd82d1ff7dd22b7fc99005442dedf5",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/master-n/bundle/metrics.json": "23cc4ff1de774cc5942a422bbf619b0262cc1cce4994e0cb035f1d205b549693",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/master-n/bundle/completion.json": "e0ce1aea53454c64dc5dc1fd3602ca649d8695785e2c4966edea983d6b39b74a",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/yolo12-n/bundle/metrics.json": "72d83733c0d50c1a94ab2569743a62a09cee4282d7eafad7d3481aea70f0d95b",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/yolo12-n/bundle/completion.json": "69cd6c06337bfc65683b5caf26ec6ebc4dfe36ff64b92b5f8f48292cb3db1d1a"
+  },
+  "exporter_sha256": "3bf62e0a298f13c9fef163f0089711b6b6f9ce80dab47b05a0b9950f6e9f0cf9",
+  "training_calls": 0,
+  "prediction_calls": 0,
+  "metric_evaluation_calls": 0,
+  "definition": "mAP50_95 averages category AP across IoU0.50:0.05:0.95. Reference-class-macro retains the VisDrone reference matcher/AP interpolation; COCO-style auxiliary retains COCO matching/101-point interpolation. Weighted reference scores are preserved separately, never renamed uniform mAP. VOC native eleven-point mAP50 does not supply native mAP50_95; empty means unavailable. The native VOC max_detections field records the saved global500 prediction cap, not a separate VOC maxDet sweep."
+}

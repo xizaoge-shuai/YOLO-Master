@@ -30,6 +30,8 @@ CPU指标后台仍运行，14项中2项完成、0项失败，其余等待原训�
 
 ## 与其他论文思想baseline的已有比较
 
+VisDrone七方法的CPU完整补指标现已全部完成，7/7成功、0失败。另新增[mAP口径和完整表](metrics/map-summary/README.md)：`map-results.csv`从已封存结果汇总mAP50、mAP50–95，并区分VisDrone参考类别等权、原参考加权与COCO-style辅助协议。SKU现有COCO AP本身已是mAP；VOC原生十一点指标为mAP50。汇总脚本不调用模型或评估器，原结果不覆盖。
+
 VisDrone完整548张开发集的保存结果已完成，0–100尺度。以下是相关论文思想的检测适配，不是其原论文源码复现。候选方法与强Adapter的负差距保留，不按结果筛baseline。
 
 | 方法 | 已测AP | Detail25减该方法AP |
