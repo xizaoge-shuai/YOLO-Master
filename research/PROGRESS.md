@@ -768,3 +768,9 @@ SKU realYOLO12/Master completed final100; full2936-image metrics bundled with no
 ## Parallel CPU baseline preparation and evidence
 
 Added CPU-only INT8 preparation for the existing fullVOC/SKU baselines and full548 seven-method saved-prediction evidence collection. Existing twoGPU training workers and frozen sources unchanged. Inputs1366/1370anchors checked; fourCPUcontracts+Ruff and independent reviews passed. LegacyVisDroneMaster duplicateCSV history is retained; savedAP is not an equal-step guarantee. [Checks](checks/status-20261113/parallel-cpu-source-checks.json). Production launch follows source commit.
+
+
+<!-- visdrone-core-metrics-20261113:master-n -->
+## VisDrone core metrics: master-n
+
+Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/master-n/README.md).
