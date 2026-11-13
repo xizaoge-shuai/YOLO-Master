@@ -858,3 +858,9 @@ Full-test final100 saved predictions scored once on CPU; [bundle](experiments/si
 ## Priority sku110k: frofa-c2-d01 completed
 
 Full seed0/final100 endpoint archived: [frofa-c2-d01](experiments/priority-single-seed-20261112/sku110k/frofa-c2-d01-s0/README.md). No seed repeats or ablations queued.
+
+
+<!-- single-pass-metrics-20261112:sku110k:frofa-c2-d01 -->
+## Single-pass metrics: sku110k, frofa-c2-d01
+
+Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/frofa-c2-d01-s0/README.md). No extra training or inference.

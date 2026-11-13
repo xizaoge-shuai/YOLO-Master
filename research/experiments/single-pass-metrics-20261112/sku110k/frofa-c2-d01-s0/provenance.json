@@ -1,0 +1,28 @@
+{
+  "version": "complete-cpu-metrics-v1",
+  "input_sha256": {
+    "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/dataset-manifest.json": "af5af57b34e9c2f2c4a755a7b25c79bae1d0f00bb4330549ace824903066fe87",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/endpoint.json": "9796fd9248823b317d0fbb20f88a564364c2e00ed72435e140f5e41346336877",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/predictions.json": "031410bb886a1829fbb32028b94d6da753cbbc27e559b63ab7957fedc12e82fd",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/metrics.json": "152562f49b54ca1b09e35a13f9d08230bf61a131fa5c5875a2bfe27fdb7604c5",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/summary.json": "de06aad9110c8415f70169dc105888437f7d2ffb17cba3e007a33f2bd6eb4771",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/complete_metric_bundle.py": "51e1e6379c21e6cc015fe44a210fc79b3081eda27146908f59f7d48bded479a2",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py": "8c00629b54bd8c150c6337b9d3b28bef716e6d0cac63dcbe3b792d54d463fd42",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/initialization.json": "86459a4480243b06c51a928e843f6338641287346838f1a5e80b46e3b21e8eac",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/args.json": "4696dde6f45ae95fcc0e6ca00918b9be167d695e4d076edb7e8f4f43fbf49ef4",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/provenance.json": "66e84151fd6937cf3ab91c6b665dcf33205653063dc47a74009bd981a0074afa",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/DONE": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/single-pass-metrics-20261112/frozen-teacher-parameters.json": "133d687d642ec2bf5c433b903a2dcf0f6ed76a49241ee46b56eaa498fdc52efe",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train-frofa-c2-d01.log": "ddea436fba7d0bb82c53124019ae65da03eea6193e6057218024d1d6b218261f"
+  },
+  "run": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0",
+  "manifest": "/mnt/data/users/zhjia/datasets-extension-20261110/sku110k/dataset-manifest.json",
+  "pycocotools_version": "2.0.11",
+  "CPU_only": true,
+  "additional_training_images": 0,
+  "additional_prediction_images": 0,
+  "tensor_dimensions": {
+    "precision_and_scores": "IoU,recall_grid,class,area,maxDet",
+    "recall": "IoU,class,area,maxDet"
+  }
+}
