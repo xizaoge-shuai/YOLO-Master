@@ -756,3 +756,9 @@ Full seed0/final100 endpoint archived: [master-n](experiments/priority-single-se
 ## Single-pass metrics: sku110k, master-n
 
 Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/master-n-s0/README.md). No extra training or inference.
+
+
+<!-- experiment-status-20261113-evening -->
+## November13 evening status
+
+SKU realYOLO12/Master completed final100; full2936-image metrics bundled with no repeated inference. AP@100=40.3693/40.3206; denseAP@500=54.1085/53.8890. VOCMaster epoch91 and SKUFroFA epoch33 continued unchanged. CPUsidecar2/14complete,0failed. Restored stopped7908reverseproxy and resumedCOCOpartial without deletion; noCOCOtraining. [Status](EXPERIMENT_STATUS_20261113.md).

@@ -1,0 +1,206 @@
+{
+  "checked_at": "2026-11-13T21:46:05.663480+08:00",
+  "priority_status": {
+    "voc0712": {
+      "state": "TRAINING",
+      "message": "master-n: full data,seed0,100 epochs",
+      "time_unix": 1794496247.8950229,
+      "dataset": "voc0712",
+      "method": "master-n",
+      "completed": 0,
+      "planned": 7
+    },
+    "sku110k": {
+      "state": "TRAINING",
+      "message": "frofa-c2-d01: full data,seed0,100 epochs",
+      "time_unix": 1794565084.9701657,
+      "dataset": "sku110k",
+      "method": "frofa-c2-d01",
+      "completed": 2,
+      "planned": 7
+    }
+  },
+  "metric_status": {
+    "state": "WAITING_RESULTS",
+    "message": "CPU sidecar waiting for original sealed final endpoints",
+    "time_unix": 1794565793.7129347,
+    "completed": 2,
+    "failed": 0,
+    "planned": 14
+  },
+  "completed_metrics": {
+    "master-n": {
+      "images": 2936,
+      "native_consistency": "PASS",
+      "native_primary": {
+        "implementation": "pycocotools.COCOeval bbox",
+        "version": "2.0.11",
+        "scale": "0-100",
+        "evaluated_images": 2936,
+        "by_max_detections": {
+          "100": {
+            "AP": 40.320611307184876,
+            "AP50": 62.55963362670759,
+            "AP75": 47.03850690990608,
+            "AP_small": 10.323613059613589,
+            "AP_medium": 14.992699534382902,
+            "AP_large": 45.90443136407189,
+            "AR": 43.97663285026393
+          },
+          "500": {
+            "AP": 53.889045015031215,
+            "AP50": 88.52677697677969,
+            "AP75": 59.7594713389073,
+            "AP_small": 10.949790836200362,
+            "AP_medium": 31.783489982705937,
+            "AP_large": 58.51527924982766,
+            "AR": 61.40110208413472
+          }
+        }
+      },
+      "resources": {
+        "training_wall_seconds": 45320.38206611801,
+        "evaluation_wall_seconds": 1704.7504407279775,
+        "train_seconds": null,
+        "wall_seconds": null,
+        "cold_seconds": null,
+        "warm_seconds": null,
+        "peak_vram_gib": 4.866519927978516,
+        "cache_bytes": 0,
+        "cache_build_charged_seconds": null,
+        "data_prepare_charged_seconds": null,
+        "training_cache_build_seconds": 0,
+        "teacher_query_images": 0,
+        "native_backbone_training_images": 821900,
+        "physical_training_teacher_queries": null,
+        "query_images": null,
+        "query_calls": null,
+        "parameters": 2812651,
+        "trainable_parameters": 2812635,
+        "detail_parameters": null,
+        "observed_mean_predict_wall_ms": 276.23684513336616,
+        "raw_image_seconds": null,
+        "raw_image_images": null,
+        "final_inference_seconds": null,
+        "consumed_cache_parts": null,
+        "retained_total_cache_bytes": null,
+        "cache_build_logical_teacher_images": null,
+        "quantization_seconds": null,
+        "compressed_training_bytes": null,
+        "checkpoint_bytes": 23355294,
+        "resource_note": "Copied saved measurements; shared-GPU observational time. Null means not measured. No fresh latency/FPS inferred from cached-feature evaluation.",
+        "training_validation_note": "No held-out validation during native training. Native metrics/* and val/* CSV zeros are placeholders and are excluded from curve exports.",
+        "pipeline_parameters": 2812651,
+        "frozen_backbone_parameters": 0,
+        "parameter_note": "Pre-nc initialization counts and EMA requires_grad flags are not valid trained-model parameter counts.",
+        "peak_vram_scope": "Process peak through training and final prediction; no separate train/eval reset.",
+        "prediction_time_scope": "Saved per-image mean includes PIL read, model.predict, warmup and output CPU transfer; P95 unavailable.",
+        "model_layers": 360,
+        "reported_GFLOPs": null,
+        "parameter_source": "Dataset-nc training model summary in saved log",
+        "model_summary": "YOLO-master-n summary"
+      },
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/master-n/bundle"
+    },
+    "yolo12-n": {
+      "images": 2936,
+      "native_consistency": "PASS",
+      "native_primary": {
+        "implementation": "pycocotools.COCOeval bbox",
+        "version": "2.0.11",
+        "scale": "0-100",
+        "evaluated_images": 2936,
+        "by_max_detections": {
+          "100": {
+            "AP": 40.3693226045944,
+            "AP50": 62.57726876896685,
+            "AP75": 47.13424787888756,
+            "AP_small": 11.106111318240496,
+            "AP_medium": 14.905516554725596,
+            "AP_large": 46.141046105474345,
+            "AR": 44.183609626783706
+          },
+          "500": {
+            "AP": 54.10846375182054,
+            "AP50": 88.88109732867531,
+            "AP75": 60.14370991796528,
+            "AP_small": 11.939357402203756,
+            "AP_medium": 32.21458296169169,
+            "AP_large": 58.6749690259836,
+            "AR": 61.66508321245012
+          }
+        }
+      },
+      "resources": {
+        "training_wall_seconds": 20798.177179475024,
+        "evaluation_wall_seconds": 1123.6379220499657,
+        "train_seconds": null,
+        "wall_seconds": null,
+        "cold_seconds": null,
+        "warm_seconds": null,
+        "peak_vram_gib": 3.2486376762390137,
+        "cache_bytes": 0,
+        "cache_build_charged_seconds": null,
+        "data_prepare_charged_seconds": null,
+        "training_cache_build_seconds": 0,
+        "teacher_query_images": 0,
+        "native_backbone_training_images": 821900,
+        "physical_training_teacher_queries": null,
+        "query_images": null,
+        "query_calls": null,
+        "parameters": 2568243,
+        "trainable_parameters": 2568227,
+        "detail_parameters": null,
+        "observed_mean_predict_wall_ms": 81.07847151341271,
+        "raw_image_seconds": null,
+        "raw_image_images": null,
+        "final_inference_seconds": null,
+        "consumed_cache_parts": null,
+        "retained_total_cache_bytes": null,
+        "cache_build_logical_teacher_images": null,
+        "quantization_seconds": null,
+        "compressed_training_bytes": null,
+        "checkpoint_bytes": 21230595,
+        "resource_note": "Copied saved measurements; shared-GPU observational time. Null means not measured. No fresh latency/FPS inferred from cached-feature evaluation.",
+        "training_validation_note": "No held-out validation during native training. Native metrics/* and val/* CSV zeros are placeholders and are excluded from curve exports.",
+        "pipeline_parameters": 2568243,
+        "frozen_backbone_parameters": 0,
+        "parameter_note": "Pre-nc initialization counts and EMA requires_grad flags are not valid trained-model parameter counts.",
+        "peak_vram_scope": "Process peak through training and final prediction; no separate train/eval reset.",
+        "prediction_time_scope": "Saved per-image mean includes PIL read, model.predict, warmup and output CPU transfer; P95 unavailable.",
+        "model_layers": 272,
+        "reported_GFLOPs": 6.5,
+        "parameter_source": "Dataset-nc training model summary in saved log",
+        "model_summary": "YOLO12n summary"
+      },
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/yolo12-n/bundle"
+    }
+  },
+  "progress_estimates": {
+    "voc0712_master_n": {
+      "last_completed_epoch": 90,
+      "current_epoch": 91,
+      "recent_epoch_seconds": 821.33,
+      "remaining_current_case_hours_approx": 2.1
+    },
+    "sku110k_frofa": {
+      "last_completed_epoch": 33,
+      "recent_epoch_seconds": 388.45,
+      "remaining_current_case_hours_approx": 7.2
+    }
+  },
+  "training_restarted": false,
+  "training_source_changed": false,
+  "coco_resume": {
+    "pid": 1264009,
+    "partial_bytes_before": 13715363183,
+    "started_unix": 1794577510.4651802,
+    "tunnel_local_pid": 2284,
+    "proxy": "127.0.0.1:7908 -> user Clash7897",
+    "training_started": false,
+    "resume_without_deleting_partial": true,
+    "partial_bytes_now": 13801694575,
+    "status": "DOWNLOADING_COCO",
+    "pid_alive": true
+  }
+}
