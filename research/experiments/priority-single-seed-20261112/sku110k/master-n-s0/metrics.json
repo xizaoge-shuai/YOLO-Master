@@ -1,0 +1,29 @@
+{
+  "primary": {
+    "implementation": "pycocotools.COCOeval bbox",
+    "version": "2.0.11",
+    "scale": "0-100",
+    "evaluated_images": 2936,
+    "by_max_detections": {
+      "100": {
+        "AP": 40.320611307184876,
+        "AP50": 62.55963362670759,
+        "AP75": 47.03850690990608,
+        "AP_small": 10.323613059613589,
+        "AP_medium": 14.992699534382902,
+        "AP_large": 45.90443136407189,
+        "AR": 43.97663285026393
+      },
+      "500": {
+        "AP": 53.889045015031215,
+        "AP50": 88.52677697677969,
+        "AP75": 59.7594713389073,
+        "AP_small": 10.949790836200362,
+        "AP_medium": 31.783489982705937,
+        "AP_large": 58.51527924982766,
+        "AR": 61.40110208413472
+      }
+    }
+  },
+  "endpoint": "Full official test split; fixed final100epoch; same frozen scorer as cache arms"
+}

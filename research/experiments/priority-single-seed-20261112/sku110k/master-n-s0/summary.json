@@ -1,0 +1,17 @@
+{
+  "version": "direct-full-detection-v1",
+  "method": "master-n",
+  "dataset": "sku110k",
+  "seed": 0,
+  "completed_epochs": 100,
+  "evaluated_images": 2936,
+  "training_wall_seconds": 45320.38206611801,
+  "evaluation_wall_seconds": 1704.7504407279775,
+  "observed_mean_predict_wall_ms": 276.23684513336616,
+  "peak_vram_gib": 4.866519927978516,
+  "cache_bytes": 0,
+  "training_cache_build_seconds": 0,
+  "teacher_query_images": 0,
+  "native_backbone_training_images": 821900,
+  "resource_note": "SharedGPU observational wall times, not controlled speed benchmark. Native detector backbones train; pretrained foundation-backbone queries do not apply."
+}

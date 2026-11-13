@@ -1,0 +1,7 @@
+{
+  "architecture": "repo:/ultralytics/cfg/models/master/v0/det/yolo-master-n.yaml",
+  "pretrained": false,
+  "seed": 0,
+  "parameters_before_dataset_class_override": 2844648,
+  "note": "Ultralytics deterministic trainer seeds then constructs actual dataset-nc model; native initialization, no loaded pretrained weights."
+}
