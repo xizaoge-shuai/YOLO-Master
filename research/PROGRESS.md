@@ -804,3 +804,9 @@ INT8 prebuildPID1276050 and full548 metricsPID1276051 verified active alongside 
 ## VisDrone core metrics: cache-reuse-c1-int8
 
 Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/cache-reuse-c1-int8/README.md).
+
+
+<!-- visdrone-core-metrics-20261113:vit-adapter-cache25 -->
+## VisDrone core metrics: vit-adapter-cache25
+
+Full548 saved final predictions scored on CPU. No retraining or inference. [Evidence](experiments/visdrone-core-metrics-20261113/vit-adapter-cache25/README.md).
