@@ -1,0 +1,15 @@
+{
+  "version": "direct-full-detection-v1",
+  "sha256": {
+    "args.json": "a67ba80ece93d55140e02d50eb623a142236dc136645efcf7110ca61ee32bf81",
+    "environment.json": "a7d5c916c6f707dc3ffb7f4597e4ca2532d8fd954e9fa65a3da7a665923f7193",
+    "initialization.json": "899ce9d6688c50b157aad1a4ccb7a9cd90b3259ab984049be31bf3b98e477bb3",
+    "snapshot.json": "9c59e2e78df384722a19025c7f307ced2d4db699e76985f8fa196d0be6d6a875",
+    "summary.json": "16df0b5ee0ef3e28ccc1b3de2b12e4f6ff3c69153f62b0866b672c8a476ec40e",
+    "metrics.json": "a16b7f80ec39a60eaf6b18693497591d5bb63c567a46558def8bbbc3e7dbb13f",
+    "predictions.json": "f17273c0f3a75695355d51486d8820f89dbffbc15a406817559d79426d1562cc",
+    "results.csv": "68b0955a95962acc227053341f174e7153a03779be96c39ce6069edf5fc510d0",
+    "epoch-state.json": "34f157f684058b2bcbd089447f4a6109effbcaab5e35aa9e4cb309926fa02b71",
+    "weights/last.pt": "3cde63b4f2409b07f7176d6791cc087a56eb2e303e5c5e6b791b05471ce2e8df"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "direct-full-detection-v1",
+  "method": "yolo12-n",
+  "dataset": "voc0712",
+  "seed": 0,
+  "completed_epochs": 100,
+  "evaluated_images": 4952,
+  "training_wall_seconds": 35443.56382843299,
+  "evaluation_wall_seconds": 99.29654578596819,
+  "observed_mean_predict_wall_ms": 19.31202915010352,
+  "peak_vram_gib": 2.387958526611328,
+  "cache_bytes": 0,
+  "training_cache_build_seconds": 0,
+  "teacher_query_images": 0,
+  "native_backbone_training_images": 1655100,
+  "resource_note": "SharedGPU observational wall times, not controlled speed benchmark. Native detector backbones train; pretrained foundation-backbone queries do not apply."
+}
