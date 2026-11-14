@@ -1,0 +1,10 @@
+dataset,method,reference_method,macro_mAP_gap_points,weighted_AP_gap_points,observed_train_elapsed_ratio,observed_cold_accounted_ratio,online_query_images_saving_pct,online_query_calls_saving_pct,interpretation
+VisDrone,detail25,online100,0.7045269506019736,0.9471158621616969,4.43037717715774,4.805554228490599,75.0,10.02966625463535,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,vit-adapter-cache25,online100,4.650514880525481,5.187338791656471,2.2143573787213904,2.338942884850806,75.0,10.02966625463535,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,vit-adapter-cache0,online100,3.865311698225275,4.5086741059173985,2.940747761812608,3.1987462655950303,100.0,100.0,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,mix25,online100,0.017981279376549253,-0.045598526777448356,0.45142459158436415,0.47417295726516506,75.0,10.02966625463535,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,online100,online100,0.0,0.0,1.0,1.0,0.0,0.0,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,cache2,online100,-0.9116617932688076,-0.7413340120848577,0.268436439997988,0.3248838346984571,100.0,100.0,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,frofa-c2-d01,online100,-1.0075963889261654,-0.8709907749907995,1.4843174671086627,1.6937534781193453,100.0,100.0,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,loffta-c2-n005,online100,-2.100909448721737,-2.2747881343602288,1.5042381363726343,1.666406808505489,100.0,100.0,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."
+VisDrone,cache-reuse-c1-int8,online100,-3.124267074886049,-3.3261444677594625,1.6540231830298446,1.8326628683615045,100.0,100.0,"Observational wall-time ratios only; not controlled speedup, equal-time or FLOP savings."

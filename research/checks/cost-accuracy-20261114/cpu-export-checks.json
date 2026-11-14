@@ -1,0 +1,27 @@
+{
+  "state": "PASS",
+  "measurement_rows": 18,
+  "visdrone_rows": 9,
+  "sealed_new_bundles": 5,
+  "endpoint_sealed_historical_controls": 4,
+  "ruff": "PASS",
+  "checks": [
+    "cold three-part arithmetic",
+    "seconds-to-elapsed-hours",
+    "unmeasured compute/energy/FLOPs/pure-training-cold stay missing",
+    "native full-trainer wall versus cached phase separation",
+    "native actual parameters and backbone images",
+    "Adapter0 preserved and online-query dominance checked",
+    "Detail actual initialized parameters",
+    "all exported output SHA",
+    "native missing cold scope explicit"
+  ],
+  "additional_training_calls": 0,
+  "additional_inference_calls": 0,
+  "additional_metric_evaluation_calls": 0,
+  "exporter_sha256": "93ce6c542642e424d3652c4d65129b45f4fd25f619a7fd551ba8c62a001e69ec",
+  "output_sha256": {
+    "measurements.csv": "a8b4e0a416de44994402a7a35a037d4d140761d3375cf04ab9352fefb235bc7b",
+    "vs-online100-observed.csv": "7f972bcb63ecadc31627fe57e172ffe274816daf0c8af33067ef91afa768e4e4"
+  }
+}

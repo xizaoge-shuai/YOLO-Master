@@ -876,3 +876,12 @@ Full seed0/final100 endpoint archived: [yolo12-n](experiments/priority-single-se
 ## Single-pass metrics: voc0712, yolo12-n
 
 Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/voc0712/yolo12-n-s0/README.md). No extra training or inference.
+
+
+## 2026-11-14 cost-accuracy-audit-20261114
+
+Read original D1 clauses: accuracy, VRAM and GPU-hours; >=2 datasets; >=50% training-cost reduction on >=1 dataset remains an acceptance target, not an achieved full-data claim. Exported 18 completed configurations with raw AP, observed elapsed time, cache/setup storage and time, actual initialized trainable parameters, allocated VRAM scope and teacher image/call counts. Current completed core endpoints: VisDrone7/7, VOC2/7, SKU3/7; VOC/SKU saved-prediction bundles5/14 completed,0failed. No new training, inference, seed or evaluator pass.
+
+Retained strong Adapter0 and Adapter25: Detail25 has fewer parameters/allocated VRAM but lower mAP and no observed elapsed-time advantage. 75% fewer online teacher images corresponds to only10.03% fewer calls; this is a batching concern, not measured causal profiling. Controlled GPU-hours, training-only cold cost, equal-time AP and energy/FLOPs are missing and remain NA. Protocol defines AP difference, explicit cold/warm cost ratios and fixed-reference CostAtGap without fitting a custom winning score.
+
+Verification: real18-row export, manifest/output hashes, cost arithmetic, parameter provenance, missing-value contracts, targeted Ruff and unchanged frozen training-source contract passed; independent definition review passed. Only enumerated exporter/docs/lightweight evidence published; unrelated drafts and all active workers preserved.

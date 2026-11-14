@@ -1,5 +1,15 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 cost-accuracy evidence and D1 requirements
+
+User asks whether training cost is measured and how to demonstrate an efficient accuracy tradeoff. Preserve the current single-seed full-data queue; no training restart, extra seed, or new evaluation forward pass.
+
+- [x] Read original D1 task clauses:accuracy/VRAM/GPUhours,atleast2datasets,and>=50%trainingcost reduction onatleast1dataset;separate oldsubset results from full-data evidence.
+- [x] Verify latest queues:VOC2/7complete,FroFA7/100;SKU3/7complete,LOFFTA68/100;CPUmetrics5/14complete,0failed;VisDronecore7/7andINT8preparation2/2complete,COCOrawdata prepared.
+- [x] Audit current costs and strong baselines:18completed configurations available;retainAdapter0 andAdapter25,rawsharedGPUtime,queryimagesANDcallcounts,andcold/warm bookkeeping scopes. No controlledequal-time results yet.
+- [x] Add CPU-only cost exporter and realCSV/provenance;math,missingvalue,andindependentdefinitionchecks passed. DefineAPgap/costratio/CostAtGapwithfixedreference/thresholds,nocustomscore chosen to guaranteevictory.
+- [x] Final source/realdata verification passed; running frozen sources unchanged,18realrows and missing controlled costs checked. Handoff and lightweight exports refreshed; scoped publication is recorded in research/PROGRESS.md. Controlledcost/equaltime remainfuturework,notclaimedcomplete.
+
 ## 2026-11-13 baseline comparison and CPU parallel completion
 
 User requests the remaining baseline comparisons and all derivable metrics together, with parallel work wherever resources permit. Retain the authorized seven-method single-seed scope, full splits, final100 protocol, and current workers. Do not alter frozen sources or duplicate training/inference.
