@@ -1,5 +1,12 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 16:05 live status refresh
+
+- [x] Confirm activeVOC FroFA31/100 andSKU INT813/100;GPU0healthy100%utilization,approximately856GiBdiskfree. Current active training logs have no new failure.
+- [x] Verify newly completedSKU LOFFTAfinal100 and nativeAP@10032.4844/denseAP@50042.3587;sealedCPUmetrics6/14complete,0failed. VisDrone7/7,VOC2/7,SKU4/7corecasescomplete.
+- [x] Fix cost exporter's fixed old completion list to discover sealed results across the authorized7methods×2datasets;require100epochs and retainallSHAchecks. Actual19rowexport preservesprevious18rows exactly;targetedRuff and independentreviewpassed. No training/inference/evaluatorcall.
+- [x] Refreshcost/mAPexports,handoff,currentcaseETAandscoped publication;fullCOCOdeferred andcurrentmethodCOCO800/200notstarted. Active frozen training sources unchanged.
+
 ## 2026-11-14 COCO subset scope update
 
 - [x] User defers full COCO under deadline; preserve prepared assets and existing VOC/SKU queues. No full-COCO training process is running.

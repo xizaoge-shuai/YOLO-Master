@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-14",
+  "case": "cost exporter incremental sealed-endpoint refresh",
+  "previous_rows": 18,
+  "current_rows": 19,
+  "previous18rows_unchanged": true,
+  "new_case": "sku110k/loffta-c2-n005",
+  "unsealed_active_cases_excluded": true,
+  "all_imported_core_cases_final100_checked": true,
+  "output_hashes_verified": true,
+  "missing_controlled_costs_preserved": true,
+  "ruff": "PASS",
+  "training_calls": 0,
+  "inference_calls": 0,
+  "evaluation_calls": 0
+}

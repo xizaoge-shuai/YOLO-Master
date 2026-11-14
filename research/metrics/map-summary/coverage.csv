@@ -16,7 +16,7 @@ voc0712,detail25,core,PENDING,False
 sku110k,master-n,core,COMPLETE,True
 sku110k,yolo12-n,core,COMPLETE,True
 sku110k,frofa-c2-d01,core,COMPLETE,True
-sku110k,loffta-c2-n005,core,TRAINING,False
-sku110k,cache-reuse-c1-int8,core,PENDING,False
+sku110k,loffta-c2-n005,core,COMPLETE,True
+sku110k,cache-reuse-c1-int8,core,TRAINING,False
 sku110k,vit-adapter-cache25,core,PENDING,False
 sku110k,detail25,core,PENDING,False

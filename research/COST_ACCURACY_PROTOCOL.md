@@ -4,9 +4,11 @@
 
 ## 当前实验状态
 
-VOC本轮七方法已完成真实YOLO-Master和YOLO12，FroFA最近完成7/100轮。SKU已完成真实YOLO12、真实YOLO-Master和FroFA，正在LOFF-TA（最近68/100轮）。VOC/SKU共5/14项的最终预测及完整CPU指标已完成，0项指标失败。VisDrone七方法的完整548图CPU指标已全部完成。VOC/SKU所需INT8银行已预构建完，后续训练自动复用。完整COCO原始数据已准备完成，尚未启动训练。
+11月14日16:05左右核查：VOC本轮七方法已完成真实YOLO-Master和YOLO12，FroFA完成31/100轮。SKU已完成真实YOLO12、真实YOLO-Master、FroFA和LOFF-TA，INT8完成13/100轮。VOC/SKU共6/14项的最终预测及完整CPU指标已完成，0项指标失败。VisDrone七方法的完整548图CPU指标已全部完成。VOC/SKU所需INT8银行已预构建完，后续训练自动复用。完整COCO已暂缓，800/200子集的当前方法未启动。
 
 新完成VOC原生十一点mAP50：Master52.4909，YOLO12为58.3583。新完成SKU FroFA的COCO mAP50–95@100=34.8733、@500=46.2087。不能把旧VOC C1/C2/Mix25分数填成这些新方法结果。
+
+新增SKU LOFF-TA：最终100轮mAP@100=32.4844，AP50@100=57.9971；dense mAP@500=42.3587，AP50@500=79.2407，完整2936图。训练经过35374.26秒、warm过程36659.65秒、cold记账38029.60秒，均保留共享GPU观测范围。成本表现已19行；已修正导出器只列旧完成名单的问题，新增结果自动通过completion/input/output哈希核验后收录。
 
 11月14日用户随后暂缓完整COCO，改用历史固定子集；优先800/200既定划分，样本身份保持不变。旧cached-latent及YOLO26n结果是历史D1 pilot，当前Detail25的COCO结果仍待测，详见RESULTS_LEDGER.md顶部核对。
 

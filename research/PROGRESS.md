@@ -904,3 +904,12 @@ Full seed0/final100 endpoint archived: [loffta-c2-n005](experiments/priority-sin
 ## Single-pass metrics: sku110k, loffta-c2-n005
 
 Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/loffta-c2-n005-s0/README.md). No extra training or inference.
+
+
+## 2026-11-14 16:05 live-status-refresh-20261114-afternoon
+
+Verified two active full-data workers: VOC FroFA31/100, SKU physicalINT813/100;GPU0healthy100%utilization,diskfree855.82GiB,no new active-train failure. SKU LOFFTA completed fixed100,full8219/2936: AP@10032.4843746632/AP50@10057.9971338572,denseAP@50042.3586700797/AP50@50079.2406664230. Completion seals and100uniqueepochs independently verified. Corecompleted VisDrone7/7,VOC2/7,SKU4/7; saved-predictionCPUbundles6/14complete,0failed. No additional inference/evaluation. COCO800/200 current-method run is not started; completeCOCO deferred.
+
+Current-case-only roughremainingtraining fromlast10epochs: VOC13.0-15.0hours,SKU8.7-10.2hours,excludingfinaleval andlaterqueuedmethods;sharedGPU makes estimates uncertain. SKU stillAdapter/DetailafterINT8,VOCstillLOFFTA/INT8/Adapter/DetailafterFroFA.
+
+Fixed non-frozen cost exporter stale five-completion list: enumerate onlyauthorized7methods×2datasets,importonlycompletionsealedbundles,retaininput/outputSHAchecks,requirefinal100. Re-export19rows;prior18rows identical,newSKU LOFFonly;missing controlledcosts preserved,outputhashchecks,targetedRuff andindependentreview passed. RefreshedmAP42protocolrows/17availableendpoints,coverage,costs andhandoff. Training sources/recipes/workers untouched. This push also publishes priorSKU LOFFtraining/metric commits whoseautomaticpushreceipts timedout;oldreceipts remainunchanged.

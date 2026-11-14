@@ -216,13 +216,15 @@ def metric_fields(row, metrics, dataset, bundle):
 def cross_rows(root, sources):
     rows = []
     bundle_root = root / "runs/paper/metric-bundles/job-20261112-single-pass"
-    cases = [
-        ("voc0712", "master-n"), ("voc0712", "yolo12-n"),
-        ("sku110k", "master-n"), ("sku110k", "yolo12-n"),
-        ("sku110k", "frofa-c2-d01"),
-    ]
+    methods = (
+        "master-n", "yolo12-n", "frofa-c2-d01", "loffta-c2-n005",
+        "cache-reuse-c1-int8", "vit-adapter-cache25", "detail25",
+    )
+    cases = [(dataset, method) for dataset in ("voc0712", "sku110k") for method in methods]
     for dataset, method in cases:
         folder = bundle_root / dataset / method / "bundle"
+        if not (folder / "completion.json").is_file():
+            continue
         completion = read(folder / "completion.json", sources)
         for name, expected in completion["output_sha256"].items():
             checked(folder / name, expected, sources)
@@ -236,6 +238,8 @@ def cross_rows(root, sources):
             path = run / name
             checked(path, completion["input_sha256"][str(path)], sources)
         summary = read(run / "summary.json", sources)
+        if summary.get("completed_epochs") != 100:
+            raise RuntimeError(f"Bundle is not a completed final100 endpoint: {run}")
         read(run / "args.json", sources)
         init = read(run / "initialization.json", sources)
         native = method in ("master-n", "yolo12-n")

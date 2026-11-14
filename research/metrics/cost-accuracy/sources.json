@@ -1,10 +1,10 @@
 {
   "schema": "cost-accuracy-saved-evidence-v1",
-  "created_utc": "2026-11-14T03:28:38.184919+00:00",
-  "rows": 18,
+  "created_utc": "2026-11-14T08:07:45.361198+00:00",
+  "rows": 19,
   "visdrone_comparison_rows": 9,
   "input_sha256": {
-    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/export_cost_accuracy.py": "93ce6c542642e424d3652c4d65129b45f4fd25f619a7fd551ba8c62a001e69ec",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/export_cost_accuracy.py": "3a6bcb01de961a99c7ab40c0476f4f97289051283ac30ba705784c76f2ca3c26",
     "/mnt/data/users/zhjia/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/detail25-s0/DONE": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
     "/mnt/data/users/zhjia/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/detail25-s0/summary.json": "7e9d8481fea1d70be0257491ee17e827a2314d807259e97d44bea29775c92bec",
     "/mnt/data/users/zhjia/YOLO-Master/runs/paper/detail-probe/job-20261022-hjP4y3Lf/train/detail25-s0/args.json": "d2bf55de1cf5b936c6994181979fbc190388d7c4f095139b969f928f03cdd14f",
@@ -119,6 +119,20 @@
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/summary.json": "de06aad9110c8415f70169dc105888437f7d2ffb17cba3e007a33f2bd6eb4771",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/args.json": "4696dde6f45ae95fcc0e6ca00918b9be167d695e4d076edb7e8f4f43fbf49ef4",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/frofa-c2-d01-s0/initialization.json": "86459a4480243b06c51a928e843f6338641287346838f1a5e80b46e3b21e8eac",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/completion.json": "55c31c835d856f26ee8f4e21bae005d68f091c1b9a1f65b011c4863797553b3f",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/metrics.json": "2475a51613fd77ff462f09ea9b45d73a17cee59f82f056a3b5d4825d971aee13",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/object-counts.csv": "0868e9abe214fb0720b401edc0efc11f7c0f1c59f310911f8f23f5f36ad0e760",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/per-area.csv": "eab10fc30c213a168f3837eb5f5f4cfe9350ed5034bc1525f3e665dff3d73ee8",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/per-class.csv": "88efdeebe96163b1226ec98a859a72fc1e41e1df9fb1b5f6d5751cd81d729989",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/pr-curves.csv": "1bd24351c292c7950d71535c229399669869cf6f2934c3aaddccf7c821af59b6",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/provenance.json": "36d0e3cdc3bf0c0c88c12bd96da453eccd8e7ad9e8df5e3a0ecb607b7a2a038c",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/resource-metrics.json": "e9e38a4840bf06e9783cfa83dd4d085d4b07b06e5814801ac1a6cc689a691211",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/status.txt": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/tensors.npz": "2bafe80ac4e534453c5cf8fd31664784e0079d0ea654c6f28eeac859fa7318e3",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass/sku110k/loffta-c2-n005/bundle/training-curves.csv": "c0ea83ad50b761cbb815b26d3f326469a7c0a1a08cd2fe0703b0a8fce6eb4234",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/loffta-c2-n005-s0/summary.json": "c905053e18b9973a64a9e3cbc3d3a183716a00202dad1e2963c31f598c747724",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/loffta-c2-n005-s0/args.json": "3c64285319ee1ee08c051f3eff01937d622ff926c1f23c169ba5c8b3487cd16a",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/loffta-c2-n005-s0/initialization.json": "86459a4480243b06c51a928e843f6338641287346838f1a5e80b46e3b21e8eac",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/train/cache1-s0/DONE": "09bb817083aa09e05e0c37290f4a10ef77935773966b716d076bd47e1cfb6636",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/train/cache1-s0/endpoint.json": "65bb3b347c41beaa257b5d7c9ab3976ba84339743028327872fb2bcedfb484ba",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/train/cache1-s0/summary.json": "4a46ae920b56959af3af1aa68b5a812053fe26ccbb8bb750eaf8fcebfbe4db7a",
@@ -146,7 +160,7 @@
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/single-pass-metrics-20261112/frozen-teacher-parameters.json": "133d687d642ec2bf5c433b903a2dcf0f6ed76a49241ee46b56eaa498fdc52efe"
   },
   "output_sha256": {
-    "measurements.csv": "a8b4e0a416de44994402a7a35a037d4d140761d3375cf04ab9352fefb235bc7b",
+    "measurements.csv": "6cfb8cfc7bd1710168227ee9156b337080df25ff81e2259b5a67feaff45abe5b",
     "vs-online100-observed.csv": "7f972bcb63ecadc31627fe57e172ffe274816daf0c8af33067ef91afa768e4e4"
   },
   "training_calls": 0,
