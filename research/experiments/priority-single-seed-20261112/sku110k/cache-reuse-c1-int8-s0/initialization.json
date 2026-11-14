@@ -1,0 +1,8 @@
+{
+  "parameters": 1288109,
+  "trainable_parameters": 1288109,
+  "detail_parameters": 0,
+  "base_head_sha256": "50bf4ece7ff8409528fcaddf04c03d354274caf20e34853433f6339b6f203701",
+  "model_contract": null,
+  "teacher_loaded": false
+}

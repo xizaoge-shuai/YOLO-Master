@@ -962,3 +962,9 @@ Actual four GPU0 training workers verified at2026-11-14T11:20:46UTC:VOC FroFA146
 ## Two campus lanes and two AutoDL continuations prepared
 
 Paused VOC LOFF-TA epoch9 and SKU Detail25 epoch17; original FroFA/INT8 children continue. Added SHA-pinned transfer, immutable-source resume wrapper, two-lane destination runner, CPU-only verified return, and campus delegation controller. 76 Linux CPU tests and targeted Ruff passed. AutoDL imports verified; transfer and training are pending separately. No new AP, seeds, epochs or same-hardware speedup claims.
+
+
+<!-- priority-single-seed-20261112:sku110k:cache-reuse-c1-int8 -->
+## Priority sku110k: cache-reuse-c1-int8 completed
+
+Full seed0/final100 endpoint archived: [cache-reuse-c1-int8](experiments/priority-single-seed-20261112/sku110k/cache-reuse-c1-int8-s0/README.md). No seed repeats or ablations queued.
