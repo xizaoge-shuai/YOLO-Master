@@ -40,6 +40,11 @@ def same_process(expected, current):
         raise RuntimeError("Process identity changed; no signal or restart is authorized")
 
 
+def same_lifetime(expected, current):
+    if current is None or any(current.get(k) != expected.get(k) for k in ("pid", "uid", "start_ticks")):
+        raise RuntimeError("Process lifetime changed while waiting for exit")
+
+
 def libc_pidfd(name, *values):
     """Use glibc's checked pidfd binding when this Python omits it."""
     import ctypes
@@ -119,6 +124,12 @@ def check(args):
         raise RuntimeError("Adopted training command differs from frozen command")
     if old["state"] == "Z" or child["state"] == "Z":
         raise RuntimeError("Supervisor or adopted worker has already exited")
+    check_pending(args, child)
+    return {"supervisor": old, "child": child, "boot_id": boot, "plan_sha256": original.sha(args.job / "pipeline-plan.json"),
+            "rollback_argv": [sys.executable, *metadata["argv"]], "policy": "Never kill child/group; preserve checkpoints; no automatic retry"}
+
+
+def check_pending(args, child):
     completed = original.read(args.job / "completed-methods.json")
     if [item["method"] for item in completed] != list(original.ordered_methods(args)[:4]):
         raise RuntimeError("Expected the four original baseline endpoints before INT8")
@@ -131,8 +142,51 @@ def check(args):
     found = [p for p in training_processes() if "--output" in p["argv"] and p["argv"][p["argv"].index("--output") + 1] == expected]
     if [p["pid"] for p in found] != [child["pid"]]:
         raise RuntimeError("Live adopted output does not have exactly one owner")
-    return {"supervisor": old, "child": child, "boot_id": boot, "plan_sha256": original.sha(args.job / "pipeline-plan.json"),
-            "rollback_argv": [sys.executable, *metadata["argv"]], "policy": "Never kill child/group; preserve checkpoints; no automatic retry"}
+
+
+def verify_recovery_processes(evidence):
+    old, child = evidence["supervisor"], evidence["child"]
+    current = process(old["pid"])
+    if current is not None and current.get("state") != "Z":
+        raise RuntimeError("Recovery requires the old supervisor to have exited")
+    current = process(child["pid"])
+    same_process(child, current)
+    if current.get("state") == "Z":
+        raise RuntimeError("Recovery requires the exact adopted child still alive")
+
+
+def check_recovery(args):
+    if args.dataset != "sku110k" or sys.platform != "linux":
+        raise RuntimeError("Requires SKU-only Linux recovery")
+    saved = original.read(args.job / "pipeline-plan.json")
+    if original.plan(args) != saved:
+        raise RuntimeError("Frozen original plan/source/cache changed")
+    evidence = original.read(args.sidecar / "handoff.json")
+    previous_plan = original.read(args.sidecar / "plan.json")
+    digest = original.sha(args.job / "pipeline-plan.json")
+    if evidence["plan_sha256"] != digest or previous_plan["frozen_pipeline_plan_sha256"] != digest:
+        raise RuntimeError("Recovery handoff and original plan are not the same sealed job")
+    if evidence["supervisor"]["pid"] != args.old_supervisor or evidence["child"]["pid"] != args.adopt_child:
+        raise RuntimeError("Recovery PID arguments differ from persisted handoff")
+    boot = Path("/proc/sys/kernel/random/boot_id").read_text().strip()
+    if evidence["boot_id"] != boot or evidence["child"]["uid"] != os.getuid():
+        raise RuntimeError("Recovery boot or adopted owner differs")
+    verify_recovery_processes(evidence)
+    metadata, active = original.read(args.job / "worker.json"), original.read(args.job / "active-child.json")
+    if metadata["pid"] == args.old_supervisor:
+        if not supervisor_argv(evidence["supervisor"]["argv"], metadata["argv"]):
+            raise RuntimeError("Canonical old worker metadata differs from handoff")
+    elif metadata.get("scheduler") != "priority-three-lane-v1" or metadata.get("handoff_file") != str(args.sidecar / "handoff.json"):
+        raise RuntimeError("Canonical worker is not the old supervisor or this explicit adoption")
+    elif (current := process(metadata["pid"])) is not None and current.get("state") != "Z":
+        raise RuntimeError("An adopting supervisor is still alive")
+    child = evidence["child"]
+    if active["pid"] != child["pid"] or active["action"] != "train" or active["method"] != INT8:
+        raise RuntimeError("Canonical active child differs from persisted INT8 handoff")
+    if active["argv"] != child["argv"] or child["argv"] != original.command_for(args, "train", INT8):
+        raise RuntimeError("Recovery child command differs from frozen trainer")
+    check_pending(args, child)
+    return evidence
 
 
 def scheduler_plan(args, evidence):
@@ -156,7 +210,8 @@ def handoff(args, evidence):
     signal_one(old)
     deadline = time.monotonic() + 20
     while (current := process(old["pid"])) is not None and current.get("state") != "Z":
-        same_process(old, current)
+        # cmdline legitimately clears during exit, after the one verified signal.
+        same_lifetime(old, current)
         if time.monotonic() > deadline:
             raise RuntimeError("Old supervisor did not exit; child is preserved, do not start extra work")
         time.sleep(0.2)
@@ -169,7 +224,9 @@ def handoff(args, evidence):
 
 def wait_adopted(args, child):
     while (current := process(child["pid"])) is not None and current.get("state") != "Z":
-        same_process(child, current)
+        same_lifetime(child, current)
+        if current.get("argv") != [""]:
+            same_process(child, current)
         time.sleep(10)
     if not (original.output_for(args, INT8) / "DONE").is_file():
         raise RuntimeError("Adopted INT8 exited without sealed DONE; no automatic restart")
@@ -263,7 +320,10 @@ class State:
             record = {"schema": "priority-three-lane-v1", "pid": os.getpid(), "lanes": self.lanes,
                       "errors": self.errors, "timing": "Shared GPU; observational, not controlled speed evidence"}
             original.write(self.args.sidecar / "status.json", record)
-            original.status(self.args, "RUNNING_THREE_LANE" if not self.errors else "PARTIAL_FAILURE", "SKU INT8 adoption + Adapter baseline + parallel Detail25", lanes=self.lanes)
+            active = [value["method"] for value in self.lanes.values() if value.get("method") and value["state"] not in ("COMPLETED", "FAILED")]
+            original.status(self.args, "RUNNING_THREE_LANE" if not self.errors else "PARTIAL_FAILURE", "SKU INT8 adoption + Adapter baseline + parallel Detail25", lanes=self.lanes,
+                            completed=len(self.completed), planned=7, sidecar=str(self.args.sidecar),
+                            method=self.lanes.get("baseline", {}).get("method"), parallel_methods=active)
 
 
 def execute(args, action, method, state, lane):
@@ -343,24 +403,30 @@ def main():
     parser.add_argument("--adopt-child", type=int, default=1881349)
     parser.add_argument("--dependencies", type=Path, default=ROOT / ".research-deps/evidence-20261110/site")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument("--recover", action="store_true", help="Adopt the persisted child after a failed supervisor handoff; never signal")
     args = parser.parse_args()
     args.job, args.dataset_job, args.sidecar = (getattr(args, key).resolve() for key in ("job", "dataset_job", "sidecar"))
     args.dataset, args.first_detector = "sku110k", "yolo12-n"
     if args.action == "status":
         print(original.read(args.sidecar / "status.json"))
         return
-    evidence = check(args)
+    checker = check_recovery if args.recover else check
+    evidence = checker(args)
     if args.action == "check":
         import json
         print(json.dumps(evidence, indent=2))
         return
     args.sidecar.mkdir(parents=True, exist_ok=True)
     with job_lock(args.sidecar):
-        evidence = check(args)
-        original.write(args.sidecar / "plan.json", scheduler_plan(args, evidence))
+        evidence = checker(args)
+        original.write(args.sidecar / ("recovery-plan.json" if args.recover else "plan.json"), scheduler_plan(args, evidence))
         try:
-            handoff(args, evidence)
+            if not args.recover:
+                handoff(args, evidence)
             with job_lock(args.job):
+                if args.recover:
+                    evidence = check_recovery(args)
+                    original.write(args.sidecar / "recovery-handoff.json", dict(evidence, state="ADOPTED_WITHOUT_SIGNAL", time_unix=time.time()))
                 state = State(args)
                 worker = {"pid": os.getpid(), "argv": sys.argv, "started_unix": time.time(), "boot_id": evidence["boot_id"],
                           "handoff_file": str(args.sidecar / "handoff.json"), "scheduler": "priority-three-lane-v1"}
@@ -375,7 +441,8 @@ def main():
                     raise RuntimeError("One or more lanes failed; inspect sidecar status and preserved outputs")
                 original.status(args, "SUCCEEDED", "All seven SKU seed0/final100 endpoints completed; Detail25 was parallelized")
         except Exception:
-            original.write(args.sidecar / "recovery-required.json", {"traceback": traceback.format_exc(), "adopted_child": evidence["child"],
+            failure = args.sidecar / (f"recovery-required-{time.time_ns()}.json" if args.recover else "recovery-required.json")
+            original.write(failure, {"traceback": traceback.format_exc(), "adopted_child": evidence["child"],
                            "policy": "Inspect live workers and DONE first. Never start original supervisor while a sidecar child is alive.", "rollback_argv": evidence["rollback_argv"]})
             raise
 

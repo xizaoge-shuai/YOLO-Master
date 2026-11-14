@@ -73,6 +73,32 @@ class Safety(unittest.TestCase):
                 lane.handoff(self.args, {"supervisor": old, "child": dict(old, pid=20)})
         send.assert_not_called()
 
+    def test_supervisor_argv_can_clear_after_confirmed_signal(self):
+        old = {"pid": 10, "uid": 7, "start_ticks": 12, "argv": ["python", "old.py"], "state": "S"}
+        child = dict(old, pid=20, ppid=10, argv=["python", "train.py"])
+        rows = {10: [old, dict(old, argv=[""], state="R"), None], 20: [child]}
+        def probe(pid):
+            values = rows[pid]
+            return values.pop(0) if len(values) > 1 else values[0]
+        with patch.object(lane, "process", side_effect=probe), patch.object(lane, "signal_one") as send, patch.object(lane.time, "sleep"):
+            lane.handoff(self.args, {"supervisor": old, "child": child})
+        send.assert_called_once_with(old)
+
+    def test_recovery_adopts_exact_reparented_child_without_signal(self):
+        old = {"pid": 10, "uid": 7, "start_ticks": 12, "argv": ["python", "old.py"]}
+        child = dict(old, pid=20, ppid=10, argv=["python", "train.py"], state="S")
+        with patch.object(lane, "process", side_effect=[None, dict(child, ppid=1)]), patch.object(lane, "signal_one") as send:
+            lane.verify_recovery_processes({"supervisor": old, "child": child})
+        send.assert_not_called()
+
+    def test_recovery_rejects_live_supervisor_or_reused_child_pid(self):
+        old = {"pid": 10, "uid": 7, "start_ticks": 12, "argv": ["python", "old.py"], "state": "S"}
+        child = dict(old, pid=20, ppid=1, argv=["python", "train.py"])
+        for snapshots in ([old], [None, dict(child, start_ticks=99)]):
+            with patch.object(lane, "process", side_effect=snapshots), patch.object(lane, "signal_one") as send, self.assertRaises(RuntimeError):
+                lane.verify_recovery_processes({"supervisor": old, "child": child})
+            send.assert_not_called()
+
     def test_adopted_child_can_be_reparented_without_restart(self):
         output = self.args.job / "train/cache-reuse-c1-int8-s0"
         output.mkdir(parents=True)
@@ -84,6 +110,15 @@ class Safety(unittest.TestCase):
     def test_unsealed_adopted_endpoint_is_failure(self):
         with patch.object(lane, "process", return_value=None), self.assertRaisesRegex(RuntimeError, "DONE"):
             lane.wait_adopted(self.args, {"pid": 20})
+
+    def test_adopted_child_exit_can_clear_argv_before_done_validation(self):
+        output = self.args.job / "train/cache-reuse-c1-int8-s0"
+        output.mkdir(parents=True)
+        (output / "DONE").write_text("SUCCEEDED\n")
+        child = {"pid": 20, "uid": 7, "start_ticks": 12, "argv": ["python", "train.py"]}
+        with patch.object(lane, "process", side_effect=[dict(child, argv=[""], state="R"), None]), patch.object(lane.time, "sleep"), patch.object(lane, "signal_one") as send:
+            lane.wait_adopted(self.args, child)
+        send.assert_not_called()
 
     def test_extra_admission_enforces_three_workers_memory_and_slot(self):
         good = dict(slot=2, occupied=2, workers=2, free_mib=14336, host_mib=12288)
