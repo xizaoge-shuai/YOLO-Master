@@ -898,3 +898,9 @@ Re-read original split and both100-row curves: cached-latent bestmAP0.673361(epo
 ## Priority sku110k: loffta-c2-n005 completed
 
 Full seed0/final100 endpoint archived: [loffta-c2-n005](experiments/priority-single-seed-20261112/sku110k/loffta-c2-n005-s0/README.md). No seed repeats or ablations queued.
+
+
+<!-- single-pass-metrics-20261112:sku110k:loffta-c2-n005 -->
+## Single-pass metrics: sku110k, loffta-c2-n005
+
+Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/loffta-c2-n005-s0/README.md). No extra training or inference.
