@@ -892,3 +892,9 @@ Verification: real18-row export, manifest/output hashes, cost arithmetic, parame
 User defers complete COCO under deadline and requests the previous subset. Preserve prepared full assets and ongoing VOC/SKU queues; no full-COCO training process found. Reuse the existing800/200 val2017-internal split as the intended subset identity, not a redraw selected by accuracy. Existing COCO12880/20 is an older predictor setup. Current Detail25 and the core seven-method COCO comparison are unmeasured and remain pending.
 
 Re-read original split and both100-row curves: cached-latent bestmAP0.673361(epoch45),final100mAP0.346753; historicalYOLO26n-scratch best0.863000(epoch36),final0.257000; values use0-100. Original source/SHA256 recorded in checks/paper-baselines-20261107/coco-subset-audit-20261114.json. Final cache improvement is0.089753points while best is lower; no strong-accuracy or current-method claim. Independent local audit found no DetailCOCO endpoint. Docs and source-derived audit only; no new training,inference,evaluator pass or frozen-source change.
+
+
+<!-- priority-single-seed-20261112:sku110k:loffta-c2-n005 -->
+## Priority sku110k: loffta-c2-n005 completed
+
+Full seed0/final100 endpoint archived: [loffta-c2-n005](experiments/priority-single-seed-20261112/sku110k/loffta-c2-n005-s0/README.md). No seed repeats or ablations queued.
