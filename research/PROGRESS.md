@@ -968,3 +968,9 @@ Paused VOC LOFF-TA epoch9 and SKU Detail25 epoch17; original FroFA/INT8 children
 ## Priority sku110k: cache-reuse-c1-int8 completed
 
 Full seed0/final100 endpoint archived: [cache-reuse-c1-int8](experiments/priority-single-seed-20261112/sku110k/cache-reuse-c1-int8-s0/README.md). No seed repeats or ablations queued.
+
+
+<!-- single-pass-metrics-20261112:sku110k:cache-reuse-c1-int8 -->
+## Single-pass metrics: sku110k, cache-reuse-c1-int8
+
+Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/cache-reuse-c1-int8-s0/README.md). No extra training or inference.
