@@ -1,5 +1,12 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 COCO subset scope update
+
+- [x] User defers full COCO under deadline; preserve prepared assets and existing VOC/SKU queues. No full-COCO training process is running.
+- [x] Re-read original COCO800/200 split, cached-latent summary/100-row curve and YOLO26n-scratch100-row curve. Keep final100 and validation-selected best separate; historical COCO128 predictor is another method/split.
+- [x] Record fixed800/200 as the reusable COCO subset identity, not a result-selected redraw. Current Detail25 and seven core methods have no completed results on this split; no old-method score is substituted.
+- [ ] Run current core methods on the fixed subset with matched data/metrics after integration; this is pending work, not a completed external validation.
+
 ## 2026-11-14 cost-accuracy evidence and D1 requirements
 
 User asks whether training cost is measured and how to demonstrate an efficient accuracy tradeoff. Preserve the current single-seed full-data queue; no training restart, extra seed, or new evaluation forward pass.

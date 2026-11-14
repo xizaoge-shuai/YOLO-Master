@@ -885,3 +885,10 @@ Read original D1 clauses: accuracy, VRAM and GPU-hours; >=2 datasets; >=50% trai
 Retained strong Adapter0 and Adapter25: Detail25 has fewer parameters/allocated VRAM but lower mAP and no observed elapsed-time advantage. 75% fewer online teacher images corresponds to only10.03% fewer calls; this is a batching concern, not measured causal profiling. Controlled GPU-hours, training-only cold cost, equal-time AP and energy/FLOPs are missing and remain NA. Protocol defines AP difference, explicit cold/warm cost ratios and fixed-reference CostAtGap without fitting a custom winning score.
 
 Verification: real18-row export, manifest/output hashes, cost arithmetic, parameter provenance, missing-value contracts, targeted Ruff and unchanged frozen training-source contract passed; independent definition review passed. Only enumerated exporter/docs/lightweight evidence published; unrelated drafts and all active workers preserved.
+
+
+## 2026-11-14 coco-subset-scope-20261114
+
+User defers complete COCO under deadline and requests the previous subset. Preserve prepared full assets and ongoing VOC/SKU queues; no full-COCO training process found. Reuse the existing800/200 val2017-internal split as the intended subset identity, not a redraw selected by accuracy. Existing COCO12880/20 is an older predictor setup. Current Detail25 and the core seven-method COCO comparison are unmeasured and remain pending.
+
+Re-read original split and both100-row curves: cached-latent bestmAP0.673361(epoch45),final100mAP0.346753; historicalYOLO26n-scratch best0.863000(epoch36),final0.257000; values use0-100. Original source/SHA256 recorded in checks/paper-baselines-20261107/coco-subset-audit-20261114.json. Final cache improvement is0.089753points while best is lower; no strong-accuracy or current-method claim. Independent local audit found no DetailCOCO endpoint. Docs and source-derived audit only; no new training,inference,evaluator pass or frozen-source change.

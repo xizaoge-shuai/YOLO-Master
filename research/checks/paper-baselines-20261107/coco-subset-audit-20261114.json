@@ -1,0 +1,56 @@
+{
+  "audit_date": "2026-11-14",
+  "scope_decision": "defer full COCO; reuse existing fixed subset rather than redraw by outcome",
+  "split": {
+    "path": "/mnt/data/users/zhjia/YOLO-Master/runs/d1/scale/coco-val1000/cached-latent-s0-boxlabels/split.json",
+    "sha256": "169e674f9feb68b51d3ac431230283887502fd1dd222055c7557f35ece9024b2",
+    "train": 800,
+    "validation": 200,
+    "training_seed": 0,
+    "split_seed": 0,
+    "train_val_disjoint": true,
+    "dataset_origin": "COCO2017 val1000 internally split; not train2017/official val2017 benchmark"
+  },
+  "summary": {
+    "path": "/mnt/data/users/zhjia/YOLO-Master/runs/d1/scale/coco-val1000/cached-latent-s0-boxlabels/p0-summary.json",
+    "sha256": "b47fd1013224c1a299c7dc62c69c2a80b14bc5ce5f6c04640b9270ed90ea8594"
+  },
+  "records": [
+    {
+      "method": "historical-cached-latent",
+      "source_csv": "/mnt/data/users/zhjia/YOLO-Master/runs/d1/scale/coco-val1000/cached-latent-s0-boxlabels/results.csv",
+      "sha256": "8da905e2dafda7968696c2a6b72d910e957f83d71c194b1fb7ddcf5ab8eb8858",
+      "epochs": 100,
+      "best_epoch": 45,
+      "best_map50_95_raw_0_1": 0.006733611853143846,
+      "final_epoch": 100,
+      "final_map50_95_raw_0_1": 0.0034675322789055924,
+      "best_map50_95_0_100": 0.6733611853143846,
+      "final_map50_95_0_100": 0.34675322789055923,
+      "endpoint_scope": "historical D1 pilot; not current Detail25 or core seven-method campaign"
+    },
+    {
+      "method": "historical-yolo26n-scratch",
+      "source_csv": "/mnt/data/users/zhjia/YOLO-Master/runs/detect/runs/d1/scale/coco-val1000-baseline/yolo26n-scratch-s0/results.csv",
+      "sha256": "9544febc6b1ab2fd822b346e8e74ca4d1ee5a55834d41ea425c4be80935fa930",
+      "epochs": 100,
+      "best_epoch": 36,
+      "best_map50_95_raw_0_1": 0.00863,
+      "final_epoch": 100,
+      "final_map50_95_raw_0_1": 0.00257,
+      "best_map50_95_0_100": 0.8630000000000001,
+      "final_map50_95_0_100": 0.257,
+      "endpoint_scope": "historical D1 pilot; not current Detail25 or core seven-method campaign"
+    }
+  ],
+  "current_detail25_coco_completed": false,
+  "new_training_calls": 0,
+  "new_inference_calls": 0,
+  "new_evaluator_calls": 0,
+  "notes": [
+    "COCO12880/20 predictor is a different historical setup.",
+    "Best is validation-selected; final100 is separately preserved.",
+    "Old values are not substitutes for current-method results.",
+    "No full COCO training process observed; prepared assets retained."
+  ]
+}
