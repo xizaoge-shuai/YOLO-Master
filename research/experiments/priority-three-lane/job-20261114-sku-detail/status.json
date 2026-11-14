@@ -1,0 +1,21 @@
+{
+  "schema": "priority-three-lane-v1",
+  "pid": 2105130,
+  "lanes": {
+    "baseline": {
+      "state": "ADOPTED_TRAINING",
+      "time_unix": 1794646844.079315,
+      "method": "cache-reuse-c1-int8",
+      "child_pid": 1881349
+    },
+    "extra": {
+      "state": "TRAIN",
+      "time_unix": 1794646844.1584818,
+      "method": "detail25",
+      "child_pid": 2105170,
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0"
+    }
+  },
+  "errors": [],
+  "timing": "Shared GPU; observational, not controlled speed evidence"
+}

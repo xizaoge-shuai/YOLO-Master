@@ -1,0 +1,70 @@
+{
+  "verified_utc": "2026-11-14T09:05:19.006453+00:00",
+  "status": "THREE_ACTIVE_TRAINING_WORKERS_VERIFIED",
+  "workers": [
+    {
+      "pid": 1467410,
+      "start_ticks": 42814294,
+      "ppid": 644301,
+      "gpu_lease": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot0.lock"
+    },
+    {
+      "pid": 1881349,
+      "start_ticks": 44524918,
+      "ppid": 1,
+      "gpu_lease": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot1.lock"
+    },
+    {
+      "pid": 2105170,
+      "start_ticks": 45384841,
+      "ppid": 2105130,
+      "gpu_lease": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot2.lock"
+    }
+  ],
+  "sku_supervisor": 2105130,
+  "sidecar": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+  "unchanged_frozen_sources_count": 1366,
+  "original_training_pids_and_start_times_preserved": true,
+  "detail_teacher_query_bytes": 58308,
+  "detail_completed_teacher_calls": 258,
+  "detail_completed_teacher_images": 550,
+  "previous_observed_query_bytes_at_090322_utc": 31866,
+  "previous_completed_calls": 141,
+  "journal_growth_verified": true,
+  "coverage_active_methods": [
+    [
+      "sku110k",
+      "cache-reuse-c1-int8"
+    ],
+    [
+      "sku110k",
+      "detail25"
+    ],
+    [
+      "voc0712",
+      "frofa-c2-d01"
+    ]
+  ],
+  "existing_map_values_byte_identical": true,
+  "coverage_ruff": "PASS",
+  "cpu_metric_watcher_alive": true,
+  "gpu": "33804, 14707, 100",
+  "lanes": {
+    "baseline": {
+      "state": "ADOPTED_TRAINING",
+      "time_unix": 1794646844.079315,
+      "method": "cache-reuse-c1-int8",
+      "child_pid": 1881349
+    },
+    "extra": {
+      "state": "TRAIN",
+      "time_unix": 1794646844.1584818,
+      "method": "detail25",
+      "child_pid": 2105170,
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0"
+    }
+  },
+  "errors": [],
+  "source_commit": "642301be97e06445d88e475630d6ef6f59f84da2",
+  "timing": "Three-way shared-GPU observations; no throughput gain claimed yet"
+}

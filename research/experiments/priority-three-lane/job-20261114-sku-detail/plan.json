@@ -1,0 +1,49 @@
+{
+  "schema": "priority-three-lane-v1",
+  "dataset": "sku110k",
+  "job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+  "frozen_pipeline_plan_sha256": "9c54bbac0a01a000da988cdf78051e1b4cf083e4d8cf2fc7501d0eb48fae1131",
+  "adopted_child": {
+    "pid": 1881349,
+    "uid": 1010,
+    "state": "R",
+    "ppid": 641892,
+    "start_ticks": 44524918,
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+      "train",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+      "--method",
+      "cache-reuse-c1-int8",
+      "--seed",
+      "0",
+      "--output",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0"
+    ]
+  },
+  "user_override": "Allow three existing core methods concurrently, single seed, unchanged full-data protocol",
+  "methods": {
+    "adopt": "cache-reuse-c1-int8",
+    "baseline": "vit-adapter-cache25",
+    "extra": "detail25"
+  },
+  "epochs": 100,
+  "batch": 8,
+  "imgsz": 640,
+  "seed": 0,
+  "gpu": 0,
+  "extra_admission": {
+    "free_gpu_mib": 14336,
+    "available_host_mib": 12288,
+    "max_our_training_processes": 3
+  },
+  "source_sha256": {
+    "online_experiments/priority_three_lane.py": "4414608ab3aa4eef8bbb893d6dd53c430f23c8d308f17f0c67cf2ba754700667",
+    "online_experiments/test_priority_three_lane.py": "07de5a402513aaa8e80390330ae0764468d411f47112465d82f1e91157e3054b"
+  },
+  "source_policy": "Unmodified frozen original sources verified by original.plan; only scheduling changes",
+  "failure_policy": "Preserve all checkpoints and live children; no automatic retry; other lane continues"
+}

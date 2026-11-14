@@ -1,0 +1,39 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py\", line 362, in main\n    handoff(args, evidence)\n  File \"/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py\", line 159, in handoff\n    same_process(old, current)\n  File \"/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py\", line 40, in same_process\n    raise RuntimeError(\"Process identity changed; no signal or restart is authorized\")\nRuntimeError: Process identity changed; no signal or restart is authorized\n",
+  "adopted_child": {
+    "pid": 1881349,
+    "uid": 1010,
+    "state": "R",
+    "ppid": 641892,
+    "start_ticks": 44524918,
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+      "train",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+      "--method",
+      "cache-reuse-c1-int8",
+      "--seed",
+      "0",
+      "--output",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0"
+    ]
+  },
+  "policy": "Inspect live workers and DONE first. Never start original supervisor while a sidecar child is alive.",
+  "rollback_argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+    "run",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+    "--dataset",
+    "sku110k",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+    "--first-detector",
+    "yolo12-n",
+    "--publish"
+  ]
+}

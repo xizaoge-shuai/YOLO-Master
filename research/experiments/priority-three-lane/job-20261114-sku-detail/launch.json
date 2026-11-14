@@ -1,0 +1,25 @@
+{
+  "launched_utc": "2026-11-14T08:54:47.319992+00:00",
+  "pid": 2092601,
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py",
+    "run",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+    "--sidecar",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+    "--old-supervisor",
+    "641892",
+    "--adopt-child",
+    "1881349",
+    "--publish"
+  ],
+  "source_commit": "ccc0e22cd0a63b0458cf3120eea852d48b78da3c",
+  "adopted_existing_child": 1881349,
+  "unchanged_voc_child": 1467410,
+  "detached": true
+}

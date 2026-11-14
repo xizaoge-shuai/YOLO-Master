@@ -4,8 +4,8 @@
 
 - [x] Inspect actual resources:GPU0free18865MiB,hostMemAvailable~18GiB;onlytwoourGPUworkers,otheruseruntouched. Select existingSKU Detail25 as thirdlane;no new method/seed/epoch.
 - [x] Design separateSKU-supervisor takeover that adopts liveINT8 unchanged,keepsVOC untouched,runsDetail concurrently,andjoinsitsresultinstead ofduplicateDetail. Preserve frozen training sources;briefglobaladmissiongate andnewslot2.
-- [x] Implement independentSKU-supervisoradoption andthirdslot;13serverCPUchecks andtargetedRuffpassed,actualreadonlypreflightverifiedoldsupervisor641892/INT8child1881349 andfrozenplan. NativeCondaos.pidfd_openmissingresolvedusinglibc+realselfsignal0check;independentreviewpassed. Sourcepublication precedeslaunch.
-- [ ] Verify oldchildren remainalive andnewthirdGPUworkerstarts/advances,automaticvalidation/archive/CPUmetrics remain wired;record changedconcurrency andpublishhandoff.
+- [x] Implement independentSKU-supervisoradoption andthirdslot;17serverCPUchecks andtargetedRuffpassed,actualreadonlypreflight/recoveryverifiedoldsupervisor641892/INT8child1881349 andfrozenplan. NativeCondaos.pidfd_openmissingresolvedusinglibc+realselfsignal0check;independentreviewpassed. Firsthandoffexit-argv racefixedwithstrictno-signalrecovery;originalfailurepreserved. Sourcepublicationccc0e22/642301b precedeslaunch.
+- [x] Actualthirdlane started: newcoordinator2105130 andDetailGPUchild2105170;oldVOC1467410/start42814294 andINT81881349/start44524918unchanged. Teacherqueryjournalstarted;originaltrainers,automaticvalidation/archive/CPUmetrics remainwired. Record changedconcurrency andpublishhandoff;firstepoch/finalmetrics pending.
 
 ## 2026-11-14 cached-training throughput diagnosis
 

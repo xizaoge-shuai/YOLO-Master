@@ -176,6 +176,14 @@ def export(output):
             state = "COMPLETE" if (dataset, method) in core_available else (
                 status.get("state", "PENDING") if status.get("method") == method else "PENDING"
             )
+            if (dataset, method) not in core_available:
+                for lane in status.get("lanes", {}).values():
+                    if lane.get("method") == method:
+                        state = {
+                            "TRAIN": "TRAINING", "ADOPTED_TRAINING": "TRAINING",
+                            "VALIDATE": "VALIDATING", "COMPLETED": "WAITING_METRICS",
+                        }.get(lane.get("state"), lane.get("state", "PENDING"))
+                        break
             coverage.append({"dataset": dataset, "method": method, "scope": "core",
                              "metric_state": state, "final_mAP_available": (dataset, method) in core_available})
 
