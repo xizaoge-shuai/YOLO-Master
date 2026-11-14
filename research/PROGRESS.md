@@ -922,3 +922,10 @@ User questions slow progress. Read-only configuration/schedule/source/resource a
 Correct prior resource interpretation:wholeGPU100% doesnot mean oursaturatedGPU. Perprocesspmon otheruserSM61-84%,ours~12-24%;otherprocess untouched. Sourcesconfirm synchronousmmap/NumPycopy/pageableH2D andperbatchsync,withoutworkerprefetch. SKUINT8inclusiveCPUread/dequant903.53s/6025.74strain~15%. I/Owait~1%,NVMeutil17-21%,MemAvailable~26GiB;swapoccupancy8GiBbutlowswaprates,notproofseverethrashing. Relativecausalcostsnotprofiled;do not claimallslownesscausedbyCPUordisk.
 
 ArchivedDIAGNOSIS/PATCH_PLAN/status andrawtelemetry/sourcehashes in debug_outputs/training-throughput-20261114/. Independent codeaudit passed;fixedrecipe/fulluniqueplans/sourcehashes verified. No trainingpatch,restart,epoch/batchchange,otheruserprocesschange ornewGPUwork. Throughputfixes remainproposed,andobservedsharedtimesremainunsuitableforstrictspeedupclaims.
+
+
+## 2026-11-14 third-lane-source-20261114
+
+User explicitly authorizes morebaseline/ownmethodparallelism,overridingold2laneceiling. NewseparateSKU-supervisor wrapper adopts unchangedINT8child andaddsSKUDetailed25fullseed0/100/b8/640;baselinecontinuesAdapter,thenjoinsDetailinsteadofduplicating. VOCsupervisor/child andallfrozentrainers remainunchanged. Extra slot2 usesbrieforiginaladmissiongate,requires>=14GiBfreeGPU and>=12GiBhostavailable,project≤3trainingworkers;GPU1/otheruseruntouched.
+
+13serverCPUtests inclPOSIXjoblock,identity/argv/reparenting,3slotguards,baselinededuplication,andrealselfpidfd signal0passed;targetedRuffPASS. Actualreadonlycheckverified641892supervisor/1881349INT8andfrozenplan/source/cache. CondaPythonlacksos.pidfd_open;reviewedlibcfallbackpreservespidfd identityprotection,norawPIDsignal. Latesthost34GiB/GPU18.4GiBfree. Independentcode/resource reviewGO. Source is committed/published before any livehandoff;actuallaunch requires subsequent evidence.

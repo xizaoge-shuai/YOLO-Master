@@ -1,0 +1,126 @@
+{
+  "captured_utc": "2026-11-14T08:52:37.631895+00:00",
+  "state": "CHECK_ONLY_NO_SIGNAL",
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py",
+    "check",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+    "--sidecar",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+    "--old-supervisor",
+    "641892",
+    "--adopt-child",
+    "1881349",
+    "--publish"
+  ],
+  "evidence": {
+    "supervisor": {
+      "pid": 641892,
+      "uid": 1010,
+      "state": "S",
+      "ppid": 1,
+      "start_ticks": 30291006,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+        "run",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+        "--dataset",
+        "sku110k",
+        "--dataset-job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--first-detector",
+        "yolo12-n",
+        "--publish"
+      ]
+    },
+    "child": {
+      "pid": 1881349,
+      "uid": 1010,
+      "state": "R",
+      "ppid": 641892,
+      "start_ticks": 44524918,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--method",
+        "cache-reuse-c1-int8",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0"
+      ]
+    },
+    "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+    "plan_sha256": "9c54bbac0a01a000da988cdf78051e1b4cf083e4d8cf2fc7501d0eb48fae1131",
+    "rollback_argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+      "run",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+      "--dataset",
+      "sku110k",
+      "--dataset-job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+      "--first-detector",
+      "yolo12-n",
+      "--publish"
+    ],
+    "policy": "Never kill child/group; preserve checkpoints; no automatic retry"
+  },
+  "checks": [
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "unittest",
+        "online_experiments.test_priority_three_lane",
+        "-v"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "test_adopted_child_can_be_reparented_without_restart (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_baseline_waits_detail_and_does_not_train_it (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_duplicate_job_lock_is_rejected (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_extra_admission_enforces_three_workers_memory_and_slot (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_identity_changed_before_handoff_never_signals (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_missing_python_pidfd_binding_uses_libc (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_only_verified_supervisor_is_signalled (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_pid_or_argv_mismatch_refuses_signal (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_pidfd_capability_uses_signal_zero_and_closes_descriptor (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_pidfd_sender_has_libc_fallback_without_raw_pid_kill (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_real_self_pidfd_signal_zero (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_real_unbuffered_supervisor_argv_matches_sys_argv_metadata (online_experiments.test_priority_three_lane.Safety) ... ok\ntest_unsealed_adopted_endpoint_is_failure (online_experiments.test_priority_three_lane.Safety) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E9,F63,F7,F82",
+        "online_experiments/priority_three_lane.py",
+        "online_experiments/test_priority_three_lane.py"
+      ],
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stderr": ""
+    }
+  ],
+  "cpu_tests": {
+    "passed": 13,
+    "failed": 0,
+    "skipped": 0,
+    "posix_job_lock_included": true,
+    "real_self_pidfd_signal0_included": true
+  },
+  "prior_readiness_issue": "conda Python lacks os.pidfd_open; resolved by libc pidfd_open without raw PID signalling",
+  "frozen_original_plan_source_cache": "PASS",
+  "actual_worker_handoff_performed": false,
+  "new_training_started": false,
+  "source_sha256": {
+    "online_experiments/priority_three_lane.py": "4414608ab3aa4eef8bbb893d6dd53c430f23c8d308f17f0c67cf2ba754700667",
+    "online_experiments/test_priority_three_lane.py": "07de5a402513aaa8e80390330ae0764468d411f47112465d82f1e91157e3054b"
+  }
+}

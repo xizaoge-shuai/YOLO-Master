@@ -1,5 +1,12 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 user-authorized third GPU lane
+
+- [x] Inspect actual resources:GPU0free18865MiB,hostMemAvailable~18GiB;onlytwoourGPUworkers,otheruseruntouched. Select existingSKU Detail25 as thirdlane;no new method/seed/epoch.
+- [x] Design separateSKU-supervisor takeover that adopts liveINT8 unchanged,keepsVOC untouched,runsDetail concurrently,andjoinsitsresultinstead ofduplicateDetail. Preserve frozen training sources;briefglobaladmissiongate andnewslot2.
+- [x] Implement independentSKU-supervisoradoption andthirdslot;13serverCPUchecks andtargetedRuffpassed,actualreadonlypreflightverifiedoldsupervisor641892/INT8child1881349 andfrozenplan. NativeCondaos.pidfd_openmissingresolvedusinglibc+realselfsignal0check;independentreviewpassed. Sourcepublication precedeslaunch.
+- [ ] Verify oldchildren remainalive andnewthirdGPUworkerstarts/advances,automaticvalidation/archive/CPUmetrics remain wired;record changedconcurrency andpublishhandoff.
+
 ## 2026-11-14 cached-training throughput diagnosis
 
 - [x] Verify actual100epochs,batch8,640 andfull16551/8219 unique-sample plans;VOC32/SKU14-15continue,no training deadlock,repeatedcachebuild orper-epochfulltest.
