@@ -974,3 +974,9 @@ Full seed0/final100 endpoint archived: [cache-reuse-c1-int8](experiments/priorit
 ## Single-pass metrics: sku110k, cache-reuse-c1-int8
 
 Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/cache-reuse-c1-int8-s0/README.md). No extra training or inference.
+
+
+<!-- priority-single-seed-20261112:voc0712:frofa-c2-d01 -->
+## Priority voc0712: frofa-c2-d01 completed
+
+Full seed0/final100 endpoint archived: [frofa-c2-d01](experiments/priority-single-seed-20261112/voc0712/frofa-c2-d01-s0/README.md). No seed repeats or ablations queued.
