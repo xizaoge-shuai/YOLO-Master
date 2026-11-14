@@ -1,0 +1,125 @@
+{
+  "cpu_contracts": {
+    "returncode": 0,
+    "elapsed_seconds": 0.15987139899516478,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/cpu_contracts.log"
+  },
+  "new_source_ruff": {
+    "returncode": 0,
+    "elapsed_seconds": 0.04123973398236558,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/new_source_ruff.log"
+  },
+  "new_source_format": {
+    "returncode": 0,
+    "elapsed_seconds": 0.027615834027528763,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/new_source_format.log"
+  },
+  "readonly_live_check": {
+    "returncode": 0,
+    "elapsed_seconds": 0.5505059759598225,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/readonly_live_check.log",
+    "evidence": {
+      "supervisor": {
+        "pid": 644301,
+        "uid": 1010,
+        "state": "S",
+        "ppid": 1,
+        "start_ticks": 30324441,
+        "argv": [
+          "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+          "-u",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+          "run",
+          "--job",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+          "--dataset",
+          "voc0712",
+          "--dataset-job",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+          "--first-detector",
+          "master-n",
+          "--publish"
+        ]
+      },
+      "child": {
+        "pid": 1467410,
+        "uid": 1010,
+        "state": "D",
+        "ppid": 644301,
+        "start_ticks": 42814294,
+        "argv": [
+          "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+          "-u",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+          "train",
+          "--job",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+          "--method",
+          "frofa-c2-d01",
+          "--seed",
+          "0",
+          "--output",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0"
+        ]
+      },
+      "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+      "plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+      "rollback_argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+        "run",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+        "--dataset",
+        "voc0712",
+        "--dataset-job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+        "--first-detector",
+        "master-n",
+        "--publish"
+      ],
+      "policy": "Signal exact supervisor only, never child/group; no automatic retries"
+    }
+  },
+  "required_ruff": {
+    "returncode": 1,
+    "elapsed_seconds": 0.10838765895459801,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/required_ruff.log"
+  },
+  "required_format": {
+    "returncode": 1,
+    "elapsed_seconds": 0.026657623006030917,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/required_format.log"
+  },
+  "required_codespell": {
+    "returncode": 1,
+    "elapsed_seconds": 0.014997072983533144,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/required_codespell.log"
+  },
+  "pending_log_paths": [
+    {
+      "method": "loffta-c2-n005",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-loffta-c2-n005.log",
+      "safe": true
+    },
+    {
+      "method": "cache-reuse-c1-int8",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-cache-reuse-c1-int8.log",
+      "safe": true
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-vit-adapter-cache25.log",
+      "safe": true
+    },
+    {
+      "method": "detail25",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-detail25.log",
+      "safe": true
+    }
+  ],
+  "ready_for_launch": true,
+  "repository_checks_note": "Existing repository-wide failures remain logged; only new source was formatted and changed. No unrelated fixes.",
+  "preflight_only_no_training_or_signals": true,
+  "checked_utc": "2026-11-14T11:14:35Z"
+}

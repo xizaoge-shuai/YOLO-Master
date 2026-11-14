@@ -1,0 +1,112 @@
+{
+  "cpu_contracts": {
+    "returncode": 0,
+    "elapsed_seconds": 0.18633685098029673,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/cpu_contracts.log"
+  },
+  "new_source_ruff": {
+    "returncode": 1,
+    "elapsed_seconds": 0.13783554802648723,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/new_source_ruff.log"
+  },
+  "readonly_live_check": {
+    "returncode": 0,
+    "elapsed_seconds": 0.820898637000937,
+    "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/readonly_live_check.log",
+    "evidence": {
+      "supervisor": {
+        "pid": 644301,
+        "uid": 1010,
+        "state": "S",
+        "ppid": 1,
+        "start_ticks": 30324441,
+        "argv": [
+          "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+          "-u",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+          "run",
+          "--job",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+          "--dataset",
+          "voc0712",
+          "--dataset-job",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+          "--first-detector",
+          "master-n",
+          "--publish"
+        ]
+      },
+      "child": {
+        "pid": 1467410,
+        "uid": 1010,
+        "state": "S",
+        "ppid": 644301,
+        "start_ticks": 42814294,
+        "argv": [
+          "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+          "-u",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+          "train",
+          "--job",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+          "--method",
+          "frofa-c2-d01",
+          "--seed",
+          "0",
+          "--output",
+          "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0"
+        ]
+      },
+      "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+      "plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+      "rollback_argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_single_seed_campaign.py",
+        "run",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+        "--dataset",
+        "voc0712",
+        "--dataset-job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+        "--first-detector",
+        "master-n",
+        "--publish"
+      ],
+      "policy": "Signal exact supervisor only, never child/group; no automatic retries"
+    }
+  },
+  "pending_log_paths": [
+    {
+      "method": "loffta-c2-n005",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-loffta-c2-n005.log",
+      "exists": false,
+      "is_symlink": false,
+      "safe": true
+    },
+    {
+      "method": "cache-reuse-c1-int8",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-cache-reuse-c1-int8.log",
+      "exists": false,
+      "is_symlink": false,
+      "safe": true
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-vit-adapter-cache25.log",
+      "exists": false,
+      "is_symlink": false,
+      "safe": true
+    },
+    {
+      "method": "detail25",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-detail25.log",
+      "exists": false,
+      "is_symlink": false,
+      "safe": true
+    }
+  ],
+  "ready_for_review": false,
+  "preflight_only_no_training_or_signals": true,
+  "checked_utc": "2026-11-14T11:13:13Z"
+}

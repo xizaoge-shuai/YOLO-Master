@@ -1,0 +1,33 @@
+
+test_adopted_child_can_be_reparented_without_restart (online_experiments.test_priority_three_lane.Safety) ... ok
+test_adopted_child_exit_can_clear_argv_before_done_validation (online_experiments.test_priority_three_lane.Safety) ... ok
+test_baseline_waits_detail_and_does_not_train_it (online_experiments.test_priority_three_lane.Safety) ... ok
+test_duplicate_job_lock_is_rejected (online_experiments.test_priority_three_lane.Safety) ... ok
+test_extra_admission_enforces_three_workers_memory_and_slot (online_experiments.test_priority_three_lane.Safety) ... ok
+test_identity_changed_before_handoff_never_signals (online_experiments.test_priority_three_lane.Safety) ... ok
+test_missing_python_pidfd_binding_uses_libc (online_experiments.test_priority_three_lane.Safety) ... ok
+test_only_verified_supervisor_is_signalled (online_experiments.test_priority_three_lane.Safety) ... ok
+test_pid_or_argv_mismatch_refuses_signal (online_experiments.test_priority_three_lane.Safety) ... ok
+test_pidfd_capability_uses_signal_zero_and_closes_descriptor (online_experiments.test_priority_three_lane.Safety) ... ok
+test_pidfd_sender_has_libc_fallback_without_raw_pid_kill (online_experiments.test_priority_three_lane.Safety) ... ok
+test_real_self_pidfd_signal_zero (online_experiments.test_priority_three_lane.Safety) ... ok
+test_real_unbuffered_supervisor_argv_matches_sys_argv_metadata (online_experiments.test_priority_three_lane.Safety) ... ok
+test_recovery_adopts_exact_reparented_child_without_signal (online_experiments.test_priority_three_lane.Safety) ... ok
+test_recovery_rejects_live_supervisor_or_reused_child_pid (online_experiments.test_priority_three_lane.Safety) ... ok
+test_supervisor_argv_can_clear_after_confirmed_signal (online_experiments.test_priority_three_lane.Safety) ... ok
+test_unsealed_adopted_endpoint_is_failure (online_experiments.test_priority_three_lane.Safety) ... ok
+test_adopted_exit_without_done_is_failure (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_adopted_frofa_is_never_restarted_or_signalled (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_baseline_waits_overlap_then_skips_duplicate_loff (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_completed_order_and_lane_status_are_canonical (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_existing_regular_training_log_is_preserved (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_extra_admission_limits_four_workers_and_reserves (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_extra_lease_holds_slot3_and_passes_descriptor (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_failed_overlap_sets_event_and_preserves_other_lane (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_recovery_verifies_exact_child_and_never_signals (online_experiments.test_priority_voc_overlap.Safety) ... ok
+test_training_log_alias_is_idempotent_and_rejects_changed_target (online_experiments.test_priority_voc_overlap.Safety) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.017s
+
+OK

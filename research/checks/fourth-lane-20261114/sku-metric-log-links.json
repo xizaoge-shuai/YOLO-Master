@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-11-14T11:09:53Z",
+  "purpose": "Let unchanged CPU metric watcher locate sidecar training logs; no trainer/source/result changes",
+  "log_links": [
+    {
+      "method": "detail25",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train-detail25.log",
+      "target_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail/train-detail25.log",
+      "action": "CREATED_LINK_WITHOUT_OVERWRITE",
+      "target_currently_exists": true
+    },
+    {
+      "method": "vit-adapter-cache25",
+      "canonical_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train-vit-adapter-cache25.log",
+      "target_log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail/train-vit-adapter-cache25.log",
+      "action": "CREATED_LINK_WITHOUT_OVERWRITE",
+      "target_currently_exists": false
+    }
+  ]
+}

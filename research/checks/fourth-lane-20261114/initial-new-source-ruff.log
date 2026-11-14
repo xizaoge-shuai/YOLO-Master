@@ -1,0 +1,50 @@
+BLE001 Do not catch blind exception: `Exception`
+   --> online_experiments/priority_voc_overlap.py:232:12
+    |
+230 |         else:
+231 |             train_one(args, LOFF, lane, state)
+232 |     except Exception as error:
+    |            ^^^^^^^^^
+233 |         with state.lock:
+234 |             state.errors.append({"lane": lane, "traceback": traceback.format_exc()})
+    |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+  --> online_experiments/test_priority_voc_overlap.py:25:16
+   |
+24 |     def test_extra_admission_limits_four_workers_and_reserves(self):
+25 |         good = dict(occupied=3, workers=3, free_mib=12288, host_mib=18432)
+   |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+26 |         self.assertTrue(lane.can_admit(**good))
+27 |         for update in ({"occupied": 4}, {"workers": 4}, {"free_mib": 12287}, {"host_mib": 18431}):
+   |
+help: Rewrite as a literal
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> online_experiments/test_priority_voc_overlap.py:100:9
+    |
+ 98 |   …     lock_root = self.args.job / "locks"
+ 99 |   …     state = SimpleNamespace(update=Mock())
+100 | / …     with patch.object(lane, "GPU_LOCK_ROOT", lock_root), patch.object(lane.shared, "training_processes", return_value=[{}, {}, {}…
+101 | | …         with lane.extra_lease(self.args, state):
+    | |__________________________________________________^
+102 |   …             self.assertGreaterEqual(self.args.gpu_lock_fd, 0)
+103 |   …             with (lock_root / "gpu0-slot3.lock").open("a") as probe:
+    |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> online_experiments/test_priority_voc_overlap.py:103:17
+    |
+101 |               with lane.extra_lease(self.args, state):
+102 |                   self.assertGreaterEqual(self.args.gpu_lock_fd, 0)
+103 | /                 with (lock_root / "gpu0-slot3.lock").open("a") as probe:
+104 | |                     with self.assertRaises(BlockingIOError):
+    | |____________________________________________________________^
+105 |                           fcntl.flock(probe.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+106 |           self.assertFalse(hasattr(self.args, "gpu_lock_fd"))
+    |
+help: Combine `with` statements
+
+Found 4 errors.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
