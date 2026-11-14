@@ -1,5 +1,12 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 cached-training throughput diagnosis
+
+- [x] Verify actual100epochs,batch8,640 andfull16551/8219 unique-sample plans;VOC32/SKU14-15continue,no training deadlock,repeatedcachebuild orper-epochfulltest.
+- [x] Sampleper-processGPU,pidstat,I/O,memory andswap rates. Correct prior inference fromwholeGPU100%:otheruserSM61-84%,ours~12-24%;diskandmemorynotseverelyblockedinsample.
+- [x] Independentlyauditfrozeninputandtrainingpaths:syncmmap/CPUcopy/H2D,noDataLoaderprefetch;INT8CPUdequantabout15%inclusiveelapsed,perbatchGPUCPUsynchronization. Relativecausalweightsnotprofiled.
+- [x] Recorddiagnosis,rawobservations,sourcehashesandproposedpatchboundary. No training source/recipe/process change ornewGPUwork;no performancefixclaimed.
+
 ## 2026-11-14 16:05 live status refresh
 
 - [x] Confirm activeVOC FroFA31/100 andSKU INT813/100;GPU0healthy100%utilization,approximately856GiBdiskfree. Current active training logs have no new failure.

@@ -913,3 +913,12 @@ Verified two active full-data workers: VOC FroFA31/100, SKU physicalINT813/100;G
 Current-case-only roughremainingtraining fromlast10epochs: VOC13.0-15.0hours,SKU8.7-10.2hours,excludingfinaleval andlaterqueuedmethods;sharedGPU makes estimates uncertain. SKU stillAdapter/DetailafterINT8,VOCstillLOFFTA/INT8/Adapter/DetailafterFroFA.
 
 Fixed non-frozen cost exporter stale five-completion list: enumerate onlyauthorized7methods×2datasets,importonlycompletionsealedbundles,retaininput/outputSHAchecks,requirefinal100. Re-export19rows;prior18rows identical,newSKU LOFFonly;missing controlledcosts preserved,outputhashchecks,targetedRuff andindependentreview passed. RefreshedmAP42protocolrows/17availableendpoints,coverage,costs andhandoff. Training sources/recipes/workers untouched. This push also publishes priorSKU LOFFtraining/metric commits whoseautomaticpushreceipts timedout;oldreceipts remainunchanged.
+
+
+## 2026-11-14 training-throughput-diagnosis-20261114
+
+User questions slow progress. Read-only configuration/schedule/source/resource audit:fixed100epochs,batch8,640;VOC16551samples/2069batches per epoch,SKU8219/1028. Median~674/361seconds per epoch. Active processes advancedVOC32->33,SKU14->15 whilechecking;unique full-data orders verified,no deadlock,repeatedcachebuild or per-epoch fulltest. Both current methods queryteacher0times.
+
+Correct prior resource interpretation:wholeGPU100% doesnot mean oursaturatedGPU. Perprocesspmon otheruserSM61-84%,ours~12-24%;otherprocess untouched. Sourcesconfirm synchronousmmap/NumPycopy/pageableH2D andperbatchsync,withoutworkerprefetch. SKUINT8inclusiveCPUread/dequant903.53s/6025.74strain~15%. I/Owait~1%,NVMeutil17-21%,MemAvailable~26GiB;swapoccupancy8GiBbutlowswaprates,notproofseverethrashing. Relativecausalcostsnotprofiled;do not claimallslownesscausedbyCPUordisk.
+
+ArchivedDIAGNOSIS/PATCH_PLAN/status andrawtelemetry/sourcehashes in debug_outputs/training-throughput-20261114/. Independent codeaudit passed;fixedrecipe/fulluniqueplans/sourcehashes verified. No trainingpatch,restart,epoch/batchchange,otheruserprocesschange ornewGPUwork. Throughputfixes remainproposed,andobservedsharedtimesremainunsuitableforstrictspeedupclaims.

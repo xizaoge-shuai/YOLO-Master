@@ -1,0 +1,144 @@
+{
+  "captured_utc": "2026-11-14T08:22:57.836043+00:00",
+  "scope": "read-only existing training/resource sampling; no new GPU workload",
+  "runs": [
+    {
+      "completed_epochs": 33,
+      "train_images": 16551,
+      "test_images": 4952,
+      "batch": 8,
+      "query_images": 0,
+      "query_calls": 0,
+      "train_seconds": 23216.286799209018,
+      "wall_seconds": 23221.969365458004,
+      "cache_bytes": 140282265984,
+      "dequant_seconds": 0.0,
+      "dequant_images": 0,
+      "peak_host_rss_mib": 68321.453125,
+      "dataset": "voc0712",
+      "method": "frofa-c2-d01",
+      "active_pid": 1467410,
+      "alive": true,
+      "steps_per_epoch": 2069,
+      "schedule_path": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0/schedules/034.json",
+      "schedule_unique_count": 16551,
+      "last10median_epoch_seconds": 674.2704904449929,
+      "summary_path": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0/summary.json",
+      "args_sha256": "468fa758a84572cbe5fa304e7268c37dd6bb91b5a54361656d23eb63a6abfcfb",
+      "proc_snapshot": {
+        "io": "rchar: 218779237\nwchar: 510551405\nsyscr: 15962\nsyscw: 7471\nread_bytes: 1662987771904\nwrite_bytes: 510963712\ncancelled_write_bytes: 4096\n",
+        "wchan": "folio_wait_bit_common",
+        "schedstat": "17759535888118 37104331626 10274164\n"
+      }
+    },
+    {
+      "completed_epochs": 15,
+      "train_images": 8219,
+      "test_images": 2936,
+      "batch": 8,
+      "query_images": 0,
+      "query_calls": 0,
+      "train_seconds": 6025.735760795884,
+      "wall_seconds": 6036.250238649023,
+      "cache_bytes": 26048278016,
+      "dequant_seconds": 903.5250042292755,
+      "dequant_images": 123285,
+      "peak_host_rss_mib": 17870.78515625,
+      "dataset": "sku110k",
+      "method": "cache-reuse-c1-int8",
+      "active_pid": 1881349,
+      "alive": true,
+      "steps_per_epoch": 1028,
+      "schedule_path": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0/schedules/016.json",
+      "schedule_unique_count": 8219,
+      "last10median_epoch_seconds": 360.64732111399644,
+      "summary_path": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0/summary.json",
+      "args_sha256": "03b430efff172be6fc7c870977404955630d372583cc0f068cbb648848dab16e",
+      "proc_snapshot": {
+        "io": "rchar: 1557921876\nwchar: 223738190\nsyscr: 18912\nsyscw: 3331\nread_bytes: 126245662720\nwrite_bytes: 223911936\ncancelled_write_bytes: 4096\n",
+        "wchan": "0",
+        "schedstat": "5198834222136 5868338418 881660\n"
+      }
+    }
+  ],
+  "telemetry": {
+    "gpu_pmon": {
+      "argv": [
+        "nvidia-smi",
+        "pmon",
+        "-i",
+        "0",
+        "-s",
+        "um",
+        "-c",
+        "3",
+        "-d",
+        "1"
+      ],
+      "returncode": 0,
+      "stdout": "# gpu         pid   type     sm    mem    enc    dec    jpg    ofa     fb   ccpm    command \n# Idx           #    C/G      %      %      %      %      %      %     MB     MB    name \n    0    1467410     C     44     21      -      -      -      -   2104      0    python         \n    0    1511497     C     44     22      -      -      -      -  23584      0    python         \n    0    1881349     C     11      5      -      -      -      -   3934      0    python         \n    0    1467410     C     11      4      -      -      -      -   2104      0    python         \n    0    1511497     C     66     33      -      -      -      -  23584      0    python         \n    0    1881349     C     22     10      -      -      -      -   3934      0    python         \n    0    1467410     C      -      -      -      -      -      -   2104      0    python         \n    0    1511497     C     66     33      -      -      -      -  23584      0    python         \n    0    1881349     C     33     16      -      -      -      -   3934      0    python         \n",
+      "stderr": ""
+    },
+    "memory": {
+      "argv": [
+        "free",
+        "-h"
+      ],
+      "returncode": 0,
+      "stdout": "               total        used        free      shared  buff/cache   available\nMem:           122Gi       103Gi       813Mi       220Mi        20Gi        19Gi\nSwap:          8.0Gi       8.0Gi       232Ki\n",
+      "stderr": ""
+    },
+    "vmstat": {
+      "argv": [
+        "vmstat",
+        "1",
+        "3"
+      ],
+      "returncode": 0,
+      "stdout": "procs -----------memory---------- ---swap-- -----io---- -system-- -------cpu-------\n r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st gu\n 3  1 8388372 831016  33792 20998300  187  292 24536  4393 10319    4 16  2 81  0  0  0\n 4  0 8388352 841104  33780 20993660    4    0 154572   556 22486 17476 27  2 70  1  0  0\n 5  0 8388596 991348  33784 21011680   40  264 137952   668 22624 15111 15  2 82  1  0  0\n",
+      "stderr": ""
+    },
+    "pidstat": {
+      "argv": [
+        "pidstat",
+        "-dru",
+        "-p",
+        "1467410,1881349",
+        "1",
+        "3"
+      ],
+      "returncode": 0,
+      "stdout": "Linux 7.0.0-42-generic (sirg-asus) \t11/14/2026 \t_x86_64_\t(24 CPU)\n\n08:23:01 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command\n08:23:02 AM  1010   1467410   87.00    2.00    0.00    0.00   89.00     0  python\n08:23:02 AM  1010   1881349   75.00   19.00    0.00    0.00   94.00     5  python\n\n08:23:01 AM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command\n08:23:02 AM  1010   1467410    781.00     24.00 150169544 13244596  10.28  python\n08:23:02 AM  1010   1881349  28878.00     30.00 42590560 7782348   6.04  python\n\n08:23:01 AM   UID       PID   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command\n08:23:02 AM  1010   1467410  90240.00      0.00      0.00       0  python\n08:23:02 AM  1010   1881349  45696.00      0.00      0.00       0  python\n\n08:23:02 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command\n08:23:03 AM  1010   1467410   80.00    2.00    0.00    0.00   82.00     1  python\n08:23:03 AM  1010   1881349   77.00   21.00    0.00    0.00   98.00     6  python\n\n08:23:02 AM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command\n08:23:03 AM  1010   1467410   1021.00     31.00 150169544 13036528  10.12  python\n08:23:03 AM  1010   1881349  16690.00     27.00 42532956 7764564   6.03  python\n\n08:23:02 AM   UID       PID   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command\n08:23:03 AM  1010   1467410 117760.00      0.00      0.00       0  python\n08:23:03 AM  1010   1881349  29928.00      0.00      0.00       0  python\n\n08:23:03 AM   UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command\n08:23:04 AM  1010   1467410   81.00    1.00    0.00    0.00   82.00     5  python\n08:23:04 AM  1010   1881349   89.00    6.00    0.00    0.00   95.00     1  python\n\n08:23:03 AM   UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command\n08:23:04 AM  1010   1467410    828.00     27.00 150169544 13126816  10.19  python\n08:23:04 AM  1010   1881349   4347.00     35.00 42532956 7807200   6.06  python\n\n08:23:03 AM   UID       PID   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command\n08:23:04 AM  1010   1467410  95440.00      0.00      0.00       0  python\n08:23:04 AM  1010   1881349  43976.00      0.00      0.00       0  python\n\nAverage:      UID       PID    %usr %system  %guest   %wait    %CPU   CPU  Command\nAverage:     1010   1467410   82.67    1.67    0.00    0.00   84.33     -  python\nAverage:     1010   1881349   80.33   15.33    0.00    0.00   95.67     -  python\n\nAverage:      UID       PID  minflt/s  majflt/s     VSZ     RSS   %MEM  Command\nAverage:     1010   1467410    876.67     27.33 150169544 13135980  10.20  python\nAverage:     1010   1881349  16638.33     30.67 42552157 7784704   6.04  python\n\nAverage:      UID       PID   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command\nAverage:     1010   1467410 101146.67      0.00      0.00       0  python\nAverage:     1010   1881349  39866.67      0.00      0.00       0  python\n",
+      "stderr": ""
+    },
+    "iostat": {
+      "argv": [
+        "iostat",
+        "-dx",
+        "1",
+        "2"
+      ],
+      "returncode": 0,
+      "stdout": "Linux 7.0.0-42-generic (sirg-asus) \t11/14/2026 \t_x86_64_\t(24 CPU)\n\nDevice            r/s     rkB/s   rrqm/s  %rrqm r_await rareq-sz     w/s     wkB/s   wrqm/s  %wrqm w_await wareq-sz     d/s     dkB/s   drqm/s  %drqm d_await dareq-sz     f/s f_await  aqu-sz  %util\nloop0            0.00      0.01     0.00   0.00    0.08    10.65    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop1            0.00      0.00     0.00   0.00    0.13    12.91    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop2            0.00      0.00     0.00   0.00    0.06     3.02    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop3            0.00      0.00     0.00   0.00    0.05     6.49    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop4            0.00      0.00     0.00   0.00    0.36     1.27    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nnvme0n1        179.28   2151.17    33.54  15.76    0.09    12.00   24.57   1131.90   116.89  82.63   17.22    46.07    0.09    192.43     0.00   0.00    0.45  2056.10    0.60    2.26    0.44   1.39\nnvme1n1        216.68  22386.88     2.69   1.23    0.64   103.32   22.07   3261.08    11.97  35.17    7.96   147.79    2.59   3461.93     0.00   0.00    0.26  1338.70    2.54    0.39    0.32   5.27\n\n\nDevice            r/s     rkB/s   rrqm/s  %rrqm r_await rareq-sz     w/s     wkB/s   wrqm/s  %wrqm w_await wareq-sz     d/s     dkB/s   drqm/s  %drqm d_await dareq-sz     f/s f_await  aqu-sz  %util\nloop0            0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop1            0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop2            0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop3            0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nloop4            0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.00   0.00\nnvme0n1          4.00     16.00     0.00   0.00    1.00     4.00   34.00    200.00    16.00  32.00    4.38     5.88    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.15   0.80\nnvme1n1       1173.00 137272.00     0.00   0.00    0.28   117.03    1.00      4.00     0.00   0.00    0.00     4.00    0.00      0.00     0.00   0.00    0.00     0.00    0.00    0.00    0.33  19.80\n\n\n",
+      "stderr": ""
+    },
+    "pressure_cpu": "some avg10=0.38 avg60=0.76 avg300=0.90 total=11269672778\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "pressure_memory": "some avg10=0.38 avg60=0.23 avg300=0.26 total=1980589187\nfull avg10=0.38 avg60=0.23 avg300=0.26 total=1964251731\n",
+    "pressure_io": "some avg10=1.35 avg60=1.34 avg300=1.97 total=5581310023\nfull avg10=1.35 avg60=1.33 avg300=1.96 total=5048042587\n"
+  },
+  "source_sha256": {
+    "online_experiments/crossdataset_suite.py": "8c00629b54bd8c150c6337b9d3b28bef716e6d0cac63dcbe3b792d54d463fd42",
+    "online_experiments/sku_official_loader_suite.py": "ca3c464f654f0349f71b8a6c110447ecde0dc3fb6863fb421d43ad414ddcbf11",
+    "online_experiments/replication_suite.py": "5735712a6ac4619c531376072afb0bdb6c478604f889eb11c89442f83afac5d4",
+    "online_experiments/full_visdrone_data.py": "c55f240e72b2f65326ea464e088c3c30bc167375fa286d89743466d25c9bc0d6",
+    "scripts/d1_train_cached_detector.py": "0973a39944f29b062e6e6a662cb64ef0f1241f5336f6529d96857ee1ecfe0009"
+  },
+  "validation": {
+    "fixed_recipe_verified": true,
+    "unique_full_train_orders_verified": true,
+    "active_children_alive": true,
+    "training_sources_modified": false,
+    "all_resource_commands_succeeded": true,
+    "frozen_sources_match_recorded_provenance": true
+  }
+}

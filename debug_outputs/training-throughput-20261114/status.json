@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-14",
+  "status": "DIAGNOSED_NO_TRAINING_PATCH_APPLIED",
+  "training_deadlock_observed": false,
+  "epochs": 100,
+  "batch": 8,
+  "imgsz": 640,
+  "confirmed_factors": [
+    "full_dataset_step_counts",
+    "shared_gpu_other_user_active",
+    "synchronous_mmap_copy_and_host_to_device_path",
+    "cpu_dequantization_on_int8_path",
+    "per_batch_gpu_cpu_synchronization"
+  ],
+  "stage_runtime_fractions_fully_profiled": false,
+  "repeated_cache_build_or_epoch_test_observed": false,
+  "training_sources_modified": false,
+  "epochs_or_batch_modified": false,
+  "other_user_processes_modified": false,
+  "new_training_calls": 0,
+  "new_inference_calls": 0,
+  "new_evaluator_calls": 0
+}
