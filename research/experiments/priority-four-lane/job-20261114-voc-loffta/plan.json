@@ -1,0 +1,53 @@
+{
+  "schema": "priority-voc-overlap-v1",
+  "dataset": "voc0712",
+  "job": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+  "frozen_pipeline_plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+  "adopted_child": {
+    "pid": 1467410,
+    "uid": 1010,
+    "state": "R",
+    "ppid": 644301,
+    "start_ticks": 42814294,
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+      "train",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+      "--method",
+      "frofa-c2-d01",
+      "--seed",
+      "0",
+      "--output",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0"
+    ]
+  },
+  "methods": {
+    "adopt": "frofa-c2-d01",
+    "extra": "loffta-c2-n005",
+    "remaining": [
+      "cache-reuse-c1-int8",
+      "vit-adapter-cache25",
+      "detail25"
+    ]
+  },
+  "epochs": 100,
+  "batch": 8,
+  "imgsz": 640,
+  "seed": 0,
+  "gpu": 0,
+  "extra_admission": {
+    "slot": 3,
+    "free_gpu_mib": 12288,
+    "available_host_mib": 18432,
+    "max_our_training_processes": 4
+  },
+  "source_sha256": {
+    "online_experiments/priority_voc_overlap.py": "efca5a1719bc847b198b5f408da84fa11e0b1b2247d02efa3b75483a34b79afc",
+    "online_experiments/test_priority_voc_overlap.py": "e8eba303291f26b67976957e50f5fb5497b8a35c61c4e415ed67947f40b9272e",
+    "online_experiments/priority_three_lane.py": "57afe0fc6409eed41fcc8d752fa0b69e7e9482ee260cbaa2b0643a1bd5537cc2"
+  },
+  "policy": "Scheduling only; unchanged frozen recipes; preserve workers/results, no retry; shared timings observational"
+}

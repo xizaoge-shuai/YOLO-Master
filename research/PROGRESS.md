@@ -951,3 +951,9 @@ Updatedhandoffcommands andmAPcoverage multi-lane display:VOC FroFA,SKU INT8andSK
 ## Fourth lane source: VOC LOFF-TA
 
 User authorizes one or two more concurrent existing methods. Resource audit selects one pure-cache VOC LOFF-TA worker, with four-worker cap, GPU>=12GiB and host>=18GiB admission. New independent scheduler preserves exact FroFA child and existing SKU workers, leaves frozen trainers/recipes unchanged, and avoids duplicate LOFF. Linux27 CPU safety tests, targeted Ruff/format and actual read-only PID/plan/log checks passed. Repository-wide pre-existing Ruff/format failures and missing codespell remain recorded. This source commit does not claim the fourth training worker has launched. Existing CPU metric watcher6/14 successful,0failed; canonical SKU sidecar log aliases added without overwriting logs.
+
+
+<!-- fourth-lane-voc-loffta-20261114-live -->
+## Fourth lane verified running: VOC LOFF-TA
+
+Actual four GPU0 training workers verified at2026-11-14T11:20:46UTC:VOC FroFA1467410,SKU INT81881349,SKU Detail252105170,and new VOC LOFF-TA2300847 under supervisor2300793. Original three PID/start identities preserved;slots0/1/2/3 held,1366frozenVOCsource hashes unchanged. LOFF CPUticks/pagefaults and sampled SM activity advanced;no lane errors. FreeGPU~12GiB/host~17GiB;no fifth lane. Same full splits,seed0,100epochs,batch8,640. CPU final-prediction metric watcher6/14successful,0failed;canonical log aliases preserve single-pass metrics. Existing mAP values byte-identical;only coverage/progress refreshed. First new epoch/finalAP pending. Shared-GPU timing remains observational. [Launch archive](experiments/priority-four-lane/job-20261114-voc-loffta/README.md).

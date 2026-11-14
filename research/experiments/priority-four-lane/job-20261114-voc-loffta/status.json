@@ -1,0 +1,21 @@
+{
+  "schema": "priority-voc-overlap-v1",
+  "pid": 2300793,
+  "lanes": {
+    "baseline": {
+      "state": "ADOPTED_TRAINING",
+      "time_unix": 1794655026.2379215,
+      "method": "frofa-c2-d01",
+      "child_pid": 1467410
+    },
+    "extra": {
+      "state": "TRAIN",
+      "time_unix": 1794655026.3156397,
+      "method": "loffta-c2-n005",
+      "child_pid": 2300847,
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+    }
+  },
+  "errors": [],
+  "timing": "Shared GPU; observational only"
+}

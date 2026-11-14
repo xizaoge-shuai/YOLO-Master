@@ -1,0 +1,26 @@
+{
+  "pid": 2300793,
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_voc_overlap.py",
+    "run",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+    "--sidecar",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-four-lane/job-20261114-voc-loffta",
+    "--old-supervisor",
+    "644301",
+    "--adopt-child",
+    "1467410",
+    "--publish"
+  ],
+  "source_commit": "068d9f2e41ebd1ad19d655068b8d653801427882",
+  "started_unix": 1794655025.2587967,
+  "source_policy": "Separate scheduler only; original three trainers preserved",
+  "sidecar": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-four-lane/job-20261114-voc-loffta",
+  "no_new_seeds": true,
+  "only_extra_method": "VOC loffta-c2-n005"
+}

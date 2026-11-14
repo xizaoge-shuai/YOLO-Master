@@ -1,0 +1,103 @@
+{
+  "verified_utc": "2026-11-14T11:20:46Z",
+  "status": "FOUR_ACTIVE_TRAINING_WORKERS_VERIFIED",
+  "workers": [
+    {
+      "pid": 1467410,
+      "start_ticks": 42814294,
+      "ppid": 1,
+      "method": "frofa-c2-d01",
+      "gpu_lease": [
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot0.lock"
+      ]
+    },
+    {
+      "pid": 1881349,
+      "start_ticks": 44524918,
+      "ppid": 1,
+      "method": "cache-reuse-c1-int8",
+      "gpu_lease": [
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot1.lock"
+      ]
+    },
+    {
+      "pid": 2105170,
+      "start_ticks": 45384841,
+      "ppid": 2105130,
+      "method": "detail25",
+      "gpu_lease": [
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot2.lock"
+      ]
+    },
+    {
+      "pid": 2300847,
+      "start_ticks": 46203056,
+      "ppid": 2300793,
+      "method": "loffta-c2-n005",
+      "gpu_lease": [
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/gpu0-slot3.lock"
+      ]
+    }
+  ],
+  "new_voc_supervisor": 2300793,
+  "new_loff_child": 2300847,
+  "original_three_pid_start_times_preserved": true,
+  "unchanged_frozen_voc_source_count": 1366,
+  "loff_activity": {
+    "elapsed_since_first_seconds": 135.89703178405762,
+    "user_ticks_delta": 10848,
+    "system_ticks_delta": 206,
+    "minor_faults_delta": 85868,
+    "major_faults_delta": 2845
+  },
+  "loff_gpu_activity_evidence": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/research/checks/fourth-lane-20261114/initial-pmon.log",
+  "coverage_active_methods": [
+    {
+      "dataset": "voc0712",
+      "method": "frofa-c2-d01"
+    },
+    {
+      "dataset": "voc0712",
+      "method": "loffta-c2-n005"
+    },
+    {
+      "dataset": "sku110k",
+      "method": "cache-reuse-c1-int8"
+    },
+    {
+      "dataset": "sku110k",
+      "method": "detail25"
+    }
+  ],
+  "existing_map_values_byte_identical_during_refresh": true,
+  "cpu_metric_watcher_pid": 661685,
+  "cpu_metric_status": {
+    "state": "WAITING_RESULTS",
+    "message": "CPU sidecar waiting for original sealed final endpoints",
+    "time_unix": 1794639090.5499964,
+    "completed": 6,
+    "failed": 0,
+    "planned": 14
+  },
+  "gpu": "0, 36207 MiB, 12304 MiB, 100 %\n1, 1 MiB, 48510 MiB, [N/A]\n",
+  "available_host_mib": 17366,
+  "lanes": {
+    "baseline": {
+      "state": "ADOPTED_TRAINING",
+      "time_unix": 1794655026.2379215,
+      "method": "frofa-c2-d01",
+      "child_pid": 1467410
+    },
+    "extra": {
+      "state": "TRAIN",
+      "time_unix": 1794655026.3156397,
+      "method": "loffta-c2-n005",
+      "child_pid": 2300847,
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+    }
+  },
+  "errors": [],
+  "source_commit": "068d9f2e41ebd1ad19d655068b8d653801427882",
+  "scope": "Added exactly one existing cached VOC baseline; no new seed/recipe/inference; no fifth worker",
+  "timing": "Four concurrent shared-GPU workers; no controlled throughput claim"
+}

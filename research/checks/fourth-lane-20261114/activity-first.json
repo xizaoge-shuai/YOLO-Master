@@ -1,0 +1,19 @@
+{
+  "time_unix": 1794655110.0863104,
+  "pid": 2300847,
+  "start_ticks": 46203056,
+  "user_ticks": 6881,
+  "system_ticks": 225,
+  "minor_faults": 506930,
+  "major_faults": 10166,
+  "io": {
+    "rchar": 217350589,
+    "wchar": 964404,
+    "syscr": 13506,
+    "syscw": 46,
+    "read_bytes": 6017638400,
+    "write_bytes": 937984,
+    "cancelled_write_bytes": 4096
+  },
+  "gpu_host_free_mib": 17576
+}

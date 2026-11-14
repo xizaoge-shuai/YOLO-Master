@@ -9,7 +9,7 @@ VisDrone,detail25,core,COMPLETE,True
 voc0712,master-n,core,COMPLETE,True
 voc0712,yolo12-n,core,COMPLETE,True
 voc0712,frofa-c2-d01,core,TRAINING,False
-voc0712,loffta-c2-n005,core,PENDING,False
+voc0712,loffta-c2-n005,core,TRAINING,False
 voc0712,cache-reuse-c1-int8,core,PENDING,False
 voc0712,vit-adapter-cache25,core,PENDING,False
 voc0712,detail25,core,PENDING,False

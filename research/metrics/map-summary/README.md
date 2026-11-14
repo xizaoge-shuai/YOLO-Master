@@ -1,5 +1,7 @@
 # mAP 汇总与口径
 
+2026-11-14 19:17并发更新：VOC新增LOFF-TA，当前四项训练为VOC FroFA/LOFF-TA、SKU INT8/Detail25。`coverage.csv`通过canonical pipeline的lanes字段记录四项TRAINING；已完成分数表保持字节一致，不能把新增启动记成完成AP。CPU完整指标仍为VOC/SKU6/14成功、0失败，新端点结束后自动追加，无需重新推理。
+
 本目录从已封存指标读取和计算类别平均，不重新训练、不推理，也不重新调用检测评估器。分数均为0–100。`map-results.csv`按数据集、方法、评估协议、maxDet分别列出结果；`sources.json`记录来源哈希和当前可用端点。
 
 - `mAP50`：IoU=0.50时，各类别AP的等权平均。

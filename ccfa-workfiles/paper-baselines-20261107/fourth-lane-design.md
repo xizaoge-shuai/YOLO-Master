@@ -20,15 +20,15 @@ The fourth worker is the already-authorized VOC `loffta-c2-n005`. Alternatives w
 
 ## Implementation and verification plan
 
-- [ ] Check-only command proves frozen plan/process identities without signaling or training.
-- [ ] CPU contracts cover PID/argv mismatch, supervisor-only signal, recovery without signaling, slot/resource guards and duplicate-method avoidance.
-- [ ] Independently review new scheduler; run new CPU tests and targeted lint on the server. Record required repository checks separately; do not modify unrelated existing failures.
-- [ ] Commit/push new source and design before starting the detached supervisor.
-- [ ] Verify the original three PID/start identities remain unchanged, the fourth canonical output has exactly one owner, slots0/1/2/3 are held, and real training activity begins. Verify the original1366-source anchor stays unchanged.
-- [ ] Archive launch/resource evidence and refresh handoff/progress; commit/push.
+- [x] Check-only command proves frozen plan/process identities without signaling or training.
+- [x] CPU contracts cover PID/argv mismatch, supervisor-only signal, recovery without signaling, slot/resource guards and duplicate-method avoidance. All27Linux tests passed.
+- [x] Independently review new scheduler; new CPU tests and targeted lint/format passed on the server. Repository-wide existing failures and missing codespell logged; no unrelated fixes.
+- [x] Commit/push new source and design before starting the detached supervisor:068d9f2.
+- [x] Verify the original three PID/start identities remain unchanged, the fourth canonical output has exactly one owner, slots0/1/2/3 are held, and real training activity begins. Original1366-source anchor unchanged; actual CPUtick/pagefault growth and pmon activity recorded at11:20UTC.
+- [x] Archive launch/resource evidence and refresh handoff/progress for scoped commit/push through the existing archive lock.
 
 ## Single prediction, complete metrics
 
 Keep the existing CPU-only single-pass watcher. Each trainer saves its final full-test predictions once. Derive native primary AP/mAP and labeled auxiliary AP/AP50/AP75/AP-small/medium/large, AR/maxDet, per-class/area results and P-R tensors from those predictions. Reuse actual training curves, query journals, measured resource/storage/parameter sources. Inspect for missing error analysis and add only separately versioned saved-prediction CPU analysis when needed. Do not invent latency, energy, controlled GPU-hours or equal-time comparisons from shared-GPU logs.
 
-This is a launch plan; no fourth worker is claimed running until live evidence is saved.
+Actual launch19:17CST:supervisor2300793 and VOC LOFF-TA child2300847,alongside the original three PIDs. Final live/source/lease evidence is saved under `research/checks/fourth-lane-20261114/launch-verification.json`; runtime snapshot under `research/experiments/priority-four-lane/job-20261114-voc-loffta/`. First epoch/final AP are not completed results.

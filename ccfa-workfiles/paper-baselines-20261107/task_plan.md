@@ -1,5 +1,14 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 user-authorized fourth GPU lane and complete metrics
+
+- [x] Inspect current three workers/resources:VOC FroFA46/100,SKU INT837/100,SKU Detail8/100;free GPU14409MiB,host available~19GiB,swap full with low current swap-in. Select one cached VOC LOFF-TA,not two additional jobs.
+- [x] Add an independent VOC supervisor preserving exact FroFA child,slot3/four-worker cap,GPU>=12GiB/host>=18GiB admission,canonical output/log aliases and explicit LOFF de-duplication. Existing SKU supervisor and frozen sources unchanged.
+- [x] Independent safety review GO;all27Linux CPU contracts,targetedRuff/format and actual read-only PID/plan/log preflight passed. Existing repository-wide failures and missing codespell preserved. Source committed/pushed068d9f2 before launch.
+- [x] Fourth supervisor2300793/LOFF child2300847 actually started alongside original1467410/1881349/2105170;GPU activity and cache mappings observed. No fifth lane because host available~17GiB after launch. First epoch and final AP pending.
+- [x] Audit single-pass metrics:existingCPU watcher6/14 successful,0failed;AP/AP50/AP75/size/class/AR/PR/resource outputs covered. Add canonicalSKU Detail/Adapter log aliases without overwriting logs;VOC new scheduler does the same. VisDroneTIDE7/7 remains;no new memory-heavyVOC/SKU TIDE or fabricated unmeasured cost/latency.
+- [x] Archive final live PID/start/lease/source proof:four active workers,slots0/1/2/3,original three lifetimes preserved,1366frozenVOCsource hashes unchanged. Fourth worker CPUticks/pagefaults/GPUactivity advanced;no errors. Refreshhandoff/mapcoverage with unchanged completedAP,then scope publication through the existing archive lock.
+
 ## 2026-11-14 user-authorized third GPU lane
 
 - [x] Inspect actual resources:GPU0free18865MiB,hostMemAvailable~18GiB;onlytwoourGPUworkers,otheruseruntouched. Select existingSKU Detail25 as thirdlane;no new method/seed/epoch.
