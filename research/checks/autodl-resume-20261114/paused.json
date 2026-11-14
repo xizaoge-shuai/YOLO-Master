@@ -1,0 +1,109 @@
+{
+  "paused_utc": "2026-11-14T14:28:22Z",
+  "paused": [
+    {
+      "pid": 2300847,
+      "uid": 1010,
+      "state": "R",
+      "ppid": 2300793,
+      "start_ticks": 46203056,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+        "--method",
+        "loffta-c2-n005",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+      ],
+      "dataset": "voc0712",
+      "method": "loffta-c2-n005",
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0",
+      "verified_state": "T",
+      "checkpoint_exists": true,
+      "checkpoint_bytes": 14512577,
+      "summary_completed_epochs": 9,
+      "checkpoint_mtime": 1794665694.2221804
+    },
+    {
+      "pid": 2105170,
+      "uid": 1010,
+      "state": "R",
+      "ppid": 2105130,
+      "start_ticks": 45384841,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--method",
+        "detail25",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0"
+      ],
+      "dataset": "sku110k",
+      "method": "detail25",
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0",
+      "verified_state": "T",
+      "checkpoint_exists": true,
+      "checkpoint_bytes": 14493297,
+      "summary_completed_epochs": 17,
+      "checkpoint_mtime": 1794665688.7100015
+    }
+  ],
+  "remaining_active": [
+    {
+      "pid": 1467410,
+      "uid": 1010,
+      "state": "R",
+      "ppid": 1,
+      "start_ticks": 42814294,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+        "--method",
+        "frofa-c2-d01",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/frofa-c2-d01-s0"
+      ]
+    },
+    {
+      "pid": 1881349,
+      "uid": 1010,
+      "state": "R",
+      "ppid": 1,
+      "start_ticks": 44524918,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--method",
+        "cache-reuse-c1-int8",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/cache-reuse-c1-int8-s0"
+      ]
+    }
+  ],
+  "no_process_terminated": true,
+  "note": "SIGSTOP retains CUDA allocation and host memory. Migration/checkpoint verification precedes retiring original children."
+}

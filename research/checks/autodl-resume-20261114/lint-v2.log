@@ -1,0 +1,25 @@
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> online_experiments/run_autodl_migrated_pair.py:205:13
+    |
+203 |               members = [row for row in plan["files"] if row["target"] not in banks]
+204 |               state(case, dataset, "UNPACKING", origin=origin)
+205 | /             with EXTRACTION_LOCK:
+206 | |                 with (args.target_root / ".migration/extraction.lock").open("a") as extraction_lock:
+    | |____________________________________________________________________________________________________^
+207 |                       fcntl.flock(extraction_lock, fcntl.LOCK_EX)
+208 |                       extract_verified(archive, args.target_root, members)
+    |
+help: Combine `with` statements
+
+BLE001 Do not catch blind exception: `Exception`
+   --> online_experiments/run_autodl_migrated_pair.py:291:12
+    |
+289 |             )
+290 |             return True
+291 |     except Exception:
+    |            ^^^^^^^^^
+292 |         if acquired:
+293 |             state(
+    |
+
+Found 2 errors.

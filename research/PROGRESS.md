@@ -957,3 +957,8 @@ User authorizes one or two more concurrent existing methods. Resource audit sele
 ## Fourth lane verified running: VOC LOFF-TA
 
 Actual four GPU0 training workers verified at2026-11-14T11:20:46UTC:VOC FroFA1467410,SKU INT81881349,SKU Detail252105170,and new VOC LOFF-TA2300847 under supervisor2300793. Original three PID/start identities preserved;slots0/1/2/3 held,1366frozenVOCsource hashes unchanged. LOFF CPUticks/pagefaults and sampled SM activity advanced;no lane errors. FreeGPU~12GiB/host~17GiB;no fifth lane. Same full splits,seed0,100epochs,batch8,640. CPU final-prediction metric watcher6/14successful,0failed;canonical log aliases preserve single-pass metrics. Existing mAP values byte-identical;only coverage/progress refreshed. First new epoch/finalAP pending. Shared-GPU timing remains observational. [Launch archive](experiments/priority-four-lane/job-20261114-voc-loffta/README.md).
+
+<!-- autodl-resume-20261114-implementation -->
+## Two campus lanes and two AutoDL continuations prepared
+
+Paused VOC LOFF-TA epoch9 and SKU Detail25 epoch17; original FroFA/INT8 children continue. Added SHA-pinned transfer, immutable-source resume wrapper, two-lane destination runner, CPU-only verified return, and campus delegation controller. 76 Linux CPU tests and targeted Ruff passed. AutoDL imports verified; transfer and training are pending separately. No new AP, seeds, epochs or same-hardware speedup claims.

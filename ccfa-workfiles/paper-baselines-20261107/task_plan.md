@@ -1,5 +1,16 @@
 # Experiment completion and dataset expansion
 
+## 2026-11-14 superseding instruction: two campus lanes plus two AutoDL resumes
+
+- [x] User requests stopping two extra workers after observed slowdown. Exactpidfd SIGSTOP VOCLOFF2300847 and SKUDetail2105170;preserve completeepoch9/17 checkpoints and originalFroFA/INT8 lifetimes. No new seed/epoch/augmentation.
+- [x] Reconnect authorizedAutoDL password session;actual4080SUPER32GiB,450GiBdata disk,container62GiB/16CPU. Repair missing deps after failed historical proxy install;source transfer dependency isolated from training env.
+- [x] Implement independent content-bound migration wrapper,SFTP transport,source bundle generator,campus queue continuation and target waiting runner. Preserve original provenance/config/checkpoint/source bytes;explicitSHA/stat relocation and origin environment/checkpoint backups;cross-host timing disclosed.
+- [ ] Finish LinuxCPU/targetedlint checks and independent integration review;commit/push source before launching new pipelines.
+- [ ] Build source recovery tar+originalcache shard manifests,verifycapacity,andstart pinned-host credential-free-on-disk background transfer SKU first thenVOC.
+- [ ] Start target waiting runner,verifiedenvironmentready and result-returnwatcher;trueAutoDL training starts only after each dataset'sSHA seal.
+- [ ] Back up then retire exact pausedchildren,adopt oldcampus two trainers without restart,andcontinue localmethods while skipping delegatedmethods permanently.
+- [ ] Verify real copy progress and unchanged source/PIDs,archive/progress/commit/push,provide bothnode commands. Do not claim pendingtransfer ortraining as finalAP.
+
 ## 2026-11-14 user-authorized fourth GPU lane and complete metrics
 
 - [x] Inspect current three workers/resources:VOC FroFA46/100,SKU INT837/100,SKU Detail8/100;free GPU14409MiB,host available~19GiB,swap full with low current swap-in. Select one cached VOC LOFF-TA,not two additional jobs.

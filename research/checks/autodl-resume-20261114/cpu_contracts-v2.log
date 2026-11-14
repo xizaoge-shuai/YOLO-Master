@@ -1,0 +1,64 @@
+{"sealed": "/tmp/tmpzclgp7bd/seal.json", "files": 14, "origin_epoch": 9}
+
+test_changed_target_is_rejected_even_if_origin_metadata_matches (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_checkpoint_config_epoch_and_history_cannot_change (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_checkpoint_origin_hash_only_required_before_first_resume (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_environment_archive_preserves_bytes_and_allows_real_new_identity (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_environment_archive_recovers_interruption_between_copy_and_unlink (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_environment_archive_refuses_conflicting_origin (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_migration_metadata_is_added_without_rewriting_endpoint_hashes (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_origin_checkpoint_copy_remains_when_last_checkpoint_advances (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_runtime_outputs_are_not_immutable_stamp_whitelist (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_seal_checks_coverage_and_excludes_mutable_runtime_outputs (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_source_path_outside_explicit_root_is_rejected (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_source_path_with_parent_traversal_is_rejected (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_target_field_cannot_name_another_copy (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_target_outside_explicit_root_is_rejected (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_unknown_stamp_request_fails_closed (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_verified_bytes_get_origin_stamp_without_changing_target (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_wrong_declared_byte_count_is_rejected (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_wrong_transfer_hash_is_rejected (online_experiments.test_resume_migrated_crossdataset.MigrationGuards) ... ok
+test_complete_upload_verifies_and_atomically_renames (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_conflicting_final_is_never_overwritten (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_connection_pins_ed25519_before_authentication (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_dataset_marker_is_bound_to_exact_files (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_host_key_mismatch_never_sends_password (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_identical_shared_code_can_repeat_in_later_dataset (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_manifest_rejects_escape_and_noncontiguous_dataset (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_matching_prefix_resumes_only_remaining_bytes (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_origin_bytes_and_ctime_fields_are_enforced (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_origin_stat_change_refuses_copy (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_password_is_read_from_one_line_only (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_remote_hash_failure_retains_partial_without_final (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_remote_symlink_parent_is_rejected (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_verified_final_is_reused_without_any_write (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_wrong_prefix_preserves_partial_and_refuses_upload (online_experiments.test_transfer_autodl_resume.Contracts) ... ok
+test_archive_dereferences_only_safe_in_root_files (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_archive_refuses_existing_destination (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_capacity_counts_both_archive_and_unpacked_members (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_collect_covers_frozen_inputs_anchor_cache_and_resume_state (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_duplicate_conflicting_source_hash_is_rejected (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_escaping_symlink_and_parent_path_are_rejected (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_original_hash_is_not_replaced_after_corruption (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_original_stat_change_rejected_before_archiving (online_experiments.test_prepare_autodl_resume_bundle.BundleSafety) ... ok
+test_adopted_child_never_restarted_or_signalled (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_check_accepts_reparented_main_child_and_never_sends_signal (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_completed_merge_reloads_current_file_and_preserves_remote_result (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_failed_adopted_child_is_not_retried (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_live_delegated_worker_blocks_new_driver_run (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_only_exact_dataset_supervisor_script_and_job_are_accepted (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_remaining_queue_skips_delegated_run_without_creating_done (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_status_has_explicit_delegation_lane (online_experiments.test_continue_campus_after_migration.CampusSafety) ... ok
+test_conflicting_destination_is_preserved (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_dataset_marker_is_bound_to_exact_global_manifest (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_existing_destination_parent_symlink_is_rejected (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_return_manifest_requires_completed_endpoint (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_tar_links_and_traversal_are_rejected (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_unlisted_and_hash_corrupted_members_are_rejected (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_verified_regular_archive_reuses_identical_destination (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+test_waiter_rejects_an_unexpected_global_manifest_hash (online_experiments.test_run_autodl_migrated_pair.DestinationSafety) ... ok
+
+----------------------------------------------------------------------
+Ran 57 tests in 0.029s
+
+OK

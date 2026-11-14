@@ -1,0 +1,15 @@
+{
+  "checks": {
+    "format": {
+      "returncode": 0
+    },
+    "lint": {
+      "returncode": 1
+    },
+    "cpu_contracts": {
+      "returncode": 0
+    }
+  },
+  "checked_unix": 1794668300.2500734,
+  "CPU_only_no_training": true
+}

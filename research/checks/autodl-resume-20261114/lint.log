@@ -1,0 +1,34 @@
+TRY004 Prefer `TypeError` exception for invalid type
+  --> online_experiments/transfer_autodl_resume.py:58:13
+   |
+56 |     for original in payload:
+57 |         if not isinstance(original, dict):
+58 |             raise ValueError("Invalid transfer file record")
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+59 |         row = {key: original[key] for key in ("dataset", "source", "target", "bytes", "sha256")}
+60 |         if row["dataset"] not in DATASETS or DATASETS.index(row["dataset"]) < previous:
+   |
+
+B023 Function definition does not bind loop variable `prior_uploaded`
+   --> online_experiments/transfer_autodl_resume.py:399:36
+    |
+397 |                 state.write(
+398 |                     force=False,
+399 |                     uploaded_bytes=prior_uploaded + update["uploaded_bytes"],
+    |                                    ^^^^^^^^^^^^^^
+400 |                     file_offset=update["offset"],
+401 |                     resumed_file_bytes=update["resumed_bytes"],
+    |
+
+BLE001 Do not catch blind exception: `Exception`
+   --> online_experiments/transfer_autodl_resume.py:461:12
+    |
+459 |                 os.nice(10)
+460 |             run(args, rows, state)
+461 |     except Exception as error:
+    |            ^^^^^^^^^
+462 |         # Deliberately exclude exception text/tracebacks: third-party errors
+463 |         # must never serialize authentication material into logs or state.
+    |
+
+Found 4 errors (1 fixed, 3 remaining).
