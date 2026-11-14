@@ -1,0 +1,189 @@
+{
+  "version": "complete-cpu-metrics-v1",
+  "dataset": "voc0712",
+  "evaluated_images": 4952,
+  "scale": "0-100",
+  "native_primary": {
+    "mAP50_11point": 58.35829592446906,
+    "per_class": {
+      "aeroplane": {
+        "AP50_11point": 64.57798369510772,
+        "non_difficult_objects": 285,
+        "detections": 6643,
+        "ignored_detections": 20
+      },
+      "bicycle": {
+        "AP50_11point": 68.9125223511538,
+        "non_difficult_objects": 337,
+        "detections": 9368,
+        "ignored_detections": 40
+      },
+      "bird": {
+        "AP50_11point": 49.536777079519325,
+        "non_difficult_objects": 459,
+        "detections": 12596,
+        "ignored_detections": 74
+      },
+      "boat": {
+        "AP50_11point": 46.297955638681024,
+        "non_difficult_objects": 263,
+        "detections": 17367,
+        "ignored_detections": 165
+      },
+      "bottle": {
+        "AP50_11point": 35.344852447364275,
+        "non_difficult_objects": 469,
+        "detections": 35687,
+        "ignored_detections": 146
+      },
+      "bus": {
+        "AP50_11point": 67.44116437916068,
+        "non_difficult_objects": 213,
+        "detections": 5433,
+        "ignored_detections": 39
+      },
+      "car": {
+        "AP50_11point": 76.6106907518057,
+        "non_difficult_objects": 1201,
+        "detections": 30888,
+        "ignored_detections": 526
+      },
+      "cat": {
+        "AP50_11point": 61.92480763889565,
+        "non_difficult_objects": 358,
+        "detections": 4511,
+        "ignored_detections": 5
+      },
+      "chair": {
+        "AP50_11point": 40.11253445941652,
+        "non_difficult_objects": 756,
+        "detections": 50064,
+        "ignored_detections": 1113
+      },
+      "cow": {
+        "AP50_11point": 55.22330552607294,
+        "non_difficult_objects": 244,
+        "detections": 3828,
+        "ignored_detections": 84
+      },
+      "diningtable": {
+        "AP50_11point": 61.20905253166873,
+        "non_difficult_objects": 206,
+        "detections": 6876,
+        "ignored_detections": 104
+      },
+      "dog": {
+        "AP50_11point": 57.22766862908756,
+        "non_difficult_objects": 489,
+        "detections": 6529,
+        "ignored_detections": 32
+      },
+      "horse": {
+        "AP50_11point": 69.95939808241607,
+        "non_difficult_objects": 348,
+        "detections": 3538,
+        "ignored_detections": 32
+      },
+      "motorbike": {
+        "AP50_11point": 65.58386491249237,
+        "non_difficult_objects": 325,
+        "detections": 5484,
+        "ignored_detections": 43
+      },
+      "person": {
+        "AP50_11point": 76.27626496815104,
+        "non_difficult_objects": 4528,
+        "detections": 75154,
+        "ignored_detections": 1134
+      },
+      "pottedplant": {
+        "AP50_11point": 31.55216479908699,
+        "non_difficult_objects": 480,
+        "detections": 32681,
+        "ignored_detections": 168
+      },
+      "sheep": {
+        "AP50_11point": 51.017510369726494,
+        "non_difficult_objects": 242,
+        "detections": 5592,
+        "ignored_detections": 56
+      },
+      "sofa": {
+        "AP50_11point": 60.102658562763864,
+        "non_difficult_objects": 239,
+        "detections": 5353,
+        "ignored_detections": 196
+      },
+      "train": {
+        "AP50_11point": 71.31848473396228,
+        "non_difficult_objects": 282,
+        "detections": 5419,
+        "ignored_detections": 31
+      },
+      "tvmonitor": {
+        "AP50_11point": 56.936256932847996,
+        "non_difficult_objects": 308,
+        "detections": 11121,
+        "ignored_detections": 51
+      }
+    },
+    "definition": "VOC2007 eleven-point AP; IoU strictly >0.5; difficult ignored; inclusive official boxes",
+    "scale": "0-100",
+    "evaluated_images": 4952
+  },
+  "native_consistency": "PASS",
+  "saved_prediction_protocol": {
+    "version": "direct-full-detection-v1",
+    "coordinates": "zero-based half-open original image pixels",
+    "confidence": 0.001,
+    "max_det": 500,
+    "nms_iou": 0.7,
+    "native_prediction": true
+  },
+  "auxiliary_coco_by_max_detections": {
+    "1": {
+      "AP": 31.2915251098952,
+      "AP50": 45.25424481170781,
+      "AP75": 33.61237282861025,
+      "AP_small": 5.838388238241847,
+      "AP_medium": 11.382107157177897,
+      "AP_large": 38.05857557603687,
+      "AR": 40.60531865704307
+    },
+    "10": {
+      "AP": 39.42529183036985,
+      "AP50": 58.57732235660526,
+      "AP75": 42.287258616434436,
+      "AP_small": 12.531859568110306,
+      "AP_medium": 20.793479536728395,
+      "AP_large": 45.34354515172317,
+      "AR": 60.01516824739147
+    },
+    "100": {
+      "AP": 39.776666488577774,
+      "AP50": 59.19685873003,
+      "AP75": 42.6560103836405,
+      "AP_small": 12.942029945849074,
+      "AP_medium": 21.288627186815642,
+      "AP_large": 45.58655642956576,
+      "AR": 63.62125992910407
+    },
+    "500": {
+      "AP": 39.7779024198774,
+      "AP50": 59.19860914496557,
+      "AP75": 42.656864128633295,
+      "AP_small": 12.942289140757701,
+      "AP_medium": 21.29041198087166,
+      "AP_large": 45.58798621320155,
+      "AR": 63.70610879110949
+    }
+  },
+  "definitions": {
+    "COCO_AP": "101-point interpolated AP averaged over IoU0.50:0.05:0.95, area=all; equal category weighting, not micro AP",
+    "AR": "Maximum recall averaged over IoU0.50:0.05:0.95 at selected maxDet; equal category weighting",
+    "VOC_auxiliary_only": "COCO-style VOC results use half-open boxes and map difficult to crowd. Native VOC eleven-point AP50 remains unchanged and primary.",
+    "area": "Original-image bbox area. COCO ranges: small[0,1024], medium[1024,9216], large[9216,1e10]; boundaries overlap per COCOeval.",
+    "PR": "COCOeval interpolated precision/score tensors at 101 recall grid points; -1/CSV empty means undefined. This is not confidence-sweep P/R/F1.",
+    "missing": "No new inference; predictions below frozen score0.001 or beyond frozen top500 cannot be recovered."
+  }
+}
