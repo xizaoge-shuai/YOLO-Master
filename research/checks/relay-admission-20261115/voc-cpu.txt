@@ -1,0 +1,6 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                               [100%][0m
+============================= slowest 30 durations =============================
+0.01s call     online_experiments/test_continue_campus_after_migration.py::CampusSafety::test_retirement_check_uses_verified_sidecar_when_admission_overwrites_status
+
+(29 durations < 0.005s hidden.  Use -vv to show these durations.)
+[32m[32m[1m26 passed[0m[32m in 0.06s[0m[0m

@@ -1,0 +1,6 @@
+exit=0
+{"sealed": "/tmp/tmpq3cexdij/seal.json", "files": 14, "origin_epoch": 9}
+----------------------------------------------------------------------
+Ran 113 tests in 0.092s
+
+OK

@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from online_experiments import priority_single_seed_campaign as original
 from online_experiments import priority_three_lane as shared
-from online_experiments.crossdataset_campaign import gpu_admission, job_lock
+from online_experiments.crossdataset_campaign import GPU_LOCK_ROOT, gpu_memory, job_lock
 
 SCHEMA = "campus-after-autodl-delegation-v1"
 CONTRACT = {
@@ -376,6 +376,85 @@ def done(args, method):
     return (original.output_for(args, method) / ("DONE.json" if method in original.DIRECT else "DONE")).is_file()
 
 
+def admission_reason(min_free_mib, occupied, workers, free_mib, host_mib):
+    """Bound campus concurrency without charging an occupied worker twice."""
+    if min_free_mib < 8192:
+        raise ValueError("GPU admission must retain at least 8192 MiB free before launch")
+    if occupied >= 2:
+        return "two_stage_leases_occupied"
+    if workers >= 2:
+        return "two_project_training_workers_active"
+    if free_mib < min_free_mib:
+        return "insufficient_free_gpu_memory"
+    if host_mib < 12288:
+        return "insufficient_available_host_memory"
+    return None
+
+
+@contextlib.contextmanager
+def gpu_admission(args, message):
+    """Hold an inherited stage lease; admit at most two campus workers."""
+    import fcntl
+
+    if args.min_free_mib < 8192:
+        raise ValueError("GPU admission must retain at least 8192 MiB free before launch")
+    GPU_LOCK_ROOT.mkdir(parents=True, exist_ok=True)
+    selected = None
+    while selected is None:
+        candidates = []
+        details = {"reason": "admission_gate_busy"}
+        try:
+            with (GPU_LOCK_ROOT / f"gpu{args.gpu}-stages.lock").open("a") as gate:
+                try:
+                    fcntl.flock(gate.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                except BlockingIOError:
+                    pass
+                else:
+                    available, occupied = {}, 0
+                    # Count historic extra-lane leases as well, but allocate only
+                    # the original two slots. A paused child still owns a slot.
+                    for number in range(4):
+                        stream = (GPU_LOCK_ROOT / f"gpu{args.gpu}-slot{number}.lock").open("a")
+                        candidates.append(stream)
+                        try:
+                            fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                        except BlockingIOError:
+                            occupied += 1
+                        else:
+                            available[number] = stream
+                    workers = len(shared.training_processes())
+                    free, host = gpu_memory(args.gpu), shared.host_memory()
+                    reason = admission_reason(args.min_free_mib, occupied, workers, free, host)
+                    details = {
+                        "reason": reason,
+                        "gpu_free_mib": free,
+                        "gpu_required_mib": args.min_free_mib,
+                        "host_available_mib": host,
+                        "host_required_mib": 12288,
+                        "project_training_workers": workers,
+                        "occupied_stage_leases": occupied,
+                        "max_training_workers": 2,
+                    }
+                    if reason is None:
+                        selected = next((available[slot] for slot in (0, 1) if slot in available), None)
+                        if selected is None:
+                            details["reason"] = "baseline_stage_slots_occupied"
+        finally:
+            for stream in candidates:
+                if stream is not selected:
+                    stream.close()
+        if selected is None:
+            emit(args, "WAITING_RESOURCES", admission_message=message, admission=details)
+            time.sleep(15)
+    try:
+        args.gpu_lock_fd = selected.fileno()
+        yield free
+    finally:
+        del args.gpu_lock_fd
+        fcntl.flock(selected.fileno(), fcntl.LOCK_UN)
+        selected.close()
+
+
 def wait_adopted(args, child):
     while (current := shared.process(child["pid"])) is not None and current.get("state") != "Z":
         shared.same_lifetime(child, current)
@@ -458,8 +537,13 @@ def main():
     parser.add_argument("--bundle-root", type=Path, help="Sealed transfer plans required with --retirement")
     parser.add_argument("--dependencies", type=Path, default=ROOT / ".research-deps/evidence-20261110/site")
     parser.add_argument("--publish", action="store_true")
+    parser.add_argument(
+        "--min-free-mib", type=int, default=12288, help="Free GPU memory required before launch (minimum 8192 MiB)"
+    )
     parser.add_argument("--recover", action="store_true", help="Persisted exact-child handoff only; never signal")
     args = parser.parse_args()
+    if args.min_free_mib < 8192:
+        parser.error("--min-free-mib must be at least 8192")
     if bool(args.retirement) != bool(args.bundle_root):
         parser.error("--retirement and --bundle-root must be supplied together")
     if args.retirement:
@@ -468,7 +552,7 @@ def main():
         getattr(args, key).resolve() for key in ("job", "dataset_job", "sidecar", "dependencies")
     )
     args.first_detector = "master-n" if args.dataset == "voc0712" else "yolo12-n"
-    args.gpu, args.min_free_mib = 0, 8192
+    args.gpu = 0
     if args.action == "status":
         print(json.dumps(original.read(args.sidecar / "status.json"), indent=2))
         return
@@ -485,6 +569,12 @@ def main():
             {
                 "schema": SCHEMA,
                 "evidence": evidence,
+                "admission_policy": {
+                    "gpu_min_free_mib": args.min_free_mib,
+                    "host_min_available_mib": 12288,
+                    "max_project_training_workers": 2,
+                    "lease_slots": [0, 1],
+                },
                 "source_sha256": {
                     name: original.sha(ROOT / name)
                     for name in (

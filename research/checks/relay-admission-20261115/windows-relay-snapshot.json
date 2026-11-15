@@ -1,0 +1,19 @@
+{
+  "schema": "windows-autodl-relay-v1",
+  "pid": 25632,
+  "local_forward": "127.0.0.1:19022",
+  "reverse_proxy": "127.0.0.1:17897",
+  "campus_forward": "127.0.0.1:19822",
+  "host_key_sha256": "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc",
+  "campus_proxy": "127.0.0.1:7908",
+  "depends_on": "Windows host, campus VPN and both SSH connections",
+  "state": "CONNECTED",
+  "attempts": 1,
+  "updated_unix": 1794759765.7195466,
+  "campus_state": "SSH_PROCESS_RUNNING",
+  "campus_attempts": 1,
+  "error": null,
+  "campus_pid": 28832,
+  "connected_unix": 1794759010.5824902,
+  "active_connections": 2
+}

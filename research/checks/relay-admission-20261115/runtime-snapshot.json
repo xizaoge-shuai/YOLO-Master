@@ -1,0 +1,32 @@
+{
+  "measured_unix": 1794759862.6230974,
+  "campus": {
+    "voc0712": {
+      "method": "cache-reuse-c1-int8",
+      "completed_epochs": 6,
+      "last_epoch": {
+        "epoch": 6,
+        "train_loss": 5.2305279627400045,
+        "train_seconds": 794.3239520220086,
+        "query_images": 0,
+        "query_calls": 0,
+        "lr": 0.0009939057285945933,
+        "peak_vram_gib": 1.4083290100097656
+      }
+    },
+    "sku110k": {
+      "method": "vit-adapter-cache25",
+      "completed_epochs": 77,
+      "last_epoch": {
+        "epoch": 77,
+        "train_loss": 4.055884991209646,
+        "train_seconds": 886.1995907400269,
+        "query_images": 158215,
+        "query_calls": 71301,
+        "lr": 0.00014416052942640148,
+        "peak_vram_gib": 4.306673049926758
+      }
+    }
+  },
+  "gpu": "2475103, 25456 MiB\n3023701, 6894 MiB\n3410938, 2012 MiB\n[N/A], [N/A]\n"
+}

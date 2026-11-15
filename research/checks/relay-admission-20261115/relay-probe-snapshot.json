@@ -1,0 +1,13 @@
+{
+  "MiBs": 1.7838073538754329,
+  "bytes": 8388608,
+  "host": "127.0.0.1",
+  "host_key_sha256": "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc",
+  "measured_unix": 1794755429.489387,
+  "port": 19822,
+  "remote": "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes/relay-probe-c0eea63ee49aa78ce24ae57b4036497480481beb9469e1639f345582dc2bcfc9.bin",
+  "schema": "autodl-relay-probe-v1",
+  "seconds": 4.484789224923588,
+  "sha256": "c0eea63ee49aa78ce24ae57b4036497480481beb9469e1639f345582dc2bcfc9",
+  "state": "VERIFIED"
+}

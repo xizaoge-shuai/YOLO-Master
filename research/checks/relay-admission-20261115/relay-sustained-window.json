@@ -1,0 +1,63 @@
+{
+  "schema": "relay-sustained-window-v1",
+  "samples": [
+    {
+      "sampled_unix": 1794759606.0163968,
+      "state": {
+        "bytes_total": 227745729717,
+        "dataset": "sku110k",
+        "datasets_complete": [],
+        "elapsed_seconds": 439.68857042398304,
+        "file_bytes": 30298521728,
+        "file_index": 3,
+        "file_offset": 5833129984,
+        "files_complete": 2,
+        "files_total": 13,
+        "last_file_reused": true,
+        "manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+        "manifest_target": "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes/manifest.json",
+        "metadata_uploaded_bytes": 0,
+        "pid": 3439657,
+        "resumed_file_bytes": 5665357824,
+        "schema": "autodl-resume-transfer-v1",
+        "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+        "state": "TRANSFERRING",
+        "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+        "updated_unix": 1794759604.7894223,
+        "upload_mib_per_second": 0.36389392575230045,
+        "uploaded_bytes": 167772160,
+        "verified_bytes": 13611506024
+      }
+    },
+    {
+      "sampled_unix": 1794759631.0412178,
+      "state": {
+        "bytes_total": 227745729717,
+        "dataset": "sku110k",
+        "datasets_complete": [],
+        "elapsed_seconds": 463.7139177159406,
+        "file_bytes": 30298521728,
+        "file_index": 3,
+        "file_offset": 5858295808,
+        "files_complete": 2,
+        "files_total": 13,
+        "last_file_reused": true,
+        "manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+        "manifest_target": "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes/manifest.json",
+        "metadata_uploaded_bytes": 0,
+        "pid": 3439657,
+        "resumed_file_bytes": 5665357824,
+        "schema": "autodl-resume-transfer-v1",
+        "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+        "state": "TRANSFERRING",
+        "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+        "updated_unix": 1794759628.8147697,
+        "upload_mib_per_second": 0.39679637157820596,
+        "uploaded_bytes": 192937984,
+        "verified_bytes": 13611506024
+      }
+    }
+  ],
+  "window_MiB_s": 0.9590478173149375,
+  "note": "Short observed relay window; not a training benchmark or whole-transfer ETA."
+}

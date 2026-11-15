@@ -1,0 +1,6 @@
+exit=0
+{"sealed": "/tmp/tmpfgl7bmgr/seal.json", "files": 14, "origin_epoch": 9}
+----------------------------------------------------------------------
+Ran 121 tests in 0.093s
+
+OK

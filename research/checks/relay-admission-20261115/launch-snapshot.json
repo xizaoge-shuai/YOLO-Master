@@ -1,0 +1,62 @@
+{
+  "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+  "children": [
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/run_autodl_upload.py",
+        "--manifest",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/transfer-manifest.json",
+        "--state",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/transfer-state.json",
+        "--marker-dir",
+        "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes",
+        "--rate-mib",
+        "32",
+        "--host-key-sha256",
+        "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "19822"
+      ],
+      "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/transfer.log",
+      "name": "transfer",
+      "pid": 3439657,
+      "start_ticks": 56616933,
+      "started_unix": 1794759165.0796137,
+      "state": "R",
+      "uid": 1010
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/return_autodl_results.py",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes",
+        "--bundle-root",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1",
+        "--publish",
+        "--host-key-sha256",
+        "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "19822"
+      ],
+      "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/return.log",
+      "name": "return",
+      "pid": 3439658,
+      "start_ticks": 56616933,
+      "started_unix": 1794759165.0803282,
+      "state": "R",
+      "uid": 1010
+    }
+  ],
+  "manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+  "schema": "autodl-transfer-pair-launch-v1",
+  "started_unix": 1794759165.0774896,
+  "state": "LAUNCHED"
+}

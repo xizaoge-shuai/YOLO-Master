@@ -996,3 +996,9 @@ Verified VOC3/7 and SKU5/7 final100 core endpoints, with8/14 CPU metric bundles 
 ## Evening status: campus adapter70/100; migration bottlenecks observed
 
 VOC3/7, SKU5/7, CPU metrics8/14 with0failures. SKU Adapter reached70epochs. VOC waits at16142MiB free versus16384MiB admission. AutoDL remains WAITING_TRANSFER; about19GB of228GB transferred after roughly12hours. The earlier hourly ETA is no longer valid; no additional final AP or protocol change. See current handover document and checked status snapshot.
+
+
+<!-- relay-admission-20261116 -->
+## AutoDL relay and VOC admission, 2026-11-16
+
+Lowered campus admission to 12GiB GPU and host free memory with two-worker/lease cap; VOC INT8 actually advances while SKU Adapter continues. Added pinned, loopback-only detached Windows relay and retained SHA-bound upload partials. New transfer/return pair3439657/3439658; observed large-file window0.959MiB/s. AutoDL remains waiting for full input. Original training recipe and final-result counts unchanged. Targeted Ruff/format and121 CPU checks pass; command guides and nonsecret runtime snapshots archived under [relay admission checks](checks/relay-admission-20261115/README.md).

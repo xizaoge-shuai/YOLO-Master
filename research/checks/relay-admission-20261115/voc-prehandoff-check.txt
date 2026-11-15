@@ -1,0 +1,48 @@
+{
+  "supervisor": {
+    "pid": 2300793,
+    "uid": 1010,
+    "state": "S",
+    "ppid": 1,
+    "start_ticks": 46202951,
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_voc_overlap.py",
+      "run",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+      "--dataset-job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+      "--sidecar",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-four-lane/job-20261114-voc-loffta",
+      "--old-supervisor",
+      "644301",
+      "--adopt-child",
+      "1467410",
+      "--publish"
+    ]
+  },
+  "child": null,
+  "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+  "plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+  "rollback_argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_voc_overlap.py",
+    "run",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+    "--sidecar",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-four-lane/job-20261114-voc-loffta",
+    "--old-supervisor",
+    "644301",
+    "--adopt-child",
+    "1467410",
+    "--publish"
+  ],
+  "delegated_method": "loffta-c2-n005",
+  "adopted_method": null,
+  "retirement_sha256": "b40b3c70fceaa1f84d886aaca17bfabef3e1a1033cceae7fcc5654b449828d0c"
+}

@@ -1,0 +1,27 @@
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> online_experiments/test_continue_campus_after_migration.py:395:21
+    |
+393 |                       campus.shared, "training_processes", return_value=workers
+394 |                   ), patch.object(campus.time, "sleep") as sleep, patch.object(campus, "emit") as emit:
+395 | /                     with self.assertRaisesRegex(RuntimeError, "training failed"):
+396 | |                         with campus.gpu_admission(args, "VOC INT8") as free:
+    | |____________________________________________________________________________^
+397 |                               self.assertEqual(free, 16142)
+398 |                               self.assertIsInstance(args.gpu_lock_fd, int)
+    |
+help: Combine `with` statements
+
+SIM117 Use a single `with` statement with multiple contexts instead of nested `with` statements
+   --> online_experiments/test_continue_campus_after_migration.py:399:29
+    |
+397 |   …                     self.assertEqual(free, 16142)
+398 |   …                     self.assertIsInstance(args.gpu_lock_fd, int)
+399 | / …                     with (lock_root / "gpu0-slot1.lock").open("a") as competing:
+400 | | …                         with self.assertRaises(BlockingIOError):
+    | |__________________________________________________________________^
+401 |   …                             fcntl.flock(competing.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+402 |   …                     raise RuntimeError("training failed")
+    |
+help: Combine `with` statements
+
+Found 2 errors.

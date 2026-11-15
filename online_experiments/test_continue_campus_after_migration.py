@@ -358,5 +358,55 @@ class CampusSafety(unittest.TestCase):
             campus.require_delegated_retired(self.args)
 
 
+class CampusAdmission(unittest.TestCase):
+    def test_16142_mib_admits_second_worker_without_double_reservation(self):
+        self.assertIsNone(campus.admission_reason(12288, 1, 1, 16142, 16384))
+
+    def test_gpu_and_host_memory_each_block_below_required_floor(self):
+        self.assertEqual(campus.admission_reason(12288, 1, 1, 12287, 16384), "insufficient_free_gpu_memory")
+        self.assertEqual(campus.admission_reason(12288, 1, 1, 16142, 12287), "insufficient_available_host_memory")
+        self.assertIsNone(campus.admission_reason(12288, 1, 1, 12288, 12288))
+
+    def test_two_existing_project_workers_block_even_when_memory_is_free(self):
+        self.assertEqual(campus.admission_reason(12288, 0, 2, 24000, 64000), "two_project_training_workers_active")
+
+    def test_two_held_stage_leases_block_even_when_workers_not_visible(self):
+        self.assertEqual(campus.admission_reason(12288, 2, 0, 24000, 64000), "two_stage_leases_occupied")
+
+    def test_gpu_safety_floor_cannot_be_disabled(self):
+        with self.assertRaisesRegex(ValueError, "8192"):
+            campus.admission_reason(8191, 0, 0, 24000, 64000)
+
+    @unittest.skipUnless(sys.platform == "linux", "Requires real Linux flock")
+    def test_lease_waits_and_releases_fd_after_training_exception(self):
+        import fcntl
+
+        with tempfile.TemporaryDirectory() as directory:
+            lock_root = Path(directory)
+            args = SimpleNamespace(gpu=0, min_free_mib=12288)
+            workers = [{"pid": 1, "state": "T"}]
+            with (lock_root / "gpu0-slot0.lock").open("a") as held:
+                fcntl.flock(held.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                with patch.object(campus, "GPU_LOCK_ROOT", lock_root), patch.object(
+                    campus, "gpu_memory", side_effect=[12287, 16142]
+                ), patch.object(campus.shared, "host_memory", return_value=16384), patch.object(
+                    campus.shared, "training_processes", return_value=workers
+                ), patch.object(campus.time, "sleep") as sleep, patch.object(campus, "emit") as emit:
+                    with self.assertRaisesRegex(RuntimeError, "training failed"):  # noqa: SIM117 - explicit failure scope
+                        with campus.gpu_admission(args, "VOC INT8") as free:
+                            self.assertEqual(free, 16142)
+                            self.assertIsInstance(args.gpu_lock_fd, int)
+                            with (lock_root / "gpu0-slot1.lock").open("a") as competing:  # noqa: SIM117 - inspect the live lease
+                                with self.assertRaises(BlockingIOError):
+                                    fcntl.flock(competing.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                            raise RuntimeError("training failed")
+                    sleep.assert_called_once_with(15)
+                    self.assertEqual(emit.call_args.args[1], "WAITING_RESOURCES")
+                    self.assertEqual(emit.call_args.kwargs["admission"]["reason"], "insufficient_free_gpu_memory")
+                self.assertFalse(hasattr(args, "gpu_lock_fd"))
+                with (lock_root / "gpu0-slot1.lock").open("a") as available:
+                    fcntl.flock(available.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+
 if __name__ == "__main__":
     unittest.main()

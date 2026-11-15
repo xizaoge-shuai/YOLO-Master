@@ -1,0 +1,66 @@
+{
+  "authorization": "User requested AutoDL reverse forwarding and faster continuation",
+  "old_children": [
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/run_autodl_upload.py",
+        "--manifest",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/transfer-manifest.json",
+        "--state",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/transfer-state.json",
+        "--marker-dir",
+        "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes",
+        "--rate-mib",
+        "32",
+        "--host-key-sha256",
+        "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc"
+      ],
+      "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/transfer.log",
+      "name": "transfer",
+      "pid": 3034111,
+      "start_ticks": 51758828,
+      "started_unix": 1794710584.03037,
+      "state": "R",
+      "uid": 1010
+    },
+    {
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/return_autodl_results.py",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes",
+        "--bundle-root",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1",
+        "--publish",
+        "--host-key-sha256",
+        "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc"
+      ],
+      "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/return.log",
+      "name": "return",
+      "pid": 3034112,
+      "start_ticks": 51758828,
+      "started_unix": 1794710584.032305,
+      "state": "R",
+      "uid": 1010
+    }
+  ],
+  "probe": {
+    "MiBs": 1.7838073538754329,
+    "bytes": 8388608,
+    "host": "127.0.0.1",
+    "host_key_sha256": "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc",
+    "measured_unix": 1794755429.489387,
+    "port": 19822,
+    "remote": "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes/relay-probe-c0eea63ee49aa78ce24ae57b4036497480481beb9469e1639f345582dc2bcfc9.bin",
+    "schema": "autodl-relay-probe-v1",
+    "seconds": 4.484789224923588,
+    "sha256": "c0eea63ee49aa78ce24ae57b4036497480481beb9469e1639f345582dc2bcfc9",
+    "state": "VERIFIED"
+  },
+  "time_unix": 1794755630.6762905,
+  "training_processes_signaled": false,
+  "old_clients_exited": true
+}
