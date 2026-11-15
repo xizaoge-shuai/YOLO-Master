@@ -1,0 +1,138 @@
+{
+  "checked_unix": 1794754603.017965,
+  "campus": {
+    "voc0712": {
+      "completed": [
+        "master-n",
+        "yolo12-n",
+        "frofa-c2-d01"
+      ],
+      "pipeline": {
+        "state": "WAITING_GPU",
+        "message": "VOC cache-reuse-c1-int8; GPU0 free=16142MiB, need>=16384MiB",
+        "time_unix": 1794754601.0633826,
+        "dataset": "voc0712"
+      }
+    },
+    "sku110k": {
+      "completed": [
+        "yolo12-n",
+        "master-n",
+        "frofa-c2-d01",
+        "loffta-c2-n005",
+        "cache-reuse-c1-int8"
+      ],
+      "pipeline": {
+        "state": "PARTIAL_FAILURE",
+        "message": "SKU INT8 adoption + Adapter baseline + parallel Detail25",
+        "time_unix": 1794710039.0047724,
+        "dataset": "sku110k",
+        "lanes": {
+          "baseline": {
+            "state": "TRAIN",
+            "time_unix": 1794693838.7101288,
+            "method": "vit-adapter-cache25",
+            "child_pid": 3023701,
+            "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/vit-adapter-cache25-s0"
+          },
+          "extra": {
+            "state": "FAILED",
+            "time_unix": 1794710039.0041976,
+            "error": "train detail25 exited -9; preserve checkpoint, no retry",
+            "policy": "Other lane continues; no retry"
+          }
+        },
+        "completed": 5,
+        "planned": 7,
+        "sidecar": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+        "method": "vit-adapter-cache25",
+        "parallel_methods": [
+          "vit-adapter-cache25"
+        ]
+      },
+      "adapter": {
+        "completed_epochs": 70,
+        "last3": [
+          {
+            "epoch": 68,
+            "train_loss": 4.086356293329837,
+            "train_seconds": 801.4471773689147,
+            "query_images": 139723,
+            "query_calls": 62968,
+            "lr": 0.0002530244992035663,
+            "peak_vram_gib": 4.306673049926758
+          },
+          {
+            "epoch": 69,
+            "train_loss": 4.082498463970537,
+            "train_seconds": 793.8687281029997,
+            "query_images": 141777,
+            "query_calls": 63884,
+            "lr": 0.00023976573648539667,
+            "peak_vram_gib": 4.306673049926758
+          },
+          {
+            "epoch": 70,
+            "train_loss": 4.074597494346061,
+            "train_seconds": 793.8183813330252,
+            "query_images": 143832,
+            "query_calls": 64824,
+            "lr": 0.00022676872796319544,
+            "peak_vram_gib": 4.306673049926758
+          }
+        ]
+      }
+    }
+  },
+  "transfer": {
+    "bytes_total": 227745729717,
+    "dataset": "sku110k",
+    "datasets_complete": [],
+    "elapsed_seconds": 43927.993071201956,
+    "file_bytes": 30298521728,
+    "file_index": 3,
+    "file_offset": 5536481280,
+    "files_complete": 2,
+    "files_total": 13,
+    "last_file_reused": false,
+    "manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+    "manifest_target": "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes/manifest.json",
+    "metadata_uploaded_bytes": 0,
+    "pid": 3034111,
+    "resumed_file_bytes": 0,
+    "schema": "autodl-resume-transfer-v1",
+    "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+    "state": "TRANSFERRING",
+    "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+    "updated_unix": 1794754512.0499458,
+    "upload_mib_per_second": 0.345834920337719,
+    "uploaded_bytes": 15929792512,
+    "verified_bytes": 13611506024
+  },
+  "return": {
+    "state": "WAITING_REMOTE",
+    "completed": 0,
+    "planned": 2,
+    "cases": {
+      "sku110k": {
+        "state": "WAITING_REMOTE",
+        "remote_state": "WAITING_TRANSFER"
+      },
+      "voc0712": {
+        "state": "WAITING_REMOTE",
+        "remote_state": "WAITING_TRANSFER"
+      }
+    },
+    "gpu_used": false,
+    "updated_unix": 1794754581.3080575
+  },
+  "metrics": {
+    "state": "WAITING_RESULTS",
+    "message": "CPU sidecar waiting for original sealed final endpoints",
+    "time_unix": 1794693854.223847,
+    "completed": 8,
+    "failed": 0,
+    "planned": 14
+  },
+  "scope": "Read-only status inspection; no training/protocol changes"
+}

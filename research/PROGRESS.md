@@ -991,3 +991,8 @@ Full-test final100 saved predictions scored once on CPU; [bundle](experiments/si
 ## Two-node migration background workers launched
 
 Verified VOC3/7 and SKU5/7 final100 core endpoints, with8/14 CPU metric bundles and0failures. Retired exactly the two paused source children after SHA-verifying epoch9/17 checkpoints in preserved archives. Started detached SKU-first upload, two AutoDL WAITING_TRANSFER resume cases, and CPU-only result receiver. Added canonical queue locks and natural-exit continuation observers, preserving original trainers/remaining tasks.102 Linux CPU tests and targeted Ruff/format passed. See [current commands and scope](../实验进展_20261115.md). Actual AutoDL training/final AP remain pending transfer and verification; mixed-host timings are not controlled speed evidence.
+
+<!-- status-20261115-evening -->
+## Evening status: campus adapter70/100; migration bottlenecks observed
+
+VOC3/7, SKU5/7, CPU metrics8/14 with0failures. SKU Adapter reached70epochs. VOC waits at16142MiB free versus16384MiB admission. AutoDL remains WAITING_TRANSFER; about19GB of228GB transferred after roughly12hours. The earlier hourly ETA is no longer valid; no additional final AP or protocol change. See current handover document and checked status snapshot.
