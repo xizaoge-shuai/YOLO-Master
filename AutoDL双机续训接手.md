@@ -1,5 +1,7 @@
 # 校园两路 + AutoDL两路：2026-11-14接手
 
+2026-11-15更新：完整迁移包已封存；两个源暂停进程已退役，资源已释放。后台传输、AutoDL自动等待/续训及回传客户端均已实际启动，当前为WAITING_TRANSFER；校园VOC FroFA和SKU INT8已完成，SKU继续Adapter，VOC接续其余方法。最新实时命令与解释见[今日进展](实验进展_20261115.md)，以下原暂停现场描述保留为历史。
+
 用户最新要求是停止校园额外两路，并在AutoDL续跑它们。校园保留FroFA/INT8；迁移VOC LOFF-TA、SKU Detail25，固定seed0、100轮、batch8、640和完整原划分。
 
 当前已确认：两迁移进程处于SIGSTOP，完整检查点为LOFF9轮/Detail17轮；原FroFA/INT8继续。AutoDL连接成功且缺失依赖已安装，GPU/环境导入验证、数据复制与新训练分别记录。不能把等待/复制状态当成训练已经开始。
@@ -13,7 +15,7 @@ cd ~/YOLO-Master-paper-baselines-20261107
 J=runs/paper/migration-autodl/job-20261114-two-lanes
 cat "$J/paused.json"
 test ! -f "$J/transfer-state.json" || cat "$J/transfer-state.json"
-test ! -f "$J/return-state.json" || cat "$J/return-state.json"
+test ! -f "$J/return-status.json" || cat "$J/return-status.json"
 tail -n 20 "$J/prepare-bundle.log"
 ```
 

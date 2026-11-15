@@ -8,6 +8,7 @@ publish DONE last. Credentials use the transfer helper's single stdin line.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import hashlib
 import json
 import os
@@ -383,6 +384,23 @@ def remote_json(sftp, path, *, maximum=16 * 1024**2):
     return json.loads(data)
 
 
+@contextlib.contextmanager
+def local_supervisor_guard(queue):
+    """Own the canonical supervisor lock before publishing any imported result."""
+    import fcntl
+
+    with (Path(queue) / "pipeline.lock").open("a") as stream:
+        try:
+            fcntl.flock(stream.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            yield False
+            return
+        try:
+            yield True
+        finally:
+            fcntl.flock(stream.fileno(), fcntl.LOCK_UN)
+
+
 def handle_case(args, sftp, dataset, state, throttle):
     plan_path = args.bundle_root / (dataset + "-plan.json")
     if not plan_path.is_file():
@@ -416,7 +434,13 @@ def handle_case(args, sftp, dataset, state, throttle):
         and not stage.exists()
         and (held.is_file() or (case["output"] / "DONE").is_file())
     )
-    if not installed:
+    downloaded = bool(prior and prior.get("state") in {"DOWNLOADED", "INSTALLING"} and stage.is_dir())
+    if downloaded:
+        # A busy local supervisor may last for hours. Recheck the sealed stage,
+        # but do not download it again or change an INSTALLING crash receipt.
+        verify_received(stage, rows, held)
+        verify_endpoint(stage, rows, case["origin"])
+    elif not installed:
         stage.mkdir(parents=True, exist_ok=True)
         required = sum(row["bytes"] for row in rows) + GIB
         if shutil.disk_usage(stage).free < required:
@@ -445,6 +469,15 @@ def handle_case(args, sftp, dataset, state, throttle):
         verify_received(stage, rows, held)
         verify_endpoint(stage, rows, case["origin"])
         write(receipt, {**identity, "state": "DOWNLOADED", "dataset": dataset})
+    with local_supervisor_guard(case["queue"]) as acquired:
+        if not acquired:
+            return {"state": "WAITING_LOCAL_SUPERVISOR", "reason": "CANONICAL_PIPELINE_LOCK_BUSY", **identity}
+        return install_received_case(args, case, rows, identity, prior, stage, backup, held, receipt)
+
+
+def install_received_case(args, case, rows, identity, prior, stage, backup, held, receipt):
+    """Caller holds pipeline.lock through retirement checks and final DONE."""
+    dataset = case["dataset"]
     retirement_path = args.job / "retirement.json"
     if not retirement_path.is_file():
         return {"state": "WAITING_REMOTE", "reason": "WAITING_EXPLICIT_ORIGIN_RETIREMENT", **identity}
@@ -544,7 +577,7 @@ def main():
                 if completed == 2:
                     return 0
                 time.sleep(args.poll_seconds)
-    except Exception as error:  # noqa: BLE001 - redact credentials from any transport error
+    except Exception as error:  # noqa: BLE001 - redact all third-party credential diagnostics
         if acquired:
             write(
                 args.job / "return-status.json",

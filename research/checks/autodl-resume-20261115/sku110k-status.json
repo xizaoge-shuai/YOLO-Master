@@ -1,0 +1,8 @@
+{
+  "schema": "campus-after-autodl-delegation-v1",
+  "state": "WAITING_PREVIOUS_SUPERVISOR",
+  "pid": 3035121,
+  "old_supervisor_pid": 2105130,
+  "time_unix": 1794711097.4999766,
+  "policy": "No signals; existing baseline continues unchanged"
+}

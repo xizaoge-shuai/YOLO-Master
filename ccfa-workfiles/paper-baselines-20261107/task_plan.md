@@ -136,3 +136,13 @@ Latest status check could not connect: SSH connection reset, then banner timeout
 2026-11-09: AutoDL migration is tracked in .planning/autodl-migration-20261109. Source cloned on a separate branch; isolated environment installation and complete VOC preparation run in background. No new training or baseline AP. Campus source checkpoints remain unavailable; current50GiB disk must be expanded before full VOC cache construction.
 
 Superseding user direction2026-11-09: original yang109 is reachable again and is the execution platform. AutoDL experiments no longer advance. Resume audit verified810 frozen sources,3 completed runs and adapter59/100 checkpoint. Original full-data queue resumed at epoch60. Finish necessary VisDrone evidence, then VOC, SKU, complete COCO last, with one dataset active at a time. Root disk34GiB free versus data volume1.3TiB; no data cleanup in this recovery.
+# 2026-11-15 continuation
+
+- [x] Verify fresh source progress: VOC3/7, SKU5/7; both original adopted children finished100epochs; metrics8/14 with0failures.
+- [x] Seal both full migration archives and verify original epoch9/17 checkpoints within backups.
+- [x] Retire exactly the two user-selected paused training children; preserve all source files and other workers.
+- [x] Start detached SHA-verified upload, two AutoDL automatic resume waiters, and CPU-only verified receiver.
+- [x] Guard canonical result installation/queue continuation with retrying locks and fresh completed-list merges; no signals to old supervisors.
+- [x] Complete102 Linux CPU safety tests and targeted Ruff/format checks; no new GPU training smoke.
+- [ ] Await SKU then VOC transfer, actual continuation to100epochs, final predictions and validation.
+- [ ] Return final results, archive and finish remaining single-pass metrics; no claim these stages are complete yet.

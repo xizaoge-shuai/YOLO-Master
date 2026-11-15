@@ -1,0 +1,11 @@
+TRY004 Prefer `TypeError` exception for invalid type
+   --> online_experiments/continue_campus_after_migration.py:155:9
+    |
+153 |     baseline = status.get("lanes", {}).get("baseline")
+154 |     if not isinstance(baseline, dict):
+155 |         raise RuntimeError("Verified prior sidecar has no baseline lane")
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+156 |     return baseline
+    |
+
+Found 1 error.

@@ -1,0 +1,278 @@
+{
+  "created_unix": 1794710953.451855,
+  "scope": "Two full datasets, seven core arms each, seed0/final100; background migration status is distinct from training",
+  "campus": {
+    "voc0712": {
+      "completed_count": 3,
+      "planned": 7,
+      "completed_methods": [
+        "master-n",
+        "yolo12-n",
+        "frofa-c2-d01"
+      ],
+      "pipeline_status": {
+        "state": "WAITING_GPU",
+        "message": "VOC cache-reuse-c1-int8; GPU0 free=16142MiB, need>=16384MiB",
+        "time_unix": 1794710940.4755673,
+        "dataset": "voc0712"
+      },
+      "continuation_observer": {
+        "schema": "campus-after-autodl-delegation-v1",
+        "state": "WAITING_PREVIOUS_SUPERVISOR",
+        "pid": 3035119,
+        "old_supervisor_pid": 2300793,
+        "time_unix": 1794710946.9571195,
+        "policy": "No signals; existing baseline continues unchanged"
+      }
+    },
+    "sku110k": {
+      "completed_count": 5,
+      "planned": 7,
+      "completed_methods": [
+        "yolo12-n",
+        "master-n",
+        "frofa-c2-d01",
+        "loffta-c2-n005",
+        "cache-reuse-c1-int8"
+      ],
+      "pipeline_status": {
+        "state": "PARTIAL_FAILURE",
+        "message": "SKU INT8 adoption + Adapter baseline + parallel Detail25",
+        "time_unix": 1794710039.0047724,
+        "dataset": "sku110k",
+        "lanes": {
+          "baseline": {
+            "state": "TRAIN",
+            "time_unix": 1794693838.7101288,
+            "method": "vit-adapter-cache25",
+            "child_pid": 3023701,
+            "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/vit-adapter-cache25-s0"
+          },
+          "extra": {
+            "state": "FAILED",
+            "time_unix": 1794710039.0041976,
+            "error": "train detail25 exited -9; preserve checkpoint, no retry",
+            "policy": "Other lane continues; no retry"
+          }
+        },
+        "completed": 5,
+        "planned": 7,
+        "sidecar": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+        "method": "vit-adapter-cache25",
+        "parallel_methods": [
+          "vit-adapter-cache25"
+        ]
+      },
+      "continuation_observer": {
+        "schema": "campus-after-autodl-delegation-v1",
+        "state": "WAITING_PREVIOUS_SUPERVISOR",
+        "pid": 3035121,
+        "old_supervisor_pid": 2105130,
+        "time_unix": 1794710947.3501108,
+        "policy": "No signals; existing baseline continues unchanged"
+      },
+      "vit-adapter-cache25-s0": {
+        "completed_epochs": 21
+      },
+      "cache-reuse-c1-int8-s0": {
+        "completed_epochs": 100
+      }
+    }
+  },
+  "migration": {
+    "bundle-sealed.json": {
+      "sku110k": {
+        "epoch": 17,
+        "checkpoint_sha256": "7ebe075273c513f66e74f2418941a78efef1954bfa9d47c8d539cf6a1ef2402e",
+        "checkpoint_in_archive_verified": true,
+        "plan_sha256": "12a89dd7e4e406e03f3be4199a014ff02d7feceea7e0b51771541120d0883826",
+        "listed_files": 24905
+      },
+      "voc0712": {
+        "epoch": 9,
+        "checkpoint_sha256": "7f65abb8a847f4e24564d20ba25a261a526a7ad74b2b4ec8567bb0f13f4faec8",
+        "checkpoint_in_archive_verified": true,
+        "plan_sha256": "c3658edbc7a109748cce2823958aa9cd4f25eee382a7fb0e346c9553a15dc712",
+        "listed_files": 44411
+      },
+      "transfer_manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+      "capacity": {
+        "transport_bytes": 227745729717,
+        "unpacked_member_bytes": 15931952966,
+        "reserve_bytes": 10737418240,
+        "required_target_bytes": 254415100923,
+        "reported_target_free_bytes": 482110078976
+      }
+    },
+    "retirement.json": {
+      "schema": "autodl-migration-retirement-v1",
+      "authorization": "User explicitly requested stopping the two extra training lanes and continuing them on AutoDL",
+      "backup": "Both original full checkpoints SHA256 verified within immutable local migration archives; original files retained",
+      "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+      "cases": {
+        "voc0712": {
+          "pid": 2300847,
+          "uid": 1010,
+          "state": "T",
+          "ppid": 2300793,
+          "start_ticks": 46203056,
+          "argv": [
+            "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+            "-u",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+            "train",
+            "--job",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+            "--method",
+            "loffta-c2-n005",
+            "--seed",
+            "0",
+            "--output",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+          ],
+          "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+          "checkpoint_sha256": "7f65abb8a847f4e24564d20ba25a261a526a7ad74b2b4ec8567bb0f13f4faec8",
+          "retired": true,
+          "method": "loffta-c2-n005",
+          "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0",
+          "retired_unix": 1794710038.7848969,
+          "final_state": "Z"
+        },
+        "sku110k": {
+          "pid": 2105170,
+          "uid": 1010,
+          "state": "T",
+          "ppid": 2105130,
+          "start_ticks": 45384841,
+          "argv": [
+            "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+            "-u",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+            "train",
+            "--job",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+            "--method",
+            "detail25",
+            "--seed",
+            "0",
+            "--output",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0"
+          ],
+          "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+          "checkpoint_sha256": "7ebe075273c513f66e74f2418941a78efef1954bfa9d47c8d539cf6a1ef2402e",
+          "retired": true,
+          "method": "detail25",
+          "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0",
+          "retired_unix": 1794710038.8855689,
+          "final_state": "Z"
+        }
+      },
+      "created_unix": 1794710038.650038
+    },
+    "launch.json": {
+      "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+      "children": [
+        {
+          "argv": [
+            "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+            "-u",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/run_autodl_upload.py",
+            "--manifest",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/transfer-manifest.json",
+            "--state",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/transfer-state.json",
+            "--marker-dir",
+            "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes",
+            "--rate-mib",
+            "32",
+            "--host-key-sha256",
+            "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc"
+          ],
+          "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/transfer.log",
+          "name": "transfer",
+          "pid": 3034111,
+          "start_ticks": 51758828,
+          "started_unix": 1794710584.03037,
+          "state": "R",
+          "uid": 1010
+        },
+        {
+          "argv": [
+            "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+            "-u",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/return_autodl_results.py",
+            "--job",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes",
+            "--bundle-root",
+            "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1",
+            "--publish",
+            "--host-key-sha256",
+            "SHA256:liZ36vNCsNcNdXeWs4f+g5ZIhPM/ZihP834vxs8Ulqc"
+          ],
+          "log": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/return.log",
+          "name": "return",
+          "pid": 3034112,
+          "start_ticks": 51758828,
+          "started_unix": 1794710584.032305,
+          "state": "R",
+          "uid": 1010
+        }
+      ],
+      "manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+      "schema": "autodl-transfer-pair-launch-v1",
+      "started_unix": 1794710584.027936,
+      "state": "LAUNCHED"
+    },
+    "transfer-state.json": {
+      "bytes_total": 227745729717,
+      "dataset": "sku110k",
+      "datasets_complete": [],
+      "elapsed_seconds": 364.82900304498617,
+      "file_bytes": 13611489280,
+      "file_index": 2,
+      "file_offset": 4929454080,
+      "files_complete": 1,
+      "files_total": 13,
+      "last_file_reused": true,
+      "manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+      "manifest_target": "/root/autodl-tmp/campus-mirror/.transfer-markers/job-20261114-two-lanes/manifest.json",
+      "metadata_uploaded_bytes": 0,
+      "pid": 3034111,
+      "resumed_file_bytes": 3218178048,
+      "schema": "autodl-resume-transfer-v1",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/sku110k-inputs-and-code.tar",
+      "state": "TRANSFERRING",
+      "target": "/root/autodl-tmp/campus-mirror/.migration/sku110k-inputs-and-code.tar",
+      "updated_unix": 1794710948.885877,
+      "upload_mib_per_second": 4.4733285631865245,
+      "uploaded_bytes": 1711276032,
+      "verified_bytes": 16744
+    },
+    "return-status.json": {
+      "state": "WAITING_REMOTE",
+      "completed": 0,
+      "planned": 2,
+      "cases": {
+        "sku110k": {
+          "state": "WAITING_REMOTE",
+          "remote_state": "WAITING_TRANSFER"
+        },
+        "voc0712": {
+          "state": "WAITING_REMOTE",
+          "remote_state": "WAITING_TRANSFER"
+        }
+      },
+      "gpu_used": false,
+      "updated_unix": 1794710952.2836483
+    }
+  },
+  "validation": "102 CPU tests and targeted Ruff/format passed; no extra GPU training check",
+  "metrics": {
+    "state": "WAITING_RESULTS",
+    "message": "CPU sidecar waiting for original sealed final endpoints",
+    "time_unix": 1794693854.223847,
+    "completed": 8,
+    "failed": 0,
+    "planned": 14
+  }
+}

@@ -4,6 +4,7 @@ import contextlib
 import hashlib
 import io
 import json
+import os
 import tempfile
 import unittest
 from pathlib import Path
@@ -232,6 +233,82 @@ class Contracts(unittest.TestCase):
             back.execute_validation(native, "detail25", self.root / "private-validation")
         self.assertEqual(popen.call_args.kwargs["env"]["CUDA_VISIBLE_DEVICES"], "")
         self.assertEqual(marker.read_text(), "live campus training")
+
+    @unittest.skipIf(os.name == "nt", "Requires real POSIX flock")
+    def test_supervisor_guard_refuses_busy_real_flock_then_acquires(self):
+        import fcntl
+
+        queue = self.root / "queue"
+        queue.mkdir()
+        with (queue / "pipeline.lock").open("a") as supervisor:
+            fcntl.flock(supervisor.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            with back.local_supervisor_guard(queue) as acquired:
+                self.assertFalse(acquired)
+            fcntl.flock(supervisor.fileno(), fcntl.LOCK_UN)
+        with back.local_supervisor_guard(queue) as acquired:
+            self.assertTrue(acquired)
+
+    @unittest.skipIf(os.name == "nt", "Requires real POSIX flock")
+    def test_supervisor_guard_releases_lock_after_body_failure(self):
+        queue = self.root / "queue"
+        queue.mkdir()
+        with self.assertRaisesRegex(RuntimeError, "validation failure"), back.local_supervisor_guard(queue) as acquired:
+            self.assertTrue(acquired)
+            raise RuntimeError("validation failure")
+        with back.local_supervisor_guard(queue) as acquired:
+            self.assertTrue(acquired)
+
+    @unittest.skipIf(os.name == "nt", "Requires real POSIX flock")
+    def test_busy_supervisor_keeps_downloaded_stage_and_receipt_until_release(self):
+        import fcntl
+
+        job, bundle, queue = self.root / "migration", self.root / "bundle", self.root / "queue"
+        for directory in (job, bundle, queue):
+            directory.mkdir()
+        (bundle / "sku110k-plan.json").write_text("{}")
+        case = dict(self.case, queue=queue, plan_sha256="b" * 64)
+        stage = job / "returned/sku110k/detail25-s0"
+        stage.mkdir(parents=True)
+        (stage / "summary.json").write_bytes(b"hello")
+        identity = {
+            "manifest_sha256": back.transfer.canonical_hash(self.manifest),
+            "origin_plan_sha256": case["plan_sha256"],
+        }
+        receipt = job / "return-receipts/sku110k.json"
+        receipt.parent.mkdir()
+        receipt.write_text(json.dumps({**identity, "state": "DOWNLOADED", "dataset": "sku110k"}))
+        saved = receipt.read_bytes()
+        args = SimpleNamespace(job=job, bundle_root=bundle, remote_job="/remote")
+
+        def remote(_sftp, path, **_kwargs):
+            return {"state": "SUCCEEDED"} if path.endswith("status.json") else self.manifest
+
+        def install(*_args):
+            # The lock must still be held throughout installation/publication.
+            with back.local_supervisor_guard(queue) as acquired:
+                self.assertFalse(acquired)
+            return {"state": "SUCCEEDED"}
+
+        with (queue / "pipeline.lock").open("a") as supervisor, patch.object(back, "ROOT", self.root), patch.object(
+            back, "load_case", return_value=case
+        ), patch.object(back, "remote_json", side_effect=remote), patch.object(
+            back, "validate_return", return_value=[self.row]
+        ), patch.object(back, "verify_endpoint"), patch.object(back, "download_file") as download, patch.object(
+            back, "install_received_case", side_effect=install
+        ) as install_case:
+            fcntl.flock(supervisor.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            for _ in range(2):
+                result = back.handle_case(args, None, "sku110k", {}, lambda _: None)
+                self.assertEqual(result["state"], "WAITING_LOCAL_SUPERVISOR")
+                self.assertEqual(receipt.read_bytes(), saved)
+                self.assertEqual((stage / "summary.json").read_bytes(), b"hello")
+            download.assert_not_called()
+            install_case.assert_not_called()
+            fcntl.flock(supervisor.fileno(), fcntl.LOCK_UN)
+            result = back.handle_case(args, None, "sku110k", {}, lambda _: None)
+            self.assertEqual(result["state"], "SUCCEEDED")
+            download.assert_not_called()
+            install_case.assert_called_once()
 
 
 if __name__ == "__main__":

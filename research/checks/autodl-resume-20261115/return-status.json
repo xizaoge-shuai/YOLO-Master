@@ -1,0 +1,17 @@
+{
+  "state": "WAITING_REMOTE",
+  "completed": 0,
+  "planned": 2,
+  "cases": {
+    "sku110k": {
+      "state": "WAITING_REMOTE",
+      "remote_state": "WAITING_TRANSFER"
+    },
+    "voc0712": {
+      "state": "WAITING_REMOTE",
+      "remote_state": "WAITING_TRANSFER"
+    }
+  },
+  "gpu_used": false,
+  "updated_unix": 1794710952.2836483
+}

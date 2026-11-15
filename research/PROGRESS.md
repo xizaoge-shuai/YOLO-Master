@@ -986,3 +986,8 @@ Full seed0/final100 endpoint archived: [frofa-c2-d01](experiments/priority-singl
 ## Single-pass metrics: voc0712, frofa-c2-d01
 
 Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/voc0712/frofa-c2-d01-s0/README.md). No extra training or inference.
+
+<!-- autodl-resume-20261115-launched -->
+## Two-node migration background workers launched
+
+Verified VOC3/7 and SKU5/7 final100 core endpoints, with8/14 CPU metric bundles and0failures. Retired exactly the two paused source children after SHA-verifying epoch9/17 checkpoints in preserved archives. Started detached SKU-first upload, two AutoDL WAITING_TRANSFER resume cases, and CPU-only result receiver. Added canonical queue locks and natural-exit continuation observers, preserving original trainers/remaining tasks.102 Linux CPU tests and targeted Ruff/format passed. See [current commands and scope](../实验进展_20261115.md). Actual AutoDL training/final AP remain pending transfer and verification; mixed-host timings are not controlled speed evidence.

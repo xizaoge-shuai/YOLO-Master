@@ -1,0 +1,6 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m            [100%][0m
+============================= slowest 30 durations =============================
+0.01s call     online_experiments/test_continue_campus_after_migration.py::CampusSafety::test_check_accepts_reparented_main_child_and_never_sends_signal
+
+(29 durations < 0.005s hidden.  Use -vv to show these durations.)
+[32m[32m[1m49 passed[0m, [32m[1m12 subtests passed[0m[32m in 0.13s[0m[0m

@@ -1,0 +1,31 @@
+{
+  "pid": 3035121,
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/continue_campus_after_migration.py",
+    "run",
+    "--dataset",
+    "sku110k",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+    "--sidecar",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/campus-sku110k",
+    "--old-supervisor",
+    "2105130",
+    "--adopt-child",
+    "0",
+    "--delegated-method",
+    "detail25",
+    "--retirement",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/retirement.json",
+    "--bundle-root",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1",
+    "--publish"
+  ],
+  "started_unix": 1794710916.2577133,
+  "policy": "Wait for exact old supervisor natural exit; no signals; skip delegated AutoDL output",
+  "replaced_observer_pid": 3034192
+}

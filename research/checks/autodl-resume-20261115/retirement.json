@@ -1,0 +1,65 @@
+{
+  "schema": "autodl-migration-retirement-v1",
+  "authorization": "User explicitly requested stopping the two extra training lanes and continuing them on AutoDL",
+  "backup": "Both original full checkpoints SHA256 verified within immutable local migration archives; original files retained",
+  "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+  "cases": {
+    "voc0712": {
+      "pid": 2300847,
+      "uid": 1010,
+      "state": "T",
+      "ppid": 2300793,
+      "start_ticks": 46203056,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2",
+        "--method",
+        "loffta-c2-n005",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+      ],
+      "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+      "checkpoint_sha256": "7f65abb8a847f4e24564d20ba25a261a526a7ad74b2b4ec8567bb0f13f4faec8",
+      "retired": true,
+      "method": "loffta-c2-n005",
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0",
+      "retired_unix": 1794710038.7848969,
+      "final_state": "Z"
+    },
+    "sku110k": {
+      "pid": 2105170,
+      "uid": 1010,
+      "state": "T",
+      "ppid": 2105130,
+      "start_ticks": 45384841,
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-u",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+        "train",
+        "--job",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+        "--method",
+        "detail25",
+        "--seed",
+        "0",
+        "--output",
+        "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0"
+      ],
+      "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+      "checkpoint_sha256": "7ebe075273c513f66e74f2418941a78efef1954bfa9d47c8d539cf6a1ef2402e",
+      "retired": true,
+      "method": "detail25",
+      "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0",
+      "retired_unix": 1794710038.8855689,
+      "final_state": "Z"
+    }
+  },
+  "created_unix": 1794710038.650038
+}

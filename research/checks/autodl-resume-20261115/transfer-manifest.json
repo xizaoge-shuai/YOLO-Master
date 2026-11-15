@@ -1,0 +1,172 @@
+{
+  "schema": "autodl-resume-transfer-v1",
+  "created_unix": 1794669147.671727,
+  "files": [
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/run_autodl_migrated_pair.py",
+      "target": "/root/autodl-tmp/campus-mirror/.migration/run_autodl_migrated_pair.py",
+      "bytes": 16744,
+      "sha256": "f9f0e9284ec29ac1da59584c20e6c8d39fc3e7a5007a8b7a0242e5edeb04f0bb",
+      "origin_stat": {
+        "bytes": 16744,
+        "mtime_ns": 1794668953773683400,
+        "ctime_ns": 1794668953773683400
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/sku110k-inputs-and-code.tar",
+      "target": "/root/autodl-tmp/campus-mirror/.migration/sku110k-inputs-and-code.tar",
+      "bytes": 13611489280,
+      "sha256": "1695f16fc5958f97e9f19d072ffdc54c1dc0121c6a0fbe3c4244def014abf807",
+      "origin_stat": {
+        "bytes": 13611489280,
+        "mtime_ns": 1794669103424507395,
+        "ctime_ns": 1794669103424507395
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v0.npy",
+      "bytes": 30298521728,
+      "sha256": "6c030a287c736fa45cf5db3f226894c49d109258497a002d9e0dfab63b0cb5d4",
+      "origin_stat": {
+        "bytes": 30298521728,
+        "mtime_ns": 1794438732796958938,
+        "ctime_ns": 1794438732909962485
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v1.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/train-v1.npy",
+      "bytes": 30298521728,
+      "sha256": "92aea1277e9e5fe54e41e8ef14e45a454a304c667a5456b4fe689f5a60dc9888",
+      "origin_stat": {
+        "bytes": 30298521728,
+        "mtime_ns": 1794439278791099076,
+        "ctime_ns": 1794439278906102690
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/test-v0.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/test-v0.npy",
+      "bytes": 10823270528,
+      "sha256": "85fe4831bcde38895e3a90c6d58f28585d02289d50a1d06cb76cd4afbe367830",
+      "origin_stat": {
+        "bytes": 10823270528,
+        "mtime_ns": 1794439516006556929,
+        "ctime_ns": 1794439516052558375
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/blank.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/cache/blank.npy",
+      "bytes": 3686528,
+      "sha256": "649f859efcaf5b6c3010ffb58a4779abcfed9a43c7c4cb7a2434afca5a92a7c0",
+      "origin_stat": {
+        "bytes": 3686528,
+        "mtime_ns": 1794439519042652381,
+        "ctime_ns": 1794439519046268426
+      }
+    },
+    {
+      "dataset": "sku110k",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/sku110k-plan.json",
+      "target": "/root/autodl-tmp/campus-mirror/.migration/sku110k-plan.json",
+      "bytes": 16702444,
+      "sha256": "12a89dd7e4e406e03f3be4199a014ff02d7feceea7e0b51771541120d0883826",
+      "origin_stat": {
+        "bytes": 16702444,
+        "mtime_ns": 1794669110925749197,
+        "ctime_ns": 1794669110925749197
+      }
+    },
+    {
+      "dataset": "voc0712",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/voc0712-inputs-and-code.tar",
+      "target": "/root/autodl-tmp/campus-mirror/.migration/voc0712-inputs-and-code.tar",
+      "bytes": 2377420800,
+      "sha256": "d328ff18a400fec9b20c201e6fd97a4eb01e8e29e76c47f115caa2fc7473af04",
+      "origin_stat": {
+        "bytes": 2377420800,
+        "mtime_ns": 1794669145674869335,
+        "ctime_ns": 1794669145674869335
+      }
+    },
+    {
+      "dataset": "voc0712",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/train-v0.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/train-v0.npy",
+      "bytes": 61013606528,
+      "sha256": "93c33c4840e52fbffe51f18b2f53ce05fdb16b5a6dc85f329394a77458ea2f67",
+      "origin_stat": {
+        "bytes": 61013606528,
+        "mtime_ns": 1794291633677144012,
+        "ctime_ns": 1794291633854149511
+      }
+    },
+    {
+      "dataset": "voc0712",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/train-v1.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/train-v1.npy",
+      "bytes": 61013606528,
+      "sha256": "654b9fe4663040216b9d254e419af42af9370071c3966c9c76b301bc2e75c512",
+      "origin_stat": {
+        "bytes": 61013606528,
+        "mtime_ns": 1794292065491557406,
+        "ctime_ns": 1794292065688563525
+      }
+    },
+    {
+      "dataset": "voc0712",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/test-v0.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/test-v0.npy",
+      "bytes": 18255052928,
+      "sha256": "e90d2b6a9fb5beb47056e7e2de227d83f8e92f67c14d51c0557fadbc147ce6ea",
+      "origin_stat": {
+        "bytes": 18255052928,
+        "mtime_ns": 1794292294809680684,
+        "ctime_ns": 1794292294872682641
+      }
+    },
+    {
+      "dataset": "voc0712",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/blank.npy",
+      "target": "/root/autodl-tmp/campus-mirror/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2/cache/blank.npy",
+      "bytes": 3686528,
+      "sha256": "649f859efcaf5b6c3010ffb58a4779abcfed9a43c7c4cb7a2434afca5a92a7c0",
+      "origin_stat": {
+        "bytes": 3686528,
+        "mtime_ns": 1794292299854837401,
+        "ctime_ns": 1794292299858986340
+      }
+    },
+    {
+      "dataset": "voc0712",
+      "source": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/migration-autodl/job-20261114-two-lanes/bundle-v1/voc0712-plan.json",
+      "target": "/root/autodl-tmp/campus-mirror/.migration/voc0712-plan.json",
+      "bytes": 30147425,
+      "sha256": "c3658edbc7a109748cce2823958aa9cd4f25eee382a7fb0e346c9553a15dc712",
+      "origin_stat": {
+        "bytes": 30147425,
+        "mtime_ns": 1794669146788905246,
+        "ctime_ns": 1794669146788905246
+      }
+    }
+  ],
+  "capacity": {
+    "transport_bytes": 227745729717,
+    "unpacked_member_bytes": 15931952966,
+    "reserve_bytes": 10737418240,
+    "required_target_bytes": 254415100923,
+    "reported_target_free_bytes": 482110078976
+  },
+  "source_root": "/mnt/data/users/zhjia",
+  "target_root": "/root/autodl-tmp/campus-mirror",
+  "extraction": "Only verified regular members, relative to campus source root; extract each dataset tar into target_root before sealing. Original source aliases must map into this target root."
+}

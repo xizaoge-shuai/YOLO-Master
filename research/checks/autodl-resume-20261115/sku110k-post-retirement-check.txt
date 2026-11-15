@@ -1,0 +1,70 @@
+{
+  "supervisor": {
+    "pid": 2105130,
+    "uid": 1010,
+    "state": "S",
+    "ppid": 1,
+    "start_ticks": 45384687,
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py",
+      "run",
+      "--recover",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+      "--dataset-job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+      "--sidecar",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+      "--old-supervisor",
+      "641892",
+      "--adopt-child",
+      "1881349",
+      "--publish"
+    ]
+  },
+  "child": {
+    "pid": 3023701,
+    "uid": 1010,
+    "state": "R",
+    "ppid": 2105130,
+    "start_ticks": 50084296,
+    "argv": [
+      "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+      "-u",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/sku_official_loader_suite.py",
+      "train",
+      "--job",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+      "--method",
+      "vit-adapter-cache25",
+      "--seed",
+      "0",
+      "--output",
+      "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/vit-adapter-cache25-s0"
+    ]
+  },
+  "boot_id": "56bcea5f-50cf-49bd-92a2-59d02be35c23",
+  "plan_sha256": "9c54bbac0a01a000da988cdf78051e1b4cf083e4d8cf2fc7501d0eb48fae1131",
+  "rollback_argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/priority_three_lane.py",
+    "run",
+    "--recover",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k",
+    "--dataset-job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2",
+    "--sidecar",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority-three-lane/job-20261114-sku-detail",
+    "--old-supervisor",
+    "641892",
+    "--adopt-child",
+    "1881349",
+    "--publish"
+  ],
+  "delegated_method": "detail25",
+  "adopted_method": "vit-adapter-cache25",
+  "retirement_sha256": "b40b3c70fceaa1f84d886aaca17bfabef3e1a1033cceae7fcc5654b449828d0c"
+}

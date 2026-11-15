@@ -1,0 +1,6 @@
+[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m.[0m[32m                                     [100%][0m
+============================= slowest 30 durations =============================
+0.01s call     online_experiments/test_launch_autodl_transfer_pair.py::Contracts::test_live_prior_child_blocks_before_password_prompt
+
+(29 durations < 0.005s hidden.  Use -vv to show these durations.)
+[32m[32m[1m28 passed[0m, [32m[1m8 subtests passed[0m[32m in 0.08s[0m[0m

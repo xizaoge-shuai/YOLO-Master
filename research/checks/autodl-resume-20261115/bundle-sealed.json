@@ -1,0 +1,24 @@
+{
+  "sku110k": {
+    "epoch": 17,
+    "checkpoint_sha256": "7ebe075273c513f66e74f2418941a78efef1954bfa9d47c8d539cf6a1ef2402e",
+    "checkpoint_in_archive_verified": true,
+    "plan_sha256": "12a89dd7e4e406e03f3be4199a014ff02d7feceea7e0b51771541120d0883826",
+    "listed_files": 24905
+  },
+  "voc0712": {
+    "epoch": 9,
+    "checkpoint_sha256": "7f65abb8a847f4e24564d20ba25a261a526a7ad74b2b4ec8567bb0f13f4faec8",
+    "checkpoint_in_archive_verified": true,
+    "plan_sha256": "c3658edbc7a109748cce2823958aa9cd4f25eee382a7fb0e346c9553a15dc712",
+    "listed_files": 44411
+  },
+  "transfer_manifest_sha256": "2153d58f731590150467d9b62c75861f89b07a7c65c0fe40f7a2bb1966386526",
+  "capacity": {
+    "transport_bytes": 227745729717,
+    "unpacked_member_bytes": 15931952966,
+    "reserve_bytes": 10737418240,
+    "required_target_bytes": 254415100923,
+    "reported_target_free_bytes": 482110078976
+  }
+}

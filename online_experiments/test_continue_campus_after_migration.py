@@ -34,6 +34,10 @@ class CampusSafety(unittest.TestCase):
         campus.original.write(
             self.args.job / "completed-methods.json", [{"method": "master-n"}, {"method": "yolo12-n"}]
         )
+        for method in ("master-n", "yolo12-n"):
+            output = campus.original.output_for(self.args, method)
+            output.mkdir(parents=True)
+            (output / "DONE.json").write_text("{}")
 
     def test_only_exact_dataset_supervisor_script_and_job_are_accepted(self):
         script = str(campus.ROOT / "online_experiments/priority_voc_overlap.py")
@@ -70,7 +74,7 @@ class CampusSafety(unittest.TestCase):
         campus.original.write(self.args.job / "pipeline-plan.json", {"frozen": True})
         for method in ("master-n", "yolo12-n"):
             output = campus.original.output_for(self.args, method)
-            output.mkdir(parents=True)
+            output.mkdir(parents=True, exist_ok=True)
             (output / "DONE.json").write_text("{}")
         return old, child
 
@@ -104,19 +108,220 @@ class CampusSafety(unittest.TestCase):
         self.assertEqual([r["method"] for r in merged], ["master-n", "yolo12-n", "frofa-c2-d01", "loffta-c2-n005"])
         self.assertEqual(merged[-1]["archive"], {"remote": True})
 
+    def test_waiting_voc_after_frofa_is_a_valid_no_child_snapshot(self):
+        self.make_check_fixture()
+        self.args.adopt_child = 0
+        campus.original.write(
+            self.args.job / "pipeline-status.json",
+            {"lanes": {"baseline": {"state": "WAITING_OVERLAP", "method": "frofa-c2-d01"}}},
+        )
+        completed = campus.original.read(self.args.job / "completed-methods.json")
+        completed.append({"method": "frofa-c2-d01"})
+        campus.original.write(self.args.job / "completed-methods.json", completed)
+        output = campus.original.output_for(self.args, "frofa-c2-d01")
+        output.mkdir(parents=True)
+        (output / "DONE").write_text("SUCCEEDED\n")
+        self.assertIsNone(
+            campus.resolve_adopted_method(
+                self.args, None, {"method": "frofa-c2-d01", "state": "WAITING_OVERLAP"}, completed
+            )
+        )
+
+    def test_idle_snapshot_rejects_unsealed_frofa(self):
+        self.args.adopt_child = 0
+        completed = [{"method": m} for m in campus.original.ordered_methods(self.args)[:3]]
+        with self.assertRaisesRegex(RuntimeError, "DONE"):
+            campus.resolve_adopted_method(
+                self.args, None, {"method": "frofa-c2-d01", "state": "WAITING_OVERLAP"}, completed
+            )
+
+    def test_sku_later_adapter_requires_five_sealed_predecessors(self):
+        self.args.dataset, self.args.first_detector, self.args.delegated_method = "sku110k", "yolo12-n", "detail25"
+        completed = [{"method": m} for m in campus.original.ordered_methods(self.args)[:5]]
+        for row in completed:
+            output = campus.original.output_for(self.args, row["method"])
+            output.mkdir(parents=True, exist_ok=True)
+            (output / ("DONE.json" if row["method"] in campus.original.DIRECT else "DONE")).write_text("{}")
+        method = campus.resolve_adopted_method(
+            self.args, {"pid": 20}, {"method": "vit-adapter-cache25", "child_pid": 20}, completed
+        )
+        self.assertEqual(method, "vit-adapter-cache25")
+        with self.assertRaisesRegex(RuntimeError, "prefix"):
+            campus.resolve_adopted_method(
+                self.args, {"pid": 20}, {"method": "vit-adapter-cache25", "child_pid": 20}, completed[:-1]
+            )
+
     def test_remaining_queue_skips_delegated_run_without_creating_done(self):
         events = []
-        with patch.object(campus, "wait_adopted", side_effect=lambda *a: events.append("wait")), patch.object(
+        output = campus.original.output_for(self.args, "frofa-c2-d01")
+        output.mkdir(parents=True)
+        (output / "DONE").write_text("SUCCEEDED\n")
+        completed = campus.original.read(self.args.job / "completed-methods.json")
+        completed.append({"method": "frofa-c2-d01"})
+        campus.original.write(self.args.job / "completed-methods.json", completed)
+        with patch.object(campus.shared, "training_processes", return_value=[]), patch.object(
             campus, "finish", side_effect=lambda a, m: events.append("finish:" + m)
         ), patch.object(campus, "train_one", side_effect=lambda a, m: events.append("train:" + m)):
             campus.continue_queue(self.args, {"child": {"pid": 20}})
-        self.assertEqual(
-            events,
-            ["wait", "finish:frofa-c2-d01", "train:cache-reuse-c1-int8", "train:vit-adapter-cache25", "train:detail25"],
-        )
+        self.assertEqual(events, ["train:cache-reuse-c1-int8", "train:vit-adapter-cache25", "train:detail25"])
         self.assertFalse((campus.original.output_for(self.args, self.args.delegated_method) / "DONE").exists())
         status = campus.original.read(self.args.job / "pipeline-status.json")
         self.assertEqual(status["state"], "LOCAL_COMPLETE_REMOTE_PENDING")
+
+    def test_wait_for_natural_supervisor_exit_never_signals(self):
+        old, _ = self.make_check_fixture()
+        with patch.object(campus.shared, "process", side_effect=[old, None]), patch.object(
+            campus.time, "sleep"
+        ), patch.object(campus.shared, "signal_one") as send, patch.object(campus.shared, "handoff") as handoff:
+            campus.wait_previous_supervisor(self.args, {"supervisor": old, "child": None})
+        send.assert_not_called()
+        handoff.assert_not_called()
+        self.assertEqual(
+            campus.original.read(self.args.sidecar / "handoff.json")["state"], "PREVIOUS_SUPERVISOR_EXITED_NATURALLY"
+        )
+
+    def test_wait_refuses_reused_supervisor_pid(self):
+        old, _ = self.make_check_fixture()
+        with patch.object(campus.shared, "process", return_value=dict(old, start_ticks=999)), self.assertRaisesRegex(
+            RuntimeError, "lifetime"
+        ):
+            campus.wait_previous_supervisor(self.args, {"supervisor": old, "child": None})
+
+    @unittest.skipUnless(sys.platform == "linux", "Requires a real Linux flock")
+    def test_canonical_lock_waits_for_real_busy_flock_then_releases(self):
+        import fcntl
+
+        path = self.args.job / "pipeline.lock"
+        with path.open("a") as held:
+            fcntl.flock(held.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+
+            def release(delay):
+                self.assertEqual(delay, 10)
+                self.assertEqual(
+                    campus.original.read(self.args.sidecar / "status.json")["state"], "WAITING_CANONICAL_LOCK"
+                )
+                fcntl.flock(held.fileno(), fcntl.LOCK_UN)
+
+            with patch.object(campus.time, "sleep", side_effect=release) as sleep:
+                with campus.canonical_queue_lock(self.args), self.assertRaises(BlockingIOError):
+                    fcntl.flock(held.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+                sleep.assert_called_once_with(10)
+            # The continuation's finally block released its actual flock.
+            fcntl.flock(held.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+            fcntl.flock(held.fileno(), fcntl.LOCK_UN)
+
+    def test_queue_rejects_remaining_live_training_owner(self):
+        argv = ["python", "train", "--output", str(campus.original.output_for(self.args, "frofa-c2-d01"))]
+        with patch.object(
+            campus.shared, "training_processes", return_value=[{"pid": 30, "argv": argv}]
+        ), self.assertRaisesRegex(RuntimeError, "remains alive"):
+            campus.continue_queue(self.args, {"child": None})
+
+    def test_retirement_snapshot_accepts_naturally_exited_supervisor_without_signal(self):
+        from online_experiments import return_autodl_results as receiver
+
+        old, _ = self.make_check_fixture()
+        self.args.adopt_child = 0
+        self.args.retirement = self.root / "retirement.json"
+        self.args.bundle_root = self.root / "bundle"
+        campus.original.write(
+            self.args.retirement, {"schema": "autodl-migration-retirement-v1", "cases": {"voc0712": {"retired": True}}}
+        )
+        metadata = campus.original.read(self.args.job / "worker.json")
+        case = {"queue": self.args.job, "method": self.args.delegated_method}
+        with patch.object(receiver, "load_case", return_value=case), patch.object(
+            receiver, "validate_retirement", return_value={"retired": True}
+        ), patch.object(receiver, "retired_worker_inactive", return_value=True), patch.object(
+            campus.shared, "training_processes", return_value=[]
+        ), patch.object(campus.os, "getuid", return_value=7, create=True), patch.object(
+            campus.shared, "signal_one"
+        ) as send:
+            evidence = campus.retirement_snapshot(self.args, metadata, {"state": "FAILED"}, "boot", None)
+        self.assertEqual(evidence["supervisor"]["state"], "EXITED_AT_SNAPSHOT")
+        self.assertEqual(evidence["supervisor"]["pid"], old["pid"])
+        self.assertIsNone(evidence["child"])
+        send.assert_not_called()
+
+    def test_retirement_check_uses_verified_sidecar_when_admission_overwrites_status(self):
+        old, _ = self.make_check_fixture()
+        self.args.adopt_child = 0
+        self.args.retirement = self.root / "retirement.json"
+        prior = self.root / "prior-sidecar"
+        prior.mkdir()
+        metadata = campus.original.read(self.args.job / "worker.json")
+        metadata["argv"] += ["--sidecar", str(prior)]
+        old["argv"] = [sys.executable, "-u", *metadata["argv"]]
+        campus.original.write(self.args.job / "worker.json", metadata)
+        baseline = {"state": "WAITING_GPU", "method": "cache-reuse-c1-int8"}
+        campus.original.write(
+            prior / "status.json", {"schema": "priority-voc-overlap-v1", "pid": 10, "lanes": {"baseline": baseline}}
+        )
+        campus.original.write(
+            self.args.job / "pipeline-status.json", {"state": "WAITING_GPU", "message": "GPU0 free=16142 need16384"}
+        )
+        actual_read = Path.read_text
+
+        def read_text(path, *args, **kwargs):
+            return (
+                "boot\n" if path.as_posix() == "/proc/sys/kernel/random/boot_id" else actual_read(path, *args, **kwargs)
+            )
+
+        with patch.object(campus.sys, "platform", "linux"), patch.object(
+            campus.os, "getuid", return_value=7, create=True
+        ), patch.object(campus.shared, "pidfd_capability"), patch.object(
+            campus.original, "plan", return_value={"frozen": True}
+        ), patch.object(campus.shared, "process", return_value=old), patch.object(
+            Path, "read_text", read_text
+        ), patch.object(campus, "retirement_snapshot", return_value={"verified": True}) as snapshot:
+            self.assertEqual(campus.check(self.args), {"verified": True})
+        self.assertEqual(snapshot.call_args.args[2], baseline)
+
+    def test_prior_sidecar_status_rejects_different_owner(self):
+        self.make_check_fixture()
+        prior = self.root / "prior-sidecar"
+        prior.mkdir()
+        metadata = campus.original.read(self.args.job / "worker.json")
+        metadata["argv"] += ["--sidecar", str(prior)]
+        campus.original.write(
+            prior / "status.json", {"schema": "priority-voc-overlap-v1", "pid": 999, "lanes": {"baseline": {}}}
+        )
+        with self.assertRaisesRegex(RuntimeError, "another supervisor"):
+            campus.prior_sidecar_baseline(self.args, metadata)
+
+    def test_retirement_snapshot_rejects_still_live_delegated_process(self):
+        from online_experiments import return_autodl_results as receiver
+
+        self.make_check_fixture()
+        self.args.retirement = self.root / "retirement.json"
+        self.args.bundle_root = self.root / "bundle"
+        campus.original.write(
+            self.args.retirement, {"schema": "autodl-migration-retirement-v1", "cases": {"voc0712": {}}}
+        )
+        case = {"queue": self.args.job, "method": self.args.delegated_method}
+        with patch.object(receiver, "load_case", return_value=case), patch.object(
+            receiver, "validate_retirement", return_value={}
+        ), patch.object(receiver, "retired_worker_inactive", return_value=False), self.assertRaisesRegex(
+            RuntimeError, "still alive"
+        ):
+            campus.retirement_snapshot(self.args, {}, {}, "boot", None)
+
+    def test_retirement_snapshot_rejects_live_worker_after_supervisor_exit(self):
+        from online_experiments import return_autodl_results as receiver
+
+        self.make_check_fixture()
+        self.args.retirement = self.root / "retirement.json"
+        self.args.bundle_root = self.root / "bundle"
+        campus.original.write(
+            self.args.retirement, {"schema": "autodl-migration-retirement-v1", "cases": {"voc0712": {}}}
+        )
+        case = {"queue": self.args.job, "method": self.args.delegated_method}
+        worker = {"pid": 99, "argv": campus.original.command_for(self.args, "train", "frofa-c2-d01")}
+        with patch.object(receiver, "load_case", return_value=case), patch.object(
+            receiver, "validate_retirement", return_value={}
+        ), patch.object(receiver, "retired_worker_inactive", return_value=True), patch.object(
+            campus.shared, "training_processes", return_value=[worker]
+        ), self.assertRaisesRegex(RuntimeError, "exact old supervisor"):
+            campus.retirement_snapshot(self.args, {}, {"method": "frofa-c2-d01", "child_pid": 99}, "boot", None)
 
     def test_adopted_child_never_restarted_or_signalled(self):
         output = campus.original.output_for(self.args, "frofa-c2-d01")
