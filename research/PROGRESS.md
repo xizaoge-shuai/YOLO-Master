@@ -1021,3 +1021,8 @@ Full-test final100 saved predictions scored once on CPU; [bundle](experiments/si
 User approved returning the remaining AutoDL assignments to campus. Byte-identical checkpoint backups verified for VOC INT8 epoch78, VOC LOFF-TA epoch9 and SKU Detail25 epoch17. Actual logs confirm resume at epochs79 and10 on distinct GPUs; SKU Detail25 remains queued from18. Original seed0, full-data100-epoch recipe and trainers retained. No smoke training. Linux seven CPU checks, Ruff and frozen-plan checks passed. CPU saved-prediction observer restored; core endpoints VOC3/7 and SKU6/7, metrics9/14. SKU Adapter primary maxDet100 AP40.1991 was already sealed and published; no final SKU Detail25 AP claimed.
 
 [Recovery evidence](checks/reboot-recovery-20261116/README.md). Physical GPU, boot and driver recorded; elapsed costs remain mixed-condition observations. No data/cache deletion; AutoDL cloud shutdown not claimed.
+
+<!-- available-results:20261116-deadline-inventory -->
+## Available result inventory under deadline
+
+Core final100 endpoints: VisDrone7/7,VOC3/7,SKU6/7;16/21 complete. Refreshed AP/cost CSVs from sealed saved metrics only, without retraining, inference or evaluation. Added Chinese inventory with core AP/AP50/AP75, VOC native11point versus COCO auxiliary distinctions, SKU max100/max500, historical controls, costs and five spatial ablations. Reference-weighted VisDrone scores remain separate from class-macro AP. Detail25 is below the strong Adapter baseline; no controlled efficiency or full-COCO/cross-backbone completion claim.
