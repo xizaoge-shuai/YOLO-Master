@@ -1,0 +1,32 @@
+{
+  "state": "STOPPED_BY_USER",
+  "message": "Campus reboot recovery; original frozen training recipes",
+  "time_unix": 1794845130.0713913,
+  "dataset": "voc0712",
+  "completed": 3,
+  "planned": 7,
+  "method": "cache-reuse-c1-int8",
+  "lanes": {
+    "0": {
+      "gpu": 0,
+      "state": "STOPPED_BY_USER",
+      "time_unix": 1794845128.8237922,
+      "dataset": "voc0712",
+      "method": "cache-reuse-c1-int8",
+      "child_pid": 150672,
+      "output": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0"
+    },
+    "1": {
+      "gpu": 1,
+      "state": "STOPPED_BY_USER",
+      "time_unix": 1794845130.0710351,
+      "dataset": "voc0712",
+      "method": "loffta-c2-n005",
+      "child_pid": 150673,
+      "output": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+    }
+  },
+  "recovery_job": "repo:/runs/paper/reboot-recovery/job-20261116-campus-two-gpu",
+  "stopped_unix": 1794845518.5954611,
+  "user_stop_record": "runs/paper/reboot-recovery/job-20261116-campus-two-gpu/user-stop-20261117.json"
+}

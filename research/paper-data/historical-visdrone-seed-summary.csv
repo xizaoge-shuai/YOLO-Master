@@ -1,0 +1,4 @@
+method,scope,seeds,n,endpoint,weighted_AP_mean,weighted_AP_sample_sd,reference_macro_AP_mean,reference_macro_AP_sample_sd,note
+cache2,historical-full548,0;1;2,3,final100,10.384735015175384,0.2518278013987989,10.065017533294965,0.23108056826943307,old campaign; not Detail25 seed repeats or a pooled current comparison
+mix25,historical-full548,0;1;2,3,final100,11.016811754318459,0.29342188683939197,10.819350852818419,0.3889316210746359,old campaign; not Detail25 seed repeats or a pooled current comparison
+online-geom,historical-full548,0;1;2,3,final100,11.496060200244777,0.1693110070187265,11.320477129709033,0.1653520233275637,old campaign; not Detail25 seed repeats or a pooled current comparison

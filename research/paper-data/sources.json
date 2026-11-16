@@ -1,0 +1,19 @@
+{
+  "client_date": "2026-11-17",
+  "scope": "Inventory and source-derived tables only. All training/observer processes stopped by user. No training, inference or evaluation.",
+  "completed_core": 16,
+  "planned_core": 21,
+  "source_sha256": {
+    "research/metrics/map-summary/map-results.csv": "3f9380734e68e78d2dfc9db56bec51d3fe57fe4881bf85e130adfca4e19260dd",
+    "research/metrics/map-summary/coverage.csv": "0a34ccf222a3e0e23d56049bde82f0f0f5cd994d1acc3d92469002743ac9d1f9",
+    "research/metrics/cost-accuracy/measurements.csv": "4509ee725c45ea2a2e9daf16bf4643726a7db386b09c7743d398f81a1c32ff64",
+    "research/experiments/story-review/verified-results.json": "136a13a770ad01f64f196f5de8cf8bba363cf054419dfdddce81484fd1720928",
+    "research/experiments/offline-evidence-job-20261110-004004-cpu548-v2/summary.csv": "2bd88f5677d506a5c884f8d24f6d65ddc3fea50320addd764a83ca5f87852388"
+  },
+  "outputs_sha256": {
+    "historical-visdrone-final-seeds.csv": "59488708b1b3e3b716c27f54fab5788ea15f3ec541cd5cb8eaacf4574f03edd8",
+    "core-results.csv": "b7db4ed28144655e84aa58c03dcb407f7d9ade698f5b2f28f4dcb3e7bbbadb65",
+    "data-index.csv": "256babd7f69d3570ac5d5fa8e1bce26c2b062fc1709d76167cfe5f5e005c4814",
+    "historical-visdrone-seed-summary.csv": "12abda4dbe95b24596fe2b3a9f7c64640967115b66c857a6604d2653f9feff3e"
+  }
+}

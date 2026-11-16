@@ -1,0 +1,19 @@
+paper_position,data_family,source,required_fields,status
+T1,core,research/paper-data/core-results.csv,dataset;method;seed;split;protocol;final AP/AP50/AP75;source,16/21 final;5 unmeasured
+T1/T3,all-protocols,research/metrics/map-summary/map-results.csv,macro/weighted/COCO/VOC;maxDet;AP/AP50/AP75,20 endpoints;49 protocol rows
+T2/F2,historical-budget-seeds,research/paper-data/historical-visdrone-final-seeds.csv,method;seed;final AP/AP50/AP75/AR;macro AP,12 historical rows;not Detail repeats
+T2/F2,historical-seed-summary,research/paper-data/historical-visdrone-seed-summary.csv,n;weighted mean/SD;macro mean/SD,3 families;seeds0/1/2
+T4/F3,spatial-ablation,research/experiments/offline-evidence-job-20261110-004004-cpu548-v2/summary.csv,weighted AP;aux COCO AP;size AP/AR;TIDE AP50,8 methods;548 dev images
+F3,size-metrics,research/experiments/offline-evidence-job-20261110-004004-cpu548-v2/size-metrics-auxiliary.csv,area group;GT count;AP;AR;maxDet,complete;auxiliary protocol
+F3,error-types,research/experiments/offline-evidence-job-20261110-004004-cpu548-v2/tide-errors-auxiliary.csv,Cls;Loc;Both;Dupe;Bkg;Miss;dAP,complete;auxiliary TIDE
+Supplement,per-class,research/experiments/offline-evidence-job-20261110-004004-cpu548-v2/per-class-metrics.csv,class;GT count;AP;AR,complete
+Supplement,curves,research/experiments/offline-evidence-job-20261110-004004-cpu548-v2/training-curves.csv,epoch;loss;lr;time;actual measured validation,complete;native placeholder APs not measurements
+T5/F2/F4,resources,research/metrics/cost-accuracy/measurements.csv,cost definitions;time;storage;query images/calls;parameters;VRAM,22 completed observations;controlled costs missing
+F3,frequency-summary,research/experiments/spatial-evidence/job-20261110-spatial-full548/features/p3-summary.csv,method;region;base/final/residual;frequency-energy,4x548 images
+F3,frequency-curves,research/experiments/spatial-evidence/job-20261110-spatial-full548/features/p3-radial-power.csv,image;method;region;normalized radial frequency;power,complete
+F3,dino-error,research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/raw-dino-summary.csv,transform;layer;relative/absolute feature error,548x6 views;not transformed AP
+F3,task-sensitivity,research/experiments/spatial-evidence/job-20261110-spatial-full548/geometry/p3-and-loss-summary.csv,model;transform;P3 error;own-head approx/exact loss,4x548x6;not training seed repeats
+F4,fresh-image-latency,research/experiments/spatial-evidence/job-20261110-spatial-full548/latency/latency-summary.csv,model;P50;P95;stage timing;batch1;fresh DINO,4x548;20warmups each;shared GPU
+F4,qualitative,research/experiments/qualitative-evidence-job-20261110-qualitative27-v3/qualitative-match-counts.csv,GT-selected image;method;TP/FP/FN;threshold,27x4;selected cohort not full-set average
+Method/T5,teacher-parameters,research/checks/single-pass-metrics-20261112/frozen-teacher-parameters.json,weights/config SHA;frozen/trainable/total count,21596544 frozen;0 trainable
+Reproducibility,stop-checkpoints,research/checks/user-stop-20261117/stop-and-checkpoints.json,process exit;boot;native checkpoint SHA;epoch;state keys,all stopped;VOC93/29;SKU17

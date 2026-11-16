@@ -1,0 +1,164 @@
+{
+  "user_request": "Stop project training and background metrics; retain checkpoints/results; do not restart",
+  "requested_client_date": "2026-11-17",
+  "observed_utc": "2026-11-16T16:05:38Z",
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "identities": [
+    {
+      "pid": 150658,
+      "start_ticks": 1559957,
+      "argv": "user-data:/miniconda3/envs/yolomaster/bin/python -u repo:/online_experiments/resume_campus_after_reboot.py run --job repo:/runs/paper/reboot-recovery/job-20261116-campus-two-gpu --publish ",
+      "pgrp": 150658,
+      "session": 150658
+    },
+    {
+      "pid": 127186,
+      "start_ticks": 1488807,
+      "argv": "user-data:/miniconda3/envs/yolomaster/bin/python -u repo:/online_experiments/metric_bundle_campaign.py run --priority repo:/runs/paper/priority/job-20261112-single-seed --job repo:/runs/paper/metric-bundles/job-20261112-single-pass --publish ",
+      "pgrp": 127186,
+      "session": 127186
+    },
+    {
+      "pid": 150672,
+      "start_ticks": 1560120,
+      "argv": "user-data:/miniconda3/envs/yolomaster/bin/python -u repo:/online_experiments/crossdataset_suite.py train --job repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2 --method cache-reuse-c1-int8 --seed 0 --output repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0 ",
+      "pgrp": 150658,
+      "session": 150658
+    },
+    {
+      "pid": 150673,
+      "start_ticks": 1560121,
+      "argv": "user-data:/miniconda3/envs/yolomaster/bin/python -u repo:/online_experiments/crossdataset_suite.py train --job repo:/runs/paper/crossdataset/job-20261110-voc0712-s0-v2 --method loffta-c2-n005 --seed 0 --output repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0 ",
+      "pgrp": 150658,
+      "session": 150658
+    }
+  ],
+  "signals": [
+    {
+      "pid": 150658,
+      "signal": "SIGSTOP",
+      "time_unix": 1794845138.402381
+    },
+    {
+      "pid": 127186,
+      "signal": "SIGTERM",
+      "time_unix": 1794845138.4023852
+    },
+    {
+      "pid": 150672,
+      "signal": "SIGTERM",
+      "time_unix": 1794845138.4024029
+    },
+    {
+      "pid": 150673,
+      "signal": "SIGTERM",
+      "time_unix": 1794845138.4024305
+    },
+    {
+      "pid": 150658,
+      "signal": "SIGTERM",
+      "time_unix": 1794845138.402466
+    },
+    {
+      "pid": 150658,
+      "signal": "SIGCONT",
+      "time_unix": 1794845138.4024684
+    }
+  ],
+  "exit_confirmed": {
+    "150658": true,
+    "127186": true,
+    "150672": true,
+    "150673": true
+  },
+  "checkpoints": [
+    {
+      "dataset": "voc0712",
+      "method": "cache-reuse-c1-int8",
+      "completed_epochs": 93,
+      "summary_exists": true,
+      "checkpoint_exists": true,
+      "output": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0",
+      "checkpoint_path": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0/weights/last.pt",
+      "checkpoint_bytes": 14519937,
+      "checkpoint_sha256": "4ce97100e6211eb2bb77f7c9368b25f7c91b7c8b8eb12195a3179ab686f6fa41",
+      "checkpoint_epoch": 93,
+      "checkpoint_full_state_keys": [
+        "args",
+        "cpu_rng",
+        "cuda_rng",
+        "epoch",
+        "model",
+        "numpy_rng",
+        "optimizer",
+        "python_rng",
+        "query_calls",
+        "query_images",
+        "rows",
+        "scheduler",
+        "summary",
+        "totals"
+      ],
+      "summary_epoch_matches_checkpoint": true
+    },
+    {
+      "dataset": "voc0712",
+      "method": "loffta-c2-n005",
+      "completed_epochs": 29,
+      "summary_exists": true,
+      "checkpoint_exists": true,
+      "output": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0",
+      "checkpoint_path": "repo:/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0/weights/last.pt",
+      "checkpoint_bytes": 14514305,
+      "checkpoint_sha256": "fdbbadc68f9d57a42b7ece251baf7c9d0eeb90d08ed059b19795978d10017d85",
+      "checkpoint_epoch": 29,
+      "checkpoint_full_state_keys": [
+        "args",
+        "cpu_rng",
+        "cuda_rng",
+        "epoch",
+        "model",
+        "numpy_rng",
+        "optimizer",
+        "python_rng",
+        "query_calls",
+        "query_images",
+        "rows",
+        "scheduler",
+        "summary",
+        "totals"
+      ],
+      "summary_epoch_matches_checkpoint": true
+    },
+    {
+      "dataset": "sku110k",
+      "method": "detail25",
+      "completed_epochs": 17,
+      "summary_exists": true,
+      "checkpoint_exists": true,
+      "output": "repo:/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0",
+      "checkpoint_path": "repo:/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0/weights/last.pt",
+      "checkpoint_bytes": 14493297,
+      "checkpoint_sha256": "7ebe075273c513f66e74f2418941a78efef1954bfa9d47c8d539cf6a1ef2402e",
+      "checkpoint_epoch": 17,
+      "checkpoint_full_state_keys": [
+        "args",
+        "cpu_rng",
+        "cuda_rng",
+        "epoch",
+        "model",
+        "numpy_rng",
+        "optimizer",
+        "python_rng",
+        "query_calls",
+        "query_images",
+        "rows",
+        "scheduler",
+        "summary",
+        "totals"
+      ],
+      "summary_epoch_matches_checkpoint": true
+    }
+  ],
+  "verification_note": "Native trainer saves weights/last.pt; initial top-level checkpoint.pt probe was a path error, not missing checkpoint. Correct native paths loaded and hashed after stopping."
+}

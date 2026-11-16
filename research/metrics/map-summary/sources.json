@@ -77,8 +77,8 @@
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/train/cache1-s0/args.json": "10eec2e9b46e807e353508f4ba1ca61505948c083d51b1a96e20dc8188fc2748",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/train/cache1-s0/summary.json": "d9489bbe73b7506865f5eaa032b074f62140cf2f334603cc4922ddb370f47744",
     "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-sku110k-official-loader-v2/train/cache1-s0/metrics.json": "ba3e14953377c34958bce60061a4c02892d5c6f6ba207592dc0e7e96f87ddcc1",
-    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/pipeline-status.json": "e28c03ee396c52a4b8b33aa2f1f2940c4763c6da1ace824127b7635557486f0c",
-    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/pipeline-status.json": "9132c7d81f0b43a5244c207a961862787bc7bb6aa0e5c60c07a007ae5433da52"
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/pipeline-status.json": "01e58269e31fd2d6692c5b9f62dbad7e2ae2c4f442bebe6c95da0d0f21a903a3",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/pipeline-status.json": "2645d955629eb57fc5de370ceb5db9cabd90443c887e5d56b31cc5ddad6a126e"
   },
   "exporter_sha256": "21554dc17c5b919cfe4fdbc28a1bfd811df3ab64a7bfe835518c749e4d1c92e9",
   "training_calls": 0,

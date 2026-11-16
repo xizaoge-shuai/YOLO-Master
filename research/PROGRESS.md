@@ -1026,3 +1026,10 @@ User approved returning the remaining AutoDL assignments to campus. Byte-identic
 ## Available result inventory under deadline
 
 Core final100 endpoints: VisDrone7/7,VOC3/7,SKU6/7;16/21 complete. Refreshed AP/cost CSVs from sealed saved metrics only, without retraining, inference or evaluation. Added Chinese inventory with core AP/AP50/AP75, VOC native11point versus COCO auxiliary distinctions, SKU max100/max500, historical controls, costs and five spatial ablations. Reference-weighted VisDrone scores remain separate from class-macro AP. Detail25 is below the strong Adapter baseline; no controlled efficiency or full-COCO/cross-backbone completion claim.
+
+<!-- user-stop-paper-data:20261117 -->
+## User stopped all project workers; paper data inventory
+
+Identity-protected pidfd TERM stopped the two full-data trainers, recovery coordinator and CPU metric observer; all four exits verified and both GPU compute-app lists empty. Preserved native weights/last.pt checkpoints with optimizer/scheduler/RNG/history: VOC INT8 epoch93, VOC LOFF-TA epoch29, SKU Detail25 epoch17; SHA and states audited. No automatic queue continuation or artifact deletion.
+
+Added D1-to-current-method relationship and five-table/four-figure data contract. Core21 pairs contain16 final endpoints; unmeasured AP stays blank. Added12 historical per-seed rows, three-family weighted/macro mean/sampleSD summaries and18-family data-source index, all verified against existing files. Full548 frequency,geometry/loss,fresh-image P50/P95 and qualitative evidence are retained; not falsely marked unmeasured. D1 cost thresholds are requirements,not inherited current-method results. No new training,inference or evaluation.
