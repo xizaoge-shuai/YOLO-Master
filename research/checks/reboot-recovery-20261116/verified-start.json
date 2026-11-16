@@ -1,0 +1,125 @@
+{
+  "observed_unix": 1794840799.878545,
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "scheduler": {
+    "schema": "campus-reboot-two-gpu-recovery-v1",
+    "state": "RUNNING",
+    "pid": 150658,
+    "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+    "time_unix": 1794840798.8021016,
+    "lanes": {
+      "0": {
+        "gpu": 0,
+        "state": "TRAIN",
+        "time_unix": 1794840797.82761,
+        "dataset": "voc0712",
+        "method": "cache-reuse-c1-int8",
+        "child_pid": 150672,
+        "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0"
+      },
+      "1": {
+        "gpu": 1,
+        "state": "TRAIN",
+        "time_unix": 1794840798.802094,
+        "dataset": "voc0712",
+        "method": "loffta-c2-n005",
+        "child_pid": 150673,
+        "output": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0"
+      }
+    },
+    "errors": []
+  },
+  "workers": {
+    "scheduler": {
+      "pid": 150658,
+      "alive": true,
+      "argv": "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python -u /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/resume_campus_after_reboot.py run --job /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/reboot-recovery/job-20261116-campus-two-gpu --publish "
+    },
+    "metrics": {
+      "pid": 127186,
+      "alive": true,
+      "argv": "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python -u /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/metric_bundle_campaign.py run --priority /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed --job /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass --publish "
+    },
+    "gpu0": {
+      "pid": 150672,
+      "alive": true,
+      "argv": "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python -u /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py train --job /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2 --method cache-reuse-c1-int8 --seed 0 --output /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0 "
+    },
+    "gpu1": {
+      "pid": 150673,
+      "alive": true,
+      "argv": "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python -u /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/crossdataset_suite.py train --job /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/crossdataset/job-20261110-voc0712-s0-v2 --method loffta-c2-n005 --seed 0 --output /mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0 "
+    }
+  },
+  "checks": [
+    {
+      "name": "format",
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "online_experiments/resume_campus_after_reboot.py",
+        "online_experiments/test_resume_campus_after_reboot.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "ruff",
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "online_experiments/resume_campus_after_reboot.py",
+        "online_experiments/test_resume_campus_after_reboot.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "cpu-tests",
+      "argv": [
+        "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+        "-m",
+        "unittest",
+        "online_experiments.test_resume_campus_after_reboot",
+        "-v"
+      ],
+      "returncode": 0
+    }
+  ],
+  "code_sha256": {
+    "online_experiments/resume_campus_after_reboot.py": "f6defcb8ef1e57f398db86bb2206ec3da2d97f4f5a4c8dde02f0920c9a57a62d",
+    "online_experiments/test_resume_campus_after_reboot.py": "86613dc4064862983123904391c1b8034bac362a7f8bd8b94519bf44dac85e20"
+  },
+  "gpu_snapshot": "0, NVIDIA GeForce RTX 4090, GPU-02d1df45-7f76-285a-1162-9ed27d60448d, 595.91.07, 1996 MiB, 46765 MiB, 9 %\n1, NVIDIA GeForce RTX 4090, GPU-97f41417-ff0e-2f11-0ac5-1b0f5f4bbe44, 595.91.07, 2106 MiB, 46655 MiB, 21 %\n",
+  "disk_free_bytes": 243110965248,
+  "no_gpu_smoke_or_training_config_changes": true,
+  "train_logs": {
+    "cache-reuse-c1-int8": {
+      "tail": [
+        "{\"epoch\": 76, \"train_loss\": 2.686931345053839, \"train_seconds\": 170.1211483529769, \"query_images\": 0, \"query_calls\": 0, \"lr\": 0.00015498214331265912, \"peak_vram_gib\": 1.408463954925537}",
+        "{\"epoch\": 77, \"train_loss\": 2.6811676614846744, \"train_seconds\": 212.71443498099688, \"query_images\": 0, \"query_calls\": 0, \"lr\": 0.00014416052942640148, \"peak_vram_gib\": 1.408463954925537}",
+        "{\"epoch\": 78, \"train_loss\": 2.6619952010370858, \"train_seconds\": 200.97112588002346, \"query_images\": 0, \"query_calls\": 0, \"lr\": 0.00013369502053292258, \"peak_vram_gib\": 1.408463954925537}",
+        "RESUME cache-reuse-c1-int8-s0 epoch=79"
+      ],
+      "path": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-cache-reuse-c1-int8.log",
+      "resume_lines": [
+        "RESUME cache-reuse-c1-int8-s0 epoch=79"
+      ]
+    },
+    "loffta-c2-n005": {
+      "tail": [
+        "{\"epoch\": 7, \"train_loss\": 5.0756819247191105, \"train_seconds\": 798.4302424339694, \"query_images\": 0, \"query_calls\": 0, \"lr\": 0.0009912321891107012, \"peak_vram_gib\": 1.4074373245239258}",
+        "{\"epoch\": 8, \"train_loss\": 4.956453470757098, \"train_seconds\": 1613.5000104770297, \"query_images\": 0, \"query_calls\": 0, \"lr\": 0.0009880787971596802, \"peak_vram_gib\": 1.4074373245239258}",
+        "{\"epoch\": 9, \"train_loss\": 4.837469753099204, \"train_seconds\": 784.6398038269836, \"query_images\": 0, \"query_calls\": 0, \"lr\": 0.0009844486647586726, \"peak_vram_gib\": 1.4074373245239258}",
+        "RESUME loffta-c2-n005-s0 epoch=10"
+      ],
+      "path": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train-loffta-c2-n005.log",
+      "resume_lines": [
+        "RESUME loffta-c2-n005-s0 epoch=10"
+      ]
+    }
+  }
+}

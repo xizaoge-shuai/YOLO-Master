@@ -1,0 +1,39 @@
+{
+  "schema": "campus-reboot-recovery-origin-v1",
+  "created_unix": 1794839699.27434,
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "checkpoints": [
+    {
+      "dataset": "voc0712",
+      "method": "cache-reuse-c1-int8",
+      "epoch": 78,
+      "sha256": "c31b26b08d8f815700cde806b48704f701aeb52be1d90c67972aac914f9118f8",
+      "checkpoint": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0/weights/last.pt",
+      "backup": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/reboot-recovery/job-20261116-campus-two-gpu/origin-checkpoints/voc0712-cache-reuse-c1-int8-epoch78.pt",
+      "args_sha256": "712db0ebc5a349f1c8c95f2fbe3895ed1293e8bd5795e4e57cf55ae2f1dfa69a",
+      "has_complete_recovery_state": true
+    },
+    {
+      "dataset": "voc0712",
+      "method": "loffta-c2-n005",
+      "epoch": 9,
+      "sha256": "7f65abb8a847f4e24564d20ba25a261a526a7ad74b2b4ec8567bb0f13f4faec8",
+      "checkpoint": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0/weights/last.pt",
+      "backup": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/reboot-recovery/job-20261116-campus-two-gpu/origin-checkpoints/voc0712-loffta-c2-n005-epoch9.pt",
+      "args_sha256": "924308bd268a8565daeb34eac583f4c983f04ef1981a1a2a17efa326dd9788d8",
+      "has_complete_recovery_state": true
+    },
+    {
+      "dataset": "sku110k",
+      "method": "detail25",
+      "epoch": 17,
+      "sha256": "7ebe075273c513f66e74f2418941a78efef1954bfa9d47c8d539cf6a1ef2402e",
+      "checkpoint": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/sku110k/train/detail25-s0/weights/last.pt",
+      "backup": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/reboot-recovery/job-20261116-campus-two-gpu/origin-checkpoints/sku110k-detail25-epoch17.pt",
+      "args_sha256": "51f50a93be7bcc972499359c159200c97a673275b4bde049e9e84c39bf324d3f",
+      "has_complete_recovery_state": true
+    }
+  ],
+  "user_instruction": "Return migrated SKU Detail25 and VOC LOFF-TA to campus; prioritize completed results",
+  "original_protocol_unchanged": true
+}

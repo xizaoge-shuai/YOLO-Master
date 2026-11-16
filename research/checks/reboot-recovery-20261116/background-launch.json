@@ -1,0 +1,17 @@
+{
+  "pid": 150658,
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/resume_campus_after_reboot.py",
+    "run",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/reboot-recovery/job-20261116-campus-two-gpu",
+    "--publish"
+  ],
+  "launched_unix": 1794840614.3243415,
+  "user_decision": "Move all remaining runs back to campus; resume exact checkpoints; no AutoDL data transfer waiting",
+  "proxy": "http://127.0.0.1:17897",
+  "two_gpu_lanes": true
+}

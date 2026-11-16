@@ -1,0 +1,13 @@
+{
+  "mode": "NATIVE_RESUME",
+  "checkpoint_epoch": 78,
+  "checkpoint": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/cache-reuse-c1-int8-s0/weights/last.pt",
+  "checkpoint_sha256": "c31b26b08d8f815700cde806b48704f701aeb52be1d90c67972aac914f9118f8",
+  "dataset": "voc0712",
+  "method": "cache-reuse-c1-int8",
+  "gpu": 0,
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "time_unix": 1794840615.8917305,
+  "pipeline_plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+  "gpu_runtime": "NVIDIA GeForce RTX 4090, GPU-02d1df45-7f76-285a-1162-9ed27d60448d, 595.91.07"
+}

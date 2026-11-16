@@ -1014,3 +1014,10 @@ Full seed0/final100 endpoint archived: [vit-adapter-cache25](experiments/priorit
 ## Single-pass metrics: sku110k, vit-adapter-cache25
 
 Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/vit-adapter-cache25-s0/README.md). No extra training or inference.
+
+<!-- campus-reboot-recovery:20261116-two-gpu -->
+## Campus recovery after reboot: two full-data GPU lanes
+
+User approved returning the remaining AutoDL assignments to campus. Byte-identical checkpoint backups verified for VOC INT8 epoch78, VOC LOFF-TA epoch9 and SKU Detail25 epoch17. Actual logs confirm resume at epochs79 and10 on distinct GPUs; SKU Detail25 remains queued from18. Original seed0, full-data100-epoch recipe and trainers retained. No smoke training. Linux seven CPU checks, Ruff and frozen-plan checks passed. CPU saved-prediction observer restored; core endpoints VOC3/7 and SKU6/7, metrics9/14. SKU Adapter primary maxDet100 AP40.1991 was already sealed and published; no final SKU Detail25 AP claimed.
+
+[Recovery evidence](checks/reboot-recovery-20261116/README.md). Physical GPU, boot and driver recorded; elapsed costs remain mixed-condition observations. No data/cache deletion; AutoDL cloud shutdown not claimed.

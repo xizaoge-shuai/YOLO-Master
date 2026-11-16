@@ -1,0 +1,12 @@
+test_checkpoint_evidence_rejects_epoch_or_config_disagreement (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+test_completion_merge_retains_parallel_lane_and_frozen_order (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+test_exact_output_workers_refuse_orphan_even_if_saved_pid_is_stale (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+test_frozen_plan_is_checked_without_rewriting (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+test_gpu_lease_blocks_second_worker_on_same_gpu_and_holds_child_fd (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+test_legacy_other_slot_prevents_new_slot0_admission (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+test_two_lanes_cover_each_authorized_pending_case_once (online_experiments.test_resume_campus_after_reboot.RecoveryContracts) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.002s
+
+OK

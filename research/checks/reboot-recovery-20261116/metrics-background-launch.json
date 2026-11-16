@@ -1,0 +1,17 @@
+{
+  "pid": 127186,
+  "argv": [
+    "/mnt/data/users/zhjia/miniconda3/envs/yolomaster/bin/python",
+    "-u",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/online_experiments/metric_bundle_campaign.py",
+    "run",
+    "--priority",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed",
+    "--job",
+    "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/metric-bundles/job-20261112-single-pass",
+    "--publish"
+  ],
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "started_unix": 1794839902.8248196,
+  "reason": "resume CPU saved-prediction sidecar after campus reboot; no new inference"
+}

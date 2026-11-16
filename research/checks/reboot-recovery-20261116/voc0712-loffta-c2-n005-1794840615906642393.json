@@ -1,0 +1,13 @@
+{
+  "mode": "NATIVE_RESUME",
+  "checkpoint_epoch": 9,
+  "checkpoint": "/mnt/data/users/zhjia/YOLO-Master-paper-baselines-20261107/runs/paper/priority/job-20261112-single-seed/voc0712/train/loffta-c2-n005-s0/weights/last.pt",
+  "checkpoint_sha256": "7f65abb8a847f4e24564d20ba25a261a526a7ad74b2b4ec8567bb0f13f4faec8",
+  "dataset": "voc0712",
+  "method": "loffta-c2-n005",
+  "gpu": 1,
+  "boot_id": "1aaf589c-9494-4f62-b0cf-8b18304826a5",
+  "time_unix": 1794840615.8831522,
+  "pipeline_plan_sha256": "4915f82547350a756706cb5a7d1da189057bf156f3ef36585763f99139572f96",
+  "gpu_runtime": "NVIDIA GeForce RTX 4090, GPU-97f41417-ff0e-2f11-0ac5-1b0f5f4bbe44, 595.91.07"
+}
