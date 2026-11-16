@@ -1002,3 +1002,9 @@ VOC3/7, SKU5/7, CPU metrics8/14 with0failures. SKU Adapter reached70epochs. VOC 
 ## AutoDL relay and VOC admission, 2026-11-16
 
 Lowered campus admission to 12GiB GPU and host free memory with two-worker/lease cap; VOC INT8 actually advances while SKU Adapter continues. Added pinned, loopback-only detached Windows relay and retained SHA-bound upload partials. New transfer/return pair3439657/3439658; observed large-file window0.959MiB/s. AutoDL remains waiting for full input. Original training recipe and final-result counts unchanged. Targeted Ruff/format and121 CPU checks pass; command guides and nonsecret runtime snapshots archived under [relay admission checks](checks/relay-admission-20261115/README.md).
+
+
+<!-- priority-single-seed-20261112:sku110k:vit-adapter-cache25 -->
+## Priority sku110k: vit-adapter-cache25 completed
+
+Full seed0/final100 endpoint archived: [vit-adapter-cache25](experiments/priority-single-seed-20261112/sku110k/vit-adapter-cache25-s0/README.md). No seed repeats or ablations queued.

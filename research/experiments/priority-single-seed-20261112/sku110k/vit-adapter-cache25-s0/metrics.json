@@ -1,0 +1,29 @@
+{
+  "primary": {
+    "implementation": "pycocotools.COCOeval bbox",
+    "version": "2.0.11",
+    "scale": "0-100",
+    "evaluated_images": 2936,
+    "by_max_detections": {
+      "100": {
+        "AP": 40.19909034789137,
+        "AP50": 62.708706438526264,
+        "AP75": 46.75613139089359,
+        "AP_small": 10.080065394625715,
+        "AP_medium": 14.950529658033545,
+        "AP_large": 45.75841408436443,
+        "AR": 43.907509280586545
+      },
+      "500": {
+        "AP": 53.968372083186324,
+        "AP50": 89.66644973437948,
+        "AP75": 59.66126014393552,
+        "AP_small": 11.35044804594827,
+        "AP_medium": 32.26839090560656,
+        "AP_large": 58.3693332349368,
+        "AR": 62.09428427096994
+      }
+    }
+  },
+  "endpoint": "SKU110K officialtest; fixed final100epoch; primary standardCOCO AP@maxDet100; dense maxDet500 secondary"
+}
