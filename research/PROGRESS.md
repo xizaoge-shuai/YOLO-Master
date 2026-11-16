@@ -1008,3 +1008,9 @@ Lowered campus admission to 12GiB GPU and host free memory with two-worker/lease
 ## Priority sku110k: vit-adapter-cache25 completed
 
 Full seed0/final100 endpoint archived: [vit-adapter-cache25](experiments/priority-single-seed-20261112/sku110k/vit-adapter-cache25-s0/README.md). No seed repeats or ablations queued.
+
+
+<!-- single-pass-metrics-20261112:sku110k:vit-adapter-cache25 -->
+## Single-pass metrics: sku110k, vit-adapter-cache25
+
+Full-test final100 saved predictions scored once on CPU; [bundle](experiments/single-pass-metrics-20261112/sku110k/vit-adapter-cache25-s0/README.md). No extra training or inference.

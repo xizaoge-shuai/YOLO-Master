@@ -1,0 +1,5 @@
+class_name,area,area_lower_inclusive,area_upper_inclusive,all_objects,non_crowd_objects,crowd_or_difficult_objects
+object,all,0,10000000000.0,431546,431546,0
+object,small,0,1024,520,520,0
+object,medium,1024,9216,78746,78746,0
+object,large,9216,10000000000.0,352359,352359,0
